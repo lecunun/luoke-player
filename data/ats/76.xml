@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CollectADStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="76" label="收集黑色广告">
+  <Task id="4007" label="收集黑色广告">
+    <!-- npcfun_g_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="收集黑色广告" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101000" npcName="兰洛斯">黑衣人又来捣乱，四处都是诡异的宣传品，快去收集来，看看他们是不是有新的阴谋。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="我再想想" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|4007"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="140700" position="0|0">
+    	<View type="0" src="140700.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="collet_paper_140700">
+    		<Click event="NULL" fire="true"/>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="140800" position="0|0">
+    		<View type="0" src="140800.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="collet_paper_140800">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="140900" position="0|0">
+    			<View type="0" src="140900.swf" atLayerID="2" hasClick="false"/>
+    			<Create>
+    			<ViewEvent type="collet_paper_140900">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    			</Create>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="141000" position="0|0">
+    				<View type="0" src="141000.swf" atLayerID="2" hasClick="false"/>
+    				<Create>
+    				<ViewEvent type="collet_paper_141000">
+    					<Click event="NULL" fire="true"/>
+    				</ViewEvent>
+    				</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="收集黑色广告" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="4007"/>
+    					<Case value="0">
+    						<Script type="dialog">
+    							<Page>
+    									<Dialog npcID="101000" npcName="兰洛斯">仔细想想哪里还没有去，据说彼得大道、皇家研究院、魔法学院和体育场都要出现。</Dialog>
+    									<Button label="好的，我继续找。" close="true">
+    										<End/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    						<Case value="1">
+    							<Script type="dialog">
+    								<Page>
+    									<Dialog npcID="101000" npcName="兰洛斯">黑衣人一定又预谋着什么，不管怎样，我们不要轻信别人的蛊惑，要坚持自己的信念。谢谢你收集，我会把他们交给罗宾好好分析下。</Dialog>
+    									<Button label="好的" close="true">
+    										<Click event="onTaskCall2" params="2|4007"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    					</Script>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

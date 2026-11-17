@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ChildrensDayOf2011.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="122" label="宠物运动会">
+  <Task id="4033" label="宠物运动会">
+    <!-- npcfun_100900 · 场景 14 -->
+    <NPCFun sceneID="14" label="宠物运动会" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100900" npcName="麦斯威尔">六一运动会正在体育场如火如荼的进行呢，还不快去看看？</Dialog>
+                    <Button label="好的！" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4033"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_123300 · 场景 14 -->
+    <NPCFun sceneID="14" label="宠物运动会" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="123300" npcName="笨笨">急速赛跑是一个对宠物体力、敏捷、和耐力的综合考验，只有真正的强者才能在比赛中胜出，当然这也离不开你的帮助哦。</Dialog>
+                    <Button label="那参赛版、竞猜版有什么差别呢？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="123300" npcName="笨笨">参赛的话你就要带着指定的宠物来报名了，记住要让它跟随你，让我们看到哦，至于竞猜，就是在你没有宠物的时候也可以参加，但是不能得到更丰厚的奖励哦。</Dialog>
+                    <Button label="那就明白了" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="123300" npcName="笨笨">那边萨尔也有话对你说，去问问吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="123300"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_127600 · 场景 14 -->
+    <NPCFun sceneID="14" label="宠物运动会" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="127600" npcName="萨尔">木头人，在我背对大家喊出口号的时候，宠物可以悄悄的接近我，但当我回头的时候不要被我发现你正在动哦。否则就要被多哥带回你刚刚的位置了。</Dialog>
+                    <Button label="那怎样才算胜利呢？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="127600" npcName="萨尔">第一个拍到我的宠物就胜利了，明白了吗？</Dialog>
+                    <Button label="差不多了，一会比上两次就明白了，实践出真知。" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="127600" npcName="萨尔">实践出真知……去问问卡卡西，他那边也有项目哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="127600"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_126600 · 场景 14 -->
+    <NPCFun sceneID="14" label="宠物运动会" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="126600" npcName="卡卡西">六一小旗手，想成为一个合格的小旗手，一定要注意口令听指挥，排除别人的干扰。</Dialog>
+                    <Button label="旗手有什么用呢？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="126600" npcName="卡卡西">旗手所打出旗语在古代是一种主要的通讯方式，现在很多海上交流和指挥也是用旗语呢。我这里是一个基础的训练。</Dialog>
+                    <Button label="对了看时报说有什么欢乐豆" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="126600" npcName="卡卡西">嗯！只要你能成功的完成参赛版有机会获得呢。一会记得去笨笨那里看看，问问未来的奖励吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="126600"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_123300_submit · 场景 14 -->
+    <NPCFun sceneID="14" label="宠物运动会" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4033"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="123300" npcName="笨笨">急速赛跑，一二三木头人，六一小旗手想想哪个没了解过？</Dialog>
+                    <Button label="差点忘了，我这就去" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="123300" npcName="笨笨">急速赛跑，一二三木头人，六一小旗手看来你都了解了，想知道更多的奖励吗？</Dialog>
+                    <Button label="想知道" nextID="-1" close="true">
+                        <Goto value="playAnimation"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="playAnimation" type="asWindow" src="task/4033/task_4033_LastStar" winPos="0|0" name="最后的星星">
+                <Default><Goto value="submit"/></Default>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4033"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

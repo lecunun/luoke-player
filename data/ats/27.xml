@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 21_TaskList.xml 的 <TFlow> 还原 -->
+<Story id="27" label="夜半琴声"><Task id="1026" label="询问夜半琴声"><NPCFun sceneID="7" label="询问夜半琴声" icon="-1" close="false"><Click event="onRunScript"><Script label="default" type="dialog"><Page id="0"><Dialog npcID="105100" npcName="爱德华">最近每到夜晚，总是能听到奇怪的琴声，而且十分清晰，可是我也不知道是从哪里发出这种声音的。听说莫里亚克也在调查这件事，{name}，你能帮我去智慧出版社问问他吗？</Dialog><Button label="现在就去" nextID="-1" close="false" /></Page><Page id="1"><Dialog npcID="100200" npcName="莫里亚克">的确有这件事。我就亲眼见到，每到夜晚，彼得大道的下水道口那里，有十分诡异的光芒，琴声就是从那里传出来的。你可以去下水道那里看看怎么回事！</Dialog><Button label="现在就去" nextID="-1" close="false" /></Page></Script></Click></NPCFun></Task></Story>

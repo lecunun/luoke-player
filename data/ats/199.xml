@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FengXueYearDreamStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="199" label="梦境枫雪年">
+  <Task id="2041" label="梦境枫雪年">
+    <!-- npc_g_xml -->
+    <Npc type="1" npcID="217700" position="732|384">
+    <View type="0" src="217700.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    <Page id="0">
+      <Dialog npcID="205500" npcName="镇长">圣剑丢了，请回洛克王国找人帮助我们，精灵王危在旦夕！</Dialog>
+      <Button label="不要担心，我就去！" nextID="-1" close="true">
+    	<Goto value="index_1"/>
+      </Button>
+    </Page>
+      </Script>
+      <Click label="index_1" event="onTaskCall2" params="1|2041"/>
+    </Click>
+    </Npc>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="217800" position="0|0">
+    <View type="0" src="217800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2041_217800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2041/2041_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2041_217800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2041_217800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2041/2041_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2041_217800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2041_217800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="210200" npcName="洛奇">他们居然还在斗地主……</Dialog>
+          <Dialog npcID="217800" npcName="隐士">也好，他们完全没有防备，我们现在催眠胖子正是时候！</Dialog>
+          <Button label="OK！就从胖子下手吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2041_217800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_2041_217800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="217800" npcName="隐士">现在，就一起进入胖子的梦境吧！</Dialog>
+          <Button label="玛尼玛尼轰！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="217900" position="0|0">
+    <View type="0" src="217900.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2041_217900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="210200" npcName="洛奇">咳咳，恨！我是羡慕啊，你在干嘛呢？</Dialog>
+          <Dialog npcID="209300" npcName="恨">没见我在减肥吗？</Dialog>
+          <Dialog npcID="210200" npcName="洛奇">……看起来没效果的样子啊！对了，你知道圣剑，哦不，恩佐在哪吗？</Dialog>
+          <Dialog npcID="209300" npcName="恨">我怎么知道！我真的没有瘦吗？明明感觉自己下巴都变尖了！</Dialog>
+          <Button label="原来他做梦都想瘦下来！咦？这是什么？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2041_217900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2041_217900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2041/2041_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml -->
+    <Npc type="1" npcID="218000" position="524|364">
+    <View type="0" src="218000.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2041_218000">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2041/2041_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2041_218000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2041_218000">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2041/2041_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2041_218000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2041_218000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="210200" npcName="洛奇">隐士，我们知道剑在哪了，快放我们回去吧！</Dialog>
+          <Button label="隐士，你在吗？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2041/2041_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml -->
+    <Npc type="1" npcID="218100" position="0|0">
+    <View type="0" src="218100.swf" atLayerID="1"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    <Page id="0">
+      <Dialog npcID="210200" npcName="洛奇">哈哈，他们完全没有发现，我们已经在恨的梦境里游历了一圈了！</Dialog>
+      <Dialog npcID="217800" npcName="隐士">梦魇的力量强大吧！哈哈！对了，圣剑的情况如何了？</Dialog>
+      <Dialog npcID="210200" npcName="洛奇">知道它藏在哪了，就在枫雪右岸，我们快去把它找到！</Dialog>
+      <Button label="走！" nextID="-1" close="true">
+    	<Goto value="index_1"/>
+      </Button>
+    </Page>
+      </Script>
+      <Click label="index_1" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_p_xml -->
+    <Npc type="1" npcID="218200" position="555|178">
+    <View type="0" src="218200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2041_218200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+      <Page id="0">
+      <Dialog npcID="217800" npcName="隐士">貌似这里有一条小路，没有被封锁，看来你们寻找救援有希望了！</Dialog>
+      <Dialog npcID="210200" npcName="洛奇">找到圣剑了，还发现了生命之路，这次多亏有你！和我们一起去见镇长吧！</Dialog>
+      <Dialog npcID="217800" npcName="隐士">不用了，我习惯隐姓埋名了！有缘再见吧，小勇士们！</Dialog>
+      <Button label="真舍不得你！那我们，后会有期！" nextID="-1" close="true">
+    	<Goto value="index_1"/>
+      </Button>
+      </Page>
+      </Script>
+      <Click label="index_1" event="onTaskCall2" params="2|2041"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2041/2041_ts_0" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" cdtn="10" params="175"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 12 -->
+    <NPCFun label="app_ts1" sceneID="12">
+    <Click event="onChangeScene" params="12"/>
+    </NPCFun>
+    <!-- app_ts2_xml -->
+    <NPCFun label="app_ts2">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2041/2041_ts_1" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" cdtn="10" params="143"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 175 -->
+    <NPCFun label="app_ts3" sceneID="175">
+    <Click event="onChangeScene" params="175"/>
+    </NPCFun>
+    <!-- app_ts4_xml -->
+    <NPCFun label="app_ts4">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2041/2041_ts_2" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" cdtn="10" params="187"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

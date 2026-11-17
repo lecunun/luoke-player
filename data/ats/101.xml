@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 OwlDisappearedStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="101" label="消失的猫头鹰">
+  <Task id="134" label="消失的猫头鹰">
+    <!-- npcfun_g_xml · 场景 1 -->
+    <NPCFun sceneID="1" label="猫头鹰消失了？" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">是的……明明每天吃饭的时候都准时出现的……现在都两天了，影子都没有……</Dialog>
+          <Button label="有留下什么线索么？" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">我的计算器被人动过，不知道是不是它留下来的……</Dialog>
+          <Button label="让我看看" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="asWindow" src="task/134/134_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_3"/>
+        </Default>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">哼，计算器，又是数字。我说，除了罗伦斯这个阴森的家伙，谁也想不出这么别扭的难题来！</Dialog>
+          <Button label="你这么说你哥哥啊……" nextID="-1">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">哥哥又怎么样！哥哥就可以把我的猫头鹰抓走吗？</Dialog>
+          <Button label="你别气……" nextID="-1">
+            <Goto value="index_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">就是前两天，他还说要跟我断绝兄弟关系呢！如果不是他做的，又是谁做！你跟他说，赶快把我的lulu还来，不然有他好看！</Dialog>
+          <Button label="（看来我得跑一趟跳跳集市了）" nextID="-1" close="true">
+            <Goto value="index_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_6" event="onTaskCall2" params="1|134"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 1 -->
+    <NPCFun sceneID="1" label="我来找万事通的猫头鹰" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">什么！他的猫头鹰不见了就来找我？开什么玩笑！</Dialog>
+          <Button label="不在你这里么……" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">当然不在！我抓他的猫头鹰做什么？他这个人，从小就是这样！</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="asWindow" src="task/134/134_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_3"/>
+        </Default>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">明明是他自己的错，却赖到了我的头上。这次肯定是这样。是他自己对他的lulu不好，lulu生气跑了。他硬要怪到我头上么！</Dialog>
+          <Button label="那，你认得这些数字么……" nextID="-1" close="true">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_4" type="asWindow" src="task/134/134_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_5"/>
+        </Default>
+      </Script>
+      <Script label="index_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">这是啥，似乎有些印象……不对。我干嘛管这事。<![CDATA[{name}]]>你跟他说，别来烦我，就这样！</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_6" event="NULL" fire="true" fireID="102601"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 1 -->
+    <NPCFun sceneID="1" label="罗伦斯说没看到" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">他当然没看到！从小，他就是这样！知道都说不知道的啦！</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="asWindow" src="task/134/134_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_2"/>
+        </Default>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">小时候是这样，长大也是这样，他还当不当我是弟弟！要断绝关系就断绝关系吧！</Dialog>
+          <Button label="不要这样子啊……" nextID="-1" close="true">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_3" event="onTaskCall2" params="2|134"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 27 -->
+    <NPCFun label="app_ts0" sceneID="27">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/134/134_ts_0" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="27"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 1 -->
+    <NPCFun label="app_ts1" sceneID="1">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/134/134_ts_1" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="1"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="135" label="数字里的秘密">
+    <!-- npcfun_c0_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="先解开谜题啊！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">也对……我气昏头了……我们一起来解开这个计算器里的谜题吧……</Dialog>
+          <Button label="嗯！这才对嘛！" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="switch" invoke="game" args="2|猜谜语|2078|0">
+        <Case value="1">
+          <Goto value="index_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_2" event="NULL" fire="true" fireID="102202"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="有猫头鹰来过吗？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">是有一只来过哦，它让我翻点东西，可是我一转头，它就不见了……</Dialog>
+          <Button label="这样子啊……" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">但是我必须说……这个图书馆里面有好多充满魔力的书，我不知道它是不是碰了什么东西……</Dialog>
+          <Button label="那我在这里到处找找！" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_135_156600"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 1 -->
+    <Npc sceneID="1" type="1" npcID="156600" position="0|0">
+    <View type="0" src="156600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt4_135_156600">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/135/135_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_135_156600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt0_135_156600">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/135/135_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="switch" invoke="combat" args="2|156600|扁嘴蝠">
+        <Case value="2">
+          <Goto value="index_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_2"/>
+        </Default>
+      </Script>
+      <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_135_156600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_135_156600">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/135/135_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="switch" invoke="game" args="2|救猫头鹰|2079|0">
+        <Case value="1">
+          <Goto value="index_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_135_156600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_135_156600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156600" npcName="万事通的lulu">呜呜呜呜，<![CDATA[{name}]]>谢谢你救了我！</Dialog>
+          <Button label="我带你回万事通那里吧！" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156600" npcName="万事通的lulu"><![CDATA[{name}]]>不行啊，我的任务还没完成。</Dialog>
+          <Button label="什么任务？" nextID="-1">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156600" npcName="万事通的lulu">万事通和罗伦斯在吵架……我出来，就是想找方法让他们和好的。</Dialog>
+          <Dialog npcID="156600" npcName="万事通的lulu">我在万事通的计算器上留下了那个数字……其实是他和罗伦斯小时候玩过的一个数字游戏……</Dialog>
+          <Button label="但是他们都不记得了……" nextID="-1">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156600" npcName="万事通的lulu"><![CDATA[{name}]]>，你愿意帮我么？</Dialog>
+          <Button label="帮你什么？" nextID="-1" close="true">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_4" type="asWindow" src="task/135/135_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_5"/>
+        </Default>
+      </Script>
+      <Click label="index_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_135_156600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_135_156600">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/135/135_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Click label="index_1" event="onTaskCall2" params="2|135"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 1 -->
+    <NPCFun label="app_ts0" sceneID="1">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/135/135_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 7 -->
+    <NPCFun label="app_ts1" sceneID="7">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/135/135_ts_1" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="7"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="136" label="失而复得">
+    <!-- npc_c0_xml · 场景 10 -->
+    <Npc sceneID="10" type="1" npcID="156700" position="925|460">
+    <View type="0" src="156700.swf" atLayerID="3"/>
+    <Click event="NULL" fire="true"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 10 -->
+    <Npc sceneID="10" type="1" npcID="156800" position="341|495">
+    	<View type="0" src="156800.swf" atLayerID="2"/>
+    	<Click event="NULL" fire="true"/>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 27 -->
+    <NPCFun sceneID="27" label="你看这是什么！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/136/136_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">这是纸蜻蜓啊……</Dialog>
+          <Button label="是的！" nextID="-1">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">当年我替万事通吃了亏，他就用这个道歉……我那时候想，毕竟我们是亲兄弟啊……</Dialog>
+          <Button label="现在也是啊！" nextID="-1">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">现在我们吵架，都已经分不清是谁起的头了，整天就因为一点小事情吵起来。</Dialog>
+          <Button label="兄弟应该好好相处的！" nextID="-1">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">走吧，我是哥哥，我应该好好和弟弟谈一下的。</Dialog>
+          <Button label="好！咱们一块走！" nextID="-1" close="true">
+            <Goto value="index_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_5" event="onTaskCall2" params="2|136"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 26 -->
+    <NPCFun label="app_ts0" sceneID="26">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/136/136_ts_0" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="26"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 10 -->
+    <NPCFun label="app_ts1" sceneID="10">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/136/136_ts_1" winPos="0|0" name="任务提示">
+    		<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="ChangeScene_0" event="onChangeScene" params="10"/>
+    		</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 27 -->
+    <NPCFun label="app_ts2" sceneID="27">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/136/136_ts_2" winPos="0|0" name="任务提示">
+    		<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="ChangeScene_0" event="onChangeScene" params="27"/>
+    		</Click>
+    </NPCFun>
+  </Task>
+  <Task id="137" label="和好如初">
+    <!-- npcfun_p_xml · 场景 1 -->
+    <NPCFun sceneID="1" label="你看这是什么！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">这是……这是三叶草啊。我记得，当年，罗伦斯……</Dialog>
+          <Button label="他怎么了？" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="asWindow" src="task/137/137_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_2"/>
+        </Default>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">我记得，当年，我不会做作业，他没有马上告诉我，而是用别的方式告诉我答案。</Dialog>
+          <Button label="这挺好的啊！" nextID="-1">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102200" npcName="万事通">是啊，可是吵架的时候，对方所有的好，都忘记了。只记得对方对你不好的部分。</Dialog>
+          <Button label="应该多记得别人的好的" nextID="-1" close="true">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_137_156900"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 1 -->
+    <Npc sceneID="1" type="1" npcID="156900" position="870|530">
+    <View type="0" src="156900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_137_156900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/137/137_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">我刚记得，7004 5这个谜题。那时候，我说要离家出走，但又不是真的想走，就留下这个谜题。</Dialog>
+          <Dialog npcID="102200" npcName="万事通">是啊。那时候我找了半天呢。</Dialog>
+          <Dialog npcID="156600" npcName="万事通的lulu">感谢我吧感谢我吧！</Dialog>
+          <Dialog npcID="102200" npcName="万事通">感谢你。</Dialog>
+          <Dialog npcID="102600" npcName="罗伦斯">也要感谢<![CDATA[{name}]]>。</Dialog>
+          <Button label="不要跟我客气啦！" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="asWindow" src="task/137/137_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_3"/>
+        </Default>
+      </Script>
+      <Click label="index_3" event="onTaskCall2" params="2|137"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 1 -->
+    <NPCFun label="app_ts0" sceneID="1">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="1"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

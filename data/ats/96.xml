@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SweepFloor.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="96" label="开学大扫除">
+  <Task id="4020" label="开学大扫除">
+    <!-- npcfun_101900 · 场景 31 -->
+    <NPCFun sceneID="31" label="开学大扫除" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">健康卫生的学习环境才能让你取得更好的成绩。
+    很多地方都要好好清扫一下了，小洛克先从图书馆开始吧，还要去实验工坊和教学楼哦，别忘记了哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4020"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_105100 · 场景 7 -->
+    <NPCFun sceneID="7" label="大扫除" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="105100" npcName="爱德华">地上有些碎纸，不知道是谁弄的，麻烦你帮忙收拾下吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="playWorkingAnimation"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="playWorkingAnimation" type="asWindow" src="task/4020/task_4020_workingAnimation_1" winPos="465|310" name="大扫除">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="105100"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_103600 · 场景 9 -->
+    <NPCFun sceneID="9" label="大扫除" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="103600" npcName="爱因斯坦">呵呵呵，谢谢你帮我打扫，这里是有些乱，记得常来做实验啊。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="playWorkingAnimation"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="playWorkingAnimation" type="asWindow" src="task/4020/task_4020_workingAnimation_2" winPos="268|240" name="大扫除">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="103601"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_100100 · 场景 6 -->
+    <NPCFun sceneID="6" label="大扫除" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">来打扫卫生啊，呵呵，好的。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="playWorkingAnimation"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="playWorkingAnimation" type="asWindow" src="task/4020/task_4020_workingAnimation_3" winPos="560|170" name="大扫除">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="100101"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101900_submit · 场景 31 -->
+    <NPCFun sceneID="31" label="开学大扫除" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4020"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">教学楼，图书馆，实验工坊，想想哪里没去？</Dialog>
+                    <Button label="我想想" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">嗯，不错哈，辛苦啦、辛苦啦，给你点小奖励吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4020"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

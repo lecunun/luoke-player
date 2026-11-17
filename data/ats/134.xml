@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FourMeetingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="134" label="四方会谈邀请">
+  <Task id="4039" label="任务 4039">
+    <!-- npcfun_g_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="元首会晤准备" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="159300" npcName="奥贝斯坦">洛克王国周年庆典是个很重要的日子，每年的这个时候我们都会邀请对王国有突出贡献的元首们来王国会晤，这可是一个艰巨的任务，你有勇气完成么？</Dialog>
+    				<Button label="王国会晤到底要干嘛呢？" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4039/task_4039_WhyFourMeeting" winPos="0|0" name="会晤目的">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|4039"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 120 -->
+    <Npc sceneID="120" type="1" npcID="174800" position="610|414">
+    	<View type="0" src="174800.png" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/4039/task_4039_CleaningMeetingPlace" winPos="0|0" name="场地布置">
+    		  <Default>
+    			<Goto value="asWindow_0"/>
+    		  </Default>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4039/task_4039_askUserToKeepLiwu" winPos="0|0" name="提示玩家去喂飞行利乌">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="174800"/>
+    	  	</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="我饿、我饿……" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		
+    		<Script label="default" type="asWindow" src="task/4039/task_4039_KeepingLiwu" winPos="0|0" name="会晤目的">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="174900"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c2_xml · 场景 120 -->
+    <Npc sceneID="120" type="1" npcID="175000" position="200|300">
+    	<View type="0" src="175000.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175000" npcName="龙族之王">其实我真的想去，但是一想将要见到阿基拉，我纠结啊……</Dialog>
+    				<Button label="纠结什么呢？" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4039/task_4039_DragenAndArkiRa" winPos="0|0" name="阿基拉和龙族之王">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175000" npcName="龙族之王">你说我怕那个大铁块？</Dialog>
+    				<Button label="那你就答应去了呗？">
+    				<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page>
+    				<Dialog npcID="175000" npcName="龙族之王">这样的话，我尽量、努力、尽全力争取吧。</Dialog>
+    				<Button label="好吧，希望你一定到场，要不我会再来找你的。" close="true">
+    				<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175000"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 120 -->
+    <Npc sceneID="120" type="1" npcID="175100" position="483|374">
+    	<View type="0" src="175100.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175100" npcName="阿基拉">哦？洛克王国的周年庆典，这样的大事！</Dialog>
+    				<Button label="是啊，来不？" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4039/task_4039_Arrirasaywhat" winPos="0|0" name="阿基拉和龙族之王">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175100" npcName="阿基拉">真的有点不想去，但是……</Dialog>
+    				<Button label="好吧，就算你答应了，如果不来我会回来的！" close="true">
+    				<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175100"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c4_xml · 场景 120 -->
+    <Npc sceneID="120" type="1" npcID="175200" position="400|354">
+    	<View type="0" src="175200.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175200" npcName="平阳公主">小洛克来了啊，呱呱还一直想着你呢，你有什么需要帮忙？</Dialog>
+    				<Button label="来参加四方会谈吧，有兴趣没？" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4039/task_4039_PingyangBeauty" winPos="0|0" name="阿基拉和龙族之王">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175200" npcName="平阳公主">我觉得你可能不够强大，你觉得呢？万一被绑架了多麻烦啊，你先回去，我会尽量安排几个保镖去的。</Dialog>
+    				<Button label="好吧。" close="true">
+    				<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>	
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175200"/>
+    		</Click>
+    	</Npc>
+    <!-- app_ts00_xml · 场景 120 -->
+    <NPCFun label="app_ts00" sceneID="120">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="139"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 120 -->
+    <NPCFun label="app_ts0" sceneID="120">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="78"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 120 -->
+    <NPCFun label="app_ts1" sceneID="120">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="83"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 120 -->
+    <NPCFun label="app_ts2" sceneID="120">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="103"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 120 -->
+    <NPCFun label="app_ts3" sceneID="120">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="120"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_noover_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="元首会晤准备" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="159300" npcName="奥贝斯坦">打扫会场、给龙族之王、阿基拉、平阳公主送信，想想哪个没干呢？</Dialog>
+    					<Button label="好的" close="true">
+    						<End/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>;
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="元首会晤准备" icon="0" close="false">
+    		<Click event="onRunScript">
+    							<Script type="dialog" label="default">
+    								<Page>
+    									<Dialog npcID="159300" npcName="奥贝斯坦">没有看错你，任务都完成了，但是我还是有些担忧他们能不能按时参加会议。</Dialog>
+    									<Button label="好的" close="true">
+    										<Goto value="sumbit"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						<Click label="sumbit" event="onTaskCall2" params="2|4039"/>
+    						
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

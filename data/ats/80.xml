@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CollectMedicineStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="80" label="收集药材">
+  <Task id="4009" label="收集药材">
+    <!-- npcfun_g_xml · 场景 57 -->
+    <NPCFun sceneID="57" label="收集药材" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="112001" npcName="萌萌">可爱的小洛克，国王病了，快帮忙收集下药材吧。</Dialog>
+    				<Button label="好的。" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|4009"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 57 -->
+    <NPCFun sceneID="57" label="收集药材" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="switch">
+    			<Func invoke="taskIsComplete" args="4009"/>
+    			<Case value="0"><Goto value="notOK"/></Case>
+    			<Case value="1"><Goto value="ok"/></Case>
+    		</Script>
+    		<Script label="notOK" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="112001" npcName="萌萌">你的药材还没有集齐呢，继续找找吧。</Dialog>
+    				<Button label="好的" nextID="-1" close="true"><End/></Button>
+    			</Page>
+    		</Script>		
+    		<Script label="ok" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="112001" npcName="萌萌">感谢你的帮忙,相信有了你的帮助,国王会很快好起来的。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|4009"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="144200" position="452|439">
+    		<View type="0" src="144200.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_4009_144200">
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="144300" position="480|317">
+    		<View type="0" src="144300.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_4009_144300">
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="144400" position="356|466">
+    		<View type="0" src="144400.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_4009_144400">
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+</Story>

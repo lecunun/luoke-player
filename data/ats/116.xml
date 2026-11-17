@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 RocoAdventure.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="116" label="洛克大探险">
+  <Task id="4030" label="洛克大探险">
+    <!-- npcfun_101600 · 场景 32 -->
+    <NPCFun sceneID="32" label="洛克大探险" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101600" npcName="吉洛斯">王国探险队发现许多探险的好去处，快去看看吧！</Dialog>
+                    <Button label="在哪里呢？" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101600" npcName="吉洛斯">下水道的漂流探险、怀特冰川的雪山探险，快去看看吧。</Dialog>
+                    <Button label="下水道的的漂流探险，怀特冰川的雪山探险，知道了" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4030"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101600_submit · 场景 32 -->
+    <NPCFun sceneID="32" label="洛克大探险" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4030"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101600" npcName="吉洛斯">下水道的的漂流探险、怀特冰川的雪山探险哪个没有完成？好好想想。</Dialog>
+                    <Button label="谢谢你！我继续找！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101600" npcName="吉洛斯">不愧是勇敢的洛克，未来还有更多的探险等着你！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4030"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

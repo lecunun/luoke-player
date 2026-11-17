@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoAppearsStoryScript8.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="197" label="大决战">
+  <Task id="4065" label="大决战">
+    <!-- npcfun_accepttask_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="大决战" icon="-1" iconType="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">最后的决战就要开始了，我不能放松，但是一个人的力量是不够的，去找些伙伴来吧！</Dialog>
+    						<Button label="我们找谁呢" close="false">
+    							<Goto value="dlg_1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="dlg_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">上次的大块头和那个小雪人吧，它们很强大的！</Dialog>
+    						<Button label="是罗隐和雪娃娃吧，好的我现在就去" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4065"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="40"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="17"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 134 -->
+    <NPCFun label="app_ts2" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="216100" name="罗隐" position="530|400">
+    	<View type="0" src="216100.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="216100" npcName="罗隐">帮助木豆丁？我义不容辞，这个小家伙一定能拯救永夜森林！</Dialog>
+    					<Button label="好的！" close="true">
+    							<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="216100"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="216200" name="雪娃娃" position="584|292">
+    	<View type="0" src="216200.swf" height="79" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="216200" npcName="雪娃娃">木豆丁要帮忙？好的我一定去！为朋友牺牲我们义不容辞！</Dialog>
+    					<Button label="好的！" close="true">
+    							<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="216200"/>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_acceptnotfinish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="大决战" close="false">
+    		<Click event="onRunScript">	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">去矿山口、雪人谷找罗隐和雪娃娃来帮忙！</Dialog>
+    					<Button label="好的，我再看看" close="true">
+    					</Button>
+    				</Page>
+    			</Script>	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="大决战" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">决战即将开始，你要和我一起去么？</Dialog>
+    					<Button label="好的！战斗吧！！" close="true">
+    						<Goto value="donghua_1"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_1" type="asWindow" src="task/4065/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_1"/>
+    				</Default>
+    			</Script>	
+    
+    	
+    			<Script label="dialog_1" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">木藤藤我想念它，它经常请我吃面，呜呜呜呜呜……</Dialog>
+    					<Button label="别担心，我相信只要我们能把永夜森林建设好，它就会开心的" close="true">
+    						<Goto value="donghua_2"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_2" type="asWindow" src="task/4065/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_2"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">好的，我一定会把永夜森林建设好的。</Dialog>
+    					<Button label="木豆丁，你也要走了？" close="false">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    	
+    			<Script label="dialog_3" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">是的，也许不久的将来，我还会回来！</Dialog>
+    					<Button label="嗯，到时候我们再一起战斗！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    			<Click label="submit" event="onTaskCall2" params="2|4065"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 Goup_2_StoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="183" label="进发（下）">
+  <Task id="3032" label="寻找洛奇">
+    <!-- npcfun_get · 场景 13 -->
+    <NPCFun sceneID="13" label="有洛奇的线索吗？" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛"><![CDATA[{name}]]>，洛奇被恩佐抓走了这么久，至今为止还是没有任何线索，真是伤脑筋啊。</Dialog>
+    					<Button label="洛奇会不会留下些线索给我们？">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">说的对呀，我们只想着满世界寻找洛奇，却把最有可能发现线索的地方错过了！我们这就回冰原瀑布去看看！</Dialog>
+    					<Button label="好的！" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|3032"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3032/app_3032_01_gotoBinghyuanpybu" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="175"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3032/app_3032_04_gotoMofakejiaoshi" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="31"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="207300" position="0|0">
+    	<View type="0" src="207300.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3032_event_lanlusiFoundGreanHatAndSay">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">快看，有一条奇怪的布在那里！</Dialog>
+    		  <Button label="那好像是……" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/3032/app_3032_02_luoqiBuyGreenTojin" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_1"/>
+    		</Default>
+    		</Script>	
+    	
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">洛奇小兄弟的品味果然独特，跟我当年有的一拼啊！</Dialog>
+    		  <Button label="……现在不是相惜的时候吧！">
+    			<Goto value="dialog_2"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">对对对，快去看看头巾里有没有神马线索，人老了就是喜欢感慨。</Dialog>
+    		  <Button label="好吧……" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="submit" event="NULL" fire="true" fireID="207300"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="208900" position="0|0">
+    		<View type="0" src="208900.swf" atLayerID="3" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="task_3032_event_GetToujinTolanlusi">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101000" npcName="兰斯洛">怎么样，<![CDATA[{name}]]>，发现了什么线索吗？快拿给我看看。</Dialog>
+    						<Button label="好，给你！" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/3032/app_3032_03_FoundxiansuoInTojin" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    	
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101000" npcName="兰斯洛">我们还是去找杰瑞西老师问问怎么让隐形墨水的字显现出来吧！</Dialog>
+    						<Button label="好的！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|3032"/>
+    				</Click>
+    		</ViewEvent>
+    		</Create>
+    </Npc>
+  </Task>
+  <Task id="3033" label="恩佐的阴谋">
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="207400" position="0|0">
+    	<View type="0" src="207400.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3033_event_jieruisiSay">
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101903" npcName="杰瑞西"><![CDATA[{name}]]>，来找我有事情吗？</Dialog>
+    					<Button label="[告诉杰瑞西老师事情的经过……]">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101903" npcName="杰瑞西">原来如此，快把那张纸拿来给我看看！</Dialog>
+    					<Button label="好！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/3033/app_3033_01_jierisiCheckPaper" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="accpet"/>
+    		</Default>
+    		</Script>	
+    		<Click label="accpet" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="209000" position="0|0">
+    		<View type="0" src="209000.swf" atLayerID="3" hasClick="false"/>
+    		<Create>
+    	
+    		<ViewEvent type="task_3033_event_paperFlaytolazhu">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101903" npcName="杰瑞西">已经显示出来了，你们看！</Dialog>
+    						<Button label="是什么是什么……" nextID="-1" close="true">
+    							<Goto value="task_3033_event_papertojieruixi"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Click label="task_3033_event_papertojieruixi" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_3033_event_papertojieruixi"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="task_3033_event_ShowPaperContents">
+    			<Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/3033/app_3033_02_Papercontents" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="dialog_1"/>
+    			</Default>
+    			</Script>	
+    	
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101903" npcName="杰瑞西"><![CDATA[{name}]]>，你们必须去阻止恩佐的阴谋，救出洛奇！</Dialog>
+    						<Dialog npcID="101000" npcName="兰斯洛">杰瑞西你放心，我一定会全力帮助<![CDATA[{name}]]>，洛奇也会安全回归。</Dialog>
+    						<Button label="我们这就去洛克号驾驶舱！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Click label="submit" event="onTaskCall2" params="2|3033"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		</Create>
+    </Npc>
+  </Task>
+  <Task id="3034" label="鸡牛部队偷引擎">
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3033/app_3033_03_gotoRocoBoatRunRoom" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="176"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3034/app_3034_03_gotoDilao" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="153"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="207500" position="0|0">
+    	<View type="0" src="207500.swf" atLayerID="3" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3034_event_lanlusimaxmjdh">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">又是这群可恶的黑衣人！看我去教训他们！</Dialog>
+    		  <Button label="还不知道洛奇在哪里，静观其变吧！" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/3034/app_3034_01_jiniubuduiTouyinqing" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="task_3034_event_jiuniubuduistandup"/>
+    		</Default>
+    		</Script>	
+    	<Click label="task_3034_event_jiuniubuduistandup" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_3034_event_jiuniubuduistandup"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_3034_event_lanlusibiaoyangluoqi">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">哈哈，洛奇这招关门打狗不错哦~</Dialog>
+    		  <Button label="看我去收拾他们！" nextID="-1" close="true">
+    			<Goto value="fight_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="fight_0" type="switch" invoke="combat" args="2|207500|鸡牛部队">
+    				<Case value="2"><Goto value="victory"/></Case>
+    				<Default><Goto value="fail"/></Default>
+    		</Script>
+    	
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="101000" npcName="兰斯洛">草包还是不要出来混了，出来混早晚是要还的。</Dialog>
+    				<Button label="嘿嘿嘿嘿……" close="true">
+    				<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="209100" npcName="羡慕">哇哈哈，我们鸡牛部队果然名不虚传！小子你再练一百年吧！</Dialog>
+    				<Button label="我先去热下身，一会再回来收拾你们！" close="true">
+    				<Goto value="task_3034_event_BtnisEnabled"/>
+    				</Button>
+    				<Button label="刚才一时大意，再来一次！" close="true">
+    				<Goto value="fight_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="task_3034_event_BtnisEnabled" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_3034_event_BtnisEnabled"/>
+    	
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_3034_event_startFightWithJIniuBudui">
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="switch" invoke="combat" args="2|207500|鸡牛部队">
+    		<Case value="2"><Goto value="victory"/></Case>		
+    		<Default><Goto value="fail"/></Default>
+    				
+    		</Script>
+    	
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="101000" npcName="兰斯洛">草包还是不要出来混了，出来混早晚是要还的。</Dialog>
+    				<Button label="嘿嘿嘿嘿……" close="true">
+    				<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="209100" npcName="羡慕">哇哈哈，我们鸡牛部队果然名不虚传！小子你再练一百年吧！</Dialog>
+    				<Button label="我先去热下身，一会再回来收拾你们！" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="刚才一时大意，再来一次！" close="true">
+    				<Goto value="default"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    			<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	
+    
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="208100" position="0|0">
+    	<View type="0" src="208100.swf" atLayerID="3" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3034_event_niniubuduihaipaole">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">说出洛奇在哪里我就饶你们的狗命！</Dialog>
+    		  <Dialog npcID="209100" npcName="羡慕">好汉饶命！</Dialog>
+     			<Dialog npcID="209200" npcName="嫉妒">英雄别冲动！</Dialog>
+    			 <Dialog npcID="209300" npcName="恨">洛奇被恩佐大人关押在天罩地牢！555555555555</Dialog>
+    	
+    			<Button label="兰斯洛大哥，怎么处理他们？" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/3034/app_3034_02_jiniubuduidiudaohaili" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="task_3034_event_lanlusiduohuiyiqing"/>
+    		</Default>
+    		</Script>	
+    	<Click label="task_3034_event_lanlusiduohuiyiqing" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_3034_event_lanlusiduohuiyiqing"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	
+    	
+    <ViewEvent type="task_3034_event_lanlusijianyyiqudilao">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">我们这就去天罩地牢吧！</Dialog>
+    		  <Button label="好！快去救洛奇！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    			<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="207600" position="0|0">
+    		<View type="0" src="207600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="task_3034_event_luoqihuojiuchenggong">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="203700" npcName="洛奇">你们终于来了，再晚点来的话，我给库伦加的佐料就该失去作用了！</Dialog>
+    						<Button label="啊？" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/3034/app_3034_03_kulunchilebadou" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101000" npcName="兰斯洛">真有你的，趁库伦还没回来，我们快走，回洛克号驾驶舱！</Dialog>
+    						<Button label="好！三十六计走为上计！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|3034"/>
+    				</Click>
+    		</ViewEvent>
+    		</Create>
+    </Npc>
+  </Task>
+  <Task id="3035" label="修引擎，洛克号完成">
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3034/app_3034_04_gotoRocoRunRoom" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="176"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="207700" position="0|0">
+    	<View type="0" src="207700.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3035_event_yinqinghuaileluoqinule">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="203700" npcName="洛奇">这几个笨蛋居然把引擎搞坏了，居然敢对我心爱的洛克号做出此等事情，不要让我再看见他们，不然我绝不轻饶！</Dialog>
+    		 <Dialog npcID="101000" npcName="兰斯洛">别急，我们现在修补应该还来得及！</Dialog>
+    			<Button label="是啊，我们一起努力！" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/3035/app_3035_01_luoqixiangbanfaxiuliyinqing" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	  <Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="208200" position="0|0">
+    	<View type="0" src="208200.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="task_3035_event_Luqixiubuhaoctsa">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="101000" npcName="兰斯洛">洛奇，经过这几天的事情，我和<![CDATA[{name}]]>看到了你对洛克号的热爱，我们决定认命你来做洛克号的船长。你意下如何？</Dialog>
+    		 <Dialog npcID="203700" npcName="洛奇">我……我真的可以吗？</Dialog>
+    		<Dialog npcID="101000" npcName="兰斯洛">恩，当然啦！我想你一定会是个好船长的！你说呢，<![CDATA[{name}]]>？</Dialog>
+    			
+    		<Button label="我也觉得洛奇你一定可以的！">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="203700" npcName="洛奇">不过我要先修理好引擎，不然我于心不安！</Dialog>	
+    		<Button label="我懂得一点，我来帮你！" nextID="-1" close="true">
+    			<Goto value="task_3034_event_wolaibangzhu"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Click label="task_3034_event_wolaibangzhu" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_3034_event_wolaibangzhu"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="task_3035_event_OpenModifyEnginGame">
+    	<Click event="onRunScript">
+    		<Script label="default" type="switch" invoke="game" args="2|引擎大修理|2126|0">
+    		  <Case value="1">
+    		    <Goto value="submit"/>
+    		  </Case>
+    		  <Default>
+    		    <End/>
+    		  </Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</ViewEvent>
+    
+    
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="209400" position="0|0">
+    		<View type="0" src="209400.swf" atLayerID="3" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="task_3035_event_lanluosiAndLUoqihengaoxing">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101000" npcName="兰斯洛">没想到<![CDATA[{name}]]>还有这门技术！</Dialog>
+    						<Dialog npcID="203700" npcName="洛奇">崇拜！<![CDATA[{name}]]>，本船长决定收了你！</Dialog>
+    						<Button label="少来，不过你进入角色好快……">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="203700" npcName="洛奇"><![CDATA[{name}]]>，那你收了本船长也行，以后我们一起冒险，找宝藏！</Dialog>
+    						<Dialog npcID="101000" npcName="兰斯洛">祖国的未来就交给你们了！</Dialog>
+    						<Dialog npcID="203700" npcName="洛奇">为了洛克王国的和平，为了阻止恩佐的阴谋，也为了我的冒险梦想！梦想第一站：枫雪镇！！！出发！！！</Dialog>
+    	
+    						<Button label="好啦好啦，加入你啦！" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/3035/app_3035_02_wan" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    
+    			<Click label="submit" event="onTaskCall2" params="2|3035"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    </Npc>
+  </Task>
+</Story>

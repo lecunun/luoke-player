@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BorisLoseStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="75" label="伯瑞斯失踪之谜">
+  <Task id="123" label="离奇失踪">
+    <!-- npc_g_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="139700" name="先遣队员" position="734|399">
+    	<View type="0" src="139700.swf" atLayerID="2" height="85"/>
+    	<Create>
+    	<NPCFun label="伯瑞斯失踪之谜" icon="-1">
+    	<Click event="onRunScript" cdtn="60">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">终于回到王国了！你还记得我们吗?</Dialog>
+    			<Button label="你们是先遣队的！以前常带回探险消息！" nextID="-1">
+    				<Goto value="dialog_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">是的，我们探索出无数新的领域，包括八大徽章的所在地！现在，我们回来了！可是……</Dialog>
+    			<Button label="怎么了？应该感到高兴啊！" nextID="-1">
+    				<Goto value="dialog_2"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">我们的队长伯瑞斯，在集齐八大徽章后，就突然失踪了。</Dialog>
+    			<Button label="啊！为什么失踪了？" nextID="-1">
+    				<Goto value="dialog_2_2"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_2_2" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">此事说来话长。</Dialog>
+    			<Button label="说来听听" nextID="-1" close="true">
+    				<Goto value="asWindow_0"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/123/123_0" winPos="0|0" name="提示">
+    		<Default><Goto value="dialog_3"/></Default>
+    	</Script>
+    	<Script label="dialog_3" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">我们张贴了寻人启事，并附上了这个字条，可一直没有收到消息。</Dialog>
+    			<Button label="字条里有什么线索呢？" nextID="-1">
+    				<Goto value="dialog_4"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_4" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">“试练之途连广宇，于梦深处听惊雷”……这个，我语文不太好。试练之途是指八大徽章，惊雷嘛……</Dialog>
+    			<Button label="难道是去雷霆峡谷听雷声？" nextID="-1">
+    				<Goto value="dialog_5"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_5" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="139700" npcName="先遣队员">啊！我怎么没有想到！这里有一张他的照片，寻找队长的事就拜托你了！我们很担心他！</Dialog>
+    			<Button label="包在我身上！" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="1|123"/>
+    	</Click>
+    	</NPCFun>
+    	</Create>
+    	<Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+    <!-- npc_c0_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="139800" position="60|432">
+    	<View type="0" src="139800.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0_123_139800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/123/123_1" winPos="0|0" name="提示">
+    					<Default><End/></Default>
+    				</Script>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="139900" position="362|358">
+    		<View type="0" src="139900.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_123_139900">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141700" npcName="霹雳球">是谁打扰我睡觉！受死吧！</Dialog>
+    							<Button label="大大大哥，我只是路过……" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|139900|霹雳云">
+    						<Default><Goto value="dialog_2"/></Default>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141700" npcName="霹雳球">哇卡卡！美味……</Dialog>
+    							<Button label="啊！不要靠近我！救命啊！" nextID="-1" close="true">
+    								<Goto value="lose"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="lose" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_123_139900"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_123_139900">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/123/123_2" winPos="0|0" name="提示">
+    						<Default><Goto value="dialog_0"/></Default>
+    					</Script>
+    					<Script label="dialog_0" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">知道吗？如果不是我，你刚才差点丢掉了自己的小命！</Dialog>
+    							<Button label="英雄！你是伯瑞斯吗？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">原来这么多人认识我！不过，不要和我提先遣队，我已经加入了新的组织！</Dialog>
+    							<Button label="什么新组织？" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">哈哈！就是可以赠送你第九大徽章的新组织——黑魔法师协会！而我就是荣誉会长！</Dialog>
+    							<Button label="什么？第九大徽章出来啦！我也想要啊！" nextID="-1">
+    								<Goto value="dialog_3"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_3" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">哦？想加入我们协会，诚意很重要。完成这入会须知的要求后，来拉布朗铜矿场找我吧！</Dialog>
+    							<Button label="我有诚意！我这就去！" nextID="-1">
+    								<Goto value="dialog_4"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_4" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">等等！怕你太笨，我给你写一张演讲小纸条。表决心的时候，照着念就行了！</Dialog>
+    							<Button label="谢谢会长！好体贴！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|123"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 59 -->
+    <NPCFun label="app_ts0" sceneID="59">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/123/123_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="124" label="黑魔法师协会">
+    <!-- npc_c0_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="139800" position="60|432">
+    	<View type="0" src="139800.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0_124_139800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/124/124_0" winPos="0|0" name="提示">
+    					<Case value="1"><Goto value="submit"/></Case>
+    					<Default><End/></Default>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_124_139800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/124/124_1" winPos="0|0" name="提示">
+    					<Default><End/></Default>
+    				</Script>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="140100" position="550|312" aimPos="636|308">
+    		<View type="0" src="140100.swf" atLayerID="2"/>
+    		<Click event="onRunScript" cdtn="0">
+    			<Script label="default" type="asWindow" src="task/124/124_2" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="140300" position="555|342">
+    		<View type="0" src="140300.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_124_140300">
+    				<Click event="onRunScript" aimPos="555|342" cdtn="60">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">干的不错啊！那么，我正式宣布你成为黑魔法师协会的一员！这就是授予你的第九大徽章！。当当当当~</Dialog>
+    							<Button label="啊……我梦寐以求的徽章！" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">咳咳～既然已经加入协会，那就是自己人了。最近经费有点紧张，听说钻石港有很多投资商人，你去忽悠，哦不，你去吸收一些人加入我们吧！</Dialog>
+    							<Button label="为了协会的发展，在所不辞！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|124"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 41 -->
+    <NPCFun label="app_ts0" sceneID="41">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/124/124_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 41 -->
+    <NPCFun label="app_ts1" sceneID="41">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/124/124_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 41 -->
+    <NPCFun label="app_ts2" sceneID="41">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/124/124_ts_2" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="125" label="真相大白">
+    <!-- npc_c0_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="139800" position="60|432">
+    		<View type="0" src="139800.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_125_139800">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/124/124_1" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="140000" position="0|0">
+    		<View type="0" src="140000.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_125_140000">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="140000" npcName="投资客">唉，钱真是多得用不出去啊！如果有好的投资机会，跟我说哦！</Dialog>
+    							<Button label="财神先生，黑魔法师协会即将风靡王国，现在投资是最好时机…" nextID="-1">
+    								<Goto value="dialog_4"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_4" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="140000" npcName="投资客">哦？听起来好像不错！我们这就去看看！……</Dialog>
+    							<Button label="就在铜矿场，您慢走！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_125_140000"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_125_140000">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">我伯瑞斯回来啦！这一次我带回了好消息！</Dialog>
+    							<Button label="财神先生……啊，会长你怎么在这里？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">你认错人了？我不是会长，我是先遣队长伯瑞斯！</Dialog>
+    							<Button label="不可能吧！你是伯瑞斯？那铜矿场那个是谁？" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">（……将事情告诉了伯瑞斯。）</Dialog>
+    							<Dialog npcID="139900" npcName="伯瑞斯">什么！竟然有这种事！这家伙敢冒充我招摇撞骗！气死我了，我这去揭穿他！</Dialog>
+    							<Button label="啊！难道我被骗了？！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_125_140000"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_125_140000">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_p_xml · 场景 41 -->
+    <Npc sceneID="41" type="1" npcID="140300" position="555|342">
+    		<View type="0" src="140300.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt3_124_140300">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">笨蛋！快去钻石港忽悠一些投资商人过来！我们经费很紧张！</Dialog>
+    							<Button label="会长别急，我这就去！" nextID="-1" close="true">
+    								<End/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt0_125_140300">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/125/125_2" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_125_140300"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_125_140300">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/125/125_4" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_125_140300"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_125_140300">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">原来是恩佐的手下！可惜让这个家伙给逃了！</Dialog>
+    							<Button label="对不起！都怪我太贪图徽章了！" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">呵呵！不要为了徽章而训练，你该有更高的理想！要不然，我在集齐八大徽章后，早就和大伙一起回来了！</Dialog>
+    							<Button label="所以，你决定一个人继续探险？" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">是的！试炼之路连广宇，于梦深处听惊雷，就是这个意思！</Dialog>
+    							<Button label="啊！原来是这个意思…我误以为……" nextID="-1">
+    								<Goto value="dialog_3"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_3" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">误以为什么了？</Dialog>
+    							<Button label="没什么！我没有以为是去听雷声！" nextID="-1">
+    								<Goto value="dialog_4"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_4" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="139900" npcName="伯瑞斯">对了！新的探险我并没有让你们失望！我发现了传说中的玄玉岛，它位于大陆的东方……</Dialog>
+    							<Button label="快说给我听听。" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/125/125_3" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|125"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 41 -->
+    <NPCFun label="app_ts0" sceneID="41">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/125/125_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 41 -->
+    <NPCFun label="app_ts1" sceneID="41">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/125/125_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

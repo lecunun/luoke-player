@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BookSweepStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="209" label="图书馆大清理">
+  <Task id="4069" label="图书馆大清理">
+    <!-- npcfun_get · 场景 7 -->
+    <NPCFun sceneID="7" label="新学期图书大清理" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="105100" npcName="爱德华">新学期又要清理图书了，唉~~~</Dialog>
+    					<Button label="不就是清理下灰尘么？有那么复杂？">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="105100" npcName="爱德华">那简直就是恶梦……</Dialog>
+    					<Button label="太夸张了吧！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4069/app1" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="dialog_2"/>
+    		  </Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="105100" npcName="爱德华">你懂了吧……</Dialog>
+    					<Button label="好吧，我来清理它们！" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		
+    			<Click label="accpet" event="onTaskCall2" params="1|4069"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 7 -->
+    <Npc sceneID="7" type="1" npcID="224300" position="0|0">
+    	<View type="0" src="224300.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_224300_showbookDialog">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="224300" npcName="会飞的图书">想收拾我们？想清理我们，没门儿！</Dialog>
+    		  <Button label="试试看" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/4069/app2" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_0"/>
+    		</Default>
+    		</Script>	
+    	
+    <Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="224300" npcName="会飞的图书">你的魔法好厉害！</Dialog>
+    		  <Button label="嘿嘿嘿，小瞧我是没有好处的！" nextID="-1" close="true">
+    			<Goto value="asWindow_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    <Script label="asWindow_1" type="asWindow" src="task/4069/app3" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	  <Click label="submit" event="NULL" fire="true" fireID="224300"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npcfun_0_noover_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="新学期图书大清理" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			<Dialog npcID="105100" npcName="爱德华">找到那些书没有？</Dialog>
+    				<Button label="我再看看" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_submit · 场景 7 -->
+    <NPCFun sceneID="7" label="新学期图书大清理" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="105100" npcName="爱德华">太感谢你了！没想到你这么厉害！</Dialog>
+    					<Button label="好的，下次继续合作哦！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		
+    			<Click label="submit" event="onTaskCall2" params="2|4069"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

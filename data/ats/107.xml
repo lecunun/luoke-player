@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 InfernalAffairsStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="107" label="无间道">
+  <Task id="1085" label="暗中调查">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="无间道" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔"><![CDATA[{name}]]>，我想了很久，恐怕只有你才真正值得我信任。事实上，我发现了一个阴谋……不过，也可能只是我多心了……</Dialog>
+          <Button label="究竟发生了什么呢？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">实际上，最近刚上任的外交官，你可有所耳闻？</Dialog>
+          <Button label="你说的是外交使馆的奥贝斯坦吧？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">正是他！他和我是从小一起长大的知己，他能担当外交大使，我自然很开心！可是……最近我收到了一封匿名信，看过之后，让我很是担忧啊……</Dialog>
+          <Button label="匿名信？" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1085/1085_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">我和奥贝斯坦可是从小一起玩儿到大的！我们从小就一块偷幼儿园的向日葵~~从路边往过路人身上吐痰玩~啊～美好的童年！</Dialog>
+          <Button label="原来你们是发小啊～！" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">是啊～所以说，他怎么可能和黑衣人在一起呢！我真的无法相信啊d(@o@)b</Dialog>
+          <Button label="你先别着急！" nextID="-1" close="false">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">我想请你帮我暗中监视他……虽然我知道这种做法有些卑劣，不过也实在没有办法……我必须为了王国的安全着想！</Dialog>
+          <Button label="好的！我不会让他发现的！" nextID="-1" close="false">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">你可以先去外交使馆看看，也许可以发现些什么。外交使馆就在大厅的那扇门后，进去就是了。</Dialog>
+          <Button label="恩！放心吧！" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onTaskCall2" params="1|1085"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="你刚刚在干什么？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">哦哦哦～那是我的猫头鹰，它只是在帮我送信而已……</Dialog>
+          <Button label="送信？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">这跟你有什么关系？你只是个魔法学院的魔法师罢了，千千万万魔法师中的一个，管这么多干嘛？</Dialog>
+          <Button label="呃……是麦斯威尔让我来找你问好，恭喜你升为外交大使。[灵机一动，我也撒谎了]" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">哈哈哈！原来是那个家伙啊！我们俩可是从小一起长大的呢！</Dialog>
+          <Button label="我想听听你们那时有趣的事情耶！[是真是假，一问便知]" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1085/1085_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">好了，你快点去找麦斯威尔交差吧～我都告诉你啦～</Dialog>
+          <Button label="交差？" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">你就别再装了。难道不是麦斯威尔让你来试探我的么？（-_,-）现在你就回去交差吧，顺便告诉他，以后我的事情，他最好少插手，不然连朋友都没得做！</Dialog>
+          <Button label="好的……[这位外交官好聪明！还是被他发现了]" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="NULL" fire="true" fireID="159301"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="无间道" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">呵呵，原来被他发现了啊……这也难怪……本来奥贝斯坦就比我更胜一筹，而且这个大臣的位子，当初本来也是他的。</Dialog>
+          <Button label="啊？还有这种事情？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1085/1085_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1085_159500"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="159400" position="0|405">
+    <View type="0" src="159400.swf" atLayerID="2" hasClick="false"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="159500" position="0|385">
+    <View type="0" src="159500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1085_159500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">真是太奇怪了。本来国王说要来这里恭贺他的，他应该好好恭候国王才是！他出去定有蹊跷！你可否再暗中跟踪他看看？</Dialog>
+          <Button label="好的！我现在就去跟踪他！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1085"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1086" label="未知的真相">
+    <!-- npc_c0_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="159600" position="0|400">
+    	<View type="0" src="159600.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="159700" position="0|473">
+    	<View type="0" src="159700.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="159800" position="0|500">
+    <View type="0" src="159800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1086_159800">
+    <Click event="onRunScript">
+      <Click label="default" event="onChangeScene" params="60"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="159900" position="0|323">
+    <View type="0" src="159900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1086_159900">
+    <Click event="onRunScript">
+      <Click label="default" event="onChangeScene" params="124"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c4_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="160000" position="0|0">
+    <View type="0" src="160000.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1086_160000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">哼！又是你！<![CDATA[{name}]]>！看来这次不好好教训你一下不行了！</Dialog>
+          <Button label="这也是我该说的话！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|160000|恩佐">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">哼～我倒是有了一个更好的主意！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">恩佐大人真是英明啊！不用说，您的主意肯定是十分完美的！</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">笨蛋！我不说的话，你们怎么知道该干什么！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">您讲……</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">我们抓住<![CDATA[{name}]]>后，用他去要挟国王和那个国王的走狗麦斯威尔！这样一来，我们就可以省去很多事情了！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">恩！不愧是恩佐！</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">但是在这之前，我们还是要把<![CDATA[{name}]]>关起来！就把他关在最黑暗的黑暗深渊去吧！	</Dialog>
+          <Dialog npcID="160300" npcName="奥贝斯坦">恩佐大人，让我亲自押着<![CDATA[{name}]]>去黑暗深渊吧！</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">好吧！哈哈哈！这下我倒要看看国王和他的走狗怎么办！</Dialog>
+          <Button label="你们太卑鄙了……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="160300" npcName="奥贝斯坦">那我现在就带他去了，恩佐大人！</Dialog>
+          <Button label="[这次我真的完了么！怎么办！]" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="160100" position="437|372">
+    <View type="0" src="160100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1086_160100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">到这里你就安全了，赶紧走吧！</Dialog>
+          <Button label="这到底是怎么回事？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">还是那句话，你只是个魔法学院的魔法师罢了，千千万万魔法师中的一个，管这么多干嘛？</Dialog>
+          <Button label="可是你……你怎么……你究竟……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">哼。我要守护和麦斯威尔童年时期的理想，为此，就会有些人不得不做出牺牲。</Dialog>
+          <Button label="啊？难道说你真的是恩佐的人？" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1086_160100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1086_160100">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|1086"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 56 -->
+    <NPCFun label="app_ts0" sceneID="56">
+    <Click event="onRunScript">
+    <Click label="default" event="onChangeScene" params="56"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1087" label="层层迷局">
+    <!-- npc_c0_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="160100" position="437|372">
+    <View type="0" src="160100.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1087_160100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人"><![CDATA[{name}]]>，你怎么还不走？</Dialog>
+          <Button label="你是……是奥贝斯坦？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！哈哈哈！笑死我啦！原来恩佐说得对，这个世界上的确有比我更傻的人，那就是你，<![CDATA[{name}]]>！</Dialog>
+          <Button label="啊！你是库伦！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！你果然很傻！你打败我有什么用啊！奥贝斯坦已经被恩佐大人抓起来了！</Dialog>
+          <Button label="啊？你说什么？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">难道你以为只有你们觉得奥贝斯坦有蹊跷么！恩佐大人早就发现他有蹊跷了！才故意让他押送你，然后派我暗中跟踪！</Dialog>
+          <Button label="原来是这样！" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">看来他还算有情有义！如果不是他把自己打伤，想要打败他还真是很困难呢……你也算是间接帮我们啦～哈哈哈！</Dialog>
+          <Button label="[懊恼！心中像堵了一块大石头0_0]" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！奥贝斯坦也真是太可怜了！麦斯威尔和你不信任他，恩佐也怀疑他！</Dialog>
+          <Button label="[我!果然是个笨蛋!0_0]" nextID="-1" close="false">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哼哼！现在我只要把你一起抓回去就行啦！</Dialog>
+          <Button label="休想！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="switch" invoke="combat" args="2|160100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_9"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_8"/>
+        </Default>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！就凭你！看来这次你要落入我的手中了！</Dialog>
+          <Button label="抵抗到底" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+          <Button label="看我稍后打败你" nextID="-1" close="true">
+            <Goto value="index_0_11"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">你打败我也没用啦～奥贝斯坦已经落入我们手中了！哈哈哈！</Dialog>
+          <Button label="[一言不发……0_0]" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1087_160100"/>
+      <Click label="index_0_11" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1087_160100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1087_160100">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|160100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_9"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_8"/>
+        </Default>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！就凭你！看来这次你要落入我的手中了！</Dialog>
+          <Button label="抵抗到底" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="看我稍后打败你" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">你打败我也没用啦～奥贝斯坦已经落入我们手中了！哈哈哈！</Dialog>
+          <Button label="[一言不发……0_0]" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1087_160100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1087_160100">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>	
+    </Npc>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="无间道" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔"><![CDATA[{name}]]>，让你跟踪奥贝斯坦，看来你一定是发现了些什么吧！</Dialog>
+          <Button label="[&amp;×（&amp;……&amp;×）0_0]" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">你别着急，慢慢说。</Dialog>
+          <Button label="[且听我慢慢道来……]" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">原来是这样！真是出乎意料啊！唉……我也是……我为什么还要怀疑奥贝斯坦呢！</Dialog>
+          <Button label="那现在怎么救出他来～0_0" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">看来只有去请教国王陛下了！本来他是来对刚上任的奥贝斯坦进行慰问的，刚好，他现在就在城堡露台，我们去问问他吧！</Dialog>
+          <Button label="好吧～" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|1087"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 14 -->
+    <NPCFun label="app_ts0" sceneID="14">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1087/1087_0" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" cdtn="10" params="14"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1088" label="无间道">
+    <!-- npc_c0_xml · 场景 124 -->
+    <Npc sceneID="124" type="1" npcID="160200" position="286|467">
+    <View type="0" src="160200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1088_160200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">真是奇怪啊，奥贝斯坦明明说了会等我的，怎么突然不见了。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">臣有罪……陛下……</Dialog>
+          <Button label="陛下！都是我不好！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">究竟怎么了？</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">[&amp;×（&amp;……&amp;×）0_0]</Dialog>
+          <Dialog npcID="159200" npcName="圣安德鲁国王">原来是这样啊……</Dialog>
+          <Button label="不愧是国王陛下！说得这么快都能听懂！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">现在我必须告诉你们真实的奥贝斯坦是什么人。</Dialog>
+          <Button label="恩……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">首先我要说，他绝对不是麦斯威尔所推测的那种内奸。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">我知道错啦～陛下0_0</Dialog>
+          <Dialog npcID="159200" npcName="圣安德鲁国王">麦斯威尔，你应该记得，当初本应是他来做国务大臣，只因他突然推辞，才把职位让给了你。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">恩……</Dialog>
+          <Dialog npcID="159200" npcName="圣安德鲁国王">实际上，他主动申请去做情报间谍，打入恩佐内部。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">啊？！！！</Dialog>
+          <Button label="可是他为什么要这样做呢？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/1088/1088_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">你回想一下，难道之前发生的那些跟恩佐有关的事情，都是主动让我们知道的吗？</Dialog>
+          <Button label="恩……这么说来……" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/1088/1088_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">这些情报，或多或少都有奥贝斯坦暗中帮忙，才让我们掌握的。</Dialog>
+          <Button label="原来如此！！" nextID="-1" close="false">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">那我们现在要怎么救出他？</Dialog>
+          <Dialog npcID="159200" npcName="圣安德鲁国王"><![CDATA[{name}]]>，以我对奥贝斯坦的了解，他一定会留下什么线索，以防后患的！你去外交使馆找找看吧！</Dialog>
+          <Button label="好的 ！" nextID="-1" close="false">
+            <Goto value="index_0_9"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159200" npcName="圣安德鲁国王">这件事就交给你们处理啦～我去玩儿啦～</Dialog>
+          <Button label="呃……" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="诡异的声响" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">咦？你来找我，有什么事情吗？</Dialog>
+          <Button label="奥贝斯坦？！你不是被抓走了吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">啊？我被抓走了吗？哈哈哈！哈哈哈！我肯定可以逃出来的！</Dialog>
+          <Button label="那……那你不是还受伤了吗……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">啊？我受伤了吗？哈哈哈！哈哈哈！我康复得很快的！</Dialog>
+          <Button label="那太好啦！我们还说去救你那！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1088_160300"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 124 -->
+    <Npc sceneID="124" type="1" npcID="160300" position="595|400">
+    <View type="0" src="160300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1088_160300">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">哼～虽然我不知道你究竟是谁，但我总觉得你有点奇怪。</Dialog>
+          <Dialog npcID="159300" npcName="奥贝斯坦">恩？奇怪？怎么奇怪了？哈哈哈！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">就是这里奇怪！我认识的奥贝斯坦，绝对不是一个轻浮得总是哈哈大笑的人！我认识的奥贝斯坦，十分严肃，极少笑。</Dialog>
+          <Button label="奥贝斯坦，你和麦斯威尔是不是从小一起长大的朋友？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">当然是～哈哈哈</Dialog>
+          <Button label="你们小时候总是偷幼儿园的郁金香，一起向过路的人吐痰玩儿？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">是啊～那个时候真是愉快啊～哈哈哈～</Dialog>
+          <Button label="你是骗子，你不是真正的奥贝斯坦！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">啊？？怎么可能！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">我和奥贝斯坦的幼儿园门口，根本没有郁金香，种的是向日葵。</Dialog>
+          <Dialog npcID="159300" npcName="奥贝斯坦">……</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">你已经被我们识破了！稍后再来收拾你！<![CDATA[{name}]]>，快点找找奥贝斯坦留的线索，救出奥贝斯坦要紧！</Dialog>
+          <Button label="恩！！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="switch" invoke="game" args="2|找线索|2083">
+        <Case value="1">
+          <Goto value="index_0_5"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">找到线索了吗？</Dialog>
+          <Button label="只有这几张写了字的纸，到底有什么用呢？" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1088_160300"/>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">奥贝斯坦一定把线索留在了这里，我们再仔细找找吧！</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+          <Button label="让我先思考一下" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1088_160300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1088_160300">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">奥贝斯坦一定把线索留在了这里，我们再仔细找找吧！</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="让我先思考一下" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="game" args="2|找线索|2083|0">
+        <Case value="1">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="default"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1088_160300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1088_160300">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1088/1088_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">这一定是奥贝斯坦的求救信号！</Dialog>
+          <Button label="可是这张纸是什么意思呢？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">那个标志，好象是电系徽章的标志，另外那个符号我就不知道了。你可以去雷霆峡谷看看有什么线索。</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="159302"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 124 -->
+    <Npc sceneID="124" type="1" npcID="160400" position="0|0">
+    <View type="0" src="160400.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1088_160400">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="game" args="2|拼字|2084|0">
+        <Case value="1">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1088_160400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1088_160400">
+    <Click event="onRunScript">
+      <Click label="default" event="onChangeScene" params="124"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c4_xml · 场景 124 -->
+    <Npc sceneID="124" type="1" npcID="160500" position="150|354">
+    <View type="0" src="160500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1088_160500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哼～我就料到你会来救奥贝斯坦！</Dialog>
+          <Button label="看我打败你！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|160500|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！就凭你！看来这次你要落入我的手中了！</Dialog>
+          <Button label="抵抗到底" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="看我稍后打败你" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1088_160500"/>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1088_160500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1088_160500">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|160500|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哈哈哈！就凭你！看来这次你要落入我的手中了！</Dialog>
+          <Button label="抵抗到底" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="看我稍后打败你" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1088_160500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1088_160500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">奥贝斯坦在哪里？我要带着他去找圣安德鲁国王谈判了！哈哈哈！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">我我我～我好像抓错了人～麦斯威尔说我抓的是冒牌货，他带来的那个才是正牌，所以我就把冒牌货给放了～</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">什么！！！！！！！！！！！！！！！！！！！！！！！！那条国王的走狗怎么可能会亲自来找咱们呢！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">恩佐大人……您别生气啊……您看，真的奥贝斯坦就在那里呢……</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">&amp;（……&amp;×（×库仑～～～～～～～～你这个笨蛋！！！！！！！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">哈哈哈！这下轮到你们着急了吧！！库仑～真是谢谢你刚刚放了奥贝斯坦～其实，你放走的那个才是真的奥贝斯坦！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">什么？？！！！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">我要是现在跟恩佐说，其实你是我们的线人，你说恩佐会不会相信啊？</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">这怎么可能！！！恩佐大人！！请您一定要相信我！！！</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">啊……！难道说现在你旁边的那个奥贝斯坦其实是……！！！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">哼～没错。他已经全招了。</Dialog>
+          <Button label="我被搞晕了@_@到底是怎么回事？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1088/1088_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">真是没想到，麦斯威尔，还有<![CDATA[{name}]]>，你们竟然这么狡猾！不过既然你们已经来了，就不可能活着离开了！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">我在进入这个秘密营地前，已经设置了魔法结界，很快，这里就会崩塌了。我劝你们最好快点离开。</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">……这次就放你们一条生路……</Dialog>
+          <Button label="你们给我等着！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1088_160500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1088_160500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">哼～<![CDATA[{name}]]>，我们走～打道回府！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="现在都平安啦～" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1088/1088_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1088"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 124 -->
+    <NPCFun label="app_ts0" sceneID="124">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1088/1088_4" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>		
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" cdtn="10" params="120"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

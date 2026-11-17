@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 AwakenStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="147" label="亚特族的觉醒">
+  <Task id="2012" label="乐乐怎么了？">
+    <!-- npcfun_0_xml · 场景 38 -->
+    <NPCFun sceneID="38" label="乐乐你怎么了？" icon="-1" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">我很担心，在亚特兰蒂斯城内，已经有越来越多的亚特族人被恩佐奴役，这个趋势还在继续，一座古老的文明古城就要这样被毁了吗?</Dialog>
+          <Button label="我们一定要阻止这个趋势啊！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">现在亚特族人都陷在贪念、欲望、征服异族的心魔里无法自拔，这都是恩佐使的坏！也许只有亚特族长老才能唤醒他们的意识了！</Dialog>
+          <Button label="长老在哪？我去找他！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">长老……听说长老已经被恩佐关押起来了。不过，我们一定要寻找机会，你现在去亚特兰蒂斯城寻找长老的下落。</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">你需要打探下守卫的情况，完了回来我们商量下一步计划。</Dialog>
+          <Button label="好，我现在去打探情况。" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Click label="index_0_3" event="onTaskCall2" params="1|2012"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 38 -->
+    <Npc sceneID="38" type="1" npcID="183600" position="0|0">
+    <View type="0" src="183600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2012_183600">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183600" npcName="怪物">哪来的小毛孩？一边玩去，这里不是你来的地方！</Dialog>
+    	      <Button label="不好意思我路过，看来这笼子里关的人很重要。" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="183600" npcName="怪物">当然，他可是亚特兰蒂斯的长老，要不是我们大人把他的法杖夺走了，我们哪里能看的住他！</Dialog>
+    	      <Button label="哈哈，那是因为你很菜，对吧？" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="183600" npcName="怪物">什么？我菜！小子，要不要比试一下？</Dialog>
+    	      <Button label="来呀，试试看。" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_3" type="switch" invoke="combat" args="2|183600|烈火飞龙">
+    	  <Default>
+    	    <Goto value="index_0_4"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="183600" npcName="怪物">就你这三脚猫的功夫还敢来挑衅，再来捣乱小心我把你也关进去！赶紧走开！</Dialog>
+    	      <Button label="大哥，我这就闪。（嘿嘿，谢谢你哦！）" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_5" event="NULL" fire="true"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npcfun_1_xml · 场景 38 -->
+    <NPCFun sceneID="38" label="我打探到长老的情况啦！" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你找到亚特族长老啦？什么情况，快说来听听！</Dialog>
+          <Button label="（将长老被关押的情况告诉了她。）" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">看来那守卫实力强大，凭我们的力量很难战胜它们，我们只能想其他办法了。</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">首先，我们必须找到一个亚特族人的法杖，一旦长老拿到法杖，那两个守卫根本就不是他的对手！</Dialog>
+          <Button label="法杖在哪能拿到呢？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">亚特城居民身上有时会带有法杖，只是他们被洗脑了，对异族抱有敌视。你如果想拿到法杖，只有靠武力了！</Dialog>
+          <Button label="明白！我这就去寻找法杖！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Click label="index_0_3" event="NULL" fire="true"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npcfun_2_xml · 场景 38 -->
+    <NPCFun sceneID="38" label="我已经拿到亚特族法杖啦！" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">太好了，这就是亚特族法杖！只是，城内看守森严，我们怎么把法杖递给长老呢？</Dialog>
+          <Button label="看来只有隐身了。" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">好主意！听说博得那有一种特殊材料制成的隐身衣，你可以向他拿些，这样就可以绕过守卫的眼睛，将法杖递给长老了！</Dialog>
+          <Button label="没问题！我去找博得！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Click label="index_0_2" event="onTaskCall2" params="2|2012"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 38 -->
+    <NPCFun label="app_ts0" sceneID="38">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2012/2012_ts_0" winPos="280|115" name="去亚特兰蒂斯寻找长老下落">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 38 -->
+    <NPCFun label="app_ts1" sceneID="38">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2012/2012_ts_1" winPos="280|115" name="找乐乐商量对策">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 38 -->
+    <NPCFun label="app_ts2" sceneID="38">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2012/2012_ts_2" winPos="280|115" name="寻找法杖">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts4_xml · 场景 38 -->
+    <NPCFun label="app_ts4" sceneID="38">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2012/2012_ts_4" winPos="280|115" name="找博得">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2013" label="拯救亚特族">
+    <!-- npcfun_0_xml · 场景 148 -->
+    <NPCFun sceneID="148" label="可以把你的隐身衣借我穿下吗？" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101500" npcName="博得">我确实有一件，不过你得告诉我你要拿去干嘛？</Dialog>
+          <Button label="我要去救亚特兰蒂斯的长老！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_1" type="dialog">
+        <Page id="0">
+           <Dialog npcID="101500" npcName="博得">原来是这样，快把这件隐身衣穿上吧！这件衣服是用魔法制成的，只能使用一次，完了就会消失，因此你快快行动吧！</Dialog>
+          <Button label="谢你，我这就去！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+        <Click label="index_0_2" event="NULL" fire="true"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 148 -->
+    <Npc sceneID="148" type="1" npcID="183700" position="0|0">
+    <View type="0" src="183700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2013_183700">
+    	<Click event="onRunScript">
+    	
+    	 	<Script label="default" type="asWindow" src="task/2013/2013_0" winPos="0|0" name="我什么也没看到">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2013_183700"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_2013_183700">
+    	<Click event="onRunScript">
+    	  
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">……</Dialog>
+    	      <Button label="长老，醒醒呀！我来救你啦！" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">……小伙子，谢谢你！你快回去吧，我们这样是出不去的！这里的守卫太强大了，我又施不了魔法……</Dialog>
+    	      <Button label="长老别担心，法杖我给你带来了！" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">啊，太谢谢你了！有了法杖我们就可以出去了！你快躲远些，看我的吧！</Dialog>
+    	      <Button label="我躲起来，别误伤群众。" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2013_183700"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt2_2013_183700">
+    	<Click event="onRunScript">
+    	  
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">我的族人这是怎么了？为什么露出这么凶残的表情？我是阿尔法长老啊，你们醒醒呀！</Dialog>
+    	      <Button label="长老，没用的，他们已经被洗脑了！" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">什么？被洗脑！究竟是谁干出这样的事情，我们亚特兰蒂斯的城民从来没有树过什么敌人。</Dialog>
+    	      <Button label="也许恩佐想利用你们……" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">他向我的族人灌输什么贪念、征服异族的思想，我绝不允许！很多年前，我们因为贪欲已经遭受过一次灭顶之灾了……<![CDATA[{name}]]>，你快将大家召集起来，我要唤醒大家的意识！</Dialog>
+    	      <Button label="好的，我马上将大家召集起来！" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  	<Script label="index_0_3" type="asWindow" src="task/2013/2013_1" winPos="0|0" name="古老的亚特兰蒂斯历史">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_2013_183700"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_2013_183700">
+    	<Click event="onRunScript">
+    	 <Click label="default" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 148 -->
+    <Npc sceneID="148" type="1" npcID="183800" position="0|380">
+    <View type="0" src="183800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2013_183800">
+    	<Click event="onRunScript">
+    	
+    	 <Script label="default" type="switch" invoke="combat" args="2|183801|肌肉狼">
+    	  <Case value="2">
+    	    <Goto value="index_0_1"/>
+    	  </Case>
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2013_183800"/>
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2013_183800"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_2013_183800">
+    	<Click event="onRunScript">
+    	
+    	 <Script label="default" type="switch" invoke="combat" args="2|183800|丰羽嘴龙">
+    	  <Case value="2">
+    	    <Goto value="index_0_1"/>
+    	  </Case>
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2013_183800"/>
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2013_183800"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_2013_183800">
+    	<Click event="onRunScript">
+    	
+    	 <Script label="default" type="switch" invoke="combat" args="2|183802|上古战龙">
+    	  <Case value="2">
+    	    <Goto value="index_0_1"/>
+    	  </Case>
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_2013_183800"/>
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2013_183800"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_2013_183800">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2013/2013_2" winPos="0|0" name="城民意识复苏">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 148 -->
+    <Npc sceneID="148" type="1" npcID="183900" position="0|0">
+    <View type="0" src="183900.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2013_183900">
+    	<Click event="onRunScript">
+    	
+    	<Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老"><![CDATA[{name}]]>，多亏有你的帮助，亚特兰蒂斯这座古城才得以保留下来，我们的文明差点就被恶念毁于一旦。</Dialog>
+    	      <Button label="这都是我应该做的。" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183700" npcName="长老">只是，我仍然担心，我们还有很多族人被恩佐带走了，正在他的控制下……</Dialog>
+    	      <Button label="我们得想办法救他们。" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2013_183900"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_2013_183900">
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="183900" npcName="伤员">恩佐让我们建造水下城堡，说是能扩大领域，征服那里的生物……为此，我们没日没夜地干活！突然，就在刚才，我们清醒了，意识到自己的愚蠢行为！</Dialog>
+    	      <Dialog npcID="183900" npcName="伤员">我们想逃跑，却被恩佐抓住，用绳子绑了起来，逼迫着继续工作！现在，多人都累的倒下了，我趁乱逃了出来，长老，快去救救他们吧！</Dialog>
+    	      <Dialog npcID="183700" npcName="长老">正是我担心的地方，水晶的控制只是一时，真正要摆脱的是恩佐的控制！ </Dialog>
+    	      <Button label="恩佐，你等着吧！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onTaskCall2" params="2|2013"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 148 -->
+    <NPCFun label="app_ts0" sceneID="148">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2013/2013_ts_0" winPos="280|115" name="去救长老">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 148 -->
+    <NPCFun label="app_ts1" sceneID="148">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2013/2013_ts_1" winPos="280|115" name="摧毁黑水晶源泉">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 148 -->
+    <NPCFun label="app_ts2" sceneID="148">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2013/2013_ts_2" winPos="280|115" name="找长老">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

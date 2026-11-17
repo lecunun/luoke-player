@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ProtectCastleStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="55" label="守卫古堡">
+  <Task id="1033" label="帮助帕尔萨斯">
+    <!-- npc_t1_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130000" position="385|346" name="帕尔萨斯">
+    <View type="0" src="130000.swf" atLayerID="2"/>
+    <Create>
+    	<NPCFun label="守卫古堡" icon="-1">
+    			<Click event="onRunScript">
+    				
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="130000" npcName="帕尔萨斯">啊，<![CDATA[{name}]]>，你是我们这么多年唯一的朋友，我需要你的帮助！又到了每年的万圣节，真是大事不好了！</Dialog>
+    						<Button label="究竟发生什么事情了？" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="1">
+    						<Dialog npcID="130000" npcName="帕尔萨斯">其实，每年的万圣节期间，恩佐都会来城堡夺取永生之血。</Dialog>
+    						<Button label="什么是永生之血？" close="true" nextID="-1">
+    							<Goto value="window_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script type="asWindow" src="task\1033\1033_0" name="永生之血" label="window_1">
+    				<Default><Goto value="dialog_2"/></Default>
+    				</Script>
+    		
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="130000" npcName="帕尔萨斯">其实永生之血并不存在，但是恩佐并不知道此事。他现在又要来进攻古堡，寻找永生之血！可是，他怎么可能找得到呢？请你一定要帮帮我！</Dialog>
+    						<Button label="定将不负所托" nextID="-1">
+    							<Goto value="dialog_3"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dialog_3" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="130000" npcName="帕尔萨斯">其实当年德古拉伯爵，为了防止坏人来这里，已经有一套排兵布阵的方法，但是需要石像鬼才行。可是只有收集了特殊的材料，才能合成石像鬼。</Dialog>
+    						<Button label="什么是特殊的材料" nextID="-1">
+    							<Goto value="dialog_4"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dialog_4" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="130000" npcName="帕尔萨斯">它们就存在于这座古堡之中，你只要按照我的指引去寻找，就一定会找到！如果你做好准备了，我们就开始寻找之旅吧！</Dialog>
+    						<Button label="我准备好了" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Click label="submit" event="onTaskCall2" params="2|1033"/>
+    			</Click>
+    			</NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="50"/>
+    </Npc>
+  </Task>
+  <Task id="1034" label="收集材料">
+    <!-- npc_t2_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130000" position="385|346" name="帕尔萨斯">
+    	<View type="0" src="130000.swf" atLayerID="2"/>
+    	<Create>
+    		<NPCFun label="守卫古堡" icon="0">
+    			<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="1034"/>
+    				<Case value="0">
+    					<Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="130000" npcName="帕尔萨斯">花园十字架里有一个卷轴，卷轴上记录着所需材料的地点。只有找到那些材料，才能合成石像鬼。</Dialog>
+    							<Button label="我知道啦！" close="true"><End/></Button>
+    						</Page>
+    					</Script>
+    				</Case>
+    				<Case value="1">
+    					<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="130000" npcName="帕尔萨斯">看来我果然没有看错你。既然已经有了足够的材料，现在就要开始准备用这些材料去合成石像鬼了！</Dialog>
+    							<Button label="怎么合成石像鬼" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="1">
+    							<Dialog npcID="130000" npcName="帕尔萨斯">实际上，合成石像鬼的魔法卷轴，就在内厅的德古拉伯爵的画像里！你去看看就知道啦！</Dialog>
+    							<Button label="我知道了" close="true" nextID="-1">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1034"/>
+    					</Click>
+    				</Case>
+    			</Script>
+    			</Click>
+    		</NPCFun>
+    	</Create>
+    	<Click event="onTaskCall" cdtn="50"/>
+    </Npc>
+    <!-- npc_t2_c0_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="131300" position="442|409">
+    	<View type="0" src="131300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    	<ViewEvent type="GotIt">
+    	<Click event="onRunScript" cdtn="50">
+    		<Script type="asWindow" src="task\1034\1034_0" name="守卫古堡提示" label="default">
+    		<Default><Click event="NULL" fire="true"/></Default>
+    		</Script>
+    	</Click>
+    	</ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_t2_c1_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130100" position="140|346">
+    	<View type="0" src="130100.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    	<ViewEvent type="GotIt">
+    	<Click event="NULL" fire="true"/>
+    	</ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_t2_c2_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130200" position="340|346">
+    	<View type="0" src="130200.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt">
+    		<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_t2_c3_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130300" position="248|438">
+    	<View type="0" src="130300.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt">
+    		<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+  </Task>
+  <Task id="1035" label="布下迷魂阵">
+    <!-- npc_t3_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130000" position="385|346" name="帕尔萨斯">
+    	<View type="0" src="130000.swf" atLayerID="2"/>
+    	<Create>
+    		<NPCFun label="守卫古堡" icon="0">
+    			<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="1035"/>
+    				<Case value="0">
+    					<Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="130000" npcName="帕尔萨斯">在古堡花园合成石像鬼，正好可以抵御黑衣人的入侵！</Dialog>
+    							<Button label="我知道啦！" close="true"><End/></Button>
+    						</Page>
+    					</Script>
+    				</Case>
+    				<Case value="1">
+    					<Click event="onRunScript">
+    							<Script label="default" type="dialog">
+    								<Page id="0">
+    									<Dialog npcID="130000" npcName="帕尔萨斯">你来得正是时候，快看，月黑风高，乌云遮月，怕是不久，恩佐一行人就要来夺取永生之血了。</Dialog>
+    									<Button label="成败在此一举" nextID="-1">
+    										<Goto value="dialog_1"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    							<Script label="dialog_1" type="dialog">
+    								<Page id="1">
+    									<Dialog npcID="130000" npcName="帕尔萨斯">雾气如此之重，不如你快去古堡露台点燃南瓜灯，照亮庭院吧！这样石像鬼才能看得足够清楚！</Dialog>
+    									<Button label="好的" close="true" nextID="-1">
+    										<Goto value="submit"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    							<Click label="submit" event="onTaskCall2" params="2|1035"/>
+    					</Click>
+    				</Case>
+    			</Script>
+    			</Click>
+    			</NPCFun>;
+    	</Create>
+    	<Click event="onTaskCall" cdtn="50"/>
+    </Npc>
+    <!-- npc_t3_c0_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130400" position="0|0">
+    	<View type="0" src="130400.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="GotIt">
+    		<Click event="onRunScript" cdtn="50">
+    			<Script type="asWindow" src="task\1035\1035_0" winPos="0|0" name="石像鬼" label="default">
+    				<Default><Click event="NULL" fire="true"/></Default>
+    			</Script>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_t3_c1_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="130500" position="0|0">
+    	<View type="0" src="130500.swf" atLayerID="3" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0">
+    			<Click event="NULL" fire="true" fireID="130500"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1">
+    			<Click event="NULL" fire="true" fireID="130600"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2">
+    			<Click event="NULL" fire="true" fireID="130700"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt3">
+    			<Click event="NULL" fire="true" fireID="130800"/>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+  </Task>
+  <Task id="1036" label="大决战">
+    <!-- npc_t4_c0_xml · 场景 92 -->
+    <Npc sceneID="92" type="1" npcID="130900" position="0|0">
+    		<View type="0" src="130900.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="SHOW_POERSAS">
+    			<Click event="onRunScript" cdtn="50">
+    			<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="130000" npcName="帕尔萨斯">他们已经来了！真是来势汹汹啊！看来成败在此一举！</Dialog>
+    						<Button label="但愿石像鬼能抵挡住他们！" close="true" nextID="-1">
+    							<Goto value="win_0"/>
+    						</Button>
+    					</Page>
+    			</Script>
+    				
+    			<Script type="asWindow" src="task\1036\1036_0" winPos="0|0" name="守卫古堡动画" label="win_0">
+    				<Default><Goto value="dialog_2"/></Default>
+    			</Script>
+    	
+    			<Script label="dialog_2" type="dialog">
+    					<Page>
+    						<Dialog npcID="130000" npcName="帕尔萨斯">太好了！恩佐一行人的进攻都被抵御住了！</Dialog>
+    						<Button label="快看，那边好像有个黑影" close="true" nextID="-1">
+    							<Click event="NULL" fire="true"/>
+    						</Button>
+    					</Page>
+    			</Script>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="SHOW_DIALOG">
+    			<Click event="onRunScript" cdtn="50">
+    			
+    			<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="130900" npcName="黑衣人">哼哼！没想到我竟然能进来吧！看来恩佐的这招声东击西，还是挺管用的！你们最好识相点，把永生之血乖乖地给我交出来吧！</Dialog>
+    						<Button label="你这是自投罗网" close="true" nextID="-1">
+    							<Goto value="combat"/>
+    						</Button>
+    					</Page>
+    			</Script>
+    				
+    			<Script type="switch" invoke="combat" args="2|130900|黑衣人" label="combat">
+    			<Case value="2"><Goto value="dialog_2"/></Case>
+    			</Script>
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    						<Dialog npcID="130900" npcName="黑衣人">哼哼！你以为真的结束了么？这简直是不可能的！我们还会再卷土重来的！</Dialog>
+    						<Button label="有本事你别逃" close="true" nextID="-1">
+    							<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="SHOW_DIALOG2">
+    			<Click event="onRunScript" cdtn="50">
+    			<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="130000" npcName="帕尔萨斯">快看！黑衣人飞过来了！他是怎么来到这里的！</Dialog>
+    						<Button label="别担心，还有我在" close="true" nextID="-1">
+    							<End/>
+    						</Button>
+    					</Page>
+    			</Script>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="LEAVE_NPC">
+    			<Click event="onRunScript" cdtn="50">
+    			
+    			<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="130000" npcName="帕尔萨斯">真是太好了，按照德古拉伯爵的布阵，果然有效地阻止了恩佐一行人</Dialog>
+    						<Button label="德古拉伯爵现在在哪里？" nextID="-1">
+    							<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    			</Script>
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    						<Dialog npcID="130000" npcName="帕尔萨斯">其实……这是一个不能说的秘密……不过我还是很感谢你。现在，危机解除了，我要继续在古堡里修行了。如果你和德古拉有缘的话，自然会相见的。</Dialog>
+    						<Button label="这是我应该做的" close="true" nextID="-1">
+    							<Click event="onTaskCall2" params="2|1036"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_t4_c1_xml · 场景 92 -->
+    <Npc sceneID="92" type="1" npcID="130000" position="385|346" name="帕尔萨斯">
+    	<View type="0" src="130000.swf" atLayerID="2"/>
+    	<Click event="onRunScript" cdtn="50">
+    		<Script label="default" type="dialog">
+    			<Page>
+    			<Dialog npcID="130000" npcName="帕尔萨斯">去露台点燃南瓜灯，准备迎接这场艰苦的战斗吧！</Dialog>
+    				<Button label="好的！" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	</Click>
+    	</Npc>
+    <!-- npc_t4_c2_xml · 场景 92 -->
+    <Npc sceneID="92" type="1" npcID="130500" position="0|0">
+    		<View type="0" src="130500.swf" atLayerID="3" hasClick="false"/>
+    	</Npc>
+  </Task>
+</Story>

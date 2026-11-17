@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BraveDolphin.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="108" label="海豚的进化">
+  <Task id="4026" label="海豚的进化">
+    <!-- npc_160900 -->
+    <Npc type="1" npcID="160900" position="570|400">
+        <View type="0" src="160900.swf" atLayerID="1"/>
+        <Create>
+            <NPCFun label="为了海豚部落" icon="-1" close="false">
+                <Click event="onRunScript">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">我们需要洛克的帮助，族长还在封印中挣扎，你能帮我们改变过去吗？</Dialog>
+                            <Button label="你是？你和外面的海豚不同，你从哪里来？" nextID="-1" close="true">
+                                <Goto value="task_4026_animation_0"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="task_4026_animation_0" type="asWindow" src="task/4026/task_4026_animation_0" winPos="0|0" name="曾经的海豚">
+                        <Default><Goto value="dialog_1"/></Default>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">真不知道该感谢他，还是该……</Dialog>
+                            <Button label="他帮助你们战胜了黑衣人？" nextID="-1">
+                                <Goto value="dialog_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">他帮了我们很多，但是在关键时刻，他不小心打破了魔力水晶。最终我们都不能进化了，族长为了我们的生存和希望，把自己封印在魔力水晶里，等待救世主的降临。你愿意帮助我们吗？</Dialog>
+                            <Button label="好吧，我们该怎么做呢？" nextID="-1">
+                                <Goto value="dialog_3"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_3" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">我们要回到过去，从商店街的时间沙漏那里穿越到过去吧。</Dialog>
+                            <Button label="好的" nextID="-1" close="true">
+                                <Goto value="accpet"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="accpet" event="onTaskCall2" params="1|4026"/>
+                </Click>
+            </NPCFun>;
+        </Create>
+        <Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+    <!-- npc_161200 -->
+    <Npc type="1" npcID="161200" position="700|350">
+        <View type="0" src="161200.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="gotItem_161200">
+                <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npc_161100 -->
+    <Npc type="1" npcID="161100" position="360|420">
+        <View type="0" src="161100.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="gotItem_161100">
+                <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npc_160900_submit -->
+    <Npc type="1" npcID="160900" position="230|440">
+        <View type="0" src="160900.swf" atLayerID="1"/>
+        <Create>
+            <NPCFun label="魔力水晶" icon="0" close="false">
+                <Click event="onRunScript">
+                    <Script label="default" type="switch">
+                        <Func invoke="taskIsComplete" args="4026"/>
+                        <Case value="0"><Goto value="notOK"/></Case>
+                        <Case value="1"><Goto value="ok"/></Case>
+                    </Script>
+                    <Script label="notOK" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">你就是梦里族长说的勇敢的洛克，快来帮我们一起收集失落的水晶吧。过去的商店街、过去的天空城都有希望找到哦。</Dialog>
+                            <Button label="好的，我找找看" nextID="-1" close="true"/>
+                        </Page>
+                    </Script>
+                    <Script label="ok" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">族长正等着你呢，快去帮助它吧。</Dialog>
+                            <Button label="好的" nextID="-1">
+                                <Goto value="dialog_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="161300" npcName="海豚族长">你来的太及时了，我们要胜利了！</Dialog>
+                            <Button label="小心！" nextID="-1" close="true">
+                                <Goto value="task_4026_animation_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="task_4026_animation_1" type="asWindow" src="task/4026/task_4026_animation_1" winPos="0|0" name="与黑衣人战斗">
+                        <Default><Goto value="dialog_2"/></Default>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="161300" npcName="海豚族长">看来我们必经的磨难不能抹去，感谢你的帮助。我相信你的努力一定会再次唤醒我们的力量。现在我要和水晶一同睡去，保存住能量。让这个海豚战士和你一起战斗吧。</Dialog>
+                            <Button label="都是我不对" nextID="-1">
+                                <Goto value="dialog_3"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_3" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="161300" npcName="海豚族长">大家都是在磨砺中才能成长起来的，不要气馁，继续努力吧。</Dialog>
+                            <Button label="呜呜呜，不要走" nextID="-1" close="true">
+                                <Goto value="task_4026_animation_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="task_4026_animation_2" type="asWindow" src="task/4026/task_4026_animation_2" winPos="0|0" name="封印">
+                        <Default><Goto value="dialog_4"/></Default>
+                    </Script>
+                    <Script label="dialog_4" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">我们一定会强大的，我们已经尽力了。</Dialog>
+                            <Button label="对不起，没能帮上你们" nextID="-1">
+                                <Goto value="dialog_5"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_5" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">未来还会有机会等着我们的，神秘人，我相信我们一定会有机会救出族长的。</Dialog>
+                            <Button label="汗！原来我就是那个神秘人……" nextID="-1">
+                                <Goto value="dialog_6"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_6" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="160900" npcName="海豚帅帅">我们一定可以重写历史的！</Dialog>
+                            <Button label="好的" nextID="-1" close="true">
+                                <Goto value="submit"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="submit" event="onTaskCall2" params="2|4026"/>
+                </Click>
+            </NPCFun>;
+        </Create>
+        <Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+  </Task>
+</Story>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ZhuiYueGuaGuaStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="155" label="呱呱回月宫">
+  <Task id="170" label="追月呱呱">
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="187100" position="0|0" icon="-1">
+    <View type="0" src="187100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_170_187100">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">吓！你想吓死人！</Dialog>
+    	      <Button label="你是呱呱？怎么跑这里来了？" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">虽然我是呱呱，但是我叫追月呱呱。跟地上的呱呱不一样。</Dialog>
+    	      <Button label="有什么不一样？" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="asWindow" src="task/170/170_0" winPos="0|0" name="追月呱呱的区别">
+    	    <Default>
+    	      <Goto value="index_0_3"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">我们已经不理陆地上的事情了啊，为什么！为什么我们还这么命苦！</Dialog>
+    	      <Button label="呃……有什么我能够帮你的么……" nextID="-1" close="false">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+     	  <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">就等你这句话了！其实！我们是有方法回去的！</Dialog>
+    	      <Button label="[我是不是掉进了什么陷阱……]" nextID="-1" close="false">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">月宫传说，只要种植出打人月桂，并且只要它甘愿让我们爬上去，我们就能借助它的力量回月宫。</Dialog>
+    	      <Button label="那怎么种植打人月桂呢？" nextID="-1" close="true">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_6" type="asWindow" src="task/170/170_1" winPos="0|0" name="种植打人月桂">
+    	    <Default>
+    	      <Goto value="index_0_7"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_170_187100"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_170_187100">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">就是这样。<![CDATA[{name}]]>，赶快去云烟桃源，打败宠物，帮我们找到打人月桂的种子吧！</Dialog>
+    	      <Button label="好吧！[怎么有种上当受骗的感觉？]" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onTaskCall2" params="1|170"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="187200" position="0|0" icon="0">
+    <View type="0" src="187200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_170_187200">
+    	<Click event="onRunScript">
+    	<Script label="default" type="switch">
+    	  <Func invoke="taskIsComplete" args="170"/>
+    	  <Case value="0">
+    	  		<Goto value="index_1_1"/>
+    	  </Case>
+    	  <Case value="1">
+    	    	<Goto value="index_0_0"/>
+    	  </Case>
+    	</Script>
+    	
+      	<Script label="index_1_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">我就要一颗种子！云烟桃源，打败宠物就有，赶快去吧，乖。</Dialog>
+    	      <Button label="我知道了……" nextID="-1" close="true">
+    	         <End/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_0" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">啊！打人月桂的种子！好耶！</Dialog>
+    	      <Button label="赶快种下吧！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/170/170_2" winPos="0|0" name="月桂种子">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	<Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_170_187200"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_170_187200">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">好耶，种出了矮月桂树了。接下来要浇灌它长大了！</Dialog>
+    	      <Button label="用什么浇灌？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Click label="index_0_1" event="onTaskCall2" params="2|170"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/170/170_ts_0" winPos="0|0" name="提示到桃源">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/170/170_ts_1" winPos="0|0" name="提示回彩虹河流">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml -->
+    <NPCFun label="app_ts2">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/170/170_ts_2" winPos="0|0" name="光之藤有露水">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="171" label="浇灌矮月桂">
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="187300" position="0|0" icon="0">
+    <View type="0" src="187300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_171_187300">
+    	<Click event="onRunScript">
+    	 	<Script label="default" type="switch">
+    	  <Func invoke="taskIsComplete" args="171"/>
+    	  <Case value="0">
+    	  		<Goto value="index_1_1"/>
+    	  </Case>
+    	  <Case value="1">
+    	    	<Goto value="index_0_0"/>
+    	  </Case>
+    	</Script>
+    	
+      	<Script label="index_1_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">在光之藤，宠物身上就有无根露水，快去取呗！</Dialog>
+    	      <Button label="我知道了……" nextID="-1" close="true">
+    	         <End/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_0" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">哼哼，有露水了，看我呱呱浇水，耶耶~</Dialog>
+    	      <Button label="这么兴奋……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/171/171_0" winPos="0|0" name="浇灌月桂">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_171_187300"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_171_187300">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">一点反应都没有！</Dialog>
+    	      <Dialog npcID="187100" npcName="追月呱呱">为什么！为什么一点反应都没有！</Dialog>
+    	      <Dialog npcID="187100" npcName="追月呱呱">看来……要下猛药了……我不想用这方法的。</Dialog>
+    	      <Button label="什么方法？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="asWindow" src="task/171/171_1" winPos="0|0" name="古法炮制">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onTaskCall2" params="2|171"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/171/171_ts_0" winPos="0|0" name="搜集完毕">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/171/171_ts_1" winPos="0|0" name="魔法密林">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="172" label="快高长大泉水">
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="187400" position="0|0" icon="0">
+    <View type="0" src="187400.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_172_187400">
+    	<Click event="onRunScript">
+    	 <Script label="default" type="switch">
+    	  <Func invoke="taskIsComplete" args="172"/>
+    	  <Case value="0">
+    	  		<Goto value="index_1_1"/>
+    	  </Case>
+    	  <Case value="1">
+    	    	<Goto value="index_0_0"/>
+    	  </Case>
+    	</Script>
+    	
+      	<Script label="index_1_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">都说在魔法密林咯！10瓶哦！快高长大泉水哦！快去快回啊！</Dialog>
+    	      <Button label="好嘛好嘛……" nextID="-1" close="true">
+    	        <End/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_0" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">这次，应该可以了吧……</Dialog>
+    	      <Button label="希望如此……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/172/172_0" winPos="0|0" name="快高长大">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_172_187400"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_172_187400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">呀！打人月桂！我终于把你种出来了！</Dialog>
+    	      <Dialog npcID="187500" npcName="打人月桂">就算是你种出我来，也不代表我不会打你。喝！啊打！</Dialog>
+    	      <Dialog npcID="187100" npcName="追月呱呱">打我也没关系，但是你让我回去月宫，好么？</Dialog>
+    	      <Dialog npcID="187500" npcName="打人月桂">我为什么要让你回月宫啊？喝！啊打！</Dialog>
+    	      <Dialog npcID="187100" npcName="追月呱呱"><![CDATA[{name}]]>，这下怎么办啊……</Dialog>
+    	      <Button label="我有办法！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="asWindow" src="task/172/172_1" winPos="0|0" name="吃人嘴短，拿人手软">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onTaskCall2" params="2|172"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/172/172_ts_0" winPos="0|0" name="快高长大泉水">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/172/172_ts_1" winPos="0|0" name="吃人嘴软糖浆">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="173" label="吃人嘴软糖浆">
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="187500" position="0|0" icon="0">
+    <View type="0" src="187500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_173_187500">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="switch">
+    	  <Func invoke="taskIsComplete" args="173"/>
+    	  <Case value="0">
+    	  		<Goto value="index_1_1"/>
+    	  </Case>
+    	  <Case value="1">
+    	    	<Goto value="index_0_0"/>
+    	  </Case>
+    	</Script>
+    	
+      	<Script label="index_1_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">不是说好给我到索米亚草原，找10瓶糖浆吗？</Dialog>
+    	      <Button label="马上就好！" nextID="-1" close="true">
+    	        <End/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_0" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="187100" npcName="追月呱呱">（把糖浆拿给打人月桂）</Dialog>
+    	      <Dialog npcID="187500" npcName="打人月桂">啊！糖浆！</Dialog>
+    	      <Dialog npcID="187500" npcName="打人月桂">（高兴地把糖浆喝了下去）</Dialog>
+    	      <Dialog npcID="187500" npcName="打人月桂">呵呵……呵呵……怎么我觉得嘴巴都软了……呵呵……追月呱呱你不是说要爬回月宫吗？</Dialog>
+    	       <Dialog npcID="187500" npcName="打人月桂">呵呵，来，我不打你了，我带你回月宫去吧！</Dialog>
+    	      <Button label="成了！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/173/173_0" winPos="0|0" name="爬回月宫">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onTaskCall2" params="2|173"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/173/173_ts_0" winPos="0|0" name="吃人嘴软糖浆">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/173/173_ts_1" winPos="0|0" name="呱呱的礼物">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="174" label="追月呱呱的礼物">
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="189200" position="0|0" icon="0">
+    <View type="0" src="189200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_174_189200">
+    	<Click event="onRunScript">
+    	<Click label="default" event="onOpenGame" type="1" id="141" params="1"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_174_189200">
+    	<Click event="onRunScript">
+    	<Click label="default" event="onOpenGame" type="1" id="141" params="2"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

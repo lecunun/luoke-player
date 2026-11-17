@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GatherWood.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="84" label="收集木材">
+  <Task id="4011" label="收集木材">
+    <!-- npcfun_122100 · 场景 87 -->
+    <NPCFun sceneID="87" label="收集木材" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122100" npcName="安格">战争即将开始，现在王国需要很多木材，快去冰山上看看能否找到足够木材。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4011"/>
+        </Click>
+    </NPCFun>
+    <!-- npc_145200 · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="145200" position="300|400">
+        <View type="0" src="145200.png" atLayerID="1"/>
+        <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+    </Npc>
+    <!-- npc_145300 · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="145300" position="300|350">
+        <View type="0" src="145300.png" atLayerID="1"/>
+        <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+    </Npc>
+    <!-- npc_145400 · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="145400" position="600|400">
+        <View type="0" src="145400.png" atLayerID="1"/>
+        <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+    </Npc>
+    <!-- npcfun_122100_canNotSubmit · 场景 87 -->
+    <NPCFun sceneID="87" label="哪里可以找到木材？" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122100" npcName="安格">怀特冰山、怀特冰川、怀特峰附近都有大量的木材，仔细想想哪里没去过？</Dialog>
+                    <Button label="我想想" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_122100_submit · 场景 87 -->
+    <NPCFun sceneID="87" label="木材收集完毕" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122100" npcName="安格">不错，看来收集木材对你来说是件很容易的事情嘛。国王果然没有看错你，马上开始锯木头吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="playWorkingAnimation"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="playWorkingAnimation" type="asWindow" src="task/4011/task_4011_workingAnimation" winPos="481|190" name="锯木头">
+                <Default><Goto value="submit"/></Default>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4011"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

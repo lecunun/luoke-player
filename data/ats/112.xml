@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FleetOfLava.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="112" label="拉瓦的船队">
+  <Task id="4028" label="拉瓦的船队">
+    <!-- npcfun_101400 · 场景 25 -->
+    <NPCFun sceneID="25" label="送给拉瓦的货物" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">你愿意帮我把这批货物送给拉瓦吗？最近实在太忙了，脱不开身啊。</Dialog>
+                    <Button label="好吧" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4028"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_122300 · 场景 76 -->
+    <NPCFun sceneID="76" label="送给拉瓦的货物" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122300" npcName="拉瓦">没想到拉尔夫如此信任我们的船队。</Dialog>
+                    <Button label="听说你有很多冒险的故事，你愿意给我讲讲吗？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122300" npcName="拉瓦">好吧，航海的故事很多，先给你讲一个吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="playAnimation"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="playAnimation" type="asWindow" src="task/4028/task_4028_StoryOfLava" winPos="0|0" name="拉瓦的故事">
+                <Default><Goto value="dialog_2"/></Default>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122300" npcName="拉瓦">有趣吧，还有很多故事哦，哈哈哈。</Dialog>
+                    <Button label="我也想烧烤……" nextID="-1">
+                        <Goto value="dialog_3"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="122300" npcName="拉瓦">先把这份合同交回给拉尔夫吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="122301"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101400_submit · 场景 25 -->
+    <NPCFun sceneID="25" label="拉瓦的合同" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4028"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">找到拉瓦了吗？</Dialog>
+                    <Button label="我这就去" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">你回来了，看样子很开心哦。</Dialog>
+                    <Button label="船长给我讲了他雪山历险的故事。" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">是说那次被困在冰雪世界的那次？</Dialog>
+                    <Button label="是啊，你也知道？" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">其实那次真的很危险，我是听后来回来的水手说的。</Dialog>
+                    <Button label="讲讲看吧" nextID="-1" close="true">
+                        <Goto value="playAnimation"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="playAnimation" type="asWindow" src="task/4028/task_4028_StoryFromRalph" winPos="0|0" name="拉尔夫讲故事">
+                <Default><Goto value="dialog_3"/></Default>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">你看上去很感动……</Dialog>
+                    <Button label="何止感动，他们太伟大了" nextID="-1">
+                        <Goto value="dialog_4"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_4" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">他还有更多的故事，以后有机会来听哦。</Dialog>
+                    <Button label="好的！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4028"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

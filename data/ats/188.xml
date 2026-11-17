@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SmallCircleOfWooddingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="188" label="木豆丁的小轮车">
+  <Task id="4061" label="木豆丁的小轮车">
+    <!-- npcfun_get · 场景 134 -->
+    <NPCFun sceneID="134" label="我的小轮车" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">木藤藤曾经留给我一个训练用的小轮车，可是我不小心给弄坏了……</Dialog>
+    					<Button label="怎么回事呢？" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4061/app_4061_01_smallCircleBrekingApp" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_1"/>
+    		</Default>
+    		</Script>	
+    	
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">我想了各种方法要修好它，可是没有合适的材料，你帮我四处问问吧。</Dialog>
+    					<Button label="去哪里找呢？">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">我也不知道，但是据说王国内有种草木精华可以帮助修理，但是具体的修理方法还是要问问别人……</Dialog>
+    					<Button label="好吧我去找爱因斯坦问问">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|4061"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="9"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的小轮车" icon="0" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="103600" npcName="爱因斯坦">你说那个小轮车？我想想，很久前是给个叫木藤藤的家伙做过，但是那个东西的材料要到很多地方才能找到哦！</Dialog>
+    						<Button label="去哪里呢？">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="103600" npcName="爱因斯坦">嗯现在这种情况要搜集草木精华，然后用魔法修复。</Dialog>
+    						<Dialog npcID="103600" npcName="爱因斯坦">草木精华可以在普拉塔草原、索米亚草原、野外研究院、魔法密林得到，去告诉木豆丁吧！</Dialog>
+    						<Button label="好的" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			<Click label="submit" event="NULL" fire="true" fireID="103604"/>
+    			</Click>
+    		</NPCFun>
+    <!-- npcfun_3_noover_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="我的小轮车" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="208600" npcName="木豆丁">去实验工坊的爱因斯坦那里问问吧？</Dialog>
+    				<Button label="好的" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_submit · 场景 134 -->
+    <NPCFun sceneID="134" label="我的小轮车" icon="0" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="208600" npcName="木豆丁">原来是这样哦，好的后面一定找找看，你只要肯帮助我修好这个小车，我就可以成为你的伙伴哦。</Dialog>
+    						<Button label="路上见到有家伙鬼鬼祟祟的盯着你，你要小心哦" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/4061/app_4061_02_BeFallowedApp" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    			</Script>	
+    				<Click label="submit" event="onTaskCall2" params="2|4061"/>
+    			</Click>
+    		</NPCFun>
+  </Task>
+</Story>

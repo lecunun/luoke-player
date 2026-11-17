@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CounterattackStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="83" label="反攻！">
+  <Task id="1063" label="远征军启航">
+    <!-- npc_g_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="146600" name="圣安德鲁国王" position="677|333">
+    	<View type="0" src="146600.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="GotIt0_1063_146600">
+    	<Click event="onRunScript" aimPos="677|333" cdtn="60">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="145600" npcName="圣安德鲁国王"><![CDATA[{name}]]>，在这千钧一发的时刻，独角兽出山，你功不可没啊！</Dialog>
+    			<Button label="大敌当前，这是我应该做的！" nextID="-1">
+    				<Goto value="dialog_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="145600" npcName="圣安德鲁国王">恩！就是要这种气势！哥顿，夏洛克！</Dialog>
+    			<Dialog npcID="105200" npcName="哥顿/夏洛克">臣在！</Dialog>
+    			<Dialog npcID="145600" npcName="圣安德鲁国王">为我准备盔甲和剑！</Dialog>
+    			<Dialog npcID="105200" npcName="哥顿">难道……难道国王您这次要亲自出征？</Dialog>
+    			<Dialog npcID="105200" npcName="夏洛克">这实在是太危险了！</Dialog>
+    			<Dialog npcID="145600" npcName="圣安德鲁国王">大敌当前，怎能退缩？我们的第一任国王亚瑟曾经说过，强者永远是最后一个离开战场的！</Dialog>
+    			<Button label="不愧是国王陛下！" nextID="-1" close="true">
+    				<Goto value="asWindow_0"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/1063/1063_0" winPos="0|0" name="提示">
+    		<Default><Goto value="submit"/></Default>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="1|1063"/>
+    	</Click>
+    	</ViewEvent>
+    	<ViewEvent type="GotIt1_1063_146600">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="146600" npcName="圣安德鲁国王">兰斯洛，你那边情况如何？</Dialog>
+    			<Dialog npcID="147800" npcName="兰斯洛">禀报国王！各魔力同盟的会长已经给予了大力支持！军草已经准备完毕！</Dialog>
+    			<Dialog npcID="146600" npcName="圣安德鲁国王">这真是太好了！</Dialog>
+    			<Dialog npcID="147800" npcName="兰斯洛">不止如此！臣已经集结了许多忠肝义胆的勇士！他们随时听候国王命令！</Dialog>
+    			<Dialog npcID="146600" npcName="圣安德鲁国王">好！<![CDATA[{name}]]>，你和兰斯洛把他们带来，让我来见见这些勇敢的人！</Dialog>
+    			<Button label="遵命！陛下！" nextID="-1" close="true">
+    				<Goto value="asWindow_0"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/1063/1063_1" winPos="0|0" name="提示">
+    		<Default><Goto value="dialog_1"/></Default>
+    	</Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="146600" npcName="圣安德鲁国王">好！为了呱呱！为了玄玉岛！为了洛克王国！我们出发！人人为我！我为人人！</Dialog>
+    			<Button label="人人为我！我为人人！" nextID="-1" close="true">
+    				<Goto value="asWindow_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_1" type="asWindow" src="task/1063/1063_2" winPos="0|0" name="提示">
+    		<Default><Goto value="submit"/></Default>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="2|1063"/>
+    	</Click>
+    	</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_c0_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="147800" name="兰斯洛" position="695|460">
+    		<View type="0" src="147800.swf" atLayerID="2" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 14 -->
+    <NPCFun label="app_ts0" sceneID="14">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1063/1063_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1064" label="打草惊蛇">
+    <!-- npc_c0_xml · 场景 103 -->
+    <Npc sceneID="103" type="1" npcID="146800" position="308|339">
+    	<View type="0" src="146800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0_1064_146800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">这里怎么可能异常安静？实在太奇怪了！恩佐怎么可能不知道我们来了呢？</Dialog>
+    						<Dialog npcID="146600" npcName="圣安德鲁国王">定要当心！想必他们早有埋伏！</Dialog>
+    						<Button label="硬往里闯，岂不是中了埋伏？" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">我可以飞，不如我前去探察一番！</Dialog>
+    						<Dialog npcID="146600" npcName="圣安德鲁国王">恩！也只有这样了！</Dialog>
+    						<Button label="独角兽……你一定要当心！" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/1064/1064_0" winPos="0|0" name="提示">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1064_146800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">果然如陛下所言！他们早有埋伏！</Dialog>
+    						<Dialog npcID="141200" npcName="呱呱">哼！我就料到！一定不能中了他们的奸计！</Dialog>
+    						<Button label="难道我们坐以待毙么？" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">当然不行！让我想想……啊！我有办法了！</Dialog>
+    						<Button label="啊？什么办法？" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/1064/1064_1" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_2"/></Default>
+    				</Script>
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="146600" npcName="圣安德鲁国王">这的确是个妙计！但是你怎么能断定，那条小路没有设下埋伏呢？</Dialog>						
+    						<Dialog npcID="141200" npcName="呱呱">只要让先头部队先去假装攻打，趁乱之时，让他们自己把埋伏的地点暴露出来，我们看看那条小路到底有没有设下埋伏就知道了！</Dialog>
+    						<Dialog npcID="128700" npcName="阿基拉">不如我去吧！我有喷射器，可以飞行！</Dialog>					
+    						<Dialog npcID="128800" npcName="龙族之王">我也可以飞，阿基拉，你独自去太危险了，我们一起去吧！</Dialog>
+    						<Dialog npcID="128700" npcName="阿基拉">看来我和龙族之王真是英雄惜英雄啊！</Dialog>
+    						<Button label="我也要去！" nextID="-1" close="true">
+    							<Goto value="asWindow_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_1" type="asWindow" src="task/1064/1064_2" winPos="0|0" name="提示">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true" fireID="147000"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2_1064_146800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱"><![CDATA[{name}]]>，辛苦你了！果然小路没有敌军埋伏！不知你是否愿意随我一起，悄悄从小路走，去救出公主！</Dialog>
+    						<Button label="呱呱！你果然好聪明啊！" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">这是玄玉岛古老的兵法，三十六计之一的打草惊蛇！</Dialog>
+    						<Dialog npcID="146600" npcName="圣安德鲁国王">呱呱！我就命你带一路人马，从小路进攻！</Dialog>
+    						<Dialog npcID="135000" npcName="西格">请带我一起去吧！</Dialog>
+    						<Dialog npcID="135600" npcName="蔷薇骑士">也请让我一同去吧！</Dialog>
+    						<Dialog npcID="132700" npcName="帕娃咔咔">我也要去！我也要去！</Dialog>
+    						<Dialog npcID="133500" npcName="八字毛球">还有我！还有我！</Dialog>
+    						<Button label="呱呱！我不怕死！" nextID="-1">
+    							<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱"><![CDATA[{name}]]>，西格，帕娃咔咔和八字毛球与我一路。蔷薇骑士的土鳖有遁地术，以后定有用处，要留下保护国王！</Dialog>
+    						<Dialog npcID="135600" npcName="蔷薇骑士">好！我一定会好好保护国王陛下的！</Dialog>
+    						<Button label="迷魂八卦的埋伏众多，如何去小路？" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|1064"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 103 -->
+    <NPCFun label="app_ts0" sceneID="103">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="103"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 103 -->
+    <NPCFun label="app_ts1" sceneID="103">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1064/1064_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 103 -->
+    <NPCFun label="app_ts2" sceneID="103">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1064/1064_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1065" label="瞒天过海，暗渡陈仓">
+    <!-- npc_c0_xml · 场景 107 -->
+    <Npc sceneID="107" type="1" npcID="146800" position="308|339">
+    		<View type="0" src="146800.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1065_146800">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141200" npcName="呱呱">嘿嘿！其实在出发之前，我已经让皮卡做了很多黑衣人的斗篷！我们伪装成黑衣人就行！</Dialog>
+    							<Dialog npcID="135000" npcName="西格">唉？我比较胖耶！我可能要定做耶！</Dialog>
+    							<Button label="我们真的能顺利安全地潜入吗？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141200" npcName="呱呱">当然不可能啦！哪有那么顺利！</Dialog>
+    							<Button label="啊？！那不是白说啦！" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="146600" npcName="圣安德鲁国王">呱呱的意思我懂了！我们要佯装和他们正面交锋，引开他们的视线！此时，你们就伪装成黑衣人，悄悄从那条小路上去！</Dialog>
+    							<Dialog npcID="141200" npcName="呱呱">正是这样！这就叫暗渡陈仓，瞒天过海！</Dialog>
+    							<Button label="原来是这样啊！" nextID="-1">
+    								<Goto value="dialog_3"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_3" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="146600" npcName="圣安德鲁国王">你们要保重！</Dialog>
+    							<Dialog npcID="150600" npcName="呱呱">可是……让大家为了我这么拼命……我……</Dialog>
+    							<Button label="你说什么啊！我们可是伙伴啊！" nextID="-1">
+    								<Goto value="dialog_4"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_4" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="135600" npcName="蔷薇骑士">是啊！我们是伙伴！</Dialog>
+    							<Dialog npcID="150600" npcName="呱呱">我们一定会杀出一条血路！再相逢时，一定是胜利之时！</Dialog>
+    							<Button label="恩……一定！" nextID="-1">
+    								<Goto value="dialog_5"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_5" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="146600" npcName="圣安德鲁国王">勇者无敌！</Dialog>
+    							<Button label="勇者无敌！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1065_146800"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1065_146800">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_1065_146800">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="149000" npcName="呱呱">大家，做好准备了吗？</Dialog>
+    							<Button label="恩！我们出发吧！" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/1065/1065_0" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onChangeScene" params="107"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 107 -->
+    <Npc sceneID="107" type="1" npcID="147200" position="266|465">
+    		<View type="0" src="147200.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1065_147200">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="149000" npcName="呱呱">快看！国王他们已经攻打过来了！趁此机会，我们快点走！</Dialog>
+    							<Button label="可是……就这么放下国王他们不管么……" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="149000" npcName="呱呱">傻瓜！快点走啊！这是大家拼死为我们创造的机会！</Dialog>
+    							<Button label="（擦了擦泪水）恩……" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/1065/1065_1" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1065_147200"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1065_147200">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="149000" npcName="呱呱">快点！藤蔓就在那里，我们快点沿着藤蔓去小路吧！</Dialog>
+    							<Button label="好的！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1065_147200"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_1065_147200">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/1065/1065_2" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true" fireID="142000"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_p_xml · 场景 107 -->
+    <Npc sceneID="107" type="1" npcID="147400" position="241|277">
+    		<View type="0" src="147400.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1065_147400">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">这不是呱呱么！你不是都逃走了吗！为什么要回来！</Dialog>
+    							<Dialog npcID="141200" npcName="呱呱">熙铭大将军！你怎么这副样子了！你的实体呢？</Dialog>
+    							<Button label="这就是熙铭大将军！？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">我被恩佐控制了。但是我拼死反抗，无奈之下，他只好控制了我的身体。你们现在看到的，是我的意念影像。</Dialog>
+    							<Dialog npcID="141200" npcName="呱呱">你知道平阳公主被关在哪里吗？</Dialog>
+    							<Button label="我们要去救她！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1065_147400"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1065_147400">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">我……我……你们快点过去吧！哈哈哈！你们要打败我！我的头好痛！哈哈哈！还有什么比收拾了你们这帮人更重要的使命呢？</Dialog>
+    							<Dialog npcID="141200" npcName="呱呱">啊！看来熙铭将军完全被恩佐控制了！他的四只机关兽十分强大呢！</Dialog>
+    							<Button label="看我的吧！" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|147400|熙铭幻象">
+    						<Case value="2"><Goto value="dialog_2"/></Case>				
+    						<Default><Goto value="dialog_1"/></Default>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">哈哈哈！恩佐根本不必亲自出马！看来我一人，就可将你们全部干掉了！你们这些弱不经风的可怜虫！</Dialog>
+    							<Button label="有本事再来" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    							<Button label="稍后再战" nextID="-1" close="true">
+    								<End/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">我好像稍微清醒些了，趁着我清醒，你们赶紧去救平阳公主吧！她就被困在玉和殿的魔法阵里面！</Dialog>
+    							<Button label="怎么去玉和殿？" nextID="-1">
+    								<Goto value="dialog_3"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_3" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="147400" npcName="熙铭幻象">我正是来此帮助你们的。恩佐封锁了前面的宫殿，你们不可能进去的。我要用墨家机关，让你们直接到达玉和殿。</Dialog>
+    							<Dialog npcID="141200" npcName="呱呱">那……你不和我们一起走么？</Dialog>
+    							<Dialog npcID="147400" npcName="熙铭幻象">我的身体已经被恩佐控制了，我能为你们做的仅此而已……趁着我还意识清醒，快点走吧。玄玉岛的未来……就靠你们了……！</Dialog>
+    							<Button label="大恩不言谢……" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1065"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 107 -->
+    <NPCFun label="app_ts0" sceneID="107">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1065/1065_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 109 -->
+    <NPCFun label="app_ts1" sceneID="109">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1065/1065_ts_1" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="109"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1066" label="调虎离山，声东击西">
+    <!-- npc_c0_xml · 场景 112 -->
+    <Npc sceneID="112" type="1" npcID="147500" position="0|560">
+    		<View type="0" src="147500.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1066_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">快看年兽！没想到年兽真的被恩佐完全控制了！</Dialog>
+    				<Button label="我们绝对不是恩佐的对手！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">的确，更何况现在他们俩在一起，我们丝毫没有胜算！</Dialog>
+    				<Button label="现在该怎么办？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">看来只有用调虎离山之计了！</Dialog>
+    				<Button label="调虎离山？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">八字毛球，你过来，我告诉你，这样，这样，就这样！</Dialog>
+    				<Dialog npcID="133500" npcName="八字毛球">原来如此！我一定努力！</Dialog>
+    				<Button label="好吧！那就拜托了，八字毛球！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1066_147500"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1066_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">太好了！调虎离山成功！恩佐已经离开公主身边了了！我们快去救出公主吧！</Dialog>
+    				<Button label="好！可是那边还有大量守卫啊！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1066_147500"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1066_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">我现在就去解决那帮小喽罗！你们快点去救出公主！</Dialog>
+    				<Button label="蔷薇骑士！你怎么来到这里的？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">我的土鳖会遁地术啊！我感应到你们现在需要我！</Dialog>
+    				<Button label="你的手怎么了？在流血……受伤了吗？" nextID="-1">
+    					<Goto value="dialog_7"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_7" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">没什么！伤痕——男子汉的勋章！</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱">好！蔷薇骑士冲出去后，我们就一起冲向公主那里，拼死也要把她救出来！</Dialog>
+    				<Button label="好～～" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1066/1066_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1066_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">年兽，你的对手是我！</Dialog>
+    				<Dialog npcID="150800" npcName="年兽">真是冤家路窄，不是冤家不聚头啊！就让我陪你玩玩儿吧！</Dialog>
+    				<Button label="独角兽！你也来了！要当心啊！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1066_147500"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_1066_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">平阳公主！快点走吧！</Dialog>
+    				<Dialog npcID="150700" npcName="平阳公主">呱呱……还有<![CDATA[{name}]]>……谢谢你们来救我！</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱"><![CDATA[{name}]]>，你先带着公主走吧！那个独角兽，其实是假的！想必马上就要露出马脚了！</Dialog>
+    				<Dialog npcID="135000" npcName="西格">是的……那只独角兽，其实是我的宠物奶瓶小鸭！</Dialog>
+    				<Button label="啊？这是怎么回事？" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1066/1066_1" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_1"/></Default>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">奶瓶小鸭的魔法马上就要失效啦！你们快走！</Dialog>
+    				<Dialog npcID="150700" npcName="平阳公主">呱呱……我们快点走吧！</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱">你们先走！我不能走！</Dialog>
+    				<Button label="啊？你不走？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">恩！我要变成假的平阳公主！只有这样，才能骗过恩佐和年兽！</Dialog>
+    				<Button label="这是什么意思？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">他们以为平阳公主还在岛上，就不会封锁整座玄玉岛，你们才能带着公主离开啊！</Dialog>
+    				<Button label="可是怎么能丢下你？" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150600" npcName="呱呱">总要有人牺牲！没关系的……</Dialog>
+    				<Button label="如果一定要找个假冒的公主，就让我来吧！" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">你在说什么傻话啊！！！</Dialog>
+    				<Button label="你才傻吧！你最熟悉这片岛屿，你要带大家逃出去！" nextID="-1">
+    					<Goto value="dialog_6"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150700" npcName="平阳公主">对不起……对不起……都是我害了大家……</Dialog>
+    				<Button label="没关系！我们一定会胜利！我会等你们来救我！" nextID="-1">
+    					<Goto value="dialog_7"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_7" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">……<![CDATA[{name}]]>，你要保重！我们一定会来救你！</Dialog>
+    				<Button label="恩……约定了哦！" nextID="-1">
+    					<Goto value="dialog_8"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_8" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">想来，这就是三十六计中的李代桃僵吧！</Dialog>
+    				<Button label="原来如此！请快点把我变成平阳公主吧！" nextID="-1">
+    					<Goto value="dialog_9"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_9" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">好吧……<![CDATA[{name}]]>，那我就把你变身为平阳公主吧！</Dialog>
+    				<Dialog npcID="150700" npcName="平阳公主">我……对不起……<![CDATA[{name}]]>……</Dialog>
+    				<Button label="大家，没关系的，别这么难过。" nextID="-1" close="true">
+    					<Goto value="asWindow_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_1" type="asWindow" src="task/1066/1066_2" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1066"/>
+    		</Click>
+    </ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 112 -->
+    <NPCFun label="app_ts0" sceneID="112">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="112"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 112 -->
+    <NPCFun label="app_ts1" sceneID="112">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1066/1066_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1067" label="李代桃僵">
+    <!-- npc_c0_xml · 场景 112 -->
+    <Npc sceneID="112" type="1" npcID="147500" position="0|560">
+    		<View type="0" src="147500.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    <ViewEvent type="GotIt0_1067_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">我的小公主，你想逃走？还让那只山寨独角兽来吓唬我！</Dialog>
+    				<Button label="[我要用自己的力量打败它！最后的机会！]" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">嘿嘿，别做梦了，还是归降了恩佐大人吧！</Dialog>
+    				<Button label="[哪怕是最后的一秒也不能放弃！拼死一战吧！]" nextID="-1" close="true">
+    					<Goto value="combat_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="combat_0" type="switch" invoke="combat" args="2|147500|年兽">
+    			<Default><Goto value="dialog_2"/></Default>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">公主……你想打败我？那是不可能的！</Dialog>
+    				<Button label="哼哼，你以为我真的是公主么？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">什么意思？你就是公主啊！哈哈哈！你是不是变傻了？</Dialog>
+    				<Button label="其实公主已经被救走了！我是代替她的！" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">啊啊啊啊啊！！！！！！！！！！你们太狡猾了！！！！！！！</Dialog>
+    				<Button label="哈哈哈！这叫做李代桃僵！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1067"/>
+    		</Click>
+    </ViewEvent>
+    </Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 112 -->
+    <NPCFun label="app_ts0" sceneID="112">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1067/1067_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1068" label="擒贼擒王">
+    <!-- npc_c0_xml · 场景 76 -->
+    <Npc sceneID="76" type="1" npcID="147500" position="0|560">
+    		<View type="0" src="147500.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    <ViewEvent type="GotIt0_1068_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，你辛苦了！现在就让我来和年兽算总账吧！</Dialog>
+    				<Button label="啊……你是真的独角兽吗？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150800" npcName="年兽">哈哈哈！你们又用假的来骗我么？你们总之一而再，再而三地给我耍阴谋！这次可没那么容易啦！</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">国王陛下已经快要攻进来了！现在就让我们来一决雌雄吧！</Dialog>
+    				<Button label="独角兽！当心啊！" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1068/1068_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1068_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150700" npcName="平阳公主">现在，就让我来封印年兽吧！</Dialog>
+    				<Button label="好的！" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1068/1068_1" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1068_147500"/>
+    		</Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1068_147500">
+    	<Click label="submit" event="NULL" fire="true" fireID="148200"/>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1068_147500">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="146600" npcName="圣安德鲁国王">外面那些恩佐的喽罗也已经被我们干掉了！</Dialog>
+    				<Dialog npcID="128700" npcName="阿基拉">那些小喽罗，不值一提！</Dialog>	
+    				<Dialog npcID="128800" npcName="龙族之王">反倒是你们，尤其是<![CDATA[{name}]]>，竟然这么勇敢！</Dialog>
+    				<Dialog npcID="132000" npcName="帕尔萨斯">还有呱呱小分队，真是让我们刮目相看啊！你们才是这场战役取得胜利的关键！</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱">恩佐逃跑了！年兽被打败了！玄玉岛又恢复往日的和平啦！</Dialog>
+    				<Dialog npcID="150700" npcName="平阳公主">洛克王国的勇士们，谢谢你们！！</Dialog>
+    				<Button label="嘿嘿！不用谢！我们是伙伴吗！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150700" npcName="平阳公主">这是玄玉岛的折扇，如果不嫌弃的话，请你收下吧！<![CDATA[{name}]]>！</Dialog>
+    				<Button label="好漂亮的折扇！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="146600" npcName="圣安德鲁国王">既然战乱已经平复！我们也该启航回去了！</Dialog>
+    				<Button label="那……呱呱要不要和我们一起走？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">我……我……</Dialog>
+    				<Dialog npcID="150700" npcName="平阳公主">呱呱，不必挂念我。你应该去外面的世界多看看的。</Dialog>
+    				<Dialog npcID="135600" npcName="蔷薇骑士">呱呱，和我们一起走吧！</Dialog>
+    				<Dialog npcID="132700" npcName="帕娃咔咔">恩！我们是伙伴啊！</Dialog>
+    				<Dialog npcID="133500" npcName="八字毛球">是伙伴就不要分开！</Dialog>
+    				<Dialog npcID="135000" npcName="西格">我可以带你去游历很多地方！</Dialog>
+    				<Button label="呱呱……一起走吧……我舍不得你……" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="150600" npcName="呱呱">恩……恩……恩……！</Dialog>
+    				<Button label="真的？太好啦！" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">明天中午12：00，我们就开船了。我们会在玄玉岛的港口等你！</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱">恩！好的！</Dialog>
+    				<Button label="约定了哦！" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1068/1068_2" winPos="0|0" name="提示">
+    			<Default>
+    				<Batch>
+    					<Click event="onChangeScene" params="76"/>
+    					<Goto value="asWindow_1"/>
+    				</Batch>
+    			</Default>
+    		</Script>
+    		<Script label="asWindow_1" type="asWindow" src="task/1068/1068_3" winPos="0|0" name="提示">
+    			<Default><Goto value="sumbit"/></Default>
+    		</Script>
+    		<Click label="sumbit" event="onTaskCall2" params="2|1068"/>
+    		</Click>
+    </ViewEvent>
+    </Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 76 -->
+    <NPCFun label="app_ts0" sceneID="76">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1068/1068_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

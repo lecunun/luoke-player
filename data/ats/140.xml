@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 LostInMemory.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="140" label="寻回失去的记忆">
+  <Task id="4041" label="寻回失去的记忆">
+    <!-- npcfun_112001 · 场景 57 -->
+    <NPCFun sceneID="57" label="可怜的宠物" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="112001" npcName="萌萌">宠物医院最近接到一个奇怪的病人，什么也不说，并且不吃不喝，这可怎么办呢？</Dialog>
+    				  <Button label="别急，我们一同看看它吧" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Click label="index_0_1" event="onTaskCall2" params="1|4041"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_178800 · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="178800" position="540|400">
+    		<View type="0" src="178800.swf" atLayerID="2" hasClick="true"/>
+           <Click event="onRunScript">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="178800" npcName="不倒叮当">……</Dialog>
+    			      <Button label="小宠物，小宠物，你怎么了？" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="178800" npcName="不倒叮当">……</Dialog>
+    			      <Button label="不要怕，我们是来帮助你的……" nextID="-1" close="false">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="178800" npcName="不倒叮当">……</Dialog>
+    			      <Button label="对了，沃尔克老师那里有一块记忆水晶，也许能帮上忙！" nextID="-1" close="true">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_3" event="NULL" fire="true"/>
+    			</Click>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_112002 · 场景 57 -->
+    <NPCFun sceneID="57" label="记忆碎片" icon="-1" close="false">
+    			<Click event="onRunScript">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="178900" npcName="沃尔克">找我有什么事？</Dialog>
+    				      <Button label="萌萌那里有个宠物失去记忆了，老师能帮助他么？" nextID="-1" close="false">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="178900" npcName="沃尔克">进入宠物的记忆，还真有个魔法碎片可以，但是数量不多，希望你能帮助到它。</Dialog>
+    				      <Button label="好的" nextID="-1" close="true">
+    				        <Goto value="index_0_2"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_2" event="NULL" fire="true" fireID="178900"/>
+    				</Click>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_179100 · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="179100" position="540|400">
+    		<View type="0" src="179100.swf" atLayerID="2" hasClick="true"/>
+    		<Click event="onRunScript">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/4041/app1" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="178800" npcName="不倒叮当">……</Dialog>
+    			      <Button label="这群坏人，终于知道了不倒叮当为什么不说话了。我要去打败他们！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_2" event="NULL" fire="true"/>
+    			</Click>
+    		</Click>
+    	</Npc>
+    <!-- npc_179000 · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="179000" position="586|337">
+    		<View type="0" src="179000.swf" atLayerID="2" hasClick="true"/>
+    		<Click event="onRunScript">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="179000" npcName="黑衣人">小洛克又想坏我的好事！</Dialog>
+    				      <Button label="我要为不倒叮当主持公道！" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="switch" invoke="combat" args="2|179000|黑衣人">
+    				    <Case value="2">
+    				      <Goto value="index_0_3"/>
+    				    </Case>
+    				    <Default>
+    				      <Goto value="index_0_2"/>
+    				    </Default>
+    				  </Script>
+    				  <Script label="index_0_2" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="179000" npcName="黑衣人">想击败我，哈哈哈，不可能。</Dialog>
+    				      <Button label="我会和你战斗到底！" nextID="-1" close="true">
+                          <End/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_3" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="179000" npcName="黑衣人">小子，我记住你了，我会回来的。</Dialog>
+    				      <Button label="谁怕你，懒得搭理你，救治不倒叮当去了。" nextID="-1" close="true">
+    				        <Goto value="index_0_4"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_4" event="NULL" fire="true"/>
+    				</Click>
+           </Click>
+    	</Npc>
+    <!-- npcfun_102200 · 场景 57 -->
+    <NPCFun sceneID="57" label="寻回失去的记忆" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+                       <Dialog npcID="112001" npcName="萌萌">宠物终于有救了！太谢谢你了！</Dialog>
+    					 <Button label="别客气，快救治它吧！" nextID="-1" close="true">
+    						<Goto value="index_0_1"/>
+    					 </Button>
+    				</Page>
+    			</Script>
+               <Script label="index_0_1" type="asWindow" src="task/4041/app2" winPos="0|0" name="">
+    				<Default>
+    					 <Goto value="index_0_2"/>
+    				</Default>
+    		    </Script>
+    			<Click label="index_0_2" event="onTaskCall2" params="2|4041"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_tz_xml · 场景 51 -->
+    <NPCFun label="app_tz" sceneID="51">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="51" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 57 -->
+    <NPCFun label="app_tz2" sceneID="57">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="57" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz3_xml · 场景 142 -->
+    <NPCFun label="app_tz3" sceneID="142">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="142" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

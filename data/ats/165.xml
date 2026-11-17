@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MakingRedFlagStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="165" label="做彩旗">
+  <Task id="4052" label="做彩旗">
+    <!-- npcfun_g_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="做彩旗的材料" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="122100" npcName="安格">做彩旗的材料不能少，去怀特冰川、皮卡服装店、万事通附近那里找找看。</Dialog>
+    		  <Button label="好的，现在就去" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    		<Click label="submit" event="onTaskCall2" params="1|4052"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 87 -->
+    <NPCFun label="app_ts0" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="44"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 87 -->
+    <NPCFun label="app_ts1" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="2"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 87 -->
+    <NPCFun label="app_ts2" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="1"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 87 -->
+    <NPCFun label="app_ts3" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="31"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="196500" position="220|259">
+    	<View type="0" src="196500.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_thrunk">
+    		<Click event="onRunScript" cdtn="30" aimPos="220|259">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="play_movie_getthrunk"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="get_trunk_over">
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="196600" position="263|330">
+    	<View type="0" src="196600.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_cloth">
+    		<Click event="onRunScript" cdtn="30" aimPos="263|330">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="play_movie_getcloth"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="get_cloth_over">
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="196700" position="491|340">
+    	<View type="0" src="196700.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_jiaoshui">
+    		<Click event="onRunScript" cdtn="30" aimPos="491|340">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="play_movie_getjiaoshui"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="get_jiaoshui_over">
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="做彩旗的材料" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="122100" npcName="安格">找个朋友一起做彩旗吧！</Dialog>
+    		  <Button label="好的，现在就去" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Script label="asWindow_0" type="asWindow" src="task/4052/app_4052_makingredflag" winPos="-58|51" name="正在加载中...">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    		<Click label="submit" event="onTaskCall2" params="2|4052"/>
+    	</Click>
+    	</NPCFun>
+  </Task>
+</Story>

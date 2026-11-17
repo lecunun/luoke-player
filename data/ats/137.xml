@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheBestGift.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="137" label="最好的礼物">
+  <Task id="4040" label="最好的礼物">
+    <!-- npcfun_105100 · 场景 7 -->
+    <NPCFun sceneID="7" label="神秘的声音" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="105100" npcName="爱德华">最近在微光密室方向传来诡异的声音，去帮我看下吧。</Dialog>
+    				  <Button label="好的，我现在就去。" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Click label="index_0_1" event="onTaskCall2" params="1|4040"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_177500 · 场景 1 -->
+    <Npc sceneID="1" type="1" npcID="177500" position="566|400">
+    		<View type="0" src="177500.swf" atLayerID="2" hasClick="true"/>
+    		<Create>
+               <Task id="4040" care="011"/>
+    		</Create>
+           <Click event="onRunScript">
+               <Script label="default" type="asWindow" src="task/4040/app1" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			</Script>
+    			<Click label="index_0_1" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_177600 · 场景 1 -->
+    <Npc sceneID="1" type="1" npcID="177600" position="400|320">
+    		<View type="0" src="177600.swf" atLayerID="2" hasClick="true"/>
+    		<Create>
+               <Task id="4040" care="101"/>
+    		</Create>
+           <Click event="onRunScript">
+               <Script label="default" type="dialog">
+    			    <Page id="0">
+    				   <Dialog npcID="177600" npcName="呆呆">为什么呢？阿傻不是说他会在周年庆的时候回来么？</Dialog>
+    			      <Button label="我就是带来他的消息的。" nextID="-1" close="true">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    		    </Script>
+               <Script label="index_0_1" type="asWindow" src="task/4040/app2" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_2"/>
+    			    </Default>
+    			</Script>
+               <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+    				   <Dialog npcID="177600" npcName="呆呆">快带我去找他吧！</Dialog>
+    			      <Button label="好的！" nextID="-1" close="true">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    		    </Script>
+    			<Click label="index_0_3" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_177700 · 场景 1 -->
+    <Npc sceneID="1" type="1" npcID="177700" position="566|400">
+    		<View type="0" src="177700.swf" atLayerID="2" hasClick="true"/>
+    		<Create>
+               <Task id="4040" care="110"/>
+    		</Create>
+           <Click event="onRunScript">
+    	       <Script label="default" type="asWindow" src="task/4040/app3" winPos="0|0" name="">
+    				    <Default>
+    				      <Goto value="index_0_1"/>
+    				    </Default>
+    		    </Script>
+    	        <Script label="index_0_1" type="dialog">
+    				    <Page id="0">
+    					   <Dialog npcID="177600" npcName="呆呆">感谢你救了我们，走我们一同去找万事通看烟火吧！</Dialog>
+    				      <Button label="我可不想当电灯泡……" nextID="-1" close="true">
+    				        <Goto value="index_0_2"/>
+    				      </Button>
+    				    </Page>
+    			 </Script>
+    			<Click label="index_0_2" event="NULL" fire="true"/>
+           </Click>
+    	</Npc>
+    <!-- npcfun_102200 · 场景 1 -->
+    <NPCFun sceneID="1" label="最好的礼物" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+                      <Dialog npcID="102200" npcName="万事通">呵呵，没想到这个呆呆鸟终于找到阿傻了，来我们一同燃放烟火吧！！</Dialog>
+    					 <Button label="好哦！" nextID="-1" close="true">
+    						<Goto value="index_0_1"/>
+    					 </Button>
+    				</Page>
+    			</Script>
+               <Script label="index_0_1" type="asWindow" src="task/4040/app4" winPos="0|0" name="">
+    				<Default>
+    					 <Goto value="index_0_2"/>
+    				</Default>
+    		    </Script>
+    			<Click label="index_0_2" event="onTaskCall2" params="2|4040"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_tz_xml · 场景 75 -->
+    <NPCFun label="app_tz" sceneID="75">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="75" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 18 -->
+    <NPCFun label="app_tz2" sceneID="18">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="18" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz3_xml · 场景 1 -->
+    <NPCFun label="app_tz3" sceneID="1">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="1" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

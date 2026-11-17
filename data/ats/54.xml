@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 21_TaskList.xml 的 <TFlow> 还原 -->
+<Story id="54" label="治疗噩梦"><Task id="3014" label="治疗噩梦"><NPCFun sceneID="14" label="治疗噩梦" icon="-1" close="false"><Click event="onRunScript"><Script label="default" type="dialog"><Page id="0"><Dialog npcID="100900" npcName="麦斯威尔">公主有天夜里偷偷去了一次威廉古堡，回来后就经常做噩梦。她估计是被幽灵古堡的怪物给吓着了。心病还需心药治，去城堡抓一直独眼怪回来让公主看看。</Dialog><Button label="好的" nextID="-1" close="false" /></Page><Page id="1"><Dialog npcID="100900" npcName="麦斯威尔">公主的病越来越严重了，快去把独眼怪抓回来。</Dialog><Button label="好的" nextID="-1" close="false" /></Page><Page id="2"><Dialog npcID="100900" npcName="麦斯威尔">这个小怪物其实一点都不可怕嘛，公主看过后应该病就会好了。</Dialog><Button label="那就太好了" nextID="-1" close="false" /></Page></Script></Click></NPCFun></Task></Story>

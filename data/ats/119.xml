@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ForbidenPlaceStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="119" label="禁地的传说">
+  <Task id="1096" label="雷电重重">
+    <!-- npc_g_xml · 场景 61 -->
+    <Npc sceneID="61" type="1" npcID="165400" position="-179|464">
+    <View type="0" src="165400.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1096_165400">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1096/knightGad" winPos="0|0" name="圣骑士的纹章">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="1|1096"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1096_165400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="165900" npcName="正电宠物">那个闪电是不是你们引起的？</Dialog>
+          <Dialog npcID="134800" npcName="西格">啊啊啊！我正想问问你……有没有听说过圣龙骑士啊？</Dialog>
+          <Dialog npcID="165900" npcName="正电宠物">刚刚那道闪电是不是你们引起的？</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">当然不是啦！</Dialog>
+          <Dialog npcID="165900" npcName="正电宠物">那为什么你们会出现在这里？你们是不是图谋不轨？</Dialog>
+          <Dialog npcID="134800" npcName="西格">我们只是想问问关于圣龙骑士……</Dialog>
+          <Button label="恩，我们没有恶意！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="165900" npcName="正电宠物">哼！你们竟然想打圣龙骑士的主意！还故意放出这么大的闪电！看我打败你们这些坏人！</Dialog>
+          <Button label="啊？这是误会啊！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1096/beatDucky" winPos="0|0" name="正电宠物打伤奶瓶小鸭">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1096_165400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1096_165400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">奶瓶小鸭！你怎么样了哇！你可不要出事啊！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">主人……我被揍了……我好无能啊……</Dialog>
+          <Dialog npcID="134800" npcName="西格">别这么说，下次我帮你报仇……</Dialog>
+          <Button label="现在治疗奶瓶小鸭要紧！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">恩恩！现在怎么办！</Dialog>
+          <Button label="一起去雷霆之渊找桑德吧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_sd_xml · 场景 59 -->
+    <NPCFun sceneID="59" label="救奶瓶小鸭" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">桑德～我的奶瓶小鸭快不行了！</Dialog>
+          <Dialog npcID="111700" npcName="桑德">呵呵呵呵呵！别着急，让我仔细看看！</Dialog>
+          <Button label="奶瓶小鸭为什么会全身都带电呢？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1096/teachKnowledge" winPos="0|0" name="讲述正电和负电的知识">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1096_165500"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 61 -->
+    <Npc sceneID="61" type="1" npcID="165500" position="642|475">
+    <View type="0" src="165500.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1096_165500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">桑德！快点救救我的奶瓶小鸭！它被一只莫名其妙的宠物揍了一顿，现在全身都带电！我们实在束手无策！</Dialog>
+          <Button label="桑德在乌云里！要用星星形状的石头召唤出来！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1096_165500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111700" npcName="桑德">哈哈！你们看到这个大瓶子没有！</Dialog>
+          <Button label="恩恩！难道它可以治好奶瓶小鸭？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111700" npcName="桑德">恩！你们先去特鲁米小径，把这个大瓶子装满空气！</Dialog>
+          <Dialog npcID="134800" npcName="西格">装满空气？</Dialog>
+          <Dialog npcID="111700" npcName="桑德">恩！！当然，还需要我特殊的电力魔法才能治好它！只有空气是不够的！哈哈哈！</Dialog>
+          <Button label="听起来好奇怪啊……不过还是去吧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|1096"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1097" label="救治">
+    <!-- npc_c0_xml · 场景 61 -->
+    <Npc sceneID="61" type="1" npcID="165600" position="98|338">
+    <View type="0" src="165600.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1097_165600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">恩恩！估计这个大瓶子已经装满空气了！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">可是我什么都看不到啊……</Dialog>
+          <Dialog npcID="134800" npcName="西格">谁知道桑德的葫芦里卖的什么药！我们快点去找他吧！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">应该不会有事吧……</Dialog>
+          <Dialog npcID="134800" npcName="西格">我们既然选择了相信他，就要相信到底！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 61 -->
+    <Npc sceneID="61" type="1" npcID="165700" position="560|484">
+    <View type="0" src="165700.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1097_165700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">奶瓶小鸭果然没有电了！</Dialog>
+          <Button label="可是你看它的脑门……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">怎么会多了一个疤痕呢！</Dialog>
+          <Dialog npcID="111700" npcName="桑德">啊！这不是传说中的圣龙骑士的印记么！</Dialog>
+          <Dialog npcID="134800" npcName="西格">啊？真的么？</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">难道我是圣龙骑士转世？</Dialog>
+          <Dialog npcID="111700" npcName="桑德">你们之前说，有一只很奇怪的宠物打伤了奶瓶小鸭，看来要找到它，一切的谜题才能解开！</Dialog>
+          <Button label="可是……怎么找到它呢？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111700" npcName="桑德">这自然难不倒我……只要它身上还带电，而且还留在这雷霆峡谷内！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1097_165700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1097_165700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1097/findThePet" winPos="0|0" name="发现宠物所在地">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1097"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_sd_xml · 场景 61 -->
+    <NPCFun sceneID="61" label="我把大瓶子带来啦" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111700" npcName="桑德">哈哈哈！你们干得不错啊！</Dialog>
+          <Dialog npcID="134800" npcName="西格">桑德，这个瓶子里的空气就能治好我的奶瓶小鸭吗？</Dialog>
+          <Dialog npcID="111700" npcName="桑德">仅仅是这里的空气还不足够，还需要一点点魔法。不过可以肯定的是，没有这些空气，一切都是惘然。</Dialog>
+          <Button label="原来空气这么重要啊！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1097/neutralization" winPos="0|0" name="正负电子中和奶瓶小鸭">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1097_165700"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1098" label="雷霆禁地">
+    <!-- npc_c0_xml · 场景 131 -->
+    <Npc sceneID="131" type="1" npcID="165800" position="215|437">
+    <View type="0" src="165800.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1098_165800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166000" npcName="负电宠物">哼！你们来这里干嘛！</Dialog>
+          <Dialog npcID="134800" npcName="西格">这次看我的吧！</Dialog>
+          <Button label="大家当心啊！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1097_165700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1098_165800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166000" npcName="负电宠物">你们……你们这么做……一定会自食其果！</Dialog>
+          <Dialog npcID="134800" npcName="西格">谁让你先欺负我的奶瓶小鸭！</Dialog>
+          <Dialog npcID="166000" npcName="负电宠物">我发誓……我真的没有……有可能……有可能是我的哥哥做的……</Dialog>
+          <Button label="啊？你的哥哥？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166000" npcName="负电宠物">你看，我现在带的是负电，我的哥哥带的是正电，我们本来是连在一起的。但是一道巨大的闪电把我们分开了，我正在找它呢……</Dialog>
+          <Dialog npcID="134800" npcName="西格">啊啊啊！那道闪电，就是之前那道呢！我们也见到了！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">那这么说，打伤我的是你的哥哥啊！</Dialog>
+          <Button label="完啦！我们真的冤枉好人啦！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1098_165800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166000" npcName="负电宠物">啊！哥哥！</Dialog>
+          <Dialog npcID="112000" npcName="黑衣人">原来你在这里啊～！现在就跟我走吧！</Dialog>
+          <Button label="库仑！你又在搞什么阴谋！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">它们俩本来就是一体的！不瞒你说，这也是恩佐制造出来的一只宠物！有非常强大的电的魔法！</Dialog>
+          <Button label="原来如此……果然是阴谋！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">我搞阴谋？我看是你们在无事生非吧！如果我没猜错的话，这只负电宠物，现在已经没有电了吧……</Dialog>
+          <Button label="就算是这样我也不会让你把它带走！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="switch" invoke="combat" args="2|166100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_5"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！就凭你们！根本不是我的对手！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+          <Button label="稍后再战" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+    	   </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！你们打败我有什么用！它们已经没有办法合为一体了！</Dialog>
+          <Button label="你胡说！" nextID="-1" close="false">
+            <Goto value="index_0_52"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_52" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">快！<![CDATA[{name}]]>！快点让这两只宠物合二为一！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1097_165700"/>
+      <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1097_165700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1098_165800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1098/cntrolPet" winPos="0|0" name="控制电网怪">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true" fireID="166100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_1098_165800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1098/knightWordsOfDeceased" winPos="0|0" name="圣龙骑士的遗言">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">圣龙骑士的遗言……真的找到了……</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">我相信……圣龙骑士一定没有死！一定在某个地方，继续守护着洛克王国。</Dialog>
+          <Button label="恩……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格"><![CDATA[{name}]]>，我们一定要变强大！然后，一起去把那两只带电的宠物救出来！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">一定会把它们救出来的！</Dialog>
+          <Button label="恩！一定会有那么一天！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|1098"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_1098_165800">
+    <Click event="onRunScript">
+    <Script label="default" type="switch" invoke="combat" args="2|166100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_5"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！就凭你们！根本不是我的对手！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="稍后再战" nextID="-1" close="true">
+            <End/>
+    	   </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！你们打败我有什么用！它们已经没有办法合为一体了！</Dialog>
+          <Button label="你胡说！" nextID="-1" close="false">
+            <Goto value="index_0_52"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_52" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">快！<![CDATA[{name}]]>！快点让这两只宠物合二为一！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1097_165700"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheMostImportantPartnerStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="166" label="最重要的伙伴">
+  <Task id="2017" label="徽章继承者">
+    <!-- npcfun_g_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="八大徽章候任者" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬院长"><![CDATA[{name}]]>，你都知道了吗？八大徽章候任者在暗黑岭凭空消失了！我很担心他们，并且隐约感觉到一场危机就要降临！</Dialog>
+          <Button label="别担心，我去找他们！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="1|2017"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 141 -->
+    <Npc sceneID="141" type="1" npcID="197600" position="619|338">
+    <View type="0" src="197600.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">唔唔，我包包里还有零食，你要不要？</Dialog>
+          <Button label="你见到八名候任者了吗？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">候任者？没听说过，不过我刚刚确实看到有8个人……他们被一个巨大的漩涡带走了！</Dialog>
+          <Button label="啊？漩涡？" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/2017/2017_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">事情就是这样了，我只听到那句“时间和空间的魔力！巨石阵！”。不知道巨石阵是不是会有线索？我陪你一起去找吧，学院的事就是我的事！</Dialog>
+          <Button label="这就去巨石阵！" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="asWindow" src="task/2017/2017_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Click label="index_0_6" event="onTaskCall2" params="2|2017"/>
+    </Click>
+    </Npc>
+    <!-- app_ts0_xml · 场景 141 -->
+    <NPCFun label="app_ts0" sceneID="141">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2017/2017_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="141"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="2018" label="机智的法比亚">
+    <!-- npc_p_xml · 场景 158 -->
+    <Npc sceneID="158" type="1" npcID="197700" position="492|369">
+    <View type="0" src="197700.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_2018_197700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">法比亚！你怎么了？这群人是谁？</Dialog>
+          <Dialog npcID="197700" npcName="法比亚">我也不知道！我看到他们在这里鬼鬼祟祟，还想用宠物来献祭，我一定要阻止他们！你来的正好，快来帮我！</Dialog>
+          <Dialog npcID="197600" npcName="奥多">哇呀呀！看我的！喵喵！喵喵~</Dialog>
+          <Button label="……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">呀，咕噜球放家里了。</Dialog>
+          <Button label="让我来吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="switch" invoke="combat" args="2|197700|武使徒">
+        <Case value="2">
+          <Goto value="index_0_4"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2018_197700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2018_197700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197700" npcName="法比亚">我们快来破坏这些魔法阵，放掉这些宠物。击碎这些石柱就可以了！</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2018_197700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2018_197700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197600" npcName="奥多">太好了，我们又做了一件大好事，回去可以写到日记里面呢！对了，法比亚，你见到过八大徽章候任者了吗？他们可能身处险境，我们在找他们！</Dialog>
+          <Dialog npcID="197700" npcName="法比亚">什么？他们失踪了吗？</Dialog>
+          <Button label="将事情告诉了法比亚" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197700" npcName="法比亚">时间和空间的魔力……巨石阵……我们现在破坏了巨石阵的阴谋，可是只见到被关押的宠物，却没有见到他们。看来，我们还有一个地方要去。</Dialog>
+          <Button label="哪里？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197700" npcName="法比亚">时间和空间的魔力所在地，幽暗空间！</Dialog>
+          <Button label="出发吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/2018/2018_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|2018"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 158 -->
+    <NPCFun label="app_ts0" sceneID="158">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2018/2018_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="158"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="2019" label="巧遇桃桃">
+    <!-- npc_c0_xml · 场景 68 -->
+    <Npc sceneID="68" type="1" npcID="197800" position="517|430">
+    <View type="0" src="197800.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197800" npcName="小桃"><![CDATA[{name}]]>，怎么办呀？我的水蓝蓝刚刚跑进幽暗空间了！那里面太黑，我不敢进去！呜呜呜……</Dialog>
+          <Button label="别哭了！我们和你一起去找！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/2019/2019_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_c1_xml · 场景 68 -->
+    <Npc sceneID="68" type="1" npcID="197900" position="277|324">
+    <View type="0" src="197900.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_2019_197900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2019/2019_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 68 -->
+    <Npc sceneID="68" type="1" npcID="198000" position="225|480">
+    <View type="0" src="198000.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197700" npcName="法比亚">这是……恩佐年轻时候？不管了！恩佐，你把八大徽章的候任者藏到哪里去了，快说！</Dialog>
+          <Button label="别跟他废话了！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2019/2019_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_p_xml · 场景 68 -->
+    <Npc sceneID="68" type="1" npcID="198100" position="701|414">
+    <View type="0" src="198100.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="197700" npcName="法比亚">我们必须回到巨石阵重新研究恩佐的阴谋！但是，我们现在还缺一个最重要的伙伴……</Dialog>
+          <Button label="重要的伙伴？他是谁" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2019/2019_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|2019"/>
+    </Click>
+    </Npc>
+    <!-- app_ts0_xml · 场景 68 -->
+    <NPCFun label="app_ts0" sceneID="68">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2019/2019_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="68"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 71 -->
+    <NPCFun label="app_ts1" sceneID="71">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2019/2019_ts_1" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="71"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 58 -->
+    <NPCFun label="app_ts2" sceneID="58">
+    <Click event="onRunScript">
+    	<Click label="default" event="onChangeScene" params="58"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

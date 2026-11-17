@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FourMeetingCurrentDayStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="136" label="元首四方会谈">
+  <Task id="158" label="元首四方会谈">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="元首四方会谈" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">你还记得，上周你帮奥贝斯坦准备的四方会谈吗？</Dialog>
+    		  <Button label="当然记得！" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	 <Script label="asWindow_0" type="asWindow" src="task/158/task_158_FourMeetingIntroduction" winPos="0|0" name="四方会谈的由来">
+    		<Default>
+    			<Goto value="dialog_0"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">我难得召集几大元首进行四方会谈，谁知道他们一个都没有来。难道他们要和我洛克王国决裂吗？这决然不行。</Dialog>
+    		  <Button label="陛下，我愿意再次出使！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  	</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|158"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_1_noover_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/158/158_getAndNoover" winPos="0|0" name="158已接未完成">
+    		<Default>
+    			<End/>
+    		</Default>
+    		</Script>	
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="175500" position="200|300">
+    	<View type="0" src="175500.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175500" npcName="龙族之王">其实我并不是不赏国王的脸，我只是，不愿意见那个叫阿基拉的大铁块。你知道我们两族的宿怨在那里，没什么好说的。</Dialog>
+    				<Button label="我衷心希望你能够去！这是我的使命！">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175500" npcName="龙族之王">那么我也只能抵抗了。</Dialog>
+    				<Button label="好！我们来赌一场吧！胜者说话！">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|175500|龙族之王">
+    				<Default><Goto value="fail"/></Default>
+    				<Case value="2"><Goto value="victory"/></Case>
+    		</Script>
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="175500" npcName="龙族之王">愿赌服输。既然我输给了你，那么我就履行我的承诺，去参加四方会谈。</Dialog>
+    				<Button label="衷心感谢你的配合！" close="true">
+    				<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="175500" npcName="龙族之王">弱者无话语权。你也不要那么固执了，回去吧。</Dialog>
+    				<Button label="等我整装再来！" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="再打一次！" close="true">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/158/task_158_taskOverTips" winPos="0|0" name="提示到魔法台">
+    		<Default>
+    			<Goto value="sumbit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175500"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/158/158_getAndOver_2" winPos="0|0" name="158已接已完成">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    		<Click label="submit" event="onTaskCall2" params="2|158"/>
+    	</Click>
+    	</NPCFun>
+  </Task>
+  <Task id="159" label="元首四方会谈">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="元首四方会谈" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">你还记得，上周你帮奥贝斯坦准备的四方会谈吗？</Dialog>
+    		  <Button label="当然记得！" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	 <Script label="asWindow_0" type="asWindow" src="task/159/task_159_FourMeetingIntroduction" winPos="0|0" name="四方会谈的由来">
+    		<Default>
+    			<Goto value="dialog_0"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">我难得召集几大元首进行四方会谈，谁知道他们一个都没有来。难道他们要和我洛克王国决裂吗？这决然不行。</Dialog>
+    		  <Button label="陛下，我愿意再次出使！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|159"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_1_noover_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/159/159_getAndNoover" winPos="0|0" name="159已接未完成">
+    		<Default>
+    			<End/>
+    		</Default>
+    		</Script>	
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="175600" position="200|300">
+    	<View type="0" src="175600.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175600" npcName="阿基拉">我也不愿意辜负圣安德鲁陛下的一番好意。哼，那条叫龙族之王的大虫……我们两个就是坐不到一块去的了。没什么好说的。</Dialog>
+    				<Button label="我衷心希望你能够去！这是我的使命！">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175600" npcName="阿基拉">既然我们的冲突不可避免，那很简单，拳头解决问题。谁赢了听谁的吧。</Dialog>
+    				<Button label="好！爽快！">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|175600|阿基拉">
+    				<Default><Goto value="fail"/></Default>
+    				<Case value="2"><Goto value="victory"/></Case>
+    		</Script>
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="175600" npcName="阿基拉">想不到你小小的个子，培训出来的宠物那么厉害。看来国王手下人才辈出。参加四方会谈我也不亏。好，我去魔法台一趟！</Dialog>
+    				<Button label="谢谢你！" close="true">
+    				<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="175600" npcName="阿基拉">你这小娃娃，赶快回去吧，别再到机械族骚扰我了。</Dialog>
+    				<Button label="等我整装再来！" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="再打一次！" close="true">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/158/task_158_taskOverTips" winPos="0|0" name="提示到魔法台">
+    		<Default>
+    			<Goto value="sumbit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175600"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/159/159_getAndOver_2" winPos="0|0" name="159已接已完成">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    		<Click label="submit" event="onTaskCall2" params="2|159"/>
+    	</Click>
+    	</NPCFun>
+  </Task>
+  <Task id="160" label="元首四方会谈">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="元首四方会谈" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">你还记得，上周你帮奥贝斯坦准备的四方会谈吗？</Dialog>
+    		  <Button label="当然记得！" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	 <Script label="asWindow_0" type="asWindow" src="task/160/task_160_FourMeetingIntroduction" winPos="0|0" name="四方会谈的由来">
+    		<Default>
+    			<Goto value="dialog_0"/>
+    		</Default>
+    		</Script>	
+    		<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="159200" npcName="国王圣安德鲁">我难得召集几大元首进行四方会谈，谁知道他们一个都没有来。难道他们要和我洛克王国决裂吗？这决然不行。</Dialog>
+    		  <Button label="陛下，我愿意再次出使！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|160"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_task_over_xml -->
+    <Npc type="1" npcID="177800" position="629|341">
+    	<View type="0" src="177800.swf" atLayerID="1" lazyLoad="true" hasClick="false"/>
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_task_over_1_xml -->
+    <Npc type="1" npcID="177900" position="319|323">
+    	<View type="0" src="177900.swf" atLayerID="1" lazyLoad="true" hasClick="false"/>
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_task_over_2_xml -->
+    <Npc type="1" npcID="178000" position="400|205">
+    	<View type="0" src="178000.swf" atLayerID="1" lazyLoad="true" hasClick="false"/>
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL"/>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_1_noover_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/160/160_getAndNoover" winPos="0|0" name="158已接未完成">
+    		<Default>
+    			<End/>
+    		</Default>
+    		</Script>	
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="175700" position="200|300">
+    	<View type="0" src="175700.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="175700" npcName="平阳公主">四方会谈……虽然我说了要去……但是我还是害怕，你知道的，如果我被劫，玄玉岛会怎么样，我完全没有办法想象的。请你理解我。</Dialog>
+    				<Button label="我们会有办法保护你的！">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="175700" npcName="平阳公主">我的呱呱救我，尚且命悬一线。你一个人，又怎么保护我？</Dialog>
+    				<Button label="公主，让我证明我的实力吧！">
+    				<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page>
+    				<Dialog npcID="175700" npcName="平阳公主">好，就给你一次证明自己实力的机会吧。</Dialog>
+    				<Button label="谢过公主！">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|175700|平阳公主">
+    				<Default><Goto value="fail"/></Default>
+    				<Case value="2"><Goto value="victory"/></Case>
+    		</Script>
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="175700" npcName="平阳公主">我的呱呱，看来能力不及你。好，我平阳愿意相信你这么一回，可以保护我的安全！我这就往魔法台而去。</Dialog>
+    				<Button label="谢公主！" close="true">
+    				<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="175700" npcName="平阳公主">不要再这样子了。你是打不过我的呱呱的。赶快回去吧。</Dialog>
+    				<Button label="我重新整装之后再来！" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="请公主再给我一次机会！" close="true">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/158/task_158_taskOverTips" winPos="0|0" name="提示到魔法台">
+    		<Default>
+    			<Goto value="sumbit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="175700"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml -->
+    <NPCFun label="四方会谈出使" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/160/160_getAndOver_2" winPos="0|0" name="160已接已完成">
+    		<Default>
+    			<Goto value="asWindow_0"/>
+    		</Default>
+    	
+    		</Script>	
+    		<Script label="asWindow_0" type="asWindow" src="task/160/task_160_eachOtherBackHome" winPos="0|0" name="提示到魔法台">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|160"/>
+    	</Click>
+    	</NPCFun>
+  </Task>
+</Story>

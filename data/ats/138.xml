@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 JuniorGardenerTrialsStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="138" label="初级园艺师试炼">
+  <Task id="161" label="从艾迪开始">
+    <!-- npcfun_g_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="初级园艺师试炼" icon="-1" close="true">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="1|161"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="初级园艺师试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">哦！<![CDATA[{name}]]>，你来啦！</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">你一定是来接受我的初级园艺师的考核……嗯……那么，我们开始吧……</Dialog>
+          <Button label="呃……艾迪你很没精神啊……[这样还要打么？]" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/161/161_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">……呃，对不起……我们再来吧。</Dialog>
+          <Button label="你怎么了？" nextID="-1" close="false">
+            <Goto value="index_1_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">我……我最近知道了一个事情……我怎么想，也想不通。</Dialog>
+          <Button label="我能听听看吗？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">小地鼠曾经来指责我，是我搞到山姆大叔不高兴。</Dialog>
+          <Button label="啊？" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">后来我才知道，山姆大叔的农庄建造的时候，我去那里帮忙嘛……可是那次之后，山姆大叔看到我，都会有一丝叹息……</Dialog>
+          <Button label="啊，怎么发生的？" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="asWindow" src="task/161/161_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">我肯定做过什么让他觉得不开心的事情了……但是，我问他，他又说没什么……</Dialog>
+          <Button label="嘿！这时候就应该让我出场了！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="asWindow" src="task/161/161_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_8"/>
+        </Default>
+      </Script>
+      <Click label="index_0_8" event="NULL" fire="true" fireID="101101"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c1_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="大叔你有心结？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">哦呵呵，是艾迪喊你过来的呀？什么心结呀，啥都没有。你让她不要担心了。快回去吧！</Dialog>
+          <Button label="啊？大叔你这么敷衍我？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_161_176500"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 7 -->
+    <Npc sceneID="7" type="1" npcID="176500" position="202|295">
+    <View type="0" src="176500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_161_176500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176500" npcName="小地鼠">我都听到了……你和大叔的对话。</Dialog>
+          <Button label="哦！你要告诉我事情的真相吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176500" npcName="小地鼠">真相……只有一个！</Dialog>
+          <Button label="不要装了……快说……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/161/161_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176500" npcName="小地鼠">这下，你知道了吧？</Dialog>
+          <Button label="算是有一点线索" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176500" npcName="小地鼠">我还是先溜了……也不知道我告诉你之后，大叔知道了，会不会责备我……</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c2_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="想问你点东西" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">这个东西啊，我有些研究资料，给你看好了。</Dialog>
+          <Button label="好……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/161/161_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">你找的是什么乱七八糟的东西啊……</Dialog>
+          <Button label="悲剧……现在才知道是个什么玩意……" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="105104"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="我找到原因了" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">是这样子吗！那……那我应该怎么办呢……</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">对了！道歉！我要去和山姆大叔道歉！嗯嗯！<![CDATA[{name}]]>陪我一起去吧！我……怕我没有勇气……</Dialog>
+          <Button label="好的呢！一起走吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|161"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 7 -->
+    <NPCFun label="app_ts0" sceneID="7">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/161/161_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 7 -->
+    <NPCFun label="app_ts1" sceneID="7">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/161/161_ts_1" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 7 -->
+    <NPCFun label="app_ts2" sceneID="7">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/161/161_ts_2" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="162" label="平凡的意义">
+    <!-- npcfun_c0_xml · 场景 128 -->
+    <NPCFun sceneID="128" label="初级园艺师试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">哦呵呵！你们这些孩子，那么执着，不必啊。</Dialog>
+          <Button label="当然不是不必的呀！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_162_176600"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="176600" position="791|515">
+    <View type="0" src="176600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">大叔！对不起！</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">我……我……反正我错了！我把你好不容易种出来的东西铲除掉了！</Dialog>
+          <Dialog npcID="163000" npcName="山姆大叔">（叹了口气）</Dialog>
+          <Dialog npcID="163000" npcName="山姆大叔">艾迪，其实没有什么对错，只是，有一些道理，你可能还不知道。</Dialog>
+          <Button label="什么道理？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/162/162_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">……</Dialog>
+          <Dialog npcID="163000" npcName="山姆大叔">怎么了？</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">我……我作为绿色园林协会的会长，竟然连这么简单的道理，都不清楚。</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">大叔！我要帮你把那棵甘露香，种回来！</Dialog>
+          <Button label="不是吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/162/162_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">呵呵，你这孩子。我知道了，来，拿好，这是甘露香的种子。</Dialog>
+          <Dialog npcID="163000" npcName="山姆大叔">连我自己都不敢尝试种植的东西，看你能不能种好了。不过不要勉强自己。</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">没问题的！何况，还有<![CDATA[{name}]]>来帮我！</Dialog>
+          <Button label="啊啦……又是我……好吧……是我……" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">接下来是……</Dialog>
+          <Button label="施行魔法" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">这……什么魔法啊……？</Dialog>
+          <Button label="事情到这地步了，死马当活马医吧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/162/162_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_162_176600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">哎呀！被你试验成功了！</Dialog>
+          <Button label="嘻嘻！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">那接下来呢？</Dialog>
+          <Button label="接下来，只有守护在它旁边，好好照顾它了！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true" fireID="176700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|176800|邪雾">
+        <Case value="2">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/162/162_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176800" npcName="邪雾">哈哈！毛头小子！别妨碍我！</Dialog>
+          <Button label="继续打！" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="等我整装再来！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="176800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|176900|暗夜骷髅">
+        <Case value="2">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/162/162_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="176900" npcName="暗夜骷髅">哈哈！毛头小子！别妨碍我！</Dialog>
+          <Button label="继续打！" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="等我整装再来！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="176900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|177000|幽冥眼">
+        <Case value="2">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/162/162_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="177000" npcName="幽冥眼">哈哈！毛头小子！别妨碍我！</Dialog>
+          <Button label="继续打！" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="等我整装再来！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="177000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_162_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">这……好多天过去了……甘露香一点变化都没有呀……</Dialog>
+          <Button label="书上也说，好难成熟的……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|162"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 128 -->
+    <NPCFun label="app_ts0" sceneID="128">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/162/162_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="163" label="园艺师的真谛">
+    <!-- npcfun_c0_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="怎么种好甘露香" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">孩子们哦……这个，我也不……哎呀！</Dialog>
+          <Button label="啊！下雨了！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_163_176600"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="176600" position="791|515">
+    <View type="0" src="176600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_163_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">哎呀，别淋湿了，艾迪，把雨衣披上吧！</Dialog>
+          <Button label="对，不然感冒了就不好" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_163_176600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_163_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">不行哦！</Dialog>
+          <Button label="嗯？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/163/163_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_163_176600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_163_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">啊，还好，放晴了呢！</Dialog>
+          <Button label="是啊，那我把雨具收起来！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true" fireID="177300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_163_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/163/163_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_163_176600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_163_176600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">长成了？</Dialog>
+          <Dialog npcID="163000" npcName="山姆大叔">长成了！</Dialog>
+          <Button label="这……究竟为什么啊？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/163/163_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">呵呵，原来是这样子啊。艾迪，<![CDATA[{name}]]>，感谢你们，给我种出了这么一棵美丽的甘露香。</Dialog>
+          <Dialog npcID="101100" npcName="艾迪">看来，<![CDATA[{name}]]>，你领悟到园艺师的真谛了呢！</Dialog>
+          <Button label="那就是传说中的真谛吗？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">好了，我们也打扰大叔太久了。园艺师的试炼，你还没有通过呢！随我回植物园，接受最后的考验吧！</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="177400"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 26 -->
+    <NPCFun sceneID="26" label="初级园艺师试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101100" npcName="艾迪">你准备好了没有哦！准备好我们就开始吧！</Dialog>
+          <Button label="好！开始吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="我等会再过来吧！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|101101|艾迪">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|163"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 128 -->
+    <NPCFun label="app_ts0" sceneID="128">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/163/163_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 128 -->
+    <NPCFun label="app_ts1" sceneID="128">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/163/163_ts_1" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

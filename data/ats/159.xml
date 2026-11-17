@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CrystalSecretStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="159" label="圣龙水晶的秘密">
+  <Task id="5000" label="圣龙水晶的秘密">
+    <!-- npc_g_xml -->
+    <Npc type="1" npcID="189500" position="543|142">
+    <View type="0" src="189500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_5000_189500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/5000/5000_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="1|5000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_5000_189500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/5000/5000_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|5000"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="189600" position="514|321">
+    <View type="0" src="189600.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/5000/5000_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|189600|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">打不过我还想抢水晶球，一边凉快去！</Dialog>
+          <Button label="哼！再打一回！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="晚些再来。" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">小家伙又破坏我的好事，咱们以后算账。</Dialog>
+          <Button label="快快逃跑吧。" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- app_ts0_xml · 场景 141 -->
+    <NPCFun label="app_ts0" sceneID="141">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/5000/5000_ts_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="141"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 131 -->
+    <NPCFun label="app_ts1" sceneID="131">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/5000/5000_ts_1" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="131"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>洛克王国 · 剧情回放</title>
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body data-theme="wood">
+<div id="app">
+  <header>
+    <button id="btn-toggle-side" class="icon" title="收起 / 展开目录">☰</button>
+    <div class="brand">洛克王国 <span>· 剧情回放</span></div>
+    <div id="chapter-title">未载入</div>
+    <div class="tools">
+      <button id="btn-timeline" title="剧情时间轴（不准确）：按官方日期与海报排的，顺序与分组只能参考">时间轴</button>
+      <label class="namebox" title="剧情里的 {name} 会替换成这个名字">
+        名字 <input id="player-name" type="text" maxlength="12" value="小洛克" />
+      </label>
+      <button id="btn-speed" title="动画倍速（即时生效）">1.0×</button>
+      <label class="zoom" title="过场动画内容缩放（只放大画面，不放大窗口）">
+        缩放 <input id="anim-zoom" type="range" min="100" max="250" step="5" value="100" /><span id="zoom-pct">100%</span>
+      </label>
+      <button id="btn-reader" title="切换阅读模式">阅读模式</button>
+      <button id="btn-mapview" title="浏览全部地图（含已关闭）">地图库</button>
+      <button id="btn-typewriter" title="逐字显示开关">打字机 开</button>
+      <button id="btn-bgm" title="背景音乐开关">音乐 开</button>
+      <button id="btn-theme" title="切换配色">主题</button>
+    </div>
+  </header>
+
+  <div id="body">
+    <aside id="sidebar">
+      <div class="side-head">
+        <input id="cat-search" type="search" placeholder="搜索故事 / 章节…" />
+        <button id="btn-fold" title="全部收起栏目">收起</button>
+        <button id="btn-order" title="切换排序">倒序</button>
+      </div>
+      <div id="cat-list"></div>
+      <div class="side-foot">
+        <span id="cat-count"></span>
+        <button id="btn-clear" title="清空浏览器里缓存的剧本、地图、音乐和过场动画（IndexedDB：luoke-story）。清空后下一次打开会重新从官方 CDN 下载，剧情进度和阅读位置不受影响">清空缓存</button>
+      </div>
+    </aside>
+
+    <main id="stage-wrap">
+      <div id="stage">
+        <div id="scene-layer"></div>
+        <div id="view-layer"></div>
+        <div id="window-layer"></div>
+        <div id="scene-name" class="hidden"></div>
+
+        <div id="start-overlay">
+          <div class="card">
+            <div class="t">洛克王国 · 剧情回放</div>
+            <div class="d">浏览器需要一次点击才允许播放声音和动画</div>
+            <button id="btn-start">开始</button>
+          </div>
+        </div>
+
+        <div id="dialog-box" class="hidden">
+          <div id="npc-avatar"><div class="ph"></div></div>
+          <div id="dialog-main">
+            <div id="speaker"></div>
+            <div id="text"></div>
+            <div id="choices"></div>
+            <div id="hint"></div>
+          </div>
+        </div>
+
+        <div id="chapter-end" class="hidden">
+          <div class="card">
+            <div class="t">本章剧情结束</div>
+            <div class="d" id="end-next">正在载入下一章…</div>
+            <div class="row">
+              <button id="btn-next">立即下一章</button>
+              <button id="btn-stay">留在这里</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="timeline" class="hidden">
+        <div class="tl-head">
+          <strong>剧情时间轴（不准确）</strong>
+          <span class="tl-meta" id="tl-count"></span>
+          <input id="tl-search" type="search" placeholder="搜索故事 / 梗概…" />
+          <button id="tl-close">返回剧情</button>
+        </div>
+        <div id="tl-main">
+          <div id="tl-rows"></div>
+          <aside id="tl-detail" class="hidden">
+            <button id="tl-detail-hide" title="隐藏详情">›</button>
+            <div class="td-imgwrap"><img id="tl-detail-img" alt="" /></div>
+            <div class="td-theme" id="tl-detail-theme"></div>
+            <h2 class="td-name" id="tl-detail-name"></h2>
+            <p class="td-outline" id="tl-detail-outline"></p>
+            <button id="tl-detail-go">回顾</button>
+          </aside>
+          <button id="tl-detail-tab" class="hidden" title="展开详情">详情</button>
+        </div>
+      </div>
+
+      <div id="reader" class="hidden">
+        <div class="rd-head">
+          <button id="rd-prev" class="rd-nav">‹ 上一章</button>
+          <strong id="reader-title">阅读模式</strong>
+          <button id="rd-next" class="rd-nav">下一章 ›</button>
+        </div>
+        <div id="reader-body"></div>
+      </div>
+
+      <div id="mapview" class="hidden">
+        <div class="mv-head">
+          <strong>地图库</strong>
+          <span id="map-count"></span>
+          <label class="mv-only"><input id="map-only-story" type="checkbox" /> 只看剧情出现过的</label>
+          <input id="map-search" type="search" placeholder="搜索地图名 / ID / 音乐" />
+          <button id="map-close">返回剧情</button>
+        </div>
+        <div id="map-grid"></div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <span id="status">就绪</span>
+  </footer>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

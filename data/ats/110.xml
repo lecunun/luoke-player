@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 RescureSpirits.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="110" label="被困的宠物">
+  <Task id="4027" label="被困的宠物">
+    <!-- npcfun_101000 · 场景 13 -->
+    <NPCFun sceneID="13" label="被困的宠物" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">最近很多地方都发现被困的宠物，你愿意去解救他们吗？</Dialog>
+                    <Button label="不会很复杂吧？" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">嗯，雪人谷的冰下有宠物的呼唤声，主题乐园的砖块围城，创意园的荷叶一点通都有被困的宠物，快去看看吧。</Dialog>
+                    <Button label="雪人谷、主题乐园、创意园，知道了" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4027"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101000_submit · 场景 13 -->
+    <NPCFun sceneID="13" label="被困的宠物" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4027"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">雪人谷的冰下有宠物的呼唤声，主题乐园的砖块围城，创意园的荷叶一点通哪个没有完成？好好想想。</Dialog>
+                    <Button label="好的，我继续找！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">很多宠物都获救了，继续加油，未来会有更多的挑战等着你！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4027"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

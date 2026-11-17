@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BestInTheWorldHeroStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="98" label="天下第一大侠">
+  <Task id="2003" label="激战赛消息传来">
+    <!-- npc_g_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="154700" position="230|305" aimPos="230|345">
+    <View type="0" src="154700.swf" atLayerID="1"/>
+    <Create>
+    <NPCFun label="兄弟，我现在来找你！" icon="-1" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2003/2003_5" winPos="0|0" name="">
+    <Case value="1"><Goto value="submit"/></Case>
+    <Default>
+    <End/>
+    </Default>
+    </Script>
+    <Click label="submit" event="onTaskCall2" params="1|2003"/>
+    </Click>
+    </NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="10"/>
+    </Npc>
+    <!-- npc_c0_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="154800" position="474|302">
+    <View type="0" src="154800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2003_154800">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2003/2003_0" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2003_154800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2003_154800">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2003/2003_1" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Script label="index_1" type="switch" invoke="combat" args="2|154800|坏孩子">
+    <Default>
+    <Goto value="index_2"/>
+    </Default>
+    </Script>
+    <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2003_154800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2003_154800">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2003/2003_2" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2003_154800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_2003_154800">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="156200" npcName="菲尔特">气死我啦！我偏要参加激战赛！还要把这群家伙打趴下！</Dialog>
+    <Button label="他们是什么人？" nextID="-1">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="156200" npcName="菲尔特">哼，不学无术的恶霸！他们老大费德，就刚才踩我咕噜球那个人，非常厉害，平时无恶不作！不过……</Dialog>
+    <Button label="不过什么？" nextID="-1">
+    <Goto value="index_2"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">不过就算再厉害，我也要在激战赛场上，把他踢下来！！哈哈哈哈！</Dialog>
+    <Button label="就凭我们吗？" nextID="-1">
+    <Goto value="index_3"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_3" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">当然现在还不行！我们去拜师学艺！云烟桃源有位兔仙人，武艺高强，如果能当我们师傅，哼哼～一千个费德我也能把他们打飞！</Dialog>
+    <Button label="好主意！我们去拜师！" nextID="-1">
+    <Goto value="index_4"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_4" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">那我在云烟桃源等你哦！我们一起高呼吧，费德费德，废的得瑟！</Dialog>
+    <Button label="呃...费德费德，废的得瑟！" nextID="-1" close="true">
+    <Goto value="index_5"/>
+    </Button>
+    </Page>
+    </Script>
+    <Click label="index_5" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="104100" position="659|368">
+    <View type="0" src="104100.swf" atLayerID="2" hasClick="false"/>
+    <Click event="NULL"/>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 22 -->
+    <NPCFun sceneID="22" label="天下第一大侠" icon="0" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">两位远道而来，不知有何要事？</Dialog>
+    <Button label="我们想拜师学艺！请收下我们！" nextID="-1">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">贫道从不妄收弟子，我且问你们，拜师学艺所为何事？</Dialog>
+    <Button label="我们想在武斗场上把费德打趴下！" nextID="-1">
+    <Goto value="index_2"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">若习武是为了复仇，贫道恐难助其力。二位请回吧！</Dialog>
+    <Button label="师傅别走呀！" nextID="-1" close="true">
+    <Goto value="index_3"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_3" type="asWindow" src="task/2003/2003_3" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_4"/>
+    </Default>
+    </Script>
+    <Script label="index_4" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">好吧，既然你们这么有诚意，我就收你们为徒！不过，你们必须答应师傅一件事！</Dialog>
+    <Dialog npcID="141500" npcName="兔仙人">不许参加激战赛，以免你们被复仇之心侵蚀！</Dialog>
+    <Button label="徒儿遵命！" nextID="-1">
+    <Goto value="index_5"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_5" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">那从今天起，我就是你师兄，你就是我师弟啦！我们要相互照顾呀，哈哈！</Dialog>
+    <Button label="好吧，又被你占便宜了！师兄好！" nextID="-1">
+    <Goto value="index_6"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_6" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">咳咳，那么修炼开始！第一重修炼，身轻如燕，碎石断柱！</Dialog>
+    <Dialog npcID="141500" npcName="兔仙人">习武之人，必须眼观六路，耳听八方，各种招式过目不忘，方能有所作为。你准备好了吗？</Dialog>
+    <Button label="准备好了" nextID="-1" close="true">
+    <Goto value="index_7"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_7" type="switch" invoke="game" args="2|格斗训练|2076|99">
+    <Case value="1">
+    <Goto value="index_8"/>
+    </Case>
+    <Default>
+    <End/>
+    </Default>
+    </Script>
+    <Script label="index_8" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">看样子你们训练的还不错！接下来，为师要考验你们的耐力！</Dialog>
+    <Button label="耐力的考验是指？" nextID="-1">
+    <Goto value="index_9"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_9" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">在雪人谷有两桶水，你们需要把水挑到怀特峰，去浇灌那里的一颗千年古树！</Dialog>
+    <Dialog npcID="141500" npcName="兔仙人">不过这一次，你们兄弟二人，只有一个人能过关！最后到达的那个人，必须接受惩罚挑一年的水！你们准备好了吗？</Dialog>
+    <Button label="这……我，我准备好了。" nextID="-1" close="true">
+    <Goto value="index_10"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_10" type="asWindow" src="task/2003/2003_4" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_11"/>
+    </Default>
+    </Script>
+    <Click label="index_11" event="onTaskCall2" params="2|2003"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 103 -->
+    <NPCFun label="app_ts0" sceneID="103">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2003/2003_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_1"/></Case>			
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="index_1" event="onChangeScene" params="103"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="2004" label="师傅的考验">
+    <!-- npc_c0_xml · 场景 45 -->
+    <Npc sceneID="45" type="1" npcID="154900" position="0|560">
+    <View type="0" src="154900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2004_154900">
+    <Click event="NULL" fire="true"/>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 45 -->
+    <Npc sceneID="45" type="1" npcID="155000" position="0|560">
+    <View type="0" src="155000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2004_155000">
+    <Click event="NULL" fire="true"/>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 45 -->
+    <Npc sceneID="45" type="1" npcID="155100" position="0|560">
+    <View type="0" src="155100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2004_155100">
+    <Click event="NULL" fire="true"/>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 45 -->
+    <Npc sceneID="45" type="1" npcID="155200" position="557|450">
+    <View type="0" src="155200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2004_155200">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="155200" npcName="千年古树">你身上穿着这身衣服，难道没有明白它真正的含义吗？</Dialog>
+    <Button label="好的。" nextID="-1" close="true">
+    <End/>
+    </Button>
+    </Page>
+    </Script>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2004_155200">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2004/2004_0" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2004_155200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2004_155200">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">那么你们二人同时到达，我该算谁赢谁输呢？</Dialog>
+    <Button label="算师兄赢！" nextID="-1">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">不是！是我输了，我连累师弟，我愿意挑一年水！</Dialog>
+    <Button label="师兄受伤了，我愿意受罚！" nextID="-1">
+    <Goto value="index_2"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">咳咳，输赢并不重要，你们从中体会到的情谊才是最重要的！你们二人都不用受罚了！</Dialog>
+    <Button label="太好了！谢谢师父！" nextID="-1">
+    <Goto value="index_3"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_3" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">接下来还有更深的修炼！在这之前，你们先去野外练习下吧！实践才是最好的老师！</Dialog>
+    <Button label="好的！" nextID="-1">
+    <Goto value="index_4"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_4" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">师弟，我先去宠物园等你，我们一起野外训练哦！</Dialog>
+    <Button label="好的，宠物园见！" nextID="-1" close="true">
+    <Goto value="index_5"/>
+    </Button>
+    </Page>
+    </Script>
+    <Click label="index_5" event="onTaskCall2" params="2|2004"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="2005" label="宠物园找菲尔特">
+    <!-- npc_c0_xml · 场景 102 -->
+    <Npc sceneID="102" type="1" npcID="104100" position="374|257">
+    <View type="0" src="104100.swf" atLayerID="1"/>
+    <Create>
+    <NPCFun label="天下第一大侠" icon="0" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">嘿，你终于来了！我听说激战赛要开始了，我们报仇的时机终于到了！</Dialog>
+    <Button label="可我们不是答应了师傅，不可以参加……" nextID="-1">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="104100" npcName="菲尔特">你笨啊！你不说我不说天不说地不说，师傅怎么会知道呢？我们训练了这么久，不就是等这一天吗？快点哦，我先去绿野擂台等你啦！</Dialog>
+    <Button label="好吧，我这就来！" nextID="-1" close="true">
+    <Goto value="index_2"/>
+    </Button>
+    </Page>
+    </Script>
+    <Click label="index_2" event="NULL" fire="true" fireID="104101"/>
+    </Click>
+    </NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 102 -->
+    <Npc sceneID="102" type="1" npcID="155300" position="496|420">
+    <View type="0" src="155300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2005_155300">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="154400" npcName="阿普森">首届激战赛马上就要开始了！王国各路英雄汇聚于此，你准备好了吗？</Dialog>
+    <Button label="准备好了！开始吧！" nextID="-1" close="true">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="asWindow" src="task/2005/2005_0" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_2"/>
+    </Default>
+    </Script>
+    <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2005_155300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2005_155300">
+    <Click event="onRunScript">
+    <Script label="default" type="switch" invoke="combat" args="2|155300|费德">
+    <Case value="2">
+    <Goto value="index_1"/>
+    </Case>
+    <Default>
+    <End/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2005_155300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2005_155300">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2005/2005_1" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2005_155300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_2005_155300">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2005/2005_2" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_1"/>
+    </Default>
+    </Script>
+    <Click label="index_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 103 -->
+    <NPCFun sceneID="103" label="天下第一大侠" icon="0" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">野外训练的怎么样了？有什么收获吗？</Dialog>
+    <Button label="师傅，请你原谅我们。(将偷偷参赛的事告诉了师傅)" nextID="-1">
+    <Goto value="index_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">呵呵，为师早料到你们会去参赛，所幸你们还算诚实。</Dialog>
+    <Dialog npcID="141500" npcName="兔仙人">不过，经过今天的比赛，我看到了你们在名利面前，以义为先！我为你们感到骄傲！</Dialog>
+    <Button label="啊？所以，那个蒙面客真的是你吗？" nextID="-1">
+    <Goto value="index_2"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="141500" npcName="兔仙人">这个嘛，咳咳，是个秘密！</Dialog>
+    <Button label="我．．．．晕！" nextID="-1" close="true">
+    <Goto value="index_3"/>
+    </Button>
+    </Page>
+    </Script>
+    <Click label="index_3" event="onTaskCall2" params="2|2005"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 102 -->
+    <NPCFun label="app_ts0" sceneID="102">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2005/2005_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 103 -->
+    <NPCFun label="app_ts1" sceneID="103">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2005/2005_ts_1" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_1"/></Case>			
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="index_1" event="onChangeScene" params="103"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

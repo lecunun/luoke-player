@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BlkyWish.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="120" label="布莱克岩的愿望">
+  <Task id="4032" label="布莱克岩的愿望">
+    <!-- npcfun_133200_accept -->
+    <NPCFun label="听说你看到流星了" icon="-1" close="false">	
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="133200" npcName="马特">前些天我正忙着主持节目，突然天上降下一颗流星……</Dialog>
+    	      <Button label="后来呢？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Script label="index_0_1" type="asWindow" src="task/4032/task_4032_0" winPos="0|0" name="">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="133200" npcName="马特">快去占星台帮我查下，看看有什么线索。去梦幻星空看看查看一下吧。最后记得告诉我哦。</Dialog>
+    	      <Button label="好的" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Click label="index_0_3" event="onTaskCall2" params="1|4032"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_133200_submit -->
+    <NPCFun label="布莱克岩回去啦" icon="-1" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">弄明白没？</Dialog>
+    			  <Button label="那个家伙叫布莱克岩，和咱们王国里的没啥区别，自己说是天上飞来的，刚刚又飞走了……" nextID="-1" close="false">
+    				<Goto value="index_0_1"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+     		
+    		<Script label="index_0_1" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">嗯，看来布莱克岩的来头不小，不知道他回归星空没有，和我一起看天上的星星吧。</Dialog>
+    			  <Button label="……" nextID="-1" close="true">
+    				<Goto value="app"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    
+    		<Script label="app" type="asWindow" src="task/4032/task_4032_3" winPos="0|0" name="">
+    		    <Default>
+    		      <Goto value="index_0_3"/>
+    		    </Default>
+    		  </Script>
+    	
+    			<Click label="index_0_3" event="onTaskCall2" params="2|4032"/>
+    	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_133200_task0_0 -->
+    <NPCFun label="占星台观星" icon="0" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="133200" npcName="马特">去占星台的梦幻星空看看，能不能找到什么线索。</Dialog>
+    		      <Button label="好的" nextID="-1" close="true">
+    					<End/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_133200_task0_1 -->
+    <NPCFun label="我看过占星台了" icon="0" close="false">	
+    		<Click event="onRunScript">
+    
+    			<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">发现什么没？</Dialog>
+    			  <Button label="就是一个看星星的望远镜嘛，根本没什么流星！" nextID="-1" close="false">
+    					<Goto value="index_1_1_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		  <Script label="index_1_1_0" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">这就对了！</Dialog>
+    			  <Button label="？？？" nextID="-1" close="false">
+    				<Goto value="index_1_1_1"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		  <Script label="index_1_1_1" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">流星是很久之前的那天，现在去怎么能看到呢？</Dialog>
+    			  <Button label="无语啊……" nextID="-1" close="false">
+    				<Goto value="index_1_1_2"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		  <Script label="index_1_1_2" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">但是我突然想到，这个流星好像落在矿山口附近，去找找看吧。</Dialog>
+    			  <Button label="再信你一次……" nextID="-1" close="true">
+    					<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_133200_task2_1 -->
+    <NPCFun label="我去过矿山了" icon="0" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="133200" npcName="马特">矿山口找到什么信息没？</Dialog>
+    			  <Button label="差点把那个爱哭鬼给忘了，我去去就回！" nextID="-1" close="true">
+    					<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_166200 -->
+    <Npc type="1" npcID="166200" name="布莱克岩" position="585|366">
+    		<View type="0" src="166200.swf" atLayerID="2"/>
+    		<Click event="onTaskCall">
+    			<Dialog>呜呜……</Dialog>
+    		</Click>
+    		<Create>
+    			<NPCFun label="我是来找流星的" icon="0" close="false">	
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">你是谁？你想干什么？</Dialog>
+    			      <Button label="我是来找流星的。" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">凭什么信你！</Dialog>
+    			      <Button label="……" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="switch" invoke="combat" args="2|166200|布莱克岩">
+    			    <Case value="2">
+    			      <Goto value="index_0_3"/>
+    			    </Case>
+    			    <Default>
+    			      <Goto value="index_0_3"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">妈妈我要回家！！！</Dialog>
+    			      <Button label="喂喂别哭，你到底怎么了？" nextID="-1" close="true">
+    			        <Goto value="app"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    		
+    			  <Script label="app" type="asWindow" src="task/4032/task_4032_1" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_4"/>
+    			    </Default>
+    			  </Script>
+    		
+    			  <Script label="index_0_4" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">呜呜呜呜……</Dialog>
+    			      <Button label="那现在怎么办？" nextID="-1" close="false">
+    			        <Goto value="index_0_5"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_5" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">我的星星能量石丢了，找到了也许还有机会恢复能量，飞回天空。</Dialog>
+    			      <Button label="你知道那个东西在哪里吗？" nextID="-1" close="false">
+    			        <Goto value="index_0_6"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    		
+    			  <Script label="index_0_6" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="166200" npcName="布莱克岩">我只记得那里有个铁房子，问旁边那个瞌睡虫，他说那地方叫弃之宝岛黑影之岭啥的，你能帮我去找找看不？</Dialog>
+    			      <Button label="那是杰克啦，不是什么瞌睡虫，好吧现在去帮你取回来。" nextID="-1" close="true">
+    						<Goto value="index_0_7"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			<Click label="index_0_7" event="NULL" fire="true"/>
+    			</Click>
+    		
+    		</NPCFun>
+    	</Create>
+    	</Npc>
+    <!-- npc_166300 -->
+    <Npc type="1" npcID="166300" position="470|243">
+    		<View type="0" src="166300.swf" atLayerID="2"/>
+    		<Click event="NULL" fire="true"/>
+    	</Npc>
+    <!-- npcfun_166500_task3_0 -->
+    <NPCFun label="交回能量" icon="0" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="166500" npcName="布莱克岩">我要星星能量啊！！</Dialog>
+    			  <Button label="哦，对了，还要去弃之宝岛的黑影之岭。" nextID="-1" close="true">
+    					<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_166500_task3_1 -->
+    <NPCFun label="交回能量" icon="0" close="false">	
+    		<Click event="onRunScript">
+    
+    			<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="166500" npcName="布莱克岩">真的是星星能量，我试试看，看能飞不……</Dialog>
+    			  <Button label="好吧，注意安全，系好安全带哦!" nextID="-1" close="false">
+    					<Goto value="index_1_3_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		  <Script label="index_1_3_0" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="166500" npcName="布莱克岩">……</Dialog>
+    			  <Button label="对了还要告诉马特一声" nextID="-1" close="true">
+    				<Goto value="app"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		<Script label="app" type="asWindow" src="task/4032/task_4032_2" winPos="0|0" name="">
+    		    <Default>
+    		      <Goto value="index_1_3_1"/>
+    		    </Default>
+    		  </Script>
+    	
+    		<Click label="index_1_3_1" event="NULL" fire="true"/>
+    	
+    		</Click>
+    	</NPCFun>
+    <!-- npc_166500 -->
+    <Npc type="1" npcID="166500" name="布莱克岩" position="585|366">
+    		<View type="0" src="166500.swf" atLayerID="2"/>
+    		<Click event="onTaskCall">
+    			<Dialog>呜呜呜……</Dialog>
+    		</Click>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 11 -->
+    <NPCFun label="app_ts0" sceneID="11">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="11"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 83 -->
+    <NPCFun label="app_ts1" sceneID="83">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="83"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

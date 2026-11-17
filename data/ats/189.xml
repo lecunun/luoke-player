@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BattleOfSwordsStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="189" label="圣剑之战 枫雪晚宴">
+  <Task id="2040" label="圣剑之战 之枫雪晚宴">
+    <!-- npcfun_get · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="210800" position="0|0">
+    		<View type="0" src="210800.swf" atLayerID="2" hasClick="false"/>
+    		<Create>	
+    	
+    		<ViewEvent type="NPCScript_210800_OpenApp_over">
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/SwordHistoryApp" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="accpet"/>
+    		  </Default>
+    		</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|2040"/></Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/app_2040_02_task1_over" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="182"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="210900" position="0|0">
+    	<View type="0" src="210900.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_210900_LanluosiDialog">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛"><![CDATA[{name}]]>，洛奇，圣剑争夺战马上就开始了，你们准备的怎么样了？</Dialog>
+    		  <Button label="没问题！圣剑，非我莫属！">
+    			<Goto value="dialog_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    		 <Dialog npcID="210800" npcName="A高人">小鬼，别说大话！</Dialog>
+    		 <Dialog npcID="210900" npcName="B高人">我们都是各个镇法力最高强的人，受枫雪镇镇长的邀请，来参加比赛！</Dialog>
+     		 <Dialog npcID="211000" npcName="C高人">想战胜我们夺取圣剑？可没那么容易！不如今天先来热热身，和你比划两下看看！</Dialog>
+    	  
+    		<Button label="完了，牛皮吹大了。" nextID="-1" close="true">
+    			<Goto value="fight_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="fight_0" type="switch" invoke="combat" args="2|210900|高人">
+    				<Default><Goto value="fight_over"/></Default>
+    		</Script>
+    	
+    	<Script label="fight_over" type="asWindow" src="task/2040/app_2040_01_enzoComming" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>	
+    	
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">恩佐这次带的人可真多啊，我有种不祥的预感！</Dialog>
+    		 <Dialog npcID="203700" npcName="洛奇">大叔，不要担心，我们一定要有信心！现在就去枫雪松路训练，不能浪费一分一秒的时间！</Dialog>
+    	  
+    		<Button label="正解！枫雪松路见！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="submit" event="NULL" fire="true" fireID="210900"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="211000" position="0|0">
+    	<View type="0" src="211000.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_211000_luoqispeak_daenzo">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="203700" npcName="洛奇">还愣着干嘛？快来练武吧！就把这稻草人想象成万恶的恩佐，看我的，嚯嚯哈嘿！</Dialog>
+    		  <Button label="哈哈！好办法，顿时斗志无穷啊！" nextID="-1" close="true">
+    			<Goto value="game_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="game_1" type="switch" invoke="game" args="2|殴打恩佐|2130|149">
+    		  <Case value="1">
+    		    <Goto value="PCScript_211000_show3jiniubudui"/>
+    		  </Case>
+    		  <Default>
+    				<Goto value="PCScript_211000_click_enabled"/>
+    		  </Default>
+    		</Script>
+    	<Click label="PCScript_211000_show3jiniubudui" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PCScript_211000_show3jiniubudui"/>
+    	<Click label="PCScript_211000_click_enabled" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PCScript_211000_click_enabled"/>
+    	
+    	</Click>
+    	</ViewEvent>
+    	
+    	
+    	<ViewEvent type="NPC_script_opengamedaocaoren">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="203700" npcName="洛奇">还愣着干嘛？快来练武吧！就把这稻草人想象成万恶的恩佐，看我的，嚯嚯哈嘿！</Dialog>
+    		  <Button label="哈哈！好办法，顿时斗志无穷啊！" nextID="-1" close="true">
+    			<Goto value="game_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="game_1" type="switch" invoke="game" args="2|殴打恩佐|2130|149">
+    		  <Case value="1">
+    		    <Goto value="PCScript_211000_show3jiniubudui"/>
+    		  </Case>
+    		  <Default>
+    				<Goto value="PCScript_211000_click_enabled"/>
+    		  </Default>
+    		</Script>
+    	<Click label="PCScript_211000_show3jiniubudui" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PCScript_211000_show3jiniubudui"/>
+    	<Click label="PCScript_211000_click_enabled" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PCScript_211000_click_enabled"/>
+    	
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_211000_The3Talking">
+    	<Click event="onRunScript">
+    	
+    	<Script label="default" type="asWindow" src="task/2040/app_2040_03_the3talkingApp" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="window_1"/>
+    		</Default>
+    		</Script>	
+    	<Script label="window_1" type="asWindow" src="task/2040/app_2040_04_the3WithEnzotalkingApp" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	
+    	<Click label="submit" event="NULL" fire="true" fireID="211000"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="181"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="211100" position="0|0">
+    	<View type="0" src="211100.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_211100_receivePaperFromEnzo">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">大事不好！恩佐派人送信来，邀请你参加晚宴，不知道他又有什么阴谋！</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">好一个无事献殷勤！据我分析，现在我们就是他夺取圣剑最大的竞争对手，此次若去参加晚宴，则凶多吉少，恐怕中了埋伏。</Dialog>
+    		<Dialog npcID="101000" npcName="兰斯洛">但若不去，他大可以在各位英雄面前数落我们，不识礼数，有可能陷我们于不义！</Dialog>  
+    		<Button label="据爱卿分析，该如何是好？">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    <Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">先不要急着下定论，恩佐身边有我一个生死之交，他让我在这里等候，说有要事向我们汇报！他来了！</Dialog>
+    			<Button label="太好了。" nextID="-1" close="true">
+    			<Goto value="NPCScript_211000_JiandiComming"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="NPCScript_211000_JiandiComming" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_211000_JiandiComming"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_211100_EnzoWillBangjiaCunzhang">
+    	<Click event="onRunScript">
+    	
+    	<Script label="default" type="asWindow" src="task/2040/app_2040_05_TalkAboutHowToHelpCunzhang" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	
+    	<Click label="submit" event="NULL" fire="true" fireID="211100"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- app_ts2_xml · 场景 13 -->
+    <NPCFun label="app_ts2" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/app_2040_10_task3_over" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="182"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="211200" position="0|0">
+    		<View type="0" src="211200.swf" atLayerID="1" hasClick="true"/>
+    		<Create>
+    	
+    		<ViewEvent type="NPCScript_211200_EnzoWaitingFoLuoqi">
+    			<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/app_2040_06_luoqiiscomming" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="app_2040_06_luoqiiscomming_npc"/>
+    		</Default>
+    		</Script>	
+    	
+    			<Click label="app_2040_06_luoqiiscomming_npc" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="app_2040_06_luoqiiscomming_npc"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="NPCScript_211200_talkAboutHongmenyan">
+    			<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/app_2040_07_hongmenyan" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="app_2040_07_renuenzou_npc"/>
+    		</Default>
+    		</Script>	
+    	
+    			<Click label="app_2040_07_renuenzou_npc" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="app_2040_07_renuenzou_npc"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="NPCScript_211200_EnzoYaozhuaLuoqi">
+    			<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2040/app_2040_08_enzoYaozhuaLuoqi" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="app_2040_08_enzoYaozhuaLuoqi_npc"/>
+    		</Default>
+    		</Script>	
+    	
+    			<Click label="app_2040_08_enzoYaozhuaLuoqi_npc" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="app_2040_08_enzoYaozhuaLuoqi_npc"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="NPCScript_211200_EnzoEscaped">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    				  	<Dialog npcID="203700" npcName="洛奇">可恶，又让他们给跑了！ </Dialog>
+    					<Dialog npcID="205500" npcName="镇长">这次多亏有各位英雄好汉相救，不然恐怕圣剑之战还未揭幕，恩佐便已得逞啊！ </Dialog>
+    					<Dialog npcID="211100" npcName="高手">放心吧，镇长，有我们在，他不敢乱来！</Dialog>
+    					<Dialog npcID="205500" npcName="镇长">如今，我只能拜托各位勇士，请一定帮助枫雪镇，夺取圣剑之战的胜利！我不希望圣剑落入坏人之手！</Dialog>
+    						
+    					<Button label="镇长放心，我们已做好准备！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    				  	</Button>
+    				</Page>
+    		  	</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|2040"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    </Npc>
+  </Task>
+</Story>

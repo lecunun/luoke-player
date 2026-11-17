@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GaoLiGongLegend1.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="186" label="高黎贡的传说（上）">
+  <Task id="3036" label="初闻高黎贡山">
+    <!-- npcfun_accepttask_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="听说会长大人抑郁了？" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">晕倒！你们这些人要不要这么八卦！难道你今天也是来消遣我的吗？</Dialog>
+    						<Button label="我是想来帮助您的！告诉我发生了什么事情吧！" close="true">
+    							<Goto value="maopao"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="maopao" type="asWindow" src="task/3036/app0" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="app1"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="app1" type="asWindow" src="task/3036/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg1"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dlg1" type="dialog">
+    				<Page>
+    					<Dialog npcID="101600" npcName="吉洛斯">就是这样，不能找到那个失落的地方，对于我这种探险家来说真是毕生的遗憾啊！你愿意陪我再去一次那里吗？</Dialog>
+    						<Button label="我正有此意！我们这就出发！" close="true">
+    							<Goto value="app2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="app2" type="asWindow" src="task/3036/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|3036"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 32 -->
+    <NPCFun label="app_ts0" sceneID="32">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="179"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 7 -->
+    <NPCFun label="app_ts1" sceneID="7">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3036/appui2" winPos="13|16" name="正在加载...">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    		</Script>
+    			
+    		<Click label="submit" event="onChangeScene" params="7"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 32 -->
+    <NPCFun label="app_ts2" sceneID="32">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="7"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="210000" name="薇薇安">
+    			<View type="0" src="210000.swf" atLayerID="2" hasClick="false"/>
+    		
+    			<Create>
+    				<ViewEvent type="eventdlg1">
+    					<Click event="onRunScript">
+    					
+    						<Script label="default" type="asWindow" src="task/3036/app3" winPos="0|0" name="正在加载...">
+    							<Default>
+    								<Goto value="playframe2"/>
+    							</Default>
+    						</Script>
+    			
+    						<Click label="playframe2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME2"/>
+    					</Click>
+    				</ViewEvent>
+    			
+    				<ViewEvent type="eventdlg2">
+    					<Click event="onRunScript">
+    						<Script label="default" type="asWindow" src="task/3036/app4" winPos="0|0" name="正在加载...">
+    							<Default>
+    								<Goto value="newdlg1"/>
+    							</Default>
+    						</Script>
+    					
+    						<Script label="newdlg1" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="105400" npcName="可丽希亚">糟糕，魔法阵的能量不足，怕只能看见一些零散的片段了。</Dialog>
+    									<Button label="坚持住呀！魔法阵大哥！" close="true">
+    										<Goto value="donghua5"/>
+    									</Button>
+    							</Page>
+    						</Script>
+    							
+    						<Script label="donghua5" type="asWindow" src="task/3036/app5" winPos="0|0" name="正在加载...">
+    							<Default>
+    								<Goto value="newdlg2"/>
+    							</Default>
+    						</Script>
+    		
+    						<Script label="newdlg2" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="101600" npcName="吉洛斯">事情居然是这样的，怪不得他们那么排外。那群蒙面人到底是谁呢？</Dialog>
+    									<Button label="搞不好是黑衣人的祖先……" close="true">
+    										<Goto value="submit"/>
+    									</Button>
+    							</Page>
+    						</Script>
+    		
+    						<Click label="submit" event="NULL" fire="true" fireID="210000"/>
+    					</Click>
+    				</ViewEvent>
+    		
+    			</Create>
+    			</Npc>
+    <!-- npc_c0_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="209800" name="薇薇安">
+    	<View type="0" src="209800.swf" atLayerID="2" hasClick="false"/>
+    
+    	<Create>
+    		<ViewEvent type="eventdlg1">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="204400" npcName="薇薇安">闲杂人等，不许擅入此山。哼！</Dialog>
+    						<Dialog npcID="204500" npcName="莉莉丝">快走吧，薇薇安生气很吓人的！呵呵呵呵！</Dialog>
+    						<Dialog npcID="101600" npcName="吉洛斯">两位可能误会了，我们没有恶意。</Dialog>
+    							<Button label="是的，请相信我们！" close="true">
+    								<Goto value="playframe2"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+      				<Click label="playframe2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME2"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="eventdlg2">
+    			<Click event="onRunScript">
+    				<Script label="default" type="switch" invoke="game" args="2|引擎大修理|2127|0">
+    				  <Case value="1">
+    				    <Goto value="playframe3"/>
+    				  </Case>
+    				  <Default>
+    					 <Goto value="fucknewdlg"/>
+    				  </Default>
+    				</Script>
+    				<Click label="playframe3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME3"/>
+    				
+    				<Script label="fucknewdlg" type="dialog">
+    					<Page>
+    						<Dialog npcID="204400" npcName="薇薇安">还不快离开这里，这里不欢迎外人！</Dialog>
+    							<Button label="再给一次机会吧！" close="true">
+    								<Goto value="default"/>
+    							</Button>
+    							<Button label="好吧，我们暂时先离开。" close="true">
+    								<Goto value="clickrestart"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    
+    				<Click label="clickrestart" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="CLICKRESTART"/>
+    			</Click>	
+    		</ViewEvent>
+    	
+    		<ViewEvent type="eventdlg3">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="204600" npcName="白眉长老">两位远方的来客，我们这里确实不欢迎外人，两位还是请回吧！</Dialog>
+    						<Dialog npcID="101600" npcName="吉洛斯">究竟是因为什么事情，让你们这么排外呢，还请告诉我们！这一定有什么误会！</Dialog>
+    		
+    							<Button label="会长我们先走吧！" close="true">
+    								<Goto value="playframe4"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Click label="playframe4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME4"/>
+    			</Click>
+    		</ViewEvent>
+    		
+    		<ViewEvent type="eventdlg4">
+    			
+    			<Click event="onRunScript">
+    
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="101600" npcName="吉洛斯"><![CDATA[{name}]]>，我们好不容易才找到这里，不能就这么轻易放弃！</Dialog>
+    							<Button label="别着急，我其实发现了一点线索，我觉得我们应该先去查查资料。" close="true">
+    								<Goto value="goappui1"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Script label="goappui1" type="asWindow" src="task/3036/appui1" winPos="0|0" name="正在加载...">
+    					<Default>
+    						<Goto value="submitdlg"/>
+    					</Default>
+    				</Script>
+    				
+    				<Script label="submitdlg" type="dialog">
+    					<Page>
+    						<Dialog npcID="101600" npcName="吉洛斯">原来如此，这样也好，我们去图书馆找一下有没有一个叫高黎贡的地方吧！</Dialog>
+    							<Button label="好的！" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true" fireID="209800"/>
+    			</Click>
+    			
+    			
+    	
+    		</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npcfun_finish_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="210100" name="薇薇安">
+    		<View type="0" src="210100.swf" atLayerID="2"/>
+    	
+    		<Create>
+    			<ViewEvent type="eventdlg3">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="101600" npcName="吉洛斯">公主你不要哭了，不知道的还以为我们两个人欺负你呢！</Dialog>
+    							<Dialog npcID="105400" npcName="可丽希亚">可是艾露尼真的好可怜，蒂伊尔也是个大傻瓜！</Dialog>
+    							<Dialog npcID="101600" npcName="吉洛斯">现在不是说这些的时候，也不是追究蒙面人身份的时候，始终是我们洛克破坏了高黎贡山，我们应该做些什么弥补之前的过错！</Dialog>	
+    								<Button label="对，一定要去弥补前人的过错！" close="true">
+    									<Goto value="donghua6"/>
+    								</Button>
+    						</Page>
+    					</Script>
+    				
+    					<Script label="donghua6" type="asWindow" src="task/3036/app6" winPos="0|0" name="正在加载...">
+    						<Default>
+    							<Goto value="submit"/>
+    						</Default>
+    					</Script>
+    	
+    					<Click label="submit" event="onTaskCall2" params="2|3036"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    		</Npc>
+  </Task>
+</Story>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 NewYearWelcomeStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="74" label="舞会,烟火！迎新年">
+  <Task id="4006" label="舞会,烟火！迎新年">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="一起迎接新年吧！" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">新年到啦，快去宴会厅和城堡露台看看吧，参加皇家舞会，去露台放烟火吧。让我们一起来迎接新年吧！</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|4006"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="一起迎接新年吧！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="switch">
+    		<Func invoke="taskIsComplete" args="4006"/>
+    		<Case value="0"><Goto value="dialog_0"/></Case>
+    		<Case value="1"><Goto value="dialog_1"/></Case>
+    		</Script>
+    		<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">参加舞会了吗，放烟火了吗，仔细想想哪个没去呢？</Dialog>
+    				<Button label="好的，我继续找。" nextID="-1" close="true"><End/></Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">嗯，哈哈哈，感受到新年的快乐吧。新的一年要继续努力，不要骄傲哦！</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|4006"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="139600" position="0|560">
+    	<View type="0" src="139600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_4006">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+</Story>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SecretGuest.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="144" label="神秘来客">
+  <Task id="4042" label="神秘来客">
+    <!-- npcfun_100900 · 场景 14 -->
+    <NPCFun sceneID="14" label="神秘来客" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="100900" npcName="麦斯威尔">国王最近邀请了一批神秘的赛车手来到王国参加比赛，但是他们失踪了，据说在黑影之岭有一些神秘人，你愿意帮我去调查下么？</Dialog>
+    				  <Button label="好的，现在就去" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Click label="index_0_1" event="onTaskCall2" params="1|4042"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_182200 · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="182200" position="742|388">
+    		<View type="0" src="182200.swf" atLayerID="2" hasClick="true"/>
+           <Click event="onRunScript">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="182200" npcName="阿诺">咔嚓嚓嚓，你是谁，我的伙伴为什么不见了，一定是你搞的鬼，你跑不了了！！！</Dialog>
+    			      <Button label="冷静！冷静！" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="182200" npcName="阿诺">咔嚓嚓嚓，少废话！快说我的同伴在哪里呢？</Dialog>
+    			      <Button label="……淡定！淡定！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+                 <Script label="index_0_2" type="switch" invoke="combat" args="2|182200|阿诺">
+    				   <Case value="2">
+    				      <Goto value="index_0_3"/>
+    				   </Case>
+    				   <Default>
+                        <End/>
+    				   </Default>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="182200" npcName="阿诺">咔嚓嚓嚓，打不过你，我跑得过你吧！</Dialog>
+    			       <Button label="冷静下来，到底发生了什么能好好说下么？" nextID="-1" close="true">
+    			          <Goto value="index_0_4"/>
+    			       </Button>
+    			    </Page>
+    			  </Script>
+                 <Script label="index_0_4" type="asWindow" src="task/4042/app1" winPos="0|0" name="">
+    				 <Default>
+    					 <Goto value="index_0_5"/>
+    				 </Default>
+    		      </Script>
+    			  <Click label="index_0_5" event="NULL" fire="true"/>
+    			</Click>
+    		</Click>
+    	</Npc>
+    <!-- npc_182300 · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="182300" position="440|366">
+    			<View type="0" src="182300.swf" atLayerID="2" hasClick="true"/>
+    			<Click event="onRunScript">
+    				  <Script label="default" type="asWindow" src="task/4042/app2" winPos="0|0" name="">
+    				    <Default>
+    				      <Goto value="index_0_1"/>
+    				    </Default>
+    				  </Script>
+    				  <Script label="index_0_1" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="182300" npcName="阿昆">终于找到能源了，这里发现了一个赛车场，你敢和我的朋友比上一场吗？</Dialog>
+    				      <Button label="比赛车，可是我没有车啊，好吧我变出一个，比赛吧。" nextID="-1" close="true">
+    				        <Goto value="index_0_2"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_2" type="switch" invoke="game" args="2|赛车游戏|2106|99">
+    				    <Case value="1">
+    				      <Goto value="index_0_3"/>
+    				    </Case>
+    				    <Default>
+                        <Goto value="index_0_7"/>
+    				    </Default>
+    				  </Script>
+                    <Script label="index_0_7" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="182300" npcName="阿昆">连阿诺都不能战胜，唉，好好练练再来吧！</Dialog>
+    				      <Button label="我不会放弃的" nextID="-1" close="true">
+    				        <Goto value="index_0_2"/>
+    				      </Button>
+                        <Button label="我晚些再来" nextID="-1" close="true">
+    				        <End/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_3" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="182300" npcName="阿昆">不错嘛，差点小看你了。</Dialog>
+    				      <Button label="客气客气" nextID="-1" close="true">
+    				        <Goto value="index_0_4"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_4" type="asWindow" src="task/4042/app3" winPos="0|0" name="">
+    				    <Default>
+    				      <Goto value="index_0_5"/>
+    				    </Default>
+    				  </Script>
+    				  <Script label="index_0_5" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="182300" npcName="阿昆">多多练习，得到赛车手套装，和稀有宠物才能得到我的认可哦。</Dialog>
+    				      <Button label="好的，我会努力的。" nextID="-1" close="true">
+    				        <Goto value="index_0_6"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_6" event="onTaskCall2" params="2|4042"/>
+    			</Click>
+    		</Npc>
+    <!-- app_tz_xml · 场景 83 -->
+    <NPCFun label="app_tz" sceneID="83">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="83" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 87 -->
+    <NPCFun label="app_tz2" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="87" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

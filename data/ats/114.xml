@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ToHelpStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="114" label="去帮忙喽">
+  <Task id="4029" label="和好的关键">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="来帮忙喽" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">王国内的几个商店最近都超级忙，快去帮帮他们吧。</Dialog>
+          <Button label="要去哪里呢？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">嗯，跳跳集市罗伦斯的杂货店，需要魔法手舞来整理；博得材料屋的魔法商店临时工也需要人，快去看看吧。</Dialog>
+          <Button label="跳跳集市的魔法手舞、博得材料屋的魔法临时工，知道了。" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="1|4029"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="来帮忙喽" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="switch">
+        <Func invoke="taskIsComplete" args="4029"/>
+        <Case value="0">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Case value="1">
+          <Goto value="index_0_2"/>
+        </Case>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">跳跳集市罗伦斯的杂货店，需要魔法手舞来整理；博得材料屋的魔法商店临时工哪个没有完成？好好想想。</Dialog>
+          <Button label="谢谢你！我继续找！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">罗伦斯和博得都要感谢你呢，呵呵，辛苦了。</Dialog>
+          <Button label="好的。" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|4029"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

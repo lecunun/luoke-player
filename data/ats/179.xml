@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 InventorStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="179" label="大发明家">
+  <Task id="2025" label="大发明家">
+    <!-- npcfun_0_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="大发明家" icon="-1" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">听说你们想前往枫雪镇？那里天寒地冻，又有冰原浅滩的阻挡，你们一定要去吗？ </Dialog>
+          <Button label="必须的呀！圣剑！圣剑！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">……好吧！你们那艘巨大的飞船做的怎么样了？我听说科学家普尼曾研制过一台发动机，能节省能源航行数千里，也许你能用上！对了，普尼是爱因斯坦的儿子！ </Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+    
+       <Click label="index_0_2" event="onTaskCall2" params="1|2025"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npcfun_1_xml · 场景 9 -->
+    <NPCFun sceneID="9" label="大发明家" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="103600" npcName="爱因斯坦">普尼确实研制过这个发动机，只是当时不被人看好，所以他藏了起来！就在皇家发明仓库，你去找找吧！拿到后来找我，我教你怎么用！ </Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Click label="index_0_1" event="onTaskCall2" params="2|2025"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 6 -->
+    <NPCFun label="app_ts0" sceneID="6">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2025/2025_ts_0" winPos="260|120" name="找普尼的爹">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 6 -->
+    <NPCFun label="app_ts2" sceneID="6">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2025/2025_ts_1" winPos="260|120" name="去找发动机">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2026" label="发动机之谜">
+    <!-- npc_c0_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="205600" position="0|0">
+    <View type="0" src="205600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2026_205600">
+    	<Click event="onRunScript">
+    	   <Click label="default" event="NULL" fire="true" fireID="205600"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npcfun_1_xml · 场景 9 -->
+    <NPCFun sceneID="9" label="大发明家" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="103600" npcName="爱因斯坦">你们找到那个巨大的引擎了吗？</Dialog>
+          <Button label="找到了！可上面落满了灰尘，不知道还能用不？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="103600" npcName="爱因斯坦">没关系！我们来做一个实验，看看它能不能带动小飞机飞行。去索米亚大草原等我吧，那里比较开阔，可以进行试飞训练.</Dialog>
+          <Button label="我这就去！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Click label="index_0_2" event="NULL" fire="true"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="205700" position="0|0" icon="-1">
+    <View type="0" src="205700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2026_205700">
+    	<Click event="onRunScript">
+    		 <Script label="default" type="asWindow" src="task/2026/2026_0" winPos="0|0" name="抢引擎">
+    	   	 <Default>
+    	     	<Goto value="index_0_1"/>
+    	   	 </Default>
+    	  	 </Script>
+    	  	 
+    	    <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2026_205700"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_2026_205700">
+    	<Click event="onRunScript">
+    		 <Script label="default" type="asWindow" src="task/2026/2026_1" winPos="0|0" name="普尼的信">
+    	   	 <Default>
+    	     	<Goto value="index_0_1"/>
+    	   	 </Default>
+    	  	 </Script>
+    	  	 
+    	   <Click label="index_0_1" event="NULL" fire="true" fireID="205700"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="205800" position="0|0" icon="-1">
+    <View type="0" src="205800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2026_205800">
+    	<Click event="onRunScript">
+    		 <Script label="default" type="asWindow" src="task/2026/2026_2" winPos="0|0" name="发动机的制造">
+    	   	 <Default>
+    	     	<Goto value="index_0_1"/>
+    	   	 </Default>
+    	  	 </Script>
+    	  	 
+      		 <Click label="index_0_1" event="onTaskCall2" params="2|2026"/>
+      		 
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts1_xml · 场景 9 -->
+    <NPCFun label="app_ts1" sceneID="9">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2026/2026_ts_1" winPos="260|120" name="去找爱因斯坦">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 9 -->
+    <NPCFun label="app_ts2" sceneID="9">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2026/2026_ts_2" winPos="260|120" name="去索米亚平原">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 9 -->
+    <NPCFun label="app_ts3" sceneID="9">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2026/2026_ts_3" winPos="260|120" name="去皇家发明仓库">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts4_xml · 场景 9 -->
+    <NPCFun label="app_ts4" sceneID="9">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2026/2026_ts_4" winPos="260|120" name="一个个寻找材料">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2027" label="制造冒险号引擎">
+    <!-- npc_c0_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="205900" position="0|0">
+    <View type="0" src="205900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2027_205900">
+    	<Click event="onRunScript">
+    	   <Click label="default" event="NULL" fire="true" fireID="205900"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="206000" position="0|0">
+    <View type="0" src="206000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2027_206000">
+    	<Click event="onRunScript">
+    	   <Click label="default" event="NULL" fire="true" fireID="206000"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npcfun_1_xml · 场景 128 -->
+    <NPCFun sceneID="128" label="借我风扇用用！" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">神马？你要把我风扇拆掉，当螺旋浆用？你大婶会把我拆了的！</Dialog>
+          <Button label="行行好啦！我们有特殊使命啊！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="163000" npcName="山姆大叔">唉，好吧，趁她不在，我拆了给你吧！用完记得还我哦！</Dialog>
+          <Button label="太好啦！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+     
+    	   <Click label="index_0_2" event="NULL" fire="true"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npcfun_2_xml · 场景 9 -->
+    <NPCFun sceneID="9" label="请做一个压缩机" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="103600" npcName="爱因斯坦">发动机用的压缩机吗？我试试看。（制作中……）</Dialog>
+          <Dialog npcID="103600" npcName="爱因斯坦">大功告成！你的燃料还没借到吗？有个关键问题，燃料到底需要多少，枫雪镇究竟离我们有多远，你需要弄清楚。</Dialog>
+          <Button label="可谁知道呢？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+           <Dialog npcID="103600" npcName="爱因斯坦">大陆最北边的居民也许知道，去冰原浅滩去找人问问。</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Click label="index_0_2" event="onTaskCall2" params="2|2027"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c3_xml · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="207000" position="0|0">
+    <View type="0" src="207000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2027_207000">
+    	<Click event="onRunScript">
+    		 <Script label="default" type="asWindow" src="task/2027/2027_0" winPos="0|0" name="如何找零件">
+    	  	 </Script>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="2028" label="拼装发动机">
+    <!-- npc_c0_xml · 场景 4 -->
+    <Npc sceneID="4" type="1" npcID="206100" position="0|0" icon="0">
+    <View type="0" src="206100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2028_206100">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+           <Dialog npcID="101000" npcName="兰斯洛">奇怪，怎么还没有来信呢……</Dialog>
+          <Button label="兰斯洛！ " nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      	<Script label="index_0_1" type="asWindow" src="task/2028/2028_0" winPos="0|0" name="罗伦斯母亲的来信">
+    	   	 <Default>
+    	     	<Goto value="index_0_2"/>
+    	   	 </Default>
+        </Script>
+        
+        
+    	   <Click label="index_0_2" event="NULL" fire="true" fireID="206100"/>
+    </Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npcfun_1_xml · 场景 4 -->
+    <NPCFun sceneID="4" label="借我点燃料用用好吗" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101500" npcName="博得">哟，你要借燃料？你知道二十一世纪什么最贵吗？石油！你知道为什么战火连连吗？石油！你知道……</Dialog>
+          <Button label="你看这些胡萝卜怎么样？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101500" npcName="博得">哇！好新鲜的感觉，你自己种的吗？现在食品安全……，我居然能吃到自家种的蔬菜，太美好了！燃料在这里，你要多少自己拿吧。</Dialog>
+          <Button label="谢谢" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      
+    	   <Click label="index_0_2" event="NULL" fire="true"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 4 -->
+    <Npc sceneID="4" type="1" npcID="206200" position="0|0" icon="-1">
+    <View type="0" src="206200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_2028_206200">
+    <Click event="onRunScript">
+      
+        
+    <Script label="default" type="switch" invoke="game" args="2|拼装引擎小游戏|2124|99">
+      <Case value="1">
+        <Goto value="index_0_1"/>
+      </Case>
+      <Default>
+        <End/>
+      </Default>
+    </Script>
+        
+       <Click label="index_0_1" event="onTaskCall2" params="2|2028"/>
+    </Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts1_xml · 场景 4 -->
+    <NPCFun label="app_ts1" sceneID="4">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2028/2028_ts_1" winPos="260|120" name="去找博得借燃料">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

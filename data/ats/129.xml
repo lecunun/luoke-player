@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MysteriousEyesStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="129" label="神秘的目光">
+  <Task id="4036" label="神秘的目光">
+    <!-- npcfun_g_xml · 场景 43 -->
+    <NPCFun sceneID="43" label="神秘的目光" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="109700" npcName="托比">好可怕、好可怕；勘探这么久头一次遇到这么诡异的事情……</Dialog>
+    				<Button label="发生了什么？" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/4036/task_4036_MysteriousEyes" winPos="0|0" name="端午节的故事">
+    		<Default>
+    			<Goto value="dialog_2"/>
+    		</Default>
+    		</Script>
+    		
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="109700" npcName="托比">看来这事是很有危险的，我独自在这里很久，这样被悄悄地关注，难道有人喜欢我？</Dialog>
+    				<Button label="……">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page>
+    				<Dialog npcID="109700" npcName="托比">不管怎样帮我去找福尔摩斯事务所罗宾看看，帮我调查下。</Dialog>
+    				<Button label="好的">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|4036"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 43 -->
+    <NPCFun label="app_ts0" sceneID="43">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="29"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 43 -->
+    <NPCFun label="app_ts1" sceneID="43">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="43"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 43 -->
+    <NPCFun sceneID="43" label="神秘的目光" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">老爷子那里有危险，不会吧，他都在那里那么久怎么会有人突然盯上他了？</Dialog>
+    				<Button label="但是托比的直觉还是很准的……">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page>
+    				<Dialog npcID="101300" npcName="罗宾">你再去矿洞看有没有什么线索，注意一下周围的脚印、特殊的石头什么的。然后和托比讨论下。</Dialog>
+    				<Button label="好的">
+    					<Goto value="index_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="index_1" event="NULL" fire="true" fireID="101301"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_c0_over_xml · 场景 43 -->
+    <NPCFun sceneID="43" label="矿山魅影" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="109700" npcName="托比">好好找找线索，罗宾不是说有脚印和石块什么的么……</Dialog>
+    					<Button label="继续找找" close="true">
+    						<End/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>;
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 43 -->
+    <Npc sceneID="43" type="1" npcID="170300" position="493|385">
+    	<View type="0" src="170300.png" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		  <Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 43 -->
+    <Npc sceneID="43" type="1" npcID="170400" position="544|436">
+    	<View type="0" src="170400.png" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		  <Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 43 -->
+    <NPCFun sceneID="43" label="矿山魅影" icon="0" close="false">
+    		<Click event="onRunScript">
+    							<Script type="dialog" label="default">
+    								<Page>
+    									<Dialog npcID="109700" npcName="托比">我们来分析一下这些线索吧。</Dialog>
+    									<Button label="好的" close="true">
+    										<Goto value="asWindow_0"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    	
+    							<Script label="asWindow_0" type="asWindow" src="task/4036/task_4036_MysteriousEyesTruth" winPos="0|0" name="端午节的故事">
+    								<Default>
+    									<Goto value="dialog_2"/>
+    								</Default>
+    							</Script>
+    	
+    							<Script label="dialog_2" type="dialog">
+    								<Page>
+    									<Dialog npcID="109700" npcName="托比">我现在也很少出山了，嗯，小洛克带上它一起去探险吧。</Dialog>
+    									<Button label="放心，我一定让他强大起来！" close="true">
+    										<Goto value="sumbit"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						<Click label="sumbit" event="onTaskCall2" params="2|4036"/>
+    						
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

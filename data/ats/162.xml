@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 JuniorDetectiveTrialStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="162" label="初级侦探试炼">
+  <Task id="177" label="从罗宾开始">
+    <!-- npcfun_g_xml · 场景 78 -->
+    <NPCFun sceneID="78" label="初级侦探试炼" icon="-1" close="true">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="1|177"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="商量侦探试炼事宜" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">试炼？！我现在还有什么心情搞这玩意啊！！</Dialog>
+          <Button label="呃……会长大人你怎么了……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">事情……是这样子的……</Dialog>
+          <Button label="嗯嗯！我在听！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/177/177_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">由于这事情实在是很诡异，国王已经委托侦探协会查办这个事情，但是我却一点头绪都没有！</Dialog>
+          <Button label="呃……" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">什么！你愿意协助我们！？不愧是未来的大侦探！</Dialog>
+          <Button label="吓？我好像什么都没说啊！" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true" fireID="101303"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 78 -->
+    <Npc sceneID="78" type="1" npcID="194800" position="654|412">
+    <View type="0" src="194800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_177_194800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/177/177_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_177_194800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_177_194800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">谢谢……谢谢你……</Dialog>
+          <Button label="真的还好？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">其实……不好……我很担心。</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">我总觉得有谁针对我。在我练唱的这段日子，这阵狂风都追着我不放，是谁在暗处，是谁要害我。上了岸，我总是心里发毛。</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">这是不是亚特族的多疑发作……</Dialog>
+          <Button label="你别害怕！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/177/177_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 78 -->
+    <Npc sceneID="78" type="1" npcID="194900" position="692|320">
+    <View type="0" src="194900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_177_194900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">这里……真的会没事？</Dialog>
+          <Button label="就算有事，我也会保护你的！你安心练习吧！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">嗯……</Dialog>
+          <Button label="我在旁边守着！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/177/177_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_177_194900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_177_194900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">是谁……究竟是谁要害我……我好怕……</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/177/177_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">这下怎么办才好？</Dialog>
+          <Button label="你听我说，丽芙。" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="问飞艇的事" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">哦，你也看到那飞艇啦！</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">那是我们和魔法学院合力制造的飞艇。</Dialog>
+          <Button label="能解释一下吗？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/177/177_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">就是这样。</Dialog>
+          <Button label="原来如此。谢谢大臣！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|177"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 29 -->
+    <NPCFun label="app_ts0" sceneID="29">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/177/177_ts_0" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="29"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 19 -->
+    <NPCFun label="app_ts1" sceneID="19">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/177/177_ts_1" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="19"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 78 -->
+    <NPCFun label="app_ts2" sceneID="78">
+    <Click event="onChangeScene" params="78"/>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 14 -->
+    <NPCFun label="app_ts3" sceneID="14">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/177/177_ts_2" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="14"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="178" label="侦探难题">
+    <!-- npc_c0_xml · 场景 16 -->
+    <Npc sceneID="16" type="1" npcID="195000" position="692|319">
+    <View type="0" src="195000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_178_195000">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|195000|恶魔叮">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="184200" npcName="恶魔叮">……</Dialog>
+          <Button label="[我要保护丽芙！]" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="[不行，整装再来]" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_178_195000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_178_195000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="184200" npcName="恶魔叮">干嘛打我，干嘛打我……</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">呃……你不是想害我？</Dialog>
+          <Dialog npcID="184200" npcName="恶魔叮">我为什么要害你，我只是出来玩而已！</Dialog>
+          <Button label="你不是跟黑衣人一伙的吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="184200" npcName="恶魔叮">一伙什么！黑衣人他们的宠物是我们恶魔叮没错，但不是每只恶魔叮都是黑衣人的宠物啊！</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">的确……</Dialog>
+          <Button label="有道理……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/178/178_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_178_195000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_178_195000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙"><![CDATA[{name}]]>，他们不可能连自己人都欺负吧。</Dialog>
+          <Button label="也有可能是苦肉计" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="184200" npcName="恶魔叮">哼！不信就算了！我不是坏蛋！</Dialog>
+          <Button label="呃……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_178_195000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_178_195000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙"><![CDATA[{name}]]>，接下来怎么办？</Dialog>
+          <Button label="我带你回罗宾那里吧。" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 16 -->
+    <Npc sceneID="16" type="1" npcID="195100" position="492|229">
+    <View type="0" src="195100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_178_195100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">（仔细听取了事情的经过）</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">作为一名侦探，你的答案是？</Dialog>
+          <Button label="我觉得恶魔叮不像在说假话" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">那么，你是否有想过这强风的原因？</Dialog>
+          <Button label="你听我解释下，看是否有道理" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/178/178_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">呵呵，看来你果然经过侦查。其实，我也从大臣那里拿了一张飞艇航行的路线图。</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">你看下路线，它和出事地点，其实有重合关系。</Dialog>
+          <Button label="是吗？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/178/178_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">这也是所以，我跟你的意见一致的原因。</Dialog>
+          <Button label="那么，我知道了！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/178/178_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">那就是说……其实……我完全不用担心？</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">是的。经过我们的推理，只要把地点换成内陆，就应该不会有问题的。</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">那就好，我放下心头大石了。那我干脆去会场——主题乐园，练唱好了。</Dialog>
+          <Button label="安心好了。" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_178_195100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_178_195100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">这下，我也可以对国王有个交代了。</Dialog>
+          <Button label="那么，我们可以开始正式试炼了吧？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">（窗外飞艇经过）</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">……不对！我们忽略了一个重要的地方！</Dialog>
+          <Button label="什么？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/178/178_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="我带了丽芙来" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">（仔细听取了事情的经过）</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">作为一名侦探，你的答案是？</Dialog>
+          <Button label="我觉得恶魔叮不像在说假话" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">那么，你是否有想过这强风的原因？</Dialog>
+          <Button label="你听我解释下，看是否有道理" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/178/178_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">呵呵，看来你果然经过侦查。其实，我也从大臣那里拿了一张飞艇航行的路线图。</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">你看下路线，它和出事地点，其实有重合关系。</Dialog>
+          <Button label="是吗？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/178/178_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">这也是所以，我跟你的意见一致的原因。</Dialog>
+          <Button label="那么，我知道了！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/178/178_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">那就是说……其实……我完全不用担心？</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">是的。经过我们的推理，只要把地点换成内陆，就应该不会有问题的。</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">那就好，我放下心头大石了。那我干脆去会场——主题乐园，练唱好了。</Dialog>
+          <Button label="安心好了。" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_178_195100"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 16 -->
+    <Npc sceneID="16" type="1" npcID="195200" position="329|345">
+    <View type="0" src="195200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_178_195200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="194800" npcName="丽芙">这是？</Dialog>
+          <Button label="丽芙小心！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/178/178_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_178_195200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_178_195200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔">都没事吧！</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">我刚赶去，跟大臣把事实全说清楚了。</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">不是说……没事了么……</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">（仔细听了事情的经过）</Dialog>
+          <Dialog npcID="194800" npcName="丽芙">原来是这样……</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">是我的疏忽……看来这个飞艇，应该要在实验室多呆一会，实际调试实在是很有问题。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">丽芙，很抱歉，请你安心的进行练习，我会找人确保你的安全的。</Dialog>
+          <Dialog npcID="100900" npcName="麦斯威尔">另外，谢谢<![CDATA[{name}]]>和罗宾，是侦探协会，保护了我们重要的亚特族朋友。</Dialog>
+          <Dialog npcID="101300" npcName="罗宾">好了，这下，我们可以把初级侦探试炼进行下去了。到事务所找我吧！</Dialog>
+          <Button label="没有问题！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="侦探的试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">你准备好了没有哦！准备好我们就开始吧！</Dialog>
+          <Button label="好！开始吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="我等会再过来吧！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|101300|罗宾">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|178"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 78 -->
+    <NPCFun label="app_ts0" sceneID="78">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/178/178_ts_0" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="78"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 29 -->
+    <NPCFun label="app_ts1" sceneID="29">
+    <Click event="onChangeScene" params="29"/>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 16 -->
+    <NPCFun label="app_ts2" sceneID="16">
+    <Click event="onChangeScene" params="16"/>
+    </NPCFun>
+  </Task>
+</Story>

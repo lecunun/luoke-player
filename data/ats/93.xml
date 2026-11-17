@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 Yuanbao.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="93" label="元宝何处来">
+  <Task id="4018" label="元宝何处来">
+    <!-- npcfun_101300 · 场景 29 -->
+    <NPCFun sceneID="29" label="元宝怪" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101300" npcName="罗宾">据说玄玉岛出现了很多元宝怪，他们从哪里来的呢？事务所的事情太多了，你去帮我调查下吧。</Dialog>
+                    <Button label="好的，可是我要先去问谁呢？" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101300" npcName="罗宾">去魔法课教室问问杰瑞西，她的消息很灵通哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4018"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101900 · 场景 31 -->
+    <NPCFun sceneID="31" label="元宝怪的由来" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">嗯，这种元宝怪最近有听说过，名字叫财多多，出现在玄玉岛，但是具体来历你去钻石港问问鲁菲吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="101902"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_140400 · 场景 76 -->
+    <NPCFun sceneID="76" label="元宝怪的由来" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="140400" npcName="鲁菲">财多多在云海古道、九龙长廊都有出现，中午和晚上都会出现一会儿，嗯……至于他的来历，哈哈哈哈，你去问问云海古道的伯瑞斯吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="140401"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_154000 · 场景 29 -->
+    <NPCFun sceneID="29" label="元宝怪的由来" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="154000" npcName="伯瑞斯">我的元宝，我的元宝！唉，我们探险队经历千辛万苦终于在玄玉岛找到了遗失已久的宝藏，本想把它们献给国王，不想在回来的路上……</Dialog>
+                    <Button label="到底发生了什么呢？" nextID="-1" close="true">
+                        <Goto value="playAnimation"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="playAnimation" type="asWindow" src="task/4018/task_4018_lostYuanbao" winPos="0|0" name="丢失元宝">
+                <Default><Goto value="YuanbaoConversation"/></Default>
+            </Script>
+            <Script label="YuanbaoConversation" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="154000" npcName="伯瑞斯">回去找罗宾帮我叫更多人手吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="154000"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101300_submit · 场景 29 -->
+    <NPCFun sceneID="29" label="元宝怪" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4018"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101300" npcName="罗宾">先找杰瑞西，再找鲁菲，最后问问伯瑞斯，估计他们那里会有线索。</Dialog>
+                    <Button label="好的，我继续找！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101300" npcName="罗宾">这家伙还真的找到了财宝，很强嘛，我会告诉大家，让更多的洛克去帮助他，谢谢你哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4018"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

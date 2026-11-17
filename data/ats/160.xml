@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TimeTunnelStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="160" label="时之秘道">
+  <Task id="175" label="受伤的菲尔特">
+    <!-- npc_fet_xml · 场景 156 -->
+    <Npc sceneID="156" type="1" npcID="194700" position="314|345">
+    	<View type="0" src="194700.swf" atLayerID="2" hasClick="true"/>
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="194700" npcName="菲尔特"><![CDATA[{name}]]>是你啊。我受伤了。</Dialog>
+    	      <Button label="怎么会受伤的？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Script label="index_0_1" type="asWindow" src="task/175/app1" winPos="0|0" name="受伤的经过">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+             <Dialog npcID="194700" npcName="菲尔特">我刚尝试过治愈魔法，但什么效果也没有。是我的能力不够吗？</Dialog>
+    	      <Button label="别急，可能过一阵子就会好的了。" nextID="-1" close="false">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+             <Dialog npcID="194700" npcName="菲尔特">我在树洞里听到了女孩的声音，我不知道是不是莎莉也在里面，你能进去看看吗？</Dialog>
+    	      <Button label="莎莉？那我马上进去看看！" nextID="-1" close="true">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Click label="index_0_4" event="onTaskCall2" params="1|175"/>
+    	</Click>
+    </Npc>
+    <!-- npc_sjq_xml · 场景 156 -->
+    <Npc sceneID="156" type="1" npcID="189800" position="621|144">
+    <View type="0" src="189800.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    	<ViewEvent type="GotIt0_175_189800">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="asWindow" src="task/175/app2" winPos="0|0" name="秘道的诅咒">
+    		    <Default>
+    		      <Goto value="index_0_1"/>
+    		    </Default>
+    		  </Script>
+    		  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_175_189800"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="GotIt1_175_189800">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="asWindow" src="task/175/app3" winPos="0|0" name="水晶球的秘密">
+    		    <Default>
+    		      <Goto value="index_0_1"/>
+    		    </Default>
+    		  </Script>
+    		  <Script label="index_0_1" type="asWindow" src="task/175/app4" winPos="0|0" name="秘道的诅咒2">
+    		    <Default>
+    		      <Goto value="index_0_2"/>
+    		    </Default>
+    		  </Script>
+    		  <Script label="index_0_2" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="189800" npcName="雪莉">你肯定是魔法学院的小魔法师吧，你好哦！</Dialog>
+    		      <Button label="你伤了菲尔特吗？还是，你把莎莉藏起来了？" nextID="-1" close="false">
+    		        <Goto value="index_0_3"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_3" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="189800" npcName="雪莉">没有哦，我没有看过这两个小朋友。我一直睡在这里，不知道外面的事情。</Dialog>
+    		      <Button label="这个……" nextID="-1" close="true">
+    		        <Goto value="index_0_4"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Click label="index_0_4" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_sjq2_xml · 场景 156 -->
+    <Npc sceneID="156" type="1" npcID="189900" position="481|281">
+    	<View type="0" src="189900.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="101900" npcName="杰瑞西">水晶球？里面有女老师？</Dialog>
+    			      <Button label="是的，老师你看看。" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="101900" npcName="杰瑞西">这个……不是雪莉吗……</Dialog>
+    			      <Button label="老师你知道些什么吗！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="asWindow" src="task/175/app5" winPos="0|0" name="多年以前">
+    			    <Default>
+    			      <Goto value="index_0_3"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_175_189900"/>
+    			</Click>	
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="194700" npcName="菲尔特">杰瑞西老师……</Dialog>
+    			      <Dialog npcID="101900" npcName="杰瑞西">你们听……这是什么声音……秘道重开之日，诅咒重来时刻……</Dialog>
+    			      <Button label="我刚也听到了……" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="194700" npcName="菲尔特">嗯……水晶球？这是什么？</Dialog>
+    			      <Button label="什么什么？" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="asWindow" src="task/175/app6" winPos="0|0" name="菲尔特被控制">
+    			    <Default>
+    			      <Goto value="index_0_3"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="101900" npcName="杰瑞西">菲尔特！你怎么了！</Dialog>
+    			      <Dialog npcID="189800" npcName="雪莉">恩佐……是你吗恩佐……</Dialog>
+    			      <Button label="恩佐？！" nextID="-1" close="true">
+    			        <Goto value="index_0_4"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_175_189900"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotIt2_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="189800" npcName="雪莉">这孩子……这孩子的身上……有恩佐的味道……</Dialog>
+    			      <Button label="哇！！雪莉你怎么了！！" nextID="-1" close="true">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_175_189900"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotIt3_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="190000" npcName="恩佐">把水晶球还我吧。</Dialog>
+    			      <Button label="不还！你肯定又拿去做坏事！" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="190000" npcName="恩佐">哼。那就一战吧。</Dialog>
+    			      <Button label="战就战！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="switch" invoke="combat" args="2|190000|恩佐">
+    			    <Case value="2">
+    			      <Goto value="index_0_3"/>
+    			    </Case>
+    			    <Default>
+    			      <Goto value="index_0_3"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_175_189900"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotIt4_175_189900">
+    			<Click event="onRunScript">
+    			  <Click label="default" event="onTaskCall2" params="2|175"/>
+    			</Click>	
+    		</ViewEvent>
+           <ViewEvent type="GotBlue_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/175/appBlue" winPos="0|0" name="分离难见">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="appBlue_175_189900"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotWhite_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/175/appWhite" winPos="0|0" name="当年初见">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="appWhite_175_189900"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotRed_175_189900">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/175/appRed" winPos="0|0" name="真心想念">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="appRed_175_189900"/>
+    			</Click>	
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- app_tz_xml · 场景 156 -->
+    <NPCFun label="app_tz" sceneID="156">
+    <Click event="onRunScript">
+    		 <Script label="default" type="asWindow" src="task/175/tzApp" winPos="0|0" name="进去树洞">
+    		    <Default>
+    		      <Goto value="index_0_1"/>
+    		    </Default>
+    		 </Script>
+    		 <Click label="index_0_1" event="onChangeScene" params="156"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 31 -->
+    <NPCFun label="app_tz2" sceneID="31">
+    <Click event="onRunScript">
+    			 <Script label="default" type="asWindow" src="task/175/tzApp2" winPos="0|0" name="问杰瑞西老师">
+    				<Default>
+    				  <Goto value="index_0_1"/>
+    				</Default>
+    			 </Script>
+    			 <Click label="index_0_1" event="onChangeScene" params="31"/>
+    		</Click>
+    </NPCFun>
+  </Task>
+  <Task id="176" label="秘道中的回忆">
+    <!-- npc_enzo_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="190000" position="527|149">
+    		<View type="0" src="190000.swf" atLayerID="2" hasClick="false"/>
+           <Create>
+    			<ViewEvent type="GotIt0_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="190000" npcName="恩佐">想不到，这么多年，这里一点都没变。</Dialog>
+    				      <Button label="啥？" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_176_190000"/>
+    				</Click>
+    			</ViewEvent>
+    	       <ViewEvent type="GotIt1_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="189800" npcName="雪莉">恩佐，你回来了啊？</Dialog>
+    				      <Button label="这样的师生情谊，究竟是？" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="asWindow" src="task/176/app1" winPos="0|0" name="就算世界与我为敌">
+    				    <Default>
+    				      <Goto value="index_0_2"/>
+    				    </Default>
+    				  </Script>
+    				  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_176_190000"/>
+    				</Click>
+    			</ViewEvent>
+    	       <ViewEvent type="GotIt2_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="190000" npcName="恩佐">那是不可能的事情。</Dialog>
+    				      <Button label="那我就不客气了！" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="switch" invoke="combat" args="2|190000|恩佐">
+    				    <Case value="2">
+    				      <Goto value="index_0_2"/>
+    				    </Case>
+    				    <Default>
+    				      <Goto value="index_0_3"/>
+    				    </Default>
+    				  </Script>
+    				  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_176_190000"/>
+    				  <Script label="index_0_3" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="190000" npcName="恩佐">今天我不想打。你还是回去吧。</Dialog>
+    				      <Button label="我要拿回水晶球！再打！" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				      <Button label="等我整装再来！" nextID="-1" close="true">
+    				        <End/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				</Click>
+    			</ViewEvent>
+              <ViewEvent type="GotIt3_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    					  <Dialog npcID="194700" npcName="菲尔特">恩佐大人，我来协助你。</Dialog>
+    					  <Dialog npcID="190000" npcName="恩佐">我的龙……这叫菲尔特的学生，是你控制的么……我这次只是想回来缅怀故地，你做得太多了。</Dialog>
+    				      <Button label="啥？哪里来的龙？" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="asWindow" src="task/176/app2" winPos="0|0" name="水晶球的另外一面">
+    				    <Default>
+    				      <Goto value="index_0_2"/>
+    				    </Default>
+    				  </Script>
+    				  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_176_190000"/>
+    				</Click>
+    			</ViewEvent>
+              <ViewEvent type="GotIt4_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="190100" npcName="？？">对不起，我的主人。</Dialog>
+    						<Dialog npcID="190000" npcName="恩佐">算了。我流连得够久了。你守护水晶球的时间也够久了，跟我走吧。</Dialog>
+    						<Dialog npcID="190100" npcName="？？">是的，我的主人。</Dialog>
+    				      <Button label="啊！这么轻易就走了？" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_176_190000"/>
+    				</Click>
+    			</ViewEvent>
+              <ViewEvent type="GotIt5_176_190000">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="asWindow" src="task/176/app3" winPos="0|0" name="带菲尔特回">
+    				    <Default>
+    				      <Goto value="index_0_1"/>
+    				    </Default>
+    				  </Script>
+    				  <Click label="index_0_1" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+           </Create>
+    	</Npc>
+    <!-- npcfun_100100 · 场景 156 -->
+    <NPCFun sceneID="156" label="菲尔特被控制了" icon="-1" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="100104" npcName="格里芬院长">（仔细听取了事情的经过）</Dialog>
+    		      <Dialog npcID="100104" npcName="格里芬院长">恩佐……我最聪明的学生……原来，他回来了啊……</Dialog>
+    		      <Button label="院长你先去秘道看看菲尔特！" nextID="-1" close="false">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="100104" npcName="格里芬院长">好，我们走吧。</Dialog>
+    		      <Button label="嗯！！" nextID="-1" close="true">
+    		        <Goto value="index_0_2"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Click label="index_0_2" event="NULL" fire="true" fireID="100104"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_sjq_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="190100" position="622|150">
+    		<View type="0" src="190100.swf" atLayerID="2" hasClick="false"/>
+           <Create>
+    		<ViewEvent type="GotIt0_176_190100">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="100100" npcName="格里芬院长">恩佐这次回来，并没有要威胁学院。</Dialog>
+    			      <Dialog npcID="100100" npcName="格里芬院长">这伤是他的宠物留下来的。但是，他并没有带走水晶球。</Dialog>
+    			      <Button label="水晶球有什么奥秘吗？" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="100100" npcName="格里芬院长">雪莉留下的水晶球里面，有着她擅长的回复魔法。</Dialog>
+    			      <Button label="这么神奇！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_176_190100"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotIt1_176_190100">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="194700" npcName="菲尔特">院长……还有……<![CDATA[{name}]]>？我怎么在这里？</Dialog>
+    			      <Button label="你都不记得了么？" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="194700" npcName="菲尔特">我只记得，我通过魔法密林，到时之秘道……后面……</Dialog>
+    			      <Button label="后面？" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="asWindow" src="task/176/app4" winPos="0|0" name="菲尔特的记忆">
+    			    <Default>
+    			      <Goto value="index_0_3"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="194700" npcName="菲尔特">事情，就是这样子。</Dialog>
+    			      <Dialog npcID="100100" npcName="格里芬院长">不管怎样，你们没事就好。<![CDATA[{name}]]>，把水晶球封印好。菲尔特，随我离开吧。</Dialog>
+    			      <Dialog npcID="194700" npcName="菲尔特">是，院长。</Dialog>
+    			      <Button label="是，院长。" nextID="-1" close="true">
+    			        <Goto value="index_0_4"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_176_190100"/>
+    			</Click>
+    		</ViewEvent>
+           <ViewEvent type="GotIt2_176_190100">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/176/app5" winPos="0|0" name="久久不能平静">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="onTaskCall2" params="2|176"/>
+    			</Click>
+    		</ViewEvent>
+           </Create>
+    	</Npc>
+    <!-- app_tz_xml · 场景 156 -->
+    <NPCFun label="app_tz" sceneID="156">
+    <Click event="onRunScript">
+    			  <Script label="default" type="asWindow" src="task/176/tzApp" winPos="0|0" name="追去时之秘道">
+    				<Default>
+    				  <Goto value="index_0_1"/>
+    				</Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="onChangeScene" params="156"/>
+    		</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 6 -->
+    <NPCFun label="app_tz2" sceneID="6">
+    <Click event="onRunScript">
+                 <Click label="default" event="onChangeScene" params="6"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_tz3_xml · 场景 156 -->
+    <NPCFun label="app_tz3" sceneID="156">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="156" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

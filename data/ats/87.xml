@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MakeFireworks.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="87" label="爆竹声声">
+  <Task id="4014" label="爆竹声声">
+    <!-- npcfun_102200 · 场景 1 -->
+    <NPCFun sceneID="1" label="爆竹声声" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="102200" npcName="万事通">过新年少了烟花可不行，来，小洛克，我们一起了解烟花是怎么做的吧！首先你要找到：杰克、萨拉和博得，看看他们都会教你什么呢？</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4014"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_110100 · 场景 40 -->
+    <NPCFun sceneID="40" label="爆竹声声" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="110100" npcName="杰克">要做烟花啊，首先你要知道火药是怎么来的，一硝二磺三木炭，嘿嘿嘿，记住这个口诀。先给你这种石头吧，要保存好哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="110101"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_115900 · 场景 59 -->
+    <NPCFun sceneID="59" label="爆竹声声" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="115900" npcName="萨拉">哦，万事通让你研究黑火药，那可是很危险的，真不知道他是怎么想的，不要随便摆弄给你的材料哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="115901"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101500 · 场景 4 -->
+    <NPCFun sceneID="4" label="爆竹声声" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101500" npcName="博得">来我这里找硫磺，看来你脑筋不错哦。好吧，给你一些。</Dialog>
+                    <Button label="谢谢" nextID="-1" close="true">
+                        <Goto value="conditionOneUpdate"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="101501"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_102200_submit · 场景 1 -->
+    <NPCFun sceneID="1" label="爆竹声声" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4014"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="102200" npcName="万事通">矿山口的杰克、雷霆入口的萨拉、博得材料屋的博得，呵呵，好好想想，你把谁给忘了？</Dialog>
+                    <Button label="好的，我继续找！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="102200" npcName="万事通">制作火药是危险的，还是让我来吧。哈哈哈，烟花最主要的成分就是火药，看来你的努力没有白费，来吧，我们一起燃放烟花吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="fireworks"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="fireworks" type="asWindow" src="task/4014/task_4014_fireworks" winPos="0|0" name="燃放烟花">
+                <Default><Goto value="submit"/></Default>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4014"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

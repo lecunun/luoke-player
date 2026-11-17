@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SeparationOfMemoryStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="91" label="记忆前分离后">
+  <Task id="130" label="波涛再起">
+    <!-- npc_g_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="152900" name="呱呱" position="473|445">
+    		<View type="0" src="152900.swf" atLayerID="2"/>
+    		<Create>
+    		<NPCFun label="说服国王" icon="-1">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="152900" npcName="呱呱"><![CDATA[{name}]]>，这下不好了！平阳公主竟然不见了！</Dialog>
+    				<Button label="什么？！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="152900" npcName="呱呱">我本来以为是恩佐的阴谋，谁知道，你看！</Dialog>
+    				<Button label="不会吧！" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/130/130_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_2"/></Default>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="152900" npcName="呱呱">这是独角兽的毛和印子，为了玄玉岛，我必须要去独角仙踪跑一趟！</Dialog>
+    				<Button label="我陪你去！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="我考虑一下……" nextID="-1" close="true"><End/></Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|130"/>
+    		</Click>
+    		</NPCFun>
+    		</Create>
+    		<Click event="onTaskCall" cdtn="60"/>
+    	</Npc>
+    <!-- npc_p_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="153000" position="410|330">
+    	<View type="0" src="153000.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_130_153000">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/130/130_1" winPos="0|0" name="提示">
+    					<Default><Goto value="combat_0"/></Default>
+    				</Script>
+    				<Script label="combat_0" type="switch" invoke="combat" args="2|144801|仙灵独角兽">
+    					<Default><Goto value="dialog_0"/></Default>
+    				</Script>
+    				<Script label="dialog_0" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">……我也是迫不得已。</Dialog>
+    						<Button label="发生了什么事情？">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">我驯养的小独角兽，我把它命名为“更生”，它，被黑衣人抓去了……</Dialog>
+    						<Button label="怎么可能！？独角兽要由洛克来驯养啊！">
+    							<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">本来的确是这样子的。</Dialog>
+    						<Button label="……" close="true">
+    							<Goto value="asWindow_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_1" type="asWindow" src="task/130/130_2" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_3"/></Default>
+    				</Script>
+    				<Script label="dialog_3" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">但是，当年，有一个幼果，被放置在灵角木后，那主人不知道是否遇到了意外，而没有来领取。</Dialog>
+    						<Button label="然后呢？" close="true">
+    							<Goto value="asWindow_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_2" type="asWindow" src="task/130/130_3" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_4"/></Default>
+    				</Script>
+    				<Script label="dialog_4" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">我……收养了更生。但是我不知道，这竟然会被恩佐发现……他劫走了更生。</Dialog>
+    						<Button label="有这等事情！">
+    							<Goto value="dialog_5"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_5" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="152900" npcName="呱呱">你是传说中最厉害的仙灵独角兽啊！为什么你不去把它救回来？还落得被他威胁！</Dialog>
+    						<Button label="是啊！">
+    							<Goto value="dialog_6"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_6" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">他们设置了祭坛。那个祭坛，是把独角兽献给恶魔的祭坛……只要独角兽一靠近，就会被吸进去。所以……</Dialog>
+    						<Dialog npcID="152900" npcName="呱呱">你只好乖乖被黑衣人威胁了……</Dialog>
+    						<Button label="这可怎么得了！">
+    							<Goto value="dialog_7"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_7" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="152900" npcName="呱呱"><![CDATA[{name}]]>，怕且我得带公主回玄玉岛，能够拜托你，到黑衣人的基地去，把更生救回来吗？</Dialog>
+    						<Button label="当然可以！">
+    							<Goto value="dialog_8"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_8" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">我帮你打开时空的缝隙，从里面，你就可以进入到黑衣人的基地了。</Dialog>
+    						<Button label="看我的吧！" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|130"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1060_141200">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+  </Task>
+  <Task id="131" label="拯救行动">
+    <!-- npc_c0_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="153100" position="410|330">
+    	<View type="0" src="153100.swf" atLayerID="1"/>
+    	<Click event="onRunScript" cdtn="10">
+    		<Script label="default" type="asWindow" src="task/131/131_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="96"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="153200" position="591|468">
+    	<View type="0" src="153200.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_131_153200">
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="153200" npcName="黑衣人">……又是你！哼，这次一定要让你尝尝失败的滋味！</Dialog>
+    					<Button label="我不会让你得逞的！" nextID="-1" close="true">
+    						<Goto value="combat_0"/>
+    					</Button>
+    				</Page>
+    			</Script>			
+    			<Script label="combat_0" type="switch" invoke="combat" args="2|153200|黑衣人">
+    					<Default><Goto value="asWindow_0"/></Default>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/131/131_1" winPos="0|0" name="提示">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_131_153200"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_131_153200">
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="153400" npcName="更生">我要回独角仙踪……我要回去……更生要见仙灵独角兽……</Dialog>
+    					<Button label="我现在就带你回去！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>			
+    			<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="我把更生带回来了！" icon="0" close="true">
+    	<Click event="onRunScript">
+    		<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_131_153300"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="153300" position="379|318">
+    <View type="0" src="153300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    	<ViewEvent type="GotIt0_131_153300">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">……没有效！</Dialog>
+    				<Button label="为什么会这样！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">是我……肯定是我……我违背了自然规律，是我擅自领养了独角兽……</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">（仙灵独角兽几近癫狂地自言自语）</Dialog>				
+    				<Button label="你不要这样子！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">那现在该怎么办，我该怎么办？</Dialog>
+    				<Button label="我们去找罗兰教授，她一定有办法的！" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">对，找罗兰，教授她一定有办法……</Dialog>
+    				<Button label="你这样子我很担心，我帮你去吧！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|131"/>
+    		</Click>
+    	</ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 96 -->
+    <NPCFun label="app_ts0" sceneID="96">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/131/131_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="132" label="记忆之前">
+    <!-- npcfun_c0_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="有一只独角兽受伤了！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="107300" npcName="罗兰">（罗兰详细听了关于独角兽更生的事情）</Dialog>
+    				<Dialog npcID="107300" npcName="罗兰"><![CDATA[{name}]]>，世间万事，自有其规律。正如生老病死，没有谁能够超脱于外。</Dialog>
+    				<Dialog npcID="107300" npcName="罗兰">仙灵独角兽本来怀着一片慈悲之心，但我只能说，是好心做坏事了。</Dialog>
+    				<Button label="为什么这么说？" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/132/132_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_1"/></Default>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="107300" npcName="罗兰">而事情到现在，要救那只叫更生的独角兽，只有一个方法……</Dialog>
+    				<Button label="什么方法？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="107300" npcName="罗兰">那就是利用时间倒转的魔法，把小独角兽恢复成幼果的状态，再由洛克进行培养。</Dialog>
+    				<Button label="啊！" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="107300" npcName="罗兰">就算是我，也想不出别的方法了。</Dialog>
+    				<Button label="这……我回去和仙灵独角兽商量一下。" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true" fireID="107301"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_c1_xml · 场景 35 -->
+    <NPCFun sceneID="35" label="我要去找罗兰" icon="0" close="false">
+    		<Click event="onChangeScene" params="35"/>
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 35 -->
+    <Npc sceneID="35" type="1" npcID="153400" position="379|318">
+    	<View type="0" src="153400.swf" atLayerID="2" hasClick="false"/>
+    	<Click event="NULL"/>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="我问完罗兰了" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">……</Dialog>
+    				<Button label="你考虑得怎样？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153400" npcName="更生">不可以这样子，不可以！</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">不要任性。这是你存活的唯一方法。</Dialog>
+    				<Button label="是啊！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153400" npcName="更生">但是我的主人，已经不能是你了呀！这样，你也愿意，你也愿意吗？</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">（不顾更生的话，转身）</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，麻烦你，带更生到轮回黑洞，请露西亚用时间的魔法，将更生重新变回独角兽幼果吧。</Dialog>
+    				<Dialog npcID="153400" npcName="更生">我不要！我不要！我不要！</Dialog>
+    				<Button label="更生你不要这样……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/132/132_1" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_3"/></Default>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">接下来，就拜托你了。</Dialog>
+    				<Button label="你不去吗？" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">我怕……我怕我割舍不下……</Dialog>
+    				<Button label="那……我出发了。" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|132"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 35 -->
+    <NPCFun label="app_ts0" sceneID="35">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/132/132_ts_0" winPos="0|0" name="提示">
+    			<Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="35"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 35 -->
+    <NPCFun label="app_ts1" sceneID="35">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/132/132_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="133" label="分离之后">
+    <!-- npcfun_c0_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="我想麻烦你" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="111100" npcName="露西亚">（露西亚详细听了关于独角兽更生的事情）</Dialog>
+    				<Dialog npcID="111100" npcName="露西亚">这不是什么难事。但把时间倒退，同样是违背自然规律的事情。</Dialog>
+    				<Button label="这可怎么办？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="111100" npcName="露西亚">代价，只要有代价就可以了。一物换一物，这样子就可以保持平衡。</Dialog>
+    				<Button label="需要什么代价来换？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="111100" npcName="露西亚">（指着更生）</Dialog>
+    				<Dialog npcID="111100" npcName="露西亚">它的记忆。它最珍贵的记忆。最割舍不下的所有。都需要来换，用这些来换取重生的机会。</Dialog>
+    				<Dialog npcID="153400" npcName="更生">（更生泣不成声）</Dialog>
+    				<Dialog npcID="153400" npcName="更生">不要！我不要！我不要忘记仙灵独角兽的一切，我不要！</Dialog>
+    				<Button label="这可怎么办……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/133/133_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_133_153500"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 71 -->
+    <Npc sceneID="71" type="1" npcID="153500" position="646|273">
+    	<View type="0" src="153500.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_133_153500">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/133/133_1" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_0"/></Default>
+    				</Script>
+    				<Script label="dialog_0" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，露西亚，接下来，麻烦你们了。</Dialog>
+    						<Dialog npcID="111100" npcName="露西亚">嗯。</Dialog>
+    						<Dialog npcID="153400" npcName="更生">为什么……为什么……</Dialog>
+    						<Button label="更生……" nextID="-1" close="true">
+    							<Goto value="asWindow_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_1" type="asWindow" src="task/133/133_2" winPos="0|0" name="提示">
+    					<Default>					
+    						<Batch>
+    							<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_133_153500"/>
+    							<Goto value="dialog_1"/>
+    						</Batch>					
+    					</Default>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="111100" npcName="露西亚">麻烦你将它带回去吧。</Dialog>
+    						<Button label="好。" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_c1_xml · 场景 71 -->
+    <NPCFun sceneID="71" label="我要去找露西亚" icon="0" close="false">
+    		<Click event="onChangeScene" params="71"/>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="更生已经变回幼果了" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">嗯……这样子，对它来讲，是最好的。那么这个独角兽幼果，你就拿回去吧。</Dialog>
+    				<Button label="你舍得吗？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">舍得……有舍才有得……只有这样子，更生才能存活不是吗？我们之间的记忆，由我来记得，已经够了。</Dialog>
+    				<Button label="独角兽……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/133/133_3" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|133"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 71 -->
+    <NPCFun label="app_ts0" sceneID="71">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/133/133_ts_0" winPos="0|0" name="提示">
+    			<Case value="1"><Goto value="submit"/></Case>			
+    			<Default><End/></Default>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="71"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 71 -->
+    <NPCFun label="app_ts1" sceneID="71">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/133/133_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

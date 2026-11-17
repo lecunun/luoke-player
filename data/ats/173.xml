@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 JuniorExplorersTrialsStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="173" label="初级探险者试炼">
+  <Task id="182" label="梦幻卷轴">
+    <!-- npcfun_g_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="初级探险者试炼" icon="-1" close="true">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="1|182"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="初级探险者试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">试炼？！嗯……比起试炼，我有一个紧急的任务，想派给你。</Dialog>
+          <Button label="哦？是什么？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">探险协会新发掘出的遗迹里面，我们发现了一个奇幻卷轴。</Dialog>
+          <Button label="那很好啊！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">不，一点都不好。这个卷轴，是一个神秘，又危险的存在……</Dialog>
+          <Button label="怎么说？" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/182/182_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">所以，我想，<![CDATA[{name}]]>，你是不是可以，帮我把这个奇幻卷轴，封印起来。以你的能力，我相信一定可以的。</Dialog>
+          <Button label="我我我……我愿意帮忙！" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">那么，玄玉岛里，有画中仙境。你就将这卷轴，封印在那里吧。</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/182/182_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Click label="index_0_7" event="NULL" fire="true" fireID="101601"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="201300" position="447|460">
+    <View type="0" src="201300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_182_201300">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">我的项链……我的项链……</Dialog>
+          <Button label="老婆婆，你怎么了？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">我的金项链，掉到山下去了，捡不到了……怎么办，这下怎么办……</Dialog>
+          <Button label="这个……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">这个！不是那个奇幻卷轴吗？就是传说中那个能将话语变成实物的奇幻卷轴！</Dialog>
+          <Button label="老婆婆，虽然说是它……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">你跟它说，金项链，这样子我的金项链就能够回来了。我求求你……</Dialog>
+          <Button label="这个……" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/182/182_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_182_201300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_182_201300">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="game" args="2|name|2119|99">
+        <Case value="1">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">啊？你说什么？</Dialog>
+          <Button label="我说，这项链送给你！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">送我？但是……这不是我的金项链……</Dialog>
+          <Dialog npcID="201300" npcName="老婆婆">哦……这上面……有一个许愿签啊……</Dialog>
+          <Button label="是啊！是我特地送给你的！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201300" npcName="老婆婆">这样子啊……</Dialog>
+          <Button label="嗯！！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/182/182_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_182_201300"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="201400" position="377|389">
+    <View type="0" src="201400.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_182_201400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">呜呜呜呜……呜呜呜呜……</Dialog>
+          <Button label="你……你怎么了？怎么总是在哭？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">呜呜呜呜……我的丈夫……我的丈夫……他还没回来……</Dialog>
+          <Dialog npcID="201400" npcName="泪娘子">我该怎么办，怎么办……啊！那个！你那个，不就是传说中的奇幻卷轴吗？</Dialog>
+          <Button label="呃，的确是那个没错……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">你用那个，用那个把我的丈夫变回来吧！</Dialog>
+          <Dialog npcID="201400" npcName="泪娘子">他生死未卜，我望夫成石，你也不忍心看我这样子的吧！是吧！</Dialog>
+          <Button label="这个……" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_182_201400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_182_201400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">我求你了……</Dialog>
+          <Button label="你别这样！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">我求求你……求求你……</Dialog>
+          <Button label="呃那就好……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/182/182_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_182_201400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_182_201400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">为什么……为什么你竟然不帮我！为什么！</Dialog>
+          <Button label="是这样子的……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/182/182_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">……</Dialog>
+          <Dialog npcID="201400" npcName="泪娘子">……</Dialog>
+          <Dialog npcID="201400" npcName="泪娘子">……</Dialog>
+          <Button label="你怎么了？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="201400" npcName="泪娘子">这位小洛克，你说得没错的……</Dialog>
+          <Button label="嗯！你了解就好！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_182_201400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_182_201400">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/182/182_6" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="201500" position="308|398">
+    <View type="0" src="201500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_182_201500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哼，我终于等到你把卷轴拿出来了！</Dialog>
+          <Button label="怎么是你！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">是我又怎样，我就是跟踪你又怎样，这都妨碍不了我得到卷轴的事实！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">这样子我们的永生计划又踏前一大步了！</Dialog>
+          <Button label="不要！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="combat" args="2|201500|黑衣人">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/182/182_7" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_182_201500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_182_201500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="133000" npcName="武使徒">哼，这没用的家伙，又要我收拾。</Dialog>
+          <Button label="你你你，你想做什么？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_182_201500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_182_201500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/182/182_8" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_182_201500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_182_201500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/182/182_9" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="探险者的试炼" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101600" npcName="吉洛斯">是吗，事情告一段落。那样真好。那么，你的试炼我们可以正式开始。准备好了吗？</Dialog>
+          <Button label="好！开始吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="我等会再过来吧！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|101600|吉洛斯">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|182"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 32 -->
+    <NPCFun label="app_ts0" sceneID="32">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/182/182_ts_0" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="32"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 105 -->
+    <NPCFun label="app_ts1" sceneID="105">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/182/182_ts_1" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="105"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 106 -->
+    <NPCFun label="app_ts2" sceneID="106">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/182/182_ts_2" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="106"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 114 -->
+    <NPCFun label="app_ts3" sceneID="114">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/182/182_ts_3" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="114"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts4_xml · 场景 32 -->
+    <NPCFun label="app_ts4" sceneID="32">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/182/182_ts_4" winPos="0|0" name="提示">
+    	<Default><Goto value="index_0"/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="32"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

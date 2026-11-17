@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 YuanXiaoCustom.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="207" label="元宵和孔明灯">
+  <Task id="4068" label="元宵和孔明灯">
+    <!-- npcfun_accepttask_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="元宵节有啥好玩的呢？" icon="-1" iconType="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="223500" npcName="菲尔特">太多了，先问你几个问题，你知道元宵和汤圆的区别么？孔明灯为什么能飞呢？</Dialog>
+    						<Button label="不如我们去问问安格吧" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4068"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 87 -->
+    <NPCFun label="app_ts0" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="103"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 87 -->
+    <NPCFun label="app_ts1" sceneID="87">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="13"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="汤圆和元宵" icon="0" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122100" npcName="安格">汤圆和元宵有什么不同？这是个好问题……</Dialog>
+    						<Button label="能给我讲讲么？" close="true">
+    							<Goto value="donghua_1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_1" type="asWindow" src="task/4068/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_1"/>
+    				</Default>
+    			</Script>	
+    
+    			<Script label="dlg_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122100" npcName="安格">明白了吧，不如现在尝试下做汤圆？</Dialog>
+    						<Button label="好的" close="true">
+    							<Goto value="donghua_2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_2" type="asWindow" src="task/4068/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_2"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122100" npcName="安格">不错不错，看好你哦！</Dialog>
+    						<Button label="好的，原来是这样，你能再给我讲讲孔明灯的故事么？" close="false">
+    							<Goto value="dlg_3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="dlg_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122100" npcName="安格">好的，要用心听哦！</Dialog>
+    						<Button label="好的" close="true">
+    							<Goto value="donghua_3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_3" type="asWindow" src="task/4068/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_4"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122100" npcName="安格">很有意思吧。</Dialog>
+    						<Button label="好的，原来是这样，我现在去告诉一下菲尔特" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Click label="submit" event="NULL" fire="true" fireID="122101"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- npcfun_acceptnotfinish_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="汤圆和元宵" close="false">
+    		<Click event="onRunScript">	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="223500" npcName="菲尔特">走，咱们问问安格去！</Dialog>
+    					<Button label="我再去看看" close="true">
+    					</Button>
+    				</Page>
+    			</Script>	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="汤圆和元宵" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="223500" npcName="菲尔特">终于弄明白了，怪不得元宵有糊糊的感觉。</Dialog>
+    					<Button label="呵呵呵，明白了吧！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Click label="submit" event="onTaskCall2" params="2|4068"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

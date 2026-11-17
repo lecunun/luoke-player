@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TimeMagicFluteStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="141" label="时间大魔笛">
+  <Task id="1109" label="第一只宠物">
+    <!-- npc_c0_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180300" position="0|0">
+    <View type="0" src="180300.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_1109_180300">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="171600" npcName="喵喵">我的主人奥多被黑衣人带走啦！</Dialog>
+    	      <Button label="奥多？是新入学的新生吗？" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="171600" npcName="喵喵">嗯嗯！是！</Dialog>
+    	      <Button label="那你为什么不跟着你的主人一起？" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="171600" npcName="喵喵"><![CDATA[{name}]]>你不知道，黑衣人把他们都带走啦……</Dialog>
+    	      <Button label="发生了什么？" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_3" type="asWindow" src="task/1109/1109_0" winPos="0|0" name="笛音">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="171600" npcName="喵喵">我们要快点去救出大家！</Dialog>
+    	      <Button label="恩！现在就去暗黑岭！" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_5" event="onTaskCall2" params="1|1109"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180400" position="0|0">
+    <View type="0" src="180400.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_1109_180400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="164500" npcName="第四号">你是谁？你是我主人的敌人？</Dialog>
+    	      <Button label="你主人……？你不认识我了吗？" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	        <Dialog npcID="164500" npcName="第四号">我的主人就是库仑啊！你是谁，我不认识你！你最好快点走！不然，我就要报告给主人了！</Dialog>
+    	      <Button label="你怎么不记得我了！" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="164500" npcName="第四号">我又没见过你，为什么要记得你！</Dialog>
+    	      <Button label="我们认识啊！我慢慢告诉你！" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_3" type="asWindow" src="task/1109/1109_1" winPos="0|0" name="回忆第四号">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="164500" npcName="第四号">哼！你骗人！我根本就不记得！你再不走，我就要叫主人啦！</Dialog>
+    	      <Button label="啊……第四号你……" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_5" event="NULL" fire="true" fireID="180400"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_1109_180400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="164500" npcName="第四号">啊……主人在呼唤我……</Dialog>
+    	      <Button label="第四号！你等等！你要去哪里？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1109_180400"/>
+    	
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_1109_180400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="122800" npcName="黑衣人"><![CDATA[{name}]]>！你这个家伙！你来这里简直是自寻死路！</Dialog>
+    	      <Button label="哼！看我打败你！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="switch" invoke="combat" args="2|181800|黑衣人">
+    	  <Case value="2">
+    	    <Goto value="index_0_2"/>
+    	  </Case>
+    	  <Default>
+    	    <Goto value="index_0_3"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_1109_180400"/>
+    	  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_combatFail"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_1109_180400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格"><![CDATA[{name}]]>！快堵住耳朵！</Dialog>
+    	      <Button label="啊？怎么回事！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="asWindow" src="task/1109/1109_2" winPos="0|0" name="西格塞住耳朵">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="NULL" fire="true" fireID="181800"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180500" position="0|470">
+    <View type="0" src="180500.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    
+    <ViewEvent type="GotIt0_1109_180500">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格">太好啦！终于远离暗黑基地了！</Dialog>
+    	      <Button label="可是……这是怎么回事……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	        <Dialog npcID="135000" npcName="西格">唉……你有所不知，我的奶瓶小鸭也被黑衣人抓走了……</Dialog>
+    	        <Button label="啊？怎么回事？" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="asWindow" src="task/1109/1109_3" winPos="0|0" name="奶瓶小鸭被迷惑">
+    	    <Default>
+    	      <Goto value="index_0_3"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">黑衣人拿着的那个笛子，我以前旅行的时候，听别人提起过。</Dialog>
+    	       <Button label="究竟有什么魔力？" nextID="-1" close="false">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">据说，那个是德古拉伯爵世代相传的笛子。听了笛音之后，会让聆听的人失忆。</Dialog>
+    	       <Button label="啊？这么可怕！" nextID="-1" close="false">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">所以我们才来这里，寻找破解之道。我听说，只要记住笛子的旋律，唱出来就可以了。</Dialog>
+    	       <Button label="可是……我不记得……" nextID="-1" close="false">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_6" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">我听过两次了，我记得！</Dialog>
+    	       <Button label="恩！" nextID="-1" close="true">
+    	        <Goto value="index_0_7"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1109_180500"/>
+      
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_1109_180500">
+    	<Click event="onRunScript">
+    	 <Script label="default" type="asWindow" src="task/1109/1109_4" winPos="0|0" name="古老的歌谣">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1109_180500"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_1109_180500">
+    	<Click event="onRunScript">
+    	  <Click label="default" event="onTaskCall2" params="2|1109"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 75 -->
+    <NPCFun label="app_ts0" sceneID="75">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1109/1109_ts_0" winPos="0|0" name="跳转到暗黑岭">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 75 -->
+    <NPCFun label="app_ts1" sceneID="75">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1109_180400"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 75 -->
+    <NPCFun label="app_ts2" sceneID="75">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1109/1109_ts_1" winPos="0|0" name="跳转到威廉古堡花园">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1110" label="破解之道">
+    <!-- npc_c0_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180600" position="0|455">
+    <View type="0" src="180600.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    
+    <ViewEvent type="GotIt0_1110_180600">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格">快看！我觉得就是那个壁炉！就是我们要取得火种的地方！</Dialog>
+    	      <Button label="可是……要怎么取得火种？" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格">不如用星星魔法试试吧！</Dialog>
+    	      <Button label="恩！" nextID="-1" close="true">
+    	        <End/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt1_1110_180600">
+    	<Click event="onRunScript">
+    	
+    	 <Script label="default" type="asWindow" src="task/1110/1110_0" winPos="0|0" name="德古拉版画">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格"><![CDATA[{name}]]>！……我们……找到了……</Dialog>
+    	      <Button label="恩！真的……" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="135000" npcName="西格">快点去暗黑宠物基地，救出大家吧！</Dialog>
+    	      <Button label="嗯嗯！" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_3" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180700" position="0|440">
+    <View type="0" src="180700.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    
+    <ViewEvent type="GotIt0_1110_180700">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">奶瓶小鸭！我来救你啦！</Dialog>
+    	       <Dialog npcID="134400" npcName="奶瓶小鸭">你是谁？</Dialog>
+    	       <Button label="西格！不要激动！它们都失忆了！" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="135000" npcName="西格">是啊！我一激动，就都给忘记啦！那现在我们要怎么办！</Dialog>
+    	       <Dialog npcID="171600" npcName="喵喵">我怎么没有看到奥多！</Dialog>
+    	       <Button label="肯定是被关在其他地方了！" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	        <Dialog npcID="171600" npcName="喵喵">那可怎么办！</Dialog>
+    	       <Button label="我自有妙计！" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_3" event="NULL" fire="true" fireID="180700"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_1110_180700">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	     <Dialog npcID="135000" npcName="西格">奶瓶小鸭，你看，你的主人……你的主人黑衣人来啦！</Dialog>
+    	     <Dialog npcID="134400" npcName="奶瓶小鸭">啊！我的主人！有什么能为您效劳？</Dialog>
+    	     <Dialog npcID="112000" npcName="黑衣人">奥多他们被关在哪里啦？</Dialog>
+    	     <Dialog npcID="134400" npcName="奶瓶小鸭">他们？他们就在孵蛋基地呢！</Dialog>
+    	      <Button label="好～我们就去那里！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1110_180700"/>
+    	
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_1110_180700">
+    	<Click event="onRunScript">
+    	   <Click label="default" event="onTaskCall2" params="2|1110"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 75 -->
+    <NPCFun label="app_ts0" sceneID="75">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1110/1110_ts_0" winPos="0|0" name="跳转到暗黑宠物基地">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 75 -->
+    <NPCFun label="app_ts1" sceneID="75">
+    <Click event="onRunScript">
+    	<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1110_180700"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 75 -->
+    <NPCFun label="app_ts2" sceneID="75">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1110/1110_ts_1" winPos="0|0" name="跳转到孵蛋基地">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1111" label="怎能遗忘">
+    <!-- npc_c0_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="180800" position="0|0">
+    <View type="0" src="180800.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    
+    <ViewEvent type="GotIt0_1111_180800">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="171600" npcName="喵喵">快看！奥多在那里呢！</Dialog>
+    	      <Dialog npcID="180800" npcName="奥多">你……我不认识你。我是魔法学院的学生，等着恩佐大人来给我上课呢。</Dialog>
+    	      <Button label="可是这里不是真正的魔法学院啊！" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="180800" npcName="奥多">这里是孵蛋基地！</Dialog>
+    	      <Button label="呃……" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1111_180800"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_1111_180800">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="asWindow" src="task/1111/1111_0" winPos="0|0" name="德古拉版画的能量">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  <Click label="index_0_1" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_1111_180800">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="122800" npcName="黑衣人">恶魔叮！你怎么了！恶魔叮！</Dialog>
+    	      <Dialog npcID="135000" npcName="西格">嘿嘿！一定是因为那块石板，把你的笛音反弹回去，被恶魔叮听到，使它失忆了。</Dialog>
+    	      <Dialog npcID="122800" npcName="黑衣人">啊……啊！啊！！怎么会……</Dialog>
+    	      <Dialog npcID="121600" npcName="恶魔叮">嗯？这里是哪里？你是谁？</Dialog>
+    	      <Dialog npcID="122800" npcName="黑衣人">怎么办……怎么办……恶魔叮什么都记不起来啦！</Dialog>
+    	      <Button label="呃……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="164500" npcName="第四号">好吧！我决定救恶魔叮！</Dialog>
+    	      <Button label="啊……？" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="164500" npcName="第四号">生命面前，人人平等。</Dialog>
+    	      <Dialog npcID="122800" npcName="黑衣人">[好感动啊……]55555555</Dialog>
+    	      <Dialog npcID="164500" npcName="第四号">你必须要无私地把你对恶魔叮的爱分享给它，让它知道，你们过去的回忆，还有，它对你而言有多么重要。</Dialog>
+    	      <Dialog npcID="122800" npcName="黑衣人">嗯嗯……我愿意！</Dialog>
+    	      <Button label="有点被感动到了……" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_3" type="asWindow" src="task/1111/1111_1" winPos="0|0" name="库仑爱恶魔叮">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_4" event="NULL" fire="true" fireID="181900"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_1111_180800">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="122800" npcName="黑衣人">哼！这次就先放过你们啦……</Dialog>
+    	      <Button label="呃……还这么逞强……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+         <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_1111_180800"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt4_1111_180800">
+    	<Click event="onRunScript">
+    		<Click label="default" event="onTaskCall2" params="2|1111"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

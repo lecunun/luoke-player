@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 PurseStolen.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="205" label="红包不见了">
+  <Task id="4067" label="红包不见了">
+    <!-- npcfun_accepttask_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="同喜同喜哦！" icon="-1" iconType="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="222500" npcName="菲尔特">今年过年你收获如何？我得到了好多红包，你呢？</Dialog>
+    						<Button label="还好啦，你有多少收获呢？" close="true">
+    							<Goto value="donghua_1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_1" type="asWindow" src="task/4067/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_1"/>
+    				</Default>
+    			</Script>	
+    
+    			<Script label="dlg_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="222500" npcName="菲尔特">嘿嘿嘿嘿，其实没有那么多啦，但是也不少哦！</Dialog>
+    						<Button label="好吧，让我看看呗……" close="false">
+    							<Goto value="dlg_2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="dlg_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="222500" npcName="菲尔特">好的，咦~~~我的压岁钱呢？完了没有了，被我弄丢了！！！</Dialog>
+    						<Button label="不是吧，好好想想你去过哪里" close="false">
+    							<Goto value="dlg_3"/>
+    						</Button>
+    				</Page>
+    			</Script>	
+    
+    			<Script label="dlg_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="222500" npcName="菲尔特">我怎么知道，我该怎么办，呜呜呜~~</Dialog>
+    						<Button label="别急，我们去福尔摩斯事务所找罗宾帮帮忙" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4067"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 29 -->
+    <NPCFun label="app_ts0" sceneID="29">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="29"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 29 -->
+    <NPCFun label="app_ts1" sceneID="29">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="2"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 29 -->
+    <NPCFun label="app_ts2" sceneID="29">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="27"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="遗失的压岁钱" icon="0" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101300" npcName="罗宾">红包不见了？一定会有线索，有小洛克说之前在皮卡服装店见过菲尔特。</Dialog>
+    						<Button label="哦~~" close="true">
+    							<Goto value="donghua_2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_2" type="asWindow" src="task/4067/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_1"/>
+    				</Default>
+    			</Script>	
+    
+    			<Script label="dlg_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101300" npcName="罗宾">去那里找找看。</Dialog>
+    						<Button label="好的" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="NULL" fire="true" fireID="101304"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="遗失的压岁钱" icon="0" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="205400" npcName="皮卡">菲尔特？他来过还留下了这个，你看看？</Dialog>
+    						<Button label="哦？" close="true">
+    							<Goto value="donghua_3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_3" type="asWindow" src="task/4067/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg_1"/>
+    				</Default>
+    			</Script>	
+    
+    			<Script label="dlg_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="205400" npcName="皮卡">这个应该是他落下的，你帮我还给他吧！</Dialog>
+    						<Button label="好的" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="NULL" fire="true" fireID="205401"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- npcfun_acceptnotfinish_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="遗失的压岁钱" close="false">
+    		<Click event="onRunScript">	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="222500" npcName="菲尔特">怎么办，罗宾那里问出什么结果了没？皮卡那里呢？</Dialog>
+    					<Button label="我再去看看" close="true">
+    					</Button>
+    				</Page>
+    			</Script>	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="遗失的压岁钱" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="222500" npcName="菲尔特">太感谢你了，终于找到了，急死我了……</Dialog>
+    					<Button label="我建议你把钱存到银行里，这样才安全" close="false">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="dialog_1" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="222500" npcName="菲尔特">嗯嗯。</Dialog>
+    					<Button label="你还可以用这些钱去钻石港投资航海，可以获得更多的回报哦！" close="true">
+    						<Goto value="donghua_4"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_4" type="asWindow" src="task/4067/app4" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>	
+    
+    			<Click label="submit" event="onTaskCall2" params="2|4067"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="178" label="木豆丁的故事之二">
+  <Task id="4057" label="木豆丁的故事之二">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="木豆丁的训练" icon="-1" close="false">
+    <Click event="onRunScript">
+    
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">周围的宠物我们都打遍了，没有敌手啊，这是强者的寂寞啊……</Dialog>
+    <Button label="你们都和谁战斗过" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/4057/app1" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">我们需要更加强大的对手，你帮我找一些高手来吧！</Dialog>
+    <Button label="锻炼不一定要战斗啊，这样吧我去矿山口、雪人谷看看，看能不能找到高手！" nextID="-1" close="false">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_3" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">随你，关键是找到对手</Dialog>
+    <Button label="好的，我去找找看" nextID="-1" close="true">
+    <Goto value="index_0_5"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    
+    <Click label="index_0_5" event="onTaskCall2" params="1|4057"/>
+    
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g2_xml -->
+    <NPCFun label="木豆丁的训练" icon="-1" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">哥要的是高手，高手你懂吗！</Dialog>
+    <Button label="好吧，我再去矿山口和雪人谷找找" nextID="-1" close="true">
+    <End/>
+    </Button>
+    </Page>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g3_xml -->
+    <NPCFun label="木豆丁的训练" icon="0" close="false">
+    <Click event="onRunScript">
+    	
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">靠谱靠谱，这个大个子看起来很猛，木豆丁上！！！</Dialog>
+    <Button label="好的，罗隐不会让我失望的" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/4057/app2" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">王国里的高手真多，感谢你们！</Dialog>
+    <Button label="还好吧" nextID="-1" close="false">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_3" type="dialog">
+    <Page id="0">
+    <Dialog npcID="202600" npcName="木藤藤">我们的族长最近说经常有黑色的家伙在永夜森林出没，你们认识他们吗？</Dialog>
+    <Button label="..." nextID="-1" close="true">
+    <Goto value="index_0_4"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_4" type="asWindow" src="task/4057/app3" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_5"/>
+    </Default>
+    </Script>
+    	
+    <Click label="index_0_5" event="onTaskCall2" params="2|4057"/>
+    	
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="203500" position="770|410">
+    <View type="0" src="203500.swf" atLayerID="1" hasClick="true"/>	
+    <Click event="onRunScript">
+    
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="203500" npcName="罗隐">要和我战斗，谁这么嚣张！</Dialog>
+    <Button label="呃，你愿意去和它战斗吗？" nextID="-1" close="false">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Script label="index_0_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="203500" npcName="罗隐">怕啥，走！</Dialog>
+    <Button label="好吧" nextID="-1" close="true">
+    <Goto value="index_0_2"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    	
+    </Click>
+    </Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="203600" position="750|390">
+    <View type="0" src="203600.swf" atLayerID="1" hasClick="true"/>	
+    <Click event="onRunScript">
+    
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="203600" npcName="雪娃娃">罗隐哥哥都去了，难道让我去打酱油？？</Dialog>
+    <Button label="咱们去当啦啦队" nextID="-1" close="false">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Script label="index_0_1" type="dialog">
+    <Page id="0">
+    <Dialog npcID="203600" npcName="雪娃娃">好吧，给罗隐哥哥加油去！</Dialog>
+    <Button label="好吧" nextID="-1" close="true">
+    <Goto value="index_0_2"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    	
+    </Click>
+    </Npc>
+    <!-- app_ts1_xml · 场景 40 -->
+    <NPCFun label="app_ts1" sceneID="40">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="40"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 17 -->
+    <NPCFun label="app_ts2" sceneID="17">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="17"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 134 -->
+    <NPCFun label="app_ts3" sceneID="134">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="134"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

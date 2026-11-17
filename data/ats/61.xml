@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FreakDragonStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="61" label="变异的龙系宠物">
+  <Task id="1041" label="格里芬的专题研究">
+    <!-- npcfun_g_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="专题研究" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100100" npcName="格里芬">最近我正在秘密做一个研究，关于龙之秘境忽然来到的一些宠物的。但是课题进行到一半，发现有些进行不下去了，需要你的帮忙，去龙守望实地考察一下。</Dialog>
+    				<Button label="现在就去" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|1041"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="专题研究" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">我经过研究发现，它们狂躁不安，竟然是因为被某种力量控制着！由于这股力量很强，想解除的话，需要两个水晶球进行催眠！</Dialog>
+    					<Button label="原来是这样啊！" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">之前就出现过一只类似的抓狂的宠物，现在又出现了一只，而且毫无征兆！实际上，这就是格里芬和我秘密研究的问题。</Dialog>
+    					<Button label="还要催眠么！" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">但是我只有一个人，所以需要你来控制另外一个水晶球。催眠需要十分集中的注意力，而且如果你的定力不够，说不定还会反被宠物催眠，所以你一定要准备好！必须当心！</Dialog>
+    					<Button label="定不负所托" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1041"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="133500" position="195|390">
+    		<View type="0" src="133500.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt">
+    				<Click event="NULL" cdtn="60" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_p2_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="133700" position="865|474">
+    		<View type="0" src="133700.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+  </Task>
+  <Task id="1042" label="催眠中的真相">
+    <!-- npcfun_p_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="专题研究" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">看来这本书里已经记载得很详细了，原来是这样啊。</Dialog>
+    					<Button label="可是我们去哪里找另外一块龙珠碎片呢？" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">格里芬和我一起在做这项研究，他那里还有一块龙珠碎片，你去拿来就可以啦！不过你还要按照书上的提示，去找到蓝之泉水。这次就拜托你啦！</Dialog>
+    					<Button label="不负所托" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1042"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134200" position="707|344">
+    		<View type="0" src="134200.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1042/1042_1" winPos="0|0" name="提示">
+    				<Case value="1"><Goto value="dialog_0"/></Case>
+    				<Default><End/></Default>
+    			</Script>			
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">太好了！<![CDATA[{name}]]>，水晶球已经开启了！现在我们必须要全神贯注！</Dialog>
+    					<Button label="一定！" nextID="-1" close="true">
+    						<Goto value="asWindow_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_1" type="asWindow" src="task/1042/1042_0" winPos="0|0" name="提示">
+    				<Default><Goto value="dialog_1"/></Default>
+    			</Script>			
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">看来，要使得宠物脱离原来的控制是十分困难的，但是龙珠碎片应该可以治好它们。具体的方法，我记得应该就在那些书里！你去看看吧！</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134100" position="690|328">
+    		<View type="0" src="134100.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1042/1042_2" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+  </Task>
+  <Task id="1043" label="激变的龙珠能量">
+    <!-- app_ts0_xml · 场景 80 -->
+    <NPCFun label="app_ts0" sceneID="80">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1043/1043_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 80 -->
+    <NPCFun label="app_ts1" sceneID="80">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1043/1043_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 80 -->
+    <NPCFun sceneID="80" label="来拿龙珠碎片" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100100" npcName="格里芬">看来还是海德对龙系宠物有研究，已经找到了原因。既然是海德拜托你来的，这块龙珠碎片就先拿去用吧！</Dialog>
+    				<Button label="真是太谢谢你啦！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 80 -->
+    <Npc sceneID="80" type="1" npcID="133800" position="802|259" aimPos="0|0">
+    	<View type="0" src="133800.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 80 -->
+    <Npc sceneID="80" type="1" npcID="133900" position="0|0">
+    	<View type="0" src="133900.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="133900" npcName="武使徒">嘿嘿！乖乖把龙珠碎片交出来吧！</Dialog>
+    						<Button label="别做梦了" nextID="-1" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="combat_0" type="switch" invoke="combat" args="2|133900|武使徒">
+    					<Case value="2"><Goto value="win"/></Case>
+    					<Default><Goto value="lose"/></Default>
+    				</Script>
+    				<Script label="lose" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="133900" npcName="武使徒"><![CDATA[{name}]]>，就你这点能耐，还是乖乖把龙珠碎片交出来吧！</Dialog>
+    						<Button label="有本事再来" nextID="-1" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    						<Button label="我打不过还跑不了吗！" nextID="-1" close="true">
+    							<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2"/>
+    						</Button>
+    					</Page>
+    				</Script>	
+    				<Script label="win" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="133900" npcName="武使徒">可恶！这只变异后的宠物竟然不受我的控制了！我们下次再一决胜负吧！这次算你小子好运啊！</Dialog>
+    						<Button label="过分" nextID="-1" close="true">
+    							<Goto value="onSceneCMDCall_0"/>
+    						</Button>
+    					</Page>
+    				</Script>	
+    				<Click label="onSceneCMDCall_0" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1">
+    			<Click event="onTaskCall2" params="2|1043"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="133900" npcName="武使徒"><![CDATA[{name}]]>，就你这点能耐，还是乖乖把龙珠碎片交出来吧！</Dialog>
+    						<Button label="有本事再来" nextID="-1" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    						<Button label="我打不过还跑不了吗！" nextID="-1" close="true">
+    							<End/>
+    						</Button>
+    					</Page>
+    				</Script>	
+    				<Script label="combat_0" type="switch" invoke="combat" args="2|133900|武使徒">
+    					<Case value="2"><Goto value="win"/></Case>
+    					<Default><Goto value="default"/></Default>
+    				</Script>
+    				<Script label="win" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="133900" npcName="武使徒">可恶！这只变异后的宠物竟然不受我的控制了！我们下次再一决胜负吧！这次算你小子好运啊！</Dialog>
+    						<Button label="过分" nextID="-1" close="true">
+    							<Goto value="onSceneCMDCall_0"/>
+    						</Button>
+    					</Page>
+    				</Script>	
+    				<Click label="onSceneCMDCall_0" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+  </Task>
+  <Task id="1044" label="接通爱的回路">
+    <!-- app_ts0_xml · 场景 81 -->
+    <NPCFun label="app_ts0" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1044/1044_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134000" position="649|320">
+    	<View type="0" src="134000.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0">
+    			<Click event="NULL" cdtn="60" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npcfun_c0_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="我找到了龙珠碎片和蓝之泉水" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="128200" npcName="海德">太好了！你拿到了龙珠碎片，还找到了蓝之泉水！现在，我们就一起来让它彻底恢复吧！</Dialog>
+    				<Button label="好的" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="128200" npcName="海德">我们用两个水晶球来施法，你把蓝之泉水放入水晶球中就好啦！</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="onSceneCMDCall_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="onSceneCMDCall_0" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134300" position="865|474">
+    	<View type="0" src="134300.swf" atLayerID="2"/>
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="134300" npcName="小卡秋莎">我恢复了！</Dialog>
+    				<Button label="太好啦！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="134300" npcName="小卡秋莎">谢谢你们救了我！</Dialog>
+    				<Button label="这是我应该做的" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="134300" npcName="小卡秋莎">如果……如果你喜欢我的话，可以当我的主人吗？</Dialog>
+    				<Button label="我当然喜欢你啦！" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="134300" npcName="小卡秋莎">可是……可是，也许我进化之后，还会变成那个很丑的变异的卡秋莎……</Dialog>
+    				<Button label="那我也会一直喜欢你的！" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="134300" npcName="小卡秋莎">真的吗？那……那你真的是我命中注定的主人！</Dialog>
+    				<Button label="恩！我会好好爱护你的！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1044"/>
+    	</Click>
+    </Npc>
+  </Task>
+</Story>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GaoLiGongLegend2.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="192" label="高黎贡的传说（下）">
+  <Task id="3037" label="高黎贡的传说（下）">
+    <!-- npcfun_accepttask_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="是不是有我的信？" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="100900" npcName="麦斯威尔">恩，我受人之托转交给你！快看看吧！</Dialog>
+    						<Button label="难道有人爱慕我…… *＾o＾*" close="true">
+    							<Goto value="appui1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="appui1" type="asWindow" src="task/3037/appui1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg1"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg1" type="dialog">
+    				<Page>
+    					<Dialog npcID="100900" npcName="麦斯威尔">可丽希亚这孩子平常看上去大大咧咧的，其实是个心地善良的好孩子。</Dialog>
+    					<Dialog npcID="100900" npcName="麦斯威尔"><![CDATA[{name}]]>，我觉得你们这次的行动非常有意义，一定要做好！</Dialog>
+    						<Button label="请放心！" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|3037"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 179 -->
+    <NPCFun label="app_ts0" sceneID="179">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3037/appui2" winPos="0|0" name="正在加载...">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    		</Script>
+    			
+    		<Click label="submit" event="onChangeScene" params="179"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 88 -->
+    <NPCFun label="app_ts1" sceneID="88">
+    <Click event="onRunScript">
+    		<Click label="default" event="NULL" params="185"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 88 -->
+    <NPCFun label="app_ts2" sceneID="88">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3037/appui3" winPos="0|0" name="正在加载...">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    		</Script>
+    		<Click event="onChangeScene" label="submit" params="185"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 88 -->
+    <NPCFun label="app_ts3" sceneID="88">
+    <Click event="onRunScript">
+    		<Click event="NULL" label="default" params="7"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="211900" name="">
+    	<View type="0" src="211900.swf" atLayerID="2" hasClick="false"/>
+    
+    	<Create>
+    		<ViewEvent type="eventdlg1">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="204400" npcName="薇薇安">外来者，快离开，可恶！</Dialog>
+    						<Dialog npcID="105400" npcName="可丽希亚">都说了我是来帮忙的！你才可恶！</Dialog>
+    							<Button label="公主，我们是来帮忙的，不是来吵架的……">
+    								<Goto value="dlg1"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Script label="dlg1" type="dialog">
+    					<Page>
+    						<Dialog npcID="105400" npcName="可丽希亚">哼！本公主当然知道！这个忙我帮定了！</Dialog>
+    						<Dialog npcID="204400" npcName="薇薇安">才不稀罕你们帮忙，赶快离开这里！不要让我再看见你们！</Dialog>
+    							<Button label="[与可丽希亚耳语]公主，我们还是用行动说话吧！" close="true">
+    								<Goto value="playframe2"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    
+    				<Click label="playframe2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME2"/>
+    			 </Click>
+    		</ViewEvent>
+    	
+    		
+    		<ViewEvent type="eventdlg2">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="asWindow" src="task/3037/app1" winPos="0|0" name="正在加载...">
+    					<Default>
+    						<Goto value="submit"/>
+    					</Default>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true" fireID="211900"/>
+    			</Click>
+    		</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="212000" name="">
+    	<View type="0" src="212000.swf" atLayerID="2" hasClick="false"/>
+    
+    	<Create>
+    		<ViewEvent type="eventdlg1">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="204500" npcName="莉莉丝">嘻嘻，这段时间你们的努力我们都看到啦！薇薇安姐姐不好意思跟你们说，其实她也认可你们了呢！</Dialog>
+    						<Dialog npcID="105400" npcName="可丽希亚">什么嘛，嘴硬心软的女人！</Dialog>
+    							<Button label="我觉得人多力量大，是否可以叫其他小洛克进来?">
+    								<Goto value="dlg1"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    				
+    				<Script label="dlg1" type="dialog">
+    					<Page>
+    						<Dialog npcID="204500" npcName="莉莉丝">这个我做不了主哦，你们去问下白眉长老吧，嘻嘻~~</Dialog>
+    							<Button label="好的，谢谢你，你真可爱耶~" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    
+    				<Click label="submit" event="NULL" fire="true" fireID="212000"/>
+    			</Click>
+    		</ViewEvent>	
+    	</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="214200" name="">
+    	<View type="0" src="214200.swf" atLayerID="2" hasClick="false"/>
+    
+    	<Create>
+    		<ViewEvent type="eventdlg1">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="204600" npcName="白眉长老">不瞒两位，现在的封印之力已经不足以继续封闭高黎贡山了。我想不久之后它就会显现在大陆上了……哎！</Dialog>
+    						<Dialog npcID="105400" npcName="可丽希亚">长老你是在担心这里再次被破坏吗？不要担心，我回到王国之后会号召小洛克们一起来保护这里，给他们讲高黎贡山的故事，告诉他们这里曾经的美丽！</Dialog>
+    							<Button label="（想不到公主也有这样善解人意的一面……）">
+    								<Goto value="dlg1"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dlg1" type="dialog">
+    					<Page>
+    						<Dialog npcID="204600" npcName="白眉长老">呵呵好吧，目前来看也没有其他办法了。希望这次上天会眷顾高黎贡！</Dialog>
+    							<Button label="一定会的！我们这就去号召大家！" close="true">
+    								<Goto value="appui4"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    
+    				<Script label="appui4" type="asWindow" src="task/3037/appui4" winPos="0|0" name="正在加载...">
+    					<Default>
+    						<Goto value="playframe2"/>
+    					</Default>
+    				</Script>
+    
+    				<Click label="playframe2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME2"/>
+    			 </Click>
+    		</ViewEvent>
+    	
+    		
+    		<ViewEvent type="eventdlg2">
+    			<Click event="onRunScript">
+    			
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="204600" npcName="白眉长老">谢谢你们，高黎贡山已经好多年没这样充满生气了！</Dialog>
+    						<Dialog npcID="105400" npcName="可丽希亚">长老，那艾露尼会从沉睡中醒来吗？那蒂伊尔……</Dialog>
+    							<Button label="(哪壶不开提哪壶……)公主，那边风景不错，我们去散步吧！">
+    								<Goto value="dlg4"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dlg4" type="dialog">
+    					<Page>
+    						<Dialog npcID="204600" npcName="白眉长老">其实不用忌讳，呵呵。已经是好久以前的故事了……</Dialog>
+    							<Button label="（白眉长老好像陷入了沉思）" close="true">
+    								<Goto value="app4"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Script label="app4" type="asWindow" src="task/3037/app4" winPos="0|0" name="正在加载...">
+    					<Default>
+    						<Goto value="dlg5"/>
+    					</Default>
+    				</Script>
+    	
+    				<Script label="dlg5" type="dialog">
+    					<Page>
+    						<Dialog npcID="105400" npcName="可丽希亚">原来是这样的！好感动！长老有办法救活蒂伊尔吗？</Dialog>
+    						<Dialog npcID="204600" npcName="白眉长老">可能需要漫长岁月的等待才行，当神树重新灵气充裕时，也许他就能苏醒。可是苏醒后的他还是他吗，这些都是未知……</Dialog>
+    						<Dialog npcID="105400" npcName="可丽希亚">那艾露尼呢，还能见到她吗？</Dialog>
+    						<Dialog npcID="204600" npcName="白眉长老">神女也需要灵气的滋养，不过现在她是可以短暂出现的！她其实已经听到我们说话了，呵呵。</Dialog>
+    							<Button label="我们真的能见到艾露尼吗？" close="true">
+    								<Goto value="overani"/>
+    							</Button>
+    					</Page>
+    				</Script>
+    	
+    				<Click label="overani" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYOVER"/>
+    				
+    			</Click>
+    		</ViewEvent>
+    		
+    		<ViewEvent type="submit3">
+    			<Click event="onRunScript">
+    					<Click label="default" event="NULL" fire="true" fireID="214200"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_finish_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="212100" name="">
+    		<View type="0" src="212100.swf" atLayerID="2"/>
+    	
+    		<Create>
+    			<ViewEvent type="eventdlg1">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/3037/appui5" winPos="0|0" name="正在加载...">
+    						<Default>
+    							<Goto value="dlg1"/>
+    						</Default>
+    					</Script>
+    	
+    					<Script label="dlg1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="105400" npcName="可丽希亚">艾露尼，我觉得不管是高黎贡山的大家还是蒂伊尔，最大的希望就是你早日恢复过来，再次和大家生活在一起。</Dialog>
+    							<Dialog npcID="204700" npcName="艾露尼">谢谢你们，我知道了。我马上又将陷入沉睡，希望你们可以继续帮助高黎贡山！</Dialog>
+    								<Button label="我们会的！" close="true">
+    									<Goto value="playframe2"/>
+    								</Button>
+    						</Page>
+    					</Script>
+    	
+    					<Click label="playframe2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="PLAYFRAME2"/>
+    	
+    				</Click>
+    			</ViewEvent>
+    	
+    			<ViewEvent type="eventdlg2">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/3037/app5" winPos="0|0" name="正在加载...">
+    						<Default>
+    							<Goto value="submit"/>
+    						</Default>
+    					</Script>
+    	
+    					<Click label="submit" event="onTaskCall2" params="2|3037"/>
+    				</Click>
+    			</ViewEvent>
+    
+    		</Create>
+    		</Npc>
+  </Task>
+</Story>

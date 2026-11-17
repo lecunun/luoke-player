@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ButterflySeedlingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="218" label="蝴蝶树苗">
+  <Task id="4073" label="蝴蝶树苗">
+    <!-- npcfun_g_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="丢失的树苗" icon="-1" close="false">
+    <Click event="onRunScript">
+    
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">最近我发现这树苗好像越来越少了，你也来帮我数数？</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/4073/app1" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">别乱猜了，还是仔细看下，有没有什么线索。</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Click label="index_0_3" event="onTaskCall2" params="1|4073"/>
+    
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g2_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="丢失的树苗" icon="0" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">仔细看看有没有树苗的线索！</Dialog>
+    <Button label="我再仔细看看。" nextID="-1" close="true">
+    <End/>
+    </Button>
+    </Page>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 185 -->
+    <Npc sceneID="185" type="1" npcID="229100" position="0|0">
+    <View type="0" src="229100.swf" atLayerID="1" hasClick="true"/>
+    <Click event="onRunScript">
+    
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="229100" npcName="淘气的小树苗">放开俺，放开俺！不要欺负俺！</Dialog>
+    <Button label="谁欺负你了？" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Script label="index_0_1" type="asWindow" src="task/4073/app2" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    
+    <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npcfun_g4_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="丢失的树苗" icon="0" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">真相到底是怎样呢？</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/4073/app3" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    
+    <Click label="index_0_2" event="onTaskCall2" params="2|4073"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

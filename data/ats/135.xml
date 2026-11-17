@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BigRescueReversedStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="135" label="逆转大营救">
+  <Task id="1106" label="疑团">
+    <!-- npc_g_xml · 场景 40 -->
+    <Npc sceneID="40" type="1" npcID="175800" position="285|428">
+    <View type="0" src="175800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1106_175800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1106/1106_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1106_175800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1106_175800">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="1|1106"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c0_xml · 场景 40 -->
+    <Npc sceneID="40" type="1" npcID="175900" position="229|321">
+    <View type="0" src="175900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1106_175900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士"><![CDATA[{name}]]>，你们来得正好！</Dialog>
+          <Button label="啊！原来是蔷薇骑士！怎么了？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">我看到那艘飞艇十分诡异，一路追踪。埋伏在这里，偷听他们的谈话。</Dialog>
+          <Button label="啊！他们说什么阴谋了！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">他们说，要去炸毁魔法学院！毁掉新生典礼！</Dialog>
+          <Button label="果然和那张信里说得一模一样呢！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">那我们快点去找格里芬吧！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 40 -->
+    <Npc sceneID="40" type="1" npcID="177100" position="659|368">
+    <View type="0" src="177100.swf" atLayerID="2" hasClick="false"/>
+    <Click event="NULL"/>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 20 -->
+    <NPCFun sceneID="20" label="刚刚有黑衣人的飞船出现啊！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬院长">飞船……？而且还是黑衣人的！？我怎么没看到……</Dialog>
+          <Button label="你看这封信！而且蔷薇骑士也亲眼见到！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">果真如此！未雨绸缪！我们还是尽早防范！</Dialog>
+          <Dialog npcID="100100" npcName="格里芬院长">恩，有备无患！</Dialog>
+          <Button label="好！我现在就去召集大家！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬院长">恩！<![CDATA[{name}]]>，你写个召集榜贴在外面吧！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true" fireID="100103"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 40 -->
+    <Npc sceneID="40" type="1" npcID="176000" position="253|488">
+    <View type="0" src="176000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1106_176000">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1106/1106_1" winPos="0|0" name="">
+    	<Case value="1"><Goto value="index_0_1"/></Case>	
+        <Default><End/></Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1106_176000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1106_176000">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|1106"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 40 -->
+    <NPCFun label="app_ts0" sceneID="40">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1106/1106_ts_0" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_1"/></Case>			
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="index_1" event="onChangeScene" params="40"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 6 -->
+    <NPCFun label="app_ts1" sceneID="6">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1106/1106_ts_1" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_1"/></Case>			
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="index_1" event="onChangeScene" params="6"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1107" label="准备">
+    <!-- npc_c0_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="176000" position="253|488">
+    <View type="0" src="176000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1107_176000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175600" npcName="阿基拉"><![CDATA[{name}]]>，我们还没有来迟吧！</Dialog>
+          <Button label="阿基拉！龙族之王！还有平阳公主！你们怎么来了！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175700" npcName="平阳公主">你都贴了招募榜，我们当然不能袖手旁观！</Dialog>
+          <Dialog npcID="175500" npcName="龙族之王">到底是怎么回事呢！</Dialog>
+          <Button label="恩佐的飞船要来袭击魔法学院啦！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175700" npcName="平阳公主">那个恩佐，还有黑衣人，他们都是十恶不赦的大坏蛋！</Dialog>
+          <Dialog npcID="175600" npcName="阿基拉">看来……我们也只有制造出空中战斗武器，与它对抗了！</Dialog>
+          <Button label="啊！怎么制造呢！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175500" npcName="龙族之王">你还不相信机械族首领吗！</Dialog>
+          <Dialog npcID="175700" npcName="平阳公主">有什么需要我们的地方？</Dialog>
+          <Dialog npcID="175600" npcName="阿基拉">这附近，有没有空地呢？这里这么拥挤，肯定没有办法制造机器的！</Dialog>
+          <Button label="那我们就去旁边的魔法密林吧！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="176100" position="375|400">
+    <View type="0" src="176100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1107_176100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175600" npcName="阿基拉">刚刚我的族人给我拿来了一些材料，<![CDATA[{name}]]>，我们现在就开始制作空中战斗的武器吧！</Dialog>
+          <Button label="啊？可是要怎么做呢？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175500" npcName="龙族之王">阿基拉已经画好了图纸！</Dialog>
+          <Dialog npcID="175700" npcName="平阳公主">恩！我们一起照着图纸来做就行！</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="game" args="2|name|2101|0">
+        <Case value="1">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1107_176100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1107_176100">
+    <Click event="onRunScript">
+    	<Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1107_176100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">……</Dialog>
+          <Button label="蔷薇骑士，你来得正好！看看我们做的飞机！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175700" npcName="平阳公主">看起来，应该可以战胜恩佐了吧！</Dialog>
+          <Dialog npcID="135600" npcName="蔷薇骑士">……</Dialog>
+          <Button label="怎么了？如此沉默？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">我和<![CDATA[{name}]]>可是亲眼见过恩佐的飞船的，非常庞大，看起来很厉害。</Dialog>
+          <Button label="的确如此……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">所以，我觉得，绝对不会是一架飞机就能打败的。</Dialog>
+          <Button label="这么说来，也有道理……" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175600" npcName="阿基拉">那……那我们再做一个机器，一个人可以进去驾驶它！怎么样！</Dialog>
+          <Dialog npcID="135600" npcName="蔷薇骑士">甚好！我愿当驾驶者！</Dialog>
+          <Dialog npcID="175500" npcName="龙族之王">现在我们要怎么做？</Dialog>
+          <Dialog npcID="175600" npcName="阿基拉">我准备好了图纸，我们来组装机器人吧！</Dialog>
+          <Dialog npcID="175700" npcName="平阳公主">可是……我看这个图纸，怎么像马戏团的大布偶……</Dialog>
+          <Dialog npcID="175600" npcName="阿基拉">没错……这是布偶机器人……为了伪装……</Dialog>
+          <Button label="好吧……" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="switch" invoke="game" args="2|name|2102|0">
+        <Case value="1">
+          <Goto value="index_0_6"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1107_176100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1107_176100">
+    <Click event="onRunScript">
+    	<Click label="default" event="NULL" fire="true" fireID="176200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_1107_176100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175600" npcName="阿基拉">万事俱备啦！</Dialog>
+          <Button label="真是谢谢大家了！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175700" npcName="平阳公主">可是……恩佐真的会来么？</Dialog>
+          <Dialog npcID="135600" npcName="蔷薇骑士">我和<![CDATA[{name}]]>亲自看到黑衣人的信的，错不了！</Dialog>
+          <Button label="是呢！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">大错特错！</Dialog>
+          <Button label="啊！是长须蚁将！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1107_176100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_1107_176100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将"><![CDATA[{name}]]>，其实，我在天空城发现了这个。</Dialog>
+          <Button label="恩？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1107/1107_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="175700" npcName="平阳公主">看来，这是恩佐的声东击西之计啊！</Dialog>
+          <Button label="那我们赶紧去魔法台吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|1107"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1107/1107_ts_0" winPos="0|0" name="提示">
+    <Case value="1"><Goto value="index_1"/></Case>			
+    <Default><End/></Default>
+    </Script>
+    <Click label="index_1" event="onChangeScene" params="134"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1108" label="最终大决战">
+    <!-- npc_c0_xml · 场景 139 -->
+    <Npc sceneID="139" type="1" npcID="176300" position="662|246">
+    <View type="0" src="176300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1108_176300">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">果然，他们已经来了！</Dialog>
+          <Button label="哼！看我驾驶飞机来对付他们！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1108/1108_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将"><![CDATA[{name}]]>！！你没受伤吧！！！</Dialog>
+          <Button label="恩……恩佐的飞艇……果然厉害……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">啊……快看……</Dialog>
+          <Button label="啊？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1108_176300">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1108/1108_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true" fireID="176400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1108_176300">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="135600" npcName="蔷薇骑士">看来……我等空战能力太差了……</Dialog>
+          <Button label="难道真的输了么……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">啊！长须黄蜂出现了！</Dialog>
+          <Button label="哪里？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1108/1108_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">长须黄蜂！太好啦！救出了大家！</Dialog>
+          <Dialog npcID="174500" npcName="长须黄蜂">兄弟齐心，合力断金！</Dialog>
+          <Dialog npcID="135600" npcName="蔷薇骑士">你们真是太厉害啦！</Dialog>
+          <Dialog npcID="174500" npcName="长须黄蜂">既然问题都解决了，我们一起回家去吧！</Dialog>
+          <Dialog npcID="174300" npcName="长须蚁将">……</Dialog>
+          <Button label="离别……总是难以抑制的悲伤……" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">事实上，我决定，要继续修行。</Dialog>
+          <Dialog npcID="174500" npcName="长须黄蜂">啊？修行？</Dialog>
+          <Dialog npcID="174300" npcName="长须蚁将">恩！只有变得强大，才有足够的能力保护族人！</Dialog>
+          <Button label="恩……" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">所以……黄蜂兄，在我不在的这段期间，请你帮我保护大家吧！</Dialog>
+          <Dialog npcID="174500" npcName="长须黄蜂">那……那你要去哪里？</Dialog>
+          <Dialog npcID="174300" npcName="长须蚁将">如果……如果……<![CDATA[{name}]]>不嫌弃的话，可以做我的主人吗？</Dialog>
+          <Button label="啊……这个！当然好！！" nextID="-1" close="false">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="174300" npcName="长须蚁将">太好啦*^-^*</Dialog>
+          <Button label="我们一起努力！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_7" event="onTaskCall2" params="2|1108"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 139 -->
+    <NPCFun label="app_ts0" sceneID="139">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1108/1108_ts_0" winPos="0|0" name="提示">
+    <Case value="1"><Goto value="index_1"/></Case>			
+    <Default><End/></Default>
+    </Script>
+    <Click label="index_1" event="onChangeScene" params="139"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

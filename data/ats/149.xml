@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DeathDuelStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="149" label="生死决斗">
+  <Task id="1112" label="角斗">
+    <!-- npc_g_xml · 场景 150 -->
+    <Npc sceneID="150" type="1" npcID="184500" position="0|0">
+    <View type="0" src="184500.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1112_184500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182500" npcName="亚特族人">恩佐大人说，倒影城堡在更深邃的地方，我要赶快去帮助恩佐大人了！</Dialog>
+          <Button label="更深邃的地方是哪里？[又一个被控制的亚特族人……]" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182500" npcName="亚特族人">据说是那里……</Dialog>
+          <Button label="哪里……？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1112/1112_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1112_184500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1112_184500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1112/1112_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="1|1112"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 150 -->
+    <Npc sceneID="150" type="1" npcID="184600" position="0|0">
+    <View type="0" src="184600.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1112_184600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼哼！<![CDATA[{name}]]>！我早就知道你是假装的啦！</Dialog>
+          <Button label="假装？假装什么？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">当然是假装被我们控制了！这样你才方便打探情报啊！</Dialog>
+          <Button label="嘿嘿[库仑变聪明了！]" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">想来容易！想走，可没那么容易了！</Dialog>
+          <Button label="你想怎么样！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1112_184600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1112_184600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！这里可是角斗场！想走，就要付出血的代价！</Dialog>
+          <Button label="尽管放马过来吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|184600|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1112_184600"/>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1112_184600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！这里可是角斗场！想走，就要付出血的代价！</Dialog>
+          <Button label="尽管放马过来吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|184600|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1112_184600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="184900" npcName="屎壳螂">木哈哈！主人！看我的厉害吧！</Dialog>
+          <Button label="呃……好久不见，屎壳螂！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|184700|屎壳螂">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！<![CDATA[{name}]]>！，你是不可能打败屎壳螂的！我的屎壳螂是全天下最强大的！！而且已经改良过！是不可能自爆的！这次你完蛋了！</Dialog>
+          <Button label="[冷静……冷静下来一定会有办法的！]" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">屎壳螂是水火草三系最强融合的！这次你是到了穷途末路了！我好开心啊～！</Dialog>
+          <Button label="[水火草……有了！可是……可是……]" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/1112/1112_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1112_184600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_1112_184600">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true" fireID="184700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_1112_184600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">我们快点离开这里！！我们撑不了多久的！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1112"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 150 -->
+    <NPCFun label="app_ts0" sceneID="150">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="150"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1113" label="背后的阴谋">
+    <!-- npc_p_xml · 场景 149 -->
+    <Npc sceneID="149" type="1" npcID="184800" position="0|0">
+    <View type="0" src="184800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1113_184800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">这里……就是传说中的太阳神庙啊……</Dialog>
+          <Button label="难道你也没有来过……？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">恩……因为这是只有被选中的巫女才能来的地方。可是……可是为何会有这种熟悉的感觉……</Dialog>
+          <Button label="啊……？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1113/1113_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">啊……我怎么会记得这么清晰……</Dialog>
+          <Button label="啊？什么？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1113_184800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1113_184800">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|1113"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1114" label="可曾记得爱">
+    <!-- npc_p_xml · 场景 149 -->
+    <Npc sceneID="149" type="1" npcID="184800" position="0|0">
+    <View type="0" src="184800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1114_184800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人"><![CDATA[{name}]]>！你们太容易上当了！看来亚特族的秘密已经被我知道啦！</Dialog>
+          <Dialog npcID="182600" npcName="丽芙">你……你想做什么……</Dialog>
+          <Dialog npcID="112000" npcName="黑衣人">自然是想借助你们祖先的能量，为恩佐服务！只是我们一直不知道怎么才能召唤出亚特族的祖先。这次看来真是得来全不费功夫啊！</Dialog>
+          <Button label="库仑！你……真卑鄙！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈！既然你们已经为我铺了路，尤其是<![CDATA[{name}]]>！</Dialog>
+          <Button label="你……卑鄙小人！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="combat" args="2|185100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1114/1114_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="185100"/>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1114_184800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1114_184800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈！既然你们已经为我铺了路，尤其是<![CDATA[{name}]]>！</Dialog>
+          <Button label="你……卑鄙小人！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="combat" args="2|185100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1114/1114_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="185100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1114_184800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="133000" npcName="武使徒">库仑！我来帮你了！</Dialog>
+          <Button label="呃……二对一么……！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙"><![CDATA[{name}]]>……我……我……我没有办法吟唱……</Dialog>
+          <Dialog npcID="185000" npcName="亚特祖先">丽芙……我的孩子……你可是被选中的人啊……你想一想被恩佐控制的我们的族人……</Dialog>
+          <Button label="恩……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1114/1114_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">看来丽芙也就那么回事啊！无需担心！</Dialog>
+          <Dialog npcID="133000" npcName="武使徒">哼！！看我先收拾了<![CDATA[{name}]]>，再把你们抓回去！</Dialog>
+          <Button label="来吧！！[已经有点精疲力尽了啊……]" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/1114/1114_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1114_184800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1114_184800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="185000" npcName="亚特祖先">丽芙……我的子孙，干得漂亮！我也可以安心去长眠了！</Dialog>
+          <Dialog npcID="182600" npcName="丽芙">恩……谢谢大家……族人都从恩佐的黑魔法中解放了。</Dialog>
+          <Button label="可是恩佐的暗黑城堡已经成功了……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">我相信！一定会有正义的力量再去阻止他！谢谢你，<![CDATA[{name}]]>，帮了我们亚特族的大忙！</Dialog>
+          <Button label="这是我应该做的！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="182600" npcName="丽芙">这把深海竖琴，是我们亚特族的象征，现在就送给你吧！我们已经把你当作我们的族人一样看待了！你永远都是我们的朋友！</Dialog>
+          <Button label="言重了……谢谢！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|1114"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

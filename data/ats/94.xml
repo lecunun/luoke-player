@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 HelpFiert.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="94" label="实名注册,健康上网!">
+  <Task id="2000" label="去欢乐谷找菲尔特！">
+    <!-- npcfun_jrx_xml · 场景 31 -->
+    <NPCFun sceneID="31" label="实名注册，健康上网！" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101900" npcName="杰瑞西">实名注册，快乐上网！各位同学请尽快完成登记哦！</Dialog>
+                      <Dialog npcID="101900" npcName="杰瑞西">我来看看名单，还有谁没注册……</Dialog>
+                      <Dialog npcID="101900" npcName="杰瑞西"><![CDATA[哎呀呀！菲尔特怎么还没注册？哼哼，我猜他肯定在主题乐园玩的兴起呢，{name},快去帮我逮住他问问！]]></Dialog>
+                         <Button label="遵命！" close="true">
+                              <Goto value="submit"/>
+    						</Button>
+                         <Button label="下次再说" close="true">
+    						     <End/>
+    					    </Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="1|2000"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_fet_xml · 场景 31 -->
+    <Npc sceneID="31" type="1" npcID="154200" position="562|292" aimPos="562|292" name="菲尔特">
+    		<View type="0" src="154200.swf" atLayerID="2" lazyLoad="true" hasClick="true"/>
+    	   <Create>
+    			<Task id="2000" care="2"/>
+    		</Create>
+    			   <Click event="onRunScript" cdtn="50">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="154200" npcName="菲尔特">别别，别打扰我，就快抓到啦！３，２，１！</Dialog>
+    							<Button label="那个……" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				  <Script label="dialog1" type="dialog">
+    					  <Page id="0">
+    							<Dialog npcID="154200" npcName="菲尔特">什么！又没抓到！唉西，真是悲剧！再来一次！</Dialog>
+    							<Button label="同学你好……" close="false">
+    								<Goto value="dialog2"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Script label="dialog2" type="dialog">
+    					  <Page id="0">
+                             <Dialog npcID="154200" npcName="菲尔特">啊啊啊，又失败了！哼，什么烂机器！</Dialog>
+                             <Dialog npcID="154200" npcName="菲尔特">哎呀妈呀！你什么时候来的？站背后吓死人啦！</Dialog>
+    							<Button label="菲哥，我来很久了。" close="false">
+    								<Goto value="dialog3"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Script label="dialog3" type="dialog">
+    					  <Page id="0">
+                             <Dialog npcID="154200" npcName="菲尔特">（告诉菲尔特要尽快完成实名登记……）</Dialog>
+                             <Dialog npcID="154200" npcName="菲尔特">实名注册吗？我很头疼呢！我还没到16岁，哪来的身份证号码啊！</Dialog>
+    							<Button label="你可以借用爸爸妈妈的嘛！" close="false">
+                                 <Goto value="dialog4"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+                    <Script label="dialog4" type="dialog">
+    					   <Page id="0">
+                             <Dialog npcID="154200" npcName="菲尔特">对哦！你怎么不早说呢，等我call下老妈哈！（飞鸽传书中……）</Dialog>
+    							<Button label="我，我也没早遇见你啊……" close="false">
+    								 <Goto value="dialog5"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+                    <Script label="dialog5" type="dialog">
+    					   <Page id="0">
+                             <Dialog npcID="154200" npcName="菲尔特">好啦！搞定啦！这是我老妈的身份证号和姓名，你可以帮我交给杰瑞西老师吗？帮帮忙啦，我还要去玩呢！</Dialog>
+    							<Button label="好吧，送佛送到西。" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+                    <Click label="submit" event="onTaskCall2" params="2|2000"/>
+    				 </Click>
+    
+    	</Npc>
+  </Task>
+  <Task id="2001" label="将菲尔特实名信息给杰瑞西老师！">
+    <!-- npcfun_jrx_xml · 场景 31 -->
+    <NPCFun sceneID="31" label="帮菲尔特实名注册" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101900" npcName="杰瑞西">菲尔特那小子来啦吗？他的班级就剩他一个人没实名注册了！</Dialog>
+    				 	 <Button label="让我帮他实名注册。" close="false">
+    						  <Goto value="dialog1"/>
+    					 </Button>
+    				</Page>
+    			</Script>
+              <Script label="dialog1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101900" npcName="杰瑞西"><![CDATA[真是气死人啦，菲尔特这个大懒虫！{name}，我们一起帮菲尔特完成实名注册吧！]]></Dialog>
+    				 	 <Button label="好的！" close="true">
+    						  <Goto value="movie1"/>
+    					 </Button>
+    				</Page>
+    			</Script>
+              <Script label="movie1" type="asWindow" src="task/2001/nameRegister2" winPos="0|0" name="注册教学">
+    				        <Case value="0"><Goto value="dialog2"/></Case>
+    		   </Script>
+    	      <Script label="dialog2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101900" npcName="杰瑞西">太棒了！实名注册活动的宣传员非你莫属哦，这是宣传小旗子，快去号召更多小洛克参与行动吧！</Dialog>
+    				 	 <Button label="没问题" close="true">
+    						  <Goto value="submit"/>
+    					 </Button>
+    				</Page>
+    			</Script>
+    	       
+    			<Click label="submit" event="onTaskCall2" params="2|2001"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

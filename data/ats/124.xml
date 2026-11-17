@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DragonBoatFestivalScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="124" label="端午节的粽子">
+  <Task id="4034" label="端午节包粽子">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="端午节的由来" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">端午节到了，在云烟桃源出现了一位叫灵均的老爷子，据说他那里有很多关于端午节的的消息，你去看看吧。</Dialog>
+    				<Button label="云烟桃源，好的这就去！">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|4034"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 14 -->
+    <NPCFun label="app_ts0" sceneID="14">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="103"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="端午节的故事" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="168500" npcName="灵均">端午临中夏，时清日复长。盐梅已佐鼎，曲糵且传觞。事古人留迹，年深缕积长。
+    当轩知槿茂，向水觉芦香。亿兆同归寿，群公共保昌。忠贞如不替，贻厥后昆芳。</Dialog>
+    					<Button label="咳咳，老先生，据说您知道很多关于端午节的故事，愿意给我讲讲吗？">
+    						<Goto value="nextdialog"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="nextdialog" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="168500" npcName="灵均">老夫岂是那般容易开口，去给我包个粽子，如果味道不错，我就给你讲讲这端午的由来。</Dialog>
+    				<Button label="好吧，哪里去找材料呢？">
+    					<Goto value="nextdialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="nextdialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="168500" npcName="灵均">首先要去找些苇叶来，用来做粽叶，苇叶长在云烟桃源的水塘边，去好好找找吧。</Dialog>
+    				<Button label="好的" close="true">
+    					<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="168500"/>
+    		</Click>
+    		</NPCFun>
+    <!-- npc_c1_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="168600" position="310|207">
+    		<View type="0" src="168600.png" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="168500" npcName="灵均">不错，先给你讲讲苇叶故事吧。</Dialog>
+    		      <Button label="好的" nextID="-1" close="true">
+    		        <Goto value="asWindow_0"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    	
+    			<Script label="asWindow_0" type="asWindow" src="task/4034/task_4034_zongyeIntroduction" winPos="0|0" name="端午节的故事">
+    			<Default>
+    				<Goto value="dialog_2"/>
+    			</Default>
+    			</Script>
+    				
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    					<Dialog npcID="168500" npcName="灵均">看来你已经了解了粽叶的来源啦，那里面的米哪里来呢？农贸集市那里有些，带过来吧。</Dialog>
+    						<Button label="农贸集市，好的这就去。" close="true">
+    							<Goto value="sumbit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    		  <Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="168700" position="738|354">
+    	<View type="0" src="168700.png" atLayerID="1"/>
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="端午节的故事" icon="0" close="false">
+    		<Click event="onRunScript">
+    							<Script type="dialog" label="default">
+    								<Page>
+    									<Dialog npcID="168500" npcName="灵均">米也弄到了，很好，来一起了解下这米的背景吧。</Dialog>
+    									<Button label="好的" close="true">
+    										<Goto value="asWindow_0"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    	
+    							<Script label="asWindow_0" type="asWindow" src="task/4034/task_4034_nuoRiceIntroducntion" winPos="0|0" name="端午节的故事">
+    								<Default>
+    									<Goto value="dialog_2"/>
+    								</Default>
+    							</Script>
+    	
+    							<Script label="dialog_2" type="dialog">
+    								<Page>
+    									<Dialog npcID="168500" npcName="灵均">米也浸泡过了，叶子也有了，现在开始包粽子吧。</Dialog>
+    									<Button label="好的，看我的！" close="true">
+    										<Goto value="asWindow_1"/>
+    									</Button>
+    								</Page>
+    	
+    							</Script>
+    							<Script label="asWindow_1" type="asWindow" src="task/4034/task_4034_makeZongzi" winPos="0|0" name="端午节的故事">
+    								<Default>
+    									<Goto value="dialog_3"/>
+    								</Default>
+    							</Script>
+    							<Script label="dialog_3" type="dialog">
+    								<Page>
+    									<Dialog npcID="168500" npcName="灵均">这粽子味道不错，你很能干嘛。来听我给你讲讲这端午节的由来……</Dialog>
+    									<Button label="等这时候好久了" close="true">
+    										<Goto value="asWindow_3"/>
+    									</Button>
+    								</Page>
+    	
+    							</Script>
+    							<Script label="asWindow_3" type="asWindow" src="task/4034/task_4034_quyuanandZongzi" winPos="0|0" name="端午节的故事">
+    								<Default>
+    									<Goto value="sumbit"/>
+    								</Default>
+    							</Script>
+    						<Click label="sumbit" event="onTaskCall2" params="2|4034"/>
+    						
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

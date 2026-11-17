@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FirstClass.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="95" label="开学第一课">
+  <Task id="4019" label="开学第一课">
+    <!-- npcfun_101900 · 场景 31 -->
+    <NPCFun sceneID="31" label="开学第一课" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">开学啦，新学期要有新气象哦，给你三个任务：在魔法课教室当一次小小代课老师，去实验工坊完成修理大考验和使用魔力显微镜吧。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4019"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101900_submit · 场景 31 -->
+    <NPCFun sceneID="31" label="开学第一课" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4019"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">小小代课老师，去实验工坊完成修理大考验和使用魔力显微镜，想想哪个没完成？</Dialog>
+                    <Button label="我想想" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101900" npcName="杰瑞西">看来你真的很用心，不错哦，给你奖励吧，以后继续努力。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4019"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

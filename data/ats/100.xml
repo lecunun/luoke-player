@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 blackmanDamageEnvironmentStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="100" label="谁在破坏环境">
+  <Task id="4022" label="谁在破坏环境">
+    <!-- npcfun_g_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="谁在破坏环境" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="122100" npcName="安格">春天来了，雪都化了，可是好多花花草草都打不起精神？一定有人在污染环境！这样的家伙不能放过！！！</Dialog>
+    				<Button label="安格别激动，现在有线索没？">
+    					<Goto value="nextdialog"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="nextdialog" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="122100" npcName="安格">嗯，八成是黑衣人，去各处找找，看能不能发现他们。</Dialog>
+    				<Button label="嗯，好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="一会再说" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|4022"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="156300" position="497|300">
+    	<View type="0" src="156300.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_tree">
+    		<Click event="onRunScript" cdtn="10" aimPos="610|315">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	
+    	<ViewEvent type="greenDrogen_Fight">
+    		<Click event="onRunScript">
+      			<Script label="default" type="dialog">
+        			<Page id="0">
+          				<Dialog npcID="156300" npcName="黑衣人">想阻止我？没那么容易！恶魔叮击败他！！</Dialog>
+          				<Button label="我不会让你得逞！">
+            				<Goto value="index_1"/>
+          				</Button>
+        			</Page>
+      			</Script>
+      			<Script label="index_1" type="switch" invoke="combat" args="2|156300|黑衣人">
+        			<Default>
+          				<End/>
+        			</Default>
+        			<Case value="2">
+          				<Goto value="sumbit"/>
+        			</Case>
+      			</Script>
+      		<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="156400" position="561|342">
+    		<View type="0" src="156400.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="walk_to_tree">
+    			<Click event="onRunScript" cdtn="10" aimPos="616|355">
+    				<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="greenDrogen_Fight">
+    		<Click event="onRunScript">
+      			<Script label="default" type="dialog">
+        			<Page id="0">
+          				<Dialog npcID="156400" npcName="黑衣人">水晶犬，把这个捣乱的家伙干掉！！</Dialog>
+          				<Button label="我不会让你得逞！">
+            				<Goto value="index_1"/>
+          				</Button>
+        			</Page>
+      			</Script>
+      			<Script label="index_1" type="switch" invoke="combat" args="2|156400|黑衣人">
+        			<Default>
+          				<End/>
+        			</Default>
+        			<Case value="2">
+          				<Goto value="sumbit"/>
+        			</Case>
+      			</Script>
+      		<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="156500" position="501|433">
+    	<View type="0" src="156500.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_tree">
+    		<Click event="onRunScript" cdtn="10" aimPos="550|443">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="greenDrogen_Fight">
+    		<Click event="onRunScript">
+      			<Script label="default" type="dialog">
+        			<Page id="0">
+          				<Dialog npcID="156500" npcName="黑衣人">小地狱犬，让他知道你的厉害，别让他干扰我！</Dialog>
+          				<Button label="我不会让你得逞！">
+            				<Goto value="index_1"/>
+          				</Button>
+        			</Page>
+      			</Script>
+      			<Script label="index_1" type="switch" invoke="combat" args="2|156500|黑衣人">
+        			<Default>
+          				<End/>
+        			</Default>
+        			<Case value="2">
+          				<Goto value="sumbit"/>
+        			</Case>
+      			</Script>
+      		<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="谁在破坏环境" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    			<Func invoke="taskIsComplete" args="4022"/>
+    				<Case value="0">
+    					<Script type="dialog">
+    						<Page>
+    								<Dialog npcID="122100" npcName="安格">很多洛克说在宠物梦工厂，宠物园、植物园都有收获，快去看看吧。</Dialog>
+    								<Button label="知道了" close="true">
+    									<End/>
+    								</Button>
+    							</Page>
+    						</Script>
+    					</Case>
+    				<Case value="1"><Goto value="dialog_0"/></Case>
+    			</Script>
+    							<Script type="dialog" label="dialog_0">
+    								<Page>
+    									<Dialog npcID="122100" npcName="安格">黑衣人想污染环境，呵呵，没那么容易。打败他们，打破他们想污染王国的美梦。任何污染环境的家伙都会得到惩罚！哈哈哈。</Dialog>
+    									<Button label="那是什么？" close="true">
+    										<Goto value="asWindow_0"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    							<Script label="asWindow_0" type="asWindow" src="task/4022/task_4022_blackmanDamageEnvironment_1" winPos="0|0" name="恩佐的台词">
+      								<Default>
+        								<Goto value="asWindow_1"/>
+      								</Default>
+    							</Script>
+    	
+    							<Script label="asWindow_1" type="dialog">
+    								<Page>
+    									<Dialog npcID="122100" npcName="安格">都是大家平时不注意保护环境，让他有机可乘，我们要平时多多注意保护环境。</Dialog>
+    									<Button label="嗯，好的" close="true">
+    										<Goto value="asWindow_2"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    							<Script label="asWindow_2" type="asWindow" src="task/4022/task_4022_blackmanDamageEnvironment_2" winPos="0|0" name="小洛克植树造林">
+        							<Default>
+    									<Click event="onTaskCall2" params="2|4022"/>
+        							</Default>
+      							</Script>
+    						
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

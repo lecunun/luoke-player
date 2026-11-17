@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 LastCrisisStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="57" label="最终的危机">
+  <Task id="3016" label="开启密室">
+    <!-- npc_g_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132000" position="0|0">
+    	<View type="0" src="132000.swf" atLayerID="3" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="132000" npcName="帕尔萨斯">虽然我们上次合力抵挡了巫师宠物兵团的进攻，但是威廉古堡的防御力量也被彻底摧毁了。为了得到伯爵的永生之血，恩佐一定不会善罢甘休。</Dialog>
+    						<Dialog npcID="132000" npcName="帕尔萨斯">伯爵曾经预言过这个“最终的危机”，并留下了应对的办法。</Dialog>						
+    						<Button label="好的" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="1|3016"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npc_c0_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132100" position="0|0">
+    	<View type="0" src="132100.swf" atLayerID="3" hasClick="false"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132200" position="0|0">
+    	<View type="0" src="132200.swf" atLayerID="1" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="132200" npcName="德古拉伯爵">辛苦你了，帕尔萨斯，这最终的危机到底是来了。</Dialog>
+    						<Dialog npcID="132200" npcName="德古拉伯爵"><![CDATA[{name}]]>，我需要你的帮助，现在我灵魂拥有的力量还不足与应对这场危机。我需要借助魔法将我的灵魂和肉体暂时融合。</Dialog>						
+    						<Dialog npcID="132200" npcName="德古拉伯爵">去维苏维火山、怀特冰川和雷霆峡谷取回三个魔法水晶，借助水晶我可以将我的灵魂暂时注入身体。</Dialog>						
+    						<Button label="好的" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|3016"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+  </Task>
+  <Task id="3017" label="伯爵复活">
+    <!-- npc_c0_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132300" position="726|243">
+    	<View type="0" src="132300.png" atLayerID="1"/>
+    	<Click event="NULL" cdtn="60" fire="true"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132400" position="90|392">
+    	<View type="0" src="132400.png" atLayerID="1"/>
+    	<Click event="NULL" cdtn="60" fire="true"/>
+    </Npc>
+    <!-- npc_c2_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132500" position="318|301">
+    	<View type="0" src="132500.png" atLayerID="1"/>
+    	<Click event="NULL" cdtn="60" fire="true"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 93 -->
+    <Npc sceneID="93" type="1" npcID="132200" position="0|0">
+    	<View type="0" src="132200.swf" atLayerID="1" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt1">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/3017/3017_0" winPos="0|0" name="动画">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2">
+    			<Click event="onTaskCall2" params="2|3017"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt3">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="132200" npcName="德古拉伯爵">凭我现在的灵魂状态还不足以应付这最后的危机，我复生需要的水晶你带来了么？</Dialog>
+    						<Button label="好的" close="true">
+    							<End/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 93 -->
+    <NPCFun label="app_ts0" sceneID="93">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/3017/3017_ts_0" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 93 -->
+    <NPCFun label="app_ts1" sceneID="93">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/3017/3017_ts_1" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="changeScene"/></Case>
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="changeScene" event="onChangeScene" params="93"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

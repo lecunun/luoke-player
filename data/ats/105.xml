@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 StonehengeStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="105" label="巨石疑阵">
+  <Task id="138" label="研究报告">
+    <!-- npcfun_g_xml · 场景 35 -->
+    <NPCFun sceneID="35" label="巨石疑阵" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰"><![CDATA[{name}]]>……我的研究报告……被偷了……</Dialog>
+          <Button label="报告再写不就得了？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">这，没有那么简单……你可知道，我除了致力于研究草系的宠物，我还花费了了大量的时间，去研究草原上的巨石像。</Dialog>
+          <Button label="哪里有巨石像啊？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/138/138_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">我们表面上看到的巨石像，其实就像冰山的一角。更多的石像，其实藏在了广袤的草原下面。而且……他们是活着的……</Dialog>
+          <Button label="活着？！" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">对，他们活着，是为了封印一条未知的龙。</Dialog>
+          <Button label="什么龙？" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="asWindow" src="task/138/138_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">这条黑龙的能力，不是一般人能够驾驭的。他拥有的魔法潜能不可估量——但，所有控制时间和空间的魔法，都是禁忌。</Dialog>
+          <Dialog npcID="107300" npcName="罗兰">不过我相信，一直研究永生魔法的恩佐，对拥有此魔法的未知之龙，非常有兴趣。</Dialog>
+          <Button label="报告是他偷的！" nextID="-1" close="false">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">我怕，接下来，恩佐要对这些巨石像下手了。<![CDATA[{name}]]>，你愿意协助我一臂之力，到草原走一趟吗？</Dialog>
+          <Button label="当然愿意！" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+          <Button label="我再想想……" nextID="-1" close="true">
+            <End/>
+          </Button>	
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onTaskCall2" params="1|138"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="158500" position="0|0">
+    <View type="0" src="158500.swf" atLayerID="1" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_138_158500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/138/138_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_138_158500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_138_158500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/138/138_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|158500|黑衣人">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_138_158500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_138_158500">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/138/138_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">哼，来了个厉害的货色。我暂时撤退。我们走着瞧。</Dialog>
+          <Button label="有种就和我再打一场啊喂！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_138_158500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_138_158500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰"><![CDATA[{name}]]>，这些宠物都受了重伤，快，跟我一起，把他们转移到萌萌那里去，赶快治疗！</Dialog>
+          <Button label="喔！好的！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_138_158500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_138_158500">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_138_158500">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true" fireID="158600"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 35 -->
+    <NPCFun sceneID="35" label="麻烦你救下这些宠物吧！" icon="0" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="112001" npcName="萌萌">嗯，刚刚罗兰也找过我了。快把宠物给我吧！</Dialog>
+    		  <Button label="好！" nextID="-1" close="true">
+    			<Goto value="index_0_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Script label="index_0_1" type="asWindow" src="task/138/138_5" winPos="0|0" name="">
+    		<Default>
+    		  <Goto value="index_0_2"/>
+    		</Default>
+    	  </Script>
+    	  <Script label="index_0_2" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="112001" npcName="萌萌">接下来就交给我吧！罗兰已经回草原了。我怕黑衣人会对她不利，你赶快回去帮她吧！</Dialog>
+    		  <Button label="谢谢你！我这就回去！" nextID="-1" close="true">
+    			<Goto value="index_0_3"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="index_0_3" event="onTaskCall2" params="2|138"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 57 -->
+    <NPCFun label="app_ts0" sceneID="57">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/138/138_ts_0" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 57 -->
+    <NPCFun label="app_ts1" sceneID="57">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/138/138_ts_1" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 57 -->
+    <NPCFun label="app_ts2" sceneID="57">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/138/138_ts_2" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="139" label="巨石复活">
+    <!-- npc_c0_xml · 场景 35 -->
+    <Npc sceneID="35" type="1" npcID="158700" position="0|0">
+    <View type="0" src="158700.swf" atLayerID="1" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_139_158700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/139/139_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|158700|巨石像">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_139_158700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_139_158700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">这下不好了。草原上这些都是障眼法。你可知道，恩佐他们已经占据了月牙桥！</Dialog>
+          <Button label="月牙桥？！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">他们已经找到了巨石阵封印的中心。那未知之龙就沉睡在月牙桥底的流水之下！</Dialog>
+          <Button label="那还等什么，赶快过去啊！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_139_158700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_139_158700">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 35 -->
+    <Npc sceneID="35" type="1" npcID="158800" position="0|0">
+    <View type="0" src="158800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158500" npcName="黑衣人">想要阻拦恩佐大人，先过我这一关吧！</Dialog>
+          <Button label="放马过来！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|158500|黑衣人">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/139/139_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">这瓶子给你，你一定要小心。</Dialog>
+          <Button label="看我的吧！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/139/139_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_139_158800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">这……是传说中未知之龙吗？</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">必定是的，它自封印中央出现！</Dialog>
+          <Button label="（他们相信了！）" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_139_158800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/139/139_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_139_158800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">哼……这次被你们的计谋所破坏，但是，我的永生计划一定会实现的！</Dialog>
+          <Dialog npcID="158500" npcName="黑衣人">恩佐大人！我们先撤退！来日方长！</Dialog>
+          <Button label="有种就留下来再打啊！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_139_158800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_139_158800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">终于……解决了……</Dialog>
+          <Button label="你没事吧！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">刚刚我只是冒险一试，我们是生是死，也就那么一线之差啊……</Dialog>
+          <Button label="没事啦，都过去啦！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">不，还有……我能拜托你，把索米亚草原中毁坏之处修补吗……</Dialog>
+          <Dialog npcID="107300" npcName="罗兰">我……已经吓得没有任何体力了……</Dialog>
+          <Button label="那你赶快回去休息吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_139_158800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_139_158800">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true" fireID="158900"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 35 -->
+    <Npc sceneID="35" type="1" npcID="159000" position="0|0">
+    <View type="0" src="159000.swf" atLayerID="1" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_139_159000">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 35 -->
+    <NPCFun sceneID="35" label="我都补完坑啦！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">是吗……谢谢你……</Dialog>
+          <Dialog npcID="107300" npcName="罗兰">刚刚萌萌已经把宠物都送回来了……</Dialog>
+          <Button label="这下好啦！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107300" npcName="罗兰">事后，我才懂得怕。嗯，不过还好，大家都没事。谢谢你<![CDATA[{name}]]>。</Dialog>
+          <Button label="不客气啦哈~" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/139/139_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|139"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 35 -->
+    <NPCFun label="app_ts0" sceneID="35">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/139/139_ts_0" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 35 -->
+    <NPCFun label="app_ts1" sceneID="35">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/139/139_ts_1" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 35 -->
+    <NPCFun label="app_ts2" sceneID="35">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/139/139_ts_2" winPos="0|0" name="提示">
+    		<Default><Goto value="index_0"/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="35"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

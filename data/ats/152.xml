@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 KingsWishStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="152" label="国王的心愿（上）">
+  <Task id="1115" label="国王的心愿0">
+    <!-- npc_g_xml -->
+    <Npc type="1" npcID="186100" position="595|486">
+    <View type="0" src="186100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1115_186100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="186100" npcName="圣安德鲁国王">我可不是在梦游，我只是睡眠不好，来海边散散心……这都要怪我做的梦啦！讨厌@_@</Dialog>
+          <Button label="究竟怎么回事" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1115/1115_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="1|1115"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1115_186100">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1115/1115_1" winPos="0|0" name="">
+        <Case value="1"><Goto value="index_0_1"/></Case>
+        <Default><End/></Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1115"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1116" label="国王的心愿1">
+    <!-- npc_g_xml -->
+    <Npc type="1" npcID="186100" position="595|486">
+    <View type="0" src="186100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1116_186100">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1116_186100">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1116/1116_0" winPos="0|0" name="">
+    	<Default><End/></Default>
+      </Script>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1116/1116_0" winPos="0|0" name="">
+    	<Default><End/></Default>
+      </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

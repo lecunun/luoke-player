@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SaplingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="216" label="高黎贡山的树苗">
+  <Task id="4072" label="高黎贡山的树苗">
+    <!-- npcfun_g_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="蝴蝶树苗" icon="-1" close="false">
+    <Click event="onRunScript">
+    
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">每年这个时候小蝶仙都会来到高黎贡山，可是今年它们却……</Dialog>
+    <Button label="发生了什么呢？" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/4072/app1" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">安格在高黎贡门廊那里，辛苦你啦！</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Click label="index_0_3" event="onTaskCall2" params="1|4072"/>
+    
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g2_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="蝴蝶树苗" icon="-1" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">记得向高黎贡门廊的安格要植树工具哦！</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <End/>
+    </Button>
+    </Page>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g3_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="植树工具" icon="-1" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="122103" npcName="安格">植树的工具，拿去，记得还回来哦！</Dialog>
+    <Button label="好的" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_g4_xml · 场景 185 -->
+    <NPCFun sceneID="185" label="植树工具" icon="-1" close="false">
+    <Click event="onRunScript">
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">工具都齐备了，我们开始种树吧！</Dialog>
+    <Button label="好哦!" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_0_1" type="asWindow" src="task/4072/app2" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="204600" npcName="白眉长老">我怎么隐隐约约发现有小蝶仙飞来呢？</Dialog>
+    <Button label="你眼花了吧！哪有这么快！" nextID="-1" close="true">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    <Script label="index_0_3" type="asWindow" src="task/4072/app3" winPos="0|0" name="">
+    <Default>
+    <Goto value="index_0_4"/>
+    </Default>
+    </Script>
+    <Click label="index_0_4" event="onTaskCall2" params="2|4072"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 179 -->
+    <NPCFun label="app_ts1" sceneID="179">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="179"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 185 -->
+    <NPCFun label="app_ts2" sceneID="185">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="185"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuo3StoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="180" label="木豆丁的故事之三">
+  <Task id="4058" label="多多的出现">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="新的技能石" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">最近在普拉塔草原周围的宠物身上发现了一种奇怪的石头，我们开始研究它……</Dialog>
+          <Button label="后来呢？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/4058/app1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">但是我们一直没有得到……</Dialog>
+          <Button label="需要我来帮忙么？" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">去索米亚草原和普拉塔草原看看有没有什么线索。</Dialog>
+          <Button label="好的，现在就去" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="onTaskCall2" params="1|4058"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="205100" position="450|300">
+    <View type="0" src="205100.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205100" npcName="蒲公英">我没有什么石头哇，别打我……</Dialog>
+          <Button label="此地无银三百两，我还没问你呢，你怎么知道？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205100" npcName="蒲公英">有话慢慢说……</Dialog>
+          <Button label="打了你再说" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="combat" args="2|205100|蒲公英">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205100" npcName="蒲公英">之前的有两个家伙来，难道说的是这个？</Dialog>
+          <Button label="嗯？？给我看看" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/4058/app2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="205200" position="680|480">
+    <View type="0" src="205200.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205200" npcName="丢丢">你说那诡异的技能石？都被他们抢走了……</Dialog>
+          <Button label="谁？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/4058/app3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205200" npcName="丢丢">看到没，我都被揍了一顿。</Dialog>
+          <Button label="可是他们说那东西碎了……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205200" npcName="丢丢">嘿嘿嘿嘿，谁让他们打我，本来想给他。</Dialog>
+          <Button label="原来你给他们的是假的……" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="205200" npcName="丢丢">看你很善良，也给你一块，嘿嘿嘿。</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npcfun_p_xml -->
+    <NPCFun label="木豆丁的技能石" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="switch">
+        <Func invoke="taskIsComplete" args="4058"/>
+        <Case value="0">
+          <Goto value="index_0_0"/>
+        </Case>
+        <Case value="1">
+          <Goto value="index_0_1"/>
+        </Case>
+      </Script>
+      <Script label="index_0_0" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">找到技能石了没？唉，不靠谱啊不靠谱。</Dialog>
+          <Button label="好吧，我再去索米亚草原和普拉塔草原看看" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">靠谱靠谱，我们来试试这个石头。</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/4058/app4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">看来又不能用。</Dialog>
+          <Button label="丢丢竟然骗我！" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">请你一定要帮助木豆丁弄到这个技能石头，永夜森林最近又发生了神秘的事件，时不我待啊。</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="asWindow" src="task/4058/app5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="202600" npcName="木藤藤">感觉危机就要来了。</Dialog>
+          <Button label="好的，我一定抓紧时间" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_7" event="onTaskCall2" params="2|4058"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 33 -->
+    <NPCFun label="app_ts0" sceneID="33">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="33"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 34 -->
+    <NPCFun label="app_ts1" sceneID="34">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="34"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 134 -->
+    <NPCFun label="app_ts2" sceneID="134">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="134"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

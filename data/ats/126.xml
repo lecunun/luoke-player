@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MeaningOfExistence.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="126" label="我们的存在">
+  <Task id="1103" label="秘密">
+    <!-- npcfun_101400 · 场景 25 -->
+    <NPCFun sceneID="25" label="沃尔克的异样" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">最近行商们的货物都被沃尔克拿走了，而且还拿走了不少。</Dialog>
+                    <Button label="啊？发生了什么事情？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101400" npcName="拉尔夫">我也不太清楚呢……可以帮我去矿山问问杰克吗？行商说沃尔克现在在那里。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                    <Button label="考虑一下……" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="1|1103"/>
+        </Click>
+    </NPCFun>
+    <!-- npc_169800 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="169800" name="" position="585|366">
+    	<View type="0" src="169800.swf" atLayerID="3"/>
+    	<Click event="onTaskCall">
+    		<Dialog>我是沃尔克</Dialog>
+    	</Click>
+    	
+    	<Create>
+    	
+    	
+    		<ViewEvent type="done_1103_169800_state1">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	
+    		<NPCFun label="给我矿石" icon="1" close="false">	
+    				<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="110100" npcName="杰克">可是这些矿石都是公有财产啊！</Dialog>
+    					<Dialog npcID="169800" npcName="贪婪沃尔克">我，我就是有用啦！！你就别管那么多拉！统统给我！</Dialog>
+    					<Dialog npcID="110100" npcName="杰克">你的发型……你用了什么发胶！？突然变得这么帅！</Dialog>
+    					<Dialog npcID="169800" npcName="贪婪沃尔克">我，我就是有用啦！！你就别管那么多拉！统统给我！</Dialog>
+    			
+    			      <Button label="好啦，好啦，先让他拿。" nextID="-1" close="true">
+    			        <Goto value="fire"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    				
+    			<!--Click label="fire" event="NULL" fire="true"/-->
+    			
+    			<Click label="fire" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1103_getMinerals"/>
+    			 
+    			</Click>
+    		
+    		</NPCFun>
+    	</Create>
+    </Npc>
+    <!-- npcfun_102600 · 场景 25 -->
+    <NPCFun sceneID="25" label="沃尔克怎么了" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="asWindow" src="task/1103/VolckerBorrow" winPos="0|0" name="">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="102600" npcName="罗伦斯">沃尔克拿走了我好多东西呢！</Dialog>
+    	      <Button label="他怎么这么奇怪！你知道他去哪里了吗？" nextID="-1" close="true">
+    	        	<Batch>
+    					<Click label="fire" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1103_step2_done"/>
+    					<Goto value="fire"/>
+    				</Batch>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    		
+    		<Click label="fire" event="NULL" fire="true" fireID="169900"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_169900 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="169900" name="" position="0|0" hasClick="false">
+    	<View type="0" src="169900.swf" atLayerID="1"/>
+    </Npc>
+    <!-- npc_170000 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="170000" name="" position="320|375">
+    			<View type="0" src="170000.swf" atLayerID="2"/>
+    			<Click event="onTaskCall">
+    				<Dialog>我是沃尔克</Dialog>
+    			</Click>
+    			<Create>
+    				<ViewEvent type="done_1103_170000_state1">
+    					<Click event="NULL" fire="true"/>
+    				</ViewEvent>
+    	
+    	
+    				<NPCFun label="给我存货" icon="1" close="false">	
+    					<Click event="onRunScript">
+    						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="170000" npcName="贪婪沃尔克">拉瓦！这里的存货都先给我吧！</Dialog>
+    								<Dialog npcID="122300" npcName="拉瓦">什么！你刚拿完还要！你要这么多干嘛！</Dialog>
+    								<Dialog npcID="170000" npcName="贪婪沃尔克">反正就是有用嘛……</Dialog>
+    			
+    								<Button label="啊？这是怎么回事啊！" nextID="-1" close="true">
+    								<Goto value="app"/>
+    								</Button>
+    							</Page>
+    						</Script>
+    						<Script label="app" type="asWindow" src="task/1103/VolckePackage" winPos="0|0" name="">
+    							<Default>
+    								<Goto value="index_0_2"/>
+    							</Default>
+    						</Script>
+    	
+    						<Script label="index_0_2" type="dialog">
+    							<Page id="0">
+    							<Dialog npcID="170000" npcName="贪婪沃尔克">哼！我要回去了！8888888！</Dialog>
+    							<Button label="呃……我去宠物训练室看看他到底在干嘛！" nextID="-1" close="true">
+    							<Goto value="fire"/>
+    							</Button>
+    							</Page>
+    						</Script>
+    						<Click label="fire" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1103_getPackage"/>
+    
+    						
+    					</Click>
+    				</NPCFun>
+    			</Create>
+    	</Npc>
+    <!-- npcfun_112002 · 场景 25 -->
+    <NPCFun sceneID="25" label="你拿了大家那么多东西究竟要干什么呢？" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    	  <Page id="0">
+    		<Dialog npcID="112002" npcName="沃尔克">啊？你冤枉我！我一直在这里老老实实呢！</Dialog>
+    		<Button label="怎么可能！拉尔夫，杰克，罗伦斯和拉瓦都知道！" nextID="-1" close="false">
+    		  <Goto value="index_0_1"/>
+    		</Button>
+    	  </Page>
+    	</Script>
+    	<Script label="index_0_1" type="dialog">
+    	  <Page id="0">
+    		<Dialog npcID="112002" npcName="沃尔克">我发誓我真的一直在这里研习魔法，哪里都没去！不信你来问问我的酷拉！</Dialog>
+    		<Dialog npcID="170700" npcName="酷拉">恩！沃尔克老师真的一直都在这里！不过……</Dialog>
+    	
+    		<Button label="啊？不过什么？" nextID="-1" close="false">
+    		  <Goto value="index_0_2"/>
+    		</Button>
+    	  </Page>
+    	</Script>
+    	<Script label="index_0_2" type="dialog">
+    	  <Page id="0">
+    		<Dialog npcID="170700" npcName="酷拉">这个……这个……老师，我能说么？</Dialog>
+    		<Dialog npcID="112002" npcName="沃尔克">还是让我来说吧！</Dialog>
+    		<Button label="恩！！请讲！" nextID="-1" close="true">
+    		  <Goto value="index_0_3"/>
+    		</Button>
+    	  </Page>
+    	</Script>
+    	
+    	<Script label="index_0_3" type="asWindow" src="task/1103/VolckerStrangEgg" winPos="0|0" name="">
+    		<Default>
+    			<Goto value="index_0_4"/>
+    		</Default>
+    	</Script>
+    	
+    	<Script label="index_0_4" type="dialog">
+    	  <Page id="0">
+    		<Dialog npcID="170700" npcName="酷拉">恩恩！就是这样呢！</Dialog>
+    		<Button label="可以让我看看那个蛋蛋吗？" nextID="-1" close="true">
+    		  <Goto value="index_0_5"/>
+    		</Button>
+    	  </Page>
+    	</Script>
+    	<Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1103_stepAll_done"/>
+      </Click>
+    </NPCFun>
+    <!-- npc_170800 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="170800" name="" position="510|276">
+    			<View type="0" src="170800.swf" atLayerID="2"/>
+    			<Click event="onTaskCall">
+    				<Dialog>宠物训练室的蛋蛋</Dialog>
+    			</Click>
+    			<Create>
+    				<NPCFun label="这什么蛋" icon="1" close="false">	
+    					<Click event="onRunScript">
+    						<Script label="default" type="asWindow" src="task/1103/HeadInEgg" winPos="0|0" name="">
+    							<Default>
+            						<Click event="onTaskCall2" params="2|1103"/>
+    							</Default>
+    						</Script>
+    					</Click>
+    				</NPCFun>
+    			</Create>
+    	</Npc>
+  </Task>
+  <Task id="1104" label="我们的存在">
+    <!-- npc_170100 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="170100" name="" position="510|276">
+    			<View type="0" src="170100.swf" atLayerID="2" hasClick="false"/>
+    
+    					<Click event="onRunScript">
+    					  <Script label="default" type="dialog">
+    					    <Page id="0">
+    					      <Dialog npcID="170200" npcName="兵马俑">爸爸！爸爸！</Dialog>
+    					      <Button label="咦？叫我？" nextID="-1" close="false">
+    					        <Goto value="index_0_1"/>
+    					      </Button>
+    					    </Page>
+    					  </Script>
+    					  <Script label="index_0_1" type="dialog">
+    					    <Page id="0">
+    								<Dialog npcID="170200" npcName="兵马俑">不是你，是那个！</Dialog>
+    								<Dialog npcID="112002" npcName="沃尔克">啊？？是我！是我！！？</Dialog>
+    								<Dialog npcID="170200" npcName="兵马俑">我在蛋蛋里面的时候，就见过你！</Dialog>
+    								<Dialog npcID="112002" npcName="沃尔克">啊？怎么可能！</Dialog>
+    								<Button label="快看！门口好像有人耶！" nextID="-1" close="true">
+    					        <Goto value="fire"/>
+    					      </Button>
+    					    </Page>
+    					  </Script>
+    	
+    						<Click label="fire" event="NULL" fire="true"/>
+    	
+    					</Click>
+    
+    	</Npc>
+    <!-- npc_170900 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="170900" name="" position="510|276">
+    			<View type="0" src="170900.swf" atLayerID="3"/>
+    			
+    			<Click event="onTaskCall">
+    					<Dialog>我是沃尔克</Dialog>
+    			</Click>
+    			<Create>
+    			
+    			<!--ViewEvent type="done_1103_170000_state1">
+    					<Click event="NULL" fire="true"/>
+    			</ViewEvent-->
+    	
+    	
+    			<NPCFun label="两个沃尔克" icon="1" close="false">	
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="112002" npcName="沃尔克">我就听说，最近关于我的传言很多，我刚去魔法密林研习魔法，<![CDATA[{name}]]>，他是谁！他一定是假冒的！</Dialog>
+    				      <Button label="啊？有两个沃尔克！" nextID="-1" close="false">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_1" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="112002" npcName="沃尔克">哼！那个一定是假的！</Dialog>
+    				      <Button label="啊？何以说明？" nextID="-1" close="false">
+    				        <Goto value="index_0_2"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_2" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="112002" npcName="沃尔克">哼哼——用酷拉一决胜负就知道了啊！真正的沃尔克，酷拉可是很强大的！</Dialog>
+    				      <Button label="恩，有道理！" nextID="-1" close="true">
+    				        <Goto value="app"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  
+    					<Script label="app" type="asWindow" src="task/1104/kulaCombat" winPos="0|0" name="">
+    						<Default>
+    						<Batch>
+    							<Click label="fire" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1103_afterCombat"/>
+    							<Goto value="index_0_4"/>
+    						</Batch>
+    	
+    						</Default>
+    					</Script>
+    
+    	
+    				  <Script label="index_0_4" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="112002" npcName="沃尔克">哼！我才是真的沃尔克！你快点离开我的讲台！你看！你露出原形了吧！你的发型都和现在的我不一样了！</Dialog>
+    				      <Dialog npcID="170500" npcName="妒忌沃尔克">哼！走就走！</Dialog>
+    						<Button label="啊……刚刚跟我说了半天话的竟然是假的……" nextID="-1" close="false">
+    							<Goto value="index_0_5"/>
+    				      </Button>
+    				    </Page>
+    					</Script>
+    	
+    					<Script label="index_0_5" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="170200" npcName="兵马俑">啊？原来你不是我爸爸，那个才是我爸爸！</Dialog>
+    				      <Button label="可是，假的沃尔克又是谁呢！" nextID="-1" close="true">
+    							<Click label="fire" event="NULL" fire="true" fireID="170500"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				</Click>
+    			</NPCFun>
+    		</Create>
+    	</Npc>
+    <!-- npc_171000 · 场景 51 -->
+    <Npc sceneID="51" type="1" npcID="171000" name="" position="510|276">
+    			<View type="0" src="171000.swf" atLayerID="3"/>
+    			
+    			<Click event="onTaskCall">
+    					<Dialog>我是沃尔克</Dialog>
+    			</Click>
+    			<Create>
+    			
+    	
+    			<NPCFun label="两个沃尔克" icon="1" close="false">	
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    					<Page id="0">
+    					  <Dialog npcID="112000" npcName="黑衣人">哈哈哈！不好意思，我又来了。</Dialog>
+    					  <Dialog npcID="170200" npcName="兵马俑">啊啊啊！爸爸！他是谁？！</Dialog>
+    					  <Dialog npcID="112000" npcName="黑衣人">哼！我就是来把你带走的！</Dialog>
+    					  
+    
+    						<Button label="啊？休想！" nextID="-1" close="false">
+    						<Goto value="index_0_1"/>
+    					  </Button>
+    					</Page>
+    				  </Script>
+    	
+    				  <Script label="index_0_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="112000" npcName="黑衣人">你是恩佐的宠物！</Dialog>
+    						<Dialog npcID="170200" npcName="兵马俑">恩佐？是谁？</Dialog>
+    						<Dialog npcID="112000" npcName="黑衣人">恩佐是我的老大，也是这个世界上最伟大的魔法师！还是制造你的人！哈哈哈！</Dialog>
+    						<Dialog npcID="112002" npcName="沃尔克"><![CDATA[{name}]]>，你靠边站，这次让我来收拾库仑！</Dialog>
+    	
+    
+    						<Button label="恩！老将出马！一个顶俩！" nextID="-1" close="true">	
+    						<Goto value="app"/>
+    					  </Button>
+    					</Page>
+    				  </Script>
+    
+    				  
+    					<Script label="app" type="asWindow" src="task/1104/kulaVsCombat" winPos="0|0" name="">
+    						<Default>
+    							<Goto value="index_0_4"/>
+    						</Default>
+    					</Script>
+    
+    	
+    				  <Script label="index_0_4" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="112000" npcName="黑衣人">哼！你们打败我也没用！你们现在还不知道这只宠物的能力吧！尤其是你，沃尔克！</Dialog>
+    						<Dialog npcID="112002" npcName="沃尔克">恩？能力？</Dialog>
+    						<Dialog npcID="112000" npcName="黑衣人">据恩佐大人说，这是一只有复制能力的宠物——所以那边站着的才是和你一模一样的沃尔克！</Dialog>
+    	
+    
+    						<Button label="原来如此！" nextID="-1" close="false">
+    							<Goto value="index_0_5"/>
+    					  </Button>
+    					</Page>
+    					</Script>
+    	
+    					<Script label="index_0_5" type="dialog">
+    					<Page id="0">
+    					  <Dialog npcID="112000" npcName="黑衣人">而且，这种复制，不仅仅是复制外形，包括你的记忆和感知都会一起复制。你们就算不让我带走它，也不要真的出了问题再来求我们解决！</Dialog>
+    					  <Button label="呃……" nextID="-1" close="true">
+    							<Click event="onTaskCall2" params="2|1104"/>
+    					  </Button>
+    					</Page>
+    	
+    				  </Script>
+    				</Click>
+    			</NPCFun>
+    		</Create>
+    	</Npc>
+  </Task>
+  <Task id="1105" label="别让我走">
+    <!-- npc_171200 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="171200" name="" position="510|276">
+    			<View type="0" src="171200.swf" atLayerID="2"/>
+    
+    					<Click event="onRunScript">
+    
+    					  <Script label="default" type="dialog">
+    						<Page id="0">
+    								<Dialog npcID="112002" npcName="沃尔克">恐怕库仑说得没错。只有这样才能解释，为什么会在同一时间不同地点出现多个我。</Dialog>
+    								<Button label="可是……为什么都是坏人的你？" nextID="-1" close="false">
+    									<Goto value="index_0_1"/>
+    								</Button>
+    										
+    						</Page>
+    					  </Script>
+    	
+    					  <Script label="index_0_1" type="dialog">
+    						<Page id="0">
+    								<Dialog npcID="170200" npcName="兵马俑">也许是……还没孵化的我，能力不完全的缘故？</Dialog>
+    								<Dialog npcID="170500" npcName="妒忌沃尔克">我也不知道……不过我只是很单纯地妒忌你……</Dialog>
+    								<Dialog npcID="112002" npcName="沃尔克">啊？妒忌我？</Dialog>
+    									
+    
+    
+    								<Button label="为什么呢？" nextID="-1" close="true">
+    									<Goto value="app"/>
+    								</Button>
+    										
+    						</Page>
+    					  </Script>
+    	
+    						<Script label="app" type="asWindow" src="task/1105/HaveStudentsAllOverTheWorld" winPos="0|0" name="">
+    							<Default>
+    								<Goto value="index_0_2"/>
+    							</Default>
+    						</Script>	
+    	
+    	
+    					  <Script label="index_0_2" type="dialog">
+    						<Page id="0">
+    								<Dialog npcID="170500" npcName="妒忌沃尔克">所以我才会在这里，假冒你，我也想感受一下你的那种感觉……</Dialog>
+    								<Button label="原来如此。可是这个世界上不能有那么多个沃尔克啊。" nextID="-1" close="false">
+    									<Goto value="index_0_3"/>
+    								</Button>
+    										
+    						</Page>
+    					  </Script>
+    	
+    	
+    					  <Script label="index_0_3" type="dialog">
+    						<Page id="0">
+    								<Dialog npcID="112002" npcName="沃尔克">是啊……你必须要消失……</Dialog>
+    								<Dialog npcID="170200" npcName="兵马俑">可是……我还不知道怎么让复制出来的事物消失……</Dialog>
+    								
+    	
+    								<Button label="我们还是先去找到其他沃尔克再说吧！" nextID="-1" close="false">
+    									<Goto value="index_0_4"/>
+    								</Button>
+    										
+    						</Page>
+    					  </Script>
+    	
+    	
+    					  <Script label="index_0_4" type="dialog">
+    						<Page id="0">
+    								<Dialog npcID="170200" npcName="兵马俑">可是去哪里找其他的沃尔克呢？</Dialog>
+    								<Button label="上次见到复制的沃尔克是在钻石港。" nextID="-1" close="true">
+    									<Click label="fire" event="NULL" fire="true" fireID="170100"/>
+    								</Button>
+    										
+    						</Page>
+    					  </Script>
+    	
+    	
+    	
+    	
+    	
+    	
+    						<Click label="fire" event="NULL" fire="true"/>
+    	
+    					</Click>
+    
+    	</Npc>
+    <!-- npcfun_122300 · 场景 134 -->
+    <NPCFun sceneID="134" label="后来沃尔克去哪里了？" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="122300" npcName="拉瓦">后来他应该是去魔法密林了吧。</Dialog>
+          <Button label="他去那里干什么？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="122300" npcName="拉瓦">我也不清楚呢……</Dialog>
+    		<Dialog npcID="112002" npcName="沃尔克">糟了！我的实验就是在那里做的！该不会出什么事情吧！</Dialog>
+    	
+          <Button label="我们赶紧去看看吧！" nextID="-1" close="true">
+            <Goto value="fire"/>
+          </Button>
+        </Page>
+      </Script>
+    	
+    	<Click label="fire" event="NULL" fire="true" fireID="122302"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_171300 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="171300" name="" position="0|0">
+    		<View type="0" src="171300.swf" atLayerID="3"/>
+    
+    				<Click event="onRunScript">
+    						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="169800" npcName="贪婪沃尔克"><![CDATA[{name}]]>，又见到你了～！</Dialog>
+    								<Button label="你并不是真的沃尔克，我们都知道了……" nextID="-1" close="false">
+    									<Goto value="index_0_1"/>
+    								</Button>
+    							</Page>
+    						</Script>
+    	
+    						<Script label="index_0_1" type="dialog">
+    							<Page id="0">
+    
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">啊～那边那个就是我的真身啊……终于见到你了……不过旁边那个长头发的，肯定和我一样，是个复制品吧……</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">听说你一直在到处收集物品……？</Dialog>
+    							<Dialog npcID="170200" npcName="兵马俑">这个就是贪婪的本性吧……看来复制出来的，都是人格有问题的啊……</Dialog>
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">你们想把我怎么样？</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">啊！你在对我的实验做什么！</Dialog>
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">啊……我只是……只是想帮你啊……</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">唉！这里曾经被恩佐施过黑魔法！随便乱动是很危险的！我要赶紧恢复原状才行！</Dialog>
+    									
+    							<Button label="啊……" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171300_state1"/>
+    							</Button>
+    							</Page>
+    						</Script>
+    						
+    					</Click>
+    	
+    			<Create>
+    				<ViewEvent type="done_1105_171300_state0">
+    						<Click event="onRunScript">
+    						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="169800" npcName="贪婪沃尔克"><![CDATA[{name}]]>，又见到你了～！</Dialog>
+    								<Button label="你并不是真的沃尔克，我们都知道了……" nextID="-1" close="false">
+    									<Goto value="index_0_1"/>
+    								</Button>
+    							</Page>
+    						</Script>
+    	
+    						<Script label="index_0_1" type="dialog">
+    							<Page id="0">
+    
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">啊～那边那个就是我的真身啊……终于见到你了……不过旁边那个长头发的，肯定和我一样，是个复制品吧……</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">听说你一直在到处收集物品……？</Dialog>
+    							<Dialog npcID="170200" npcName="兵马俑">这个就是贪婪的本性吧……看来复制出来的，都是人格有问题的啊……</Dialog>
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">你们想把我怎么样？</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">啊！你在对我的实验做什么！</Dialog>
+    							<Dialog npcID="169800" npcName="贪婪沃尔克">啊……我只是……只是想帮你啊……</Dialog>
+    							<Dialog npcID="112002" npcName="沃尔克">唉！这里曾经被恩佐施过黑魔法！随便乱动是很危险的！我要赶紧恢复原状才行！</Dialog>
+    									
+    							<Button label="啊……" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171300_state1"/>
+    							</Button>
+    							</Page>
+    						</Script>
+    						
+    					</Click>
+    				</ViewEvent>
+    	
+    
+    	
+    				<ViewEvent type="done_1105_171300_state1">
+    						<Click event="onRunScript">
+    						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="112002" npcName="沃尔克">啊！我感觉全身乏力……</Dialog>
+    								<Dialog npcID="169800" npcName="贪婪沃尔克">这是为什么！我也不知道呢！</Dialog>
+    	
+    								<Button label="肯定是曾经的黑魔法……！" nextID="-1" close="true">
+    									<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171300_state2"/>
+    								</Button>
+    							</Page>
+    						</Script>
+    					</Click>
+    				</ViewEvent>
+    	
+    	
+    				<ViewEvent type="done_1105_171300_state2">
+    						<Click event="onRunScript">
+    						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="169800" npcName="贪婪沃尔克">我的真身，你怎么了！</Dialog>
+    								<Dialog npcID="112002" npcName="沃尔克">呵呵……我好像是中毒了……这些土……有毒……黑魔法……</Dialog>
+    								
+    								<Button label="那可怎么办！" nextID="-1" close="true">
+    									<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171300_state3"/>
+    								</Button>
+    							</Page>
+    						</Script>
+    					</Click>
+    				</ViewEvent>
+    	
+    				<ViewEvent type="done_1105_171300_state3">
+    					<Click label="fire" event="NULL" fire="true" fireID="170200"/>
+    				</ViewEvent>
+    	
+    			</Create>
+    	</Npc>
+    <!-- npc_171400 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="171400" name="" position="0|0">
+    			<View type="0" src="171400.swf" atLayerID="3"/>
+    	
+    				<Click event="onTaskCall">
+    					<Dialog>我是沃尔克</Dialog>
+    				</Click>
+    				<Create>
+    					<ViewEvent type="done_1105_171400_state0">
+    							<Click event="onRunScript">
+    							  <Script label="default" type="dialog">
+    							    <Page id="0">
+    							      <Dialog npcID="170600" npcName="兵马俑">我一路走来，听说出现了很多奇怪的事情！就在想，是不是我的复制品在搞鬼！</Dialog>
+    							      <Button label="啊？你是哪里冒出来的？" nextID="-1" close="false">
+    							        <Goto value="index_0_1"/>
+    							      </Button>
+    							    </Page>
+    							  </Script>
+    							  <Script label="index_0_1" type="asWindow" src="task/1105/EggCopy" winPos="0|0" name="">
+    							    <Default>
+    							      <Goto value="index_0_2"/>
+    							    </Default>
+    							  </Script>
+    	
+    							  <Script label="index_0_2" type="dialog">
+    							    <Page id="0">
+    									<Dialog npcID="170200" npcName="复制的兵马俑">……原来我也是被复制出来的啊……</Dialog>
+    							      <Button label="那……真正的你，一定知道怎么救沃尔克对不对？" nextID="-1" close="false">
+    							        <Goto value="index_0_3"/>
+    							      </Button>
+    							    </Page>
+    							  </Script>
+    							  <Script label="index_0_3" type="dialog">
+    							    <Page id="0">
+     									<Dialog npcID="170600" npcName="兵马俑">恩……当然有办法……</Dialog>
+    							      <Button label="快点说！" nextID="-1" close="false">
+    							        <Goto value="index_0_4"/>
+    							      </Button>
+    							    </Page>
+    							  </Script>
+    							  <Script label="index_0_4" type="dialog">
+    							    <Page id="0">
+    									<Dialog npcID="170600" npcName="兵马俑">其实也很简单啊。那个克隆出来的沃尔克，只要把自己的能量给真实的沃尔克就好了啊！</Dialog>
+    							      <Button label="啊？那克隆的沃尔克会怎样？" nextID="-1" close="false">
+    							        <Goto value="index_0_5"/>
+    							      </Button>
+    							    </Page>
+    							  </Script>
+    							  <Script label="index_0_5" type="dialog">
+    							    <Page id="0">
+    									<Dialog npcID="170600" npcName="兵马俑">能量不稳定的产物，就会灰飞烟灭吧……</Dialog>
+    									<Dialog npcID="169800" npcName="贪婪沃尔克">成为实体本身的救援者么……也许这就是我们克隆人的存在价值吧……</Dialog>
+    									<Dialog npcID="170500" npcName="妒忌沃尔克">恩……这样的话，也不算没有存在的意义了吧……</Dialog>
+    							      <Button label="难道你们……" nextID="-1" close="true">
+    										<Click label="fire" event="NULL" fire="true" fireID="170600"/>
+    							      </Button>
+    							    </Page>
+    							  </Script>
+    							</Click>
+    						</ViewEvent>
+    				</Create>
+    		</Npc>
+    <!-- npc_171500 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="171500" name="" position="0|0">
+    			<View type="0" src="171500.swf" atLayerID="3"/>
+    	
+    				<Click event="onTaskCall">
+    					<Dialog>我是沃尔克</Dialog>
+    				</Click>
+    				<Create>
+    				<ViewEvent type="done_1105_171500_state1">
+    						<Click event="onRunScript">
+    	 						<Script label="default" type="dialog">
+    							<Page id="0">
+    								<Dialog npcID="170600" npcName="兵马俑">啊……它就这么和黑衣人走了么……</Dialog>
+    								<Dialog npcID="169800" npcName="贪婪沃尔克">我们也走吧。</Dialog>
+    								<Dialog npcID="170500" npcName="妒忌沃尔克">啊～啊～还是不得不说，我依然妒忌你，我的真身。</Dialog>
+    								<Dialog npcID="112002" npcName="沃尔克">恩……</Dialog>
+    	
+    	 							<Button label="大家……再见了……" nextID="-1" close="true">
+    									<Goto value="app"/>
+    							  	</Button>
+    							</Page>
+    						  </Script>
+    	
+    	
+    						<Script label="app" type="asWindow" src="task/1105/VolckerDie" winPos="0|0" name="">
+    							<Default>
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171500_state2"/>
+    							</Default>
+    						</Script>	
+    	
+    						</Click>
+    				</ViewEvent>
+    				<ViewEvent type="done_1105_171500_state2">
+    					<Click label="submit" event="onTaskCall2" params="2|1105"/>
+    				</ViewEvent>
+    				<NPCFun label="你想怎么样" icon="-1" close="false">
+    					<Click event="onRunScript">
+    					  <Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="112000" npcName="黑衣人"><![CDATA[{name}]]>，终于找到你们了！快点把它交给我吧！！</Dialog>
+    						  <Button label="不要再做白日梦了！" nextID="-1" close="true">
+    							<Goto value="index_0_1"/>
+    						  </Button>
+    							<!--Button label="赢了" nextID="-1" close="false">
+    							<Goto value="win"/>
+    						  </Button-->
+    	
+    						</Page>
+    					  </Script>
+    	
+    					  <Script label="index_0_1" type="switch" invoke="combat" args="2|170100|黑衣人">
+    						<Case value="2">
+    						  <Goto value="win"/>
+    						</Case>
+    						<Default>
+    						  <Goto value="lose"/>
+    						</Default>
+    					  </Script>
+    	
+    					  <Script label="lose" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="112000" npcName="黑衣人">哈哈哈！就凭你们！根本不是我的对手！</Dialog>
+    						  <Button label="有本事再来" nextID="-1" close="true">
+    							<Goto value="index_0_1"/>
+    						  </Button>
+    							<Button label="稍后再战" nextID="-1" close="true">
+    							<End/>
+    						  </Button>
+    	
+     							
+    	
+    						</Page>
+    					  </Script>
+    	
+    						<Script label="win" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="112000" npcName="黑衣人">哼！只要我还活着，我一定会继续来抓它的！</Dialog>
+    							<Dialog npcID="170200" npcName="复制的兵马俑">等等……我……我跟你们走……</Dialog>
+    		
+    						  <Button label="啊？" nextID="-1" close="false">
+    							<Goto value="index_0_3"/>
+    						  </Button>
+    						</Page>
+    					  </Script>
+    		
+    					<Script label="index_0_3" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="170200" npcName="复制的兵马俑">如果我不跟你走的话，你是不会死心的吧……</Dialog>
+    							<Dialog npcID="112000" npcName="黑衣人">哈哈哈！可是，为什么有两个一模一样的你……？难道那个是被克隆出来的……？</Dialog>
+    							<Dialog npcID="170200" npcName="复制的兵马俑">恩……只要我跟你走，它自然会消失的……</Dialog>
+    							<Dialog npcID="112000" npcName="黑衣人">哈哈哈！太好啦！</Dialog>
+    	
+    						   <Button label="……[要代替自己的真身牺牲么……]" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task1105_171500_state1"/>
+    						   </Button>
+    						</Page>
+    					  </Script>
+    	
+    					</Click>
+    				</NPCFun>
+    			</Create>
+    		</Npc>
+  </Task>
+</Story>

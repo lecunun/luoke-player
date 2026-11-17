@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CelestialTrackOfSanGuStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="82" label="三顾仙踪">
+  <Task id="126" label="说服国王">
+    <!-- npc_g_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="145500" name="呱呱" position="582|398">
+    	<View type="0" src="145500.swf" atLayerID="2"/>
+    	<Create>
+    	<NPCFun label="说服国王" icon="-1">
+    	<Click event="onRunScript" cdtn="60">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="145500" npcName="呱呱"><![CDATA[{name}]]>，是你啊！</Dialog>
+    			<Button label="呱呱！国王要见你！" nextID="-1">
+    				<Goto value="dialog_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="145500" npcName="呱呱">国王他还有什么不舒服吗？</Dialog>
+    			<Dialog npcID="145500" npcName="呱呱">（仔细听取了原因）</Dialog>
+    			<Dialog npcID="145500" npcName="呱呱">原来是这样……我本来不愿意牵扯到洛克王国的王室的。但既然国王要见我，我也只好去一趟了。那么我先行一步，到城堡大厅。</Dialog>
+    			<Button label="我马上就到" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="1|126"/>
+    	</Click>
+    	</NPCFun>
+    	</Create>
+    	<Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="145600" position="456|370">
+    		<View type="0" src="145600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_126_145600">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱">参见尊敬的国王圣安德鲁。</Dialog>
+    							<Dialog npcID="145600" npcName="圣安德鲁">呱呱，谢谢你救了我一命。但我这次召见你，并不单为道谢你——我想知道，为什么会有东方的法术，控制了我。</Dialog>
+    							<Dialog npcID="145500" npcName="呱呱">根据我在洛克王国里的调查，我推断，应该是恩佐和年兽，勾结了起来。</Dialog>
+    							<Dialog npcID="145600" npcName="圣安德鲁">那么，你西行而来，想必已经了解好一切了，也想好了解决的方法吧。</Dialog>
+    							<Dialog npcID="145500" npcName="呱呱">国王圣明。</Dialog>
+    							<Button label="啊？方法是什么？" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/126/126_0" winPos="0|0" name="提示">
+    						<Default><Goto value="dialog_1"/></Default>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱">陛下，这正是呱呱不明智的建议，万望指教。</Dialog>
+    							<Dialog npcID="145600" npcName="圣安德鲁">呵呵，你的建议非常好，又怎么是不明智呢。但是，我还想听一下具体的方案。我们的合作，究竟要怎么做？</Dialog>
+    							<Dialog npcID="145500" npcName="呱呱">我们有两个方面，是事不宜迟的。一是寻找传说中最强的仙灵独角兽，二是重新夺回玄玉岛的准备。</Dialog>
+    							<Dialog npcID="145600" npcName="圣安德鲁">这是为什么呢？</Dialog>
+    							<Dialog npcID="145500" npcName="呱呱">我们两方面，只能各自对一方进行克制，但并没有办法致胜。要想赢过对方，我们必须要找到帮手。如果传说中最强的仙灵独角兽能够帮我们，那么我们是必胜无疑。</Dialog>
+    							<Button label="传说中的仙灵独角兽这么厉害？" nextID="-1" close="true">
+    								<Goto value="asWindow_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_1" type="asWindow" src="task/126/126_1" winPos="0|0" name="提示">
+    						<Default><Goto value="dialog_2"/></Default>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱">这就是强大的仙灵独角兽。而另外一个方面……呱呱希望陛下能帮助我们的……就是，救出平阳公主。</Dialog>
+    							<Dialog npcID="145600" npcName="圣安德鲁">既然平阳公主才能牵制年兽，我当然是不会推迟的。战船，物资等，我这边准备好。等你把传说中最强的仙灵独角兽带过来，我们就一起远征玄玉岛。</Dialog>
+    							<Dialog npcID="145500" npcName="呱呱">国王英明！</Dialog>
+    							<Button label="国王英明！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_126_145600">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱"><![CDATA[{name}]]>，你要和我一起去寻找传说中最强的仙灵独角兽吗？</Dialog>
+    							<Button label="那是当然的啊！" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱">你可知道仙灵独角兽隐居多时，途中会遇到什么险阻，完全不知道的哦。</Dialog>
+    							<Button label="我不怕！" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145500" npcName="呱呱">有你这个朋友真好。那么，我们向独角仙踪出发吧。只有那里，才会找到那传说中最为聪明，最为强大的仙灵独角兽。</Dialog>
+    							<Button label="出发吧！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|126"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+  <Task id="127" label="仙踪奇遇">
+    <!-- npc_c0_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="145800" position="411|285">
+    	<View type="0" src="145800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0_127_145800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="145800" npcName="呱呱">且慢！这位尊敬的仙灵独角兽，我是来自东方的玄玉岛的！我叫呱呱！</Dialog>
+    						<Dialog npcID="144800" npcName="仙灵独角兽">（仙灵独角兽总算停下了攻击）</Dialog>
+    						<Dialog npcID="144800" npcName="仙灵独角兽">东方……玄玉岛……</Dialog>
+    						<Dialog npcID="145800" npcName="呱呱">（长叹了一口气）</Dialog>
+    						<Dialog npcID="145800" npcName="呱呱">我们不是有意入侵你的仙境，我们是有事相求，才会不知礼节，贸然所致，万望见谅！</Dialog>
+    						<Dialog npcID="144800" npcName="仙灵独角兽">你们来这里是为什么。</Dialog>
+    						<Dialog npcID="145800" npcName="呱呱">（长叹了一口气）</Dialog>
+    						<Dialog npcID="145800" npcName="呱呱">我们为了寻找传说中的仙灵独角兽——最为强大与最为聪慧的仙灵独角兽。</Dialog>
+    						<Dialog npcID="144800" npcName="仙灵独角兽">……</Dialog>
+    						<Button label="请问您知道吗？" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/127/127_0" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_1"/></Default>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="144800" npcName="仙灵独角兽">你们要找的，是我的恩人，我的师傅，世人叫他传说中的仙灵独角兽。但是他进入了山中，云雾很深，并不知道地方。我想，你们还是走吧。</Dialog>
+    						<Button label="等、等一下啊！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    </Npc>
+    <!-- npcfun_c0_xml · 场景 5 -->
+    <NPCFun sceneID="5" label="你好！仙灵独角兽！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">你们，究竟是什么人，竟敢入侵独角仙踪？接招吧！</Dialog>
+    				<Button label="啊，不听我说就开打了？" nextID="-1" close="true">
+    					<Goto value="combat_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="combat_0" type="switch" invoke="combat" args="2|144800|仙灵独角兽">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_127_140300"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="145900" position="316|453">
+    		<View type="0" src="145900.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_127_145900">
+    				<Click event="onRunScript" aimPos="316|453" cdtn="60">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145900" npcName="呱呱">救命，这就被撵出来了。</Dialog>
+    							<Button label="我看这其中有蹊跷" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145900" npcName="呱呱">你也觉得是吧，我看那仙灵独角兽肯定有什么隐瞒着我们。</Dialog>
+    							<Button label="一定要再回去看看！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|127"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 5 -->
+    <NPCFun label="app_ts0" sceneID="5">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/127/127_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 5 -->
+    <NPCFun label="app_ts1" sceneID="5">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="5"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="128" label="再顾仙踪">
+    <!-- npc_c0_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="145500" position="411|285">
+    		<View type="0" src="145500.swf" atLayerID="2" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npcfun_c0_xml · 场景 5 -->
+    <NPCFun sceneID="5" label="你好！仙灵独角兽！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">我不是说过，你们要找的仙灵独角兽不在吗？</Dialog>
+    				<Dialog npcID="145800" npcName="呱呱">那么我们愿意在这里等到传说中最强的仙灵独角兽归来，一直等，一直等。</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">没有用的。你们是见不到他的——当然，他也不会见你们。</Dialog>
+    				<Dialog npcID="145800" npcName="呱呱">呱呱还是那句话。对不对，<![CDATA[{name}]]>。</Dialog>
+    				<Button label="当然，不达目的不罢休。" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">……（沉默了很久）</Dialog>
+    				<Dialog npcID="145800" npcName="呱呱">……（沉默了很久）</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">真拿你们没办法……仙灵独角兽在独角仙踪里留下了两个永恒的谜题，他曾经说过，要见他，必须要先解开这两个谜题。</Dialog>
+    				<Dialog npcID="145800" npcName="呱呱">嗯！谢谢你给……啊不对，谢谢传说中的仙灵独角兽留下了这个机会给我们！我们一定会解开谜题的！</Dialog>
+    				<Button label="我去找谜题解开吧！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true" fireID="145500"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="146000" position="354|253">
+    		<View type="0" src="146000.swf" atLayerID="2"/>
+    		<Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/128/128_0" winPos="0|0" name="提示">
+    				<Case value="1"><Goto value="dialog_0"/></Case>
+    				<Default><End/></Default>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">是吗，你们把谜题解开了吗？</Dialog>
+    				<Dialog npcID="145800" npcName="呱呱">那么我们可以见最强的仙灵独角兽了吗？</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">不，他还是不愿意见你们。你们回去吧。</Dialog>
+    					<Button label="不是吧！又回去！？" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="145900" position="316|453">
+    		<View type="0" src="145900.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_128_145900">
+    				<Click event="onRunScript" aimPos="316|453" cdtn="60">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145900" npcName="呱呱">又被撵出来了。</Dialog>
+    							<Button label="他是不想我们知道什么吗？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145900" npcName="呱呱">因为……他就是仙灵独角兽……</Dialog>
+    							<Dialog npcID="145900" npcName="呱呱">如果没有实际的证据，我觉得他是不会出山的。云雾长城和迷魂八卦里，有年兽肆虐的痕迹。我们把那些痕迹拿过来，让他看到玄玉岛的危机，这样他才会知道，我们急需要他的帮忙。</Dialog>
+    							<Button label="同感啊！" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="145900" npcName="呱呱"><![CDATA[{name}]]>，我能拜托你走这一趟吗？我还到独角仙踪去，尽我最大的努力去劝说，加上你拿回来的证据，传说中的仙灵独角兽应该就会出现啦！</Dialog>
+    							<Button label="看我的吧！" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|128"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 5 -->
+    <NPCFun label="app_ts0" sceneID="5">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="5"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="129" label="三顾仙踪">
+    <!-- npc_c0_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="146200" position="0|0">
+    		<View type="0" src="146200.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_129_146200">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="146300" position="0|0">
+    		<View type="0" src="146300.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_129_146300">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="146400" position="401|287">
+    		<View type="0" src="146400.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_129_146400">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/129/129_0" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npcfun_c2_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="我又来了！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">……怎么还是你们。</Dialog>
+    				<Dialog npcID="146400" npcName="呱呱">我想知道，那传说中的仙灵独角兽，不见我们的原因。</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">没有原因。</Dialog>
+    				<Dialog npcID="146400" npcName="呱呱">那么请向他转达，现在的玄玉岛，正处在水深火热之中！</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">……</Dialog>
+    				<Button label="你不相信我们吗！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_129_146400"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="就是这么回事！" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽">其实……我就是你们要找的，传说中的，仙灵独角兽。</Dialog>
+    					<Button label="啊！果然！" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="146400" npcName="呱呱">你为什么不愿意出山呢？</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">是我把年兽变成现在这样子的。</Dialog>
+    					<Button label="啊！怎么会！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/129/129_1" winPos="0|0" name="提示">
+    				<Default><Goto value="dialog_2"/></Default>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽">……</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">（思考了很久）</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">你们说得对。好，我跟你们走，解决洛克王国和玄玉岛的危机。</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">我这里，有一个独角兽的幼果。通过灵角木的培育，它能够成长为独当一面的仙灵独角兽——这全看你自己了。我把它交给你，相信，你可以给它一个美好的未来。</Dialog>
+    					<Button label="谢谢你！" nextID="-1" close="true">
+    						<Goto value="asWindow_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_1" type="asWindow" src="task/129/129_2" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|129"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

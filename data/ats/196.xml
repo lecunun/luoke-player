@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 JuniorKnightTrialStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="196" label="初级骑士试炼">
+  <Task id="186" label="守护边境">
+    <!-- npcfun_g_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="骑士初级试炼" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    <Page id="0">
+      <Dialog npcID="101000" npcName="兰斯洛">为了验证你是一位合格的骑士，今天需要你向王国证明自己。</Dialog>
+      <Button label="我要做什么呢？" nextID="-1" close="false">
+    	<Goto value="index_1010001"/>
+      </Button>
+    </Page>
+      </Script>
+      <Script label="index_1010001" type="dialog">
+    <Page id="0">
+      <Dialog npcID="101000" npcName="兰斯洛">最近有风声在王国边境出现了一些可疑的黑影，今天你就去边境站岗一天，如果有什么线索就及时回来报告。</Dialog>
+      <Button label="Yes，my lord!" nextID="-1" close="true">
+    	<Goto value="index_1010002"/>
+      </Button>
+    </Page>
+      </Script>
+      <Click label="index_1010002" event="onTaskCall2" params="1|186"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 42 -->
+    <Npc sceneID="42" type="1" npcID="215700" position="0|0">
+    <View type="0" src="215700.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+      <ViewEvent type="Getit_0_186_215700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/186/186_0" winPos="0|0" name="">
+    	<Default>
+    	  <Goto value="index_2157002"/>
+    	</Default>
+      </Script>
+      <Click label="index_2157002" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_186_215700"/>
+    </Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_1_186_215700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/186/186_1" winPos="0|0" name="">
+    	<Default>
+    	  <Goto value="index_2157005"/>
+    	</Default>
+      </Script>
+      <Click label="index_2157005" event="NULL" fireID="215700" fire="true"/>
+    </Click>
+      </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 42 -->
+    <NPCFun sceneID="42" label="发生了什么？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    <Page id="0">
+      <Dialog npcID="110200" npcName="克里斯">什么，有没有看到可疑的人？当然有啦！</Dialog>
+      <Button label="太好了,说一说什么情况吧。" nextID="-1" close="false">
+    	<Goto value="index_1102001"/>
+      </Button>
+    </Page>
+      </Script>
+      <Script label="index_1102001" type="dialog">
+    <Page id="0">
+      <Dialog npcID="110200" npcName="克里斯">终于有人来问了，你都不知道我最近过的什么日子啊，唉，说起来真是一把鼻涕一把泪啊……</Dialog>
+      <Button label="难为你了。" nextID="-1" close="false">
+    	<Goto value="index_1102002"/>
+      </Button>
+    </Page>
+      </Script>
+      <Script label="index_1102002" type="dialog">
+    <Page id="0">
+      <Dialog npcID="110200" npcName="克里斯">何止是难为啊，我每天都在这个暗无天日的地方辛苦的干活，为了王国的能源保障不辞辛劳，日理万机……</Dialog>
+      <Button label="=，=我知道了，我们说一说可疑的人吧。" nextID="-1" close="false">
+    	<Goto value="index_1102003"/>
+      </Button>
+    </Page>
+      </Script>
+      <Script label="index_1102003" type="dialog">
+    <Page id="0">
+      <Dialog npcID="110200" npcName="克里斯">不，你不知道，我还要继续说！</Dialog>
+      <Button label="……" nextID="-1" close="true">
+    	<Goto value="index_1102004"/>
+      </Button>
+    </Page>
+      </Script>
+      <Script label="index_1102004" type="asWindow" src="task/186/186_2" winPos="0|0" name="">
+    <Default>
+      <Goto value="index_1102005"/>
+    </Default>
+      </Script>
+      <Script label="index_1102005" type="dialog">
+    <Page id="0">
+      <Dialog npcID="110200" npcName="克里斯">嗯，大概就是这样了，我再给你讲讲我的故事……</Dialog>
+      <Button label="别，我回去报告兰斯洛了。" nextID="-1" close="true">
+    	<Goto value="index_1102006"/>
+      </Button>
+    </Page>
+      </Script>
+      <Click label="index_1102006" event="onTaskCall2" params="2|186"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 56 -->
+    <NPCFun label="app_ts0" sceneID="56">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/186/186_ts_0" winPos="0|0" name="提示">
+    		<Default><Goto value="index_0"/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="56" ver="0"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 42 -->
+    <NPCFun label="app_ts1" sceneID="42">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/186/186_ts_1" winPos="0|0" name="提示">
+    		<Default><Goto value="index_0"/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="42" ver="0"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="187" label="调查黑影">
+    <!-- npcfun_c0_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="发现了线索。" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">……</Dialog>
+    	  <Button label="（告之兰斯洛发生的一切）" nextID="-1" close="false">
+    		<Goto value="index_1010001"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010001" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">
+    		看来王国的财产遭到了严重的侵害了，我怀疑这一切又是黑衣人在幕后捣鬼，
+    		<![CDATA[{name}]]>
+    		，查清这一切，尽到你王国骑士的职责。
+    	  </Dialog>
+    	  <Button label="是的，长官！" nextID="-1" close="true">
+    		<Goto value="index_1010002"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Click label="index_1010002" event="NULL" fireID="101002" fire="true"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="215800" position="497|352">
+    <View type="0" src="215800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+      <ViewEvent type="Getit_0_187_215800">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="asWindow" src="task/187/187_0" winPos="0|0" name="">
+    		<Default>
+    		  <Goto value="index_2158002"/>
+    		</Default>
+    	  </Script>
+    	  <Script label="index_2158002" type="switch" invoke="combat" args="2|215800|羡慕">
+    		<Case value="2">
+    		  <Goto value="index_2158003"/>
+    		</Case>
+    		<Default>
+    		  <Goto value="index_2158005"/>
+    		</Default>
+    	  </Script>
+    	  <Script label="index_2158003" type="asWindow" src="task/187/187_1" winPos="0|0" name="">
+    		<Default>
+    		  <Goto value="index_2158004"/>
+    		</Default>
+    	  </Script>
+    	  <Click label="index_2158004" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_187_215800"/>
+    	  <Click label="index_2158005" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_1_187_215800"/>
+    	</Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_1_187_215800">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="asWindow" src="task/187/187_2" winPos="0|0" name="">
+    		<Default>
+    		  <Goto value="index_2158008"/>
+    		</Default>
+    	  </Script>
+    	  <Click label="index_2158008" event="NULL" fireID="215800" fire="true"/>
+    	</Click>
+      </ViewEvent>
+    </Create>
+      </Npc>
+    <!-- npc_p_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="215900" position="667|379">
+    <View type="0" src="215900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+      <ViewEvent type="Getit_0_187_215900">
+        <Click event="onRunScript">
+          <Script label="default" type="asWindow" src="task/187/187_3" winPos="0|0" name="">
+            <Default>
+              <Goto value="index_2159002"/>
+            </Default>
+          </Script>
+          <Click label="index_2159002" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_187_215900"/>
+        </Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_1_187_215900">
+        <Click event="onRunScript">
+          <Script label="default" type="asWindow" src="task/187/187_4" winPos="0|0" name="">
+            <Default>
+              <Goto value="index_2159005"/>
+            </Default>
+          </Script>
+          <Click label="index_2159005" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_1_187_215900"/>
+        </Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_2_187_215900">
+        <Click event="onRunScript">
+          <Click label="default" event="onTaskCall2" params="2|187"/>
+        </Click>
+      </ViewEvent>
+    </Create>
+      </Npc>
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/187/187_ts_0" winPos="0|0" name="提示">	
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 42 -->
+    <NPCFun label="app_ts1" sceneID="42">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/187/187_ts_1" winPos="0|0" name="提示">
+    		<Default><Goto value="index_0"/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="42" ver="0"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 125 -->
+    <NPCFun label="app_ts2" sceneID="125">
+    <Click event="onRunScript">
+    	<Click label="default" event="onChangeScene" params="125" ver="0"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="188" label="营救蔷薇骑士">
+    <!-- npcfun_c0_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="蔷薇骑士被抓住了。" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">……</Dialog>
+    	  <Button label="（告知发生的一切）" nextID="-1" close="false">
+    		<Goto value="index_1010001"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010001" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">事不宜迟，我们去倒影城堡救回蔷薇骑士。</Dialog>
+    	  <Button label="好！" nextID="-1" close="true">
+         		<Goto value="index_1010002"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Click label="index_1010002" event="NULL" fireID="101003" fire="true"/>
+    </Click>
+      </NPCFun>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="216000" position="454|377" name="黑衣人">
+    <View type="0" src="216000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+      <ViewEvent type="Getit_0_188_216000">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">蔷薇骑士就在他们身后，看上去被捆住了。</Dialog>
+    		  <Button label="我们现在就上去，揍他们个落花流水。" nextID="-1" close="false">
+    			<Goto value="index_2160002"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Script label="index_2160002" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">骑士靠的不仅是武勇，更多时候要是要用脑子的。在这里打闹起来恩佐肯定会发现的，到时候就不好办了。</Dialog>
+    		  <Button label="嗯，我知道了。" nextID="-1" close="false">
+    			<Goto value="index_2160003"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Script label="index_2160003" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="101000" npcName="兰斯洛">我去引开他们，你乘机救回蔷薇骑士，我们王国城堡见。</Dialog>
+    		  <Button label="你自己要小心啊。" nextID="-1" close="true">
+    			<Goto value="index_2160004"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="index_2160004" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_188_216000"/>
+    	</Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_1_188_216000">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="135600" npcName="蔷薇骑士">哈，我就知道你能来到这里。</Dialog>
+    		  <Button label="都是我害的你，我这就救你。" nextID="-1" close="true">
+    			<Goto value="index_2160007"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="index_2160007" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_1_188_216000"/>
+    	</Click>
+      </ViewEvent>
+      <ViewEvent type="Getit_2_188_216000">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="135600" npcName="蔷薇骑士">走，我们快回王国。</Dialog>
+    		  <Button label="好的。" nextID="-1" close="true">
+    			<Goto value="index_2160008"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Click label="index_2160008" event="NULL" fireID="216000" fire="true"/>
+    	</Click>
+      </ViewEvent>
+    </Create>
+      </Npc>
+    <!-- npcfun_c2_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="我回来了！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">我就知道你能和蔷薇骑士一起回来，你出色的完成了本次的任务。</Dialog>
+    	  <Button label="不，通过这次的事件，我认识到自己还有很多不足。" nextID="-1" close="false">
+    		<Goto value="index_1010001"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010001" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">那让我们开始吧，最后的挑战。</Dialog>
+    	  <Button label="什么挑战？(⊙_⊙?)" nextID="-1" close="false">
+    		<Goto value="index_1010002"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010002" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">
+    		你还要得到我的承认啊，来吧，
+    		<![CDATA[{name}]]>
+    		，用尽全力试着打倒我吧。
+    	  </Dialog>
+    	  <Button label="我来了！" nextID="-1" close="true">
+    		<Goto value="index_1010003"/>
+    	  </Button>
+    	  <Button label="我要准备一下。" nextID="-1" close="true">
+    		<End/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010003" type="switch" invoke="combat" args="2|101004|兰斯洛">
+    	<Case value="2">
+    	  <Goto value="index_1010004"/>
+    	</Case>
+    	<Default>
+    	  <END/>
+    	</Default>
+      </Script>
+      <Click label="index_1010004" event="NULL" fireID="101004" fire="true"/>
+    </Click>
+      </NPCFun>
+    <!-- npcfun_p_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="最后的考验。" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">很好很好，你果然成长了不少！</Dialog>
+    	  <Button label="这都要谢谢你跟蔷薇骑士。" nextID="-1" close="false">
+    		<Goto value="index_1010001"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010001" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">
+    		勇敢，牺牲，谦卑与荣耀，这些骑士的精神我相信你有了更多的理解，但是，试炼永远都不会完结，
+    		<![CDATA[{name}]]>
+    		，骑士的荣耀与你同在！
+    	  </Dialog>
+    	  <Button label="是的，长官！" nextID="-1" close="false">
+    		<Goto value="index_1010002"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010002" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="101000" npcName="兰斯洛">下面，继续做100次骑士的试炼。</Dialog>
+    	  <Button label="神马！！！还要试炼！！！( ⊙ o ⊙ )" nextID="-1" close="true">
+    		<Goto value="index_1010003"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_1010003" type="switch" invoke="game" args="2|null|2007|69">
+    	<Case value="1">
+    	  <Goto value="index_1010004"/>
+    	</Case>
+    	<Default>
+    	  <Goto value="index_1010004"/>
+    	</Default>
+      </Script>
+      <Script label="index_1010004" type="asWindow" src="task/188/188_0" winPos="0|0" name="">
+    	<Default>
+    	  <Goto value="index_1010005"/>
+    	</Default>
+      </Script>
+      <Click label="index_1010005" event="onTaskCall2" params="2|188"/>
+    </Click>
+      </NPCFun>
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/188/188_ts_0" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 152 -->
+    <NPCFun label="app_ts1" sceneID="152">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/188/188_ts_1" winPos="0|0" name="提示">
+    		<Default><Goto value="index_0"/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" params="152" ver="0"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 13 -->
+    <NPCFun label="app_ts2" sceneID="13">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/188/188_ts_2" winPos="0|0" name="提示">	
+    		<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 13 -->
+    <NPCFun label="app_ts3" sceneID="13">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/188/188_ts_3" winPos="0|0" name="提示">	
+    		<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

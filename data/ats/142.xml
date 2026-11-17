@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CareerCertifyDetective.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="142" label="侦探能力认证">
+  <Task id="164" label="侦探能力认证">
+    <!-- npcfun_101300_accept · 场景 29 -->
+    <NPCFun sceneID="29" label="侦探能力测试" icon="-1" close="false">	
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">有一个秘密，是只有我们侦探协会才知道的，可以说，是我们内部流传的秘密。</Dialog>
+          <Button label="啊？是什么秘密！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">作为一个侦探！难道你不会用自己的双手去发掘！拿着这个诗句，到里面的地点，到时候，会有协会留给你的答案的！</Dialog>
+          <Button label="让我看看诗句" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/164/TaleOfPoem" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">找到了，我就会认定你的能力！</Dialog>
+          <Button label="好！我会找出来的！" nextID="-1" close="true">
+    			<Click event="onTaskCall2" params="1|164"/>
+          </Button>
+        </Page>
+      </Script>
+    </Click>
+    </NPCFun>
+    <!-- npc_180900 · 场景 29 -->
+    <Npc sceneID="29" type="1" npcID="180900" position="0|0">
+    		<View type="0" src="180900.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+     			<Script label="default" type="asWindow" src="task/164/Rock0" winPos="0|0" name="">
+    			    <Default>
+    					<Click label="fire" event="NULL" fire="true"/>
+    			    </Default>
+    			  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npc_181000 · 场景 29 -->
+    <Npc sceneID="29" type="1" npcID="181000" position="0|0">
+    		<View type="0" src="181000.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+     			<Script label="default" type="asWindow" src="task/164/Rock1" winPos="0|0" name="">
+    			    <Default>
+    					<Click label="fire" event="NULL" fire="true"/>
+    			    </Default>
+    			  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npc_181100 · 场景 29 -->
+    <Npc sceneID="29" type="1" npcID="181100" position="0|0">
+    		<View type="0" src="181100.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+     			<Script label="default" type="asWindow" src="task/164/Rock2" winPos="0|0" name="">
+    			    <Default>
+    					<Click label="fire" event="NULL" fire="true"/>
+    			    </Default>
+    			  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npc_181200 · 场景 29 -->
+    <Npc sceneID="29" type="1" npcID="181200" position="0|0">
+    		<View type="0" src="181200.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+     			<Script label="default" type="asWindow" src="task/164/Rock3" winPos="0|0" name="">
+    			    <Default>
+    					<Click label="fire" event="NULL" fire="true"/>
+    			    </Default>
+    			  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_101300_task4 · 场景 11 -->
+    <NPCFun sceneID="11" label="线索找齐了" icon="-1" close="false">	
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">哦，这线索找齐了啊。那么，你也是时候解开谜底了。</Dialog>
+          <Button label="那就解开吧。" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="game" args="2|侦探能力认证游戏|2104|69">
+        <Case value="1">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+     		<Goto value="game_fail"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/164/RocoConan" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">既然是你自己找到的，那就你自己印证吧。靠你的双手找出答案来。</Dialog>
+          <Button label="好！我去！" nextID="-1" close="true">
+            	<Batch>
+    				<Click label="fire" event="NULL" fire="true" fireID="101302"/>
+     				<Goto value="index_0_4"/>
+    			</Batch>
+          </Button>
+        </Page>
+    	
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/164/GoStar" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onChangeScene" params="11"/>
+    
+    	
+      <Script label="game_fail" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101300" npcName="罗宾">不通过游戏可不行哦</Dialog>
+          <Button label="我再试试" nextID="-1" close="true">
+    			<Goto value="index_0_1"/>
+          </Button>
+    		<Button label="稍后再来" nextID="-1" close="true">
+    			<End/>
+          </Button>
+    	
+        </Page>
+      </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_robin_xml · 场景 29 -->
+    <NPCFun label="app_robin" sceneID="29">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/164/Robin" winPos="0|0" name="去问罗宾">
+    	  <Default>
+    		<Click label="go" event="onChangeScene" params="29"/>
+    	  </Default>
+    	</Script>
+      </Click>
+    </NPCFun>
+    <!-- npc_181300_submit · 场景 29 -->
+    <Npc sceneID="29" type="1" npcID="181300" position="0|0">
+    		<View type="0" src="181300.swf" atLayerID="1"/>
+    		<Click event="onTaskCall2" params="2|164"/>
+    	</Npc>
+  </Task>
+</Story>

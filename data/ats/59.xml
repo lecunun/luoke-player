@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 EveryoneIsStarStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="59" label="人人都是大明星">
+  <Task id="3019" label="人人都是大明星">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="人人都是大明星" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133200" npcName="马特">现在我们正在举行宠物明星show，人人都有机会成为大明星。为了推广本次活动，我们鼓励小宠物们积极参加训练，本周只要带着火花参加火花的烈炎特训就会得到我们的奖励。</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="1|3019"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml -->
+    <NPCFun label="人人都是大明星" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="3019"/>
+    				<Case value="0">
+    					<Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="133200" npcName="马特">不刻苦训练可成不了大明星。</Dialog>
+    							<Button label="好的" close="true"><End/></Button>
+    						</Page>
+    					</Script>
+    				</Case>
+    				<Case value="1">
+    					<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133200" npcName="马特">你的小火花特训后看来精神极了，祝你们在宠物明星show中取得好成绩</Dialog>
+    							<Button label="好的" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|3019"/>
+    					</Click>
+    				</Case>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

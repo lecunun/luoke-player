@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GreatRocksyStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="104" label="伟大的地质学家">
+  <Task id="4024" label="伟大的地质学家">
+    <!-- npcfun_g_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="诡异的声响" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">最近一到夜晚，就有诡异的事情，吓得我都不敢在图书馆读书了……</Dialog>
+          <Button label="发生了什么呢？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/4024/4024_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">估计是那个书架上的东西在搞鬼，帮我看看是怎么回事好吗？</Dialog>
+          <Button label="好吧，找个胆大的朋友一起来找找看" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/4024/4024_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">？？？</Dialog>
+          <Button label="爱德华快来看看我发现了什么？" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">这是？</Dialog>
+          <Button label="翻开图书" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/4024/4024_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">它说残缺的记忆？那个地方好像是龙之秘境的龙守望、弃之宝岛的黑影之岭，你去看看有什么线索没？</Dialog>
+          <Button label="好的" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onTaskCall2" params="1|4024"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 7 -->
+    <Npc sceneID="7" type="1" npcID="158300" position="605|336">
+    <View type="0" src="158300.png" atLayerID="1"/>
+    <Click event="NULL" cdtn="50" fire="true"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 7 -->
+    <Npc sceneID="7" type="1" npcID="158300" position="487|250">
+    <View type="0" src="158300.png" atLayerID="1"/>
+    <Click event="NULL" cdtn="50" fire="true" fireID="158400"/>
+    </Npc>
+    <!-- npcfun_c2_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="谁的日记" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">书收集齐了没？看看讲的是什么事情？</Dialog>
+          <Button label="好的，我们看看到底记录了什么？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/4024/4024_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">这貌似是托比的笔记，里面记载了很多矿石的知识呢，去还给托比吧。没想到托比从小就有这么伟大的志向，并且还付出了努力，所以才成为了地质学家。</Dialog>
+          <Button label="我们不算是偷看了他的日记了吧？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105100" npcName="爱德华">我们也是想找到作者嘛，去和他好好说说，我还要打理图书馆，就先不去了。</Dialog>
+          <Button label="好吧" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="105102"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 43 -->
+    <NPCFun sceneID="43" label="日记本" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109700" npcName="托比">这本笔记啊，终于找到你了，谢谢你！应该是上次去图书馆的时候忘记的。</Dialog>
+          <Button label="我们看了日记，您不会生气吧？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109700" npcName="托比">没关系，里面记载了很多矿石的故事，有时间一起来读啊。但是看别人的日记或者笔记一定要经过他人的允许哦。</Dialog>
+          <Button label="好的知道了" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|4024"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

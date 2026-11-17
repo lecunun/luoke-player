@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ClearTheAirStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="92" label="冰释前嫌">
+  <Task id="1069" label="玄玉岛的小独角兽">
+    <!-- npcfun_g_xml · 场景 113 -->
+    <NPCFun sceneID="113" label="冰释前嫌" icon="-1" close="false">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="145100" npcName="熙铭将军"><![CDATA[{name}]]>，你是从西方来的，应该会一些西方的魔法吧？</Dialog>
+    				<Button label="恩，不过我还没有学有所成" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="145100" npcName="熙铭将军">实际上，玄玉岛有一只宠物生病了，可能只有西方的魔法才能救治它，所以才找你来帮忙。</Dialog>
+    				<Button label="定不负所托！不过是什么宠物？这么奇怪？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="145100" npcName="熙铭将军">其实……是一只小独角兽……</Dialog>
+    				<Button label="独角兽？怎么会在玄玉岛出现？" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="145100" npcName="熙铭将军">具体的，你去画中仙里面，问问被封印的年兽就知道了。</Dialog>
+    				<Button label="画中仙在哪里？" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="145100" npcName="熙铭将军">就是玉和殿的那幅画卷里面。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|1069"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 114 -->
+    <Npc sceneID="114" type="1" npcID="153600" position="593|324">
+    		<View type="0" src="153600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1069_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽"><![CDATA[{name}]]>……你来这里干什么？</Dialog>
+    				<Button label="熙铭将军说有独角兽生病了，让我来找你。" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">既然是熙铭将军让你来找我的，说明你是靠得住的人啊。</Dialog>
+    				<Button label="玄玉岛怎么会有独角兽？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">是啊……玄玉岛怎么可能有独角兽？独角兽该在洛克王国的独角仙踪长大啊。</Dialog>
+    				<Button label="可是熙铭将军说……" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">你看，那是什么？</Dialog>
+    				<Button label="哪里？" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1069_153600"/>
+    		</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1069_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">你说它是不是独角兽？</Dialog>
+    				<Button label="长着翅膀的独角兽！第一次看见！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">可是现在它不能飞了。我想，可能是它水土不服的缘故。</Dialog>
+    				<Button label="你怎么得来这只独角兽的？" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1069/1069_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1069_153600"/>
+    		</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2_1069_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽"><![CDATA[{name}]]>，我的小独角兽，它以前可以飞的，但是最近，身体每况愈下，现在连飞都飞不起来了……就连熙铭大将军都不知道是怎么回事……你可以救它吗？</Dialog>
+    				<Button label="我实在没有这个能力……" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">唉……我估计只有独角仙踪的独角兽可以救它了。我从来不求人的，不过这次，你可以帮我去问问它，究竟该怎么办么？</Dialog>
+    				<Button label="好！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">对了……千万不要说，是我让你来的……</Dialog>
+    				<Button label="……为什么？" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">你不需要知道那么多……</Dialog>
+    				<Button label="好吧……" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1069"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 114 -->
+    <NPCFun label="app_ts0" sceneID="114">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1069_1072/ts_0" winPos="0|0" name="任务提示">
+    	<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<!--场景跳转-->
+    	<Click label="ChangeScene_0" event="onChangeScene" params="114"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1070" label="冷漠的独角兽">
+    <!-- npcfun_c0_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="冰释前嫌" icon="0" close="false">
+    		<Click event="onRunScript" cdtn="60" hasClick="false">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，你来找我，肯定是无事不登三宝殿吧。</Dialog>
+    				<Button label="……其实是有一只小独角兽需要你帮忙。" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">哦？有需要我帮忙的独角兽？我怎么不知道。只要是这幼果上成长的独角兽，都和我有心灵感应，需要我帮忙的话，我立刻感应得到。</Dialog>
+    				<Button label="它……可能不是这里长出的。" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">那它就不是独角兽。所有独角兽，都是在这里生长的！</Dialog>
+    				<Button label="它是独角兽！可是它水土不服！翅膀飞不起来了！" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">翅膀……？你说它有翅膀？</Dialog>
+    				<Button label="是啊！对了，为什么你没有翅膀？" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">啊……那真是提起来就让我又悲又恨啊……</Dialog>
+    				<Button label="可以告诉我吗？" nextID="-1">
+    					<Goto value="dialog_5_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">那是很久很久以前的事情了……那个时候，我和年兽学成出山，都在玄玉岛为现在平阳公主的奶奶，也就是平月公主效命。我永远也忘不了那一天……</Dialog>
+    				<Button label="恩……洗耳恭听……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1070/1070_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_6"/></Default>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">所以，我后来培育的那些独角兽，都没有翅膀了……因为我不想它们也受和我一样的痛苦。这也是为什么，我和年兽结下梁子的原因。</Dialog>
+    				<Button label="原来如此……你不打算救救那只独角兽么？" nextID="-1">
+    					<Goto value="dialog_7"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_7" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">我说过了，从来就没有有翅膀的独角兽！除非你去证明给我看！</Dialog>
+    				<Button label="好吧……" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true" fireID="144802"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="153600" position="593|324">
+    		<View type="0" src="153600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1070_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">看来独角兽还是那样固执啊……</Dialog>
+    				<Button label="独角兽说是你折断了它的翅膀。" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">看来它还记得啊……</Dialog>
+    				<Button label="原来这是真的……！！" nextID="-1">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1070/1070_1" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_3"/></Default>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">不过已经过了这么多年……唉……只要独角兽可以救救它，我做什么都可以。</Dialog>
+    				<Button label="独角兽要我证明，这只小独角兽真的有翅膀才行。" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">既然如此……那就让小独角兽把翅膀上的羽毛给你，你带过去给它看看就知道了。</Dialog>
+    				<Button label="这样就可以了吗？" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">我想是的……毕竟这片羽毛上，承载了小独角兽的记忆，独角兽看了就会明白的。到时候请你务必让它来此处。</Dialog>
+    				<Button label="我不能和小独角兽一起去独角仙踪么？" nextID="-1">
+    					<Goto value="dialog_6"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">你有所不知，小独角兽自出生来从未离开过玄玉岛，加之现在魔法能力又很弱……</Dialog>
+    				<Button label="好！我一定把独角兽请来此处！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 111 -->
+    <NPCFun sceneID="111" label="冰释前嫌" icon="0" close="false">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">啊！这的确是……</Dialog>
+    				<Button label="它应该和你有某种关系吧……" nextID="-1">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1070/1070_2" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_2"/></Default>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">不过……真的是年兽一直帮我养育着它吗……？</Dialog>
+    				<Button label="对的！" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">哼，难道不是它的阴谋么？</Dialog>
+    				<Button label="为何你就不能相信它会改邪归正呢？" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">唉……我很担心，这是它让我过去，想让我教它西方魔法的阴谋啊。以前，他多次向我讨教魔法的学习之道，我明明已经告诉了他，可他就是怀恨在心。</Dialog>
+    				<Button label="什么意思？" nextID="-1" close="true">
+    					<Goto value="asWindow_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_1" type="asWindow" src="task/1070/1070_3" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_5"/></Default>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">它一而再，再而三地陷害我，我怎能对它毫无防范？</Dialog>
+    				<Button label="这次你见到了翅膀，请你相信我！" nextID="-1">
+    					<Goto value="dialog_6"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">	好吧……这次就相信你……</Dialog>
+    				<Button label="那现在我们就去画中仙吧！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1070"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 111 -->
+    <NPCFun label="app_ts0" sceneID="111">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1069_1072/ts_1" winPos="0|0" name="任务提示">
+    		<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<!--场景跳转-->
+    		<Click label="ChangeScene_0" event="onChangeScene" params="111"/>
+    		</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 114 -->
+    <NPCFun label="app_ts1" sceneID="114">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1069_1072/ts_0" winPos="0|0" name="任务提示">
+    		<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<!--场景跳转-->
+    		<Click label="ChangeScene_0" event="onChangeScene" params="114"/>
+    		</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 111 -->
+    <NPCFun label="app_ts2" sceneID="111">
+    <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1069_1072/ts_1" winPos="0|0" name="任务提示">
+    			<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    			<Default><End/></Default>
+    			</Script>
+    			<!--场景跳转-->
+    			<Click label="ChangeScene_0" event="onChangeScene" params="111"/>
+    			</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1071" label="养育之恩">
+    <!-- npc_c0_xml · 场景 47 -->
+    <Npc sceneID="47" type="1" npcID="153600" position="593|324">
+    		<View type="0" src="153600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1071_153600">
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽">啊……那是……那是我在玄玉岛的时候培育的第一个独角兽……</Dialog>
+    					<Button label="太好啦！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/1071/1071_0" winPos="0|0" name="提示">
+    				<Default><Goto value="dialog_1"/></Default>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="153600" npcName="年兽">独角兽，你可以救救它吗？</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">难道这些年来，真的是你一直在养育它吗……？</Dialog>
+    					<Dialog npcID="153600" npcName="年兽">恩……我被平阳公主封印在此，只有它与我作伴，我待它如同自己的孩子一般。</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">唉……</Dialog>
+    					<Dialog npcID="153600" npcName="年兽">我求求你，快点救救它吧！</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，你和我一起，将它带到云海古道去吧！</Dialog>
+    					<Dialog npcID="153600" npcName="年兽">难道……你要带走它？</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">哼。它常年在此，失去了魔法的滋养。现在，我要把它带到离海洋最近的地方，然后奏响海洋之音，我再用触角让它与大海一起吸收日月精华，恢复魔法。</Dialog>
+    					<Dialog npcID="153700" npcName="小独角兽">可是……可是我从未离开过这里啊……</Dialog>
+    					<Button label="没关系的，我会陪伴着你。" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true" fireID="153700"/>
+    			</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 47 -->
+    <Npc sceneID="47" type="1" npcID="153800" position="667|415">
+    		<View type="0" src="153800.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1071_153800">
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，在杰诺斯深海有一个很大的机器，你去奏响那个机器，让它和海洋发生共振，然后我用触角让它与大海一起吸收日月精华，恢复魔法。</Dialog>
+    					<Button label="好的！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onChangeScene" params="47"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1071_153800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽"><![CDATA[{name}]]>，多亏了你，现在小独角兽的魔力已经恢复了！</Dialog>
+    					<Dialog npcID="153700" npcName="小独角兽">哈哈！太好啦！</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">不过我们独角兽一族，归根结底是要在西方生长的。如果你长期待在玄玉岛，还是会水土不服。</Dialog>
+    						<Button label="啊？那可怎么办？" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    					<Dialog npcID="144800" npcName="仙灵独角兽">只有让它随我回到独角仙踪，这样它才能健康成长。</Dialog>
+    					<Dialog npcID="153700" npcName="小独角兽">啊……？要我离开爸爸……？</Dialog>
+    					<Dialog npcID="144800" npcName="仙灵独角兽">恩……否则你还会生病的……而且……年兽那么爱你，怎么忍心看着你生病呢？</Dialog>
+    					<Dialog npcID="153700" npcName="小独角兽">恩……我知道了……</Dialog>					
+    						<Button label="那现在就去告诉年兽吧……" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|1071"/>
+    			</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 114 -->
+    <NPCFun label="app_ts0" sceneID="114">
+    <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1069_1072/ts_0" winPos="0|0" name="任务提示">
+    			<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    			<Default><End/></Default>
+    			</Script>
+    			<!--场景跳转-->
+    			<Click label="ChangeScene_0" event="onChangeScene" params="114"/>
+    			</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 105 -->
+    <NPCFun label="app_ts1" sceneID="105">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="105"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1072" label="冰释前嫌">
+    <!-- npc_p_xml · 场景 111 -->
+    <Npc sceneID="111" type="1" npcID="153600" position="593|324">
+    		<View type="0" src="153600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="GotIt0_1072_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">我的孩子，你看起来健康多了！</Dialog>
+    				<Dialog npcID="153700" npcName="小独角兽">爸爸……我……</Dialog>
+    				<Dialog npcID="153600" npcName="年兽">唉……你也不必说了……我都知道了……你还是随独角兽一起，去外面的世界看看吧。</Dialog>
+    				<Dialog npcID="153700" npcName="小独角兽">爸爸……我舍不得你。</Dialog>
+    				<Dialog npcID="153600" npcName="年兽">我相信，独角兽会好好照顾你的……</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">你放心吧……它怎么说也是我当年培育出来的……</Dialog>
+    				<Dialog npcID="153600" npcName="年兽">独角兽……一直以来，我都很愧疚……真的很想当面跟你说一声，对不起……</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">我没想到，你竟然会帮我养育着小独角兽……</Dialog>
+    				<Button label="不如你们俩就冰释前嫌吧！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">恩……我也正有此意。</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">想来，我们俩当初也是亲如一家……</Dialog>
+    				<Button label="这可真是回忆飘荡在风中……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1072/1072_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_3"/></Default>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153700" npcName="小独角兽">我感觉到了，独角兽和爸爸之间，真的和好了！</Dialog>
+    				<Dialog npcID="153600" npcName="年兽">恩，现在，你就跟随独角兽去外面的世界吧！</Dialog>
+    				<Dialog npcID="153700" npcName="小独角兽">恩……我不会辜负爸爸的期望的！</Dialog>
+    				<Dialog npcID="144800" npcName="仙灵独角兽">我会好好培养它的！</Dialog>
+    				<Button label="它是唯一一只有翅膀的独角兽耶！好棒！" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="144800" npcName="仙灵独角兽">正是因为这样，我才会更加好好培养它！时间不早了，我们一起去独角仙踪吧！那里的环境更适合你生活！</Dialog>
+    				<Dialog npcID="153600" npcName="年兽">快点走吧，孩子。</Dialog>
+    				<Button label="小独角兽看起来很难过……" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1072_153600"/>
+    		</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1072_153600">
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="153600" npcName="年兽">我被平阳公主封印在画中仙，就不送你们了……<![CDATA[{name}]]>，也请你帮我好好照顾它！</Dialog>
+    				<Dialog npcID="153700" npcName="小独角兽">恩……我会变得更加强大的！</Dialog>
+    				<Button label="恩！我们出发吧……" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1072/1072_1" winPos="0|0" name="提示">
+    			<Default>
+    				<Batch>
+    					<Click event="onChangeScene" params="111"/>
+    					<Goto value="submit"/>
+    				</Batch>
+    			</Default>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1072"/>
+    		</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+</Story>

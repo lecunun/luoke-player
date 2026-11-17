@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TwoTwonLeaderStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="198" label="真假镇长">
+  <Task id="189" label="真假镇长">
+    <!-- npcfun_get · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="216300" position="0|0">
+    		<View type="0" src="216300.swf" atLayerID="2" hasClick="false"/>
+    		<Create>	
+    		
+    		<ViewEvent type="NPCScript_216300_AcceptDialog">
+    		<Click event="onRunScript">
+    		
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">……</Dialog>
+    			  <Button label="小公主殿下，你在干嘛呢？">
+    				<Goto value="dialog_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">啊，<![CDATA[{name}]]>，你来的正好，我现在正准备回王宫，把发生在这里的事情禀告父王。</Dialog>
+    			  <Button label="嗯，那你咋还不走捏？">
+    				<Goto value="dialog_1"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">你，你，你，真是个猪头啊，这里天寒地冻，回去王国路途遥远，洛奇又要留下来和镇长商量事情，你叫本公主一个人回去吗？</Dialog>
+    			  <Button label="我知道了，我这就护送小公主回去！" nextID="-1" close="true">
+    				<Goto value="accpet"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|189"/>
+    		</Click>
+    		</ViewEvent>
+    	
+    		</Create>
+    		</Npc>
+    <!-- app_ts0_xml · 场景 88 -->
+    <NPCFun label="app_ts0" sceneID="88">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="14"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 88 -->
+    <NPCFun label="app_ts1" sceneID="88">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="184"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 88 -->
+    <NPCFun label="app_ts2" sceneID="88">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="188"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="216400" position="0|0">
+    	<View type="0" src="216400.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_216400_TheThruthOfSwordBattle">
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="asWindow" src="task/189/app_189_task_2_TheThruthOfSwordsBattle" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="dialog_0"/>
+    				</Default>
+    		</Script>	
+    	
+    	  <Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="105400" npcName="可丽希亚">父王，我才回来呀，为什么还让我去那个天寒地冻的地方。</Dialog>
+    		  <Button label="（是啊，国王为什么还让公主过去呢。）">
+    			<Goto value="dialog_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="145600" npcName="国王">孩子，枫雪镇发生的这些事情，你作为王室的一员，有责任弄清楚这一切。</Dialog>
+    		  <Button label="（平时很马虎的国王现在好认真啊。）">
+    			<Goto value="dialog_2"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="105400" npcName="可丽希亚">我不要！</Dialog>
+    		  <Button label="（哎呀……）">
+    			<Goto value="dialog_3"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_3" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="145600" npcName="国王">孩子，精灵王与我们洛克王国有很大的渊源，<![CDATA[{name}]]>，你也来听听。</Dialog>
+    		  <Button label="是的，国王。" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/189/app_189_task_3_TheRealationOfRocokingdomAndIceHero" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="NPCScript_216400_ClickEnabledFor3"/>
+    				</Default>
+    		</Script>	
+    	<Click label="NPCScript_216400_ClickEnabledFor3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_ClickEnabledFor3"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_216400_ShowDialogAfterKownTheRelation">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="145600" npcName="国王">现在你们知道我为什么这么紧张了吗？</Dialog>
+    		  <Button label="嗯嗯。">
+    			<Goto value="dialog_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">我，我，我还是不要去！</Dialog>
+    		  <Button label="小公主……" nextID="-1" close="true">
+    			<Goto value="NPCScript_216400_GirlIsAngry"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="NPCScript_216400_GirlIsAngry" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_GirlIsAngry"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_216400_ShowDialogAfterGirlAngry">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="145600" npcName="国王">这孩子今天似乎有点不对劲。</Dialog>
+    		  <Button label="国王殿下，我来帮你问问小公主吧。" nextID="-1" close="true">
+    			<Goto value="NPCScript_216400_AskGirlWhytoAngry"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="NPCScript_216400_AskGirlWhytoAngry" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_AskGirlWhytoAngry"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_216400_ShowDialogToaskGirl">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">……</Dialog>
+    		  <Button label="小公主，国王说的都是对的啊，为什么你不肯回到枫雪镇呢。">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">我，我……</Dialog>
+    		  <Button label="嗯，怎么啦？" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/189/app_189_task_4_TheReasonofGirlWhyNotToStuff" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="NPCScript_216400_ClickEnabledFor4"/>
+    				</Default>
+    		</Script>	
+    	<Click label="NPCScript_216400_ClickEnabledFor4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_ClickEnabledFor4"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_216400_ShowDialogAfterTalkToGirl">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">人家可是期待了好久好久好久呢！</Dialog>
+    		  <Button label="……">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">所以我才不想去的，<![CDATA[{name}]]>，你说呢？</Dialog>
+    		  <Button label="其实我有个好办法哦。" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/189/app_189_task_5_TheCleverGirl" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="NPCScript_216400_ClickEnabledFor5"/>
+    				</Default>
+    		</Script>	
+    	<Click label="NPCScript_216400_ClickEnabledFor5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_ClickEnabledFor5"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_216400_OpenAppXXX">
+    	<Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/189/app_189_task_5_TalkWithGirlAppl" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="NPCScript_216400_GotoAndStop4"/>
+    				</Default>
+    		</Script>	
+    	<Click label="NPCScript_216400_GotoAndStop4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216400_GotoAndStop4"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_216400_GirlApologizeToFather">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">父王，对不起，刚刚是我太任性了，我会去枫雪镇，履行我作为王室一员应有的职责。</Dialog>
+    		  <Button label="（小公主说的好！）">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    	<Dialog npcID="145600" npcName="国王">可丽希亚，我的孩子，你长大了。<![CDATA[{name}]]>，也拜托你照顾小公主了。</Dialog>
+    		  <Button label="遵命，陛下。">
+    			<Goto value="dialog_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">什么嘛，谁要他来保护啊，还不知道是谁照顾谁呢，那谁，不要磨蹭了，我还要尽早回来过年呢。</Dialog>
+    		  <Button label="小公主等等我啊！！！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="submit" event="NULL" fire="true" fireID="216400"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="216500" position="0|0">
+    	<View type="0" src="216500.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_216500_DavySpeakDialog">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="216500" npcName="戴维镇长">这不是小公主和<![CDATA[{name}]]>吗，小公主怎么又回来了？</Dialog>
+    		  <Button label="我们回来寻找精灵王，国王告诉了我们精灵王的传说哦。">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="216500" npcName="戴维镇长">啊？快告诉我。</Dialog>
+    		  <Button label="嗯……精灵王……">
+    			<Goto value="dialog_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    		<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    <Dialog npcID="105400" npcName="可丽希亚">不要告诉他！</Dialog>
+    		  <Button label="啊？小公主，为什么？">
+    			<Goto value="dialog_2"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    		<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    <Dialog npcID="105400" npcName="可丽希亚">你们这两个猪头，这个镇长是假的难道都看不出来吗？</Dialog>
+    		  <Button label="神马？！" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="asWindow_0" type="switch" invoke="game" args="2|真假镇长大PK|2137|0">
+    		  <Case value="1">
+    		    <Goto value="asWindow_1"/>
+    		  </Case>
+    		  <Default>
+    		    <End/>
+    		  </Default>
+    		</Script>
+    	
+    		<Script label="asWindow_1" type="asWindow" src="task/189/app_189_task_7_KuLunisMe" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="NPCScript_216500_ClickEnabledTrue"/>
+    			</Default>
+    			</Script>	
+    	
+    	<Click label="NPCScript_216500_ClickEnabledTrue" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216500_ClickEnabledTrue"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_216500_KuluBrokenDialog">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="136400" npcName="库伦">既然被识破了，只有来硬的了，公主殿下，就“请”你把知道的都告诉我吧。</Dialog>
+    		  <Button label="身为小公主的保镖，怎么能让你胡来。" nextID="-1" close="true">
+    			<Goto value="fight_0"/>
+    		  </Button>
+    			<Button label="让我准备一下。" nextID="-1" close="true">
+    			<End/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	  <Script label="fight_0" type="switch" invoke="combat" args="2|216500|恶魔叮">
+     				<Default>
+    				      <Goto value="default"/>
+    				</Default>
+    				<Case value="2">
+    				      <Goto value="victory_dialog"/>
+    				 </Case>
+    		</Script>
+    		  <Script label="victory_dialog" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="136400" npcName="库伦">小洛克，你又坏了我们的好事。</Dialog>
+    		      <Button label="荣幸之至！！！我乃可丽希亚公主唯一指定保镖！">
+    		        <Goto value="victory_dialog_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    			
+    		<Script label="victory_dialog_1" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="136400" npcName="库伦">啊呀呀，你竟然敢耍我，我也饶不了你。</Dialog>
+    		      <Button label="（其实我也被骗了，多亏了公主）。" nextID="-1" close="true">
+    		        <Goto value="NPCScript_216500_KulunEscaped"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    	
+    		<Click label="NPCScript_216500_KulunEscaped" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216500_KulunEscaped"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_216500_Task2_Will_over">
+    	<Click event="onRunScript">
+    	<Click label="default" event="NULL" fire="true" fireID="216500"/>
+    	</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="216600" position="0|0">
+    	<View type="0" src="216600.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_216600_JiniuArmyDialog">
+    	<Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="136400" npcName="库伦">哇哈哈，你们中计了，这下我们就瓮中捉鳖了。</Dialog>
+    			  <Button label="你才是鳖，就你们几个，还想以多欺少？" nextID="-1" close="true">
+    				<Goto value="fight_0"/>
+    			  </Button>
+    			<Button label="等我准备一下。" nextID="-1" close="true">
+    				<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    	  <Script label="fight_0" type="switch" invoke="combat" args="2|216600|水晶犬">
+     				<Default>
+    				      <Goto value="default"/>
+    				</Default>
+    				<Case value="2">
+    				      <Goto value="victory_dialog_ShowEnzo"/>
+    				 </Case>
+    		</Script>
+    	
+    	<Click label="victory_dialog_ShowEnzo" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="victory_dialog_ShowEnzo"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	<ViewEvent type="NPCScript_216600_IceHeroIsComming">
+    	<Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/189/app_189_task_8_IceHeroIsComming" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="victory"/>
+    			</Default>
+    			</Script>	
+    			<Click label="victory" event="NULL" fire="true" fireID="216600"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="216700" position="0|0">
+    	<View type="0" src="216700.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_216700_IceHeroDialog">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="215600" npcName="冰系精灵王">最终我又暴露了身份，恩佐肯定不会善罢甘休的。</Dialog>
+    			  <Button label="精灵王，我们会保护你的。">
+    				<Goto value="dialog_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="215600" npcName="冰系精灵王">谢谢你们，但我还是不能连累你们，必要的时候，我会再出现的。</Dialog>
+    			  <Button label="谢谢你！" nextID="-1" close="true">
+    				<Goto value="NPCScript_216700_GotoAndStop2_IceHeroFly"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Click label="NPCScript_216700_GotoAndStop2_IceHeroFly" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_216700_GotoAndStop2_IceHeroFly"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_216700_ShowJUzhongwnzi">
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/189/app_189_task_9_IceHeroGohome" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    		</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|189"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+  </Task>
+</Story>

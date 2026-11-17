@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BeautifulSea.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="161" label="美丽的海洋">
+  <Task id="4048" label="美丽的海洋">
+    <!-- npcfun_109100 · 场景 19 -->
+    <NPCFun sceneID="19" label="美丽的海洋" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">美丽的人鱼湾是沙滩排球的好地方，去挑战一下，看看你能闯过几关？</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4048"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_109100_submit · 场景 19 -->
+    <NPCFun sceneID="19" label="美丽的海洋" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4048"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">先去人鱼湾进行沙滩排球的训练吧！完成后记得告诉我你的成绩哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">干得不错，去和艾琳进行海洋拼拼乐吧，完成后记得告诉我你的表现哦！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4048"/>
+        </Click>
+    </NPCFun>
+    <!-- condition_0_complete · 场景 19 -->
+    <NPCFun label="condition_0_complete" sceneID="19">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/4048/task_4048_app_0" winPos="0|0" name="沙滩排球">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="4049" label="美丽的海洋">
+    <!-- npcfun_109100_submit · 场景 19 -->
+    <NPCFun sceneID="19" label="美丽的海洋" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4049"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">快去找艾琳进行海洋拼拼乐吧！</Dialog>
+                    <Button label="好的" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">学习到很多海洋知识了吧，去海螺沙滩进行环保小卫士吧！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4049"/>
+        </Click>
+    </NPCFun>
+    <!-- condition_0_complete · 场景 19 -->
+    <NPCFun label="condition_0_complete" sceneID="19">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/4049/task_4049_app_0" winPos="0|0" name="美丽的海洋">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="4050" label="美丽的海洋">
+    <!-- npcfun_109100_submit · 场景 19 -->
+    <NPCFun sceneID="19" label="美丽的海洋" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4050"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">环保小卫士的游戏完成了吗？快去海螺沙滩吧！</Dialog>
+                    <Button label="好的" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="109100" npcName="卡拉">体验了如此多的海洋生活，以后要更加爱护海洋环境哦！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4050"/>
+        </Click>
+    </NPCFun>
+    <!-- condition_0_complete · 场景 19 -->
+    <NPCFun label="condition_0_complete" sceneID="19">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/4050/task_4050_app_0" winPos="0|0" name="收集垃圾">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

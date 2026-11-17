@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SwordLegendStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="187" label="冰原旅途之圣剑传说">
+  <Task id="185" label="圣剑传说">
+    <!-- npc_1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="210200" position="617|262" aimPos="634|290" name="洛奇">
+    		   <View type="0" src="210200.swf" atLayerID="2" hasClick="true"/>
+    				<Create>
+    					<NPCFun label="圣剑传说" icon="-1" close="false">
+    							   <Click event="onRunScript">
+    								 <Script label="default" type="dialog">
+    								   <Page id="0">
+    									 <Dialog npcID="210200" npcName="洛奇">
+    									   <![CDATA[{name}]]>
+    									   我们这一路过来真不容易啊，不过现在胜利就在眼前了！
+    									 </Dialog>
+    									 <Button label="O(∩_∩)O对呀" nextID="-1" close="false">
+    									   <Goto value="index_2102001"/>
+    									 </Button>
+    								   </Page>
+    								 </Script>
+    								 <Script label="index_2102001" type="dialog">
+    								   <Page id="0">
+    									 <Dialog npcID="210200" npcName="洛奇">枫雪镇就在前方我们走吧。</Dialog>
+    									 <Button label="好的。" nextID="-1" close="true">
+    									   <Goto value="index_2102002"/>
+    									 </Button>
+    								   </Page>
+    								 </Script>
+    					 			 <Click label="index_2102002" event="onTaskCall2" params="1|185"/>
+    							   </Click>
+    						</NPCFun>
+    				</Create>
+     			<Click event="onTaskCall" cdtn="20">
+    				 <Dialog>我兰斯洛，以骑士团团长的名义，郑重跟你说，当骑士是件很严肃的事情。
+    				看来，王国有什么事情发生了，才促使小洛克你来找我的吧！</Dialog>
+    			</Click>
+    		 </Npc>
+    <!-- npc_2_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="210300" position="0|0" name="枫雪左岸的洛奇">
+    	  <View type="0" src="210300.swf" atLayerID="3" hasClick="false"/>
+    	  <Create>
+    		<ViewEvent type="Getit_0_185_210300">
+    		  <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/185/185_0" winPos="0|0" name="进入枫雪镇）全屏动画">
+    			  <Default>
+    				<Goto value="index_2103002"/>
+    			  </Default>
+    			</Script>
+    			<Click label="index_2103002" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_185_210300"/>
+    		  </Click>
+    		</ViewEvent>
+    		<ViewEvent type="Getit_1_185_210300">
+    		  <Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="210200" npcName="洛奇">这是怎么回事，镇子里怎么没有人？</Dialog>
+    				<Button label="不要慌，再仔细看看有什么线索。" nextID="-1" close="true">
+    				  <Goto value="index_2103005"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Script label="index_2103005" type="asWindow" src="task/185/185_1" winPos="0|0" name="发现圣剑）全屏动画">
+    			  <Default>
+    				<Goto value="index_2103006"/>
+    			  </Default>
+    			</Script>
+    			<Script label="index_2103006" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="210200" npcName="洛奇">这就是传说中的圣剑吗,我们解开机关就可以成为圣剑的持有者了呢。</Dialog>
+    				<Button label="我们刚来到这里，还是谨慎一点好，再观察一下吧。" nextID="-1" close="false">
+    				  <Goto value="index_2103007"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Script label="index_2103007" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="210200" npcName="洛奇">不会有事的，我先解开机关再说。</Dialog>
+    				<Button label="……" nextID="-1" close="true">
+    				  <Goto value="index_2103008"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Click label="index_2103008" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_1_185_210300"/>
+    		  </Click>
+    		</ViewEvent>
+    		<ViewEvent type="Getit_2_185_210300">
+    		  <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/185/185_2" winPos="0|0" name="圣剑UI—游戏">
+    				  <Case value="1">
+    						<Goto value="index_21030011"/>
+    				  </Case>
+    				  <Default>
+    					<END/>
+    				  </Default>
+    			</Script>
+    			<Script label="index_21030011" type="asWindow" src="task/185/185_3" winPos="0|0" name="误中陷阱）全屏动画">
+    			  <Default>
+    				<Goto value="index_21030012"/>
+    			  </Default>
+    			</Script>
+    			<Click label="index_21030012" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_2_185_210300"/>
+    		  </Click>
+    		</ViewEvent>
+    		<ViewEvent type="Getit_3_185_210300">
+    		  <Click event="onRunScript">
+    	
+    				<Script label="default" type="dialog">
+    				  <Page id="0">
+    					<Dialog npcID="205500" npcName="戴维镇长">终于逮到你们这群觊觎圣剑的毛贼了。</Dialog>
+    					<Button label="你在说什么啊？" nextID="-1" close="true">
+    					  <Goto value="t_index_2"/>
+    					</Button>
+    				  </Page>
+    				</Script>
+    	
+    				  <Script label="t_index_2" type="asWindow" src="task/185/t1" winPos="0|0" name="圣剑传说）漫画">
+    					<Default>
+    					  <Goto value="t_index_3"/>
+    					</Default>
+    				  </Script>
+    	
+    	
+    	
+    			<Script label="t_index_3" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="205500" npcName="戴维镇长">哈哈，终于让我成功逮到你们了。</Dialog>
+    				<Button label="您误会了，我们不是……" nextID="-1" close="false">
+    				  <Goto value="index_21030015"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Script label="index_21030015" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="205500" npcName="戴维镇长">不用解释了，来人，把剩下的那个也捉住。</Dialog>
+    				<Button label="你们要做什么！" nextID="-1" close="true">
+    				  <Goto value="index_21030016"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Script label="index_21030016" type="switch" invoke="combat" args="2|210300|音速犬">
+    			  <Case value="2">
+     				<Goto value="index_21030017"/>
+    			  </Case>
+    			  <Default>
+    				<Goto value="index_21030017"/>
+    			  </Default>
+    			</Script>
+    			<Click label="index_21030017" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_3_185_210300"/>
+    		  </Click>
+    		</ViewEvent>
+    		<ViewEvent type="Getit_4_185_210300">
+    		  <Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    			  <Page id="0">
+    				<Dialog npcID="210200" npcName="洛奇">
+    				  <![CDATA[{name}]]>
+    				  ，你快回去找兰斯洛来澄清一切。
+    				</Dialog>
+    				<Button label="好，你等我，我马上回来！" nextID="-1" close="true">
+    				  <Goto value="index_21030020"/>
+    				</Button>
+    			  </Page>
+    			</Script>
+    			<Click label="index_21030020" event="NULL" fireID="210300" fire="true"/>
+    		  </Click>
+    		</ViewEvent>
+    	  </Create>
+    	</Npc>
+    <!-- npc_3_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="圣剑传说" icon="0" close="false">
+    		<Click event="onRunScript">
+              <Script label="default" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="101000" npcName="兰斯洛">......</Dialog>
+                  <Button label="（告之发生的一切）" nextID="-1" close="false">
+                    <Goto value="index_1010011"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_1010011" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="101000" npcName="兰斯洛">我们马上出发去枫雪镇。</Dialog>
+                  <Button label="好！~" nextID="-1" close="true">
+                    <Goto value="index_1010012"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Click label="index_1010012" event="NULL" fireID="101001" fire="true"/>
+            </Click>
+          </NPCFun>
+    <!-- npc_4_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="210400" position="570|400" name="库伦">
+    			<View type="0" src="210400.swf" atLayerID="2" hasClick="false"/>
+    			<Create>
+    			  <ViewEvent type="Getit_0_185_210400">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    					<Page id="0">
+     					  <Dialog npcID="158200" npcName="黑衣人">
+    						<![CDATA[{name}]]>
+    						，怎么又是你，看来这次要好好教训你了。
+    					  </Dialog>
+    					  <Button label="看是谁教训谁吧。" nextID="-1" close="true">
+    						<Goto value="index_2104002"/>
+    					  </Button>
+    					<Button label="让我准备一下再教训你！" nextID="-1" close="true">
+                        	<END/>
+                      	</Button>
+    					</Page>
+    				  </Script>
+    				  <Click label="index_2104002" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_0_185_210400"/>
+    				</Click>
+    			  </ViewEvent>
+    			  <ViewEvent type="Getit_1_185_210400">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="switch" invoke="combat" args="2|210400|鸡牛部队">
+    					<Case value="2">
+    						<Goto value="index_2104005"/>
+    					</Case>
+    					<Default>
+    						<END/>
+    					</Default>
+    				  </Script>
+    				  <Script label="index_2104005" type="asWindow" src="task/185/185_4" winPos="0|0" name="打败黑衣人）全屏动画">
+    					<Default>
+    					  <Goto value="index_2104006"/>
+    					</Default>
+    				  </Script>
+    					<Click label="index_2104006" event="NULL" fireID="210400" fire="true"/>
+    				  <!--<Click label="index_2104006" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state_1_185_210400"/>-->
+    				</Click>
+    			  </ViewEvent>
+    			  <ViewEvent type="Getit_2_185_210400">
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    					<Page id="0">
+    					  <Dialog npcID="205500" npcName="戴维镇长">原来一切都是误会，这一切还是得怪我，不过圣剑影响太大，我也是出于无奈啊。</Dialog>
+    					  <Button label="怎么回事？" nextID="-1" close="true">
+    						<Goto value="index_2104009"/>
+    					  </Button>
+    					</Page>
+    				  </Script>
+    				  <Script label="index_2104009" type="asWindow" src="task/185/185_5" winPos="0|0" name="圣剑传说）漫画">
+    					<Default>
+    					  <Goto value="index_21040010"/>
+    					</Default>
+    				  </Script>
+    				  <Script label="index_21040010" type="dialog">
+    					<Page id="0">
+    					  <Dialog npcID="205500" npcName="戴维镇长">你们能够原谅我吗？</Dialog>
+    					  <Button label="当然可以啦，您不用介意的。" nextID="-1" close="false">
+    						<Goto value="index_21040011"/>
+    					  </Button>
+    					</Page>
+    				  </Script>
+    				  <Script label="index_21040011" type="dialog">
+    					<Page id="0">
+    					  <Dialog npcID="205500" npcName="戴维镇长">太好了。另外，我还有一事相求。</Dialog>
+    					  <Button label="什么？" nextID="-1" close="true">
+    						<Goto value="index_21040012"/>
+    					  </Button>
+    					</Page>
+    				  </Script>
+    				  <Script label="index_21040012" type="asWindow" src="task/185/185_6" winPos="0|0" name="圣剑争夺战）全屏动画">
+    					<Default>
+    					  <Goto value="index_21040013"/>
+    					</Default>
+    				  </Script>
+     					<Click label="index_21040013" event="onTaskCall2" params="2|185"/>
+    				</Click>
+    			  </ViewEvent>
+    			</Create>
+    		  </Npc>
+    <!-- app_ts0_xml · 场景 181 -->
+    <NPCFun label="app_ts0" sceneID="181">
+    <Click event="onChangeScene" params="181"/>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onChangeScene" params="13"/>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 92 -->
+    <NPCFun label="app_ts3" sceneID="92">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/181/181_ts_3" winPos="0|0" name="提示">
+    		<Default><Click event="onChangeScene" params="92"/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

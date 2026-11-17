@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 PowerTestStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="169" label="体能测试">
+  <Task id="4053" label="体能测试">
+    <!-- npcfun_101000 · 场景 13 -->
+    <NPCFun sceneID="13" label="体能测试" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">最近发现很多小洛克都不重视体能训练了，这怎么行，来进行骑士的荣耀的挑战吧，看你能过几关？</Dialog>
+    					<Dialog npcID="101000" npcName="兰斯洛">然后去体育场找欧利文，进行动感足球的训练，最后向我报告！</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|4053"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_3_noover_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="体能测试" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101000" npcName="兰斯洛">动感足球要达到1000分，骑士的荣耀要达到800分想想哪个没有完成。</Dialog>
+    				<Button label="好的" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_101000_submit · 场景 13 -->
+    <NPCFun sceneID="13" label="体能测试" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101000" npcName="兰斯洛">平时也要注意锻炼身体哦！</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|4053"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 RocoPetRescue.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="118" label="救治受伤的宠物">
+  <Task id="4031" label="救治受伤的宠物">
+    <!-- npcfun_112001 · 场景 57 -->
+    <NPCFun sceneID="57" label="救治宠物" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="112001" npcName="萌萌">很多宠物都病了，宠物园的护工都忙不过来了，快去帮帮他吧！</Dialog>
+    					<Button label="宠物园，好的这就去！" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|4031"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_112001_submit · 场景 57 -->
+    <NPCFun sceneID="57" label="救治宠物" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="switch">
+    				<Func invoke="taskIsComplete" args="4031"/>
+    				<Case value="0"><Goto value="notOK"/></Case>
+    				<Case value="1"><Goto value="ok"/></Case>
+    			</Script>
+    			<Script label="notOK" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="112001" npcName="萌萌">宠物园献爱心完成没？要关心宠物哦。</Dialog>
+    					<Button label="谢谢你！我继续找！" nextID="-1" close="true"/>
+    				</Page>
+    			</Script>
+    			<Script label="ok" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="112001" npcName="萌萌">活干的不错哦！这里有些药物愿意帮我研磨下吗？</Dialog>
+    					<Button label="好的，找个伙伴来帮忙。" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/4031/task_4031_RocoPetRescue" winPos="0|0" name="为宠物们研磨药材">
+    				<Default>
+    					<Goto value="dialog_2"/>
+    				</Default>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    					<Dialog npcID="112001" npcName="萌萌">辛苦啦！记得经常关注宠物哦。</Dialog>
+    					<Button label="好的。" close="true">
+    						<Goto value="sumbit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="sumbit" event="onTaskCall2" params="2|4031"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

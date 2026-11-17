@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TrainYourself.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="85" label="为了战斗准备">
+  <Task id="4012" label="为了战斗准备">
+    <!-- npcfun_101000 · 场景 13 -->
+    <NPCFun sceneID="13" label="为了战斗准备" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">战斗真的要开始了，不要怕，要积极准备。开始锻炼吧！</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4012"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101000_canNotSubmit · 场景 13 -->
+    <NPCFun sceneID="13" label="在哪里可以锻炼？" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">战斗不是闹着玩，云海飞行你可以吗？洛克山营救你完成了吗？还不快去！</Dialog>
+                    <Button label="好的" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_101000_submit · 场景 13 -->
+    <NPCFun sceneID="13" label="准备好了" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101000" npcName="兰斯洛">小子，没有看错你，真的不错哦，看不出你还真有一手。相信有你的加入，我们一定会胜利的。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4012"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

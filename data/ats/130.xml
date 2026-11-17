@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FathersDay.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="130" label="父亲节的由来">
+  <Task id="4037" label="父亲节的由来">
+    <!-- npcfun_101900_accept · 场景 31 -->
+    <NPCFun sceneID="31" label="父亲节的由来" icon="-1" close="false">	
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="101900" npcName="杰瑞西">你是说父亲节，我差点给忘记了，每年的6月的第三个星期日就是父亲节，关于父亲节的由来有很多个传说，你可以去问问山姆大叔。</Dialog>
+    	      <Button label="好的" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    
+    	  <Click label="index_0_3" event="onTaskCall2" params="1|4037"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_163000_step0 · 场景 128 -->
+    <NPCFun sceneID="128" label="父亲节的故事" icon="-1" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="163000" npcName="山姆大叔">想听故事，可以啊，但是要先帮我为农场干些活儿，先除草吧。</Dialog>
+    			  <Button label="我找朋友一起来帮你吧" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    			  </Button>
+    	
+    			  <Button label="我再想想" nextID="-1" close="true">
+    					<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		  <Script label="index_0_1" type="asWindow" src="task/4037/SamulMoveFriut" winPos="0|0" name="">
+    		    <Default>
+    				<Click label="fire" event="NULL" fire="true" fireID="172400"/>
+    		    </Default>
+    		  </Script>
+    
+    			
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_163000_step1 · 场景 128 -->
+    <NPCFun sceneID="128" label="我除完草啦" icon="-1" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="163000" npcName="山姆大叔">干得不错，再在帮我搬些水果吧。</Dialog>
+    			  <Button label="我找朋友一起来帮你吧" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    			  </Button>
+    	
+    			  <Button label="我再想想" nextID="-1" close="true">
+    					<End/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+     			<Script label="index_0_1" type="asWindow" src="task/4037/SamulWeed" winPos="0|0" name="">
+    		    <Default>
+    				<Click label="fire" event="NULL" fire="true" fireID="172500"/>
+    		    </Default>
+    		  </Script>
+    
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_163000_submit · 场景 128 -->
+    <NPCFun sceneID="128" label="我搬完水果啦" icon="-1" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="163000" npcName="山姆大叔">很不错嘛，来我们一同讲讲父亲节的故事。</Dialog>
+    			  <Button label="好的" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    			<Script label="index_0_1" type="asWindow" src="task/4037/SamulStroy" winPos="0|0" name="">
+    			<Default>
+    				<Goto value="index_0_2"/>
+    			</Default>
+    		  </Script>
+    	
+     		<Script label="index_0_2" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="163000" npcName="山姆大叔">故事讲完了，还有什么要问的吗？</Dialog>
+    			  <Button label="谢谢，好感动……" nextID="-1" close="true">
+    					<Goto value="index_0_3"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	 
+    		<Click label="index_0_3" event="onTaskCall2" params="2|4037"/>
+    
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

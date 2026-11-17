@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheBrother.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="73" label="兄妹情深">
+  <Task id="119" label="雪人谷幻影">
+    <!-- npcfun_100100 · 场景 6 -->
+    <NPCFun sceneID="6" label="奇怪的幻影" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">恩佐又来了……</Dialog>
+                    <Button label="什么？" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">在雪人谷出现了很多幻影，恐怕是恩佐新的阴谋。此行的危险我没有办法估量，你是否愿意帮助王国，到雪人谷调查一下呢？</Dialog>
+                    <Button label="当然愿意！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                    <Button label="考虑一下……" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="1|119"/>
+        </Click>
+    </NPCFun>
+    <!-- npc_138900 · 场景 100 -->
+    <Npc sceneID="100" type="1" npcID="138900" position="600|400">
+        <View type="0" src="138900.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="task_119_npc_138900_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="switch" invoke="combat" args="2|138900|幻影">
+                        <Case value="2"><Goto value="win"/></Case>
+                        <Default><End/></Default>
+                    </Script>
+                    <Click label="win" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_119_npc_138900_fight_win"/>
+                </Click>
+            </ViewEvent>
+            <ViewEvent type="task_119_npc_138900_over">
+                <Click event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npcfun_139100 · 场景 6 -->
+    <NPCFun sceneID="6" label="回忆" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="asWindow" src="task/119/task_119_game" winPos="0|0" name="回忆">
+                <Default><Goto value="submit"/></Default>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|119"/>
+        </Click>
+    </NPCFun>
+    <!-- indication_task_accepted · 场景 100 -->
+    <NPCFun label="indication_task_accepted" sceneID="100">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/119/task_119_indication_task_accepted" name="接受任务提示">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+    <!-- indication_condition_complete · 场景 100 -->
+    <NPCFun label="indication_condition_complete" sceneID="100">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/119/task_119_indication_condition_complete" name="条件完成提示">
+            <Case value="1"><Goto value="change_scene"/></Case>
+            <Default><End/></Default>
+        </Script>
+        <Click label="change_scene" event="onChangeScene" params="100"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="120" label="村中少女">
+    <!-- npcfun_139100 · 场景 100 -->
+    <NPCFun sceneID="100" label="克莱尔" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">你是谁？来这里干什么？</Dialog>
+                    <Button label="我是为了恩佐的事情来的" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">这里没有恩佐。在白落落村，只有我手上的布偶，陪我等我的哥哥回来。</Dialog>
+                    <Button label="我刚刚看到了幻影，那里面的人很像你" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">幻影？那你是不是还看到一个，跟这个照片里很像的人？</Dialog>
+                    <Button label="我看看" nextID="-1" close="true">
+                        <Goto value="photo"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="photo" type="asWindow" src="task/120/task_120_photo" winPos="0|0" name="哥哥的照片">
+                <Default><Goto value="dialog_3"/></Default>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">他叫特伦斯，是我的哥哥。</Dialog>
+                    <Button label="为什么幻影里有他？" nextID="-1">
+                        <Goto value="dialog_4"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_4" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">大概是因为我的思念吧……我的思念异化，形成了幻影。</Dialog>
+                    <Button label="竟然，有这样的事情？" nextID="-1" close="true">
+                        <Goto value="missing"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="missing" type="asWindow" src="task/120/task_120_missing" winPos="0|0" name="克莱尔的思念">
+                <Default><Goto value="dialog_5"/></Default>
+            </Script>
+            <Script label="dialog_5" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">造成你的困扰，非常抱歉。但我也不知道怎么解决这个局面……你说，我的哥哥什么时候才能回来呢。</Dialog>
+                    <Button label="不行，我得帮你找到你的哥哥！" nextID="-1">
+                        <Goto value="dialog_6"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_6" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">真的，你肯帮我！我这里有哥哥的日记，你看下，会不会有线索！</Dialog>
+                    <Button label="嗯嗯！" nextID="-1" close="true">
+                        <Goto value="diary"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="diary" type="asWindow" src="task/120/task_120_diary" winPos="0|0" name="特伦斯的日记">
+                <Default><Goto value="dialog_7"/></Default>
+            </Script>
+            <Script label="dialog_7" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">一切，就麻烦你了。</Dialog>
+                    <Button label="看我的吧！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|120"/>
+        </Click>
+    </NPCFun>
+    <!-- indication_task_accepted · 场景 100 -->
+    <NPCFun label="indication_task_accepted" sceneID="100">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/120/task_120_indication_task_accepted" name="接受任务提示">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="121" label="特伦斯的去向">
+    <!-- npc_139300 · 场景 44 -->
+    <Npc sceneID="44" type="1" npcID="139300" position="0|0">
+        <View type="0" src="139300.swf" atLayerID="3" hasClick="false"/>
+        <Create>
+            <ViewEvent type="task_121_npc_139300_over">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="switch" invoke="combat" args="2|139300|雪精灵">
+                        <Default><Goto value="dialog_0"/></Default>
+                    </Script>
+                    <Script label="dialog_0" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139300" npcName="雪精灵">说！你是来干什么的！</Dialog>
+                            <Button label="我是来找特伦斯的" nextID="-1">
+                                <Goto value="dialog_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139300" npcName="雪精灵">特伦斯……你找他干什么？</Dialog>
+                            <Button label="他的妹妹很想见他一面" nextID="-1">
+                                <Goto value="dialog_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139300" npcName="雪精灵">我应该告诉你真相吗……</Dialog>
+                            <Button label="你知道特伦斯的下落吗？" nextID="-1">
+                                <Goto value="dialog_3"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_3" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139300" npcName="雪精灵">特伦斯……他其实就是冰封骑士。</Dialog>
+                            <Button label="啊？" nextID="-1" close="true">
+                                <Goto value="app_seal"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="app_seal" type="asWindow" src="task/121/task_121_sealIceKnight" winPos="0|0" name="被封印的骑士">
+                        <Default><Goto value="dialog_4"/></Default>
+                    </Script>
+                    <Script label="dialog_4" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139300" npcName="雪精灵">而那之后，我就在这里长眠。可是最近，克莱尔的思念影响了我。你把冰封骑士带回去吧！我相信以你的能力，一定可以救出他的！</Dialog>
+                            <Button label="交给我了！" nextID="-1" close="true">
+                                <Goto value="submit"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="submit" event="onTaskCall2" params="2|121"/>
+                </Click>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- indication_task_accepted · 场景 44 -->
+    <NPCFun label="indication_task_accepted" sceneID="44">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/121/task_121_indication_task_accepted" name="接受任务提示">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="122" label="冰封骑士">
+    <!-- npc_139400 · 场景 100 -->
+    <Npc sceneID="100" type="1" npcID="139400" position="0|0">
+        <View type="0" src="139400.swf" atLayerID="3" hasClick="false"/>
+        <Create>
+            <ViewEvent type="task_122_npc_139400_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139400" npcName="特伦斯">我在你身上闻到了克莱尔的气息。你是从白落落村来的吗？</Dialog>
+                            <Button label="你是冰封骑士？" nextID="-1">
+                                <Goto value="dialog_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139400" npcName="特伦斯">是的，小魔法师。我是特伦斯，也是冰封骑士。特伦斯是因应亲情而生。冰封骑士，是因责任而生。你来……是因为克莱尔吗？</Dialog>
+                            <Button label="是的！" nextID="-1">
+                                <Goto value="dialog_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139400" npcName="特伦斯">克莱尔……我的妹妹……我对不起她……</Dialog>
+                            <Button label="你为什么不回去看她？" nextID="-1" close="true">
+                                <Goto value="app_fight"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="app_fight" type="asWindow" src="task/122/task_122_fight" winPos="0|0" name="冰封骑士大战黑轮">
+                        <Default><Goto value="dialog_3"/></Default>
+                    </Script>
+                    <Script label="dialog_3" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139400" npcName="特伦斯">为了王国，我成为了骑士，而为了在雪山这里，与黑轮制衡，我只好不回去。这是我身为骑士的职责，也是我存在的证明。虽然我也很想念我的妹妹，但……</Dialog>
+                            <Button label="你回不去……" nextID="-1">
+                                <Goto value="dialog_4"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_4" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="139400" npcName="特伦斯">新的一年又开始了。新年伊始，白落落村的萤火虫，总是很明亮的。拜托你，告诉我的妹妹，她的哥哥很好。其它的，不要挂念。</Dialog>
+                            <Button label="嗯……你也要保重" nextID="-1" close="true">
+                                <Goto value="condition_update"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="condition_update" event="NULL" fire="true"/>
+                </Click>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npcfun_139100 · 场景 100 -->
+    <NPCFun sceneID="100" label="哥哥的消息" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">是吗……原来，他在守护王国呢。真好。嗯……我知道了……</Dialog>
+                    <Button label="他一切都好！你不要担心！" nextID="-1" close="true">
+                        <Goto value="app_fireflies"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="app_fireflies" type="asWindow" src="task/122/task_122_fireflies" winPos="0|0" name="萤火虫">
+                <Default><Goto value="dialog_0"/></Default>
+            </Script>
+            <Script label="dialog_0" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">哥哥……一定是哥哥！他回来看我了！</Dialog>
+                    <Button label="没错！" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">你知道吗，从小，新年伊始，哥哥就会抓一堆的萤火虫，放到半空中，陪我们过新年。一定是他回来了。哥哥……</Dialog>
+                    <Button label="嗯……一定是的" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="139100" npcName="克莱尔">谢谢你，<![CDATA[{name}]]>，谢谢你！</Dialog>
+                    <Button label="要一直开开心心的哦！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|122"/>
+        </Click>
+    </NPCFun>
+    <!-- indication_task_accepted · 场景 100 -->
+    <NPCFun label="indication_task_accepted" sceneID="100">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/122/task_122_indication_task_accepted" name="接受任务提示">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+    <!-- indication_condition_complete · 场景 100 -->
+    <NPCFun label="indication_condition_complete" sceneID="100">
+    <Click event="onRunScript">
+        <Script label="default" type="asWindow" src="task/122/task_122_indication_condition_complete" name="条件完成提示">
+            <Default><End/></Default>
+        </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

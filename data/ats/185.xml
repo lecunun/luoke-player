@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BusinessmanStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="185" label="初级商人试炼">
+  <Task id="184" label="商人试炼">
+    <!-- npcfun_0_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="初级商人试炼" icon="-1" close="true">
+    <Click event="onRunScript">
+    
+       <Click label="default" event="onTaskCall2" params="1|184"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npcfun_1_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="开始试炼" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101401" npcName="拉尔夫">试炼？亲爱的小洛克，在问题没有解决之前，我都没有办法和你进行试炼。</Dialog>
+          <Button label="发生什么事情了？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      
+       <Script label="index_0_1" type="asWindow" src="task/184/184_0" winPos="0|0" name="老商人的遗愿">
+    	   	 <Default>
+    	     	<Goto value="index_0_2"/>
+    	   	 </Default>
+      </Script>
+      
+        <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101401" npcName="拉尔夫">所以，我们整个协会最近都在忙着完成老商人的愿望。</Dialog>
+          <Button label="作为协会的一份子，我也要出力！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      
+        <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101401" npcName="拉尔夫">哦！难得你有这份心！老商人最近每天都会在雷霆峡谷入口那里。</Dialog>
+          <Dialog npcID="101401" npcName="拉尔夫">据说当初他遇到那名少年，就是在峡谷入口。你去看看老商人，先拿一点资料吧。</Dialog>
+          <Button label="包在我身上！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Click label="index_0_4" event="NULL" fire="true" fireID="101401"/>
+      
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="207800" position="0|0">
+    <View type="0" src="207800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_184_207800">
+    	<Click event="onRunScript">
+    	   
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">少年，你在哪里呢……</Dialog>
+    	      <Button label="老商人你好。" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">我在等当年的少年。你知道他的下落吗，小商人。</Dialog>
+    	      <Button label="我就是要过来帮你忙的" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">啊，原来你也不知道啊……</Dialog>
+    	      <Button label="老商人，我可以先看看那颗珠子吗？" nextID="-1" close="false">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">我也已经很久没有拿出来了。</Dialog>
+    	      <Button label="看下有没有线索" nextID="-1" close="true">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	     <Script label="index_0_4" type="asWindow" src="task/184/184_1" winPos="0|0" name="感应">
+    	   		 <Default>
+    	     		<Goto value="index_0_5"/>
+    	   	 	</Default>
+    		  </Script>
+    		  
+    	   <Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">啊！！我的珠子！！！</Dialog>
+    	      <Button label="别急！我帮你追回来！" nextID="-1" close="true">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+        	<Click label="index_0_6" event="NULL" fire="true"/>
+        	
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="207900" position="0|0">
+    <View type="0" src="207900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_184_207900">
+    	<Click event="onRunScript">
+    	   
+    	<Script label="default" type="switch" invoke="combat" args="2|207900|幽系宠物">
+    	  <Default>
+    	    <Goto value="index_0_1"/>
+    	  </Default>
+    	</Script>
+    	
+    	 <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_184_207900"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_184_207900">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">嗯？怎么是你？</Dialog>
+    	      <Button label="诶？D伯爵，怎么是你？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/184/184_2" winPos="0|0" name="为何而来">
+    	   	 <Default>
+    	     	<Goto value="index_0_2"/>
+    	   	 </Default>
+    	 </Script>
+    		  
+    	<Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">那么，你能替我解释一下这个事情吗？尤其是，这旁边的珠子。</Dialog>
+    	      <Button label="是个问题啊……" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_3" type="asWindow" src="task/184/184_3" winPos="0|0" name="受委托">
+    	   	 <Default>
+    	     	<Goto value="index_0_4"/>
+    	   	 </Default>
+    	 </Script>
+    	 
+    	<Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">你找到什么了？</Dialog>
+    	      <Button label="我们带上珠子！伯爵你快跟我来！" nextID="-1" close="false">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  	<Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">去哪里？</Dialog>
+    	      <Button label="雷霆入口！我带你去见老商人！" nextID="-1" close="true">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>	 
+    	  
+         <Click label="index_0_6" event="NULL" fire="true"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="208000" position="482|377">
+    <View type="0" src="208000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_184_208000">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">你是……当年那个少年？</Dialog>
+    	       <Dialog npcID="200000" npcName="D伯爵">嗯？怎么是你？</Dialog>
+    	       <Dialog npcID="207800" npcName="老商人">你不是当年把珠子卖给我的少年？</Dialog>
+    	      <Button label="就是这个珠子！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	
+    	 <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_184_208000"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_184_208000">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">不是，这个珠子我没有见过。但是，珠子应该是属于我父亲的剑的。</Dialog>
+    	       <Dialog npcID="207800" npcName="老商人">这话怎么讲？</Dialog>
+    	      <Button label="怎讲？" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/184/184_4" winPos="0|0" name="宝物归属">
+    	   	 <Default>
+    	     	<Goto value="index_0_2"/>
+    	   	 </Default>
+    	 </Script>
+    	
+    	 <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_184_208000"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_184_208000">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">原来……当年的少年，竟是你的母亲。</Dialog>
+    	      <Button label="原来如此……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/184/184_5" winPos="0|0" name="等价交换">
+    	   	 <Default>
+    	     	<Goto value="index_0_2"/>
+    	   	 </Default>
+    	 </Script>
+    	
+    	<Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="207800" npcName="老商人">那时候，我不知道珠子的珍贵。后来我知道了，一直寻找当年的少年，也就是要遵从这个原则。</Dialog>
+    	      <Dialog npcID="207800" npcName="老商人">我要把相差的部分，归还。</Dialog>
+    	      <Button label="原来如此……" nextID="-1" close="false">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">完全没有必要。</Dialog>
+    	       <Dialog npcID="207800" npcName="老商人">为什么？</Dialog>
+    	      <Button label="为什么！" nextID="-1" close="true">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_4" type="asWindow" src="task/184/184_6" winPos="0|0" name="比钱财还珍贵">
+    	   	 <Default>
+    	     	<Goto value="index_0_5"/>
+    	   	 </Default>
+    	 </Script>
+    	 
+    	   <Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="200000" npcName="D伯爵">那些钱财，老人家你收回去吧。</Dialog>
+    	       <Dialog npcID="200000" npcName="D伯爵">你为我们家做的，我们已经很感谢了。</Dialog>
+    	      <Button label="伯爵……" nextID="-1" close="true">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	 <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_184_208000"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt3_184_208000">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">孩子，你很善良。</Dialog>
+    	       <Dialog npcID="200000" npcName="D伯爵">把那些钱，用在更有需要的地方吧，老人家。</Dialog>
+    	       <Dialog npcID="207800" npcName="老商人">好……我答应你……</Dialog>
+    	      <Button label="老商人……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_184_208000"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt4_184_208000">
+    	<Click event="onRunScript">
+    	   
+    	 <Script label="default" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">我也要回去了。</Dialog>
+    	      <Button label="老商人我送你" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	       <Dialog npcID="207800" npcName="老商人">不用了。我可以。我要用我剩下的生命，把那些钱财，用到更有需要的地方去。</Dialog>
+    	       <Dialog npcID="207800" npcName="老商人">小商人，你一定要将，等价交换原则，牢牢记住啊。</Dialog>
+    	      <Button label="我会的" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_184_208000"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt5_184_208000">
+    	<Click event="onRunScript">
+         <Click label="default" event="NULL" fire="true"/>
+    
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_2_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="商人的试炼" icon="0" close="false">
+    <Click event="onRunScript">
+    
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101401" npcName="拉尔夫">是吗，事情告一段落。那样真好。那么，你的试炼我们可以正式开始。准备好了吗？</Dialog>
+          <Button label="好！开始吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          
+          <Button label="我等会再过来吧！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|101400|拉尔夫">
+        <Case value="2">
+        	<Goto value="index_0_2"/>
+      	</Case>
+    	  <Default>
+    	    <End/>
+    	  </Default>
+    	</Script>
+     
+      
+       <Click label="index_0_2" event="onTaskCall2" params="2|184"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 59 -->
+    <NPCFun label="app_ts0" sceneID="59">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/184/184_ts_0" winPos="0|0" name="提示找拉尔夫">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 59 -->
+    <NPCFun label="app_ts1" sceneID="59">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/184/184_ts_1" winPos="0|0" name="向雷霆入口进发">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 59 -->
+    <NPCFun label="app_ts2" sceneID="59">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/184/184_ts_2" winPos="0|0" name="追到收藏室">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 59 -->
+    <NPCFun label="app_ts3" sceneID="59">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/184/184_ts_3" winPos="0|0" name="此间少年">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts4_xml · 场景 59 -->
+    <NPCFun label="app_ts4" sceneID="59">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/184/184_ts_4" winPos="0|0" name="终于告一段落">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

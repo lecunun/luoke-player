@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BrotherTogetherStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="154" label="兄弟齐心">
+  <Task id="2014" label="呆小路的兄弟">
+    <!-- npc_g_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="186600" position="307|407">
+    	<View type="0" src="186600.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="165200" npcName="呆小路"><![CDATA[{name}]]>，你说公主她什么时候回来呀？都是恩佐那个坏蛋，我要去和他拼了！</Dialog>
+    				<Button label="冷静！呆小路，你打不过他的。">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="165200" npcName="呆小路">那怎么办？就这样看着公主被他抢去？如果我的弟弟们在就好了！</Dialog>
+    				<Button label="你的兄弟？">
+    				<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page>
+    				<Dialog npcID="165200" npcName="呆小路">对！当年恩佐把我们拿去实验，后来我们失散了……我们七个都拥有不同的特殊能力，你应该还记得吧？</Dialog>
+    				<Dialog npcID="165200" npcName="呆小路">二弟拥有超强的治愈能力，四弟是雷霆峡谷一霸，对电掌控力很强，还有可以把幻想变成现实的五弟笛笛笔……</Dialog>
+    				<Button label="如果你们兄弟齐心，肯定可以救回公主！">
+    				<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page>
+    				<Dialog npcID="165200" npcName="呆小路">可我们失散多年，都不知道从哪开始找起……那就先去问问萌萌，有没有二弟的消息吧！</Dialog>
+    				<Button label="好，我陪你去！" close="true">
+    				<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="onTaskCall2" params="1|2014"/>
+    		</Click>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 57 -->
+    <NPCFun label="app_ts0" sceneID="57">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2014/task_2014_taskOverTips" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    			<Case value="1"><Goto value="submit"/></Case>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="57"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 44 -->
+    <NPCFun label="app_ts1" sceneID="44">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2014/task_2014_gotoHuaiteiceriver" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    			<Case value="1"><Goto value="submit"/></Case>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="44"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 133 -->
+    <NPCFun label="app_ts2" sceneID="133">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2014/task_2014_toFindDDB" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    			<Case value="1"><Goto value="submit"/></Case>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="133"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 57 -->
+    <NPCFun sceneID="57" label="你见过那只会治愈的宠物吗？" icon="0" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="112001" npcName="萌萌">你说那只会治愈的机甲壳吗？它常热心地来医院帮忙，上次来时他说最近会去怀特冰川采药。</Dialog>
+    			  <Button label="我们去怀特冰川找它" nextID="-1" close="true">
+    				<Goto value="KO"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Click label="KO" event="NULL" fire="true" fireID="157801"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 57 -->
+    <Npc sceneID="57" type="1" npcID="186700" position="600|199">
+    		<View type="0" src="186700.swf" atLayerID="1" lazyLoad="true"/>
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="186700" npcName="机甲壳">天寒地冻之处，有可能长出珍贵的药材哦！咦，大哥？怎么会是你，我以为再也看不到你了！</Dialog>
+    					<Dialog npcID="165200" npcName="呆小路">可算找到你了！我家公主被恩佐绑架了，我快急死了！只有你们能帮我了！</Dialog>
+    					<Dialog npcID="186700" npcName="机甲壳">可没问题，我和你一起去！笛笛笔呢？我曾经在睡美人之书里见到过它，我们去找找吧！</Dialog>
+    					<Button label="好，这就去睡美人之书！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/2014/task_2014_toFindDDB" winPos="0|0" name="寻找笛笛笔">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|2014"/>
+    			</Click>
+    		</Npc>
+  </Task>
+  <Task id="2015" label="笛笛笔">
+    <!-- npc_p_xml · 场景 153 -->
+    <Npc sceneID="153" type="1" npcID="186800" position="334|402">
+    		<View type="0" src="186800.swf" atLayerID="1" lazyLoad="true"/>
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="186800" npcName="笛笛笔">快把我的照片还给我……你们是？大哥！是你吗？我好想你们呀！</Dialog>
+    					<Dialog npcID="165200" npcName="呆小路">你还留着我们的照片呢！我也好想你，太久没见了！</Dialog>
+    					<Dialog npcID="186800" npcName="笛笛笔">其他兄弟呢？怎么只有你和二哥！</Dialog>
+    					<Dialog npcID="165200" npcName="呆小路">其他人完全没了踪迹，我现在只能找到你们二人了！快和我一起去救公主吧，晚了就来不及了！</Dialog>
+    					<Dialog npcID="186800" npcName="笛笛笔">公主出事了？我们快走吧！</Dialog>
+    		
+    					<Button label="出发！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/2016/task_2016_taskOverTips" winPos="0|0" name="去倒影城堡)">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|2015"/>
+    			</Click>
+    		</Npc>
+    <!-- app_ts0_xml · 场景 153 -->
+    <NPCFun label="app_ts0" sceneID="153">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2016/task_2016_taskOverTips" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    			<Case value="1"><Goto value="submit"/></Case>
+    		</Script>
+    		<Click label="submit" event="onChangeScene" params="153"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="2016" label="救公主">
+    <!-- npc_c1_xml · 场景 152 -->
+    <Npc sceneID="152" type="1" npcID="186900" position="541|249">
+    	<View type="0" src="186900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2016_186900">
+    	<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="186900" npcName="黑衣人">哟，好小子，搬救兵来了啊！</Dialog>
+    			  <Button label=" 废话少说！看招！" nextID="-1" close="true">
+    				<Goto value="fight"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		  <Script label="fight" type="switch" invoke="combat" args="2|186900|黑衣人">
+    				<Default><Goto value="dialog_2"/></Default>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="186900" npcName="黑衣人">哼哼，又成长了不少嘛！我不陪你玩了，我要把公主带走！恶魔叮，给我盯住他们！</Dialog>
+    					<Button label="啊，这么多恶魔叮，我们怎么办？" close="false">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="186800" npcName="笛笛笔">别忘了还有我！我能把幻想中的变成现实，来吧！正义的千军万马，消灭恶魔叮！ </Dialog>
+    					<Button label="就看你的了！" close="true">
+    						<Goto value="onScene"/>
+    					</Button>
+    				</Page>
+    		</Script>
+    		<Click label="onScene" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2016_186900"/>
+    </Click>
+    </ViewEvent>
+    	
+    
+    <ViewEvent type="GotIt1_2016_186900">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="186800" npcName="笛笛笔">小洛克，你们快追，不要让库伦跑了！一定要把公主救回来！我在这拖住它们！</Dialog>
+    					<Button label="好！你要小心啊！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    		</Script>
+    	<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 152 -->
+    <Npc sceneID="152" type="1" npcID="187000" position="431|402">
+    		<View type="0" src="187000.swf" atLayerID="2" hasClick="false"/>
+    	
+    <Create>
+    <ViewEvent type="GotIt0_2016_187000">
+    	<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="158900" npcName="恩佐"><![CDATA[{name}]]>，我们又见面了！这一次，你是为了公主而来？只是这倒影城堡，你们进来容易，可就别想出去了！</Dialog>
+    					<Button label="可恶！" close="false">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="165200" npcName="呆小路">别冲动，我们打不过恩佐的，别忘了我有特殊能力——只要公主躲到我蛋里，所有人就会消除对她的记忆！看我的！</Dialog>
+    					<Button label="……" close="true">
+    						<Goto value="onScene"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="onScene" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2016_187000"/>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt1_2016_187000">
+    	<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="158900" npcName="恩佐">？？？</Dialog>
+    					<Dialog npcID="158900" npcName="恩佐">奇怪，我在这做什么？你们怎么也在这里！</Dialog>
+    					<Button label="我们只是路过，路过，打打酱油。" close="false">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="158900" npcName="恩佐">哼，你们肯定有什么阴谋！不过也好，这一次你可没那么容易逃脱我的掌心！来人啊！</Dialog>
+    					<Button label="怎么办？我们打不过。" close="true">
+    						<Goto value="onScene"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="onScene" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2016_187000"/>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt2_2016_187000">
+    	<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="167100" npcName="费米龙">别担心，还有我们！</Dialog>
+    					<Button label="四弟！！" close="true">
+    						<Goto value="onScene"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="onScene" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2016_187000"/>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt3_2016_187000">
+    	<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="158900" npcName="恩佐">怎么突然间来这么多人！以多欺少，你们有意思没？我闪！</Dialog>
+    					<Button label="好吧，他完全忘记了公主这回事。" close="false">						
+    					<Goto value="dialog_7"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_7" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="165200" npcName="呆小路">四弟！你们是怎么来的？</Dialog>
+    					<Dialog npcID="167100" npcName="费米龙">呵呵，做兄弟的当然有心灵感应啦！我猜想你肯定很难找到我们，我就从过去的时光中将几位兄弟找到，一起过来帮你！别忘了，我可是会穿越的费米龙！</Dialog>
+    					<Dialog npcID="165200" npcName="呆小路">谢谢你们！帮我救出了公主！希望我们永远在一起不要分开呢！</Dialog>
+    					<Button label="嗯！你们要常联系哦！" close="true">						
+    					<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|2016"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

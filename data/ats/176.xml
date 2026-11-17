@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoduoAppearsStoryScript2.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="176" label="木豆丁的故事">
+  <Task id="4056" label="木豆丁的故事">
+    <!-- npcfun_accepttask_xml -->
+    <NPCFun label="木豆丁的故事" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="202600" npcName="木藤藤">我们永夜森林的勇士是不可战胜的，无论多少敌人我们都不会退缩！！</Dialog>
+    					<Dialog npcID="202600" npcName="木藤藤">看你的样子和那个穿黑衣服的一样都不是好人，木豆丁战斗吧，让他们知道我们强大！！</Dialog>				
+    						<Button label="兄弟，淡定！有话好好说！！">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="asWindow_0" type="asWindow" src="task/4056/app1" winPos="0|0" name="正在加载中...">
+    				<Default>
+    					<Goto value="Fight_0"/>
+    				</Default>
+    			</Script>
+    	
+     			<Script label="Fight_0" type="switch" invoke="combat" args="2|202600|木豆丁">
+               	<Case value="2">
+              			<Goto value="failed"/>
+              		</Case>
+            		<Default>
+                  	<Goto value="failed"/>
+              		</Default>
+              </Script>
+    	
+     			<Script label="failed" type="dialog">
+              		<Page>
+              			<Dialog npcID="202600" npcName="木藤藤">想打败我们，那是不可能的！</Dialog>
+             			<Button label="我是来帮助你们的，不是来战斗的。">
+    						<Goto value="failed_2"/>
+             			</Button>
+                	</Page>
+       			</Script>
+    	
+    			<Script label="failed_2" type="dialog">
+             		<Page>
+             			<Dialog npcID="202600" npcName="木藤藤">……凭什么信你，我们在火山口打败了一个笨蛋，但是不小心把行李给丢掉了，你去帮我找回来。</Dialog>
+              			<Button label="好吧，我去找找看。" icon="0" close="true">
+    						<Goto value="sumbit"/>
+                		</Button>
+         			</Page>
+    			</Script>
+    			
+    			<Click label="sumbit" event="onTaskCall2" params="1|4056"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="52"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="202700" name="黑衣人" position="400|410">
+    	<View type="0" src="202700.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">小子，你要干嘛？</Dialog>
+    				<Button label="把行李还来" close="false">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">什么破行李，打赢我再说。</Dialog>
+    				<Button label="谁怕谁" close="true">
+    					<Goto value="Fight_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/4056/app2" winPos="0|0" name="正在加载...">
+    			<Default>
+    				<Goto value="dialog_2"/>
+    			</Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">就是这些，它太厉害了……</Dialog>
+    				<Button label="好吧" close="true">
+    					<Goto value="sumbit"/>
+    		  		</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="Fight_0" type="switch" invoke="combat" args="2|202700|恶魔叮">
+           	<Case value="2">
+           		<Goto value="succeed"/>
+            	</Case>
+          		<Default>
+        			<Goto value="fail"/>
+          		</Default>
+       		</Script>
+    	
+    		<Script label="succeed" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">不就是个破行李吗，给你给你。</Dialog>
+    				<Button label="……" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="fail" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">你以为自己也是那个花花草草，只有战胜我才能拿回行李！</Dialog>
+    				<Button label="等我恢复好宠物" close="true">
+    				</Button>
+    	
+    				<Button label="再次挑战" close="true">
+    					<Goto value="Fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="Fight_1" type="switch" invoke="combat" args="2|202700|恶魔叮">
+           	<Case value="2">
+           		<Goto value="succeed"/>
+            	</Case>
+          		<Default>
+        			<Goto value="fail2"/>
+          		</Default>
+       		</Script>
+    	
+    		<Script label="fail2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="202700" npcName="黑衣人">连个能战斗的宠物都没有，不是我鄙视你哦！</Dialog>
+    				<Button label="等我恢复好宠物" close="true">
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true" fireID="202700"/>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_acceptnotfinish_xml -->
+    <NPCFun label="木豆丁的故事" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="202600" npcName="木藤藤">想挨揍？没有行李我不信你，快去火山口找吧！</Dialog>
+    					<Button label="好吧，我再找找" close="true">
+    						<!--<Goto value="asWindow_0"/>-->
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml -->
+    <NPCFun label="木豆丁的故事" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="202600" npcName="木藤藤">靠谱靠谱，没看出来你能量很强嘛……</Dialog>
+    					<Button label="其实就在你打败的黑衣人那里">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    	
+    	
+    			<Script label="dialog_3" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="202600" npcName="木藤藤">好吧，我就给你讲讲我们的来历</Dialog>
+    					<Button label="好啊好啊" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="asWindow_0" type="asWindow" src="task/4056/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_4"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dialog_4" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="202600" npcName="木藤藤">再次感谢你，下次见面请你吃面。哈哈哈，我去训练小木豆丁去了。</Dialog>
+    					<Button label="好的" close="true">
+    						<Goto value="sumbit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>		
+    	
+    			<Click label="sumbit" event="onTaskCall2" params="2|4056"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

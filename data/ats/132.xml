@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MysteryguestStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="132" label="诡异的宠物">
+  <Task id="4047" label="神秘宠物">
+    <!-- npc_g_xml -->
+    <Npc type="1" npcID="188600" position="386|418">
+    	<View type="0" src="188600.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/4047/task_4046_gotoRainroad" winPos="0|0" name="跳转到雷雨走廊">
+    		<Default>
+    			<Goto value="sumbit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="sumbit" event="onTaskCall2" params="1|4047"/>
+    		</Click>
+    	</Npc>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="60"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="61"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml -->
+    <NPCFun label="app_ts2">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="131"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="188700" position="340|440">
+    	<View type="0" src="188700.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/4047/task_4046_gotoRaindeep" winPos="0|0" name="跳转到雷雨之渊">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="188800" position="500|425">
+    	<View type="0" src="188800.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/4047/task_4046_ABUApp" winPos="0|0" name="跳转到雷雨之渊">
+    		<Default>
+    			<Goto value="fight_1"/>
+    		</Default>
+    		</Script>
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|188800|黑衣人">
+    				<Default><Goto value="window_0"/></Default>
+    		</Script>
+    		<Script label="window_0" type="asWindow" src="task/4047/task_4046_gotoThunderFibiden" winPos="0|0" name="跳转到雷雨之渊">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c2_xml -->
+    <Npc type="1" npcID="188900" position="310|430">
+    	<View type="0" src="188900.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/4047/task_4046_speakableStone" winPos="0|0" name="跳转到雷雨之渊">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml -->
+    <Npc type="1" npcID="189000" position="310|430">
+    		<View type="0" src="189000.swf" atLayerID="1"/>
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="189000" npcName="黑衣人">想从我这里抢走他没门儿！兄弟们去把那宝石偷走，我先来教训他！</Dialog>
+    					<Button label="别说那些没用的，战斗吧!" close="true">
+    						<Goto value="fight_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    	
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|189000|黑衣人">
+    				<Default><Goto value="fail"/></Default>
+    				<Case value="2"><Goto value="victory"/></Case>
+    		</Script>
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="189000" npcName="黑衣人">下次不会放过你！</Dialog>
+    				<Button label="谁怕谁" close="true">
+    				<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="189000" npcName="黑衣人">连我都打不过，还想抢走宠物！</Dialog>
+    				<Button label="晚些再来" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="刚刚没发挥好，再来一局！" close="true">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4047/task_4046_app3" winPos="0|0" name="提示到魔法台">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|4047"/>
+    			</Click>
+    		</Npc>
+  </Task>
+</Story>

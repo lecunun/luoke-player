@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MagicPioneerStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="204" label="魔法先锋队">
+  <Task id="190" label="先锋队的号角">
+    <!-- npc_f0_xml · 场景 140 -->
+    <NPCFun sceneID="140" label="你是谁?" icon="-1" close="false">
+            <Click event="onRunScript">
+              <Script label="default" type="dialog">
+                <Page id="0">
+                   <Dialog npcID="220500" npcName="先知lulu"><![CDATA[{name}]]>，我听过你的名字，格里芬说过，你是个不错的小洛克。
+                  </Dialog>
+                  <Button label="我以前好像没有见过你。" nextID="-1" close="false">
+                    <Goto value="index_1001001"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_1001001" type="dialog">
+                <Page id="0">
+                   <Dialog npcID="220500" npcName="先知lulu">我的名字叫做先知lulu，曾是一位伟大魔法师身边的lulu，以前我一直低调的生活在王国中，但这段时间王国与黑衣人之前的纷争让我很担忧，所以我决定站出来，用我主人的力量帮助王国。</Dialog>
+                  <Button label="哇，听上去好厉害的样子。" nextID="-1" close="true">
+                    <Goto value="index_1001002"/>
+                  </Button>
+                </Page>
+              </Script>
+         
+              <Click label="index_1001002" event="onTaskCall2" params="1|190"/>
+            </Click>
+          </NPCFun>
+    <!-- npc_f1_xml · 场景 140 -->
+    <NPCFun sceneID="140" label="先知lulu" icon="0" close="false">
+            <Click event="onRunScript">
+              <Script label="default" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">嗯，首先，你愿意听一位老人讲讲他的故事吗？</Dialog>
+                  <Button label="故事？好啊好啊。" nextID="-1" close="false">
+                    <Goto value="index_2205002"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205002" type="dialog">
+                <Page id="0">
+                   <Dialog npcID="220500" npcName="先知lulu">你看，广场那边有一卷记载着我的故事的魔法卷轴，你点击它就可以知道我的故事了。</Dialog>
+                  <Button label="好的。" nextID="-1" close="true">
+                    <Goto value="index_2205003"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205003" type="asWindow" src="task/190/190_0" winPos="0|0" name="">
+                <Default>
+                  <Goto value="index_2205004"/>
+                </Default>
+              </Script>
+              <Script label="index_2205004" type="asWindow" src="task/190/190_1" winPos="0|0" name="">
+                <Default>
+                  <Goto value="index_2205005"/>
+                </Default>
+              </Script>
+              <Script label="index_2205005" type="asWindow" src="task/190/190_2" winPos="0|0" name="">
+                <Default>
+                  <Goto value="index_2205006"/>
+                </Default>
+              </Script>
+              <Script label="index_2205006" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">现在你知道我的故事了吧。</Dialog>
+                  <Button label="哇，你的主人都好厉害啊。" nextID="-1" close="false">
+                    <Goto value="index_2205007"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205007" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">那是当然啦，现在，<![CDATA[{name}]]>，你能帮我一个忙吗？
+                  </Dialog>
+                  <Button label="当然可以啦。" nextID="-1" close="true">
+                    <Goto value="index_2205008"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205008" type="asWindow" src="task/190/190_3" winPos="0|0" name="">
+                <Default>
+                  <Goto value="index_2205009"/>
+                </Default>
+              </Script>
+              
+              <Script label="index_2205009" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">你将所有素材集齐之后，回到我这里，我为你铸造一把属于你的魔杖。</Dialog>
+                  <Button label="好的。" nextID="-1" close="true">
+                    <Goto value="index_2205010"/>
+                  </Button>
+                </Page>
+              </Script>
+              
+              <Click label="index_2205010" event="NULL" fire="true"/>
+            </Click>
+          </NPCFun>
+    <!-- npc_f2_xml · 场景 140 -->
+    <Npc sceneID="140" type="1" npcID="220600" position="0|0" name="魔杖素材">
+            <View type="0" src="220600.swf" atLayerID="2" hasClick="true"/>
+             <Click event="onRunScript">
+              <Click label="default" event="NULL" fire="true"/>
+            </Click>
+          </Npc>
+    <!-- npc_f3_xml · 场景 140 -->
+    <Npc sceneID="140" type="1" npcID="220700" position="0|0" name="魔杖素材二">
+            <View type="0" src="220700.swf" atLayerID="2" hasClick="true"/>
+            <Click event="onRunScript">
+              <Click label="default" event="NULL" fire="true"/>
+            </Click>
+          </Npc>
+    <!-- npc_f4_xml · 场景 140 -->
+    <Npc sceneID="140" type="1" npcID="220800" position="0|0" name="魔杖素材三">
+            <View type="0" src="220800.swf" atLayerID="2" hasClick="true"/>
+            <Click event="onRunScript">
+              <Click label="default" event="NULL" fire="true"/>
+            </Click>
+          </Npc>
+    <!-- npc_f5_xml · 场景 140 -->
+    <NPCFun sceneID="140" label="先知lulu" icon="-1" close="false">
+            <Click event="onRunScript">
+              <Script label="default" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">你果然是个了不起的小洛克，下面让我来帮你重铸法杖吧。</Dialog>
+                  <Button label="好的。" nextID="-1" close="true">
+                    <Goto value="index_2205001"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205001" type="asWindow" src="task/190/190_4" winPos="0|0" name="重铸法杖">
+                <Default>
+                  <Goto value="index_2205002"/>
+                </Default>
+              </Script>
+              
+              <Script label="index_2205002" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">现在，你可以开始踏上自己的旅程了，魔法先锋队在各自的异度空间沉睡着，异度空间就在神殿的各个大门后。</Dialog>
+                  <Button label="哇，那我现在就去。" nextID="-1" close="false">
+                    <Goto value="index_2205003"/>
+                  </Button>
+                </Page>
+              </Script>
+              <Script label="index_2205003" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">不要着急，我的孩子，以我现在的力量还不足以开启所有的大门，而且欲速则不达，以后的每个月，我都会为你开启一道空间之门。</Dialog>
+                  <Dialog npcID="220500" npcName="先知lulu">我还需要提醒你，虽然你已经得到了法杖，但异度空间里仍旧是非常危险的，没有自己的lulu陪伴，是无法进入异度空间的。</Dialog>
+                  <Button label="我知道了。" nextID="-1" close="false">
+                    <Goto value="index_2205004"/>
+                  </Button>
+                </Page>
+              </Script>
+              
+               <Script label="index_2205004" type="dialog">
+                <Page id="0">
+                  <Dialog npcID="220500" npcName="先知lulu">现在，神殿的第一道门已经打开了，开始你的历险吧，我会一直在这里注视着你的。</Dialog>
+                  <Button label="我会成为一名勇敢的魔法师的！" nextID="-1" close="true">
+                    <Goto value="index_2205005"/>
+                  </Button>
+                </Page>
+              </Script>
+              
+              <Click label="index_2205005" event="onTaskCall2" params="2|190"/>
+            </Click>
+          </NPCFun>
+    <!-- app_ts0_xml · 场景 190 -->
+    <NPCFun label="app_ts0" sceneID="190">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="190"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 55 -->
+    <NPCFun label="app_ts1" sceneID="55">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="55"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 46 -->
+    <NPCFun label="app_ts2" sceneID="46">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="46"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 140 -->
+    <NPCFun label="app_ts3" sceneID="140">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="140"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

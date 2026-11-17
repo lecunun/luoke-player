@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SearchForFangfangStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="174" label="找方方">
+  <Task id="4055" label="找方方">
+    <!-- npcfun_101000 · 场景 14 -->
+    <NPCFun sceneID="14" label="找方方" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="100900" npcName="麦斯威尔">能源站最近出现了一群小方方，他们嚷着要去找他们的同伴，快去帮帮他们吧！</Dialog>
+    					<Button label="能源站？" nextID="-1" close="true">
+    						<Goto value="window_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/4055/app1" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="dialog_0"/>
+    			  </Default>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="100900" npcName="麦斯威尔">快点去吧，加油哦！</Dialog>
+    					<Button label="好的现在就去" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Click label="accpet" event="onTaskCall2" params="1|4055"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 14 -->
+    <NPCFun label="app_ts0" sceneID="14">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="87"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_3_noover_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="找方方" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">能源站的方方需要你的帮助哦。</Dialog>
+    				<Button label="好的" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_101000_submit · 场景 14 -->
+    <NPCFun sceneID="14" label="找方方" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="100900" npcName="麦斯威尔">帮助到他们了吗？</Dialog>
+    					<Button label="是的" nextID="-1" close="true">
+    						<Goto value="window_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/4055/app2" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="dialog_0"/>
+    			  </Default>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="100900" npcName="麦斯威尔">乐于助人才是一个好洛克哦！</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|4055"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DeepBlueSeaStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="109" label="碧海深蓝">
+  <Task id="140" label="海洋之哮">
+    <!-- npcfun_g_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="听说发生了海啸？" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">的确……在沿岸发生了非常严重的海啸。但据各位研究员的研究报告，最近地壳并没有异动。</Dialog>
+          <Button label="那是不是说……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">对，应该是人为的异动。是魔法，或者怪物之力。</Dialog>
+          <Button label="恩佐又来搞事啦？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">我还不能确定。现在魔法学院正倾尽全力去搜寻事实的真相。<![CDATA[{name}]]>，作为学院的一份子，你也要参与进来。</Dialog>
+          <Button label="义不容辞！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">到海边去吧，找沿海的居民，寻找真相。</Dialog>
+          <Button label="谨遵师命！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="1|140"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c0_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="听说发生了海啸？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109100" npcName="卡拉">……我跟你说，那天，可恐怖了……</Dialog>
+          <Button label="怎么恐怖了？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/140/140_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109100" npcName="卡拉">好不容易，各位居民相互协助，总算没有人伤亡。</Dialog>
+          <Button label="有线索可以提供给我么？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109100" npcName="卡拉">那个很大的漩涡是从海里形成的，你往海里走去看看吧。</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="109101"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_c1_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="听说发生了海啸？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="110000" npcName="艾琳">是的！！！！</Dialog>
+          <Button label="那么激动……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="110000" npcName="艾琳">那天我都被卷到外面去了！</Dialog>
+          <Button label="有线索可以提供么？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/140/140_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="110000" npcName="艾琳">我觉得那个黑影和那道光，都很值得研究。你再往杰诺斯深海调查下吧！说不定有什么发现哦！</Dialog>
+          <Button label="好！谢谢你！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="110001"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 38 -->
+    <Npc sceneID="38" type="1" npcID="161700" position="0|0">
+    <View type="0" src="161700.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_140_161700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">……</Dialog>
+          <Button label="是你在破坏！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|161700|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">……哼。</Dialog>
+          <Button label="喂,你给我站住！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_140_161700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_140_161700">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="你没有怎样吧？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">嗯，没怎样。前些日子海啸的时候，他们来过。</Dialog>
+          <Button label="他们要制造第二场海啸吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">未必。这次黑衣人他们来，我估计，是他们想要我的研究资料。</Dialog>
+          <Button label="你有什么厉害的研究成果啊？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">我对亚特兰蒂斯，进行了很深入的研究。</Dialog>
+          <Button label="我的天！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/140/140_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">但是，也正是音乐，与魔法成就，将亚特兰蒂斯推入了深渊。</Dialog>
+          <Button label="发生了什么事情？" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="asWindow" src="task/140/140_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">所以我估计，恩佐应该是对禁忌的魔法，产生了兴趣。</Dialog>
+          <Button label="这跟海啸什么关系？" nextID="-1" close="false">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">我也不太清楚……</Dialog>
+          <Button label="还是多加防范为上" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_8" event="onTaskCall2" params="2|140"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 38 -->
+    <NPCFun label="app_ts0" sceneID="38">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/140/140_ts_0" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 38 -->
+    <NPCFun label="app_ts1" sceneID="38">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/140/140_ts_1" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 38 -->
+    <NPCFun label="app_ts2" sceneID="38">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/140/140_ts_2" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 38 -->
+    <NPCFun label="app_ts3" sceneID="38">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/140/140_ts_3" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="141" label="救援线索">
+    <!-- npc_c0_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="161800" position="0|0">
+    <View type="0" src="161800.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_141_161800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/141/141_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|161800|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_141_161800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_141_161800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">这么轻易就撤退了！是怎么回事？</Dialog>
+          <Button label="这其中必定有诈！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">这结界会对海洋中的生物带来不可估量的影响的！我的天！<![CDATA[{name}]]>我需要你来帮我解决目前的危机！</Dialog>
+          <Button label="你就说吧！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你知道海螺沙滩吗？在人鱼湾的旁边，那是我的家乡——而那是一个巨大的海螺。</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">大家都不知道的事实是——那是当年亚特兰蒂斯的产物，是他们酷爱音乐的产物。</Dialog>
+          <Button label="这么厉害？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">是的。而用海螺演奏出的音乐，是具有驱逐海洋中邪恶的能力的。</Dialog>
+          <Button label="还有这等事情！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/141/141_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你快去吧！带上我的小海螺。趁黑衣人他们还没有回来！我要回去，看守亚特兰蒂斯！</Dialog>
+          <Button label="交给我吧！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="162200" position="0|0">
+    <View type="0" src="162200.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_141_162200">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/141/141_2" winPos="0|0" name="">
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="161900" position="251|249">
+    <View type="0" src="161900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_141_161900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/141/141_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="162000" position="0|0">
+    <View type="0" src="162000.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|162000|怪物">
+        <Case value="2">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/141/141_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">这些只是被结界影响了的海洋生物！他们也是海洋的生命啊！</Dialog>
+          <Button label="但他们已经变异了！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你说得对！只是变异了而已！</Dialog>
+          <Button label="你这是什么坚持啊！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">现在事实都清楚了不是吗？</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">刚刚的黑衣人只是来声东击西的！事实是，恩佐已经取得了部分亚特兰蒂斯的禁忌魔法！不然这些生物是怎么变异的！</Dialog>
+          <Button label="那你说怎么办嘛！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">我们用音乐——只有用音乐，才能把所有的邪恶驱逐。</Dialog>
+          <Button label="你疯了吧！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/141/141_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="162000" npcName="恩佐">哈哈，我已经获得了亚特兰蒂斯的禁忌魔法了！永生魔法的研究，要前进一大步了！看我的合成宠物们！你们接招吧！</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">你别想！我们会用音乐的能量！打败你！</Dialog>
+          <Button label="对！你别痴人说梦！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="162000" npcName="恩佐">音乐？痴人说梦的是你们才对吧！哈哈！</Dialog>
+          <Button label="我们走着瞧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/141/141_6" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/141/141_7" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="162000" npcName="恩佐">哼……这次，我暂且撤退……我们走着瞧！</Dialog>
+          <Button label="快滚！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你们……究竟是……</Dialog>
+          <Dialog npcID="161900" npcName="人鱼">我们一直在留意你，乐乐。</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">留意我……那你们！你们是！</Dialog>
+          <Dialog npcID="161900" npcName="人鱼">我们是亚特兰蒂斯的遗民。</Dialog>
+          <Button label="你们还活着！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/141/141_8" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161900" npcName="人鱼">乐乐，你对音乐的坚持深深感动了我。</Dialog>
+          <Dialog npcID="109900" npcName="乐乐">我！我很喜欢你们的文明！</Dialog>
+          <Dialog npcID="161900" npcName="人鱼">嗯……谢谢你。但，希望我们没有机会再见面。</Dialog>
+          <Button label="你们要保重！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_141_162000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_141_162000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="109900" npcName="乐乐">你看！音乐的能量还是很巨大的对不对！我相信！我相信，终有一天我可以知晓这种力量的奥秘！</Dialog>
+          <Button label="加油吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="海啸的真相我找到了！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">原来发生了这样的事情。看来你也经历了不少的历练。</Dialog>
+          <Button label="是的！！！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">王国和学院还有很多地方需要你。赶快成长起来，成为独当一面的魔法师吧。</Dialog>
+          <Button label="知道了！！！！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/141/141_9" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|141"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 6 -->
+    <NPCFun label="app_ts0" sceneID="6">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/141/141_ts_0" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 6 -->
+    <NPCFun label="app_ts1" sceneID="6">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/141/141_ts_1" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 6 -->
+    <NPCFun label="app_ts2" sceneID="6">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/141/141_ts_2" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MemoryStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="62" label="记忆中的倒影">
+  <Task id="1045" label="西格的委托">
+    <!-- npc_xg_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="135000" position="238|431" aimPos="238|431" name="西格">
+    		<View type="0" src="135000.swf" atLayerID="2" lazyLoad="true" hasClick="true" height="110"/>
+           <Create>
+    		    <Task id="1045" care="1"/>
+    	    </Create>
+                  <Click event="onRunScript" cdtn="50">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="135000" npcName="西格">我好像突然变傻了！不知道自己是谁了！什么也不记得了！你能告诉我，我是谁吗？</Dialog>
+    							<Button label="我怎么知道你是谁……我就知道你很胖！" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="dialog1" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">那可怎么办！5555555！你一定要帮帮我！</Dialog>
+    							<Button label="那你有没有什么线索呢？" close="false">
+    								<Goto value="dialog2"/>
+    							</Button>
+    						</Page>
+                      </Script>
+                      <Script label="dialog2" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">我这里有张照片，也许能找到什么线索！</Dialog>
+    							<Button label="那我们来看看吧" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+                      </Script>
+                      <Script label="movie1" type="asWindow" src="task/1045/pictures" winPos="0|0" name="西格的照片">
+    				        <Case value="0"><Goto value="dialog3"/></Case>
+    			        </Script>
+                      <Script label="dialog3" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">这个人是谁？这个照片里的人肯定认识我！但是我什么也不记得了！你可以帮我去问问照片里的人吗？</Dialog>
+    							<Button label="这位是龙榻陋室的海德教授" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+                      </Script>
+    					<Click label="submit" event="onTaskCall2" params="1|1045"/>
+    				 </Click>
+    
+    	</Npc>
+    <!-- npc_xg2_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="135000" position="238|431" aimPos="238|431" name="西格">
+    		<View type="0" src="135001.swf" atLayerID="2" lazyLoad="true" hasClick="true"/>
+    	   <Create>
+    			<Task id="1045" care="2"/>
+    		</Create>
+                   <Click event="onRunScript" cdtn="50">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="135000" npcName="西格">我好像突然变傻了！不知道自己是谁了！什么也不记得了！你能告诉我，我是谁吗？</Dialog>
+    							<Button label="我怎么知道你是谁……我就知道你很胖！" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="dialog1" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">那可怎么办！5555555！你一定要帮帮我！</Dialog>
+    							<Button label="那你有没有什么线索呢？" close="false">
+    								<Goto value="dialog2"/>
+    							</Button>
+    						</Page>
+                      </Script>
+                      <Script label="dialog2" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">我这里有张照片，也许能找到什么线索！</Dialog>
+    							<Button label="那我们来看看吧" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+                      </Script>
+                      <Script label="movie1" type="asWindow" src="task/1045/pictures" winPos="0|0" name="西格的照片">
+    				        <Case value="0"><Goto value="dialog3"/></Case>
+    			        </Script>
+                      <Script label="dialog3" type="dialog">
+                         <Page id="0">
+    							<Dialog npcID="135000" npcName="西格">这个人是谁？这个照片里的人肯定认识我！但是我什么也不记得了！你可以帮我去问问照片里的人吗？</Dialog>
+    							<Button label="这位是龙榻陋室的海德教授" close="true">
+                                <End/>
+    							</Button>
+    						</Page>
+                      </Script>
+    				 </Click>
+    
+    	</Npc>
+    <!-- npcfun_hd_xml · 场景 22 -->
+    <NPCFun sceneID="22" label="西格的委托" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">我当然知道，照片里这人是西格！是我最好的朋友！</Dialog>
+    					<Button label="可是他看起来失忆了！" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">什么？他失忆了？这太奇怪了！那个晚上我睡着了，他忽然离开后就再也没回来，他以前也有过类似的情况，所以我也没在意。难道这次是发生什么事情了？我这里有一个仪器，可以回到过去看看他当晚在这间屋子里发生什么事情！</Dialog>
+    					<Button label="现在就看看仪器的影像" nextID="-1" close="true">
+    						<Goto value="movie1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Script label="movie1" type="asWindow" src="task/1045/ThreeDaysAgo" winPos="0|0" name="三天前">
+    				    <Case value="0"><Goto value="dialog_2"/></Case>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">天哪！这竟然是龙珠之光！</Dialog>
+    					<Button label="什么是龙珠之光?" nextID="-1" close="true">
+    						<Goto value="movie2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Script label="movie2" type="asWindow" src="task/1045/dragonBook" winPos="0|0" name="龙珠之光">
+    				    <Case value="0"><Goto value="dialog_3"/></Case>
+    			</Script>
+               <Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">不过还无法断定是不是龙珠的力量让西格失去了记忆，不过你倒是可以先去龙守望，看看有什么线索没有。</Dialog>
+    					<Button label="现在就去查看" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1045"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+  <Task id="1046" label="尘封的回忆">
+    <!-- npc_xgp_xml · 场景 78 -->
+    <Npc sceneID="78" type="1" npcID="134400" position="180|390" aimPos="180|390" name="西格的宠物">
+    		<View type="0" src="134400.swf" atLayerID="2" lazyLoad="true" hasClick="true" height="60"/>
+           <Create>
+    		    <Task id="1046" care="2"/>
+    	    </Create>
+    			  <Click event="onRunScript" cdtn="50">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="134400" npcName="西格的宠物">都是因为你，我没追上我的主人西格！赔我的西格！赔我的西格！555555</Dialog>
+    							<Button label="我没在这里看到西格啊，你认识他吗？" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				  <Script label="dialog1" type="dialog">
+    					 <Page id="0">
+    							<Dialog npcID="134400" npcName="西格的宠物">他是我的主人！我好几天没见到他了！我最后一次看到西格的时候，他和另外一个宠物在一起，我刚刚就在追它，也许它能知道西格在哪里！要不是你，我都追上啦！</Dialog>
+    							<Button label="那个宠物究竟是什么？" close="false">
+    								<Goto value="dialog2"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Script label="dialog2" type="dialog">
+    					 <Page id="0">
+    							<Dialog npcID="134400" npcName="西格的宠物">是一只叫做提普斯的宠物！它经常出现在龙须小径的大树后面！它总是神出鬼没，很难找到的！我想它应该知道西格的线索吧！</Dialog>
+    							<Button label="那现在怎么找到它？" close="false">
+    								<Goto value="dialog3"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Script label="dialog3" type="dialog">
+    					 <Page id="0">
+    							<Dialog npcID="134400" npcName="西格的宠物">对啦！它喜欢吃甜甜布丁！我们去龙须小径，用甜甜布丁来引诱它出来吧！</Dialog>
+    							<Button label="好主意" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1046"/>
+    				 </Click>
+    
+    	</Npc>
+    <!-- app_ts0_xml · 场景 78 -->
+    <NPCFun label="app_ts0" sceneID="78">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1045/ts" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1047" label="善意的诱惑">
+    <!-- npc_tt_xml · 场景 82 -->
+    <Npc sceneID="82" type="1" npcID="134500" position="560|372">
+    	      <View type="0" src="134500.swf" atLayerID="2" lazyLoad="true" hasClick="false"/>
+             <Create>
+               <ViewEvent type="byySuccess">
+                 <Click event="onRunScript">
+    			     <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="134400" npcName="西格的宠物">我的西格在哪里？</Dialog>
+                             <Dialog npcID="134500" npcName="提普斯">你是说那天那个晕倒的大胖子啊？</Dialog>
+    							<Button label="就是他！" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="movie1" type="asWindow" src="task/1047/privateMemory" winPos="0|0" name="提普斯的回忆">
+    				        <Case value="0"><Goto value="dialog1"/></Case>
+    			        </Script>
+    				  <Script label="dialog1" type="dialog">
+    					 <Page>
+    							<Dialog npcID="134400" npcName="西格的宠物">原来是这样啊！那么一定要让我的主人西格恢复啊！</Dialog>
+    							<Button label="一定要让西格恢复记忆" close="false">
+    								<Goto value="dialog2"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Script label="dialog2" type="dialog">
+    					 <Page>
+    							<Dialog npcID="134500" npcName="提普斯">那你只有去问问海德啦！</Dialog>
+    							<Button label="现在就去问" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Click label="submit" event="onTaskCall2" params="2|1047"/>
+    				 </Click>
+               </ViewEvent>
+               <Task id="1047" care="2"/>
+            </Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 82 -->
+    <NPCFun label="app_ts0" sceneID="82">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1046/ts" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1048" label="恢复记忆的魔法">
+    <!-- npcfun_hd_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="龙珠碎片让西格失忆了，怎么办？" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">只要碰到龙珠碎片，我们洛克会失去记忆。</Dialog>
+    					<Button label="那可怎么办！" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">龙须小径那棵大橡树的根部，藏有龙之血液。用龙之血液和龙珠碎片，在龙守望的平台上，就可以凝结为一片树叶。这片树叶可以让西格恢复记忆。</Dialog>
+    					<Button label="可是去哪里找龙珠碎片?" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		 	<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">提普斯不是拿走了一块吗，你去找它要吧。我等你做好树叶带给我。然后我们再一起商议下一步对策！</Dialog>
+    					<Button label="现在就去" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		  	<Click label="submit" event="onTaskCall2" params="2|1048"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 81 -->
+    <NPCFun label="app_ts0" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1047/ts" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1049" label="寻找遗失的记忆">
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134900" position="686|333" tooltip="大橡树树根" aimPos="686|333">
+    		<View type="0" src="134900.swf" atLayerID="2" lazyLoad="true"/> 
+    
+           <Click event="onRunScript" cdtn="50">
+    		   <Script type="switch" invoke="game" args="2|大树根|1049|90" label="default">
+    	           <Case value="1"><Goto value="submit"/></Case>
+                   <Default><End/></Default>
+    	       </Script>
+               <Click event="NULL" fire="true" label="submit"/>
+    	     </Click>
+    
+    	</Npc>
+    <!-- npc_c1_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134600" position="757|397" aimPos="757|397" name="提普斯">
+    		<View type="0" src="134600.swf" atLayerID="2" lazyLoad="true" hasClick="true"/>
+    
+           <Click event="onRunScript">
+                     <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="134600" npcName="提普斯">除非你能打败我！我才不想给你龙珠碎片呢！这可是宝贝耶！</Dialog>
+    							<Button label="好吧……其实我不想打你" close="true">
+                                <Goto value="fight"/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="fight" type="switch" invoke="combat" args="2|134600|提普斯">
+    				        <Case value="2"><Goto value="dialog_1"/></Case>
+    				        <Default><Goto value="dialog_2"/></Default>
+    	              </Script>
+                      <Script label="dialog_2" type="dialog">
+    						<Page>
+    							<Dialog npcID="134600" npcName="提普斯">就不给！哈哈哈！</Dialog>
+    							<Button label="有本事再来" close="true">
+                                <Goto value="fight"/>
+    							</Button>
+                             <Button label="算你厉害" close="true">
+    								<End/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="dialog_1" type="dialog">
+    				        <Page id="0">
+    					         <Dialog npcID="134600" npcName="提普斯">555555！你欺负我～！我把龙珠碎片给你就是啦！</Dialog>
+    					         <Button label="我可不是故意的，我是被逼的……" close="true">
+    						           <Goto value="submit"/>
+    					         </Button>
+    				        </Page>
+    			       </Script>
+                     <Click event="NULL" fire="true" label="submit"/>
+    		</Click>
+    
+    	</Npc>
+    <!-- npc_c2_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="134700" position="432|329" aimPos="432|329">
+    		<View type="0" src="134700.swf" atLayerID="2" lazyLoad="true" hasClick="false"/>
+           <Create>
+              <ViewEvent type="byySuccess">
+                   <Click event="NULL" fire="true" label="submit"/>
+              </ViewEvent>
+           </Create>
+    	</Npc>
+    <!-- npcfun_hd_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="我找到树叶啦！" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德"><![CDATA[{name},我果然没有看错你啊！现在就去彼得大道找西格吧！]]></Dialog>
+    					<Button label="好的" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1049"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts_xml · 场景 81 -->
+    <NPCFun label="app_ts" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1048/ts" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 81 -->
+    <NPCFun label="app_ts0" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1049/ts1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 81 -->
+    <NPCFun label="app_ts1" sceneID="81">
+    <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1049/ts2" winPos="0|0" name="提示">
+    				<Default><End/></Default>
+    			</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 81 -->
+    <NPCFun label="app_ts2" sceneID="81">
+    <Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/1049/ts3" winPos="0|0" name="提示">
+    				<Default><End/></Default>
+    			</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1050" label="西格的感言">
+    <!-- npc_xg_xml · 场景 22 -->
+    <Npc sceneID="22" type="1" npcID="134800" position="238|431" aimPos="238|431">
+    		<View type="0" src="134800.swf" atLayerID="2" lazyLoad="true" hasClick="false" height="110"/>
+           <Create>
+              <ViewEvent type="byySuccess">
+    			  <Click event="onRunScript" cdtn="50">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="134800" npcName="西格">啊啊啊！我都想起来了！原来我是西格！</Dialog>
+    							<Button label="太好啦！你终于恢复啦！" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				  <Script label="dialog1" type="dialog">
+    					   <Page id="0">
+    							<Dialog npcID="134800" npcName="西格">不过你怎么让我恢复的？我的脑子现在还有点混乱啊……</Dialog>
+    							<Button label="我来帮你梳理你的记忆，你说，我来记下" close="true">
+    								<Goto value="game1"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+                    <Script type="switch" invoke="game" args="2|记忆碎片|1050|99" label="game1">
+    	                  <Case value="1"><Goto value="dialog2"/></Case>
+                           <Default><End/></Default>
+    	             </Script>
+    				  <Script label="dialog2" type="dialog">
+    					 <Page id="0">
+    							<Dialog npcID="134800" npcName="西格">正是这样呢！我彻底好了呢！</Dialog>
+    							<Button label="太好啦！" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				  </Script>
+    				  <Click label="submit" event="onTaskCall2" params="2|1050"/>
+    				</Click>
+               </ViewEvent>
+               <Task id="1050" care="2"/>
+            </Create>
+    	</Npc>
+  </Task>
+</Story>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TimeOfSculptorStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="99" label="雕塑家的时间">
+  <Task id="1078" label="不翼而飞的雕塑画册">
+    <!-- npcfun_g_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="雕塑家的时间" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬"><![CDATA[{name}]]>，你听说过艾德曼么？</Dialog>
+          <Button label="不知道……" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">艾德曼曾是洛克王国伟大的雕塑家。他写过的草稿和画过的草图，都放在一本叫做《雕刻时光》的书里……</Dialog>
+          <Button label="现在这本书丢了，对么？" nextID="-1">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">恩……看来你已经有所耳闻了……那些丢失的残页上面，有他的灵魂碎片，所以请你一定要帮我把那些残页找回来。</Dialog>
+          <Button label="定不负所托！" nextID="-1" close="true">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_3" event="onTaskCall2" params="1|1078"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="155400" position="922|486">
+    <View type="0" src="155400.png" atLayerID="1" hasBorder="true"/>
+    <Click event="NULL" fire="true" cdtn="50"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="155500" position="181|413">
+    <View type="0" src="155500.png" atLayerID="1" hasBorder="true"/>
+    <Click event="NULL" fire="true" cdtn="50"/>
+    </Npc>
+    <!-- npc_c2_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="155600" position="829|474" aimPos="817|449">
+    <View type="0" src="155600.png" atLayerID="1" hasBorder="true"/>
+    <Click event="NULL" fire="true" cdtn="50"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 6 -->
+    <Npc sceneID="6" type="1" npcID="156100" position="418|445">
+    <View type="0" src="156100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1078_156100">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|1078"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="雕塑家的时间" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="switch">
+        <Func invoke="taskIsComplete" args="1078"/>
+        <Case value="0">
+          <Goto value="index_1"/>
+        </Case>
+        <Case value="1">
+          <Goto value="index_2"/>
+        </Case>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬">那些丢失的残页上面，有他的灵魂，所以请你一定要帮我把那些残页找回来。</Dialog>
+          <Button label="恩，我知道啦！" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100100" npcName="格里芬"><![CDATA[{name}]]>，我想艾德曼的灵魂碎片一定不会毫无理由地离开这本书，一定有什么理由。快看！这本书怎么在动！</Dialog>
+          <Button label="哪里？？" nextID="-1" close="true">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1078_156100"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1079" label="寻找艾德曼的记忆">
+    <!-- npc_c0_xml · 场景 47 -->
+    <Npc sceneID="47" type="1" npcID="155700" position="415|386">
+    <View type="0" src="155700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1079_155700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">我一直思念着的美人鱼，我只见过她一次，这创意园的雕塑，就是我凭着记忆雕的。只是，雕塑毕竟没有颜色啊……</Dialog>
+          <Button label="让我来帮你吧！" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1079_155700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1079_155700">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="game" args="2|name|2077|0">
+        <Case value="1">
+          <Goto value="index_1"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">太好了……美人鱼的颜色，我回忆起来了。啊……我想起来了……美人鱼的歌声让我陶醉，我好想再听一次啊……我记得就是在人鱼湾……</Dialog>
+          <Button label="我们一起去人鱼湾吧！" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 47 -->
+    <Npc sceneID="47" type="1" npcID="155800" position="488|306">
+    <View type="0" src="155800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1079_155800">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">快看，那座美人鱼雕像，也是我雕塑的。雕像曾经被我施了魔法，我凭着记忆，把美人鱼哼唱的歌曲注入了雕像。只要碰触那个雕像，就会听到优美的音乐。</Dialog>
+          <Button label="让我来帮你吧！" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1079_155800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1079_155800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1079/1079_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">多么熟悉啊……这悠扬的旋律……啊！我想起来了，我就是在这里，为美人鱼画了一幅画，那幅画，我想就在那个鱼嘴里面！</Dialog>
+          <Button label="我们一起去海洋研究院找找吧！" nextID="-1" close="true">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 47 -->
+    <Npc sceneID="47" type="1" npcID="155900" position="511|386">
+    <View type="0" src="155900.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1079/1079_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">如果可以的话，真想再和她见一面啊……啊……我全部回忆都想起来了！</Dialog>
+          <Button label="真的吗？" nextID="-1">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">恩！我记得，她给过我一个海螺，只要把海螺放到海边，海洋中就会出现一道光，美人鱼就会出现了。</Dialog>
+          <Button label="那我们现在就去人鱼湾召唤美人鱼吧！" nextID="-1">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">且慢！！！</Dialog>
+          <Button label="啊……？怎么了？" nextID="-1">
+            <Goto value="index_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">我……现在的我……已经变成灵魂了……这样的我，就算见到了她，又能怎么样呢……</Dialog>
+          <Button label="你只要把心意好好传达到就可以了啊！" nextID="-1">
+            <Goto value="index_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">恩……你说得有道理……我会好好把心意传达到的！</Dialog>
+          <Button label="那我们现在就去人鱼湾吧！" nextID="-1" close="true">
+            <Goto value="index_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_6" event="onTaskCall2" params="2|1079"/>
+    </Click>
+    </Npc>
+  </Task>
+  <Task id="1080" label="曾经梦见的心愿">
+    <!-- npc_p_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="156000" position="374|390">
+    <View type="0" src="156000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1080_156000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156000" npcName="黑衣人"><![CDATA[{name}]]>～又是你～我最近都很老实啦～又没有欺负宠物～还把我叫来干什么！难道你不知道，我正在赶恩佐给我留的作业吗～！</Dialog>
+          <Button label="这……不知道为什么就把你召唤出来了……" nextID="-1">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">可能是海螺太久没用，出了些问题……<![CDATA[{name}]]>，这位是谁？实在不好意思， 我们本来是打算召唤美人鱼的……</Dialog>
+          <Dialog npcID="156000" npcName="黑衣人">哈哈！美人鱼？难道是传说中最强大最美丽歌声最动听的那个美人鱼吗？</Dialog>
+          <Dialog npcID="155700" npcName="艾德曼">难道你也认识她？</Dialog>
+          <Dialog npcID="156000" npcName="黑衣人">哼～我当然不认识她。既然你们打算召唤她，那我就坐收渔翁之利，等她出现后，把她献给恩佐吧！</Dialog>
+          <Button label="你还是快点回去吧！" nextID="-1">
+            <Goto value="index_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156000" npcName="黑衣人">你们把我召来，这么容易就让我回去？不把美人鱼带走，我怎么可能回去！我只要把美人鱼带给恩佐，他一开心，就再也不会给我留这么多作业啦！</Dialog>
+          <Button label="那你先过了我这关再说吧！" nextID="-1" close="true">
+            <Goto value="index_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_3" type="switch" invoke="combat" args="2|156000|黑衣人">
+        <Case value="2">
+          <Goto value="index_5"/>
+        </Case>
+        <Default>
+          <Goto value="index_4"/>
+        </Default>
+      </Script>
+      <Script label="index_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156000" npcName="黑衣人">哈哈哈！看来美人鱼是我的囊中之物了！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true">
+            <Goto value="index_3"/>
+          </Button>
+          <Button label="稍后再战" nextID="-1" close="true">
+            <Goto value="index_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1080_156000"/>
+      <Click label="index_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1080_156000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1080_156000">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|156000|黑衣人">
+        <Case value="2">
+          <Goto value="index_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_1"/>
+        </Default>
+      </Script>
+      <Script label="index_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="156000" npcName="黑衣人">哈哈哈！看来美人鱼是我的囊中之物了！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="稍后再战" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1080_156000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1080_156000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">好吧……这次希望别出什么差错了……</Dialog>
+          <Button label="恩，我想应该不会了……" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1080_156000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="155700" npcName="艾德曼">真的是美人鱼……你没有改变，依旧的容颜。变化的只是时间，这样匆匆……</Dialog>
+          <Dialog npcID="155800" npcName="美人鱼">艾德曼……是艾德曼吗……</Dialog>
+          <Dialog npcID="155700" npcName="艾德曼">我……我还有一个未完成的心愿……只有你，只有你才可以……</Dialog>
+          <Dialog npcID="155800" npcName="美人鱼">恩……你想再做一个我的雕塑，对吧？</Dialog>
+          <Dialog npcID="155700" npcName="艾德曼">恩……完成这个心愿之后，我就再也见不到你了……</Dialog>
+          <Button label="啊……觉得心里好难受啊……" nextID="-1" close="true">
+            <Goto value="index_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_1" type="asWindow" src="task/1080/1080_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_2"/>
+        </Default>
+      </Script>
+      <Click label="index_2" event="onTaskCall2" params="2|1080"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

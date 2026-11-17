@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 disapearedDocuments.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="150" label="消失的手稿">
+  <Task id="4045" label="消失的手稿">
+    <!-- npcfun_100200 · 场景 24 -->
+    <NPCFun sceneID="24" label="消失的手稿" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="100200" npcName="莫里亚克">最近很多珍稀的手稿都不见了，而且书架那边还有异样的声音传出来！帮我看看吧！</Dialog>
+    				  <Button label="好的" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="asWindow" src="task/4045/app1" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_2"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_2" event="onTaskCall2" params="1|4045"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_185300 · 场景 9 -->
+    <Npc sceneID="9" type="1" npcID="185300" position="640|400">
+    		<View type="0" src="185300.swf" atLayerID="2" hasClick="true"/>
+           <Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="185300" npcName="饭桶蔡">你是谁？想干嘛？</Dialog>
+    			      <Button label="你吃了珍贵的手稿还有理了你！" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="185300" npcName="饭桶蔡">管你是谁，打赢我再说！</Dialog>
+    			      <Button label="好的，谁怕你，战斗吧！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="switch" invoke="combat" args="2|185300|饭桶蔡">
+    			    <Case value="2">
+    			      <Goto value="index_0_3"/>
+    			    </Case>
+    			    <Default>
+    			      <Goto value="index_0_8"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="185300" npcName="饭桶蔡">呜呜呜，为什么要打我？</Dialog>
+    			      <Button label="明明看到你在吃手稿你还不承认？" nextID="-1" close="true">
+    			        <Goto value="index_0_4"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_4" type="asWindow" src="task/4045/app2" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_5"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_5" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="100200" npcName="莫里亚克">手稿被吃了，怎么复原呢？</Dialog>
+    			      <Button label="这样吧，我们找找爱因斯坦看看他有没什么办法！" nextID="-1" close="false">
+    			        <Goto value="index_0_6"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_6" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="100200" npcName="莫里亚克">好吧，看看有什么办法没有，带上这个惹祸的家伙。</Dialog>
+    			      <Button label="好的" nextID="-1" close="true">
+    			        <Goto value="index_0_7"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_7" event="NULL" fire="true"/>
+                <Script label="index_0_8" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="185300" npcName="饭桶蔡">这么弱还想和我较量，练练再来吧！</Dialog>
+    			      <Button label="不服，再来一局！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+                     <Button label="晚些再教训你" nextID="-1" close="true">
+    			        <End/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_103603 · 场景 9 -->
+    <NPCFun sceneID="9" label="修复手稿" icon="-1" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="103600" npcName="爱因斯坦">这个手稿的确很头疼啊，谁吃掉的呢？</Dialog>
+    		      <Button label="就是这个家伙…" nextID="-1" close="true">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="asWindow" src="task/4045/app3" winPos="0|0" name="">
+    		    <Default>
+    		      <Goto value="index_0_2"/>
+    		    </Default>
+    		  </Script>
+    		  <Script label="index_0_2" type="dialog">
+    		    <Page id="0">
+                 <Dialog npcID="103600" npcName="爱因斯坦">我们找一些纸来，让魔法复制他肚子里的文字，然后再想想办法。去莫里亚克那里找纸张和笔！</Dialog>
+    		      <Button label="好的" nextID="-1" close="true">
+    		        <Goto value="index_0_3"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Click label="index_0_3" event="NULL" fire="true" fireID="103603"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_100201 · 场景 24 -->
+    <NPCFun sceneID="24" label="修复手稿" icon="-1" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    			   <Dialog npcID="100200" npcName="莫里亚克">纸和笔，好的这就给你，看来有希望！</Dialog>
+    		      <Button label="试试看，总是好的。" nextID="-1" close="true">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Click label="index_0_1" event="NULL" fire="true" fireID="100201"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_103600 · 场景 9 -->
+    <NPCFun sceneID="9" label="修复手稿" icon="-1" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    			  <Dialog npcID="103600" npcName="爱因斯坦">我们来修复这些文稿吧。</Dialog>
+    		      <Button label="好的。" nextID="-1" close="true">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="asWindow" src="task/4045/app4" winPos="0|0" name="">
+    		    <Default>
+    		      <Goto value="index_0_2"/>
+    		    </Default>
+    		  </Script>
+    		  <Script label="index_0_2" type="dialog">
+    		    <Page id="0">
+                 <Dialog npcID="103600" npcName="爱因斯坦">总算完成了，不错。</Dialog>
+    		      <Button label="好的。" nextID="-1" close="true">
+    		        <Goto value="index_0_3"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+             <Click label="index_0_3" event="onTaskCall2" params="2|4045"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_tz_xml · 场景 24 -->
+    <NPCFun label="app_tz" sceneID="24">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="24" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 9 -->
+    <NPCFun label="app_tz2" sceneID="9">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="9" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

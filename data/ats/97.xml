@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheCrane.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="97" label="仙鹤族长">
+  <Task id="4021" label="仙鹤族长">
+    <!-- npcfun_140500 -->
+    <Npc type="1" npcID="140500" position="592|391" aimPos="592|391" name="仙鹤族长">
+    			<View type="0" src="140500.swf" atLayerID="1"/>
+    			<Create>
+    				<NPCFun label="需要水灵花和仙药" icon="-1" close="false">
+                     <Click event="onRunScript" cdtn="60">
+    			           <Script label="default" type="dialog">
+    				        <Page id="0">
+    					<Dialog npcID="140500" npcName="仙鹤族长">可爱的小洛克，现在我很虚弱，我需要你的帮助，一个药师给了我这个配方，但是族里的小仙鹤们始终有几种材料找不到，没了这些材料药就配不成……</Dialog>
+    					<Dialog npcID="140500" npcName="仙鹤族长">我需要水灵花和仙药，你愿意帮我找寻吗？</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    					<Button label="考虑一下" nextID="-1" close="true">
+                         <End/>
+                     </Button>
+    				        </Page>
+    			        </Script>
+    			        <Click label="accpet" event="onTaskCall2" params="1|4021"/>
+    		            </Click>
+                  </NPCFun>
+    			</Create>
+              <Click event="onTaskCall" cdtn="60"/>
+    		</Npc>
+    <!-- npc_154500 -->
+    <Npc type="1" npcID="154500" position="450|382">
+    		<View type="0" src="154500.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="gotItem_154500">
+    				<Click label="conditionOneUpdate" event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_154600 -->
+    <Npc type="1" npcID="154600" position="257|208">
+    		<View type="0" src="154600.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="gotItem_154600">
+    				<Click label="conditionOneUpdate" event="NULL" fire="true"/>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npcfun_140500_submit -->
+    <Npc type="1" npcID="140500" position="592|391" aimPos="592|391" name="仙鹤族长">
+    		<View type="0" src="140500.swf" atLayerID="1"/>
+    		<Create>
+               <NPCFun label="需要水灵花和仙药" icon="0" close="false">
+                  <Click event="onRunScript" cdtn="60">
+    			<Script label="default" type="switch">
+    				<Func invoke="taskIsComplete" args="4021"/>
+    				<Case value="0"><Goto value="notOK"/></Case>
+    				<Case value="1"><Goto value="ok"/></Case>
+    			</Script>
+    			<Script label="notOK" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="140500" npcName="仙鹤族长">云海古道的水灵花，云烟桃源的仙药，想想缺少哪个呢？</Dialog>
+    					<Button label="好的，我继续找！" nextID="-1" close="true"/>
+    				</Page>
+    			</Script>
+    			<Script label="ok" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="140500" npcName="仙鹤族长">感谢你的帮助，在你的帮助下我已经好多了。你让我相信，你是一个勇敢的洛克，你一定能有一番成就，我们族里的小仙鹤有点不服气，想和你较量一下，你愿意吗？</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="fight"/>
+    					</Button>
+                      <Button label="我准备下" nextID="-1" close="true">
+                         <End/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Script label="fight" type="switch" invoke="combat" args="2|140500|仙鹤族长">
+    				        <Case value="2"><Goto value="wined"/></Case>
+    				        <Default><Goto value="losted"/></Default>
+    	       </Script>
+              <Script label="losted" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="140500" npcName="仙鹤族长">小仙鹤觉得你没有想象中的那么强大，努力提升自己吧，等到你强大了再来挑战它。</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+                           <End/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Script label="wined" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="140500" npcName="仙鹤族长">嗯，你真的很强大，很佩服你。我收集的这个果儿糖给你。</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+                           <Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|4021"/>
+    		       </Click>
+               </NPCFun>
+    		</Create>
+           <Click event="onTaskCall" cdtn="60"/>
+    	</Npc>
+  </Task>
+</Story>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ColdMoonWerewolf2StoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="175" label="冷月狼人(下)">
+  <Task id="2022" label="最新情报">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="冷月狼人（下）" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔"><![CDATA[{name}]]>。最近有奥贝斯坦的消息吗？这家伙，我很担心他啊！</Dialog>
+          <Button label="天！我差点忘记去看，他的最新情报！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="1|2022"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 168 -->
+    <Npc sceneID="168" type="1" npcID="201900" position="696|284">
+    <View type="0" src="201900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2022_201900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2022/2022_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2022_201900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2022_201900">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 168 -->
+    <Npc sceneID="168" type="1" npcID="202000" position="594|335">
+    <View type="0" src="202000.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200900" npcName="D伯爵">奥贝斯坦那边怎么样了？恩佐想必会给狼人施压，就要有所行动了！</Dialog>
+          <Button label="是的！他们今晚攻打这里！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200900" npcName="D伯爵">果然是抵挡不住永生之血的诱惑啊！那么，帕尔萨斯，快去召集卫士！今天就要让他们知道，古堡不会任由他们践踏的！</Dialog>
+          <Dialog npcID="200400" npcName="帕尔萨斯">遵命！主人！</Dialog>
+          <Dialog npcID="200900" npcName="D伯爵">小洛克，你也有一份重任，你需要帮我唤醒收藏室里的石像鬼！去山姆农场寻找南瓜豌豆、材料屋找蓝水晶、去植物园找元素种子。</Dialog>
+          <Button label="是！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|2022"/>
+    </Click>
+    </Npc>
+    <!-- app_ts0_xml · 场景 168 -->
+    <NPCFun label="app_ts0" sceneID="168">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2022/2022_ts_0" winPos="0|0" name="任务提示">
+    <Case value="1"><Goto value="ChangeScene_0"/></Case>
+    <Default><End/></Default>
+    </Script>
+    <Click label="ChangeScene_0" event="onChangeScene" params="168"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 90 -->
+    <NPCFun label="app_ts1" sceneID="90">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2022/2022_ts_1" winPos="0|0" name="任务提示">
+    <Case value="1"><Goto value="ChangeScene_0"/></Case>
+    <Default><End/></Default>
+    </Script>
+    <Click label="ChangeScene_0" event="onChangeScene" params="90"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2023" label="唤醒石像鬼">
+    <!-- npc_c0_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="202100" position="0|0">
+    <View type="0" src="202100.swf" atLayerID="1"/>
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_c1_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="202200" position="0|0">
+    <View type="0" src="202200.swf" atLayerID="1"/>
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_c2_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="202300" position="0|0">
+    <View type="0" src="202300.swf" atLayerID="1"/>
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_p_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="202400" position="372|399">
+    <View type="0" src="202400.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2023_202400">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2023/2023_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2023_202400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2023_202400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="104100" npcName="菲尔特">听说今晚小德要守卫古堡，我也一起去帮他！</Dialog>
+          <Button label="好的！准备出发！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2023/2023_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|2023"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 128 -->
+    <NPCFun label="app_ts0" sceneID="128">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2023/2023_ts_0" winPos="0|0" name="任务提示">
+    <Case value="1"><Goto value="ChangeScene_0"/></Case>
+    <Default><End/></Default>
+    </Script>
+    <Click label="ChangeScene_0" event="onChangeScene" params="128"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 26 -->
+    <NPCFun label="app_ts1" sceneID="26">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2023/2023_ts_1" winPos="0|0" name="任务提示">
+    	<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="26"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 4 -->
+    <NPCFun label="app_ts2" sceneID="4">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2023/2023_ts_2" winPos="0|0" name="任务提示">
+    	<Case value="1"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="4"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 166 -->
+    <NPCFun label="app_ts3" sceneID="166">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2023/2023_ts_3" winPos="0|0" name="任务提示">
+    <Case value="1"><Goto value="ChangeScene_0"/></Case>
+    <Default><End/></Default>
+    </Script>
+    <Click label="ChangeScene_0" event="onChangeScene" params="166"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2024" label="最后决战">
+    <!-- npc_p_xml · 场景 169 -->
+    <Npc sceneID="169" type="1" npcID="202500" position="373|367">
+    <View type="0" src="202500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200900" npcName="D伯爵">老狼，你鬼鬼祟祟地拿武器想做什么？哈哈，想攻打古堡可没那么容易，你觉得这个伏击我做的怎么样？</Dialog>
+          <Dialog npcID="200800" npcName="狼人首领">……可恶，究竟是谁告的密？</Dialog>
+          <Dialog npcID="200900" npcName="D伯爵">这不重要，重要的是，我劝你赶紧清醒过来，不要被恩佐利用了！</Dialog>
+          <Dialog npcID="200800" npcName="狼人首领">少废话，就你这些残兵剩将也想拦住我！上次战败的滋味还没尝够吗？</Dialog>
+          <Button label="那就比试比试！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+    	<Script label="index_0_1" type="switch" invoke="game" args="2|田忌赛马|2122|0">
+    	  <Case value="1"><Goto value="index_0_2"/></Case>
+    	  <Default><Goto value="index_0_3"/></Default>
+    	</Script>
+      <Script label="index_0_2" type="asWindow" src="task/2024/2024_0" winPos="0|0" name="">
+        <Default><Goto value="index_0_4"/></Default>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/2024/2024_1" winPos="0|0" name="">
+        <Default><End/></Default>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2024_202500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200800" npcName="狼人首领">你们还不快把永生之血交出来！ 否则我要了他的小命！</Dialog>
+          <Dialog npcID="200900" npcName="D伯爵">等等！只要你放人，我立刻拿出来！菲尔特，去把永生之血给他！</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2024_202500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200800" npcName="狼人首领">哈哈，永生之血！我们可以恢复原型了！</Dialog>
+          <Button label="永生之血……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_2024_202500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200800" npcName="狼人首领">恩佐，快把永生之血给我！你为什么出尔反尔，你说你只是想帮助我们！</Dialog>
+          <Dialog npcID="158900" npcName="恩佐">你个笨蛋，笨的真是无可救药！总之，现在要你们已经没用了！</Dialog>
+          <Button label="住手！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_2024_202500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158900" npcName="恩佐">今天你们人多，不跟你玩了！哈哈哈哈！反正我得到想要的东西了！</Dialog>
+          <Button label="等等！把永生之血还回来！！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200900" npcName="D伯爵">随他去吧！</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_2024_202500"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_2024_202500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="200800" npcName="狼人首领">谢谢你们救了我！可是，永生之血，就这样被他抢走了吗！！</Dialog>
+          <Dialog npcID="200900" npcName="D伯爵">哈哈，这世界上本来就没有这个东西。</Dialog>
+          <Dialog npcID="200800" npcName="狼人首领">那他刚才抢的是……</Dialog>
+          <Button label="哈？是什么？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2024/2024_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|2024"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 169 -->
+    <NPCFun label="app_ts0" sceneID="169">
+    <Click event="onRunScript">
+    	<Click label="default" event="onChangeScene" params="169"/>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>

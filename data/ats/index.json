@@ -1,0 +1,5222 @@
+[
+ {
+  "id": "5",
+  "script": "(21_TaskList TFlow)",
+  "label": "拉尔夫母亲的礼物",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "29",
+    "name": "我要帮拉尔夫做礼物"
+   },
+   {
+    "task": "30",
+    "name": "我要兑换棉布"
+   },
+   {
+    "task": "31",
+    "name": "去商店街购买地毯图纸"
+   },
+   {
+    "task": "32",
+    "name": "去服装店做地毯"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "14",
+  "script": "(21_TaskList TFlow)",
+  "label": "国家宝藏",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "35",
+    "name": "我要寻找国家宝藏"
+   },
+   {
+    "task": "36",
+    "name": "我要寻找亚瑟头盔"
+   },
+   {
+    "task": "37",
+    "name": "我要寻找亚瑟胸甲"
+   },
+   {
+    "task": "38",
+    "name": "我要寻找亚瑟盾牌"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "15",
+  "script": "(21_TaskList TFlow)",
+  "label": "不愿上学的小公主",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "44",
+    "name": "王国小公主"
+   },
+   {
+    "task": "45",
+    "name": "给与糖果"
+   },
+   {
+    "task": "46",
+    "name": "不上课的原因"
+   },
+   {
+    "task": "47",
+    "name": "给公主衣服"
+   },
+   {
+    "task": "48",
+    "name": "狗狗怕怕"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "16",
+  "script": "(21_TaskList TFlow)",
+  "label": "成为公主的好朋友",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "49",
+    "name": "丢失的项链"
+   },
+   {
+    "task": "50",
+    "name": "小小生的挑衅"
+   },
+   {
+    "task": "51",
+    "name": "找出小小生（上）"
+   },
+   {
+    "task": "52",
+    "name": "找出小小生（下）"
+   },
+   {
+    "task": "53",
+    "name": "商店街的伪装"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "18",
+  "script": "(21_TaskList TFlow)",
+  "label": "月光宝盒",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "59",
+    "name": "吉洛斯的烦恼"
+   },
+   {
+    "task": "60",
+    "name": "再次询问"
+   },
+   {
+    "task": "61",
+    "name": "回忆魔法球"
+   },
+   {
+    "task": "62",
+    "name": "回忆碎片"
+   },
+   {
+    "task": "63",
+    "name": "宝盒真相"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "19",
+  "script": "(21_TaskList TFlow)",
+  "label": "危机预言",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "64",
+    "name": "危机预言信"
+   },
+   {
+    "task": "65",
+    "name": "唯一的著作"
+   },
+   {
+    "task": "66",
+    "name": "著作中的乾坤"
+   },
+   {
+    "task": "67",
+    "name": "隐藏物件"
+   },
+   {
+    "task": "68",
+    "name": "危机真相"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "21",
+  "script": "(21_TaskList TFlow)",
+  "label": "不速之客",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "76",
+    "name": "宝宝从天而降"
+   },
+   {
+    "task": "77",
+    "name": "宝宝何处来？"
+   },
+   {
+    "task": "78",
+    "name": "熊熊的方向"
+   },
+   {
+    "task": "79",
+    "name": "月光宝盒重现"
+   },
+   {
+    "task": "80",
+    "name": "回归心泉"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "22",
+  "script": "(21_TaskList TFlow)",
+  "label": "帮助机器人",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1006",
+    "name": "帮助爱因斯坦"
+   },
+   {
+    "task": "1007",
+    "name": "我会继续努力的"
+   },
+   {
+    "task": "1008",
+    "name": "你说话好奇怪啊"
+   },
+   {
+    "task": "1009",
+    "name": "我要帮助007"
+   },
+   {
+    "task": "1010",
+    "name": "我要破坏病毒的源头"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "24",
+  "script": "(21_TaskList TFlow)",
+  "label": "黑暗边缘的宠物(上)",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1013",
+    "name": "草系宠物的恐慌"
+   },
+   {
+    "task": "1014",
+    "name": "旋风的指引"
+   },
+   {
+    "task": "1016",
+    "name": "火山口的疑团"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "25",
+  "script": "(21_TaskList TFlow)",
+  "label": "黑暗边缘的宠物(下)",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1017",
+    "name": "最初的线索"
+   },
+   {
+    "task": "1018",
+    "name": "绝密较量"
+   },
+   {
+    "task": "1019",
+    "name": "破坏魔法阵"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "26",
+  "script": "(21_TaskList TFlow)",
+  "label": "失传的封印",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1021",
+    "name": "小布石的预测"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "27",
+  "script": "(21_TaskList TFlow)",
+  "label": "夜半琴声",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1026",
+    "name": "询问夜半琴声"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "29",
+  "script": "(21_TaskList TFlow)",
+  "label": "灵兽迷踪",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "86",
+    "name": "旧照片"
+   },
+   {
+    "task": "87",
+    "name": "空灵树的资料"
+   },
+   {
+    "task": "88",
+    "name": "历史的真相"
+   },
+   {
+    "task": "89",
+    "name": "追踪到底"
+   },
+   {
+    "task": "90",
+    "name": "为空灵兽解毒"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "30",
+  "script": "(21_TaskList TFlow)",
+  "label": "格斗小五的挑战",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3004",
+    "name": "格斗小五的挑战"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "31",
+  "script": "(21_TaskList TFlow)",
+  "label": "观察果冻怪",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3005",
+    "name": "观察果冻怪"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "32",
+  "script": "(21_TaskList TFlow)",
+  "label": "杂草丛生",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3006",
+    "name": "清除杂草"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "33",
+  "script": "(21_TaskList TFlow)",
+  "label": "化石失窃",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "91",
+    "name": "化石坑"
+   },
+   {
+    "task": "92",
+    "name": "秘密对话"
+   },
+   {
+    "task": "93",
+    "name": "再起风波"
+   },
+   {
+    "task": "94",
+    "name": "追踪黑影"
+   },
+   {
+    "task": "95",
+    "name": "告一段落"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "39",
+  "script": "(21_TaskList TFlow)",
+  "label": "教师节的问候",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "4001",
+    "name": "问候格里芬"
+   },
+   {
+    "task": "4002",
+    "name": "问候杰瑞西"
+   },
+   {
+    "task": "4003",
+    "name": "问候沃尔克"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "40",
+  "script": "(21_TaskList TFlow)",
+  "label": "龙之叛走",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "101",
+    "name": "龙之出走"
+   },
+   {
+    "task": "102",
+    "name": "安息之地"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "41",
+  "script": "(21_TaskList TFlow)",
+  "label": "龙珠碎片",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3007",
+    "name": "龙珠碎片"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "42",
+  "script": "(21_TaskList TFlow)",
+  "label": "月下龙影",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "103",
+    "name": "月下龙影"
+   },
+   {
+    "task": "106",
+    "name": "月下龙影尾声"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "43",
+  "script": "(21_TaskList TFlow)",
+  "label": "龙珠碎片",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3008",
+    "name": "龙珠碎片"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "49",
+  "script": "(21_TaskList TFlow)",
+  "label": "能源危机",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "1031",
+    "name": "寻找阿基拉"
+   },
+   {
+    "task": "1032",
+    "name": "能源枯竭"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "50",
+  "script": "(21_TaskList TFlow)",
+  "label": "能源实验",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3009",
+    "name": "能源实验"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "51",
+  "script": "(21_TaskList TFlow)",
+  "label": "龙珠战争",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3010",
+    "name": "龙珠战争"
+   },
+   {
+    "task": "3011",
+    "name": "龙珠战争第二步"
+   },
+   {
+    "task": "3012",
+    "name": "龙珠战争第三步"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "52",
+  "script": "(21_TaskList TFlow)",
+  "label": "能源实验",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3013",
+    "name": "能源实验"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "53",
+  "script": "(21_TaskList TFlow，纯漫画)",
+  "label": "古堡探险",
+  "tasks": [
+   {
+    "task": "112",
+    "name": "顽皮小公主",
+    "chain": [],
+    "field": "88",
+    "frags": 1,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "113",
+    "name": "林中机关",
+    "chain": [],
+    "field": "88",
+    "frags": 1,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "114",
+    "name": "花园险境",
+    "chain": [],
+    "field": "89",
+    "frags": 1,
+    "scenes": [
+     "89"
+    ]
+   },
+   {
+    "task": "115",
+    "name": "援救公主",
+    "chain": [],
+    "field": "90",
+    "frags": 1,
+    "scenes": [
+     "90"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "54",
+  "script": "(21_TaskList TFlow)",
+  "label": "治疗噩梦",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3014",
+    "name": "治疗噩梦"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "55",
+  "script": "ProtectCastleStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1033",
+    "name": "帮助帕尔萨斯",
+    "chain": [
+     "89"
+    ],
+    "field": "89",
+    "frags": 1,
+    "scenes": [
+     "89"
+    ]
+   },
+   {
+    "task": "1034",
+    "name": "收集材料",
+    "chain": [
+     "89"
+    ],
+    "field": "89",
+    "frags": 5,
+    "scenes": [
+     "89"
+    ]
+   },
+   {
+    "task": "1035",
+    "name": "布下迷魂阵",
+    "chain": [
+     "89"
+    ],
+    "field": "89",
+    "frags": 3,
+    "scenes": [
+     "89"
+    ]
+   },
+   {
+    "task": "1036",
+    "name": "大决战",
+    "chain": [
+     "92"
+    ],
+    "field": "92",
+    "frags": 3,
+    "scenes": [
+     "92"
+    ]
+   }
+  ],
+  "label": "守卫古堡"
+ },
+ {
+  "id": "56",
+  "script": "(21_TaskList TFlow)",
+  "label": "博得的请求",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3015",
+    "name": "博得的请求"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "57",
+  "script": "LastCrisisStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3016",
+    "name": "开启密室",
+    "chain": [
+     "90",
+     "93"
+    ],
+    "field": "93",
+    "frags": 3,
+    "scenes": [
+     "93"
+    ]
+   },
+   {
+    "task": "3017",
+    "name": "伯爵复活",
+    "chain": [
+     "93"
+    ],
+    "field": "93",
+    "frags": 6,
+    "scenes": [
+     "93"
+    ]
+   }
+  ],
+  "label": "最终的危机"
+ },
+ {
+  "id": "58",
+  "script": "(21_TaskList TFlow)",
+  "label": "紧急采购",
+  "src": "tflow",
+  "tasks": [
+   {
+    "task": "3018",
+    "name": "紧急采购"
+   }
+  ],
+  "tflow": true
+ },
+ {
+  "id": "59",
+  "script": "EveryoneIsStarStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3019",
+    "name": "人人都是大明星",
+    "chain": [],
+    "field": null,
+    "frags": 2,
+    "scenes": []
+   }
+  ],
+  "label": "人人都是大明星"
+ },
+ {
+  "id": "60",
+  "script": "EvilDisguiseStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1037",
+    "name": "幽灵出没",
+    "chain": [
+     "51",
+     "81"
+    ],
+    "field": "81",
+    "frags": 2,
+    "scenes": [
+     "51"
+    ]
+   },
+   {
+    "task": "1038",
+    "name": "迁徙的宠物",
+    "chain": [
+     "82"
+    ],
+    "field": "82",
+    "frags": 1,
+    "scenes": [
+     "82"
+    ]
+   },
+   {
+    "task": "1039",
+    "name": "邪恶的伪装",
+    "chain": [
+     "75"
+    ],
+    "field": "75",
+    "frags": 2,
+    "scenes": [
+     "75"
+    ]
+   },
+   {
+    "task": "1040",
+    "name": "古老的壁画",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 6,
+    "scenes": [
+     "81"
+    ]
+   }
+  ],
+  "label": "邪恶的伪装"
+ },
+ {
+  "id": "61",
+  "script": "FreakDragonStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1041",
+    "name": "格里芬的专题研究",
+    "chain": [
+     "6",
+     "81"
+    ],
+    "field": "81",
+    "frags": 4,
+    "scenes": [
+     "6",
+     "81"
+    ]
+   },
+   {
+    "task": "1042",
+    "name": "催眠中的真相",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 3,
+    "scenes": [
+     "81"
+    ]
+   },
+   {
+    "task": "1043",
+    "name": "激变的龙珠能量",
+    "chain": [
+     "80"
+    ],
+    "field": "80",
+    "frags": 5,
+    "scenes": [
+     "80"
+    ]
+   },
+   {
+    "task": "1044",
+    "name": "接通爱的回路",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 4,
+    "scenes": [
+     "81"
+    ]
+   }
+  ],
+  "label": "变异的龙系宠物"
+ },
+ {
+  "id": "62",
+  "script": "MemoryStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1045",
+    "name": "西格的委托",
+    "chain": [
+     "22",
+     "81"
+    ],
+    "field": "81",
+    "frags": 3,
+    "scenes": [
+     "22",
+     "81"
+    ]
+   },
+   {
+    "task": "1046",
+    "name": "尘封的回忆",
+    "chain": [
+     "78"
+    ],
+    "field": "78",
+    "frags": 2,
+    "scenes": [
+     "78"
+    ]
+   },
+   {
+    "task": "1047",
+    "name": "善意的诱惑",
+    "chain": [
+     "82"
+    ],
+    "field": "82",
+    "frags": 2,
+    "scenes": [
+     "82"
+    ]
+   },
+   {
+    "task": "1048",
+    "name": "恢复记忆的魔法",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 2,
+    "scenes": [
+     "81"
+    ]
+   },
+   {
+    "task": "1049",
+    "name": "寻找遗失的记忆",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 8,
+    "scenes": [
+     "81"
+    ]
+   },
+   {
+    "task": "1050",
+    "name": "西格的感言",
+    "chain": [
+     "22"
+    ],
+    "field": "22",
+    "frags": 1,
+    "scenes": [
+     "22"
+    ]
+   }
+  ],
+  "label": "记忆中的倒影"
+ },
+ {
+  "id": "63",
+  "script": "ThanksgivingTurkeyStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3021",
+    "name": "感恩节火鸡",
+    "chain": [],
+    "field": "87",
+    "frags": 2,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "感恩节火鸡"
+ },
+ {
+  "id": "65",
+  "script": "KnightOfRoseStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1051",
+    "name": "打探蔷薇骑士的消息",
+    "chain": [
+     "29",
+     "26",
+     "24",
+     "57"
+    ],
+    "field": "57",
+    "frags": 9,
+    "scenes": [
+     "24",
+     "26",
+     "29",
+     "57"
+    ]
+   },
+   {
+    "task": "1052",
+    "name": "罗宾的考验",
+    "chain": [
+     "13"
+    ],
+    "field": "13",
+    "frags": 3,
+    "scenes": [
+     "13",
+     "14"
+    ]
+   },
+   {
+    "task": "1053",
+    "name": "千里走单骑",
+    "chain": [],
+    "field": "19",
+    "frags": 4,
+    "scenes": [
+     "19"
+    ]
+   },
+   {
+    "task": "1054",
+    "name": "挑战蔷薇骑士",
+    "chain": [
+     "19",
+     "8"
+    ],
+    "field": "8",
+    "frags": 6,
+    "scenes": [
+     "8",
+     "19"
+    ]
+   },
+   {
+    "task": "1055",
+    "name": "最后的抉择",
+    "chain": [],
+    "field": "59",
+    "frags": 2,
+    "scenes": [
+     "59"
+    ]
+   }
+  ],
+  "label": "蔷薇骑士异闻录"
+ },
+ {
+  "id": "66",
+  "script": "miaomiaoFishingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3022",
+    "name": "人人都是大明星第二季",
+    "chain": [],
+    "field": null,
+    "frags": 2,
+    "scenes": []
+   }
+  ],
+  "label": "人人都是大明星第二季"
+ },
+ {
+  "id": "67",
+  "script": "DeerDisappearStoryScript.ats",
+  "tasks": [
+   {
+    "task": "116",
+    "name": "麋鹿困扰",
+    "chain": [
+     "13",
+     "58"
+    ],
+    "field": "58",
+    "frags": 5,
+    "scenes": [
+     "13",
+     "58"
+    ]
+   },
+   {
+    "task": "117",
+    "name": "救援线索",
+    "chain": [
+     "4"
+    ],
+    "field": "20",
+    "frags": 4,
+    "scenes": [
+     "4",
+     "20"
+    ]
+   },
+   {
+    "task": "118",
+    "name": "潜入敌阵",
+    "chain": [
+     "13"
+    ],
+    "field": "58",
+    "frags": 9,
+    "scenes": [
+     "13",
+     "58",
+     "96"
+    ]
+   }
+  ],
+  "label": "失踪的麋鹿"
+ },
+ {
+  "id": "68",
+  "script": "seaFightStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3023",
+    "name": "人人都是大明星第三季",
+    "chain": [],
+    "field": null,
+    "frags": 2,
+    "scenes": []
+   }
+  ],
+  "label": "人人都是大明星第三季"
+ },
+ {
+  "id": "69",
+  "script": "DeerWhoIsTrueStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1056",
+    "name": "飞天载物",
+    "chain": [
+     "13",
+     "60"
+    ],
+    "field": "60",
+    "frags": 7,
+    "scenes": [
+     "13",
+     "60"
+    ]
+   },
+   {
+    "task": "1057",
+    "name": "步步生花",
+    "chain": [
+     "60"
+    ],
+    "field": "60",
+    "frags": 1,
+    "scenes": [
+     "60"
+    ]
+   },
+   {
+    "task": "1058",
+    "name": "愿望术",
+    "chain": [
+     "44"
+    ],
+    "field": "98",
+    "frags": 5,
+    "scenes": [
+     "44",
+     "98"
+    ]
+   },
+   {
+    "task": "1059",
+    "name": "读心术",
+    "chain": [
+     "44"
+    ],
+    "field": "44",
+    "frags": 3,
+    "scenes": [
+     "44"
+    ]
+   }
+  ],
+  "label": "真假七彩鹿"
+ },
+ {
+  "id": "70",
+  "script": "ChristmasTreeStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3024",
+    "name": "装点圣诞树",
+    "chain": [],
+    "field": "87",
+    "frags": 6,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "装点圣诞树"
+ },
+ {
+  "id": "72",
+  "script": "giftBackStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3026",
+    "name": "争分夺秒",
+    "chain": [
+     "44",
+     "86"
+    ],
+    "field": "86",
+    "frags": 4,
+    "scenes": [
+     "86"
+    ]
+   },
+   {
+    "task": "3027",
+    "name": "被诅咒的礼物",
+    "chain": [
+     "86"
+    ],
+    "field": "86",
+    "frags": 6,
+    "scenes": [
+     "86"
+    ]
+   },
+   {
+    "task": "3028",
+    "name": "幕后黑手",
+    "chain": [
+     "86"
+    ],
+    "field": "86",
+    "frags": 1,
+    "scenes": [
+     "86"
+    ]
+   }
+  ],
+  "label": "失而复得的礼物"
+ },
+ {
+  "id": "73",
+  "script": "TheBrother.ats",
+  "tasks": [
+   {
+    "task": "119",
+    "name": "雪人谷幻影",
+    "chain": [
+     "6",
+     "100"
+    ],
+    "field": "100",
+    "frags": 5,
+    "scenes": [
+     "6",
+     "100"
+    ]
+   },
+   {
+    "task": "120",
+    "name": "村中少女",
+    "chain": [
+     "100"
+    ],
+    "field": "100",
+    "frags": 2,
+    "scenes": [
+     "100"
+    ]
+   },
+   {
+    "task": "121",
+    "name": "特伦斯的去向",
+    "chain": [
+     "44"
+    ],
+    "field": "44",
+    "frags": 2,
+    "scenes": [
+     "44"
+    ]
+   },
+   {
+    "task": "122",
+    "name": "冰封骑士",
+    "chain": [
+     "100"
+    ],
+    "field": "100",
+    "frags": 4,
+    "scenes": [
+     "100"
+    ]
+   }
+  ],
+  "label": "兄妹情深"
+ },
+ {
+  "id": "74",
+  "script": "NewYearWelcomeStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4006",
+    "name": "舞会,烟火！迎新年",
+    "chain": [],
+    "field": "14",
+    "frags": 3,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "舞会,烟火！迎新年"
+ },
+ {
+  "id": "75",
+  "script": "BorisLoseStoryScript.ats",
+  "tasks": [
+   {
+    "task": "123",
+    "name": "离奇失踪",
+    "chain": [
+     "22",
+     "59"
+    ],
+    "field": "59",
+    "frags": 4,
+    "scenes": [
+     "59"
+    ]
+   },
+   {
+    "task": "124",
+    "name": "黑魔法师协会",
+    "chain": [
+     "41"
+    ],
+    "field": "41",
+    "frags": 6,
+    "scenes": [
+     "41"
+    ]
+   },
+   {
+    "task": "125",
+    "name": "真相大白",
+    "chain": [
+     "41"
+    ],
+    "field": "41",
+    "frags": 5,
+    "scenes": [
+     "41"
+    ]
+   }
+  ],
+  "label": "伯瑞斯失踪之谜"
+ },
+ {
+  "id": "76",
+  "script": "CollectADStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4007",
+    "name": "收集黑色广告",
+    "chain": [],
+    "field": "13",
+    "frags": 6,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "收集黑色广告"
+ },
+ {
+  "id": "77",
+  "script": "TheGetawayStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1060",
+    "name": "神秘的玉佩",
+    "chain": [
+     "32"
+    ],
+    "field": "32",
+    "frags": 11,
+    "scenes": [
+     "32"
+    ]
+   },
+   {
+    "task": "1061",
+    "name": "远航寻药",
+    "chain": [
+     "103"
+    ],
+    "field": "103",
+    "frags": 3,
+    "scenes": [
+     "103"
+    ]
+   },
+   {
+    "task": "1062",
+    "name": "不打不相识",
+    "chain": [
+     "32"
+    ],
+    "field": "32",
+    "frags": 2,
+    "scenes": [
+     "32"
+    ]
+   }
+  ],
+  "label": "逃亡"
+ },
+ {
+  "id": "78",
+  "script": "CleanBeachStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4008",
+    "name": "海上的漂浮物",
+    "chain": [],
+    "field": "19",
+    "frags": 5,
+    "scenes": [
+     "19"
+    ]
+   }
+  ],
+  "label": "海上的漂浮物"
+ },
+ {
+  "id": "79",
+  "script": "BrokenGameStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3029",
+    "name": "蹊跷",
+    "chain": [
+     "32"
+    ],
+    "field": "32",
+    "frags": 5,
+    "scenes": [
+     "32"
+    ]
+   },
+   {
+    "task": "3030",
+    "name": "追踪",
+    "chain": [
+     "32"
+    ],
+    "field": "96",
+    "frags": 13,
+    "scenes": [
+     "13",
+     "96"
+    ]
+   },
+   {
+    "task": "3031",
+    "name": "解药",
+    "chain": [
+     "105"
+    ],
+    "field": "105",
+    "frags": 4,
+    "scenes": [
+     "105"
+    ]
+   }
+  ],
+  "label": "破局"
+ },
+ {
+  "id": "80",
+  "script": "CollectMedicineStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4009",
+    "name": "收集药材",
+    "chain": [],
+    "field": "57",
+    "frags": 5,
+    "scenes": [
+     "57"
+    ]
+   }
+  ],
+  "label": "收集药材"
+ },
+ {
+  "id": "81",
+  "script": "MakeRecipe.ats",
+  "tasks": [
+   {
+    "task": "4010",
+    "name": "研磨药材",
+    "chain": [],
+    "field": "87",
+    "frags": 5,
+    "scenes": [
+     "1",
+     "43",
+     "87"
+    ]
+   }
+  ],
+  "label": "研磨药材"
+ },
+ {
+  "id": "82",
+  "script": "CelestialTrackOfSanGuStoryScript.ats",
+  "tasks": [
+   {
+    "task": "126",
+    "name": "说服国王",
+    "chain": [
+     "5",
+     "14"
+    ],
+    "field": "14",
+    "frags": 2,
+    "scenes": [
+     "14"
+    ]
+   },
+   {
+    "task": "127",
+    "name": "仙踪奇遇",
+    "chain": [
+     "5"
+    ],
+    "field": "5",
+    "frags": 5,
+    "scenes": [
+     "5"
+    ]
+   },
+   {
+    "task": "128",
+    "name": "再顾仙踪",
+    "chain": [
+     "5"
+    ],
+    "field": "5",
+    "frags": 5,
+    "scenes": [
+     "5"
+    ]
+   },
+   {
+    "task": "129",
+    "name": "三顾仙踪",
+    "chain": [
+     "111"
+    ],
+    "field": "111",
+    "frags": 5,
+    "scenes": [
+     "111"
+    ]
+   }
+  ],
+  "label": "三顾仙踪"
+ },
+ {
+  "id": "83",
+  "script": "CounterattackStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1063",
+    "name": "远征军启航",
+    "chain": [
+     "14"
+    ],
+    "field": "14",
+    "frags": 3,
+    "scenes": [
+     "14"
+    ]
+   },
+   {
+    "task": "1064",
+    "name": "打草惊蛇",
+    "chain": [
+     "5"
+    ],
+    "field": "103",
+    "frags": 4,
+    "scenes": [
+     "103"
+    ]
+   },
+   {
+    "task": "1065",
+    "name": "瞒天过海，暗渡陈仓",
+    "chain": [
+     "109"
+    ],
+    "field": "107",
+    "frags": 5,
+    "scenes": [
+     "107",
+     "109"
+    ]
+   },
+   {
+    "task": "1066",
+    "name": "调虎离山，声东击西",
+    "chain": [
+     "112"
+    ],
+    "field": "112",
+    "frags": 3,
+    "scenes": [
+     "112"
+    ]
+   },
+   {
+    "task": "1067",
+    "name": "李代桃僵",
+    "chain": [
+     "112"
+    ],
+    "field": "112",
+    "frags": 2,
+    "scenes": [
+     "112"
+    ]
+   },
+   {
+    "task": "1068",
+    "name": "擒贼擒王",
+    "chain": [
+     "112"
+    ],
+    "field": "76",
+    "frags": 2,
+    "scenes": [
+     "76"
+    ]
+   }
+  ],
+  "label": "反攻！"
+ },
+ {
+  "id": "84",
+  "script": "GatherWood.ats",
+  "tasks": [
+   {
+    "task": "4011",
+    "name": "收集木材",
+    "chain": [],
+    "field": "87",
+    "frags": 6,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "收集木材"
+ },
+ {
+  "id": "85",
+  "script": "TrainYourself.ats",
+  "tasks": [
+   {
+    "task": "4012",
+    "name": "为了战斗准备",
+    "chain": [],
+    "field": "13",
+    "frags": 3,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "为了战斗准备"
+ },
+ {
+  "id": "86",
+  "script": "NewYearRedEnvolop.ats",
+  "tasks": [
+   {
+    "task": "4013",
+    "name": "洛克大拜年",
+    "chain": [],
+    "field": "6",
+    "frags": 7,
+    "scenes": [
+     "1",
+     "2",
+     "6",
+     "14",
+     "16",
+     "27"
+    ]
+   }
+  ],
+  "label": "洛克大拜年"
+ },
+ {
+  "id": "87",
+  "script": "MakeFireworks.ats",
+  "tasks": [
+   {
+    "task": "4014",
+    "name": "爆竹声声",
+    "chain": [],
+    "field": "1",
+    "frags": 5,
+    "scenes": [
+     "1",
+     "4",
+     "40",
+     "59"
+    ]
+   }
+  ],
+  "label": "爆竹声声"
+ },
+ {
+  "id": "88",
+  "script": "GatherGears.ats",
+  "tasks": [
+   {
+    "task": "4015",
+    "name": "收集维修材料",
+    "chain": [],
+    "field": "87",
+    "frags": 5,
+    "scenes": [
+     "40",
+     "87"
+    ]
+   }
+  ],
+  "label": "收集维修材料"
+ },
+ {
+  "id": "89",
+  "script": "MakeLantern.ats",
+  "tasks": [
+   {
+    "task": "4016",
+    "name": "做灯笼",
+    "chain": [],
+    "field": "87",
+    "frags": 5,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "做灯笼"
+ },
+ {
+  "id": "90",
+  "script": "GatherMagicGears.ats",
+  "tasks": [
+   {
+    "task": "4017",
+    "name": "收集施法材料",
+    "chain": [],
+    "field": "4",
+    "frags": 5,
+    "scenes": [
+     "4"
+    ]
+   }
+  ],
+  "label": "收集施法材料"
+ },
+ {
+  "id": "91",
+  "script": "SeparationOfMemoryStoryScript.ats",
+  "tasks": [
+   {
+    "task": "130",
+    "name": "波涛再起",
+    "chain": [
+     "76",
+     "111"
+    ],
+    "field": "111",
+    "frags": 2,
+    "scenes": [
+     "111"
+    ]
+   },
+   {
+    "task": "131",
+    "name": "拯救行动",
+    "chain": [
+     "111"
+    ],
+    "field": "96",
+    "frags": 5,
+    "scenes": [
+     "96",
+     "111"
+    ]
+   },
+   {
+    "task": "132",
+    "name": "记忆之前",
+    "chain": [
+     "111"
+    ],
+    "field": "35",
+    "frags": 6,
+    "scenes": [
+     "35",
+     "111"
+    ]
+   },
+   {
+    "task": "133",
+    "name": "分离之后",
+    "chain": [
+     "111"
+    ],
+    "field": "71",
+    "frags": 6,
+    "scenes": [
+     "71",
+     "111"
+    ]
+   }
+  ],
+  "label": "记忆前分离后"
+ },
+ {
+  "id": "92",
+  "script": "ClearTheAirStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1069",
+    "name": "玄玉岛的小独角兽",
+    "chain": [
+     "113",
+     "114"
+    ],
+    "field": "114",
+    "frags": 3,
+    "scenes": [
+     "113",
+     "114"
+    ]
+   },
+   {
+    "task": "1070",
+    "name": "冷漠的独角兽",
+    "chain": [
+     "111"
+    ],
+    "field": "111",
+    "frags": 6,
+    "scenes": [
+     "111",
+     "114"
+    ]
+   },
+   {
+    "task": "1071",
+    "name": "养育之恩",
+    "chain": [
+     "105"
+    ],
+    "field": "47",
+    "frags": 4,
+    "scenes": [
+     "47",
+     "105",
+     "114"
+    ]
+   },
+   {
+    "task": "1072",
+    "name": "冰释前嫌",
+    "chain": [
+     "114"
+    ],
+    "field": "111",
+    "frags": 1,
+    "scenes": [
+     "111"
+    ]
+   }
+  ],
+  "label": "冰释前嫌"
+ },
+ {
+  "id": "93",
+  "script": "Yuanbao.ats",
+  "tasks": [
+   {
+    "task": "4018",
+    "name": "元宝何处来",
+    "chain": [],
+    "field": "29",
+    "frags": 5,
+    "scenes": [
+     "29",
+     "31",
+     "76"
+    ]
+   }
+  ],
+  "label": "元宝何处来"
+ },
+ {
+  "id": "94",
+  "script": "HelpFiert.ats",
+  "tasks": [
+   {
+    "task": "2000",
+    "name": "去欢乐谷找菲尔特！",
+    "chain": [],
+    "field": "31",
+    "frags": 2,
+    "scenes": [
+     "31"
+    ]
+   },
+   {
+    "task": "2001",
+    "name": "将菲尔特实名信息给杰瑞西老师！",
+    "chain": [],
+    "field": "31",
+    "frags": 1,
+    "scenes": [
+     "31"
+    ]
+   }
+  ],
+  "label": "实名注册,健康上网!"
+ },
+ {
+  "id": "95",
+  "script": "FirstClass.ats",
+  "tasks": [
+   {
+    "task": "4019",
+    "name": "开学第一课",
+    "chain": [],
+    "field": "31",
+    "frags": 2,
+    "scenes": [
+     "31"
+    ]
+   }
+  ],
+  "label": "开学第一课"
+ },
+ {
+  "id": "96",
+  "script": "SweepFloor.ats",
+  "tasks": [
+   {
+    "task": "4020",
+    "name": "开学大扫除",
+    "chain": [],
+    "field": "31",
+    "frags": 5,
+    "scenes": [
+     "6",
+     "7",
+     "9",
+     "31"
+    ]
+   }
+  ],
+  "label": "开学大扫除"
+ },
+ {
+  "id": "97",
+  "script": "TheCrane.ats",
+  "tasks": [
+   {
+    "task": "4021",
+    "name": "仙鹤族长",
+    "chain": [],
+    "field": null,
+    "frags": 4,
+    "scenes": []
+   }
+  ],
+  "label": "仙鹤族长"
+ },
+ {
+  "id": "98",
+  "script": "BestInTheWorldHeroStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2003",
+    "name": "激战赛消息传来",
+    "chain": [
+     "22",
+     "58",
+     "103"
+    ],
+    "field": "58",
+    "frags": 5,
+    "scenes": [
+     "22",
+     "58",
+     "103"
+    ]
+   },
+   {
+    "task": "2004",
+    "name": "师傅的考验",
+    "chain": [
+     "17",
+     "44",
+     "45",
+     "46"
+    ],
+    "field": "45",
+    "frags": 4,
+    "scenes": [
+     "45"
+    ]
+   },
+   {
+    "task": "2005",
+    "name": "宠物园找菲尔特",
+    "chain": [
+     "18",
+     "102",
+     "103"
+    ],
+    "field": "102",
+    "frags": 5,
+    "scenes": [
+     "102",
+     "103"
+    ]
+   }
+  ],
+  "label": "天下第一大侠"
+ },
+ {
+  "id": "99",
+  "script": "TimeOfSculptorStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1078",
+    "name": "不翼而飞的雕塑画册",
+    "chain": [
+     "6"
+    ],
+    "field": "6",
+    "frags": 6,
+    "scenes": [
+     "6"
+    ]
+   },
+   {
+    "task": "1079",
+    "name": "寻找艾德曼的记忆",
+    "chain": [
+     "47"
+    ],
+    "field": "47",
+    "frags": 3,
+    "scenes": [
+     "47"
+    ]
+   },
+   {
+    "task": "1080",
+    "name": "曾经梦见的心愿",
+    "chain": [
+     "19"
+    ],
+    "field": "19",
+    "frags": 1,
+    "scenes": [
+     "19"
+    ]
+   }
+  ],
+  "label": "雕塑家的时间"
+ },
+ {
+  "id": "100",
+  "script": "blackmanDamageEnvironmentStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4022",
+    "name": "谁在破坏环境",
+    "chain": [],
+    "field": "87",
+    "frags": 5,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "谁在破坏环境"
+ },
+ {
+  "id": "101",
+  "script": "OwlDisappearedStoryScript.ats",
+  "tasks": [
+   {
+    "task": "134",
+    "name": "消失的猫头鹰",
+    "chain": [
+     "1",
+     "27"
+    ],
+    "field": "27",
+    "frags": 5,
+    "scenes": [
+     "1",
+     "27"
+    ]
+   },
+   {
+    "task": "135",
+    "name": "数字里的秘密",
+    "chain": [
+     "1",
+     "7"
+    ],
+    "field": "1",
+    "frags": 5,
+    "scenes": [
+     "1",
+     "7"
+    ]
+   },
+   {
+    "task": "136",
+    "name": "失而复得",
+    "chain": [
+     "26",
+     "10",
+     "27"
+    ],
+    "field": "10",
+    "frags": 6,
+    "scenes": [
+     "10",
+     "26",
+     "27"
+    ]
+   },
+   {
+    "task": "137",
+    "name": "和好如初",
+    "chain": [
+     "1"
+    ],
+    "field": "1",
+    "frags": 3,
+    "scenes": [
+     "1"
+    ]
+   }
+  ],
+  "label": "消失的猫头鹰"
+ },
+ {
+  "id": "102",
+  "script": "jackBirthdayPresentStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4023",
+    "name": "杰克的礼物",
+    "chain": [],
+    "field": "14",
+    "frags": 7,
+    "scenes": [
+     "14",
+     "17",
+     "40",
+     "43",
+     "81"
+    ]
+   }
+  ],
+  "label": "杰克的礼物"
+ },
+ {
+  "id": "103",
+  "script": "ARaceAgainstTimeStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1081",
+    "name": "火山口的气体",
+    "chain": [
+     "57",
+     "52"
+    ],
+    "field": "52",
+    "frags": 3,
+    "scenes": [
+     "52",
+     "57"
+    ]
+   },
+   {
+    "task": "1082",
+    "name": "紧急救治",
+    "chain": [
+     "54"
+    ],
+    "field": "54",
+    "frags": 2,
+    "scenes": [
+     "54"
+    ]
+   },
+   {
+    "task": "1083",
+    "name": "心结",
+    "chain": [
+     "54"
+    ],
+    "field": "54",
+    "frags": 3,
+    "scenes": [
+     "54"
+    ]
+   },
+   {
+    "task": "1084",
+    "name": "和时间赛跑",
+    "chain": [
+     "23"
+    ],
+    "field": "23",
+    "frags": 5,
+    "scenes": [
+     "23"
+    ]
+   }
+  ],
+  "label": "和时间赛跑"
+ },
+ {
+  "id": "104",
+  "script": "GreatRocksyStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4024",
+    "name": "伟大的地质学家",
+    "chain": [],
+    "field": "7",
+    "frags": 5,
+    "scenes": [
+     "7",
+     "43"
+    ]
+   }
+  ],
+  "label": "伟大的地质学家"
+ },
+ {
+  "id": "105",
+  "script": "StonehengeStoryScript.ats",
+  "tasks": [
+   {
+    "task": "138",
+    "name": "研究报告",
+    "chain": [
+     "35",
+     "57"
+    ],
+    "field": "57",
+    "frags": 6,
+    "scenes": [
+     "35",
+     "57"
+    ]
+   },
+   {
+    "task": "139",
+    "name": "巨石复活",
+    "chain": [
+     "35"
+    ],
+    "field": "35",
+    "frags": 7,
+    "scenes": [
+     "35"
+    ]
+   }
+  ],
+  "label": "巨石疑阵"
+ },
+ {
+  "id": "106",
+  "script": "MourningDayDrizzleStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4025",
+    "name": "清明时节雨纷纷",
+    "chain": [],
+    "field": "103",
+    "frags": 5,
+    "scenes": [
+     "7",
+     "103"
+    ]
+   }
+  ],
+  "label": "清明时节雨纷纷"
+ },
+ {
+  "id": "107",
+  "script": "InfernalAffairsStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1085",
+    "name": "暗中调查",
+    "chain": [
+     "14"
+    ],
+    "field": "14",
+    "frags": 5,
+    "scenes": [
+     "14"
+    ]
+   },
+   {
+    "task": "1086",
+    "name": "未知的真相",
+    "chain": [
+     "56"
+    ],
+    "field": "60",
+    "frags": 7,
+    "scenes": [
+     "56",
+     "60"
+    ]
+   },
+   {
+    "task": "1087",
+    "name": "层层迷局",
+    "chain": [
+     "14"
+    ],
+    "field": "14",
+    "frags": 3,
+    "scenes": [
+     "14"
+    ]
+   },
+   {
+    "task": "1088",
+    "name": "无间道",
+    "chain": [
+     "120"
+    ],
+    "field": "124",
+    "frags": 7,
+    "scenes": [
+     "120",
+     "124"
+    ]
+   }
+  ],
+  "label": "无间道"
+ },
+ {
+  "id": "108",
+  "script": "BraveDolphin.ats",
+  "tasks": [
+   {
+    "task": "4026",
+    "name": "海豚的进化",
+    "chain": [],
+    "field": null,
+    "frags": 4,
+    "scenes": []
+   }
+  ],
+  "label": "海豚的进化"
+ },
+ {
+  "id": "109",
+  "script": "DeepBlueSeaStoryScript.ats",
+  "tasks": [
+   {
+    "task": "140",
+    "name": "海洋之哮",
+    "chain": [
+     "6",
+     "38"
+    ],
+    "field": "38",
+    "frags": 9,
+    "scenes": [
+     "6",
+     "38"
+    ]
+   },
+   {
+    "task": "141",
+    "name": "救援线索",
+    "chain": [
+     "6"
+    ],
+    "field": "6",
+    "frags": 8,
+    "scenes": [
+     "6"
+    ]
+   }
+  ],
+  "label": "碧海深蓝"
+ },
+ {
+  "id": "110",
+  "script": "RescureSpirits.ats",
+  "tasks": [
+   {
+    "task": "4027",
+    "name": "被困的宠物",
+    "chain": [],
+    "field": "13",
+    "frags": 2,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "被困的宠物"
+ },
+ {
+  "id": "111",
+  "script": "FunnyHuntingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1089",
+    "name": "那只是一个传说",
+    "chain": [
+     "17"
+    ],
+    "field": "17",
+    "frags": 3,
+    "scenes": [
+     "17"
+    ]
+   },
+   {
+    "task": "1090",
+    "name": "捕猎雪怪",
+    "chain": [
+     "100"
+    ],
+    "field": "126",
+    "frags": 5,
+    "scenes": [
+     "100",
+     "126"
+    ]
+   },
+   {
+    "task": "1091",
+    "name": "将计就计",
+    "chain": [
+     "58"
+    ],
+    "field": "58",
+    "frags": 2,
+    "scenes": [
+     "58"
+    ]
+   },
+   {
+    "task": "1092",
+    "name": "抵达",
+    "chain": [
+     "55"
+    ],
+    "field": "55",
+    "frags": 3,
+    "scenes": [
+     "55"
+    ]
+   }
+  ],
+  "label": "搞怪捕猎"
+ },
+ {
+  "id": "112",
+  "script": "FleetOfLava.ats",
+  "tasks": [
+   {
+    "task": "4028",
+    "name": "拉瓦的船队",
+    "chain": [],
+    "field": "25",
+    "frags": 3,
+    "scenes": [
+     "25",
+     "76"
+    ]
+   }
+  ],
+  "label": "拉瓦的船队"
+ },
+ {
+  "id": "113",
+  "script": "UncleSamStoryScript.ats",
+  "tasks": [
+   {
+    "task": "142",
+    "name": "新店开张",
+    "chain": [
+     "128"
+    ],
+    "field": "128",
+    "frags": 6,
+    "scenes": [
+     "128"
+    ]
+   },
+   {
+    "task": "143",
+    "name": "共同的昨日",
+    "chain": [
+     "115"
+    ],
+    "field": "115",
+    "frags": 5,
+    "scenes": [
+     "115"
+    ]
+   },
+   {
+    "task": "144",
+    "name": "和好的关键",
+    "chain": [
+     "119"
+    ],
+    "field": "119",
+    "frags": 6,
+    "scenes": [
+     "119"
+    ]
+   }
+  ],
+  "label": "山姆大叔"
+ },
+ {
+  "id": "114",
+  "script": "ToHelpStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4029",
+    "name": "和好的关键",
+    "chain": [],
+    "field": "14",
+    "frags": 2,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "去帮忙喽"
+ },
+ {
+  "id": "115",
+  "script": "TheKeyNo4StoryScript.ats",
+  "tasks": [
+   {
+    "task": "1093",
+    "name": "奇怪的现象",
+    "chain": [
+     "51",
+     "118"
+    ],
+    "field": "118",
+    "frags": 5,
+    "scenes": [
+     "51",
+     "118"
+    ]
+   },
+   {
+    "task": "1094",
+    "name": "扑朔迷离",
+    "chain": [
+     "52"
+    ],
+    "field": "52",
+    "frags": 1,
+    "scenes": [
+     "52"
+    ]
+   },
+   {
+    "task": "1095",
+    "name": "真相大白",
+    "chain": [
+     "78"
+    ],
+    "field": "78",
+    "frags": 2,
+    "scenes": [
+     "78"
+    ]
+   }
+  ],
+  "label": "关键第四号"
+ },
+ {
+  "id": "116",
+  "script": "RocoAdventure.ats",
+  "tasks": [
+   {
+    "task": "4030",
+    "name": "洛克大探险",
+    "chain": [],
+    "field": "32",
+    "frags": 2,
+    "scenes": [
+     "32"
+    ]
+   }
+  ],
+  "label": "洛克大探险"
+ },
+ {
+  "id": "117",
+  "script": "ThePrincessComesAcrossStoryScript.ats",
+  "tasks": [
+   {
+    "task": "145",
+    "name": "公主驾到",
+    "chain": [
+     "97",
+     "26",
+     "100"
+    ],
+    "field": "100",
+    "frags": 7,
+    "scenes": [
+     "26",
+     "100",
+     "125"
+    ]
+   },
+   {
+    "task": "146",
+    "name": "被忘记的忘记",
+    "chain": [
+     "14",
+     "6",
+     "9"
+    ],
+    "field": "9",
+    "frags": 8,
+    "scenes": [
+     "6",
+     "9",
+     "14",
+     "125"
+    ]
+   },
+   {
+    "task": "147",
+    "name": "以未来之名",
+    "chain": [
+     "130"
+    ],
+    "field": "130",
+    "frags": 2,
+    "scenes": [
+     "130"
+    ]
+   }
+  ],
+  "label": "公主驾到"
+ },
+ {
+  "id": "118",
+  "script": "RocoPetRescue.ats",
+  "tasks": [
+   {
+    "task": "4031",
+    "name": "救治受伤的宠物",
+    "chain": [],
+    "field": "57",
+    "frags": 2,
+    "scenes": [
+     "57"
+    ]
+   }
+  ],
+  "label": "救治受伤的宠物"
+ },
+ {
+  "id": "119",
+  "script": "ForbidenPlaceStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1096",
+    "name": "雷电重重",
+    "chain": [
+     "59",
+     "61"
+    ],
+    "field": "61",
+    "frags": 3,
+    "scenes": [
+     "59",
+     "61"
+    ]
+   },
+   {
+    "task": "1097",
+    "name": "救治",
+    "chain": [
+     "61"
+    ],
+    "field": "61",
+    "frags": 3,
+    "scenes": [
+     "61"
+    ]
+   },
+   {
+    "task": "1098",
+    "name": "雷霆禁地",
+    "chain": [
+     "131"
+    ],
+    "field": "131",
+    "frags": 1,
+    "scenes": [
+     "131"
+    ]
+   }
+  ],
+  "label": "禁地的传说"
+ },
+ {
+  "id": "120",
+  "script": "BlkyWish.ats",
+  "tasks": [
+   {
+    "task": "4032",
+    "name": "布莱克岩的愿望",
+    "chain": [],
+    "field": null,
+    "frags": 12,
+    "scenes": [
+     "11",
+     "83"
+    ]
+   }
+  ],
+  "label": "布莱克岩的愿望"
+ },
+ {
+  "id": "121",
+  "script": "DragonEnvironmentalAdventuresStoryScript.ats",
+  "tasks": [
+   {
+    "task": "148",
+    "name": "被欺负的麻雀",
+    "chain": [
+     "81",
+     "80"
+    ],
+    "field": "80",
+    "frags": 7,
+    "scenes": [
+     "80",
+     "81"
+    ]
+   },
+   {
+    "task": "149",
+    "name": "狼来了",
+    "chain": [
+     "81"
+    ],
+    "field": "81",
+    "frags": 4,
+    "scenes": [
+     "81"
+    ]
+   },
+   {
+    "task": "150",
+    "name": "龙的能力",
+    "chain": [
+     "81"
+    ],
+    "field": "121",
+    "frags": 5,
+    "scenes": [
+     "81",
+     "121"
+    ]
+   }
+  ],
+  "label": "龙境奇谈"
+ },
+ {
+  "id": "122",
+  "script": "ChildrensDayOf2011.ats",
+  "tasks": [
+   {
+    "task": "4033",
+    "name": "宠物运动会",
+    "chain": [],
+    "field": "14",
+    "frags": 5,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "宠物运动会"
+ },
+ {
+  "id": "123",
+  "script": "RedAttacksStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1099",
+    "name": "陷阱",
+    "chain": [
+     "120",
+     "80"
+    ],
+    "field": "80",
+    "frags": 4,
+    "scenes": [
+     "80",
+     "120"
+    ]
+   },
+   {
+    "task": "1100",
+    "name": "苦肉计",
+    "chain": [
+     "82"
+    ],
+    "field": "44",
+    "frags": 6,
+    "scenes": [
+     "44",
+     "82"
+    ]
+   },
+   {
+    "task": "1101",
+    "name": "回溯",
+    "chain": [
+     "132"
+    ],
+    "field": "132",
+    "frags": 2,
+    "scenes": [
+     "132"
+    ]
+   },
+   {
+    "task": "1102",
+    "name": "灰飞烟灭",
+    "chain": [
+     "82"
+    ],
+    "field": "82",
+    "frags": 2,
+    "scenes": [
+     "82"
+    ]
+   }
+  ],
+  "label": "赤色的逆袭"
+ },
+ {
+  "id": "124",
+  "script": "DragonBoatFestivalScript.ats",
+  "tasks": [
+   {
+    "task": "4034",
+    "name": "端午节包粽子",
+    "chain": [],
+    "field": "14",
+    "frags": 6,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "端午节的粽子"
+ },
+ {
+  "id": "125",
+  "script": "SleepingBeautyStoryScript.ats",
+  "tasks": [
+   {
+    "task": "151",
+    "name": "魔幻笛声",
+    "chain": [
+     "6",
+     "22"
+    ],
+    "field": "22",
+    "frags": 7,
+    "scenes": [
+     "6",
+     "22"
+    ]
+   },
+   {
+    "task": "152",
+    "name": "书中世界",
+    "chain": [
+     "24"
+    ],
+    "field": "133",
+    "frags": 4,
+    "scenes": [
+     "24",
+     "133"
+    ]
+   },
+   {
+    "task": "153",
+    "name": "声中隐情",
+    "chain": [
+     "24"
+    ],
+    "field": "24",
+    "frags": 2,
+    "scenes": [
+     "24"
+    ]
+   }
+  ],
+  "label": "睡美人"
+ },
+ {
+  "id": "126",
+  "script": "MeaningOfExistence.ats",
+  "tasks": [
+   {
+    "task": "1103",
+    "name": "秘密",
+    "chain": [
+     "25",
+     "51"
+    ],
+    "field": "51",
+    "frags": 7,
+    "scenes": [
+     "25",
+     "51"
+    ]
+   },
+   {
+    "task": "1104",
+    "name": "我们的存在",
+    "chain": [
+     "51"
+    ],
+    "field": "51",
+    "frags": 3,
+    "scenes": [
+     "51"
+    ]
+   },
+   {
+    "task": "1105",
+    "name": "别让我走",
+    "chain": [
+     "134"
+    ],
+    "field": "134",
+    "frags": 5,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "我们的存在"
+ },
+ {
+  "id": "127",
+  "script": "ArbiterFrankStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4035",
+    "name": "仲裁者弗兰克",
+    "chain": [],
+    "field": "9",
+    "frags": 5,
+    "scenes": [
+     "9"
+    ]
+   }
+  ],
+  "label": "仲裁者弗兰克"
+ },
+ {
+  "id": "128",
+  "script": "AnotherMyselfStoryScript.ats",
+  "tasks": [
+   {
+    "task": "154",
+    "name": "呆滞的安妮",
+    "chain": [
+     "2",
+     "50"
+    ],
+    "field": "50",
+    "frags": 10,
+    "scenes": [
+     "2",
+     "50"
+    ]
+   },
+   {
+    "task": "155",
+    "name": "另一个世界",
+    "chain": [
+     "135"
+    ],
+    "field": "136",
+    "frags": 5,
+    "scenes": [
+     "135",
+     "136"
+    ]
+   }
+  ],
+  "label": "世上的另一个我"
+ },
+ {
+  "id": "129",
+  "script": "MysteriousEyesStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4036",
+    "name": "神秘的目光",
+    "chain": [],
+    "field": "43",
+    "frags": 8,
+    "scenes": [
+     "43"
+    ]
+   }
+  ],
+  "label": "神秘的目光"
+ },
+ {
+  "id": "130",
+  "script": "FathersDay.ats",
+  "tasks": [
+   {
+    "task": "4037",
+    "name": "父亲节的由来",
+    "chain": [],
+    "field": "128",
+    "frags": 4,
+    "scenes": [
+     "31",
+     "128"
+    ]
+   }
+  ],
+  "label": "父亲节的由来"
+ },
+ {
+  "id": "131",
+  "script": "GodMayCry.ats",
+  "tasks": [
+   {
+    "task": "2006",
+    "name": "翻修魔法台",
+    "chain": [
+     "6",
+     "138"
+    ],
+    "field": "138",
+    "frags": 4,
+    "scenes": [
+     "6",
+     "138"
+    ]
+   },
+   {
+    "task": "2007",
+    "name": "寻找三大神器",
+    "chain": [
+     "137",
+     "6",
+     "33",
+     "111"
+    ],
+    "field": "33",
+    "frags": 7,
+    "scenes": [
+     "6",
+     "18",
+     "33",
+     "111"
+    ]
+   },
+   {
+    "task": "2008",
+    "name": "神泣",
+    "chain": [
+     "34",
+     "6"
+    ],
+    "field": "34",
+    "frags": 5,
+    "scenes": [
+     "6",
+     "34"
+    ]
+   }
+  ],
+  "label": "神泣"
+ },
+ {
+  "id": "132",
+  "script": "MysteryguestStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4047",
+    "name": "神秘宠物",
+    "chain": [],
+    "field": null,
+    "frags": 8,
+    "scenes": []
+   }
+  ],
+  "label": "诡异的宠物"
+ },
+ {
+  "id": "133",
+  "script": "SaveTheSkyStoryScript.ats",
+  "tasks": [
+   {
+    "task": "156",
+    "name": "天空危难",
+    "chain": [
+     "28"
+    ],
+    "field": "28",
+    "frags": 6,
+    "scenes": [
+     "28"
+    ]
+   },
+   {
+    "task": "157",
+    "name": "彩虹河流",
+    "chain": [
+     "140"
+    ],
+    "field": "140",
+    "frags": 1,
+    "scenes": [
+     "140"
+    ]
+   }
+  ],
+  "label": "行动！解救天空！"
+ },
+ {
+  "id": "134",
+  "script": "FourMeetingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4039",
+    "name": "任务 4039",
+    "chain": [],
+    "field": "120",
+    "frags": 13,
+    "scenes": [
+     "120"
+    ]
+   }
+  ],
+  "label": "四方会谈邀请"
+ },
+ {
+  "id": "135",
+  "script": "BigRescueReversedStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1106",
+    "name": "疑团",
+    "chain": [
+     "20",
+     "5"
+    ],
+    "field": "40",
+    "frags": 7,
+    "scenes": [
+     "6",
+     "20",
+     "40"
+    ]
+   },
+   {
+    "task": "1107",
+    "name": "准备",
+    "chain": [
+     "134"
+    ],
+    "field": "134",
+    "frags": 3,
+    "scenes": [
+     "134"
+    ]
+   },
+   {
+    "task": "1108",
+    "name": "最终大决战",
+    "chain": [
+     "139"
+    ],
+    "field": "139",
+    "frags": 2,
+    "scenes": [
+     "139"
+    ]
+   }
+  ],
+  "label": "逆转大营救"
+ },
+ {
+  "id": "136",
+  "script": "FourMeetingCurrentDayStoryScript.ats",
+  "tasks": [
+   {
+    "task": "158",
+    "name": "元首四方会谈",
+    "chain": [],
+    "field": null,
+    "frags": 4,
+    "scenes": []
+   },
+   {
+    "task": "159",
+    "name": "元首四方会谈",
+    "chain": [],
+    "field": null,
+    "frags": 4,
+    "scenes": []
+   },
+   {
+    "task": "160",
+    "name": "元首四方会谈",
+    "chain": [],
+    "field": null,
+    "frags": 7,
+    "scenes": []
+   }
+  ],
+  "label": "元首四方会谈"
+ },
+ {
+  "id": "137",
+  "script": "TheBestGift.ats",
+  "tasks": [
+   {
+    "task": "4040",
+    "name": "最好的礼物",
+    "chain": [],
+    "field": "1",
+    "frags": 8,
+    "scenes": [
+     "1",
+     "7",
+     "18",
+     "75"
+    ]
+   }
+  ],
+  "label": "最好的礼物"
+ },
+ {
+  "id": "138",
+  "script": "JuniorGardenerTrialsStoryScript.ats",
+  "tasks": [
+   {
+    "task": "161",
+    "name": "从艾迪开始",
+    "chain": [
+     "26",
+     "128",
+     "7"
+    ],
+    "field": "7",
+    "frags": 9,
+    "scenes": [
+     "7",
+     "26"
+    ]
+   },
+   {
+    "task": "162",
+    "name": "平凡的意义",
+    "chain": [
+     "128"
+    ],
+    "field": "128",
+    "frags": 3,
+    "scenes": [
+     "128"
+    ]
+   },
+   {
+    "task": "163",
+    "name": "园艺师的真谛",
+    "chain": [
+     "128",
+     "26"
+    ],
+    "field": "128",
+    "frags": 5,
+    "scenes": [
+     "26",
+     "128"
+    ]
+   }
+  ],
+  "label": "初级园艺师试炼"
+ },
+ {
+  "id": "139",
+  "script": "GiftStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2009",
+    "name": "新生来了吗？",
+    "chain": [
+     "14"
+    ],
+    "field": "98",
+    "frags": 5,
+    "scenes": [
+     "14",
+     "98",
+     "142"
+    ]
+   },
+   {
+    "task": "2010",
+    "name": "暗黑魔法学院",
+    "chain": [
+     "142"
+    ],
+    "field": "142",
+    "frags": 2,
+    "scenes": [
+     "142"
+    ]
+   },
+   {
+    "task": "2011",
+    "name": "雕像的秘密",
+    "chain": [
+     "141"
+    ],
+    "field": "143",
+    "frags": 5,
+    "scenes": [
+     "143"
+    ]
+   }
+  ],
+  "label": "礼物"
+ },
+ {
+  "id": "140",
+  "script": "LostInMemory.ats",
+  "tasks": [
+   {
+    "task": "4041",
+    "name": "寻回失去的记忆",
+    "chain": [],
+    "field": "57",
+    "frags": 9,
+    "scenes": [
+     "51",
+     "57",
+     "142"
+    ]
+   }
+  ],
+  "label": "寻回失去的记忆"
+ },
+ {
+  "id": "141",
+  "script": "TimeMagicFluteStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1109",
+    "name": "第一只宠物",
+    "chain": [],
+    "field": "75",
+    "frags": 6,
+    "scenes": [
+     "75"
+    ]
+   },
+   {
+    "task": "1110",
+    "name": "破解之道",
+    "chain": [],
+    "field": "75",
+    "frags": 5,
+    "scenes": [
+     "75"
+    ]
+   },
+   {
+    "task": "1111",
+    "name": "怎能遗忘",
+    "chain": [],
+    "field": "75",
+    "frags": 1,
+    "scenes": [
+     "75"
+    ]
+   }
+  ],
+  "label": "时间大魔笛"
+ },
+ {
+  "id": "142",
+  "script": "CareerCertifyDetective.ats",
+  "tasks": [
+   {
+    "task": "164",
+    "name": "侦探能力认证",
+    "chain": [],
+    "field": "29",
+    "frags": 8,
+    "scenes": [
+     "11",
+     "29"
+    ]
+   }
+  ],
+  "label": "侦探能力认证"
+ },
+ {
+  "id": "143",
+  "script": "BusinessCompetencyStoryScript.ats",
+  "tasks": [
+   {
+    "task": "165",
+    "name": "商人能力认证",
+    "chain": [],
+    "field": "25",
+    "frags": 11,
+    "scenes": [
+     "17",
+     "25",
+     "27",
+     "51"
+    ]
+   }
+  ],
+  "label": "商人能力认证"
+ },
+ {
+  "id": "144",
+  "script": "SecretGuest.ats",
+  "tasks": [
+   {
+    "task": "4042",
+    "name": "神秘来客",
+    "chain": [],
+    "field": "14",
+    "frags": 5,
+    "scenes": [
+     "14",
+     "83",
+     "87"
+    ]
+   }
+  ],
+  "label": "神秘来客"
+ },
+ {
+  "id": "145",
+  "script": "AtlantisContinentStoryScript.ats",
+  "tasks": [
+   {
+    "task": "166",
+    "name": "巨大的危险",
+    "chain": [
+     "47",
+     "50"
+    ],
+    "field": "145",
+    "frags": 12,
+    "scenes": [
+     "38",
+     "47",
+     "145",
+     "146"
+    ]
+   },
+   {
+    "task": "167",
+    "name": "心魔之争",
+    "chain": [
+     "146"
+    ],
+    "field": "145",
+    "frags": 7,
+    "scenes": [
+     "145",
+     "146"
+    ]
+   }
+  ],
+  "label": "亚特兰蒂斯大陆"
+ },
+ {
+  "id": "146",
+  "script": "SecretGuest2.ats",
+  "tasks": [
+   {
+    "task": "4043",
+    "name": "糗事一箩筐",
+    "chain": [],
+    "field": "76",
+    "frags": 6,
+    "scenes": [
+     "12",
+     "14",
+     "76"
+    ]
+   }
+  ],
+  "label": "糗事一箩筐"
+ },
+ {
+  "id": "147",
+  "script": "AwakenStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2012",
+    "name": "乐乐怎么了？",
+    "chain": [
+     "38"
+    ],
+    "field": "38",
+    "frags": 8,
+    "scenes": [
+     "38"
+    ]
+   },
+   {
+    "task": "2013",
+    "name": "拯救亚特族",
+    "chain": [
+     "148"
+    ],
+    "field": "148",
+    "frags": 7,
+    "scenes": [
+     "148"
+    ]
+   }
+  ],
+  "label": "亚特族的觉醒"
+ },
+ {
+  "id": "148",
+  "script": "SpecialAgentStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4044",
+    "name": "特工",
+    "chain": [],
+    "field": "14",
+    "frags": 5,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "特工"
+ },
+ {
+  "id": "149",
+  "script": "DeathDuelStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1112",
+    "name": "角斗",
+    "chain": [
+     "145",
+     "150"
+    ],
+    "field": "150",
+    "frags": 3,
+    "scenes": [
+     "150"
+    ]
+   },
+   {
+    "task": "1113",
+    "name": "背后的阴谋",
+    "chain": [
+     "149"
+    ],
+    "field": "149",
+    "frags": 1,
+    "scenes": [
+     "149"
+    ]
+   },
+   {
+    "task": "1114",
+    "name": "可曾记得爱",
+    "chain": [
+     "149"
+    ],
+    "field": "149",
+    "frags": 1,
+    "scenes": [
+     "149"
+    ]
+   }
+  ],
+  "label": "生死决斗"
+ },
+ {
+  "id": "150",
+  "script": "disapearedDocuments.ats",
+  "tasks": [
+   {
+    "task": "4045",
+    "name": "消失的手稿",
+    "chain": [],
+    "field": "9",
+    "frags": 7,
+    "scenes": [
+     "9",
+     "24"
+    ]
+   }
+  ],
+  "label": "消失的手稿"
+ },
+ {
+  "id": "151",
+  "script": "PrincessBeingGetStoryScript.ats",
+  "tasks": [
+   {
+    "task": "168",
+    "name": "呆小路哭惨了",
+    "chain": [
+     "141",
+     "149",
+     "36",
+     "153"
+    ],
+    "field": "36",
+    "frags": 7,
+    "scenes": [
+     "36",
+     "149",
+     "153"
+    ]
+   },
+   {
+    "task": "169",
+    "name": "拯救公主大行动",
+    "chain": [
+     "36",
+     "153",
+     "147"
+    ],
+    "field": "153",
+    "frags": 5,
+    "scenes": [
+     "36",
+     "147",
+     "153"
+    ]
+   }
+  ],
+  "label": "公主被拐事件簿"
+ },
+ {
+  "id": "152",
+  "script": "KingsWishStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1115",
+    "name": "国王的心愿0",
+    "chain": [],
+    "field": null,
+    "frags": 1,
+    "scenes": []
+   },
+   {
+    "task": "1116",
+    "name": "国王的心愿1",
+    "chain": [],
+    "field": null,
+    "frags": 2,
+    "scenes": []
+   }
+  ],
+  "label": "国王的心愿（上）"
+ },
+ {
+  "id": "153",
+  "script": "AncientTreasure.ats",
+  "tasks": [
+   {
+    "task": "4046",
+    "name": "古老的宝藏",
+    "chain": [],
+    "field": "32",
+    "frags": 5,
+    "scenes": [
+     "32",
+     "81"
+    ]
+   }
+  ],
+  "label": "古老的宝藏"
+ },
+ {
+  "id": "154",
+  "script": "BrotherTogetherStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2014",
+    "name": "呆小路的兄弟",
+    "chain": [
+     "141",
+     "44"
+    ],
+    "field": "57",
+    "frags": 6,
+    "scenes": [
+     "44",
+     "57",
+     "133"
+    ]
+   },
+   {
+    "task": "2015",
+    "name": "笛笛笔",
+    "chain": [
+     "133"
+    ],
+    "field": "153",
+    "frags": 2,
+    "scenes": [
+     "153"
+    ]
+   },
+   {
+    "task": "2016",
+    "name": "救公主",
+    "chain": [
+     "152"
+    ],
+    "field": "152",
+    "frags": 2,
+    "scenes": [
+     "152"
+    ]
+   }
+  ],
+  "label": "兄弟齐心"
+ },
+ {
+  "id": "155",
+  "script": "ZhuiYueGuaGuaStoryScript.ats",
+  "tasks": [
+   {
+    "task": "170",
+    "name": "追月呱呱",
+    "chain": [],
+    "field": null,
+    "frags": 5,
+    "scenes": []
+   },
+   {
+    "task": "171",
+    "name": "浇灌矮月桂",
+    "chain": [],
+    "field": null,
+    "frags": 3,
+    "scenes": []
+   },
+   {
+    "task": "172",
+    "name": "快高长大泉水",
+    "chain": [],
+    "field": null,
+    "frags": 3,
+    "scenes": []
+   },
+   {
+    "task": "173",
+    "name": "吃人嘴软糖浆",
+    "chain": [],
+    "field": null,
+    "frags": 3,
+    "scenes": []
+   },
+   {
+    "task": "174",
+    "name": "追月呱呱的礼物",
+    "chain": [],
+    "field": null,
+    "frags": 1,
+    "scenes": []
+   }
+  ],
+  "label": "呱呱回月宫"
+ },
+ {
+  "id": "156",
+  "script": "MysteriousPetStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4047",
+    "name": "神秘宠物",
+    "chain": [],
+    "field": null,
+    "frags": 8,
+    "scenes": []
+   }
+  ],
+  "label": "神秘宠物"
+ },
+ {
+  "id": "157",
+  "script": "NewStudent.ats",
+  "tasks": [
+   {
+    "task": "1117",
+    "name": "生气的费得",
+    "chain": [
+     "5",
+     "59"
+    ],
+    "field": "59",
+    "frags": 2,
+    "scenes": [
+     "5",
+     "59"
+    ]
+   },
+   {
+    "task": "1118",
+    "name": "寻找",
+    "chain": [
+     "154"
+    ],
+    "field": "154",
+    "frags": 2,
+    "scenes": [
+     "154"
+    ]
+   },
+   {
+    "task": "1119",
+    "name": "安慰",
+    "chain": [
+     "134"
+    ],
+    "field": "134",
+    "frags": 2,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "学院的奇怪新生"
+ },
+ {
+  "id": "158",
+  "script": "IslandOfMysteriesStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1120",
+    "name": "谜之岛的消失",
+    "chain": [],
+    "field": "5",
+    "frags": 3,
+    "scenes": [
+     "5"
+    ]
+   },
+   {
+    "task": "1121",
+    "name": "谜之岛的消失",
+    "chain": [],
+    "field": "5",
+    "frags": 1,
+    "scenes": [
+     "5"
+    ]
+   }
+  ],
+  "label": "谜之岛的消失"
+ },
+ {
+  "id": "159",
+  "script": "CrystalSecretStoryScript.ats",
+  "tasks": [
+   {
+    "task": "5000",
+    "name": "圣龙水晶的秘密",
+    "chain": [],
+    "field": null,
+    "frags": 4,
+    "scenes": [
+     "131",
+     "141"
+    ]
+   }
+  ],
+  "label": "圣龙水晶的秘密"
+ },
+ {
+  "id": "160",
+  "script": "TimeTunnelStoryScript.ats",
+  "tasks": [
+   {
+    "task": "175",
+    "name": "受伤的菲尔特",
+    "chain": [
+     "134",
+     "156",
+     "31"
+    ],
+    "field": "156",
+    "frags": 5,
+    "scenes": [
+     "31",
+     "156"
+    ]
+   },
+   {
+    "task": "176",
+    "name": "秘道中的回忆",
+    "chain": [
+     "156",
+     "6"
+    ],
+    "field": "6",
+    "frags": 6,
+    "scenes": [
+     "6",
+     "156"
+    ]
+   }
+  ],
+  "label": "时之秘道"
+ },
+ {
+  "id": "161",
+  "script": "BeautifulSea.ats",
+  "tasks": [
+   {
+    "task": "4048",
+    "name": "美丽的海洋",
+    "chain": [],
+    "field": "19",
+    "frags": 3,
+    "scenes": [
+     "19"
+    ]
+   },
+   {
+    "task": "4049",
+    "name": "美丽的海洋",
+    "chain": [],
+    "field": "19",
+    "frags": 2,
+    "scenes": [
+     "19"
+    ]
+   },
+   {
+    "task": "4050",
+    "name": "美丽的海洋",
+    "chain": [],
+    "field": "19",
+    "frags": 2,
+    "scenes": [
+     "19"
+    ]
+   }
+  ],
+  "label": "美丽的海洋"
+ },
+ {
+  "id": "162",
+  "script": "JuniorDetectiveTrialStoryScript.ats",
+  "tasks": [
+   {
+    "task": "177",
+    "name": "从罗宾开始",
+    "chain": [
+     "29",
+     "19",
+     "78"
+    ],
+    "field": "78",
+    "frags": 9,
+    "scenes": [
+     "14",
+     "19",
+     "29",
+     "78"
+    ]
+   },
+   {
+    "task": "178",
+    "name": "侦探难题",
+    "chain": [
+     "78",
+     "29",
+     "16"
+    ],
+    "field": "16",
+    "frags": 8,
+    "scenes": [
+     "16",
+     "29",
+     "78"
+    ]
+   }
+  ],
+  "label": "初级侦探试炼"
+ },
+ {
+  "id": "163",
+  "script": "ForbidenBookStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1122",
+    "name": "疑神疑鬼",
+    "chain": [
+     "7",
+     "5",
+     "157"
+    ],
+    "field": "157",
+    "frags": 7,
+    "scenes": [
+     "7",
+     "157"
+    ]
+   },
+   {
+    "task": "1123",
+    "name": "幻之书",
+    "chain": [
+     "157"
+    ],
+    "field": "157",
+    "frags": 3,
+    "scenes": [
+     "6",
+     "157"
+    ]
+   },
+   {
+    "task": "1124",
+    "name": "焚书者",
+    "chain": [
+     "157"
+    ],
+    "field": "157",
+    "frags": 4,
+    "scenes": [
+     "6",
+     "156",
+     "157"
+    ]
+   }
+  ],
+  "label": "禁忌的幻之书"
+ },
+ {
+  "id": "164",
+  "script": "SummerVocationNoteStoryScript2.ats",
+  "tasks": [
+   {
+    "task": "4051",
+    "name": "暑假自然笔记",
+    "chain": [],
+    "field": "128",
+    "frags": 7,
+    "scenes": [
+     "31",
+     "128"
+    ]
+   }
+  ],
+  "label": "暑假自然笔记"
+ },
+ {
+  "id": "165",
+  "script": "MakingRedFlagStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4052",
+    "name": "做彩旗",
+    "chain": [],
+    "field": "87",
+    "frags": 9,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "做彩旗"
+ },
+ {
+  "id": "166",
+  "script": "TheMostImportantPartnerStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2017",
+    "name": "徽章继承者",
+    "chain": [
+     "6",
+     "141"
+    ],
+    "field": "141",
+    "frags": 3,
+    "scenes": [
+     "6",
+     "141"
+    ]
+   },
+   {
+    "task": "2018",
+    "name": "机智的法比亚",
+    "chain": [
+     "158"
+    ],
+    "field": "158",
+    "frags": 2,
+    "scenes": [
+     "158"
+    ]
+   },
+   {
+    "task": "2019",
+    "name": "巧遇桃桃",
+    "chain": [
+     "58"
+    ],
+    "field": "68",
+    "frags": 7,
+    "scenes": [
+     "58",
+     "68",
+     "71"
+    ]
+   }
+  ],
+  "label": "最重要的伙伴"
+ },
+ {
+  "id": "167",
+  "script": "YongShengStoryScript.ats",
+  "tasks": [
+   {
+    "task": "179",
+    "name": "追查",
+    "chain": [
+     "158",
+     "153"
+    ],
+    "field": "164",
+    "frags": 8,
+    "scenes": [
+     "164"
+    ]
+   },
+   {
+    "task": "180",
+    "name": "定义",
+    "chain": [
+     "158"
+    ],
+    "field": "163",
+    "frags": 8,
+    "scenes": [
+     "163"
+    ]
+   }
+  ],
+  "label": "永生的定义"
+ },
+ {
+  "id": "168",
+  "script": "DEarlStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2020",
+    "name": "小德出现",
+    "chain": [
+     "14",
+     "128"
+    ],
+    "field": "128",
+    "frags": 3,
+    "scenes": [
+     "14",
+     "128"
+    ]
+   },
+   {
+    "task": "2021",
+    "name": "寻找小德",
+    "chain": [
+     "89"
+    ],
+    "field": "89",
+    "frags": 10,
+    "scenes": [
+     "89"
+    ]
+   }
+  ],
+  "label": "D伯爵传说(上)"
+ },
+ {
+  "id": "169",
+  "script": "PowerTestStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4053",
+    "name": "体能测试",
+    "chain": [],
+    "field": "13",
+    "frags": 3,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "体能测试"
+ },
+ {
+  "id": "170",
+  "script": "MysteriousPlaceStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4054",
+    "name": "神秘之地",
+    "chain": [],
+    "field": "32",
+    "frags": 5,
+    "scenes": [
+     "32"
+    ]
+   }
+  ],
+  "label": "神秘之地"
+ },
+ {
+  "id": "171",
+  "script": "DEarlStoryScript2.ats",
+  "tasks": [
+   {
+    "task": "1125",
+    "name": "继续追踪",
+    "chain": [
+     "14",
+     "7"
+    ],
+    "field": "7",
+    "frags": 3,
+    "scenes": [
+     "7",
+     "14"
+    ]
+   },
+   {
+    "task": "1126",
+    "name": "可丽希亚在哪里",
+    "chain": [
+     "165"
+    ],
+    "field": "165",
+    "frags": 4,
+    "scenes": [
+     "165"
+    ]
+   },
+   {
+    "task": "1127",
+    "name": "可丽希亚又丢了",
+    "chain": [
+     "166"
+    ],
+    "field": "166",
+    "frags": 3,
+    "scenes": [
+     "166"
+    ]
+   },
+   {
+    "task": "1128",
+    "name": "英雄惜英雄",
+    "chain": [
+     "141"
+    ],
+    "field": "141",
+    "frags": 2,
+    "scenes": [
+     "141"
+    ]
+   },
+   {
+    "task": "1126_199600_nl",
+    "name": "任务 1126_199600_nl",
+    "chain": [],
+    "field": "165",
+    "frags": 4,
+    "scenes": [
+     "165"
+    ]
+   },
+   {
+    "task": "1127_199900_nl",
+    "name": "任务 1127_199900_nl",
+    "chain": [],
+    "field": "88",
+    "frags": 3,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "1128_200100_nl",
+    "name": "任务 1128_200100_nl",
+    "chain": [],
+    "field": "88",
+    "frags": 2,
+    "scenes": [
+     "88"
+    ]
+   }
+  ],
+  "label": "D伯爵传说(下)"
+ },
+ {
+  "id": "172",
+  "script": "MoonWerewolfStoryScript.ats",
+  "tasks": [
+   {
+    "task": "181",
+    "name": "冷月狼人",
+    "chain": [
+     "120",
+     "167",
+     "92"
+    ],
+    "field": "167",
+    "frags": 13,
+    "scenes": [
+     "92",
+     "120",
+     "167"
+    ]
+   }
+  ],
+  "label": "冷月狼人"
+ },
+ {
+  "id": "173",
+  "script": "JuniorExplorersTrialsStoryScript.ats",
+  "tasks": [
+   {
+    "task": "182",
+    "name": "梦幻卷轴",
+    "chain": [],
+    "field": "32",
+    "frags": 11,
+    "scenes": [
+     "32",
+     "105",
+     "106",
+     "114"
+    ]
+   }
+  ],
+  "label": "初级探险者试炼"
+ },
+ {
+  "id": "174",
+  "script": "SearchForFangfangStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4055",
+    "name": "找方方",
+    "chain": [],
+    "field": "14",
+    "frags": 4,
+    "scenes": [
+     "14"
+    ]
+   }
+  ],
+  "label": "找方方"
+ },
+ {
+  "id": "175",
+  "script": "ColdMoonWerewolf2StoryScript.ats",
+  "tasks": [
+   {
+    "task": "2022",
+    "name": "最新情报",
+    "chain": [
+     "14",
+     "90"
+    ],
+    "field": "168",
+    "frags": 5,
+    "scenes": [
+     "14",
+     "90",
+     "168"
+    ]
+   },
+   {
+    "task": "2023",
+    "name": "唤醒石像鬼",
+    "chain": [
+     "166"
+    ],
+    "field": "128",
+    "frags": 8,
+    "scenes": [
+     "4",
+     "26",
+     "128",
+     "166"
+    ]
+   },
+   {
+    "task": "2024",
+    "name": "最后决战",
+    "chain": [
+     "169"
+    ],
+    "field": "169",
+    "frags": 2,
+    "scenes": [
+     "169"
+    ]
+   }
+  ],
+  "label": "冷月狼人(下)"
+ },
+ {
+  "id": "176",
+  "script": "DuoduoAppearsStoryScript2.ats",
+  "tasks": [
+   {
+    "task": "4056",
+    "name": "木豆丁的故事",
+    "chain": [],
+    "field": null,
+    "frags": 6,
+    "scenes": []
+   }
+  ],
+  "label": "木豆丁的故事"
+ },
+ {
+  "id": "177",
+  "script": "IcePlaceTripStartingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "183",
+    "name": "冰原旅途之启程",
+    "chain": [],
+    "field": "13",
+    "frags": 9,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "冰原旅途之启程"
+ },
+ {
+  "id": "178",
+  "script": "DuoDuoStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4057",
+    "name": "木豆丁的故事之二",
+    "chain": [],
+    "field": null,
+    "frags": 8,
+    "scenes": [
+     "17",
+     "40",
+     "134"
+    ]
+   }
+  ],
+  "label": "木豆丁的故事之二"
+ },
+ {
+  "id": "179",
+  "script": "InventorStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2025",
+    "name": "大发明家",
+    "chain": [],
+    "field": "6",
+    "frags": 4,
+    "scenes": [
+     "6",
+     "9"
+    ]
+   },
+   {
+    "task": "2026",
+    "name": "发动机之谜",
+    "chain": [],
+    "field": "9",
+    "frags": 8,
+    "scenes": [
+     "9"
+    ]
+   },
+   {
+    "task": "2027",
+    "name": "制造冒险号引擎",
+    "chain": [],
+    "field": "9",
+    "frags": 5,
+    "scenes": [
+     "9",
+     "128"
+    ]
+   },
+   {
+    "task": "2028",
+    "name": "拼装发动机",
+    "chain": [],
+    "field": "4",
+    "frags": 4,
+    "scenes": [
+     "4"
+    ]
+   }
+  ],
+  "label": "大发明家"
+ },
+ {
+  "id": "180",
+  "script": "DuoDuo3StoryScript.ats",
+  "tasks": [
+   {
+    "task": "4058",
+    "name": "多多的出现",
+    "chain": [],
+    "field": null,
+    "frags": 7,
+    "scenes": [
+     "33",
+     "34",
+     "134"
+    ]
+   }
+  ],
+  "label": "木豆丁的故事之三"
+ },
+ {
+  "id": "181",
+  "script": "GoupStoryScript.ats",
+  "tasks": [
+   {
+    "task": "1129",
+    "name": "有朋相助",
+    "chain": [],
+    "field": "13",
+    "frags": 5,
+    "scenes": [
+     "12",
+     "13"
+    ]
+   },
+   {
+    "task": "1130",
+    "name": "挟持洛奇",
+    "chain": [],
+    "field": "13",
+    "frags": 3,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "进发（上）"
+ },
+ {
+  "id": "182",
+  "script": "DuoDuoAppearsStoryScript4.ats",
+  "tasks": [
+   {
+    "task": "4059",
+    "name": "木豆丁的新挑战",
+    "chain": [],
+    "field": null,
+    "frags": 8,
+    "scenes": []
+   }
+  ],
+  "label": "木豆丁的新挑战"
+ },
+ {
+  "id": "183",
+  "script": "Goup_2_StoryScript.ats",
+  "tasks": [
+   {
+    "task": "3032",
+    "name": "寻找洛奇",
+    "chain": [],
+    "field": "13",
+    "frags": 5,
+    "scenes": [
+     "13"
+    ]
+   },
+   {
+    "task": "3033",
+    "name": "恩佐的阴谋",
+    "chain": [],
+    "field": "13",
+    "frags": 2,
+    "scenes": [
+     "13"
+    ]
+   },
+   {
+    "task": "3034",
+    "name": "鸡牛部队偷引擎",
+    "chain": [],
+    "field": "13",
+    "frags": 5,
+    "scenes": [
+     "13"
+    ]
+   },
+   {
+    "task": "3035",
+    "name": "修引擎，洛克号完成",
+    "chain": [],
+    "field": "13",
+    "frags": 4,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "进发（下）"
+ },
+ {
+  "id": "184",
+  "script": "DuoDuoAppearsStoryScript5.ats",
+  "tasks": [
+   {
+    "task": "4060",
+    "name": "永夜森林",
+    "chain": [],
+    "field": "134",
+    "frags": 8,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "木豆丁的回忆"
+ },
+ {
+  "id": "185",
+  "script": "BusinessmanStoryScript.ats",
+  "tasks": [
+   {
+    "task": "184",
+    "name": "商人试炼",
+    "chain": [
+     "134",
+     "25",
+     "59",
+     "166"
+    ],
+    "field": "59",
+    "frags": 11,
+    "scenes": [
+     "59",
+     "134"
+    ]
+   }
+  ],
+  "label": "初级商人试炼"
+ },
+ {
+  "id": "186",
+  "script": "GaoLiGongLegend1.ats",
+  "tasks": [
+   {
+    "task": "3036",
+    "name": "初闻高黎贡山",
+    "chain": [],
+    "field": "32",
+    "frags": 7,
+    "scenes": [
+     "7",
+     "32"
+    ]
+   }
+  ],
+  "label": "高黎贡的传说（上）"
+ },
+ {
+  "id": "187",
+  "script": "SwordLegendStoryScript.ats",
+  "tasks": [
+   {
+    "task": "185",
+    "name": "圣剑传说",
+    "chain": [],
+    "field": "13",
+    "frags": 7,
+    "scenes": [
+     "13",
+     "92",
+     "181"
+    ]
+   }
+  ],
+  "label": "冰原旅途之圣剑传说"
+ },
+ {
+  "id": "188",
+  "script": "SmallCircleOfWooddingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4061",
+    "name": "木豆丁的小轮车",
+    "chain": [],
+    "field": "134",
+    "frags": 6,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "木豆丁的小轮车"
+ },
+ {
+  "id": "189",
+  "script": "BattleOfSwordsStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2040",
+    "name": "圣剑之战 之枫雪晚宴",
+    "chain": [],
+    "field": "13",
+    "frags": 8,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "圣剑之战 枫雪晚宴"
+ },
+ {
+  "id": "190",
+  "script": "DuoDuoAppearsStoryScript6.ats",
+  "tasks": [
+   {
+    "task": "4062",
+    "name": "敌人来袭",
+    "chain": [],
+    "field": "134",
+    "frags": 6,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "敌人来袭"
+ },
+ {
+  "id": "191",
+  "script": "ChristmasWishOfWoodDingStory.ats",
+  "tasks": [
+   {
+    "task": "4063",
+    "name": "木豆丁的圣诞愿望",
+    "chain": [],
+    "field": "134",
+    "frags": 10,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "木豆丁的圣诞愿望"
+ },
+ {
+  "id": "192",
+  "script": "GaoLiGongLegend2.ats",
+  "tasks": [
+   {
+    "task": "3037",
+    "name": "高黎贡的传说（下）",
+    "chain": [],
+    "field": "88",
+    "frags": 9,
+    "scenes": [
+     "14",
+     "88",
+     "179"
+    ]
+   }
+  ],
+  "label": "高黎贡的传说（下）"
+ },
+ {
+  "id": "193",
+  "script": "BattleOfSwordsStoryScriptSecond.ats",
+  "tasks": [
+   {
+    "task": "1139",
+    "name": "圣剑之战",
+    "chain": [],
+    "field": "88",
+    "frags": 6,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "1140",
+    "name": "举起圣剑",
+    "chain": [],
+    "field": "88",
+    "frags": 2,
+    "scenes": [
+     "88"
+    ]
+   }
+  ],
+  "label": "圣剑之战（下）"
+ },
+ {
+  "id": "194",
+  "script": "NewStartStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3038",
+    "name": "一波未平，一波又起",
+    "chain": [],
+    "field": "13",
+    "frags": 6,
+    "scenes": [
+     "13"
+    ]
+   },
+   {
+    "task": "3039",
+    "name": "冰系精灵王出现！",
+    "chain": [],
+    "field": "13",
+    "frags": 4,
+    "scenes": [
+     "13"
+    ]
+   },
+   {
+    "task": "3040",
+    "name": "恩佐的目的！",
+    "chain": [],
+    "field": "13",
+    "frags": 4,
+    "scenes": [
+     "13"
+    ]
+   }
+  ],
+  "label": "新的征程"
+ },
+ {
+  "id": "195",
+  "script": "DuoDuoAppearsStoryScript7.ats",
+  "tasks": [
+   {
+    "task": "4064",
+    "name": "可怕的黑暗力量",
+    "chain": [],
+    "field": "134",
+    "frags": 8,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "可怕的黑暗力量"
+ },
+ {
+  "id": "196",
+  "script": "JuniorKnightTrialStoryScript.ats",
+  "tasks": [
+   {
+    "task": "186",
+    "name": "守护边境",
+    "chain": [],
+    "field": "42",
+    "frags": 5,
+    "scenes": [
+     "13",
+     "42",
+     "56"
+    ]
+   },
+   {
+    "task": "187",
+    "name": "调查黑影",
+    "chain": [],
+    "field": "13",
+    "frags": 6,
+    "scenes": [
+     "13",
+     "42",
+     "125"
+    ]
+   },
+   {
+    "task": "188",
+    "name": "营救蔷薇骑士",
+    "chain": [],
+    "field": "13",
+    "frags": 8,
+    "scenes": [
+     "13",
+     "152"
+    ]
+   }
+  ],
+  "label": "初级骑士试炼"
+ },
+ {
+  "id": "197",
+  "script": "DuoDuoAppearsStoryScript8.ats",
+  "tasks": [
+   {
+    "task": "4065",
+    "name": "大决战",
+    "chain": [],
+    "field": "134",
+    "frags": 8,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "大决战"
+ },
+ {
+  "id": "198",
+  "script": "TwoTwonLeaderStoryScript.ats",
+  "tasks": [
+   {
+    "task": "189",
+    "name": "真假镇长",
+    "chain": [],
+    "field": "88",
+    "frags": 8,
+    "scenes": [
+     "88"
+    ]
+   }
+  ],
+  "label": "真假镇长"
+ },
+ {
+  "id": "199",
+  "script": "FengXueYearDreamStoryScript.ats",
+  "tasks": [
+   {
+    "task": "2041",
+    "name": "梦境枫雪年",
+    "chain": [],
+    "field": null,
+    "frags": 11,
+    "scenes": [
+     "12",
+     "175"
+    ]
+   }
+  ],
+  "label": "梦境枫雪年"
+ },
+ {
+  "id": "200",
+  "script": "WindSnowyTownProtectBattleStoryScript.ats",
+  "tasks": [
+   {
+    "task": "3041",
+    "name": "灯笼的作用",
+    "chain": [],
+    "field": "88",
+    "frags": 5,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "3042",
+    "name": "冰系精灵王的反击",
+    "chain": [],
+    "field": "88",
+    "frags": 5,
+    "scenes": [
+     "88"
+    ]
+   },
+   {
+    "task": "3043",
+    "name": "失乐园",
+    "chain": [],
+    "field": "88",
+    "frags": 4,
+    "scenes": [
+     "88"
+    ]
+   }
+  ],
+  "label": "枫雪镇保卫战（下）"
+ },
+ {
+  "id": "201",
+  "script": "FengXueBattleStoryScript1.ats",
+  "tasks": [
+   {
+    "task": "1141",
+    "name": "生命之路",
+    "chain": [],
+    "field": "88",
+    "frags": 7,
+    "scenes": [
+     "44",
+     "88"
+    ]
+   },
+   {
+    "task": "1142",
+    "name": "迎来希望",
+    "chain": [],
+    "field": "88",
+    "frags": 6,
+    "scenes": [
+     "14",
+     "88",
+     "192"
+    ]
+   },
+   {
+    "task": "1143",
+    "name": "初上灯笼",
+    "chain": [],
+    "field": "88",
+    "frags": 5,
+    "scenes": [
+     "88",
+     "184",
+     "192"
+    ]
+   }
+  ],
+  "label": "枫雪镇保卫战（上）"
+ },
+ {
+  "id": "202",
+  "script": "DuoDuoAppearsStoryScript9.ats",
+  "tasks": [
+   {
+    "task": "4066",
+    "name": "再见了，木豆丁！",
+    "chain": [],
+    "field": "134",
+    "frags": 9,
+    "scenes": [
+     "134"
+    ]
+   }
+  ],
+  "label": "再见了，木豆丁！"
+ },
+ {
+  "id": "204",
+  "script": "MagicPioneerStoryScript.ats",
+  "tasks": [
+   {
+    "task": "190",
+    "name": "先锋队的号角",
+    "chain": [
+     "190",
+     "55",
+     "46",
+     "140"
+    ],
+    "field": "140",
+    "frags": 10,
+    "scenes": [
+     "46",
+     "55",
+     "140",
+     "190"
+    ]
+   }
+  ],
+  "label": "魔法先锋队"
+ },
+ {
+  "id": "205",
+  "script": "PurseStolen.ats",
+  "tasks": [
+   {
+    "task": "4067",
+    "name": "红包不见了",
+    "chain": [],
+    "field": "29",
+    "frags": 8,
+    "scenes": [
+     "29"
+    ]
+   }
+  ],
+  "label": "红包不见了"
+ },
+ {
+  "id": "207",
+  "script": "YuanXiaoCustom.ats",
+  "tasks": [
+   {
+    "task": "4068",
+    "name": "元宵和孔明灯",
+    "chain": [],
+    "field": "87",
+    "frags": 6,
+    "scenes": [
+     "87"
+    ]
+   }
+  ],
+  "label": "元宵和孔明灯"
+ },
+ {
+  "id": "209",
+  "script": "BookSweepStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4069",
+    "name": "图书馆大清理",
+    "chain": [],
+    "field": "7",
+    "frags": 4,
+    "scenes": [
+     "7"
+    ]
+   }
+  ],
+  "label": "图书馆大清理"
+ },
+ {
+  "id": "211",
+  "script": "WinterHolidaysAssignmentStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4070",
+    "name": "菲尔特的寒假作业",
+    "chain": [],
+    "field": "31",
+    "frags": 4,
+    "scenes": [
+     "31"
+    ]
+   }
+  ],
+  "label": "菲尔特的寒假作业"
+ },
+ {
+  "id": "216",
+  "script": "SaplingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4072",
+    "name": "高黎贡山的树苗",
+    "chain": [],
+    "field": "185",
+    "frags": 6,
+    "scenes": [
+     "179",
+     "185"
+    ]
+   }
+  ],
+  "label": "高黎贡山的树苗"
+ },
+ {
+  "id": "218",
+  "script": "ButterflySeedlingStoryScript.ats",
+  "tasks": [
+   {
+    "task": "4073",
+    "name": "蝴蝶树苗",
+    "chain": [],
+    "field": "185",
+    "frags": 4,
+    "scenes": [
+     "185"
+    ]
+   }
+  ],
+  "label": "蝴蝶树苗"
+ }
+]

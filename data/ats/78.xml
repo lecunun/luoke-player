@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 CleanBeachStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="78" label="海上的漂浮物">
+  <Task id="4008" label="海上的漂浮物">
+    <!-- npcfun_g_xml · 场景 19 -->
+    <NPCFun sceneID="19" label="海上的漂浮物" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="109100" npcName="卡拉">最近从海的东方漂来了很多的东西，海滩上应该还有一些，你仔细找找。</Dialog>
+    				<Button label="我来收集" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="稍后再说" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|4008"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="142100" position="0|0">
+    	<View type="0" src="142100.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="collet_paper_142100">
+    		<Click event="NULL" fire="true"/>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="142300" position="0|0">
+    		<View type="0" src="142300.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="collet_paper_142300">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="142400" position="0|0">
+    			<View type="0" src="142400.swf" atLayerID="2" hasClick="false"/>
+    			<Create>
+    			<ViewEvent type="collet_paper_142400">
+    				<Click event="NULL" fire="true"/>
+    			</ViewEvent>
+    			</Create>
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 19 -->
+    <NPCFun sceneID="19" label="海上的漂浮物" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="4008"/>
+    					<Case value="0">
+    						<Script type="dialog">
+    							<Page>
+    									<Dialog npcID="109100" npcName="卡拉">继续找，看还能找到什么线索。</Dialog>
+    									<Button label="好的" close="true">
+    										<End/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    						<Case value="1">
+    							<Script type="dialog">
+    								<Page>
+    									<Dialog npcID="109100" npcName="卡拉">太感谢你了，我觉得海的东边那头一定发生了什么大事，你看这里有很多都不是我们洛克王国的东西。</Dialog>
+    									<Button label="嗯，去研究下" close="true">
+    										<Click event="onTaskCall2" params="2|4008"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    					</Script>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

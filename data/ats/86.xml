@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 NewYearRedEnvolop.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="86" label="洛克大拜年">
+  <Task id="4013" label="洛克大拜年">
+    <!-- npcfun_100100 · 场景 6 -->
+    <NPCFun sceneID="6" label="洛克大拜年" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">新年到了，呵呵，小洛克们红包都拿了吗？快去找找大家，看看他们为你准备红包了没？哈哈哈，去问问麦斯威尔、皮卡、罗伦斯、瑞可、万事通吧，他们还有很多祝福要送给你哦，快去找他们吧。</Dialog>
+                    <Button label="我现在就去" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="稍候片刻" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4013"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_100900 · 场景 14 -->
+    <NPCFun sceneID="14" label="给你拜年啦" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100900" npcName="麦斯威尔">哦哈哈，新年快乐！新年快乐！明年要加倍努力学习哦。</Dialog>
+                    <Button label="新年快乐！" nextID="-1" close="true">
+                        <Goto value="getRedEnvolop"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="getRedEnvolop" type="asWindow" src="task/4013/task_4013_getRedEnvolop" winPos="0|0" name="得到红包">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="100901"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_100800 · 场景 2 -->
+    <NPCFun sceneID="2" label="给你拜年啦" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100800" npcName="皮卡">新年快乐！新年要穿新衣服哦，你买新衣服了吗？呵呵，记得多来服装店哦。</Dialog>
+                    <Button label="新年快乐！" nextID="-1" close="true">
+                        <Goto value="getRedEnvolop"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="getRedEnvolop" type="asWindow" src="task/4013/task_4013_getRedEnvolop" winPos="0|0" name="得到红包">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="100801"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_102600 · 场景 27 -->
+    <NPCFun sceneID="27" label="给你拜年啦" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="102600" npcName="罗伦斯">新年快乐哈哈哈，记得常来照顾我的生意啊。</Dialog>
+                    <Button label="新年快乐！" nextID="-1" close="true">
+                        <Goto value="getRedEnvolop"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="getRedEnvolop" type="asWindow" src="task/4013/task_4013_getRedEnvolop" winPos="0|0" name="得到红包">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="102601"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_126700 · 场景 16 -->
+    <NPCFun sceneID="16" label="给你拜年啦" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="126700" npcName="瑞可">新年快乐，要好好吃，好好玩哦。注意身体哦。</Dialog>
+                    <Button label="新年快乐！" nextID="-1" close="true">
+                        <Goto value="getRedEnvolop"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="getRedEnvolop" type="asWindow" src="task/4013/task_4013_getRedEnvolop" winPos="0|0" name="得到红包">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="126701"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_102200 · 场景 1 -->
+    <NPCFun sceneID="1" label="给你拜年啦" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="102200" npcName="万事通">新年快乐，要好好休息，记得常来看我哦。这是你的红包。</Dialog>
+                    <Button label="新年快乐！" nextID="-1" close="true">
+                        <Goto value="getRedEnvolop"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="getRedEnvolop" type="asWindow" src="task/4013/task_4013_getRedEnvolop" winPos="0|0" name="得到红包">
+                <Default><Goto value="conditionOneUpdate"/></Default>
+            </Script>
+            <Click label="conditionOneUpdate" event="NULL" fire="true" fireID="102201"/>
+        </Click>
+    </NPCFun>
+    <!-- npcfun_100100_submit · 场景 6 -->
+    <NPCFun sceneID="6" label="洛克大拜年" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4013"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">麦斯威尔、万事通、瑞可、皮卡、罗伦斯。好好想想，你把谁给忘了？</Dialog>
+                    <Button label="好的，我拜年去了！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="asWindow" src="task/4013/task_4013_happyNewYear" winPos="0|0" name="得到红包">
+                <Default><Goto value="newYearConversation"/></Default>
+            </Script>
+            <Script label="newYearConversation" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="100100" npcName="格里芬">新年是一个新的开始，很多老师都给了你祝福，但是你要通过自己的努力才能取得更好的成绩，新的一年要加油，不要放弃，要更加努力。小洛克我相信你一定会有更大的进步！</Dialog>
+                    <Button label="谢谢！新年快乐！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4013"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

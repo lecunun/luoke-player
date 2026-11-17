@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GodMayCry.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="131" label="神泣">
+  <Task id="2006" label="翻修魔法台">
+    <!-- npcfun_glf_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="翻修魔法台" icon="-1" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="100100" npcName="格里芬"><![CDATA[{name},你来的正好！下个月学院将举行开学典礼，盛典的场地就定在魔法台！]]></Dialog>
+    		      <Button label="那个乱石岗？很多年都无人问津了啊！" nextID="-1" close="false">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="dialog">
+    		    <Page id="0">
+    		      <Dialog npcID="100100" npcName="格里芬">是啊，所以我们下血本聘请了一位建筑师，主持魔法台的修建工作。不过他好像还缺一些人手，你去魔法台帮帮他吧！</Dialog>
+    		      <Button label="没问题。" nextID="-1" close="true">
+    		        <Goto value="index_0_2"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Click label="index_0_2" event="onTaskCall2" params="1|2006"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_wz_xml · 场景 138 -->
+    <Npc sceneID="138" type="1" npcID="173800" position="628|311" aimPos="628|311" name="伍兹">
+    		<View type="0" src="173800.swf" atLayerID="2" hasClick="true"/>
+    		   <Create>
+    				<Task id="2006" care="2"/>
+    			</Create>
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="173800" npcName="伍兹">哦？你是院长派来的帮手？看看我的成果吧！一个即将载入史册的建筑诞生了！你看这浮雕，你看这纹理……</Dialog>
+    			      <Button label="那三个奇怪的盘子是什么？" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    					<Dialog npcID="173800" npcName="伍兹">盘子？那是专用来摆放“神器”的器皿！你不要小看这座魔法台，它的朝向、石料材质都处处蕴含着能量，也就是制衡的力量！</Dialog>
+    			      <Button label="制衡的力量，难道是说风水？" nextID="-1" close="false">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+    				  <Dialog npcID="173800" npcName="伍兹">你也可以这么理解！制衡就是几种巨大的力量互相牵制，从而形成强大的保护力！来看看我的设计图吧！</Dialog>
+    			      <Button label="好的。" nextID="-1" close="true">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_3" type="asWindow" src="task/2006/AboutFiveElements" winPos="0|0" name="关于五行">
+    			    <Default>
+    			      <Goto value="index_0_4"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_4" type="dialog">
+    			    <Page id="0">
+    				  <Dialog npcID="173800" npcName="伍兹">现在懂了吗？只有得到了这三个代表不同力量的神器，这座魔法台才能发挥它最大的保护作用！</Dialog>
+    			      <Button label="用小动物做神器，不太好吧。" nextID="-1" close="false">
+    			        <Goto value="index_0_5"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_5" type="dialog">
+    			    <Page id="0">
+                    <Dialog npcID="173800" npcName="伍兹">你懂什么？如果没有这五行力量的保护，难道你不怕举行庆典的时候，恩佐突然降临？！</Dialog>
+    			      <Button label="这……" nextID="-1" close="false">
+    			        <Goto value="index_0_6"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_6" type="dialog">
+    			    <Page id="0">
+                    <Dialog npcID="173800" npcName="伍兹">别这这那那了，既然格里芬让你来帮我，那你就要服从我的命令！现在，我命令你，去海螺洞穴打败幽暗蘑菇，寻找定海珠！至于象牙和金钱豹子皮嘛……</Dialog>
+    			      <Button label="这两个值钱的要怎么找呢？" nextID="-1" close="false">
+    			        <Goto value="index_0_7"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_7" type="dialog">
+    			    <Page id="0">
+                    <Dialog npcID="173800" npcName="伍兹">这两个神器确实非常难找到，尤其是金钱豹，现在已经灭绝了！只有一个办法，才可能找到它们！</Dialog>
+    			      <Button label="什么办法？让金钱豹复活？" nextID="-1" close="false">
+    			        <Goto value="index_0_8"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_8" type="dialog">
+    			    <Page id="0">
+                    <Dialog npcID="173800" npcName="伍兹">穿越，穿越到100年前，那时金钱豹还没有灭绝，大象也没有现在这么罕见！问格里芬借时光沙漏，应该可以回到过去！</Dialog>
+    			      <Button label="好的！行动！" nextID="-1" close="true">
+    			        <Goto value="index_0_9"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_9" event="onTaskCall2" params="2|2006"/>
+    			</Click>
+    
+    	</Npc>
+    <!-- app_get_xml · 场景 138 -->
+    <NPCFun label="app_get" sceneID="138">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2006/get_2006" winPos="0|0" name="提示ui1">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="138" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- npc_mftd_xml · 场景 138 -->
+    <Npc sceneID="138" type="1" npcID="173700" position="382|392" aimPos="382|392" name="魔法台">
+               <View type="0" src="173700.swf" atLayerID="2" hasClick="true" height="180"/>
+               <Create>
+    				<Task id="2006" care="2"/>
+    			</Create>
+    			<Click event="onRunScript">
+    			  <Click label="default" event="onChangeScene" params="138"/>
+    			</Click>
+    	
+       </Npc>
+  </Task>
+  <Task id="2007" label="寻找三大神器">
+    <!-- npcfun_wzsl_xml · 场景 33 -->
+    <Npc sceneID="33" type="1" npcID="172900" position="751|376" aimPos="751|376">
+    			<View type="0" src="172900.swf" atLayerID="2" hasClick="true"/>
+    				<Click event="onRunScript">
+    				  <Script label="default" type="dialog">
+    				    <Page id="0">
+                        <Dialog npcID="172900" npcName="伍兹">我已经借到了时光沙漏，快和我一起回去寻找象牙和金钱豹皮吧！我在索米亚草原等你，听说那是动物们过去常聚的地方。</Dialog>
+    				      <Button label="好的！出发吧！" nextID="-1" close="true">
+    				        <Goto value="index_0_1"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Click label="index_0_1" event="NULL" fire="true"/>
+    				</Click>
+       </Npc>
+    <!-- npcfun_dxx_xml · 场景 33 -->
+    <Npc sceneID="33" type="1" npcID="173000" position="480|280" aimPos="480|280" name="大小象">
+    			<View type="0" src="173000.swf" atLayerID="2" hasClick="false"/>
+    			<Create>	
+    				<ViewEvent type="GotIt0_2007_173000">
+    					<Click event="onRunScript">
+    					  <Script label="default" type="asWindow" src="task/2007/getTusk" winPos="0|0" name="砍象牙">
+    					    <Default>
+    					      <Goto value="index_0_1"/>
+    					    </Default>
+    					  </Script>
+    					  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2007_173000"/>
+    					</Click>
+    				</ViewEvent>
+                  <ViewEvent type="GotIt1_2007_173000">
+    					<Click event="onRunScript">
+                        <Script label="default" type="asWindow" src="task/2007/WhyIsFretHere" winPos="0|0" name="菲尔特怎么在这">
+    					    <Default>
+    					      <Goto value="index_0_1"/>
+    					    </Default>
+    					  </Script>
+    					  <Click label="index_0_1" event="NULL" fire="true"/>
+    					</Click>
+    				</ViewEvent>
+    			</Create>
+       </Npc>
+    <!-- npcfun_jqb_xml · 场景 33 -->
+    <Npc sceneID="33" type="1" npcID="173500" position="497|335" aimPos="497|335" name="金钱豹喝水">
+    			<View type="0" src="173500.swf" atLayerID="2" hasClick="false"/>
+    			<Create>	
+    			   <ViewEvent type="GotIt1_2007_173500">
+    					<Click event="onRunScript">
+                       <Script label="default" type="asWindow" src="task/2007/getGoldCat" winPos="0|0" name="激战金钱豹">
+    						<Default>
+    						  <Goto value="index_0_1"/>
+    						</Default>
+    					  </Script>
+    					  <Script label="index_0_1" type="asWindow" src="task/2007/WhyDontReleaseHim" winPos="0|0" name="为什么不放了它">
+    						<Default>
+    						  <Goto value="index_0_2"/>
+    						</Default>
+    					  </Script>
+                       <Click label="index_0_2" event="onTaskCall2" params="2|2007"/>
+    					</Click>
+    				</ViewEvent>
+    			</Create>
+       </Npc>
+    <!-- app_submit_xml · 场景 111 -->
+    <NPCFun label="app_submit" sceneID="111">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2006/submit_2006" winPos="0|0" name="提示ui1">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="137" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 18 -->
+    <NPCFun label="app_ts0" sceneID="18">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2007/jumper" winPos="0|0" name="穿越动画">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="18" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 6 -->
+    <NPCFun label="app_ts1" sceneID="6">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2007/ts1_2007" winPos="0|0" name="提示ui1">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="6" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 111 -->
+    <NPCFun label="app_ts3" sceneID="111">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2007/ts3_2007" winPos="0|0" name="提示ui2">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="111" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="2008" label="神泣">
+    <!-- npcfun_wzjqb_xml · 场景 34 -->
+    <Npc sceneID="34" type="1" npcID="173600" position="759|366" aimPos="759|366" name="金钱豹的家">
+    			<View type="0" src="173600.swf" atLayerID="2" hasClick="false"/>
+              <Create>	
+    				<ViewEvent type="GotIt0_2008_173600">
+    					<Click event="onRunScript">
+    					   <Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2008_173600"/>
+    					</Click>
+    				</ViewEvent>
+                  <ViewEvent type="GotIt1_2008_173600">
+    					<Click event="onRunScript">
+                        <Script label="default" type="asWindow" src="task/2008/WhoDropedTheApple" winPos="0|0" name="谁丢的果子">
+    					    <Default>
+    					      <Goto value="index_0_1"/>
+    					    </Default>
+    					  </Script>
+    					  <Click label="index_0_1" event="NULL" fire="true"/>
+    					</Click>
+    				</ViewEvent>
+    			</Create>
+       </Npc>
+    <!-- npc_wz_xml · 场景 34 -->
+    <Npc sceneID="34" type="1" npcID="173200" position="770|316" aimPos="740|350">
+    		   <View type="0" src="173200.swf" atLayerID="2" hasClick="true"/>
+    		   <Create>
+    				<Task id="2008" care="10"/>
+    			</Create>
+    			<Click event="onRunScript">
+                 <Script label="default" type="asWindow" src="task/2008/LetUsGoBack" winPos="0|0" name="我们回去吧">
+    			    <Default>
+    			      <Goto value="index_0_1"/>
+    			    </Default>
+    			  </Script>
+    			  <Click label="index_0_1" event="NULL" fire="true"/>
+    			</Click>
+    	
+       </Npc>
+    <!-- npcfun_glf_xml · 场景 6 -->
+    <NPCFun sceneID="6" label="我们回来了！" icon="0" close="false">
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    		    <Page id="0">
+                 <Dialog npcID="100100" npcName="格里芬">你们终于回来了！这次寻找神器还顺利吗？</Dialog>
+    		      <Button label="将事情一五一十地告诉了院长……" nextID="-1" close="false">
+    		        <Goto value="index_0_1"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="dialog">
+    		    <Page id="0">
+                 <Dialog npcID="100100" npcName="格里芬">呵呵，原来是这样！我为你们感到骄傲，你们在利益面前放下了杀戮，挽救了整个族群！我会好好将这对小豹子抚养大，让它们能够继续繁衍下去！</Dialog>
+    		      <Button label="可是，我们没有完成任务，神器……" nextID="-1" close="false">
+    		        <Goto value="index_0_2"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_2" type="dialog">
+    		    <Page id="0">
+                <Dialog npcID="100100" npcName="格里芬">呵呵，珍稀动物的骨头或是皮革确实具有巨大的魔力，但即便在我们的私欲面前，它们也是一条生命，生命重于一切！否则无论多么价值连城的神器，都将有可能带来毁灭性的灾难！</Dialog>
+    		      <Button label="神器……神泣……，我明白了！" nextID="-1" close="false">
+    		        <Goto value="index_0_3"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_3" type="dialog">
+    		    <Page id="0">
+    			   <Dialog npcID="100100" npcName="格里芬">对了，伍兹呢？他不是和你一起回来的吗？</Dialog>
+    		      <Button label="对呀，差点忘了！伍兹人呢？" nextID="-1" close="true">
+    		        <Goto value="index_0_4"/>
+    		      </Button>
+    		    </Page>
+    		  </Script>
+    		  <Script label="index_0_4" type="asWindow" src="task/2008/WuzzOver" winPos="0|0" name="伍兹的结果">
+    		    <Default>
+    		      <Goto value="index_0_5"/>
+    		    </Default>
+    		  </Script>
+    		  <Click label="index_0_5" event="onTaskCall2" params="2|2008"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_get_xml · 场景 34 -->
+    <NPCFun label="app_get" sceneID="34">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2007/submit_2007" winPos="0|0" name="提示ui1">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="34" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 6 -->
+    <NPCFun label="app_ts0" sceneID="6">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/2007/jumper" winPos="0|0" name="穿越动画">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="6" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

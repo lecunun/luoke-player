@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ChristmasTreeStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="70" label="装点圣诞树">
+  <Task id="3024" label="装点圣诞树">
+    <!-- npcfun_g_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="装点圣诞树" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="122100" npcName="安格">一年一度的圣诞节即将来临，这是洛克王国最重要的节日之一。这一天每家每户都将装点用松树制作的圣诞树。现在人手不足，我希望你能帮我去怀特冰川、怀特冰山和怀特封砍伐一些松树的树枝来制作圣诞树。</Dialog>
+    				<Button label="马上就去" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="一会再说" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|3024"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="137000" position="0|0">
+    	<View type="0" src="137000.swf" atLayerID="3" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="walk_to_tree">
+    		<Click event="onRunScript" cdtn="10" aimPos="479|244">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="greenDrogen_Fight">
+    		<Click event="onRunScript">
+    			<Script label="default" type="switch" invoke="combat" args="2|137000|圣诞树枝守护者">
+    				<Default><End/></Default>
+    				<Case value="2"><Goto value="sumbit"/></Case>
+    			</Script>
+    			<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="137001" position="0|0">
+    		<View type="0" src="137001.swf" atLayerID="3" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="walk_to_tree">
+    			<Click event="onRunScript" cdtn="10" aimPos="569|366">
+    				<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="greenDrogen_Fight">
+    			<Click event="onRunScript">
+    				<Script label="default" type="switch" invoke="combat" args="2|137001|圣诞树枝守护者">
+    					<Default><End/></Default>
+    					<Case value="2"><Goto value="sumbit"/></Case>
+    				</Script>
+    				<Click label="sumbit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="137002" position="0|0">
+    	<View type="0" src="137002.swf" atLayerID="3" hasClick="false"/>
+    	<Create>
+    	<ViewEvent type="xxxxxx">
+    		<Click event="onRunScript" cdtn="10" aimPos="137|236">
+    			<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="yyyyyyy"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="zzzzzzz">
+    		<Click event="onRunScript">
+    			<Script label="default" type="switch" invoke="combat" args="2|137002|圣诞树枝守护者">
+    				<Default><End/></Default>
+    				<Case value="2"><Goto value="sumbit"/></Case>
+    			</Script>
+    			<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 87 -->
+    <Npc sceneID="87" type="1" npcID="137003" position="0|0">
+    		<View type="0" src="137003.swf" atLayerID="3" hasClick="false"/>
+    		<Create>
+    		<ViewEvent type="walk_to_tree">
+    			<Click event="onRunScript" cdtn="10" aimPos="704|230">
+    				<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="show_dialog"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="greenDrogen_Fight">
+    			<Click event="onRunScript">
+    				<Script label="default" type="switch" invoke="combat" args="2|137003|圣诞树枝守护者">
+    					<Default><End/></Default>
+    					<Case value="2"><Goto value="sumbit"/></Case>
+    				</Script>
+    				<Click label="sumbit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    		</Create>
+    		</Npc>
+    <!-- npcfun_p_xml · 场景 87 -->
+    <NPCFun sceneID="87" label="装点圣诞树" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="3024"/>
+    					<Case value="0">
+    						<Script type="dialog">
+    							<Page>
+    									<Dialog npcID="122100" npcName="安格">圣诞节就快来了，可是还没有足够的松树树枝啊。</Dialog>
+    									<Button label="知道了" close="true">
+    										<End/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    						<Case value="1">
+    							<Script type="dialog">
+    								<Page>
+    									<Dialog npcID="122100" npcName="安格">非常感谢，这是你的报酬。我会用它们制作出最好的圣诞树的。</Dialog>
+    									<Button label="不客气" close="true">
+    										<Click event="onTaskCall2" params="2|3024"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    					</Script>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

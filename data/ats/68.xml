@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 seaFightStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="68" label="人人都是大明星第三季">
+  <Task id="3023" label="人人都是大明星第三季">
+    <!-- npcfun_g_xml -->
+    <NPCFun label="人人都是大明星第三季" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="133200" npcName="马特">现在我们正在举行宠物明星show，人人都有机会成为大明星。为了推广本次活动，我们鼓励小宠物们积极参加训练，本周是海洋特训周，凡是击败杰诺斯浅海的宠物都会获得它们亲手编制的特训花环（水）。收集到5个花环可以到我这领奖。</Dialog>
+    				<Button label="马上就去" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="一会再说" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|3023"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml -->
+    <NPCFun label="人人都是大明星第三季" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script type="switch" label="default">
+    				<Func invoke="taskIsComplete" args="3023"/>
+    					<Case value="0">
+    						<Script type="dialog">
+    							<Page>
+    									<Dialog npcID="133200" npcName="马特">不刻苦训练可成不了大明星。</Dialog>
+    									<Button label="知道了" close="true">
+    										<End/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    						<Case value="1">
+    							<Script type="dialog">
+    								<Page>
+    									<Dialog npcID="133200" npcName="马特">你的宠物看来深受海洋宠物的敬服。祝你们在宠物明星show中取得好成绩。</Dialog>
+    									<Button label="不客气" close="true">
+    										<Click event="onTaskCall2" params="2|3023"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    						</Case>
+    					</Script>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

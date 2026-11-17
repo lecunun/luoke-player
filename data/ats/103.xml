@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ARaceAgainstTimeStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="103" label="和时间赛跑">
+  <Task id="1081" label="火山口的气体">
+    <!-- npcfun_g_xml · 场景 57 -->
+    <NPCFun sceneID="57" label="和时间赛跑" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">最近火山好像出现了什么奇怪传言，你有没有听说过？</Dialog>
+          <Button label="没有听说过……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1081_157000"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_g_xml · 场景 52 -->
+    <Npc sceneID="52" type="1" npcID="157000" position="99|474">
+    <View type="0" src="157000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1081_157000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">你看， 菲尔特和西格也在说了。如果火山真的有奇怪的气体，难道那里的宠物没有受伤吗？也没见到它们来我这里治病。我有些担心……</Dialog>
+          <Button label="那不如我们一起去火山看看吧？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">可是我的宠物小囧娃也生病了，所以你能否帮我去火山看下？</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="1|1081"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 52 -->
+    <Npc sceneID="52" type="1" npcID="157100" position="0|560">
+    <View type="0" src="157100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1081_157100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">我想过了，火山一定发生了很严重的情况，这里的宠物们一定很需要我！</Dialog>
+          <Button label="是的！！它们好像都被困在火山下面了！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">那我们赶紧去救它们吧！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="2|1081"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1082" label="紧急救治">
+    <!-- npc_p_xml · 场景 54 -->
+    <Npc sceneID="54" type="1" npcID="157200" position="0|560">
+    <View type="0" src="157200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1082_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1082/1082_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">我要先简单为它们做一下护理，但是，需要奇丽草花这种植物才能救治它们。<![CDATA[{name}]]>，你能帮我去找一些来吗？</Dialog>
+          <Button label="可是去哪里采集呢？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1082/1082_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">你要抓紧时间！我就在这里先为它们做一些简单的护理！</Dialog>
+          <Button label="好的！我现在就去索米亚草原！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1082_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">太好了！有了奇丽草花，我就可以开始治愈它们了！</Dialog>
+          <Button label="恩！快点救救它们吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1082_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1082_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">啊～太好啦～大家都恢复啦！</Dialog>
+          <Dialog npcID="157700" npcName="音速犬">可是……我的孩子小护主犬它……</Dialog>
+          <Button label="的确，还有一只……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">恩……可是……可是我刚刚消耗了太多体力，现在已经没有足够的魔法了……</Dialog>
+          <Button label="可是……救治宠物不是你的责任吗？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">恩……是啊……我来试试吧……不过，小护主犬受伤太严重了，你能先用魔法结界将它隔离么？</Dialog>
+          <Button label="恩！！你一定没问题的！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onTaskCall2" params="2|1082"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 54 -->
+    <NPCFun label="app_ts0" sceneID="54">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1082/1082_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>		
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" cdtn="10" params="54"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1083" label="心结">
+    <!-- npc_c2_xml · 场景 54 -->
+    <Npc sceneID="54" type="1" npcID="159100" position="0|0">
+    	<View type="0" src="159100.swf" atLayerID="1"/>
+    	<Click event="NULL" fire="true"/>
+    	</Npc>
+    <!-- npc_p_xml · 场景 54 -->
+    <Npc sceneID="54" type="1" npcID="157200" position="0|560">
+    <View type="0" src="157200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">那……现在我就来试试吧……</Dialog>
+          <Dialog npcID="157700" npcName="音速犬">那就拜托你了！萌萌！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">哈哈哈！你们都跑不了！</Dialog>
+          <Button label="又是你来搞鬼！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">我劝你们也不要挣扎了，我在这里放沼气，就是为了能够轻松地抓走这些宠物，去献给恩佐，让他去做永生实验。</Dialog>
+          <Button label="哼！休想！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="switch" invoke="combat" args="2|158200|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_4"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">哈哈哈！就凭你！看我把你们全收拾了！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+          <Button label="马上就再来教训你" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">哈哈哈！难道你以为你打败我就有用么！</Dialog>
+          <Button label="什么意思？" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">不瞒你说！这个火山的洞口，已经让我做了手脚！现在洞口马上就要被堵上了！你们再挣扎也是徒劳！哈哈哈！我到时候再来收拾你们这帮家伙！</Dialog>
+          <Button label="可恶！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1083_157200"/>
+      <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1083_157200">
+    <Click event="onRunScript">
+    <Script label="default" type="switch" invoke="combat" args="2|158200|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_4"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">哈哈哈！就凭你！看我把你们全收拾了！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="false">
+            <Goto value="default"/>
+          </Button>
+          <Button label="马上就再来教训你" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">哈哈哈！难道你以为你打败我就有用么！</Dialog>
+          <Button label="什么意思？" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158200" npcName="黑衣人">不瞒你说！这个火山的洞口，已经让我做了手脚！现在洞口马上就要被堵上了！你们再挣扎也是徒劳！哈哈哈！我到时候再来收拾你们这帮家伙！</Dialog>
+          <Button label="可恶！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="157700" npcName="音速犬">洞口真的要被堵住了！我们快点逃走吧！</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">可是……小护主犬现在十分虚弱，只要稍微一动，就有可能死掉啊……</Dialog>
+          <Button label="那就快点救它啊！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="157700" npcName="音速犬">对！你快点救它！我会用身体撑住这个洞口，然后我们尽快从这里逃走！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">我……我……</Dialog>
+          <Button label="怎么了……？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">对不起……我还是办不到……</Dialog>
+          <Button label="你在说什么傻话！你要相信奇迹啊！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">救治宠物是没有奇迹的！病痛会毫不留情地袭击它们，光凭爱和勇气，患者还是是无法苏醒的！</Dialog>
+          <Button label="你究竟怎么了？难道你在害怕？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">是啊！我是害怕啊！我害怕同样的事情会再发生一次啊！难道我就必须要乐观吗！是谁规定医护人员一定要乐观的？</Dialog>
+          <Button label="难道，过去发生了什么？" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/1083/1083_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="157600" npcName="直立音速犬">萌萌！你在说什么傻话！你看看我，现在不是也很好吗！</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">啊……你是……是那个时候被砸断前腿的音速犬……</Dialog>
+          <Dialog npcID="157600" npcName="直立音速犬">现在的我，也可以和其他音速犬一样走路，而且我还要感谢你，赐予我生命！如果那次不是因为你，我就有可能死亡。有什么比活着更美好的事情呢？</Dialog>
+          <Button label="对！无论如何都要活下去！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="157600" npcName="直立音速犬">只要活着，就会有希望。所以现在，萌萌，我希望你放下内心的包袱，好好治疗那只小护主犬，它是我的孩子。</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">啊……</Dialog>
+          <Button label="萌萌！你一定可以的！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">恩……恩……<![CDATA[{name}]]>，你能帮我去找一些水滴来吗？</Dialog>
+          <Button label="水滴？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">恩～就在宠物农庄，海星会给你一颗水滴。那个水滴说不定可以救小护主犬！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="157600"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌"><![CDATA[{name}]]>，你取来了水滴吗？</Dialog>
+          <Button label="是的！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">可是……可是已经太晚了……它中毒太深了……</Dialog>
+          <Button label="难道它……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">我还是会努力试试看的！不过……就算它醒来，恐怕那只后腿也保不住了……</Dialog>
+          <Dialog npcID="157600" npcName="直立音速犬">那也没关系！它是我的孩子！我相信它！</Dialog>
+          <Button label="恩！！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt7_1083_157200">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true" fireID="157700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt8_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158100" npcName="小护主犬">爸爸～妈妈～我怎么站不起来了……</Dialog>
+          <Button label="[强忍住泪水]" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1083/1083_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158100" npcName="小护主犬">我站起来了！太好啦！</Dialog>
+          <Dialog npcID="157600" npcName="直立音速犬">我们快点离开这里吧！</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">可是……洞口都被封住了……</Dialog>
+          <Dialog npcID="157600" npcName="直立音速犬">这里还有一个秘密通道，就是我刚刚进来的那个通道，那里可以直接通到外面！</Dialog>
+          <Button label="那我们快点走吧！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt9_1083_157200">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="game" args="2|name|2080|0">
+        <Case value="1">
+          <Goto value="index_0_1"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1083"/>	
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_1083_157200"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 54 -->
+    <NPCFun label="app_ts0" sceneID="54">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1082/1082_ts_0" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" cdtn="10" params="54"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1084" label="和时间赛跑">
+    <!-- npc_c0_xml · 场景 23 -->
+    <Npc sceneID="23" type="1" npcID="157300" position="460|390">
+    <View type="0" src="157300.swf" atLayerID="2"/>
+    <Click event="onRunScript" cdtn="60">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">这里是夜影回路耶！从那个口出去就到彼得大道啦！太好啦！大家都安全了！</Dialog>
+          <Button label="真是太好啦！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="157700" npcName="音速犬">那我们赶紧出去吧！</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">恩！我的小囧娃还在生病，我先回去啦！</Dialog>
+          <Dialog npcID="157600" npcName="直立音速犬">萌萌，谢谢你！我们也一起跟你去宠物医院吧，看看有什么我们能帮得上忙的……</Dialog>
+          <Dialog npcID="112001" npcName="萌萌">恩！谢谢你们！<![CDATA[{name}]]>，那我们宠物医院见！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 23 -->
+    <NPCFun sceneID="23" label="大家都平安无事太好啦！" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌"><![CDATA[{name}]]>……由于我回来晚了……我的小囧娃它……失去了一只眼睛……</Dialog>
+          <Button label="……不要太难过了……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">你能不能陪我去二楼的爱心教堂一起祈祷……我想这样，我的心理会稍微平静一些……</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true" fireID="157800"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 23 -->
+    <Npc sceneID="23" type="1" npcID="157400" position="0|0">
+    <View type="0" src="157400.swf" atLayerID="3" hasClick="false"/>
+    <Click event="NULL"/>
+    </Npc>
+    <!-- npc_p_xml · 场景 23 -->
+    <Npc sceneID="23" type="1" npcID="157500" position="485|361">
+    <View type="0" src="157500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1084_157500">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1084/1084_0" winPos="0|0" name="">
+    	  <Default>
+    	    <Goto value="index_1"/>
+    	  </Default>
+    	</Script>
+      <Click label="index_1" event="onTaskCall2" params="2|1084"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 23 -->
+    <NPCFun label="app_ts0" sceneID="23">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" cdtn="10" params="73"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

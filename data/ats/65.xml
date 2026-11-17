@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 KnightOfRoseStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="65" label="蔷薇骑士异闻录">
+  <Task id="1051" label="打探蔷薇骑士的消息">
+    <!-- npcfun_g_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="蔷薇骑士异闻录" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">最近蔷薇骑士又出现了，还把菲尔特的宠物放跑了，刚刚菲尔特来找我，委托我帮他找到宠物。</Dialog>
+    				<Button label="蔷薇骑士？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">唉，这蔷薇骑士真是让我头疼啊，每次他的出现都伴随着巨大的话题性。什么？你还不知道蔷薇骑士的故事？那你最好去多方位打听一下！</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|1051"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="我打听了蔷薇骑士的消息啦！" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script type="switch" label="default">
+    			<Func invoke="taskIsComplete" args="1051"/>
+    			<Case value="0"><Goto value="no"/></Case>
+    			<Case value="1"><Goto value="yes"/></Case>
+    		</Script>
+    		<Script label="no" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">关于蔷薇骑士的传说有很多呢。如果你还一点都不知道，最好去打听一下！如果你对他的事情一点都不知道，接下来的事情也很难去做了。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="yes" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">看来你已经对蔷薇骑士有些了解了。其实我本人对他的态度倒是没什么，主要是他抢走了菲尔特的宠物和咕噜球，菲尔特来这里委托我帮他，所以我们要帮他把宠物和咕噜球找回来。</Dialog>
+    				<Button label="恩！那是一定的" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101300" npcName="罗宾">不过传闻蔷薇骑士的剑法高明，又十分聪明，如果不是智勇双全的小洛克，恐怕很难和他对抗，为此我也准备了一些考验。<![CDATA[{name}]]>，只有你通过这些考验，才能把菲尔特的委托放心交给你。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1051"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_c0_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="你知道蔷薇骑士吗?" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101100" npcName="艾迪">你是说那个英俊潇洒的蔷薇骑士吗？当然知道啦！他还帮过我呢！</Dialog>
+    				<Button label="他帮过你？能不能和我说一下？" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1051/1051_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_1"/></Default>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101100" npcName="艾迪">所以说，蔷薇骑士是个好人呢！</Dialog>
+    				<Button label="谢谢你，艾迪" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_c1_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="你知道蔷薇骑士吗?" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100200" npcName="莫里亚克">呵呵，看来最近蔷薇骑士成了红人啊！你看看我这里的报纸，刚刚报道了关于他的事情呢！</Dialog>
+    				<Button label="我来看看" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1051/1051_1" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_1"/></Default>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100200" npcName="莫里亚克">关于他的评价，一直以来都很难说呢，一会帮助别人，一会又兴风作浪，真是让我头疼啊！</Dialog>
+    				<Button label="谢谢你，莫里亚克" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_c2_xml · 场景 29 -->
+    <NPCFun sceneID="29" label="你知道蔷薇骑士吗?" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="112001" npcName="萌萌">那天我就看到他啦！菲尔特让他的宠物干很重的活，像苦力一样！宠物们都很可怜，我看着都心疼！没想到蔷薇骑士突然出现了，看起来十分生气，然后把装有宠物的咕噜球抢走了。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 26 -->
+    <NPCFun label="app_ts0" sceneID="26">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1051/1051_ts_0" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="26"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 24 -->
+    <NPCFun label="app_ts1" sceneID="24">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1051/1051_ts_1" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="24"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 57 -->
+    <NPCFun label="app_ts2" sceneID="57">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1051/1051_ts_2" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="57"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 29 -->
+    <NPCFun label="app_ts3" sceneID="29">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="29"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1052" label="罗宾的考验">
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1052/1052_ts_0" winPos="0|0" name="任务提示">
+    		<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="ChangeScene_0" event="onChangeScene" params="13"/>
+    		</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 14 -->
+    <NPCFun label="app_ts1" sceneID="14">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1052/1052_ts_1" winPos="0|0" name="任务提示">
+    		<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    		<Default><End/></Default>
+    		</Script>
+    		<Click label="ChangeScene_0" event="onChangeScene" params="14"/>
+    		</Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="罗宾的考验" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="105300" npcName="哥顿">原来是大侦探罗宾让你来找我的啊！的确，最近蔷薇骑士又出现了，让我很头大呢！</Dialog>
+    				<Button label="究竟是怎么回事" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="105300" npcName="哥顿">蔷薇骑士总是神出鬼没的！明明我们已经严格巡查了，还是逮不到他！我倒是推测了几种可能，你能帮我分析一下吗？</Dialog>
+    				<Button label="一定尽力" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1052/1052_0" winPos="0|0" name="提示">
+    			<Case value="0"><Goto value="no"/></Case>
+    			<Case value="1"><Goto value="yes"/></Case>
+    		</Script>
+    		<Script label="no" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="105300" npcName="哥顿">为什么我觉得怪怪的……<![CDATA[{name}]]>，是不是你推理错了呢？</Dialog>
+    				<Button label="我再试试" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    				<Button label="我的头都大了" nextID="-1" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="yes" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="105300" npcName="哥顿">不愧是罗宾推荐的人选，就是比我聪明啊！<![CDATA[{name}]]>，可能有一件事你还不知道，那就是蔷薇骑士经过的地方，都会留下蓝色蔷薇。</Dialog>
+    				<Button label="蓝色蔷薇？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="105300" npcName="哥顿">是啊！只要沿着蓝色蔷薇，就一定可以找到蔷薇骑士！既然罗宾如此信任你，那么追捕蔷薇骑士的任务，就交给你啦！快点去找找，哪里有蓝色蔷薇吧！</Dialog>
+    				<Button label="定不负所托" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1052"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1053" label="千里走单骑">
+    <!-- app_ts0_xml · 场景 19 -->
+    <NPCFun label="app_ts0" sceneID="19">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1053/1053_ts_0" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="19"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="135100" position="802|449">
+    	<View type="0" src="135100.swf" atLayerID="1" hasClick="false"/>
+    	<Click event="NULL"/>
+    </Npc>
+    <!-- npc_c1_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="135100" position="850|255">
+    		<View type="0" src="135100.swf" atLayerID="1" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_p_xml · 场景 19 -->
+    <Npc sceneID="19" type="1" npcID="135600" name="蔷薇骑士" position="433|385">
+    <View type="0" src="135600.swf" atLayerID="2"/>
+    <Create>
+    <NPCFun label="千里走单骑" icon="0" close="false">
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">如果我没猜错，你是受罗宾的委托，来找我的吧！你说菲尔特的咕噜球？</Dialog>
+    				<Button label="请你把菲尔特的咕噜球交给我吧！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">你知道他虐待宠物的事情吗？他总是欺负宠物，不但不给它们食物吃，而且让它们干很多活。你不觉得它们很可怜吗！</Dialog>
+    				<Button label="这……萌萌的确有说过……" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">所以说，我把宠物球拿走，是为了救这些宠物啊！我这样做有错吗？难道你不觉得我做的都是正确的吗？</Dialog>
+    				<Button label="可是……你拿了他的东西就是不对啊" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">既然如此……看来你是来给我下战书的！如果你执意要来挑战我，作为骑士，我当然也会欣然接受。</Dialog>
+    				<Button label="那么就比试一下吧！" nextID="-1" close="true">
+    					<Goto value="combat_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="combat_0" type="switch" invoke="combat" args="2|135600|蔷薇骑士">
+    			<Default><Goto value="dialog_4"/></Default>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士"><![CDATA[{name}]]>，我看得出，你已经尽力了！显然，你想打败我，是根本不可能的。哈哈，作为骑士，我绝对不会以大欺小的！刚刚只是初试牛刀，真正的比试现在才开始！</Dialog>
+    				<Button label="现在才开始？" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">那当然！我可没说挑战就是比试剑法！</Dialog>
+    				<Button label="那要怎么挑战呢？" nextID="-1">
+    					<Goto value="dialog_6"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">这样吧，这片沙滩上埋藏着一块石碑，记载蓝色蔷薇种子地点。你要找到石碑，看看种子埋藏的地点。然后把蔷薇种子找来，放到沙滩的杯子里，最后转动杯子！我们来打赌！</Dialog>
+    				<Button label="打赌？怎么玩？" nextID="-1">
+    					<Goto value="dialog_7"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_7" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">很简单啊！猜猜蔷薇种子在哪个杯子里。如果你猜中了，我就把宠物球的所在地告诉你。如果我猜中了，你就立刻从我眼前消失。</Dialog>
+    				<Button label="我接受挑战" nextID="-1" close="true">
+    					<Goto value="submit"/> 
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1053"/>
+    	</Click>
+    </NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="60">
+    <Dialog>蔷薇骑士，自古以蔷薇头盔为传承。为了荣誉，为了正义，我必须要将正义坚持下去，就算不被世人所理解。</Dialog>
+    </Click>
+    </Npc>
+  </Task>
+  <Task id="1054" label="挑战蔷薇骑士">
+    <!-- app_ts0_xml · 场景 8 -->
+    <NPCFun label="app_ts0" sceneID="8">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1054/1054_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 8 -->
+    <NPCFun label="app_ts1" sceneID="8">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1054/1054_ts_1" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="8"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 19 -->
+    <NPCFun label="app_ts2" sceneID="19">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1054/1054_ts_2" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="19"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 8 -->
+    <Npc sceneID="8" type="1" npcID="135400" name="蔷薇骑士" position="433|385">
+    <View type="0" src="135400.swf" atLayerID="2"/>
+    <Create>
+    <NPCFun label="千里走单骑" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="switch">
+    			<Func invoke="taskIsComplete" args="1054"/>
+    			<Case value="0"><Goto value="no"/></Case>
+    			<Case value="1"><Goto value="yes"/></Case>
+    		</Script>
+    		<Script label="no" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">呵呵，我很期待和你的对决呢。只要你把蔷薇种子找来，放到这杯子里，我们就可以开始了。当然，关于我的正义，我也会贯彻到底。</Dialog>
+    				<Button label="我知道啦！" nextID="-1" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="yes" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">把蔷薇种子放到这杯子里，我们就开始了。</Dialog>
+    				<Button label="转动杯子" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1054/1054_1" winPos="0|0" name="提示">
+    			<Case value="0"><Goto value="asW_no"/></Case>
+    			<Case value="1"><Goto value="asW_yes"/></Case>
+    		</Script>
+    		<Script label="asW_no" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">看在你如此努力的份上，再给你一次机会吧。毕竟我不能以大欺小啊！</Dialog>
+    				<Button label="谢谢你" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    				<Button label="我必须好好想想" nextID="-1" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asW_yes" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">啊……没想到你竟然获胜了！君子一言，驷马难追！唉……我还是希望你仔细想一想，菲尔特对他的宠物不好，我是可怜那些宠物才把宠物球拿走的。</Dialog>
+    				<Button label="恩！我都知道的！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">他的咕噜球就被我藏在了雷霆峡谷的入口。不过被埋着的还有一个是假的咕噜球，这也是我以防万一，所以特意准备的。</Dialog>
+    				<Button label="这是为什么？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士">你还不懂吗？如果你也同情那些受虐待的宠物，又不得不完成罗宾的委托，只要把假的宠物球归还回去就好了。那些宠物的命运就掌握在你的手中，你要好好考虑一下。</Dialog>
+    				<Button label="我会慎重考虑的！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1054"/>
+    	</Click>
+    </NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="60">
+    <Dialog>蔷薇骑士，自古以蔷薇头盔为传承。为了荣誉，为了正义，我必须要将正义坚持下去，就算不被世人所理解。</Dialog>
+    </Click>
+    </Npc>
+    <!-- npc_c0_xml · 场景 8 -->
+    <Npc sceneID="8" type="1" npcID="135200" position="713|434">
+    	<View type="0" src="135200.swf" atLayerID="1"/>
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="asWindow" src="task/1054/1054_0" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    </Npc>
+    <!-- npc_c1_xml · 场景 8 -->
+    <Npc sceneID="8" type="1" npcID="135300" position="0|0">
+    	<View type="0" src="135300.swf" atLayerID="1"/>
+    	<Click event="NULL" fire="true"/>
+    </Npc>
+  </Task>
+  <Task id="1055" label="最后的抉择">
+    <!-- app_ts0_xml · 场景 59 -->
+    <NPCFun label="app_ts0" sceneID="59">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1055/1055_ts_0" winPos="0|0" name="任务提示">
+    	<Case value="0"><Goto value="ChangeScene_0"/></Case>
+    	<Default><End/></Default>
+    	</Script>
+    	<Click label="ChangeScene_0" event="onChangeScene" params="59"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="135500" position="246|347">
+    	<View type="0" src="135500.swf" atLayerID="1"/>
+    	<Click event="onRunScript" cdtn="50">
+    		<Script label="default" type="asWindow" src="task/1055/1055_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_0"/></Default>
+    		</Script>
+    		<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135600" npcName="蔷薇骑士"><![CDATA[{name}]]>，你知道吗，很多时候，法律是无法约束道义的！蔷薇骑士自古以这蔷薇骑士头盔为传承。现在我就把蔷薇骑士头盔给你！接下来，就由你代替我，继续发扬蔷薇骑士的风格吧！</Dialog>
+    				<Button label="我一定会继承蔷薇骑士的精神" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1055"/>
+    	</Click>
+    </Npc>
+  </Task>
+</Story>

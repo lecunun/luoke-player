@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoAppearsStoryScript4.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="182" label="木豆丁的新挑战">
+  <Task id="4059" label="木豆丁的新挑战">
+    <!-- npcfun_accepttask_xml -->
+    <NPCFun label="木豆丁的新挑战" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="202600" npcName="木藤藤">木豆丁开始独自在野外试炼了，但是看上去它很不开心，到底是因为什么呢？</Dialog>
+    						<Button label="我帮你问问去">
+    							<Goto value="dlg2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="202600" npcName="木藤藤">它跑到普拉塔草原和索米亚草原去了，帮我去看看吧！</Dialog>
+    						<Button label="好的现在就去。">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Click label="submit" event="onTaskCall2" params="1|4059"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml -->
+    <NPCFun label="app_ts0">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="33"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml -->
+    <NPCFun label="app_ts1">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="34"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml -->
+    <NPCFun label="app_ts2">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml -->
+    <Npc type="1" npcID="206800" name="木豆丁" position="450|300">
+    	<View type="0" src="206800.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="206800" npcName="木豆丁">我不理你！别烦我……</Dialog>
+    				<Button label="冷静些到底发生了什么？" close="false">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="206800" npcName="木豆丁">木藤藤它欺负我……</Dialog>
+    				<Button label="没事慢慢说" close="true">
+    					<Goto value="donghua_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="donghua_0" type="asWindow" src="task/4059/app1" winPos="0|0" name="正在加载...">
+    			<Default>
+    				<Goto value="dialog_2"/>
+    			</Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="206800" npcName="木豆丁">我的命好苦啊……</Dialog>
+    				<Button label="其实我觉得木藤藤也是为你好，只是……" close="false">
+    					<Goto value="dialog_3"/>
+    		  		</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="dialog_3" type="dialog">
+    			<Page>
+    				<Dialog npcID="206800" npcName="木豆丁">你们都在为它说话，我不理你了</Dialog>
+    				<Button label="听我说完啊，别跑" close="true">
+    					<Goto value="submit"/>
+    		  		</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="206800"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c1_xml -->
+    <Npc type="1" npcID="206900" name="木豆丁" position="680|480">
+    	<View type="0" src="206900.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    		<Script label="default" type="dialog">
+    			<Page>
+    				<Dialog npcID="206900" npcName="木豆丁">别靠近我，我什么也不听，我讨厌无休止的训练，我也是一个正常的宠物，我希望有自己的爱好……</Dialog>
+    				<Button label="淡定，木藤藤一定有它的苦衷，你和我一起回去问问它好么？" close="false">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    			<Page>
+    				<Dialog npcID="206900" npcName="木豆丁">我讨厌它！！！</Dialog>
+    				<Button label="冷静些" close="true">
+    					<Goto value="donghua_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="donghua_0" type="asWindow" src="task/4059/app2" winPos="0|0" name="正在加载...">
+    			<Default>
+    				<Goto value="dialog_2"/>
+    			</Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="206900" npcName="木豆丁">……</Dialog>
+    				<Button label="有我在，它不能把你怎么样的，相信我。" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="206900"/>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_acceptnotfinish_xml -->
+    <NPCFun label="木豆丁的新挑战" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="202600" npcName="木藤藤">找到木豆丁了吗？我好担心它。</Dialog>
+    					<Button label="我再去索米亚草原和普拉塔草原找找看。" close="true">
+    						<!--<Goto value="asWindow_0"/>-->
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml -->
+    <NPCFun label="木豆丁的新挑战" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="202600" npcName="木藤藤">木豆丁，你回来了，还不开心么，看我给你准备的面，很好吃的。</Dialog>
+    					<Button label="木豆丁说你欺负它，到底怎么回事？" close="true">
+    						<Goto value="donghua_0"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_0" type="asWindow" src="task/4059/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_1"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dialog_1" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="202600" npcName="木藤藤">好啦好啦，都别哭啦一起来吃碗面！</Dialog>
+    					<Button label="呜呜呜" close="true">
+    						<Goto value="donghua_1"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>		
+    	
+    			<Script label="donghua_1" type="asWindow" src="task/4059/app4" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="2|4059"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

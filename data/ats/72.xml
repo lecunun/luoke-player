@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 giftBackStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="72" label="失而复得的礼物">
+  <Task id="3026" label="争分夺秒">
+    <!-- npc_ml_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138000" position="450|380" name="七彩鹿">
+    		 <View type="0" src="138000.swf" atLayerID="2" height="139" hasClick="true"/>
+    		 <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="138000" npcName="七彩鹿">由于恩佐的破坏，我们已经耽误了很多的时间了，现在圣诞节近在眼前，可是我们为孩子们准备的礼物都还没有包装好。</Dialog>
+    							<Button label="我可以请机械族帮忙" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Click label="submit" event="onTaskCall2" params="1|3026"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_ajl_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138200" position="310|310" name="阿基拉">
+    		 <View type="0" src="138200.swf" atLayerID="2" hasClick="true"/>
+    		 <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">恩佐是我们共同的敌人，他想破坏的我们就一定要保护。圣诞礼物包装这个事情就交给我们了，让你看看我们工业流水线的效率。</Dialog>
+    							<Button label="让我们看看吧" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Script label="movie1" type="asWindow" src="task/3026/line1" winPos="0|0" name="流水线1">
+    						<Case value="0"><Goto value="dialog1"/></Case>
+    				 </Script>
+                   <Script label="dialog1" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">请随我到维修站看看机械流水线的工作成果。</Dialog>
+    							<Button label="好的" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Click event="NULL" fire="true" label="submit"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_ajl2_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138200" position="216|410" name="阿基拉">
+    		 <View type="0" src="138200_2.swf" atLayerID="2" height="145" hasClick="true"/>
+    		 <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">你眼前看到的就是我们机械族引以为豪的机械流水线了。</Dialog>
+    							<Button label="真了不起" close="false">
+    								<Goto value="dialog1"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+    			    <Script label="dialog1" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">以这个速度，明天所有礼物都可以打包完成了</Dialog>
+    							<Button label="好的" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Script label="movie1" type="asWindow" src="task/3026/line2" winPos="0|0" name="流水线2">
+    						<Case value="0"><Goto value="dialog2"/></Case>
+    				 </Script>
+                   <Script label="dialog2" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">好了，现在所有礼物包装完毕，你检查一下吧。</Dialog>
+    							<Button label="好的" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Click label="submit" event="onTaskCall2" params="2|3026"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_lsx_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138202" position="0|0">
+    		<View type="0" src="138202.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+  </Task>
+  <Task id="3027" label="被诅咒的礼物">
+    <!-- npc_gift1_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138300" position="398|359">
+    		 <View type="0" src="138300.swf" atLayerID="2" hasClick="false"/>
+            <Create>
+    		     <ViewEvent type="giftSuccess1">
+                     <Click event="NULL" fire="true"/>
+    		     </ViewEvent>
+    	     </Create>
+    	</Npc>
+    <!-- npc_gift2_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138400" position="513|382">
+    		 <View type="0" src="138400.swf" atLayerID="2" hasClick="false"/>
+            <Create>
+    		     <ViewEvent type="giftSuccess2">
+                     <Click event="NULL" fire="true"/>
+    		     </ViewEvent>
+    	     </Create>
+    	</Npc>
+    <!-- npc_gift3_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138500" position="460|391">
+    		 <View type="0" src="138500.swf" atLayerID="2" hasClick="false"/>
+            <Create>
+    		     <ViewEvent type="giftSuccess3">
+                     <Click event="NULL" fire="true"/>
+    		     </ViewEvent>
+    	     </Create>
+    	</Npc>
+    <!-- npc_ajl_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138200" position="216|410" name="阿基拉">
+    			 <View type="0" src="138200.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+    <!-- npc_ajl2_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138800" position="216|410">
+    			 <View type="0" src="138800.swf" atLayerID="2" hasClick="true"/>
+               <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="138200" npcName="阿基拉">怎么会这样，我想一定有人暗中破坏，你和七彩鹿躲到流水线的机器里面，看看晚上会发生什么.</Dialog>
+    							<Button label="让我看看黑手到底是谁" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+    			    <Click label="submit" event="onTaskCall2" params="2|3027"/>
+    		     </Click>
+    	</Npc>
+    <!-- npc_lsx_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138202" position="0|0">
+    		<View type="0" src="138202.swf" atLayerID="2" hasClick="false"/>
+    	</Npc>
+  </Task>
+  <Task id="3028" label="幕后黑手">
+    <!-- npc_ml_xml · 场景 86 -->
+    <Npc sceneID="86" type="1" npcID="138700" position="480|560">
+    		 <View type="0" src="138700.swf" atLayerID="2" hasClick="false"/>
+            <Create>
+    		     <ViewEvent type="getMovie1">
+                     <Click event="onRunScript">
+                         <Script label="default" type="asWindow" src="task/3028/line3" winPos="0|0" name="流水线3">
+    						    <Case value="0"><Goto value="event1"/></Case>
+    					   </Script>
+                         <Click label="event1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="playMc"/>
+    					</Click>
+    		     </ViewEvent>
+                <ViewEvent type="getMovie2">
+                     <Click event="onRunScript">
+                         <Script label="default" type="asWindow" src="task/3028/fightMovie" winPos="0|0" name="麋鹿战斗">
+    						    <Case value="0"><Goto value="event2"/></Case>
+    					   </Script>
+                         <Click label="event2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="playMc2"/>
+    					</Click>
+    		     </ViewEvent>
+                <ViewEvent type="getDone">
+                     <Click event="onRunScript">
+                       <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="138000" npcName="七彩鹿">我代替洛克王国所有的孩子感谢你的帮助，没有你他们恐怕要度过一个失望的圣诞节了。</Dialog>
+    							<Button label="这是我应该做的" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    				     </Script>
+                       <Click label="submit" event="onTaskCall2" params="2|3028"/>
+    					</Click>
+    		     </ViewEvent>
+    	     </Create>
+    	</Npc>
+  </Task>
+</Story>

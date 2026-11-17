@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 GatherMagicGears.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="90" label="收集施法材料">
+  <Task id="4017" label="收集施法材料">
+    <!-- npcfun_101500 · 场景 4 -->
+    <NPCFun sceneID="4" label="收集施法材料" icon="-1" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101500" npcName="博得">时间是审查一切罪犯的最老练的法官。
+    现在很多家伙想回到过去，时间不是那么容易就能倒流的，呵呵，会使用这样的魔法的人不多，但无论谁来施法，先收集足够的材料准备着才可以哦。
+                    </Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="accpet"/>
+                    </Button>
+                    <Button label="考虑一下" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Click label="accpet" event="onTaskCall2" params="1|4017"/>
+        </Click>
+    </NPCFun>
+    <!-- npc_151200 · 场景 4 -->
+    <Npc sceneID="4" type="1" npcID="151200" position="260|410">
+        <View type="0" src="151200.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="gotItem_151200">
+                <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npc_151300 · 场景 4 -->
+    <Npc sceneID="4" type="1" npcID="151300" position="670|420">
+        <View type="0" src="151300.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="gotItem_151300">
+                <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npc_151400 · 场景 4 -->
+    <Npc sceneID="4" type="1" npcID="151400" position="220|250">
+        <View type="0" src="151400.swf" atLayerID="1" hasClick="false"/>
+        <Create>
+            <ViewEvent type="gotItem_151400">
+                <Click label="conditionOneUpdate" event="NULL" fire="true"/>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npcfun_101500_submit · 场景 4 -->
+    <NPCFun sceneID="4" label="收集施法材料" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="switch">
+                <Func invoke="taskIsComplete" args="4017"/>
+                <Case value="0"><Goto value="notOK"/></Case>
+                <Case value="1"><Goto value="ok"/></Case>
+            </Script>
+            <Script label="notOK" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101500" npcName="博得">跳跳集市、占星台、怀特冰川找找看，材料要用心找寻哦。</Dialog>
+                    <Button label="好的，我继续找！" nextID="-1" close="true"/>
+                </Page>
+            </Script>
+            <Script label="ok" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="101500" npcName="博得">看来你真的用心去找寻了，时间不是那么容易就会倒流的，珍惜现在的时间才是最好的方法。这些材料估计会对露西亚他们有帮助的，感谢你哦。</Dialog>
+                    <Button label="好的" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|4017"/>
+        </Click>
+    </NPCFun>
+  </Task>
+</Story>

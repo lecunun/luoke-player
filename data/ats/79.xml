@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 BrokenGameStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="79" label="破局">
+  <Task id="3029" label="蹊跷">
+    <!-- npc_g_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="144500" name="呱呱" position="468|272" aimPos="496|335">
+    	<View type="0" src="144500.swf" atLayerID="1"/>
+    	<Create>
+    	<NPCFun label="蹊跷" icon="-1">
+    	<Click event="onRunScript" cdtn="60">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="141200" npcName="呱呱">最近为了疗伤，每到深夜我都会打坐入静。伤势好的很快，但是有一点，我发现了一些奇怪的事情。</Dialog>
+    			<Button label="发现了什么" nextID="-1">
+    				<Goto value="dialog_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="141200" npcName="呱呱">当我入静的时候，我的元神在洛克王国恍恍惚东游西荡。结果到了皇宫上方发现笼罩着一团紫色的乌云。。。。。</Dialog>
+    			<Button label="紫色的乌云？" nextID="-1" close="true">
+    				<Goto value="asWindow_0"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_0" type="asWindow" src="task/3029/3029_0" winPos="0|0" name="提示">
+    		<Default><Goto value="dialog_2"/></Default>
+    	</Script>
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="141200" npcName="呱呱">云雾中隐含的的力量既有东方的魔法气息，也有你们洛克王国的魔法气息。和之前解除年兽封印的魔法力量非常相似。</Dialog>
+    			<Dialog npcID="141200" npcName="呱呱">我怀疑那个解除了年兽封印的不知名的邪恶巫师也到了洛克王国。并且正在王宫实施什么邪恶魔法。</Dialog>
+    			<Button label="我估计是黑巫师恩佐，你看看你当时看到的是不是这个人？" nextID="-1" close="true">
+    				<Goto value="asWindow_1"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Script label="asWindow_1" type="asWindow" src="task/3029/3029_1" winPos="0|0" name="提示">
+    		<Default><Goto value="dialog_3"/></Default>
+    	</Script>
+    	<Script label="dialog_3" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="141200" npcName="呱呱">看来我终于找到那个毁灭了玄玉国的罪魁祸首了。可是我一个人也拿他没办法，需要借助你们洛克王国的力量。我们要尽快，否则随着他对东西方魔法的融会贯通。他的力量能将两个王国都毁掉。</Dialog>
+    			<Button label="我一定会阻止它" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="1|3029"/>
+    	</Click>
+    	</NPCFun>
+    	</Create>
+    	<Click event="onTaskCall" cdtn="20"/>
+    </Npc>
+    <!-- npcfun_c0_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="询问最近王宫有什么异常" icon="0" close="false">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">没。。。没有。。。。什么都没有发生。。。。。国王能有什么事情，哈哈哈哈，开玩笑。</Dialog>
+    				<Button label="我没有问国王啊" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">啊。。。。你问。。。问。。问的不是国王啊。。。。那。。。。那就好，那就好</Dialog>
+    				<Button label="一定有什么事情发生在国王身上，快说" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">其实，也没什么，只是国王最近好像喜欢扮动物。</Dialog>
+    				<Button label="？？？？？？" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/3029/3029_2" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="144500" name="呱呱" position="468|272" aimPos="496|335">
+    		<View type="0" src="144500.swf" atLayerID="1"/>
+    		<Create>
+    		<NPCFun label="蹊跷" icon="0">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="switch">
+    			<Func invoke="taskIsComplete" args="3029"/>
+    			<Case value="0"><Goto value="notOK"/></Case>
+    			<Case value="1"><Goto value="ok"/></Case>
+    		</Script>
+    		<Script label="notOK" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">你发现什么异常了么？</Dialog>
+    				<Button label="离开" nextID="-1" close="true"><End/></Button>
+    			</Page>
+    		</Script>
+    		<Script label="ok" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">看来事情已经清楚了，恩佐一定使用了什么魔法控制了国王。下一步我们要找出他到底是如何控制国王的。</Dialog>
+    				<Dialog npcID="141200" npcName="呱呱">这是一面八卦镜，它会根据魔法的波动找出作用在国王身上的魔法力量源头。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|3029"/>
+    		</Click>
+    		</NPCFun>
+    		</Create>
+    		<Click event="onTaskCall" cdtn="20"/>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 32 -->
+    <NPCFun label="app_ts0" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3029/3029_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 32 -->
+    <NPCFun label="app_ts1" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3029/3029_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="3030" label="追踪">
+    <!-- npc_c0_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="144000" position="0|464">
+    	<View type="0" src="144000.swf" atLayerID="2" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0_3030_144000">
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144000" npcName="黑衣人">你是谁，既然你发现了这里的秘密，就和这个木偶一样吧！</Dialog>
+    					<Button label="那可说不准" nextID="-1" close="true">
+    						<Goto value="combat_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="combat_0" type="switch" invoke="combat" args="2|144000|黑衣人">
+    				<Case value="2"><Goto value="dialog_3"/></Case>				
+    				<Default><Goto value="dialog_2"/></Default>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144000" npcName="黑衣人">就你这本事,就少管闲事吧.哈哈哈.</Dialog>
+    					<Button label="谁说的,看招!" nextID="-1" close="true">
+    						<Goto value="combat_0"/>
+    					</Button>
+    					<Button label="你等着~" nextID="-1" close="true">
+    						<End/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="144000" npcName="黑衣人">就算你打败了我，可是我的诅咒已经纹刻在木偶的身上，你们国王已经醒不过来了。哈哈哈！</Dialog>
+    					<Button label="可恶啊~" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143000" position="0|0">
+    		<View type="0" src="143000.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143100" position="0|0">
+    		<View type="0" src="143100.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143200" position="0|0">
+    		<View type="0" src="143200.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c4_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143300" position="0|0">
+    		<View type="0" src="143300.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c5_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143400" position="0|0">
+    		<View type="0" src="143400.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c6_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143500" position="0|0">
+    		<View type="0" src="143500.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c7_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143600" position="0|0">
+    		<View type="0" src="143600.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c8_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143700" position="0|0">
+    		<View type="0" src="143700.swf" atLayerID="3" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- npc_c9_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="143900" position="0|0">
+    		<View type="0" src="143900.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_3030_143900">
+    				<Click label="default" event="onChangeScene" params="96"/>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_3030_143900" aimPos="830|232" cdtn="0">
+    				<Click event="onRunScript" cdtn="60" aimPos="830|232">
+    					<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_3030_143900"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_p_xml · 场景 96 -->
+    <Npc sceneID="96" type="1" npcID="144500" name="呱呱" position="468|272" aimPos="496|335">
+    		<View type="0" src="144500.swf" atLayerID="1"/>
+    		<Create>
+    		<NPCFun label="蹊跷" icon="0">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="switch">
+    			<Func invoke="taskIsComplete" args="3030"/>
+    			<Case value="0"><Goto value="notOK"/></Case>
+    			<Case value="1"><Goto value="ok"/></Case>
+    		</Script>
+    		<Script label="notOK" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">你发现是谁在王宫施展邪恶的魔法么？</Dialog>
+    				<Button label="离开" nextID="-1" close="true"><End/></Button>
+    			</Page>
+    		</Script>
+    		<Script label="ok" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">这个魔法在我们东方叫做木偶提控术，首先将被施法对象和木偶建立某种精神联系，然后通过控制木偶来控制木偶的本体。</Dialog>
+    				<Button label="怎么破除这种魔法控制" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141200" npcName="呱呱">要破除这个魔法，就要解除木偶和本体的精神联系。但是破除魔法的魔法材料你们这里没有，只能麻烦你去云烟桃源找找，等你找到了去云海古道找我。</Dialog>
+    				<Button label="义不容辞" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|3030"/>
+    		</Click>
+    		</NPCFun>
+    		</Create>
+    		<Click event="onTaskCall" cdtn="20"/>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 96 -->
+    <NPCFun label="app_ts0" sceneID="96">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3030/3030_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="13"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="3031" label="解药">
+    <!-- npc_c0_xml · 场景 105 -->
+    <Npc sceneID="105" type="1" npcID="144600" position="634|497">
+    		<View type="0" src="144600.swf" atLayerID="2"/>
+    		<Click event="onRunScript" cdtn="60">
+    			<Script label="default" type="switch" invoke="game" args="2|挖宝|2065|99">
+    				<Case value="1"><Goto value="submit"/></Case>
+    				<Default><End/></Default>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml · 场景 105 -->
+    <Npc sceneID="105" type="1" npcID="144100" position="396|316">
+    		<View type="0" src="144100.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_3031_144100">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141200" npcName="呱呱">好了，我要开始对国王木偶施法了，这个过程中我的精力必须完全集中，一旦受到外界影响，国王就有生命危险。你帮我护法。</Dialog>
+    							<Button label="你放心吧" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_3031_144100"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_3031_144100">
+    				<Click event="onRunScript">
+    					<Script label="default" type="switch" invoke="combat" args="2|144100|黑衣人">
+    						<Default><Goto value="dialog_0"/></Default>
+    					</Script>
+    					<Script label="dialog_0" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="144000" npcName="黑衣人">我等的就是这个机会,呱呱你现在没有还手之力了吧.</Dialog>
+    							<Button label="呱呱,救命啊~" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/3031/3031_0" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_3031_144100"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_3031_144100">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="141200" npcName="呱呱">好了，现在国王他应该已经被解除诅咒了。</Dialog>
+    							<Button label="谢谢你救了洛克王国" nextID="-1" close="true">
+    								<Goto value="asWindow_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_1" type="asWindow" src="task/3031/3031_1" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|3031"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 105 -->
+    <NPCFun label="app_ts0" sceneID="105">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3031/3031_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 105 -->
+    <NPCFun label="app_ts1" sceneID="105">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/3031/3031_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

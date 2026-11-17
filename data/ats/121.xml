@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DragonEnvironmentalAdventuresStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="121" label="龙境奇谈">
+  <Task id="148" label="被欺负的麻雀">
+    <!-- npcfun_g_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="被欺负的麻雀？" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">唉……为什么会这样子呢……那群小龙竟然去欺负一只麻雀。</Dialog>
+          <Button label="有此等事情发生！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">是真的，我刚刚去还发现了。只是他们完全不听我的劝告！</Dialog>
+          <Button label="这样子的话，看我去搞定这件事情！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="1|148"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 80 -->
+    <Npc sceneID="80" type="1" npcID="166700" position="655|382">
+    <View type="0" src="166700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_148_166700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">和我一起玩……和我一起玩嘛……</Dialog>
+          <Dialog npcID="166800" npcName="触须草龙">走远一点啦。</Dialog>
+          <Dialog npcID="166900" npcName="霹雳龙">为什么要和你一起玩？你又不是龙。</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">我是龙，我真的是龙，你相信我。</Dialog>
+          <Dialog npcID="167000" npcName="蒸汽龙">你说你是龙？你看你这样子，有哪一点像龙？</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">可我真的就是龙嘛……</Dialog>
+          <Button label="[= - = 目前看来没事，等我再观察一下]" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/148/148_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_148_166700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_148_166700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167000" npcName="蒸汽龙">烦不烦啊你！要我赶你多少次啊！还不快走！</Dialog>
+          <Button label="喂你们给我住手！这也太过分了！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_148_166700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_148_166700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/148/148_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 80 -->
+    <Npc sceneID="80" type="1" npcID="166800" position="427|230">
+    <View type="0" src="166800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_148_166800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/148/148_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_148_166800"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_148_166800">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 80 -->
+    <Npc sceneID="80" type="1" npcID="166900" position="715|370">
+    <View type="0" src="166900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_148_166900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">住手！你在做什么？</Dialog>
+          <Dialog npcID="161700" npcName="黑衣人">他们不跟我走，这是他们应有的下场。</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">跟你走……？</Dialog>
+          <Dialog npcID="166900" npcName="霹雳龙">呜呜呜呜，他要我们跟他走，肯定会欺负我们的。呜呜呜呜呜，我不要！</Dialog>
+          <Button label="[0 – 0！事情不好！待我上前与黑衣人一战！]" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">今天之内，你们必须献出一只龙给我，不然，你们自然知道下场，哼！</Dialog>
+          <Button label="[啥？？？？]" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_148_166900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_148_166900">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/148/148_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_148_166900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_148_166900">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|148"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 80 -->
+    <NPCFun label="app_ts0" sceneID="80">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/148/148_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 80 -->
+    <NPCFun label="app_ts1" sceneID="80">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/148/148_ts_1" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 80 -->
+    <NPCFun label="app_ts2" sceneID="80">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/148/148_ts_2" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="149" label="狼来了">
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="167000" position="475|376">
+    <View type="0" src="167000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀"><![CDATA[{name}]]>，你看这个……</Dialog>
+          <Button label="什么东西？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/149/149_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">我……刚刚和他们说好了，要把自己献给黑衣人。</Dialog>
+          <Button label="喂喂喂，他们说你就做吗，你那么傻啊！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">但是这也是证明自己的一次机会。</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">如果我真的和黑衣人签得了契约，那么就证明我真的是龙，我就可以在龙之秘境这里好好生存了。</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">如果契约签不成，那么就证明我不是龙，我也只好死心了。</Dialog>
+          <Button label="等一下，我们等一下……" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/149/149_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">事情就是这样子。</Dialog>
+          <Button label="啊我越听越傻眼了……" nextID="-1" close="false">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">所以这对我来讲真是一个好机会……我……我怎么都要一试……</Dialog>
+          <Button label="你别！！！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="asWindow" src="task/149/149_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_8"/>
+        </Default>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">这下好了。</Dialog>
+          <Button label="一点都不好！" nextID="-1" close="true">
+            <Goto value="index_0_9"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_9" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">契约签订好了么。</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">签好了。</Dialog>
+          <Button label="[还是让我打一场吧，反正他肯定打不过我的……]" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">那么接下来，听我的！</Dialog>
+          <Button label="[啊？搞什么？]" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/149/149_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">很好，看来你很有诚意。</Dialog>
+          <Button label="[完蛋，我不知不觉就……不关我的事啊喂！]" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="asWindow" src="task/149/149_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">这不是签订给我的契约么？</Dialog>
+          <Button label="为什么又有黑衣人来了！？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/149/149_5" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">究竟……发生什么事情？</Dialog>
+          <Button label="他们，真把我们当猴子耍了一次！" nextID="-1" close="false">
+            <Goto value="index_0_0"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_0" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166900" npcName="霹雳龙">……</Dialog>
+          <Dialog npcID="166800" npcName="触须草龙">……事情，是这样子的……</Dialog>
+          <Button label="什么鬼样子！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/149/149_6" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166900" npcName="霹雳龙">我们怎么知道……真的把真的黑衣人引来了呢……</Dialog>
+          <Dialog npcID="167000" npcName="蒸汽龙">好恐怖……好恐怖……刚刚好恐怖……</Dialog>
+          <Dialog npcID="166800" npcName="触须草龙">呜呜呜，屁股好痛……</Dialog>
+          <Button label="这不就是活该么……" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_149_167000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">那个……刚刚那个黑衣人，我看是坏蛋吧？</Dialog>
+          <Button label="的确是的。" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">那么现在不是喊痛，也不是抱怨的时候……我们应该想对策，打跑黑衣人耶……</Dialog>
+          <Dialog npcID="166900" npcName="霹雳龙">！</Dialog>
+          <Dialog npcID="166800" npcName="触须草龙">！！</Dialog>
+          <Dialog npcID="167000" npcName="蒸汽龙">！！！</Dialog>
+          <Dialog npcID="166700" npcName="小麻雀">黑衣人往龙榻陋室的方向去了。我们追过去看下吧，海德还在那里呢。</Dialog>
+          <Button label="好，我跟你去！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_149_167000"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_149_167000">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="167100" position="553|450">
+    <View type="0" src="167100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">说，那个蛋，被你藏到哪里去了。</Dialog>
+          <Dialog npcID="128200" npcName="海德">你说什么，我不清楚。</Dialog>
+          <Dialog npcID="161700" npcName="黑衣人">哼，你专门在这里研究龙蛋，还有什么是你不清楚的吗？</Dialog>
+          <Button label="[呀！海德要遇到危险了！]" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">我劝你最好乖乖说出真相来。</Dialog>
+          <Button label="妄想。" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166700" npcName="小麻雀">好痛……</Dialog>
+          <Button label="小麻雀！可恶！你这坏蛋！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|167000|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">有一点功架。</Dialog>
+          <Button label="那当然！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">海德，你还不说吗？你还不说的话，这几只小龙，就不用要了吧。</Dialog>
+          <Button label="你这坏蛋！竟然要挟！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">……</Dialog>
+          <Dialog npcID="161700" npcName="黑衣人">哼，老匹夫。</Dialog>
+          <Button label="你想怎么样！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/149/149_7" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="166900" npcName="霹雳龙">这！麻雀……</Dialog>
+          <Dialog npcID="166800" npcName="触须草龙">这！他不是麻雀而已吗……</Dialog>
+          <Dialog npcID="167000" npcName="蒸汽龙">他真的是龙啊！</Dialog>
+          <Dialog npcID="128200" npcName="海德">糟糕……</Dialog>
+          <Dialog npcID="161700" npcName="黑衣人">嗯嗯，踏破铁鞋无觅处，得来全不费工夫。我终于找到你了，费米龙。恩佐大人最重要的宠物之一。</Dialog>
+          <Button label="才不管你有什么阴谋！我要把你打跑再说！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|167100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼，小鬼头，功力未够就别来烦我。</Dialog>
+          <Button label="再来一战！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+          <Button label="我我我迟点再来……" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/149/149_8" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_149_167100"/>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|167100|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_3"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼，小鬼头，功力未够就别来烦我。</Dialog>
+          <Button label="再来一战！" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="我我我迟点再来……" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/149/149_8" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_149_167100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt6_149_167100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="133000" npcName="武使徒">怎么了，还没有搞定吗？</Dialog>
+          <Dialog npcID="161700" npcName="黑衣人">……</Dialog>
+          <Dialog npcID="133000" npcName="武使徒">费米龙已经成功孵化了吗？</Dialog>
+          <Dialog npcID="167100" npcName="费米龙">我不会跟你们走的！</Dialog>
+          <Dialog npcID="133000" npcName="武使徒">你本来就是恩佐大人的宠物。</Dialog>
+          <Button label="什么乱七八糟的！！！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/149/149_9" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="133000" npcName="武使徒">这样子，你还不跟我们回去吗？</Dialog>
+          <Dialog npcID="167100" npcName="费米龙">……</Dialog>
+          <Button label="你不要相信他们！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/149/149_10" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|149"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 81 -->
+    <NPCFun label="app_ts0" sceneID="81">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/149/149_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 81 -->
+    <NPCFun label="app_ts1" sceneID="81">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/149/149_ts_1" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="150" label="龙的能力">
+    <!-- npcfun_c0_xml · 场景 121 -->
+    <NPCFun sceneID="121" label="我要去找费米龙" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">费米龙他被卷走的时候，留下了这个，你看……</Dialog>
+          <Button label="什么？" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/150/150_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onChangeScene" params="121"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 121 -->
+    <Npc sceneID="121" type="1" npcID="167200" position="287|336">
+    <View type="0" src="167200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_150_167200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">这里……是哪里？</Dialog>
+          <Button label="这里是……以前的商店街" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">为什么……我们会来到这里……？</Dialog>
+          <Button label="必定是你的能力……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">我的能力？我的什么能力？</Dialog>
+          <Button label="你有穿越时空的能力" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">啊？穿越时空？</Dialog>
+          <Button label="嗯……而且你把我们都卷进来了" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">你是说，黑衣人他们也来到这里了？</Dialog>
+          <Button label="必定是的" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_150_167200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_150_167200">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/150/150_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/150/150_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_150_167200">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/150/150_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_150_167200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_150_167200">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true" fireID="167300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt4_150_167200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">接下来，我们怎么办？</Dialog>
+          <Button label="当然是回去啦！还不快走，等他醒来咋办？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">可是怎么回去？</Dialog>
+          <Button label="你没听到他手上有水晶吗？拿过来就是了！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_150_167200"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt5_150_167200">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">是说这个吧？</Dialog>
+          <Button label="对！我们回去吧！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/150/150_4" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true" fireID="167400"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 121 -->
+    <Npc sceneID="121" type="1" npcID="167500" position="600|430">
+    <View type="0" src="167500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_150_167500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="167100" npcName="费米龙">我们，回来了？</Dialog>
+          <Button label="嗯，终于回来了。" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">天！孩子们，你们终于回来了！</Dialog>
+          <Button label="海德教授……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">费米龙，你知道吗，你刚刚无法控制的能力，是穿越时空的能力！</Dialog>
+          <Dialog npcID="167100" npcName="费米龙">嗯，刚刚<![CDATA[{name}]]>也和我说过了……</Dialog>
+          <Button label="这有什么问题吗教授？" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="128200" npcName="海德">如果说，费米龙是结合了恩佐的结晶孵出来的宠物……那么，刚刚武使徒提出的，一共有七个特殊的结晶，进入了宠物蛋中……</Dialog>
+          <Dialog npcID="128200" npcName="海德">我不知道后面会发生什么……但我只能说，危险，在一步步向我们靠近了。</Dialog>
+          <Button label="教授不要担心，我们会多加防范的。" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|150"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 121 -->
+    <NPCFun label="app_ts0" sceneID="121">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="121"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 81 -->
+    <NPCFun label="app_ts1" sceneID="81">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="81"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 IcePlaceTripStartingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="177" label="冰原旅途之启程">
+  <Task id="183" label="冰原旅途之启程">
+    <!-- npcfun_183_101000_accpetTask · 场景 13 -->
+    <NPCFun sceneID="13" label="冰原旅途之启程" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛"><![CDATA[{name}]]>，我正忙，没空理会你。或者你有什么，可以跟夏洛克，哥顿他们交代一声。</Dialog>
+    					<Button label="你要去哪里？">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">这个，你就没有必要理会了。</Dialog>
+    					<Button label="……" nextID="-1" close="true">
+    						<Goto value="window_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/183/app_1" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="accpet"/>
+    			  </Default>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|183"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 13 -->
+    <NPCFun label="app_ts0" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/183/app_1_01" winPos="0|0" name="">
+    		  <Default>
+    		    <Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="44"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 13 -->
+    <NPCFun label="app_ts1" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/183/app_2_04" winPos="0|0" name="">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="52"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 13 -->
+    <NPCFun label="app_ts2" sceneID="13">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/183/app_3_00" winPos="0|0" name="">
+    		  <Default>
+    			<Goto value="changescene_0"/>
+    		  </Default>
+    		</Script>
+    		<Click event="onChangeScene" label="changescene_0" params="44"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 13 -->
+    <NPCFun label="app_ts3" sceneID="13">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="170"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="203400" position="0|0">
+    	<View type="0" src="203400.swf" atLayerID="1" hasClick="false"/>
+    	
+    	<Create>
+    	<ViewEvent type="task_183_event_showLanlusi">
+    		<Click event="onRunScript">
+    			<Script label="default" type="asWindow" src="task/183/App_2_01" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="task_183_event_showSnowsprite"/>
+    			  </Default>
+    			</Script>
+    				<Click label="task_183_event_showSnowsprite" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_event_showSnowsprite"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="task_183_event_startFightWithSnowysprite">
+    		<Click event="onRunScript">
+    			<Script label="default" type="switch" invoke="combat" args="2|203400|雪精灵">
+    				<Default><End/></Default>
+    				<Case value="2"><Goto value="task_183_event_iceWallCracking"/></Case>
+    			</Script>
+    			<Click label="task_183_event_iceWallCracking" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_event_iceWallCracking"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_event_showLanlusiDialog_0">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">冰墙果然很难对付……</Dialog>
+    					<Dialog npcID="101000" npcName="兰斯洛">我的火花，出来吧。</Dialog>
+    					<Button label="啊啊？" nextID="-1" close="true">
+    						<Goto value="task_183_event_ShowHuohua"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="task_183_event_ShowHuohua" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_event_ShowHuohua"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_event_showedHuohuaDialog_1">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">火花，把冰墙融化吧。</Dialog>
+    					<Dialog npcID="203400" npcName="火花">遵命！</Dialog>
+    					<Button label="还有这招(⊙０⊙)" nextID="-1" close="true">
+    						<Goto value="window_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_1" type="asWindow" src="task/183/app_2_02" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="task_183_event_huohuaheadmaopao"/>
+    			  </Default>
+    			</Script>
+    			<Click label="task_183_event_huohuaheadmaopao" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_event_huohuaheadmaopao"/>
+    			//<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_event_showedHuohuaDialog_3">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="203400" npcName="火花">主人……</Dialog>
+    					<Dialog npcID="101000" npcName="兰斯洛">不是你的错。待我想想怎么办……</Dialog>
+    					<Button label="我有办法！" nextID="-1" close="true">
+    						<Goto value="window_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_2" type="asWindow" src="task/183/app_2_03" winPos="0|0" name="加载中......">
+    			  <Default>
+    			    <Goto value="sumbit"/>
+    			  </Default>
+    			</Script>
+    			<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="203300" position="0|0">
+    	<View type="0" src="203300.swf" atLayerID="1"/>
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="203400" npcName="火花">什么？要我们帮忙？</Dialog>
+    				<Dialog npcID="203400" npcName="火花">你凭什么让我们帮你忙啊。</Dialog>
+    				<Dialog npcID="203400" npcName="火花">打赢我们再说吧！</Dialog>
+    				<Button label="不会吧……这都要打？" nextID="-1" close="true">
+    					<Goto value="fight_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fight_0" type="switch" invoke="combat" args="2|203300|火花">
+    				<Default><End/></Default>
+    				<Case value="2"><Goto value="dialog_0"/></Case>
+    			</Script>
+    	
+    		<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="203400" npcName="火花">好强大哦！</Dialog>
+    				<Dialog npcID="203400" npcName="火花">好厉害哦！</Dialog>
+    				<Dialog npcID="203400" npcName="火花">好吧我们跟你走，帮你的忙！</Dialog>
+    				<Button label="那马上出发吧。" nextID="-1" close="true">
+    					<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="NULL" fire="true"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="203200" position="0|0">
+    	<View type="0" src="203200.swf" atLayerID="3" hasClick="false"/>
+    	
+    	<Create>
+    	<ViewEvent type="task_183_3_showHuohuaDialog_0">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="203400" npcName="火花">哦！我的天！好多小伙伴！</Dialog>
+    					<Button label="快点开始吧！" nextID="-1" close="true">
+    						<Goto value="window_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/183/app_3_01" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="dialog_0"/>
+    			  </Default>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="203400" npcName="火花">哇咔咔！谢谢你！我的小伙伴！</Dialog>
+    					<Button label="谢谢你们！" nextID="-1" close="true">
+    						<Goto value="task_183_3_huohuaheadmaopao_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="task_183_3_huohuaheadmaopao_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_3_huohuaheadmaopao_1"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	
+    	
+    <ViewEvent type="task_183_3_showLanluosiDialog_2">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">走吧。</Dialog>
+    					<Button label="兰斯洛你要不要老这么酷……" nextID="-1" close="true">
+    						<Goto value="window_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_1" type="asWindow" src="task/183/app_3_02" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="task_183_3_showedbingjing_2"/>
+    			  </Default>
+    			</Script>
+    			<Click label="task_183_3_showedbingjing_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_3_showedbingjing_2"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_3_showLanluosiDialog_3">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">冰晶栅栏。</Dialog>
+    					<Dialog npcID="203400" npcName="火花">这又没冰墙大，我来！</Dialog>
+    					<Button label="靠你了！" nextID="-1" close="true">
+    						<Goto value="window_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_2" type="asWindow" src="task/183/app_3_03" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="dialog_0"/>
+    			  </Default>
+    			</Script>
+    	
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="203400" npcName="火花">为什么！为什么！为什么！</Dialog>
+    					<Dialog npcID="101000" npcName="兰斯洛">这是冰晶栅栏的特点。</Dialog>
+    					<Button label="兰斯洛你为什么不早说……" nextID="-1" close="true">
+    						<Goto value="task_183_3_showBlackmanAndGostTing_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="task_183_3_showBlackmanAndGostTing_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_3_showBlackmanAndGostTing_3"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_3_showBlackDialog_4">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="179000" npcName="黑衣人">哈哈哈哈哈哈哈！过不去吧！过不去吧！</Dialog>
+    					<Dialog npcID="203400" npcName="火花">看我把你个恶魔叮打下来！</Dialog>
+    					<Dialog npcID="179000" npcName="黑衣人">你们也想飞过去吗？别想了！我众多侦查恶魔叮已经在前方等候了。</Dialog>
+    					<Dialog npcID="179000" npcName="黑衣人">打得了一只，打得了那么多只吗？别傻了！你们就等着过不去吧！哇咔咔咔咔！</Dialog>
+    	
+    					<Button label="你！你你你你你！" nextID="-1" close="true">
+    						<Goto value="task_183_3_BlackmanGoAway_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="task_183_3_BlackmanGoAway_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_3_BlackmanGoAway_4"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_3_showLanlusiDialog_5">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">看来，要出绝招。</Dialog>
+    					<Dialog npcID="203400" npcName="火花">主人，你终于要使那招了吗？</Dialog>
+    					<Button label="哪招？">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛"><![CDATA[{name}]]>，等会趁着空档，你迅速跟我而来。</Dialog>
+    					<Button label="啊！给我点心理准备啊！" nextID="-1" close="true">
+    						<Goto value="window_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/183/app_3_04" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="sumbit"/>
+    			  </Default>
+    			</Script>
+    		<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npcfun_101000_183_submit · 场景 13 -->
+    <Npc sceneID="13" type="1" npcID="203100" position="0|0">
+    	<View type="0" src="203100.swf" atLayerID="3" hasClick="false"/>
+    	
+    	<Create>
+    	<ViewEvent type="task_183_p_fightWithGostTing_1">
+    		<Click event="onRunScript">
+    			<Script label="default" type="switch" invoke="combat" args="2|203100|恶魔叮">
+    				<Default><Goto value="window_0"/></Default>
+    			</Script>
+    			<Script label="window_0" type="asWindow" src="task/183/app_p_01" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="task_183_p_GostTingIsFailed_0"/>
+    			  </Default>
+    			</Script>
+    			<Click label="task_183_p_GostTingIsFailed_0" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_p_GostTingIsFailed_0"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_p_showLanlusiDialog_1">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">看来，你需要特训冷静。</Dialog>
+    					<Button label="这下怎么办啊？">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">前方有河，右方有墙，任何魔法，都无法进入。</Dialog>
+    					<Dialog npcID="101000" npcName="兰斯洛">彼岸的小镇，必须用船，一步一个脚印，才能进入。</Dialog>
+    					<Dialog npcID="203400" npcName="火花">主人为什么你不早说……</Dialog>
+    					<Dialog npcID="179000" npcName="黑衣人">原来这样！哼！看我日后卷土重来！</Dialog>
+    					<Button label="别来了你……" nextID="-1" close="true">
+    						<Goto value="task_183_p_BlackManGoAway_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="task_183_p_BlackManGoAway_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="task_183_p_BlackManGoAway_1"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="task_183_p_showLanlusiDialog_2">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">也就是说，我们必须造船。</Dialog>
+    					<Button label="造船啊……" nextID="-1" close="true">
+    						<Goto value="window_2"/>
+    					</Button>
+    				</Page>
+    			</Script>,,,,
+    			<Script label="window_2" type="asWindow" src="task/183/app_p_02" winPos="0|0" name="加载中......">
+    			  <Default>
+    				<Goto value="submit"/>
+    			  </Default>
+    			</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|183"/>
+    		</Click>
+    </ViewEvent>
+    	</Create>
+    	</Npc>
+  </Task>
+</Story>

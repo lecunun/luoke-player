@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MoonWerewolfStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="172" label="冷月狼人">
+  <Task id="181" label="冷月狼人">
+    <!-- npcfun_g_xml · 场景 120 -->
+    <NPCFun sceneID="120" label="冷月狼人" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">哦，是你啊，<![CDATA[{name}]]>。</Dialog>
+          <Button label="奥贝斯坦，你在研究些什么？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">看到那边的留声机了吗？我截获到了一段魔鬼之声。</Dialog>
+          <Button label="什么！魔鬼之声？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+    <!--app-截获经过-->
+      <Script label="index_0_2" type="asWindow" src="task/181/181_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">经过我的分析，这虽然听起来像魔鬼的声音，但却是狼人的吼叫。</Dialog>
+          <Button label="狼人的吼叫？！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+    	<!--app-叫声里的信息-->
+      <Script label="index_0_4" type="asWindow" src="task/181/181_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_6"/>
+        </Default>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">这几天的魔鬼之声，都是狼人们的集结号。</Dialog>
+          <Button label="他们要做什么？" nextID="-1" close="false">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">我也不清楚。不过，作为一个情报贩子，我决定潜入冷月仓库。</Dialog>
+          <Button label="啊！这么危险！" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+    	<!--app-自愿跟随-->
+      <Script label="index_0_8" type="asWindow" src="task/181/181_2" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_9"/>
+        </Default>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="159300" npcName="奥贝斯坦">那么，我们出发吧！</Dialog>
+          <Button label="出发！" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="onTaskCall2" params="1|181"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="200800" position="480|280" aimPos="630|444">
+    <View type="0" src="200800.swf" atLayerID="1" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_181_200800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/181/181_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_181_200800"/>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt1_181_200800">
+    <Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="200800" npcName="狼人首领">等你很久了，奥贝斯坦</Dialog>
+    	  	  <Dialog npcID="159300" npcName="奥贝斯坦">你是谁？</Dialog>
+    		  <Dialog npcID="200800" npcName="狼人首领">这不重要。重要的是，你的命现在在我们的手上。</Dialog>
+    	      <Button label="奥贝斯坦……" nextID="-1" close="true">
+    	        <Goto value="index_0_10"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	<Script label="index_0_10" type="asWindow" src="task/181/181_4" winPos="0|0" name="">
+    	    <Default>
+    	      <Goto value="index_0_11"/>
+    	    </Default>
+    	  </Script>
+    	<Script label="index_0_11" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="159300 " npcName="奥贝斯坦">那么……我答应你……</Dialog>
+    	 	  <Dialog npcID="200800" npcName="狼人首领">哦？这么爽快？</Dialog>
+    	  	  <Dialog npcID="159300" npcName="奥贝斯坦">不答应直接没命呢。</Dialog>
+    		  <Dialog npcID="200800" npcName="狼人首领">哈哈！那好，跟我来吧！</Dialog>
+    	      <Button label="啊……" nextID="-1" close="true">
+    	 		<Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_181_200800"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt2_181_200800">
+    	<Click event="onRunScript">
+    		  <Script label="default" type="asWindow" src="task/181/181_5" winPos="0|0" name="">
+    		    <Default>
+    		      <Goto value="index_0_12"/>
+    		    </Default>
+    		  </Script>
+    		<Click label="index_0_12" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="200900" position="592|271" name="D伯爵">
+    	<View type="0" src="200900.swf" atLayerID="2"/>
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page>
+    				<Dialog npcID="200000" npcName="D伯爵"><![CDATA[{name}]]>，是你啊，来找我有什么事情？</Dialog>
+    				<Button label="事情很严重啊！" nextID="-1" close="false"><Goto value="index_0_1"/></Button>
+    			</Page>
+    		</Script>
+    	<Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="200000" npcName="D伯爵">（仔细听取了事情的经过）</Dialog>
+    			<Dialog npcID="200000" npcName="D伯爵">竟然发生了这种事情！狼人……这群可恶的家伙……</Dialog>
+    			<Dialog npcID="200000" npcName="D伯爵">看来我要准备和他们一战。和奥贝斯坦互通消息，就继续拜托你了，<![CDATA[{name}]]>。</Dialog>
+    	      <Button label="交给我吧！" nextID="-1" close="true">
+    				<Click label="index_0_2" event="NULL" fire="true" fireID="200900"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    		</Click>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="201000" position="0|0" name="狼人守卫">
+    	<View type="0" src="201000.swf" atLayerID="2"/>
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="201000" npcName="狼人守卫">什么人！</Dialog>
+    					<Button label="糟糕被发现了！" close="true"><Goto value="index_0_1"/></Button>
+    				</Page>
+    			</Script>
+    			  <Script label="index_0_1" type="switch" invoke="game" args="2|狼人守卫|2120|69">
+    			    <Case value="1">
+    			      <Goto value="index_0_2"/>
+    			    </Case>
+    			    <Default>
+    			      <End/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_2" type="asWindow" src="task/181/181_6" winPos="0|0" name="突破防守">
+    			    <Default>
+    					<Click label="index_0_3" event="NULL" fire="true"/>
+    			    </Default>
+    			  </Script>						
+    		</Click>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="201100" position="592|271" name="D伯爵">
+    	<View type="0" src="201100.swf" atLayerID="2"/>
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="200000" npcName="D伯爵">（把奥贝斯坦的信件给了D伯爵）</Dialog>
+    				<Dialog npcID="200000" npcName="D伯爵">奥贝斯坦说了一个很惊人的事实。</Dialog>
+    				<Button label="什么！？" nextID="-1" close="false"><Goto value="index_0_1"/></Button>
+    			</Page>
+    		</Script>
+    	  <Script label="index_0_1" type="asWindow" src="task/181/181_7" winPos="0|0" name="">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	<Script label="index_0_2" type="dialog">
+    		<Page id="0">
+    				<Dialog npcID="200000" npcName="D伯爵">狼人们的目的是恢复原状。而恩佐利用了这一点。</Dialog>
+    				<Dialog npcID="200000" npcName="D伯爵">难道……他想借狼人之力，拿到永生之血么！</Dialog>
+    				<Button label="果然狡猾！" nextID="-1" close="false"><Goto value="index_0_3"/></Button>
+    			</Page>
+    		</Script>	
+    	<Script label="index_0_3" type="dialog">
+     			<Page id="0">
+    				<Dialog npcID="200000" npcName="D伯爵">小洛克，我们赶快取得地形图吧！</Dialog>
+    				<Button label="好！我马上过去！" nextID="-1" close="true">
+    					<Click label="index_0_2" event="NULL" fire="true" fireID="201100"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		</Click>
+    	</Npc>
+    <!-- npc_c4_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="201600" position="384|469" name="">
+    	<View type="0" src="201600.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    		  <Script label="default" type="asWindow" src="task/181/181_8" winPos="0|0" name="">
+    			<Default>
+    				<Click label="index_0_1" event="NULL" fire="true"/>
+    			</Default>
+    		  </Script>	
+    	</Click>
+    	</Npc>
+    <!-- npc_c5_xml · 场景 167 -->
+    <Npc sceneID="167" type="1" npcID="201200" position="592|271" name="D伯爵">
+    	<View type="0" src="201200.swf" atLayerID="2"/>
+    	<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="200000" npcName="D伯爵">（把奥贝斯坦的地形图给了D伯爵）</Dialog>
+    				<Dialog npcID="200000" npcName="D伯爵">辛苦你了，当然，也辛苦奥贝斯坦了。</Dialog>
+    				<Button label="什么话，不辛苦！伯爵！" nextID="-1" close="false"><Goto value="index_0_1"/></Button>
+    			</Page>
+    		</Script>
+    		<Script label="index_0_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="200000" npcName="D伯爵">等着吧，等我把准备做好，我们就一举攻下冷月！</Dialog>
+    				<Button label="好！我等着那天！" nextID="-1" close="true"><Goto value="index_0_2"/></Button>
+    			</Page>
+    		</Script>	
+    	 	<Script label="index_0_2" type="asWindow" src="task/181/181_9" winPos="0|0" name="">
+    			<Default>
+    			 <Click label="index_0_10" event="onTaskCall2" params="2|181"/>
+    			</Default>
+    		  </Script>
+    
+    		</Click>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 167 -->
+    <NPCFun label="app_ts0" sceneID="167">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/181/181_ts_0" winPos="0|0" name="提示">
+    	<Default><Click event="onChangeScene" params="167"/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 92 -->
+    <NPCFun label="app_ts1" sceneID="92">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/181/181_ts_1" winPos="0|0" name="提示">
+    	<Default><Click event="onChangeScene" params="92"/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 167 -->
+    <NPCFun label="app_ts2" sceneID="167">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/181/181_ts_2" winPos="0|0" name="提示">
+    	<Default><Click event="onChangeScene" params="167"/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 92 -->
+    <NPCFun label="app_ts3" sceneID="92">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/181/181_ts_3" winPos="0|0" name="提示">
+    		<Default><Click event="onChangeScene" params="92"/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts4_xml · 场景 167 -->
+    <NPCFun label="app_ts4" sceneID="167">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/181/181_ts_4" winPos="0|0" name="提示">
+    		<Default><Click event="onChangeScene" params="167"/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts5_xml · 场景 92 -->
+    <NPCFun label="app_ts5" sceneID="92">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/181/181_ts_5" winPos="0|0" name="提示">
+    		<Default><Click event="onChangeScene" params="92"/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

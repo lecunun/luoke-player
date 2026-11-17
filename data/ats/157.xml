@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 NewStudent.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="157" label="学院的奇怪新生">
+  <Task id="1117" label="生气的费得">
+    <!-- npc_187600 · 场景 59 -->
+    <Npc sceneID="59" type="1" npcID="187600" position="379|406">
+        <View type="0" src="187600.swf" atLayerID="2" hasClick="false"/>
+        <Create>
+            <ViewEvent type="task_1117_npc_187600_state_0_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="188500" npcName="费得">你这个家伙！学习好有什么了不起！竟然陷害我！</Dialog>
+                            <Dialog npcID="104100" npcName="菲尔特">我～我没有！</Dialog>
+                            <Dialog npcID="188500" npcName="费得">你再废话！看我揍你！信不信！</Dialog>
+                            <Button label="呃呃呃～先不要欺负小盆友！" nextID="-1">
+                                <Goto value="dialog_0"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_0" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="188500" npcName="费得"><![CDATA[{name}]]>！你来得正好！你给评评理！学习好就跟我玩儿这种小心眼儿！也不怕得痔疮！</Dialog>
+                            <Dialog npcID="104100" npcName="菲尔特">你干嘛老是欺负我！</Dialog>
+                            <Button label="究竟发生什么了？" nextID="-1" close="true">
+                                <Goto value="app_task_1117_0"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="app_task_1117_0" type="asWindow" src="task/1117/app_task_1117_0" winPos="0|0" name="嫁祸菲尔特">
+                        <Default><Goto value="accept"/></Default>
+                    </Script>
+                    <Click label="accept" event="onTaskCall2" params="1|1117"/>
+                </Click>
+            </ViewEvent>
+            <ViewEvent type="task_1117_npc_187600_state_1_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187600" npcName="电咩咩">菲尔特！！我一直以为你是好人！没想到你竟然指使别人来欺负我们！</Dialog>
+                            <Dialog npcID="104100" npcName="菲尔特">啊……？这是怎么回事！我一直在准备魔法庆典，根本不知道你们在说什么！</Dialog>
+                            <Dialog npcID="188500" npcName="费得">嘿嘿！菲尔特，看不出来啊～欢迎你加入我们的欺负小朋友组织！</Dialog>
+                            <Button label="这又是怎么回事？" nextID="-1" close="true">
+                                <Goto value="app_task_1117_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="app_task_1117_1" type="asWindow" src="task/1117/app_task_1117_1" winPos="0|0" name="电咩咩一族被抓">
+                        <Default><Goto value="dialog_1"/></Default>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="104100" npcName="菲尔特">这些真的不是我做的！</Dialog>
+                            <Dialog npcID="187600" npcName="电咩咩">我不管～～现在好多电咩咩都不知道被抓去哪里了！！<![CDATA[{name}]]>～果然还是你最靠得住，你要帮帮我！</Dialog>
+                            <Button label="恩！一定！真相只有一个！" nextID="-1">
+                                <Goto value="dialog_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187600" npcName="电咩咩">而且！萨拉说她的植物也被菲尔特拿走了！</Dialog>
+                            <Dialog npcID="104100" npcName="菲尔特">啊？！！！！！5555555555</Dialog>
+                            <Button label="我这就去找萨拉问清楚！" nextID="-1" close="true">
+                                <Goto value="condition_update"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="condition_update" event="NULL" fire="true"/>
+                </Click>
+            </ViewEvent>
+        </Create>
+    </Npc>
+    <!-- npcfun_115900 · 场景 5 -->
+    <NPCFun sceneID="5" label="菲尔特来过？" icon="0" close="false">
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="115900" npcName="萨拉">菲尔特那个孩子……真是太不懂事了……完全不像他的风格……</Dialog>
+                    <Button label="他怎么了？" nextID="-1" close="true">
+                        <Goto value="app_task_1117_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="app_task_1117_2" type="asWindow" src="task/1117/app_task_1117_2" winPos="0|0" name="萨拉的抱怨">
+                <Default><Goto value="dialog_3"/></Default>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="115900" npcName="萨拉">如果你见到他，一定要让他快点把那些植物还给我。</Dialog>
+                    <Button label="恩……[这究竟是怎么回事？]" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|1117"/>
+        </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1118" label="寻找">
+    <!-- npc_187700 · 场景 154 -->
+    <Npc sceneID="154" type="1" npcID="187700" position="594|422">
+        <View type="0" src="187700.swf" atLayerID="2" hasClick="false"/>
+    </Npc>
+    <!-- npc_187800 · 场景 154 -->
+    <Npc sceneID="154" type="1" npcID="187800" position="412|380">
+        <View type="0" src="187800.swf" atLayerID="2" hasClick="false"/>
+        <Create>
+            <ViewEvent type="task_1118_npc_187800_state_0_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187900" npcName="法比亚">别欺负我～555555～我只不过是新来的学生而已……</Dialog>
+                            <Button label="新来的学生？" nextID="-1">
+                                <Goto value="dialog_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_1" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187900" npcName="法比亚">是……我是新来的学生……你不要欺负我啦……</Dialog>
+                            <Button label="魔法学院的院长是谁？" nextID="-1">
+                                <Goto value="dialog_2"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_2" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187900" npcName="法比亚">当然是恩佐大人！</Dialog>
+                            <Button label="库仑……你别装蒜了！" nextID="-1" close="true">
+                                <Goto value="notify_npc_skip_to_state_1"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="notify_npc_skip_to_state_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="npc_skip_to_state_1"/>
+                </Click>
+            </ViewEvent>
+            <ViewEvent type="task_1118_npc_187800_state_2_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="switch" invoke="combat" args="2|187800|黑衣人">
+                        <Case value="2">
+                            <Goto value="dialog_fight_win"/>
+                        </Case>
+                        <Default>
+                            <Goto value="dialog_fight_lose"/>
+                        </Default>
+                    </Script>
+                    <Script label="dialog_fight_lose" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="112000" npcName="黑衣人">哈哈，你这个废柴！</Dialog>
+                            <Button label="下次再来！" nextID="-1" close="true">
+                                <End/>
+                            </Button>
+                            <Button label="再打一次！" nextID="-1" close="true">
+                                <Goto value="default"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_fight_win" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="112000" npcName="黑衣人">哼！就算这次失败了，也无法阻止我们要破坏魔法庆典的计划！</Dialog>
+                            <Button label="我一定还会阻止你们的！" nextID="-1">
+                                <Goto value="dialog_4"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_4" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="112000" npcName="黑衣人">就凭你！？</Dialog>
+                            <Button label="你为什么要陷害菲尔特！" nextID="-1" close="true">
+                                <Goto value="app_task_1118_0"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="app_task_1118_0" type="asWindow" src="task/1118/app_task_1118_0" winPos="0|0" name="库仑嫉妒菲尔特">
+                        <Default><Goto value="condition_update"/></Default>
+                    </Script>
+                    <Click label="condition_update" event="NULL" fire="true"/>
+                </Click>
+            </ViewEvent>
+            <ViewEvent type="task_1118_npc_187800_state_5_click">
+                <Click event="onRunScript" cdtn="0">
+                    <Script label="default" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187600" npcName="电咩咩">谢谢你救了我们！</Dialog>
+                            <Button label="电咩咩～这件事不是菲尔特做的！" nextID="-1">
+                                <Goto value="dialog_5"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Script label="dialog_5" type="dialog">
+                        <Page id="0">
+                            <Dialog npcID="187600" npcName="电咩咩">嗯嗯……是我冤枉了好人……求求你，去魔法学院告诉他！！我实在不好意思！！！</Dialog>
+                            <Button label="呃……好吧！" nextID="-1" close="true">
+                                <Goto value="submit"/>
+                            </Button>
+                        </Page>
+                    </Script>
+                    <Click label="submit" event="onTaskCall2" params="2|1118"/>
+                </Click>
+            </ViewEvent>
+        </Create>
+    </Npc>
+  </Task>
+  <Task id="1119" label="安慰">
+    <!-- npc_187900 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="187900" position="428|391">
+        <View type="0" src="187900.swf" atLayerID="2" hasClick="true"/>
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="187900" npcName="法比亚">你就是传说中的<![CDATA[{name}]]>？</Dialog>
+                    <Button label="啊？[难道此人不是库仑伪装的？]" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="187900" npcName="法比亚">你在我们这些新生当中很出名耶！！我们以后要向你好好学习才行！</Dialog>
+                    <Button label="此话怎讲？" nextID="-1" close="true">
+                        <Goto value="app_task_1119_0"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="app_task_1119_0" type="asWindow" src="task/1119/app_task_1119_0" winPos="0|0" name="被夸奖得一塌糊涂">
+                <Default><Goto value="dialog_2"/></Default>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="187900" npcName="法比亚">以后我和奥多还有小桃还有好多问题要向你请教呢！！你和菲尔特都是我们的好榜样！</Dialog>
+                    <Button label="对了……关于菲尔特……" nextID="-1">
+                        <Goto value="dialog_3"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188500" npcName="费得">我们都知道了……格里芬院长都告诉过我们了……是我冤枉了他……</Dialog>
+                    <Button label="对啦？菲尔特在哪里？" nextID="-1">
+                        <Goto value="dialog_4"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_4" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188500" npcName="费得">应该是在魔法密林……<![CDATA[{name}]]>，可以帮我跟他道歉么……？</Dialog>
+                    <Button label="恩！*^-^*" nextID="-1" close="true">
+                        <Goto value="condition_update"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="condition_update" event="NULL" fire="true"/>
+        </Click>
+    </Npc>
+    <!-- npc_188000 · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="188000" name="菲尔特" position="440|390">
+        <View type="0" src="188000.swf" atLayerID="2"/>
+        <Click event="onRunScript">
+            <Script label="default" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188000" npcName="菲尔特"><![CDATA[{name}]]>……我被大家讨厌了……</Dialog>
+                    <Button label="怎么会……真相已经揭开了" nextID="-1">
+                        <Goto value="dialog_1"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_1" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188000" npcName="菲尔特">啊？真的吗……？真相是什么？</Dialog>
+                    <Button label="恩！原来是黑衣人扮成魔法学院的新生，嫁祸给你的。" nextID="-1">
+                        <Goto value="dialog_2"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_2" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188000" npcName="菲尔特">我想过了……我果然还是太软弱了……我要变得更加强大！</Dialog>
+                    <Button label="恩！大家现在都在准备魔法庆典呢！很需要你！" nextID="-1">
+                        <Goto value="dialog_3"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Script label="dialog_3" type="dialog">
+                <Page id="0">
+                    <Dialog npcID="188000" npcName="菲尔特">谢谢你！！还我清白！！！我要怎么感谢你才好～</Dialog>
+                    <Button label="你开心就好～！" nextID="-1" close="true">
+                        <Goto value="submit"/>
+                    </Button>
+                </Page>
+            </Script>
+            <Click label="submit" event="onTaskCall2" params="2|1119"/>
+        </Click>
+    </Npc>
+  </Task>
+</Story>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SpecialAgentStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="148" label="特工">
+  <Task id="4044" label="特工">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="特工也疯狂" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100900" npcName="麦斯威尔">阿昆再次感谢你帮忙找到了暴牙，可是据说他有个很神秘的朋友，到现在也没有找到，你能帮助他么？</Dialog>
+    				<Button label="好的">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="100900" npcName="麦斯威尔">好的，阿昆在体育场等着你，去和他聊聊吧！</Dialog>
+    					<Button label="好的，现在就去" close="true">
+    						<Goto value="sumbit"/>
+    					</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="sumbit" event="onTaskCall2" params="1|4044"/>
+    	</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 14 -->
+    <NPCFun label="app_ts0" sceneID="14">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="40"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="184100" position="370|300">
+    	<View type="0" src="184100.swf" atLayerID="1" lazyLoad="true"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="184100" npcName="阿昆">我的那个朋友是个神出鬼没的家伙，据说还有着一个特别的身份，超级特工！！！</Dialog>
+    				<Button label="好厉害" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/4044/task_4044_SPECIALANGENT" winPos="0|0" name="特工的故事">
+    			<Default>
+    				<Goto value="dialog_2"/>
+    			</Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    			<Page>
+    				<Dialog npcID="184100" npcName="阿昆">那个家伙估计现在在索米亚草原那里，去看看有没有什么线索。</Dialog>
+    					<Button label="好的" close="true">
+    						<Goto value="sumbit"/>
+    					</Button>
+    			</Page>
+    		</Script>
+    		<Click label="sumbit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 14 -->
+    <Npc sceneID="14" type="1" npcID="184200" position="140|300">
+    		<View type="0" src="184200.swf" atLayerID="1" lazyLoad="true"/>
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="184200" npcName="恶魔叮">想让我和你说实话没门！</Dialog>
+    					<Button label="那就满足你，先扁你一顿，看你说不说！" close="true">
+    						<Goto value="fight_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="fight_1" type="switch" invoke="combat" args="2|184200|恶魔叮">
+    				<Default><Goto value="fail"/></Default>
+    				<Case value="2"><Goto value="victory"/></Case>
+    		</Script>
+    		<Script label="victory" type="dialog">
+    			<Page>
+    				<Dialog npcID="184200" npcName="恶魔叮">刚刚和主人碰到一个怪怪的家伙，主人想带回去给恩佐大人献礼，可是……</Dialog>
+    				<Button label="后来呢?" close="true">
+    				<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="fail" type="dialog">
+    			<Page>
+    				<Dialog npcID="184200" npcName="恶魔叮">还想扁我，你练几年再来吧！</Dialog>
+    				<Button label="等会再来" close="true">
+    				<End/>
+    				</Button>
+    				<Button label="哼哼，我就不信打不过你！" close="true">
+    				<Goto value="fight_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4044/task_4044_SPECIALANGENTisWhere" winPos="0|0" name="特工去了哪里">
+    		<Default>
+    			<Goto value="dialog_end"/>
+    		</Default>
+    		</Script>
+    		<Script label="dialog_end" type="dialog">
+    			<Page>
+    				<Dialog npcID="184200" npcName="恶魔叮">后来模糊的记得他向火山口那边去了……</Dialog>
+    				<Button label="好吧，以后不要帮助黑衣人干坏事了，否则下次绝不绕你！" close="true">
+    				<Goto value="sumbit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    			
+    			<Click label="sumbit" event="NULL" fire="true"/>
+    			</Click>
+    		</Npc>
+    <!-- npcfun_p_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="特工" icon="0" close="false">
+    		<Click event="onRunScript">
+    							<Script label="default" type="dialog">
+    								<Page>
+    									<Dialog npcID="184000" npcName="麦可">你是谁？难道也要攻击我，小心哦！</Dialog>
+    									<Button label="不是的，我是你的朋友" close="true">
+    										<Goto value="asWindow_0" close="true"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    	
+    							<Script label="asWindow_0" type="asWindow" src="task/4044/task_4044_SPECIALANGENTFriendly" winPos="0|0" name="我们是朋友">
+    								<Default>
+    									<Goto value="dialog_4"/>
+    								</Default>
+    							</Script>
+    							
+    							<Script label="dialog_4" type="dialog">
+    								<Page>
+    									<Dialog npcID="184000" npcName="麦可">谢谢告诉我这些，这些情报太重要了！</Dialog>
+    									<Button label="呃……好吧。" close="true">
+    										<Goto value="sumbit"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    		
+    						<Click label="sumbit" event="onTaskCall2" params="2|4044"/>	
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

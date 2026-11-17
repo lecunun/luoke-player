@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheKeyNo4StoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="115" label="关键第四号">
+  <Task id="1093" label="奇怪的现象">
+    <!-- npcfun_g_xml · 场景 51 -->
+    <NPCFun sceneID="51" label="关键第四号" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112002" npcName="沃尔克">就在昨晚，草原深处发生了地震，<![CDATA[{name}]]>，不知你是否有所感觉？</Dialog>
+          <Button label="地震？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112002" npcName="沃尔克">恩， 我担心草原是不是出了什么问题……</Dialog>
+          <Button label="啊？又有问题！我这就去看看！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onTaskCall2" params="1|1093"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 118 -->
+    <Npc sceneID="118" type="1" npcID="164100" position="522|400">
+    <View type="0" src="164100.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1093_164100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">刚刚真是好奇怪……明明我可以治好EC的宠物啊……</Dialog>
+          <Button label="恩？刚刚出什么事情了吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">呃呃呃～没有啦……我自言自语而已……</Dialog>
+          <Button label="好吧……" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1093_164100"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1093_164100">
+    <Click event="onRunScript">
+      <Click label="default" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 51 -->
+    <NPCFun sceneID="51" label="草原有什么奇怪的事情呢？" icon="0" close="true">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1093/1093_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107100" npcName="EC">不过它看起来并无恶意……难道只是恶作剧吗？</Dialog>
+          <Button label="原来是它啊！我刚刚在宠物园看到它了！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107100" npcName="EC">那你怎么不快点去制止它！省得它再去恶作剧啊！</Dialog>
+          <Button label="可是我刚刚又不知道……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="107100" npcName="EC">那现在可怎么办～～</Dialog>
+          <Button label="啊啊啊！它说它要去宠物医院，我这就去！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true" fireID="107101"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 118 -->
+    <Npc sceneID="118" type="1" npcID="164200" position="0|560">
+    <View type="0" src="164200.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1093/1093_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">不过我真的可以证明，当时小囧娃的眼睛好了！</Dialog>
+          <Button label="唉～你们不知道！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">怎么了？</Dialog>
+          <Button label="EC那边的宠物也是！开始治好了，后来又恢复原状了！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">这可怎么办！</Dialog>
+          <Button label="我怀疑是它的恶作剧！我要去找它！" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">它刚刚说它要去桥上溜达溜达。</Dialog>
+          <Button label="恩！应该是月牙桥！" nextID="-1" close="true">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_5" event="NULL" fire="true"/>
+    </Click>
+    </Npc>
+    <!-- npc_p_xml · 场景 118 -->
+    <Npc sceneID="118" type="1" npcID="164300" position="578|408">
+    <View type="0" src="164300.swf" atLayerID="2"/>
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">……</Dialog>
+          <Button label="为什么你要恶作剧呢？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">我没有……我是真心想要帮助EC和小囧娃的！</Dialog>
+          <Button label="那为什么适得其反呢？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">我也不知道……可能是我孵化的时间太早了，导致治愈的能量不完全……</Dialog>
+          <Button label="你根本就没有治愈能力吧！你只是在恶作剧！" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">我没有……我没有说谎……</Dialog>
+          <Button label="那我们去火山找小护主犬吧！" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">小护主犬？</Dialog>
+          <Button label="是啊！它之前沼气中毒了，一只腿坏掉了！" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">恩！我这次一定要治好它！</Dialog>
+          <Button label="那我们就去维苏威火山口吧！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="onTaskCall2" params="2|1093"/>
+    </Click>
+    </Npc>
+  </Task>
+  <Task id="1094" label="扑朔迷离">
+    <!-- npc_c0_xml · 场景 52 -->
+    <Npc sceneID="52" type="1" npcID="164400" position="626|349">
+    <View type="0" src="164400.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1094_164400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158100" npcName="小护主犬"><![CDATA[{name}]]>，你看，我很努力地在适应生活呢！</Dialog>
+          <Button label="恩……也许它可以治好你……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">嘿嘿！小菜一碟！</Dialog>
+          <Button label="啊啊啊！也不要抱太多期望！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158100" npcName="小护主犬">恩，我知道。我会好好配合的！</Dialog>
+          <Dialog npcID="164100" npcName="第四号">那就开始吧！</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1094/1094_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1094_164400">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="158100" npcName="小护主犬">啊！又是黑衣人！</Dialog>
+          <Dialog npcID="112000" npcName="黑衣人">别紧张……我是来把第四号带走的。</Dialog>
+          <Button label="第四号？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！<![CDATA[{name}]]>你还不知道吧，这只可以治愈的宠物，其实是属于恩佐的！</Dialog>
+          <Button label="啊！？" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1094/1094_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">所以，你们最好识趣些，把它交给我吧！</Dialog>
+          <Dialog npcID="164100" npcName="第四号">我不要跟你回去！你是坏人！</Dialog>
+          <Dialog npcID="112000" npcName="黑衣人">乖乖……跟我走吧～你最终还是属于恩佐的！</Dialog>
+          <Button label="既然第四号不想回去，就不要勉强它！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="switch" invoke="combat" args="2|164400|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_6"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！看来这个关键第四号是非得跟我回去不可了！</Dialog>
+          <Button label="休想！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+          <Button label="待我稍后再战" nextID="-1" close="true">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！你们这些大傻子！你们还不知道吧！其实，恩佐制造了好多好多蛋蛋呢！哈哈哈！每一个都很厉害！</Dialog>
+          <Button label="哼！兵来将挡，水来土淹！" nextID="-1" close="false">
+            <Goto value="index_0_9"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">看来……唯一的办法……就是我要让这神奇的力量消失……</Dialog>
+          <Button label="消失？" nextID="-1" close="false">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_10" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">恩……我已经决定……要把这个力量注入到宠物医院的魔法泉水中去。</Dialog>
+          <Button label="啊？？" nextID="-1" close="false">
+            <Goto value="index_0_11"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_11" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">只有这样，这份力量才能为更多宠物服务……而且，我也可以得到自由。<![CDATA[{name}]]>，你愿意和我一起去吗？</Dialog>
+          <Button label="好！我们现在就去宠物医院！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_7" event="onTaskCall2" params="2|1094"/>
+      <Click label="index_0_8" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1094_164400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1094_164400">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|164400|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_6"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_5"/>
+        </Default>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哈哈哈！看来这个关键第四号是非得跟我回去不可了！</Dialog>
+          <Button label="休想！" nextID="-1" close="true">
+            <Goto value="default"/>
+          </Button>
+          <Button label="待我稍后再战" nextID="-1" close="true">
+            <End/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112000" npcName="黑衣人">哼！你们这些大傻子！你们还不知道吧！其实，恩佐制造了好多好多蛋蛋呢！哈哈哈！每一个都很厉害！</Dialog>
+          <Button label="哼！兵来将挡，水来土淹！" nextID="-1" close="false">
+            <Goto value="index_0_9"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">看来……唯一的办法……就是我要让这神奇的力量消失……</Dialog>
+          <Button label="消失？" nextID="-1" close="false">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_10" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">恩……我已经决定……要把这个力量注入到宠物医院的魔法泉水中去。</Dialog>
+          <Button label="啊？？" nextID="-1" close="false">
+            <Goto value="index_0_11"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_11" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164100" npcName="第四号">只有这样，这份力量才能为更多宠物服务……而且，我也可以得到自由。<![CDATA[{name}]]>，你愿意和我一起去吗？</Dialog>
+          <Button label="好！我们现在就去宠物医院！" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1094_164400"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1094_164400">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="2|1094"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1095" label="真相大白">
+    <!-- npc_c0_xml · 场景 78 -->
+    <Npc sceneID="78" type="1" npcID="164500" position="257|393">
+    <View type="0" src="164500.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1095_164500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">太好了～这样就好了～</Dialog>
+          <Button label="你把治愈能量怎么了？你变色了……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">哈哈～我把治愈能量给魔法泉水了～现在我已经没有这种能量了！</Dialog>
+          <Button label="这又是为何……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">反正这种能量也是恩佐做实验的结果……还不如不要。反而轻松自在。</Dialog>
+          <Button label="恩……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">况且，魔法泉水才更需要能量呢！我这样做，也是为了大家好！</Dialog>
+          <Button label="那现在你有什么打算……？" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="112001" npcName="萌萌">我刚刚听说，在龙守望，机甲壳在寻找它的伙伴呢……</Dialog>
+          <Button label="果然！你和机甲壳长得很像耶！第四号！" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">真的吗？快点带我去看看吧！</Dialog>
+          <Button label="好的！" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_6" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 78 -->
+    <Npc sceneID="78" type="1" npcID="164600" position="478|440">
+    <View type="0" src="164600.swf" atLayerID="2" hasClick="false"/>
+    <Create>	
+    <ViewEvent type="GotIt0_1095_164600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">你和我长得几乎是一模一样呢！</Dialog>
+          <Dialog npcID="164600" npcName="机甲壳">是啊是啊！就像是照镜子一样！只有颜色不同！</Dialog>
+          <Button label="果然是呢！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164600" npcName="机甲壳">就在前一段时间，我们的一只机甲壳的蛋被恩佐抢走了！我们的首领阿基拉说，恩佐肯定有什么阴谋！让我离开弃之宝岛，去外面找找看！</Dialog>
+          <Dialog npcID="164500" npcName="第四号">啊……原来是这样啊！</Dialog>
+          <Dialog npcID="164600" npcName="机甲壳">现在你要跟我一起回去吗？回到弃之宝岛去！那里有很多我们的伙伴！</Dialog>
+          <Dialog npcID="164500" npcName="第四号">……</Dialog>
+          <Button label="第四号，你就和机甲壳一起回去吧！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="164500" npcName="第四号">嘿嘿，我有了一个其他的决定——我要去云游四海！</Dialog>
+          <Dialog npcID="164600" npcName="机甲壳">这……</Dialog>
+          <Dialog npcID="164500" npcName="第四号">这也是我自己的选择……</Dialog>
+          <Button label="恩……" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1095/1095_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|1095"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+</Story>

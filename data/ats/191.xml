@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 ChristmasWishOfWoodDingStory.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="191" label="木豆丁的圣诞愿望">
+  <Task id="4063" label="木豆丁的圣诞愿望">
+    <!-- npcfun_get · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的圣诞愿望" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">呜呜呜呜~~~~</Dialog>
+    					<Button label="大过节的，你这是怎么了？">
+    						<Goto value="dialog_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_0" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">我想回永夜森林和大家一起过节……</Dialog>
+    					<Button label="可是你现在要锤炼自己，让自己变强哦！">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">我知道，但是我想家……</Dialog>
+    					<Button label="……" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4063/app1_memoryOfWoodDing" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="dialog_2"/>
+    		  </Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">每次我都在想圣诞老人是什么样子，真的希望能见到他……</Dialog>
+    					<Button label="我们也是，你们心中的圣诞老人是什么样子的呢？" nextID="-1" close="true">
+    						<Goto value="asWindow_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+            <Script label="asWindow_1" type="asWindow" src="task/4063/app2_ImageOfChtistamDady" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="dialog_3"/>
+    		  </Default>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">大家心中都有着属于自己的圣诞老人呢，我一直有个愿望就是见到圣诞老人……</Dialog>
+    					<Button label="圣诞老人？今年的圣诞节他会来王国哦！不如我们一起找他去？">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">太好了，出发。</Dialog>
+    					<Button label="好的" nextID="-1" close="true">
+    						<Goto value="accpet"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="accpet" event="onTaskCall2" params="1|4063"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="22"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="211800" position="413|383">
+    	<View type="0" src="211800.swf" atLayerID="2" hasClick="true"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_211800_ShowDialogOfMilu">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="211800" npcName="麋鹿">圣诞老人会在12月24日的下午来哦！据说这次他带了很多礼物呢！</Dialog>
+    		  <Button label="再告诉我们些小道消息吧，嘿嘿嘿">
+    			<Goto value="dialog_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="211800" npcName="麋鹿">路易斯消息很灵通，去魔法学院再问问，先悄悄的给你看看他的消息吧。</Dialog>
+    		  <Button label="好的" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/4063/app3_ChristmasDadyComeToRocoKingdom" winPos="0|0" name="加载中......">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    	  <Click label="submit" event="NULL" fire="true" fireID="211800"/>
+    	</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="5"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c1_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的圣诞愿望" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="178200" npcName="路易斯">圣诞老人会在12月24日的下午14点到16点到来哦！</Dialog>
+    					<Button label="你还有什么更新更确切的消息呢？" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4063/app4_LuysiSayChristmasDadyWillCome" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="submit"/>
+    		  </Default>
+    		</Script>
+    			<Click label="submit" event="NULL" fire="true" fireID="178201"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts2_xml · 场景 134 -->
+    <NPCFun label="app_ts2" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="12"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的圣诞愿望" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="115000" npcName="欧利文">官方一手消息：圣诞老人将会在12月24日的14点到16点到达洛克王国，他可能在彼得大道、山姆大叔的农庄、体育场出现，还要送给小洛克圣诞套装和圣诞宠物呢！</Dialog>
+    					<Button label="太好了，我赶快告诉木豆丁去！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true" fireID="115001"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts3_xml · 场景 134 -->
+    <NPCFun label="app_ts3" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_3_noover_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的圣诞愿望" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="208600" npcName="木豆丁">你不是说要去彼得大道、魔法学院、体育场看看么？</Dialog>
+    				<Button label="好的，我再去看看" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_submit · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的圣诞愿望" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">希望今年一定要见到他！也希望永夜森林的族人们能过一个平安的圣诞节。</Dialog>
+    					<Button label="不看看水晶球有没有什么消息？" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/4063/app5_ShuijingqiuMovie" winPos="0|0" name="加载中......">
+    		  <Default>
+    			<Goto value="dialog_2"/>
+    		  </Default>
+    		</Script>
+    	
+    		<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">我是懦夫么？当族人在战斗的时候我只能躲在这里！</Dialog>
+    					<Button label="不是的，现在的你最关键的是保护好自己！">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">好的，我一定会努力的！</Dialog>
+    					<Button label="嗯，记得一起去看圣诞老人哦！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		
+    			<Click label="submit" event="onTaskCall2" params="2|4063"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

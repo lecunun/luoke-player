@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 IslandOfMysteriesStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="158" label="谜之岛的消失">
+  <Task id="1120" label="谜之岛的消失">
+    <!-- npcfun_g_xml · 场景 5 -->
+    <NPCFun sceneID="5" label="谜之岛的消失" icon="-1" close="false">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="118500" npcName="卡贝"><![CDATA[{name}]]>，为什么迪兰不见了！！我还想去谜之岛呢！</Dialog>
+    		  <Button label="你看～迪兰留下了一张纸条" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	 <Script label="asWindow_0" type="asWindow" src="task/1120/task_1120_penandpaper" winPos="0|0" name="纸笔动画UI">
+    		<Default>
+    			<Goto value="submit"/>
+    		</Default>
+    		</Script>	
+    		<Click label="submit" event="onTaskCall2" params="1|1120"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="189100" position="582|233">
+    	<View type="0" src="189100.swf" atLayerID="1"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="135700" npcName="镜子迪兰"><![CDATA[{name}]]>，快点把我救出来啊！！！我不在，谜之岛就无法开放啊！！！</Dialog>
+    		  <Button label="立刻就来" nextID="-1" close="true">
+    			<Goto value="cgi_0"/>
+    		  </Button>
+    			<Button label="我先想一下怎么弄" nextID="-1" close="true">
+    			<End/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    		<Script type="switch" label="cgi_0">
+    			<Func invoke="loadCGI" args="get_game_playtimes?cmd=0"/>
+    			<Case value="0"><Goto value="More_than_3"/></Case>
+    			<Case value="1"><Goto value="game_0"/></Case>
+    		</Script>
+    	
+    		<Script label="More_than_3" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="135700" npcName="镜子迪兰">救救我！！我被困在镜子里面啦！！！可是今天你已经来过三次啦！超过三次，镜子就会自动封闭了！明天再来救我！都怪恩佐施了什么可恶的一日三次咒语！</Dialog>
+    			<Button label="呃……那我明天再来救你！撑住啊！" nextID="-1" close="true">
+    			<End/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="game_0" type="switch" invoke="game" args="2|拯救迪兰|2111|0">
+    		  	<Case value="1">
+    		    	<Goto value="KO"/>
+    		  	</Case>
+    		  	<Default>
+    				<Goto value="cgi_1"/>
+    		  	</Default>
+    		</Script>
+    	
+    		<Script type="switch" label="cgi_1">
+    			<Func invoke="loadCGI" args="get_game_playtimes?cmd=1"/>
+    			<Default>
+    				<End/>
+    		  	</Default>
+    		</Script>
+    
+    		<Click label="KO" event="NULL" fire="true" fireID="189100"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_p_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="135700" position="582|233" name="迪兰">
+    		<View type="0" src="135700.swf" atLayerID="1" lazyLoad="true" height="100"/>
+    			<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="135700" npcName="迪兰"><![CDATA[{name}]]>，谢谢你把我救出来！！这珍贵的亚特兰蒂斯的物品，还有小成长果实就送给你啦！</Dialog>
+    					<Button label="谢谢" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="2|1120"/>
+    			</Click>
+    		</Npc>
+  </Task>
+  <Task id="1121" label="谜之岛的消失">
+    <!-- npc_c0_xml · 场景 5 -->
+    <Npc sceneID="5" type="1" npcID="135700" position="582|233" name="迪兰">
+    	<View type="0" src="135700.swf" atLayerID="1" lazyLoad="true" height="100"/>
+    		<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="135700" npcName="迪兰">我被强大的黑魔法困在这里！！迷之岛也被恩佐占领了！我感觉黑魔法每天都在侵蚀着我的大脑……谢谢你还记得我，每天都来看我，这个高级咕噜球你先收下。一定要想办法把我救出来！</Dialog>
+    				<Button label="我们会有办法保护你的！" close="true">
+    					<Goto value="get_present"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="get_present" event="onOpenGame" type="1" id="142" params="1"/>
+    		</Click>
+    	</Npc>
+  </Task>
+</Story>

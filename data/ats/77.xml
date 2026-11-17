@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 TheGetawayStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="77" label="逃亡">
+  <Task id="1060" label="神秘的玉佩">
+    <!-- npcfun_g_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="逃亡" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101600" npcName="吉洛斯"><![CDATA[{name}]]>，其实我找你来，是因为我发现了一块神奇的石头！以前在王国里，可从来没有见过这种质地的石头耶！</Dialog>
+    				<Button label="探险协会会长都不知道，我就更不知道啦！" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101600" npcName="吉洛斯">所以我们更要好好研究一下！你看！这个石头又在发光了！它好像知道我们在谈论它呢！好像隐约还能看到什么！</Dialog>
+    				<Button label="真有这么神奇！？让我来看看" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1060/1060_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_2"/></Default>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101600" npcName="吉洛斯">石头里面的景象是哪里呢？其实这块石头是船长拉瓦给我的。他们出海归来时，在船上发现了这块奇异的石头，才拿来给我鉴定。</Dialog>
+    				<Button label="看来出海总是能发现神奇的宝贝呢！" nextID="-1">
+    					<Goto value="dialog_3"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101600" npcName="吉洛斯">你能帮我查查这块石头的来历吗？你去问问他，到底是怎么发现这块石头的吧！这块石头有很强的能量场！貌似有很强的魔力呢！</Dialog>
+    				<Button label="这就去钻石港，找问问拉瓦！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|1060"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_c0_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="给我讲讲发现奇怪石头的事情吧" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122300" npcName="拉瓦">呵呵，消息传得真快啊～！肯定是下水道吉洛斯那个老怪告诉你的吧！</Dialog>
+    					<Button label="嗯嗯！就是吉洛斯让我来问你的！" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122300" npcName="拉瓦">我能感觉到，这块石头的能量很强大！它一定非比寻常！但是它究竟来自哪里呢？它的主人又是谁呢？它为什么会在我的船上呢？</Dialog>
+    					<Button label="你能详细说说发现它的过程么？" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/1060/1060_1" winPos="0|0" name="提示">
+    				<Default><Goto value="dialog_3"/></Default>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="122300" npcName="拉瓦">我倒是建议你，可以去图书馆，看看那些关于石头的书里，有没有关于这种石头的记载。</Dialog>
+    					<Button label="现在就去" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c1_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="141100" position="688|439" aimPos="570|455">
+    		<View type="0" src="141100.swf" atLayerID="1"/>
+    		<Click event="onRunScript" cdtn="0">
+    			<Script label="default" type="asWindow" src="task/1060/1060_2" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="NULL" fire="true"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="141200" position="0|0">
+    	<View type="0" src="141200.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_1060_141200">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">啊！就是你！你拿着我的玉佩！</Dialog>
+    						<Button label="啊？玉佩？难道是这块奇怪的石头？" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="combat_0" type="switch" invoke="combat" args="2|141200|受伤的呱呱">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1060_141200"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1060_141200">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_c3_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="141800" position="452|285">
+    	<View type="0" src="141800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_1060_141800">
+    			<Click event="NULL" fire="true"/>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1060_141800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">只有玄玉岛的人参酒才能救我……</Dialog>
+    						<Button label="离开" close="true">
+    							<End/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npcfun_c3_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="帮忙救治呱呱" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">你们在上面那么吵！究竟发生什么事啦！<![CDATA[{name}]]>～你竟然还欺负弱者！</Dialog>
+    					<Dialog npcID="141200" npcName="呱呱">他……他拿了我的玉佩……还打伤了我……</Dialog>
+    					<Button label="我不是故意的！玉佩？就是那块石头？" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="141200" npcName="呱呱">快点……快点把它还给我……我还要回去……平阳公主……我……</Dialog>
+    					<Button label="它好像晕过去了！" nextID="-1">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">它这是休克了！<![CDATA[{name}]]>，快！我们必须快点救治它！</Dialog>
+    					<Button label="55555！我真的不是有意的！可是要怎么做！" nextID="-1">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">废话少说！看起来它好像不是洛克王国的，不知道我的那些救治方法对它有没有用！唉！不试试也不知道结果！</Dialog>
+    					<Button label="那就快点吧！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/1060/1060_3" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1060_141800"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 32 -->
+    <NPCFun sceneID="32" label="怎么去玄玉岛啊" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">玄玉岛？我倒是听说过！不过我还没有去过那里呢……<![CDATA[{name}]]>，这次你就去一趟吧！我还要照顾受伤的小兔子！</Dialog>
+    					<Button label="可我又不认识，怎么去那里呢？" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯">你就用那个绿色的皮划艇划过去吧！</Dialog>
+    					<Button label="可是人参酒又在哪里呢……？" nextID="-1">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="141200" npcName="呱呱"><![CDATA[{name}]]>……我来告诉你，你务必要记好。</Dialog>
+    					<Button label="啊，我一定用心记住！" nextID="-1" close="true">
+    						<Goto value="asWindow_0"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="asWindow_0" type="asWindow" src="task/1060/1060_4" winPos="0|0" name="提示">
+    				<Default><Goto value="dialog_4"/></Default>
+    			</Script>
+    			<Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101600" npcName="吉洛斯"><![CDATA[{name}]]>，这次就辛苦你啦！用皮划艇划到钻石港，然后找鲁菲坐船就能到玄玉岛啦！</Dialog>
+    					<Button label="我一定快去快回！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1060"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 32 -->
+    <NPCFun label="app_ts0" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1060/1060_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 32 -->
+    <NPCFun label="app_ts1" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1060/1060_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 32 -->
+    <NPCFun label="app_ts2" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1060/1060_ts_2" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 32 -->
+    <NPCFun label="app_ts3" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1060/1060_ts_3" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1061" label="远航寻药">
+    <!-- npc_c0_xml · 场景 103 -->
+    <Npc sceneID="103" type="1" npcID="141900" position="0|0" aimPos="382|357">
+    		<View type="0" src="141900.swf" atLayerID="1"/>
+    		<Click event="onRunScript" cdtn="0">
+    			<Script label="default" type="asWindow" src="task/1061/1061_0" winPos="0|0" name="提示">
+    				<Default><Goto value="submit"/></Default>
+    			</Script>
+    			<Click label="submit" event="onChangeScene" params="103"/>
+    		</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 103 -->
+    <Npc sceneID="103" type="1" npcID="141800" position="452|285">
+    	<View type="0" src="141800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_1061_141800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">只有玄玉岛的人参酒才能救我……</Dialog>
+    						<Button label="离开" close="true">
+    							<End/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- npc_p_xml · 场景 103 -->
+    <Npc sceneID="103" type="1" npcID="141300" position="635|455">
+    <View type="0" src="141300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    	<ViewEvent type="GotIt0_1061_141300">
+    		<Click event="onRunScript" cdtn="60">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141300" npcName="梦游仙桃老人">我是仙桃老人的分身。你有什么事情找我？</Dialog>
+    				<Button label="[向梦游仙桃老人讲述和呱呱相遇，呱呱接受救治]" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141300" npcName="梦游仙桃老人">什么！你说呱呱它病了！？</Dialog>
+    				<Button label="请您快点救救它吧！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141300" npcName="梦游仙桃老人">酿人参果酒可是需要人参果的啊……</Dialog>
+    				<Button label="我有！我有！" nextID="-1">
+    					<Goto value="dialog_2_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141300" npcName="梦游仙桃老人">看来你知道得很清楚嘛，想必是呱呱告诉你的吧……现在我就来酿酒吧！</Dialog>
+    				<Button label="好的！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1061_141300"/>
+    		</Click>
+    	</ViewEvent>
+    	<ViewEvent type="GotIt1_1061_141300">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141300" npcName="梦游仙桃老人"><![CDATA[{name}]]>，人参酒已经酿好了！你去交给呱呱吧！我要继续梦游去啦……</Dialog>
+    				<Button label="好！我们后会有期！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1061"/>
+    	</Click>
+    	</ViewEvent>
+    </Create>
+    </Npc>
+  </Task>
+  <Task id="1062" label="不打不相识">
+    <!-- npc_p_xml · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="141800" position="452|285">
+    	<View type="0" src="141800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    		<ViewEvent type="GotIt0_1062_141800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101600" npcName="吉洛斯"><![CDATA[{name}]]>，你来得正好！快！我估计它快坚持不了多久了！</Dialog>
+    						<Button label="我带来了人参果酒！" nextID="-1">
+    							<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">平阳公主……平阳公主……</Dialog>
+    						<Dialog npcID="101600" npcName="吉洛斯">它好像在做梦，一直都在叫着平阳公主。快，我们把人参果酒给它喝下去！相信它很快就会好起来的！</Dialog>
+    						<Button label="平阳公主应该是对它来说很重要的人吧……" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/1062/1062_0" winPos="0|0" name="提示">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1_1062_141800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">我看起来应该恢复了！<![CDATA[{name}]]>，还有吉洛斯，谢谢你们啦！！我还没有自我介绍，我叫做呱呱！</Dialog>
+    						<Button label="你终于恢复啦！这块玉佩也还给你吧！" nextID="-1">
+    							<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">（双手接过玉佩，小心翼翼地放到腰间）恩！这是对我来说很重要的东西……谢谢你们……</Dialog>
+    						<Dialog npcID="101600" npcName="吉洛斯">平阳公主是谁？你昏迷不醒的时候，一直喊着她的名字。</Dialog>
+    						<Dialog npcID="142000" npcName="呱呱">她……她是对我而言很重要的人……是我无论如何，拼上性命都要守护的人！</Dialog>
+    						<Button label="她也在玄玉岛吗？你是怎么来到洛克王国的？" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/1062/1062_1" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_3"/></Default>
+    				</Script>
+    				<Script label="dialog_3" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101600" npcName="吉洛斯">没想到拉瓦阴差阳错地拿了你的玉佩啊！</Dialog>
+    						<Button label="是啊！现在玉佩找到啦！你可以回去啦！" nextID="-1">
+    							<Goto value="dialog_4"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_4" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101600" npcName="吉洛斯">平阳公主还在等着你吧，快点回去吧！</Dialog>
+    						<Dialog npcID="142000" npcName="呱呱">我……我现在还不能回去……</Dialog>			
+    						<Button label="[是啊……它还没说过为什么要离开玄玉岛]" nextID="-1">
+    							<Goto value="dialog_5"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_5" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">总有一天，我一定会回去，一定会好好守护平阳公主的！</Dialog>					
+    						<Dialog npcID="101600" npcName="吉洛斯">恩！我也会为你默默祝福的！</Dialog>
+    						<Dialog npcID="141200" npcName="呱呱">你们救了我，我还没有好好报答你们……</Dialog>
+    						<Button label="不要这么说，我都不好意思啦！" nextID="-1">
+    							<Goto value="dialog_6"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_6" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">没什么的！本来我晕倒，也是因为初来此地，水土不服的缘故。</Dialog>
+    						<Button label="可救人是天经地义的！怎能要回礼？" nextID="-1">
+    							<Goto value="dialog_7"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_7" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">也不算是什么特别贵重的礼物啦！我就给你一根我的兔毛吧！</Dialog>
+    						<Button label="兔毛？" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1062_141800"/>
+    			</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt2_1062_141800">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="141200" npcName="呱呱">这跟兔毛可以变成和我一样的小兔子哦！你一定要好好呵护它，照顾它！</Dialog>
+    						<Button label="谢谢你！呱呱！我一定会好好照顾它！" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/1062/1062_2" winPos="0|0" name="提示">
+    					<Default><Goto value="submit"/></Default>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|1062"/>
+    			</Click>
+    		</ViewEvent>
+    	</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 32 -->
+    <NPCFun label="app_ts0" sceneID="32">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1062/1062_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

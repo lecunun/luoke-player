@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DEarlStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="168" label="D伯爵传说(上)">
+  <Task id="2020" label="小德出现">
+    <!-- npcfun_g_xml · 场景 14 -->
+    <NPCFun sceneID="14" label="可丽希亚去哪玩了？" icon="-1" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="100900" npcName="麦斯威尔"><![CDATA[{name}]]>，她一大早就去帮山姆捕捉蝴蝶了，现在还没回来，我真担心她！</Dialog>
+          <Button label="我去找找她！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+    
+      <Click label="index_0_1" event="onTaskCall2" params="1|2020" tips="hahahhaha"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 128 -->
+    <Npc sceneID="128" type="1" npcID="199300" position="0|0" ainPos="172|327">
+    <View type="0" src="199300.swf" atLayerID="1" hasClick="true"/>
+    
+    
+    <Click event="onRunScript">
+    	<Click label="default" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2020_199300"/>
+    </Click>
+    
+    <Create>
+    <ViewEvent type="GotIt0_2020_199300">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2020/2020_game" winPos="0|0" name="游戏">
+    <Default><Goto value="index_0_1"/></Default>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/2020/2020_1" winPos="0|0" name="动画">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Click label="index_0_2" event="onTaskCall2" params="2|2020"/>
+    	
+    </Click>
+    </ViewEvent>
+    </Create>
+    
+    
+    	
+    </Npc>
+    <!-- app_ts0_xml · 场景 128 -->
+    <NPCFun label="app_ts0" sceneID="128">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2020/2020_ts_0" winPos="0|0" name="提示">
+    	<Case value="1">
+    		<Click label="default" event="onChangeScene" params="128"/>
+        </Case>
+    	<Default><End/></Default>
+    	</Script>
+    
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="2021" label="寻找小德">
+    <!-- npc_c0_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="199400" position="0|0">
+    <View type="0" src="199400.swf" atLayerID="1" hasClick="true"/>
+    	
+    <Click event="onRunScript">
+    
+    <Script label="default" type="dialog">
+    <Page id="0">
+    <Dialog npcID="105400" npcName="小公主">菲尔特，我看见小德了~</Dialog>
+    <Dialog npcID="104100" npcName="菲尔特">小德？你见到他了吗？不可能，他都失踪那么多年了。</Dialog>
+    <Button label="小德，你们认识他吗？" nextID="-1" close="true">
+    <Goto value="index_0_1"/>
+    </Button>
+    </Page>
+    </Script>
+    	
+    <Script label="index_0_1" type="asWindow" src="task/2021/2021_0" winPos="0|0" name="动画">
+    <Default>
+    <Goto value="index_0_2"/>
+    </Default>
+    </Script>
+    	
+    <Script label="index_0_2" type="dialog">
+    <Page id="0">
+    <Dialog npcID="105400" npcName="小公主">小德就这样突然离开我们了……不过如果他出现，本公主肯定不想见他！哼！</Dialog>
+    <Dialog npcID="104100" npcName="菲尔特">……小德，究竟为什麽离开我们呢？</Dialog>
+    <Dialog npcID="101900" npcName="杰瑞西">你们说的小德，我觉得很像一个人，当然我不能确定！你们需要去问问他以前认识的人，也许能得到什么消息。</Dialog>
+    <Dialog npcID="105400" npcName="小公主">小德的朋友很少，除了我和菲尔特。对了，当初是罗伦斯收养他的，我们去找他问问吧！</Dialog>
+    <Button label="好的！" nextID="-1" close="true">
+    <Goto value="index_0_3"/>
+    </Button>
+    </Page>
+    </Script>
+    
+    <Click label="index_0_3" event="NULL" fire="true"/>
+    	
+    </Click>
+    	
+    </Npc>
+    <!-- npc_c1_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="198800" position="0|0">
+    	<View type="0" src="198800.swf" atLayerID="1" hasClick="true"/>
+    		
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">你们问小德么？是我当年收养的一个孩子，他性格孤僻，很少说话。</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2021/2021_1" winPos="0|0" name="动画">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105400" npcName="小公主">他真可怜，我以前还总欺负他。他喜欢去山姆大叔那里帮忙，我们去找山姆大叔问问情况吧。</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+    	
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    	
+    </Click>
+    		
+    	</Npc>
+    <!-- npcfun_p_xml · 场景 89 -->
+    <NPCFun sceneID="89" label="你们问小德么？" icon="0" close="false">
+    <Click event="onRunScript">
+    	
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="102600" npcName="罗伦斯">你们问小德么？是我当年收养的一个孩子，他性格孤僻，很少说话。</Dialog>
+          <Button label="……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2021/2021_1" winPos="0|0" name="动画">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105400" npcName="小公主">他真可怜，我以前还总欺负他。他喜欢去山姆大叔那里帮忙，我们去找山姆大叔问问情况吧。</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    	
+    </Click>
+    	</NPCFun>
+    <!-- npc_c2_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="198900" position="0|0">
+    	<View type="0" src="198900.swf" atLayerID="1" hasClick="true"/>
+    		
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+    	<Page id="0">
+    	  <Dialog npcID="163000" npcName="山姆大叔">小德啊？那是个好孩子！他常常来帮我干活呢，只不过都是晚上来。</Dialog>
+    	  <Button label="……" nextID="-1" close="true">
+    		<Goto value="index_0_1"/>
+    	  </Button>
+    	</Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/2021/2021_2" winPos="0|0" name="动画">
+    	<Default>
+    	  <Goto value="index_0_2"/>
+    	</Default>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true"/>
+    	
+    </Click>
+    		
+    	</Npc>
+    <!-- npc_c3_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="199000" position="426|333">
+    	<View type="0" src="199000.swf" atLayerID="2" hasClick="true"/>
+    
+    <Create>	
+    <ViewEvent type="GotIt0_2020_199000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101900" npcName="杰瑞西">你们说的我都听到了，你们说的小德，就是传说中的D伯爵！</Dialog>
+          <Button label="D伯爵？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101900" npcName="杰瑞西">是的！他是威廉堡主德古拉伯爵的儿子，失踪了很多年，在他父亲死后他才又重新回到古堡！</Dialog>
+          <Dialog npcID="105400" npcName="小公主">你是说，他是一个吸血鬼吗？我不相信！我不相信！</Dialog>
+          <Dialog npcID="101900" npcName="杰瑞西">公主请冷静下来，你想想，你有没有在他身上见过一个獠牙装饰，那个是古堡的家族象征！</Dialog>
+          <Dialog npcID="105400" npcName="小公主">……</Dialog>
+          <Button label="下一步" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/2021/2021_3" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105400" npcName="小公主">我没见过，你们都误会他了，他不是吸血鬼，他是和我们一样的正常人！我要去找他！</Dialog>
+          <Button label="小公主！！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2021_199000"/>
+    </Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_2020_199000">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="101900" npcName="杰瑞西">小洛克，你们快去找到可丽希亚，我真怕她出事！</Dialog>
+          <Button label="我这就去找她！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    	</Npc>
+    <!-- npc_c4_xml · 场景 89 -->
+    <Npc sceneID="89" type="1" npcID="199100" position="0|0">
+    <View type="0" src="199100.swf" atLayerID="1" hasClick="true"/>
+    
+    	
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="133000" npcName="武使徒">公主，快说！D伯爵在哪？</Dialog>
+          <Dialog npcID="105400" npcName="小公主">我，我不知道。</Dialog>
+          <Dialog npcID="133000" npcName="武使徒">哈哈哈哈，你骗不了我的！我手下已经打听到D伯爵是你好朋友，对吗？你最好老实交代，不然我的狼可要不听话了！</Dialog>
+          <Dialog npcID="105400" npcName="小公主">好朋友……好朋友会一声不吭地就离开吗？我讨厌他！</Dialog>
+          <Dialog npcID="133000" npcName="武使徒">你还是不说吗？好吧，恶魔狼，给她点颜色看看！</Dialog>
+          <Button label="住手！！" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="switch" invoke="combat" args="2|199100|恶魔狼">
+        <Case value="2">
+          <Goto value="index_0_2"/>
+        </Case>
+        <Default>
+          <End/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_2021_199100"/>
+    </Click>
+    
+    <Create>
+    <ViewEvent type="GotIt1_2021_199100">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105400" npcName="小公主">小洛克，谢谢你，你怎么会来找我？</Dialog>
+          <Button label="因为怕你危险啊！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="105400" npcName="小公主">谢谢你，我以为小德会来救我的！……那边有人！</Dialog>
+          <Button label="啊？小心！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_2021_199100"/>
+    </Click>
+    </ViewEvent>
+    	
+    <ViewEvent type="GotIt2_2021_199100">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/2021/2021_4" winPos="0|0" name="动画">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|2021"/>
+    </Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 89 -->
+    <NPCFun label="app_ts0" sceneID="89">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/2021/2021_ts_0" winPos="0|0" name="提示">
+    <Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 89 -->
+    <NPCFun label="app_ts1" sceneID="89">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2021/2021_ts_1" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 89 -->
+    <NPCFun label="app_ts2" sceneID="89">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2021/2021_ts_2" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 89 -->
+    <NPCFun label="app_ts3" sceneID="89">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/2021/2021_ts_3" winPos="0|0" name="提示">
+    	<Default><End/></Default>
+    	</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

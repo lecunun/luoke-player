@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 FunnyHuntingStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="111" label="搞怪捕猎">
+  <Task id="1089" label="那只是一个传说">
+    <!-- npc_g_xml · 场景 17 -->
+    <Npc sceneID="17" type="1" npcID="162300" position="578|419">
+    <View type="0" src="162300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1089_162300">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1089/1089_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1089_162300"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1089_162300">
+    <Click event="onRunScript">
+      <Click label="default" event="onTaskCall2" params="1|1089"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c0_xml · 场景 17 -->
+    <Npc sceneID="17" type="1" npcID="162400" position="258|406">
+    <View type="0" src="162400.swf" atLayerID="2"/>
+    <Create>
+    <NPCFun label="蹊跷" icon="0">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">我刚刚看到了雪怪！而且很凶暴！吓死我啦！</Dialog>
+          <Button label="啊！真的么！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格"><![CDATA[{name}]]>，你也快点远离晶晶雪域吧！这荒郊野岭的，真是太可怕啦！</Dialog>
+          <Button label="雪怪不是一向都很温顺的么？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">那我就不清楚啦～反正我是真的看到一只很凶暴的雪怪！我们还是快点走吧！</Dialog>
+          <Button label="好吧！那我要和希罗说一下！" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </NPCFun>
+    </Create>
+    <Click event="onTaskCall" cdtn="60"/>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 17 -->
+    <NPCFun sceneID="17" label="雪怪为什么突然变得凶暴了？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">啊？这个应该不太可能吧……就我所知，雪怪和洛克可是一直友好相处的。</Dialog>
+          <Button label="真的吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">恩……雪怪们最喜欢和洛克在一起了，在很早以前，盖茨还没有去讨伐黑轮的时候，他们其乐融融地生活在晶晶雪域呢。</Dialog>
+          <Button label="给我讲讲那时的故事吧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1089/1089_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">我觉得，不如你再去晶晶雪域看看，我反而是担心，雪怪们出了什么事情呢！</Dialog>
+          <Button label="好！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|1089"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1090" label="捕猎雪怪">
+    <!-- npc_c0_xml · 场景 126 -->
+    <Npc sceneID="126" type="1" npcID="162500" position="0|0">
+    <View type="0" src="162500.swf" atLayerID="1" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1090_162500">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格"><![CDATA[{name}]]>～离远点，看我来收拾它！</Dialog>
+          <Button label="西格！雪怪怎么性情大变了！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">所以我早就说了，雪怪很凶暴！你快点躲开，我来收拾它！</Dialog>
+          <Button label="啊啊啊啊啊～好吧！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="asWindow" src="task/1090/1090_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_3"/>
+        </Default>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格"><![CDATA[{name}]]>～你快点去找希罗来帮忙～我在这里看着它！</Dialog>
+          <Button label="恩恩恩！马上就去！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c1_xml · 场景 100 -->
+    <NPCFun sceneID="100" label="西格把雪怪打败啦～" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗"><![CDATA[{name}]]>～这是怎么回事啊？</Dialog>
+          <Button label="……×）（%#￥&amp;……" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">原来竟然这样！那我们快点去晶晶雪域看看吧！</Dialog>
+          <Button label="恩恩恩！西格还在等着我们呢！" nextID="-1" close="true">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_2" event="NULL" fire="true" fireID="114902"/>
+    </Click>
+    </NPCFun>
+    <!-- npc_c2_xml · 场景 126 -->
+    <Npc sceneID="126" type="1" npcID="162600" position="218|452">
+    <View type="0" src="162600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1090_162600">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">啊～这是白落落村的克莱尔！</Dialog>
+          <Button label="难道雪怪又去袭击克莱尔了吗？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">你还傻愣着干嘛！快点去白落落村救她吧！英雄救美的时刻到啦！</Dialog>
+          <Button label="呃呃呃～太好啦～" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="114900" npcName="希罗">这情况……反而是糟糕吧……</Dialog>
+          <Button label="[一不小心说露了~_~]" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_3" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_p_xml · 场景 126 -->
+    <Npc sceneID="126" type="1" npcID="162700" position="515|453">
+    <View type="0" src="162700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1090_162700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134400" npcName="奶瓶小鸭">哼～你这只雪怪～竟然来欺负这么善良美丽的克莱尔！看我来收拾你！</Dialog>
+          <Button label="啊！是西格的奶瓶小鸭！！当心啊～" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="asWindow" src="task/1090/1090_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_2"/>
+        </Default>
+      </Script>
+      <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1090_162700"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1090_162700">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">哈哈哈～我的奶瓶小鸭看起来好厉害啊！</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">主人～我独自打败了雪怪耶～英雄救美～小鸭救克莱尔～*^-^*</Dialog>
+          <Dialog npcID="139100" npcName="克莱尔">谢谢你们～奶瓶小鸭也饿了吧～我这里还有一些牛奶～作为谢礼送给你吧～</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">太好啦～你有多少就给我多少吧～对于牛奶我永远不会嫌多～我的瓶子都装得下*^-^*</Dialog>
+          <Button label="[小小鸭子嘴这么甜……]" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onTaskCall2" params="2|1090"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 126 -->
+    <NPCFun label="app_ts0" sceneID="126">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/1090/1090_ts_0" winPos="0|0" name="提示">
+    	<Case value="1"><Goto value="index_0"/></Case>		
+    	<Default><End/></Default>
+    </Script>
+    <Click label="index_0" event="onChangeScene" params="126"/>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="1091" label="将计就计">
+    <!-- npc_c0_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="162700" position="515|453">
+    <View type="0" src="162700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1091_162700">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1091/1091_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="139100" npcName="克莱尔">看起来，这个看起来是骑士团发的招募榜吧！</Dialog>
+          <Button label="恩，看起来是这样。" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="139100" npcName="克莱尔">看来雪怪真的性情大变了呢……这个时候，王国需要真正的勇士啊！</Dialog>
+          <Button label="恩恩！[难道克莱尔是希望我去！？]" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="139100" npcName="克莱尔">西格，你和奶瓶小鸭两次制服雪怪，这次非你莫属啊！</Dialog>
+          <Button label="嗯嗯，的确如此呢！[好吧……不是我……]" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">可是……可是……可是……</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">主人……这可怎么办……</Dialog>
+          <Button label="你可是怪物猎人啊～你要是不去都对不起群众！" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">这……唉……好吧……</Dialog>
+          <Button label="招募榜上说特鲁米小径有雪怪，我们就去那里吧！" nextID="-1" close="false">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">好……好吧……</Dialog>
+          <Button label="我也跟你们一起去特鲁米小径～" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_7" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    </Create>	
+    </Npc>
+    <!-- npc_p_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="162800" position="740|461">
+    <View type="0" src="162800.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1091_162800">
+    <Click event="onRunScript">
+      <Script label="default" type="asWindow" src="task/1091/1091_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_1"/>
+        </Default>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">咦咦咦！这个小姑娘怎么看着这么面熟啊～～！</Dialog>
+          <Button label="我可以理解为这个是搭讪么……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">呃呃呃～言归正传！雪怪把你的蛋糕抢到哪里去啦？我们正要去讨伐雪怪！</Dialog>
+          <Dialog npcID="162800" npcName="小红帽">呜呜呜～它说它去维苏威地心啦p_q</Dialog>
+          <Dialog npcID="134800" npcName="西格">雪怪竟然会去火山？太奇怪了吧……</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">恩……而且还是去最热的地心……</Dialog>
+          <Dialog npcID="162800" npcName="小红帽">可是它就是这么说的吗～难道你还不相信我吗～呜呜呜p_q</Dialog>
+          <Button label="好啦好啦……我们相信你啦……" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">那……那我们就去维苏威地心一探究竟吧！</Dialog>
+          <Button label="恩！" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|1091"/>
+    </Click>
+    </ViewEvent>
+    </Create>	
+    </Npc>
+  </Task>
+  <Task id="1092" label="抵达">
+    <!-- npc_c0_xml · 场景 55 -->
+    <Npc sceneID="55" type="1" npcID="162900" position="998|468">
+    <View type="0" src="162900.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    <ViewEvent type="GotIt0_1092_162900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111800" npcName="科伦尔">哥哥！这是怎么回事？这里怎么会有雪怪？</Dialog>
+          <Button label="你们都别傻愣着啊～赶紧打雪怪啊～西格～奶瓶小鸭！！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">可是……可是……我……</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">我……我……主人……</Dialog>
+          <Button label="哎呀！看你们磨磨蹭蹭！没有一点男子气概！" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">那是因为……那是因为——我们就是雪怪啊！</Dialog>
+          <Button label="啊？？你们就是雪怪！？" nextID="-1" close="true">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="asWindow" src="task/1092/1092_0" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_4"/>
+        </Default>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134400" npcName="奶瓶小鸭">可是抢走小红帽的蛋糕的雪怪，还有现在的雪怪，又是谁啊？</Dialog>
+          <Button label="哼！～真是对你们俩无语了……" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111800" npcName="科伦尔">抢走小红帽蛋糕的雪怪就是我啊！</Dialog>
+          <Dialog npcID="111900" npcName="科伦斯">恩恩！我就是小红帽！</Dialog>
+          <Button label="@_@这到底是怎么回事～～~[崩溃ING]" nextID="-1" close="true">
+            <Goto value="index_0_6"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_6" type="asWindow" src="task/1092/1092_1" winPos="0|0" name="">
+        <Default>
+          <Goto value="index_0_7"/>
+        </Default>
+      </Script>
+      <Script label="index_0_7" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">啊啊啊～原来你们兄弟俩合伙骗我@_@</Dialog>
+          <Dialog npcID="111900" npcName="科伦斯">哼～你还骗了克莱尔和<![CDATA[{name}]]>还有希罗呢！</Dialog>
+          <Button label="科伦斯～科伦尔，你们俩也骗了我好不好！" nextID="-1" close="false">
+            <Goto value="index_0_8"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111800" npcName="科伦尔">可是……哥哥……既然西格在这里，我们也在这里。那么，那边那只雪怪是谁啊？</Dialog>
+          <Button label="呃呃呃～是啊！那边那只雪怪是谁？@_@" nextID="-1" close="true">
+            <Goto value="index_0_9"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_9" event="NULL" fire="true" fireID="111901"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt1_1092_162900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">完蛋了！</Dialog>
+          <Button label="恩？" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">好久没有看过这么有意思的事情了……骗来骗去的……哈哈哈！</Dialog>
+          <Button label="呃……" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">太好笑了～怎么办～笑得我肚子痛～～</Dialog>
+          <Button label="呃呃呃～你来这里干嘛～" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">我来这里看你们演演戏～真是比莫里亚克写的小说还精彩啊！哈哈哈！</Dialog>
+          <Button label="那现在戏演完了，你可以回去了～" nextID="-1" close="false">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_4" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">其实我是为了恩佐的永生实验～正在想要不要抓几只雪怪回去，没想到雪怪竟然是西格和科伦斯假扮的！所以我就做了一个雪怪外套来骗你们～哼！</Dialog>
+          <Button label="什么吗～原来你也被骗了……" nextID="-1" close="false">
+            <Goto value="index_0_5"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_5" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">是啊@_@——怎么可能！哼～我我我～我要打败你～</Dialog>
+          <Button label="你是不是中暑了头脑发昏……" nextID="-1" close="true">
+            <Goto value="index_0_7"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_7" type="switch" invoke="combat" args="2|162900|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_8"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_9"/>
+        </Default>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼～下次我还会来骗你们的！</Dialog>
+          <Button label="你以为你真的骗得到我么……" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼～就凭你～也不照镜子看看你那副嘴脸！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true"><Goto value="index_0_7"/></Button>
+          <Button label="待我休息一下再战" nextID="-1" close="true"><Goto value="index_0_11"/></Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="NULL" fire="true"/>
+      <Click label="index_0_11" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_1092_162900"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt2_1092_162900">
+    <Click event="onRunScript">
+      <Script label="default" type="switch" invoke="combat" args="2|162900|黑衣人">
+        <Case value="2">
+          <Goto value="index_0_8"/>
+        </Case>
+        <Default>
+          <Goto value="index_0_9"/>
+        </Default>
+      </Script>
+      <Script label="index_0_8" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼～下次我还会来骗你们的！</Dialog>
+          <Button label="你以为你真的骗得到我么……" nextID="-1" close="true">
+            <Goto value="index_0_10"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_9" type="dialog">
+        <Page id="0">
+          <Dialog npcID="161700" npcName="黑衣人">哼～就凭你～也不照镜子看看你那副嘴脸！</Dialog>
+          <Button label="有本事再来" nextID="-1" close="true"><Goto value="default"/></Button>
+          <Button label="待我休息一下再战" nextID="-1" close="true"><End/></Button>
+        </Page>
+      </Script>
+      <Click label="index_0_10" event="NULL" fire="true"/>
+    </Click>
+    </ViewEvent>
+    <ViewEvent type="GotIt3_1092_162900">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">呃呃呃～以后再也不敢恶作剧了～</Dialog>
+          <Dialog npcID="134400" npcName="奶瓶小鸭">主人……那以后我想喝奶怎么办……</Dialog>
+          <Button label="再怎么样也不能骗人啊！还有你们兄弟俩！" nextID="-1" close="false">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_1" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111900" npcName="科伦斯">我知道了啦～讨厌～</Dialog>
+          <Dialog npcID="111800" npcName="科伦尔">我们以后如果真的想骗人，不不不， 我是说，我们以后如果真的有了好的想法，就会写在这本书里～</Dialog>
+          <Button label="哈？《科伦兄弟童话》？" nextID="-1" close="false">
+            <Goto value="index_0_2"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_2" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">这名字……怎么听着这么耳熟……</Dialog>
+          <Dialog npcID="111900" npcName="科伦斯">反正不可能是抄袭的啦～～</Dialog>
+          <Button label="好啦～好啦～问题都解决啦～" nextID="-1" close="false">
+            <Goto value="index_0_3"/>
+          </Button>
+        </Page>
+      </Script>
+      <Script label="index_0_3" type="dialog">
+        <Page id="0">
+          <Dialog npcID="134800" npcName="西格">是啊～我们去玩儿啦～</Dialog>
+          <Button label="记住～不要再骗人啦～这样可不是好孩子～" nextID="-1" close="true">
+            <Goto value="index_0_4"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_4" event="onTaskCall2" params="2|1092"/>
+    </Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npcfun_c0_xml · 场景 55 -->
+    <NPCFun sceneID="55" label="你们看到雪怪了吗？" icon="0" close="false">
+    <Click event="onRunScript">
+      <Script label="default" type="dialog">
+        <Page id="0">
+          <Dialog npcID="111900" npcName="科伦斯">我们可从来没见过什么雪怪哦……</Dialog>
+          <Dialog npcID="111800" npcName="科伦尔">是呢～我和哥哥一直在这里研究，从来没见过什么雪怪……</Dialog>
+          <Button label="这就奇怪了啊……" nextID="-1" close="true">
+            <Goto value="index_0_1"/>
+          </Button>
+        </Page>
+      </Script>
+      <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state0_1092_162900"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts0_xml · 场景 55 -->
+    <NPCFun label="app_ts0" sceneID="55">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1092/1092_ts_0" winPos="0|0" name="提示">
+    		<Case value="1"><Goto value="index_0"/></Case>		
+    		<Default><End/></Default>
+    	</Script>
+    	<Click label="index_0" event="onChangeScene" cdtn="10" params="55"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

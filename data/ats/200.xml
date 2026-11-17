@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 WindSnowyTownProtectBattleStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="200" label="枫雪镇保卫战（下）">
+  <Task id="3041" label="灯笼的作用">
+    <!-- npcfun_get · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218300" position="0|0">
+    		<View type="0" src="218300.swf" atLayerID="3" hasClick="false"/>
+    		<Create>	
+    		
+    		<ViewEvent type="NPCScript_218300_ShowDialogOfKelixiyaAndZhenzhang">
+    		<Click event="onRunScript">
+    		
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">你是真的戴维镇长吗？</Dialog>
+    			  <Dialog npcID="205500" npcName="戴维镇长">你是真的可丽希亚吗？</Dialog>
+    			  <Button label="来吧，我们对暗号！" nextID="-1" close="true">
+    				<Goto value="NPCScript_218300_gotoAndStop2"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Click label="NPCScript_218300_gotoAndStop2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_218300_gotoAndStop2"/>
+    		</Click>
+    		</ViewEvent>
+    	
+    		<ViewEvent type="NPCScript_218300_ShowUIAnhao">
+    		<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/200/app_1_anhaoUI" winPos="0|0" name="加载中......">
+    			<Case value="1">
+    			<Goto value="accpet"/>
+    			</Case>
+    			<Case value="0">
+    			<End/>
+    			</Case>
+    		</Script>	
+    		<Click label="accpet" event="onTaskCall2" params="1|3041"/>
+    		</Click>
+    		</ViewEvent>
+    	
+    		</Create>
+    		</Npc>
+    <!-- app_ts1_xml · 场景 88 -->
+    <NPCFun label="app_ts1" sceneID="88">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/200/app_4_goto182" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="goto182"/>
+    				</Default>
+    		</Script>	
+    		<Click event="onChangeScene" label="goto182" params="184"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218400" position="0|0">
+    	<View type="0" src="218400.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_216400_ShowDialogOfAll">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="205500" npcName="戴维镇长">辛苦各位，枫雪镇能否度过这次的危难，就看今天晚上了！</Dialog>
+    		<Dialog npcID="105400" npcName="可丽希亚">安啦，本公主的妙计绝对可以出奇制胜！</Dialog>
+    	
+    		<Button label="哇，难道公主的计谋是……" nextID="-1" close="true">
+    			<Goto value="asWindow_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_0" type="asWindow" src="task/200/app_3_gussesOfOthers" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="dialog_1"/>
+    				</Default>
+    		</Script>	
+    	
+    		<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="105400" npcName="可丽希亚">这种被人用烂的方法本公主怎么会用！</Dialog>
+    		 <Dialog npcID="203700" npcName="洛奇">看起来好厉害的样子！好崇拜公主！</Dialog>		  
+    		 <Button label="公主你快告诉我们吧！" nextID="-1" close="true">
+    			<Goto value="asWindow_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Script label="asWindow_1" type="asWindow" src="task/200/app_2_planOfGirl" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="dialog_2"/>
+    				</Default>
+    		</Script>	
+    	
+    	<Script label="dialog_2" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="105400" npcName="可丽希亚">你们居然质疑本公主的计策！</Dialog>
+    		<Dialog npcID="205500" npcName="戴维镇长">可丽希亚的计划虽然简单，但是不失为一个办法，现在只能硬着头皮试试了！</Dialog>
+    		<Dialog npcID="219400" npcName="众人">对！胜负就在今晚，我们一定不能失败！</Dialog>
+    		  <Button label="加油！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="submit" event="NULL" fire="true" fireID="218400"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218500" position="0|0">
+    	<View type="0" src="218500.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_218500_showCatchJNDialog">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="105400" npcName="可丽希亚">一会看我指示，我点亮灯笼之后，你们也快速点亮灯笼！天空中的灯笼由雪精灵负责！</Dialog>
+    			<Dialog npcID="219400" npcName="众人">我们一定全力配合公主，以公主马首是瞻！</Dialog>
+    			<Button label="公主小心！" nextID="-1" close="true">
+    			<Goto value="NPCScript_218500_Goto3"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	<Click label="NPCScript_218500_Goto3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_218500_Goto3"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_218500_showCatchJNApp">
+    	<Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/200/app_5_dianliangdenglong" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    	</Script>	
+    	
+    	<Click label="submit" event="NULL" fire="true" fireID="218500"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218600" position="0|0">
+    	<View type="0" src="218600.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_218600_showCatchJNDialogDavy">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="205500" npcName="戴维镇长">趁他们慌乱之际，一举击溃。</Dialog>
+    			  <Dialog npcID="219400" npcName="众人">防止他们从空中逃跑！</Dialog>
+    			  <Button label="看我的！" nextID="-1" close="true">
+    				<Goto value="game_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    	<Script label="game_0" type="switch" invoke="game" args="2|击溃鸡牛部队|2138|0">
+    		  <Case value="1">
+    		    <Goto value="NPCScript_218600_GotoAndStop3"/>
+    		  </Case>
+    		  <Default>
+    		    <End/>
+    		  </Default>
+    		</Script>
+    	
+    		<Click label="NPCScript_218600_GotoAndStop3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_218600_GotoAndStop3"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    <ViewEvent type="NPCScript_218600_WhyNoEnzo">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="205500" npcName="戴维镇长">糟糕，怎么不见恩佐！</Dialog>
+    			  <Dialog npcID="137700" npcName="库伦">哈哈，恩佐大人早就去枫雪冰泉抓冰系精灵王去了！</Dialog>
+    				<Dialog npcID="219500" npcName="鸡牛部队">笨蛋，恩佐大人要我们保密的！</Dialog>
+    			  <Dialog npcID="219400" npcName="众人">冰系精灵王有危险！我们快去救他！</Dialog>
+    				<Dialog npcID="203700" npcName="洛奇">镇长大叔、可丽希亚还有<![CDATA[{name}]]>我们先去营救冰系精灵王，余下的人安置好鸡牛部队后再来援助我们！</Dialog>
+    	
+    				<Button label="好，我们快走！" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Click label="submit" event="onTaskCall2" params="2|3041"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+  </Task>
+  <Task id="3042" label="冰系精灵王的反击">
+    <!-- app_ts0_xml · 场景 88 -->
+    <NPCFun label="app_ts0" sceneID="88">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/200/app6_goto188" winPos="0|0" name="加载中......">
+    				<Default>
+    					<Goto value="goto188"/>
+    				</Default>
+    		</Script>	
+    		<Click event="onChangeScene" label="goto188" params="188"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218700" position="0|0">
+    	<View type="0" src="218700.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_218700_ShoutingToEnzao">
+    	<Click event="onRunScript">
+    	
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="205500" npcName="戴维镇长">恩佐你在做什么，快住手！</Dialog>
+    		<Dialog npcID="158900" npcName="恩佐">你叫我住手我就住手吗，那我以后还怎么带小弟？</Dialog>
+    		<Dialog npcID="203700" npcName="洛奇">你在对冰系精灵王做什么，为什么它没有任何反应？</Dialog>
+    		<Dialog npcID="158900" npcName="恩佐">哈哈，这是我最新研究出的黑魔法，可以剥夺任何生物的神智，提炼生命本源。</Dialog>
+    		<Dialog npcID="158900" npcName="恩佐">弱一点的人挨一下就要变傻瓜，像各系精灵王这种强大的生物需要的时间就久一点。而且这个魔法一旦开始就不能停止，除非转换对象，哈哈哈哈哈哈！</Dialog>
+    	
+    		<Button label="恩佐你好卑鄙！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Click label="submit" event="NULL" fire="true" fireID="218700"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218800" position="0|0">
+    	<View type="0" src="218800.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_218800_LuoqiAndMeIsAngryDialog">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="203700" npcName="洛奇">恩佐，我和你拼了！</Dialog>
+    		  <Button label="洛奇！！！" nextID="-1" close="true">
+    			<Goto value="fight_0"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+     	<Script label="fight_0" type="switch" invoke="combat" args="2|218800|叮叮恶魔">
+     				<Default>
+    				      <Goto value="asWindow_0"/>
+    				</Default>
+    	</Script>
+    	
+    		<Script label="asWindow_0" type="asWindow" src="task/200/app_6_LuoqiAndMeFighting" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="218800"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- app_ts1_xml · 场景 88 -->
+    <NPCFun label="app_ts1" sceneID="88">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="191"/>
+    	</Click>
+    </NPCFun>
+    <!-- npcfun_submit · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="218900" position="0|0">
+    	<View type="0" src="218900.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_218900_showDialog">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			<Dialog npcID="203700" npcName="洛奇">镇长大叔你没事吧，冰系精灵王它不会有事吧？</Dialog>
+    			<Dialog npcID="105400" npcName="可丽希亚">呜呜呜呜呜，冰系精灵王都是为了救我们。</Dialog>
+    			<Dialog npcID="205500" npcName="戴维镇长">我没事，快查看冰系精灵王的情况。</Dialog>
+    			<Button label="冰系精灵王好虚弱，怕是…… " nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		<Click label="submit" event="onTaskCall2" params="2|3042"/>
+    		</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+  </Task>
+  <Task id="3043" label="失乐园">
+    <!-- npc_c0_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="219000" position="0|0">
+    	<View type="0" src="219000.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_219000_meishiba">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="203700" npcName="洛奇">冰系精灵王你没事吧？</Dialog>
+    		<Dialog npcID="215600" npcName="冰系精灵王">一把年纪了，果然已经太老了么，呵呵……</Dialog>
+    		<Dialog npcID="205500" npcName="戴维镇长">（冰系精灵王的魔力在快速消退……）</Dialog>
+    					 
+    			<Button label="（冰系精灵王应该已经是强弩之末了……）">
+    				<Goto value="dialog_1"/>
+    		    </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="dialog_1" type="dialog">
+    		<Page id="0">
+    		<Dialog npcID="215600" npcName="冰系精灵王">你们这都是什么表情？不必为我难过，我早就有身为守护者的觉悟。</Dialog>
+    		<Dialog npcID="105400" npcName="可丽希亚">呜呜呜呜呜，冰系精灵王你要坚持住，会有办法让你恢复的。</Dialog>
+    		<Dialog npcID="203700" npcName="洛奇">我这就回去拿圣剑，镇长大叔你也不要阻止我！</Dialog>
+    		<Dialog npcID="215600" npcName="冰系精灵王">已经用不到圣剑了……</Dialog>
+    
+    			<Button label="怎么会这样？" nextID="-1" close="true">
+    				<Goto value="NPCScript_219000_gotoAndStop3"/>
+    		    </Button>
+    		</Page>
+    	  </Script>
+    	
+    	<Click label="NPCScript_219000_gotoAndStop3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="NPCScript_219000_gotoAndStop3"/>
+    	</Click>
+    	</ViewEvent>
+    	
+    	<ViewEvent type="NPCScript_219000_flyInThesky">
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="asWindow" src="task/200/app_7_FlyByIceHeroInthesky" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="submit"/>
+    			</Default>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="219000"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="219100" position="0|0">
+    	<View type="0" src="219100.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_219100_dialog1">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="105400" npcName="可丽希亚">怎么会这样，枫雪镇的积雪全部都在融化。</Dialog>
+    		<Dialog npcID="215600" npcName="冰系精灵王">戴维，身为镇长你应该知道一些原因的。</Dialog>
+    		<Dialog npcID="205500" npcName="戴维镇长">（沉默……）</Dialog>
+    	
+    		<Button label="镇长，到底是怎么回事？" nextID="-1" close="true">
+    			<Goto value="asWindow_1"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Script label="asWindow_1" type="asWindow" src="task/200/app_8_rollingBook" winPos="0|0" name="加载中......">
+    			<Default>
+    				<Goto value="dialog_0"/>
+    			</Default>
+    			</Script>	
+    	
+    		<Script label="dialog_0" type="dialog">
+    		<Page id="0">
+    		  <Dialog npcID="215600" npcName="冰系精灵王">不错，就是这样，而我就是枫雪镇力量的来源，枫雪镇恐怕支撑不了多久了。</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">那是不是意味着……精灵王你也……</Dialog>
+    			<Dialog npcID="215600" npcName="冰系精灵王">现在不是伤感的时候，我有重要的事情想托付给你和<![CDATA[{name}]]>，这关系重大！</Dialog>
+    				
+    			<Button label="我们一定会全力以赴！" nextID="-1" close="true">
+    			<Goto value="submit"/>
+    		  </Button>
+    		</Page>
+    	  </Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="219100"/>
+    		</Click>
+    	</ViewEvent>
+    
+    	</Create>
+    	</Npc>
+    <!-- npc_c2_xml · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="219200" position="0|0">
+    	<View type="0" src="219200.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_219200_dialog1">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			 <Dialog npcID="215600" npcName="冰系精灵王">这是我的精元，恩佐的目标也是它，以后就要麻烦你们帮我守护它了。</Dialog>
+    			<Dialog npcID="215600" npcName="冰系精灵王">戴维，没有帮你守护好枫雪镇，是我的失职，以后恐怕它很难再现于世了。</Dialog>
+    			<Dialog npcID="205500" npcName="戴维镇长">不要这样说，该是我谢谢你守护了枫雪镇这么久。</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">冰系精灵王，你把精元给了我，那你会怎样……</Dialog>
+    							  
+    			<Button label="（失去精元，冰系精灵王就会失去力量吧……）">
+    				<Goto value="dialog_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    			 <Dialog npcID="215600" npcName="冰系精灵王">我可能会去一处神秘的地方修养，你们不要担心。</Dialog>
+    			<Dialog npcID="105400" npcName="可丽希亚">冰系精灵王……</Dialog>
+    							  
+    			<Button label="（精灵王的形体在变淡……）" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="219200"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+    <!-- npcfun_submit · 场景 88 -->
+    <Npc sceneID="88" type="1" npcID="219300" position="0|0">
+    	<View type="0" src="219300.swf" atLayerID="2" hasClick="false"/>
+    	<Create>	
+    	
+    	<ViewEvent type="NPCScript_219300_dialog1">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="205500" npcName="戴维镇长">你们看这里，这是枫雪镇中的世外桃源，这里一定是冰系精灵王用全部的魔力开辟出的空间。</Dialog>
+    			<Dialog npcID="205500" npcName="戴维镇长">冰系精灵王会一直在我们身边。</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">（大喊）冰系精灵王，我们一定不会辜负你的期望的！</Dialog>
+    				
+    			<Button label="（大喊）冰系精灵王，请放心！">
+    				<Goto value="dialog_0"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    			<Script label="dialog_0" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="105400" npcName="可丽希亚">洛奇，接下来你要去哪里？</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">先把冰系精灵王的精元放到洛克号驾驶舱，我会时刻守护着它。</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">然后我一定要变强，我不想再失去朋友、失去伙伴！</Dialog>
+    			<Dialog npcID="203700" npcName="洛奇">（大喊）我一定要变强！</Dialog>
+    			<Button label="我们一起努力，洛奇！" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="2|3043"/>
+    		</Click>
+    	</ViewEvent>
+    	
+    	</Create>
+    	</Npc>
+  </Task>
+</Story>

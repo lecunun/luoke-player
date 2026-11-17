@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoAppearsStoryScript6.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="190" label="敌人来袭">
+  <Task id="4062" label="敌人来袭">
+    <!-- npcfun_accepttask_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="黑暗力量" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">最近和族长的联络中断了，你一定要帮我想想办法……</Dialog>
+    						<Button label="是不是你的联络水晶没有能源了？">
+    							<Goto value="dlg2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">肯定不是的，并且最近发现有股强大的力量在身体里觉醒，但是这力量不是我能控制的，我觉得永夜森林的危险越来越近了！</Dialog>
+    						<Button label="有什么线索么？">
+    							<Goto value="dlg3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Script label="dlg3" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">我只有一个隐隐约约的梦境。</Dialog>
+    						<Button label="说来听听" close="true">
+    							<Goto value="donghua_1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="donghua_1" type="asWindow" src="task/4062/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg4"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg4" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">就这些。</Dialog>
+    						<Button label="好混乱，不管怎么说，我先去巨石阵看看！" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4062"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="158"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="黑暗力量" icon="0" close="false">
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="211300" npcName="暗黑阿木木">小子，竟敢打扰我的好梦！！看我不收拾你！咦~~~你身上有木豆丁的气息，快说木豆丁在哪里？</Dialog>
+    						<Button label="你是谁，你怎么知道木豆丁的？">
+    							<Goto value="dlg2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="211300" npcName="暗黑阿木木">呵呵呵，我是木豆丁的朋友，我是帮助它的？我们从小一起长大，我和木藤藤也是最好的朋友！</Dialog>
+    						<Button label="那你说木藤藤最爱吃什么？">
+    							<Goto value="dlg3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="dlg3" type="dialog">
+    				<Page>
+    					<Dialog npcID="211300" npcName="暗黑阿木木">它最爱吃巧克力，对吧！</Dialog>
+    						<Button label="你个骗子，少忽悠我，木藤藤最爱吃面了，你肯定不是好人，我闪！" close="true">
+    							<Goto value="donghua_2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="donghua_2" type="asWindow" src="task/4062/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="211300"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_acceptnotfinish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="黑暗力量" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">去巨石阵看看，有没有什么线索。</Dialog>
+    					<Button label="好的，我再看看" close="true">
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="黑暗力量" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">看来预言真的发生了，暗黑阿木木真的出现了，但是魔法没有解开，密匙就是安全的……</Dialog>
+    					<Button label="我觉得他们在打你的主意，密匙不是封印在你身上吧？">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    	
+    			<Script label="dialog_1" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">难道我就是上天选中的那个？不会吧，对了今天联络水晶有了点反应，我们一起看看吧！</Dialog>
+    					<Button label="好的" close="true">
+    						<Goto value="donghua_3"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_3" type="asWindow" src="task/4062/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_2"/>
+    				</Default>
+    			</Script>	
+    
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">看来我要准备回去了，我要击败那个坏人，我要救出我们族人！</Dialog>
+    					<Button label="好的，我一定会帮助你！">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="dialog_3" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">嗯，先把那个黑家伙扁了！</Dialog>
+    					<Button label="好的！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Click label="submit" event="onTaskCall2" params="2|4062"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

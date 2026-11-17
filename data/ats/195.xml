@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoAppearsStoryScript7.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="195" label="可怕的黑暗力量">
+  <Task id="4064" label="可怕的黑暗力量">
+    <!-- npcfun_accepttask_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="可怕的黑暗力量" icon="-1" iconType="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">永夜森林的危机真的来了，我们该怎么办？？</Dialog>
+    						<Button label="发生了什么？" close="true">
+    							<Goto value="donghua_1"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_1" type="asWindow" src="task/4064/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg2"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">先找到它们，看有没有什么办法……</Dialog>
+    						<Button label="好的" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4064"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="88"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="141"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 134 -->
+    <NPCFun label="app_ts2" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="215200" name="暗黑阿木木" icon="0" position="450|390">
+    	<View type="0" src="215200.swf" height="75" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="215200" npcName="暗黑阿木木">谁能救出我们，我们不想战斗，我们该怎么办……</Dialog>
+    					<Button label="发生了什么？" close="true">
+    							<Goto value="donghua_2"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="donghua_2" type="asWindow" src="task/4064/app2" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg2"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="215200" npcName="暗黑阿木木">这次连族长也被污染了，你去问问它吧，快远离我，我就要发狂了……</Dialog>
+    					<Button label="我这就去" close="true">
+    							<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="215200"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="215400" name="木木族长" icon="0" position="600|360">
+    	<View type="0" src="215400.swf" height="82" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="215400" npcName="木木族长">我的身体已经不听我的控制了，快快救出我们！</Dialog>
+    					<Button label="如何帮助你们呢？" close="true">
+    							<Goto value="donghua_3"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="donghua_3" type="asWindow" src="task/4064/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dlg2"/>
+    				</Default>
+    			</Script>
+    
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="215400" npcName="木木族长">尽快解救我们吧，你和木豆丁是永夜森林最后的希望……</Dialog>
+    					<Button label="我这就去" close="true">
+    							<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="215400"/>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_acceptnotfinish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="可怕的黑暗力量" close="false">
+    		<Click event="onRunScript">	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">去暗黑岭、迷雾之森看看，看看有什么线索。</Dialog>
+    					<Button label="好的，我再看看" close="true">
+    					</Button>
+    				</Page>
+    			</Script>	
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="可怕的黑暗力量" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">神秘之匙竟然在我身上，天啊！我们怎么解救它们？我如何给你我的力量？</Dialog>
+    					<Button label="别急，好好回忆下" close="true">
+    						<Goto value="donghua_4"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_4" type="asWindow" src="task/4064/app4" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_2"/>
+    				</Default>
+    			</Script>	
+    
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">原来是这样，我们一定要救出它们，你愿意帮助我们么？</Dialog>
+    					<Button label="好的，加油！" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Click label="submit" event="onTaskCall2" params="2|4064"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

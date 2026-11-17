@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 WinterHolidaysAssignmentStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="211" label="菲尔特的寒假作业">
+  <Task id="4070" label="菲尔特的寒假作业">
+    <!-- npcfun_get · 场景 31 -->
+    <Npc sceneID="31" type="1" npcID="226800" position="363|392" aimPos="363|392">
+    		<View type="0" src="226800.swf" atLayerID="2"/>
+    		<Create>	
+    		<NPCFun label="菲尔特的寒假在作业" icon="-1" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">哦哈哈哈，今年的寒假作业都写完了，谁有我写的好！</Dialog>
+    						<Button label="你好厉害，小公主还在为那日记发愁呢……" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/4070/app1" winPos="0|0" name="加载中......">
+    							<Default>
+    								<Goto value="dialog_0"/>
+    							</Default>
+    					</Script>	
+    				<Script label="dialog_0" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">完了我忘记了，怎么办！</Dialog>
+    						<Button label="先别急，让我们先和老师说说" nextID="-1" close="true">
+    							<Goto value="accpet"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="accpet" event="onTaskCall2" params="1|4070"/>
+    			</Click>
+    		</NPCFun>;
+    		</Create>
+    	
+    		<Click event="onTaskCall" cdtn="20">
+    		<Dialog>xxxxxxxxxxxxx</Dialog>
+    		</Click>
+    		</Npc>
+    <!-- npc_c0_xml · 场景 31 -->
+    <NPCFun sceneID="31" label="寒假作业" icon="0" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="101900" npcName="杰瑞西">菲尔特，又是他，唉，没办法让他尽快补好交上来，但是不能胡编哦！</Dialog>
+    						<Button label="嗯，我这就去告诉他" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="NULL" fire="true" fireID="101904"/>
+    			</Click>
+    		</NPCFun>
+    <!-- npcfun_0_noover_xml · 场景 31 -->
+    <Npc sceneID="31" type="1" npcID="226800" position="363|392" aimPos="363|392">
+    		<View type="0" src="226800.swf" atLayerID="2"/>
+    		<Create>	
+    		<NPCFun label="菲尔特的寒假在作业" icon="0" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">先和杰瑞西老师说说好话。</Dialog>
+    						<Button label="我再去看看" close="true">
+    							<End/>
+    						</Button>
+    					</Page>
+    				</Script>
+    			</Click>
+    		</NPCFun>;
+    		</Create>
+    		<Click event="onTaskCall" cdtn="20">
+    		<Dialog>xxxxxxxxxxxxx</Dialog>
+    		</Click>
+    		</Npc>
+    <!-- npcfun_submit · 场景 31 -->
+    <Npc sceneID="31" type="1" npcID="226800" position="363|392" aimPos="363|392">
+    	<View type="0" src="226800.swf" atLayerID="2"/>
+    	<Create>	
+    	
+    	<NPCFun label="菲尔特的寒假在作业" icon="0" close="false">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">嘿嘿嘿，我今天就能弄完作业。</Dialog>
+    						<Button label="你好厉害，小公主还在为那日记发愁呢……" nextID="-1" close="true">
+    							<Goto value="asWindow_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_0" type="asWindow" src="task/4070/app2" winPos="0|0" name="加载中......">
+    							<Default>
+    								<Goto value="dialog_0"/>
+    							</Default>
+    					</Script>	
+    				<Script label="dialog_0" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">怎么样强大吧！</Dialog>
+    						<Button label="你这也太坑人了，明显胡编么">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">那你说怎么办？</Dialog>
+    						<Button label="实话实说" nextID="-1" close="true">
+    							<Goto value="asWindow_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="asWindow_1" type="asWindow" src="task/4070/app3" winPos="0|0" name="加载中......">
+    							<Default>
+    								<Goto value="dialog_2"/>
+    							</Default>
+    					</Script>	
+    	
+    				<Script label="dialog_2" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="226800" npcName="菲尔特">虽然这样写作业，一天写不完，但是很有意义，谢谢你，嘿嘿嘿！</Dialog>
+    						<Button label="别客气，下次记得早点写完哦！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|4070"/>
+    			</Click>
+    		</NPCFun>;
+    	
+    	</Create>
+    	
+    	<Click event="onTaskCall" cdtn="20">
+    		<Dialog>xxxxxxxxxxxxx</Dialog>
+    		</Click>
+    	</Npc>
+  </Task>
+</Story>

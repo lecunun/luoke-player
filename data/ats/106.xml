@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 MourningDayDrizzleStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="106" label="清明时节雨纷纷">
+  <Task id="4025" label="清明时节雨纷纷">
+    <!-- npcfun_g_xml · 场景 103 -->
+    <NPCFun sceneID="103" label="清明前后，点瓜种豆" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141500" npcName="兔仙人">清明节到了，可以种下种子了……</Dialog>
+    				<Button label="什么是清明节呢？">
+    					<Goto value="nextdialog"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="nextdialog" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141500" npcName="兔仙人">春分后十五日，斗指乙，则清明风至。</Dialog>
+    				<Button label="好深奥……">
+    					<Goto value="nextdialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="nextdialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141500" npcName="兔仙人">其实不深奥，二十四节气中的春分过后不久，就要到清明节了。清明节还有很多习俗，想知道吗？</Dialog>
+    				<Button label="不会很无聊吧……">
+    					<Goto value="nextdialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="nextdialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="141500" npcName="兔仙人">这个要随缘，哈哈哈。想听故事，先去普拉塔草原找我的影子，看看他会告诉你什么。</Dialog>
+    	
+    				<Button label="好吧" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    				<Button label="一会再说" close="true">
+    					<End/>
+    				</Button>
+    			</Page>
+    		</Script>
+    	
+    		<Click label="submit" event="onTaskCall2" params="1|4025"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_ged_xml · 场景 103 -->
+    <NPCFun sceneID="103" label="清明时节雨纷纷" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="141500" npcName="兔仙人">爱德华很爱学习的，有很多知识呢，问过他了吗？</Dialog>
+    					<Button label="我再找找" close="true">
+    						<End/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_c0_xml · 场景 103 -->
+    <Npc sceneID="103" type="1" npcID="160800" position="583|476" name="兔仙人的影子">
+    	<View type="0" src="160800.swf" height="100" atLayerID="2"/>
+    	<Create>
+    		<NPCFun label="清明时节雨纷纷">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page>
+    						<Dialog npcID="160800" npcName="兔仙人的影子">梨花风起正清明，游子寻春半出城。日暮笙歌收拾去，万株杨柳属流莺。</Dialog>
+    						<Button label="您是一个诗人" icon="-1" nextID="0" close="false">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dialog_1" type="dialog">
+    					<Page>
+    					<Dialog npcID="160800" npcName="兔仙人的影子">哪里哪里，这是古人写的。清明时节，正是出来踏青的好时节，怎么样这一路的绿色美丽吧。</Dialog>
+    						<Button label="哦，还好啦，那清明节我们还干什么呢？" icon="-1" nextID="0" close="false">
+    						<Goto value="dialog_2"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    		
+    				<Script label="dialog_2" type="dialog">
+    					<Page>
+    					<Dialog npcID="160800" npcName="兔仙人的影子">去问问天天看书的爱德华，看看他能给你什么知识。</Dialog>
+    						<Button label="好的" close="true">
+    						<Goto value="sumbit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="sumbit" event="NULL" fire="true" fireID="160800"/>
+    			</Click>
+    		</NPCFun>;
+    	</Create>
+    	<Click event="onTaskCall" cdtn="50">
+    	<Dialog>梨花风起正清明，游子寻春半出城。日暮笙歌收拾去，万株杨柳属流莺。
+    	</Dialog>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_c1_xml · 场景 7 -->
+    <NPCFun sceneID="7" label="清明时节雨纷纷" icon="0" close="false">
+    	<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="105100" npcName="爱德华">春雨惊春清谷天，夏满芒夏暑相连，秋处露秋寒霜降，冬雪雪冬小大寒。</Dialog>
+    						<Button label="二十四节气歌，这个我学过。">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="105100" npcName="爱德华">春雨惊春“清”谷天里面的清就是清明的意思。清明节还有个别称：“寒食节”，至于寒食节的历史，兔仙人会讲的很生动呢。</Dialog>
+    						<Button label="好的，我去问问他吧。" close="true">
+    							<Goto value="sumbit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				
+    				<Click label="sumbit" event="NULL" fire="true" fireID="105103"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npcfun_p_xml · 场景 103 -->
+    <NPCFun sceneID="103" label="寒食节的历史" icon="0" close="false">
+    		<Click event="onRunScript">
+    							<Script type="dialog" label="default">
+    								<Page>
+    									<Dialog npcID="141500" npcName="兔仙人">寒食节，爱德华还真是个爱学习的好孩子，好吧我们一起听听吧。</Dialog>
+    									<Button label="好的。" close="true">
+    										<Goto value="asWindow_0"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    	
+    							<Script label="asWindow_0" type="asWindow" src="task/4025/task_4025_jiezituiandhanshijie" winPos="0|0" name="jack的感谢">
+    								<Default>
+    									<Goto value="dialog_2"/>
+    								</Default>
+    							</Script>
+    	
+    							<Script label="dialog_2" type="dialog">
+    								<Page>
+    									<Dialog npcID="141500" npcName="兔仙人">任何一个节日，都有很多故事的，多学习吧。</Dialog>
+    									<Button label="知道啦。" close="true">
+    										<Goto value="sumbit"/>
+    									</Button>
+    								</Page>
+    							</Script>
+    							<Click label="sumbit" event="onTaskCall2" params="2|4025"/>
+    						
+    					
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

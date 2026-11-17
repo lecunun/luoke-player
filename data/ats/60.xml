@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 EvilDisguiseStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="60" label="邪恶的伪装">
+  <Task id="1037" label="幽灵出没">
+    <!-- npcfun_g_xml · 场景 51 -->
+    <NPCFun sceneID="51" label="邪恶的伪装" icon="-1" close="false">
+    <Click event="onRunScript">
+    	<Script label="default" type="dialog">
+    		<Page id="0">
+    			<Dialog npcID="112002" npcName="沃尔克"><![CDATA[{name}]]>，想必你也听说了，龙珠碎片突然出现在了龙之秘境，现在城里传得沸沸扬扬的！</Dialog>
+    			<Dialog npcID="112002" npcName="沃尔克">我也十分好奇，究竟是怎么回事呢？它怎么突然出现了？你可否去龙榻陋室，问问海德？他可是龙系方面的专家！</Dialog>
+    			<Button label="我知道啦" nextID="-1" close="true">
+    				<Goto value="submit"/>
+    			</Button>
+    		</Page>
+    	</Script>
+    	<Click label="submit" event="onTaskCall2" params="1|1037"/>
+    </Click>
+    </NPCFun>
+    <!-- npcfun_p_xml · 场景 51 -->
+    <NPCFun sceneID="51" label="邪恶的伪装" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="128200" npcName="海德"><![CDATA[{name}]]>，原来是沃尔克让你来找我的啊！的确，龙珠碎片最近有些不正常。你去看看我房间里的那块龙珠碎片，那里面竟然映出了奇怪的景象。</Dialog>
+    				<Button label="让我来看看" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1037/1037_0" winPos="0|0" name="动画">
+    			<Default><Goto value="dialog_1"/></Default>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="128200" npcName="海德">最近龙须小径突然出现了许多迁徙过来的宠物，可以先去问问它们。可能它们知道一些吧。</Dialog>
+    				<Button label="现在就去" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|1037"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1038" label="迁徙的宠物">
+    <!-- npc_p_xml · 场景 82 -->
+    <Npc sceneID="82" type="1" npcID="132700" position="830|410">
+    		<View type="0" src="132700.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="132700" npcName="帕娃咔咔">我们什么都不知道！不要再问我们啦！你再问我们，我们就要暴走啦！55555</Dialog>
+    							<Button label="你们不说的话，我就要动用武力了！" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    						</Page>
+    					</Script>				
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|132700|帕娃咔咔">
+    						<Case value="2"><Goto value="win"/></Case>
+    						<Default><Goto value="lose"/></Default>
+    					</Script>
+    					<Script label="lose" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133300" npcName="八字毛球">什么吗！你就这点本事！弱不禁风的样子！我们就算知道，也不会告诉你的！</Dialog>
+    							<Button label="有本事再来" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    							<Button label="哼！算你狠！" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5"/>
+    							</Button>
+    						</Page>
+    					</Script>	
+    					<Script label="win" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133300" npcName="八字毛球">啊啊啊！我们被武使徒施了魔咒，<![CDATA[{name}]]>，正是你刚刚打败了我们，让我们破解了咒语！其实，武使徒把另外一块龙珠碎片，放到了微光实验室里面！</Dialog>
+    							<Dialog npcID="133300" npcName="八字毛球">可是，他还放了很强大的宠物看守着龙珠碎片！而且，据说那个宠物，会幻化成其他的样子！如果你要去找龙珠碎片的话，一定要当心！</Dialog>
+    							<Button label="谢谢你们" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>	
+    					<Click label="submit" event="onTaskCall2" params="2|1038"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133300" npcName="八字毛球">什么吗！你就这点本事！弱不禁风的样子！我们就算知道，也不会告诉你的！</Dialog>
+    							<Button label="有本事再来" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    							<Button label="哼！算你狠！" nextID="-1" close="true">
+    								<End/>
+    							</Button>
+    						</Page>
+    					</Script>	
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|132700|帕娃咔咔">
+    						<Case value="2"><Goto value="win"/></Case>
+    						<Default><Goto value="default"/></Default>
+    					</Script>
+    					<Script label="win" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133300" npcName="八字毛球">啊啊啊！我们被武使徒施了魔咒，<![CDATA[{name}]]>，正是你刚刚打败了我们，让我们破解了咒语！其实，武使徒把另外一块龙珠碎片，放到了微光实验室里面！</Dialog>
+    							<Dialog npcID="133300" npcName="八字毛球">可是，他还放了很强大的宠物看守着龙珠碎片！而且，那个宠物据说，会幻化成其他的样子！如果你要去找龙珠碎片的话，一定要当心！</Dialog>
+    							<Button label="谢谢你们" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>	
+    					<Click label="submit" event="onTaskCall2" params="2|1038"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+  <Task id="1039" label="邪恶的伪装">
+    <!-- app_ts0_xml · 场景 75 -->
+    <NPCFun label="app_ts0" sceneID="75">
+    <Click event="onRunScript">
+    	<Script label="default" type="asWindow" src="task/1039/1039_ts_0" winPos="0|0" name="提示">
+    		<Default><End/></Default>
+    	</Script>
+    </Click>
+    </NPCFun>
+    <!-- npc_p_xml · 场景 75 -->
+    <Npc sceneID="75" type="1" npcID="132800" position="793|334">
+    		<View type="0" src="132800.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="132800" npcName="水蓝蓝">呜呜呜，海德让你来帮我一起拿龙珠碎片吗？不过……我才不会给你呢！我怎么知道你是不是武使徒的手下！</Dialog>
+    							<Button label="你才是武使徒的手下！少骗我啦！" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">可恶！竟然被你看穿了！这怎么可能！</Dialog>
+    							<Button label="是八字毛球和帕娃咔咔告诉我的！" nextID="-1">
+    								<Goto value="dialog_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_0" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">原来它们已经叛变了！也罢！那种货色！！你想拿走龙珠碎片？除非你能打败我！</Dialog>
+    							<Button label="少给我废话" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|132800|武使徒">
+    						<Case value="2"><Goto value="win"/></Case>
+    						<Default><Goto value="lose"/></Default>
+    					</Script>
+    					<Script label="lose" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">哎呀呀！我好怕怕啊！你这么厉害，还被我打得落花流水！我求求你，别再丢人现眼啦！</Dialog>
+    							<Button label="有本事再来啊！" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    							<Button label="哼！算你狠！" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4"/>
+    							</Button>
+    						</Page>
+    					</Script>	
+    					<Script label="win" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">哼！<![CDATA[{name}]]>！别看你其貌不扬，长得没我帅，但你还挺厉害的！我打不过！我还逃不了么！</Dialog>
+    							<Button label="什么！我长得没你帅？" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">哎呀呀！我好怕怕啊！你这么厉害，还被我打得落花流水！我求求你，别再丢人现眼啦！</Dialog>
+    							<Button label="有本事再来啊！" nextID="-1" close="true">
+    								<Goto value="combat_0"/>
+    							</Button>
+    							<Button label="哼！算你狠！" nextID="-1" close="true">
+    								<End/>
+    							</Button>
+    						</Page>
+    					</Script>						
+    					<Script label="combat_0" type="switch" invoke="combat" args="2|132800|武使徒">
+    						<Case value="2"><Goto value="win"/></Case>
+    						<Default><Goto value="default"/></Default>
+    					</Script>
+    					<Script label="win" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="133400" npcName="阿亚拉拉">哼！<![CDATA[{name}]]>！别看你其貌不扬，长得没我帅，但你还挺厉害的！我打不过！我还逃不了么！</Dialog>
+    							<Button label="什么！我长得没你帅？" nextID="-1" close="true">
+    								<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state5"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt3">
+    				<Click event="onRunScript">
+    					<Script label="default" type="asWindow" src="task/1039/1039_0" winPos="0|0" name="提示">
+    						<Default><Click event="onTaskCall2" params="2|1039"/></Default>
+    					</Script>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+  <Task id="1040" label="古老的壁画">
+    <!-- app_ts0_xml · 场景 81 -->
+    <NPCFun label="app_ts0" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1040/1040_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 81 -->
+    <NPCFun label="app_ts1" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1040/1040_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 81 -->
+    <NPCFun label="app_ts2" sceneID="81">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1040/1040_ts_2" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="133000" position="588|307">
+    	<View type="0" src="133000.swf" atLayerID="1" hasClick="false"/>
+    	<Create>
+    		<ViewEvent type="GotIt0">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133000" npcName="武使徒"><![CDATA[{name}]]>！你竟然能追到这里来！算你有点本事！我千辛万苦在龙之秘境找到的龙珠碎片，怎么可能让你拿走！</Dialog>
+    					<Button label="快点把龙珠碎片交出来吧！" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133000" npcName="武使徒">我吓得全身哆嗦！哎呀呀！哇啦啦！就凭你！以为真的能打败我吗？</Dialog>
+    					<Button label="废话少说！来点真格的！" nextID="-1" close="true">
+    						<Goto value="combat_0"/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    			<Script label="combat_0" type="switch" invoke="combat" args="2|133000|武使徒">
+    				<Case value="2">
+    					<Batch>
+    						<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4"/>
+    						<Goto value="win"/>
+    					</Batch>
+    				</Case>
+    				<Default><Goto value="lose"/></Default>
+    			</Script>
+    			<Script label="lose" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133000" npcName="武使徒">不好意思，我稍微一不小心，就把你给打败了。</Dialog>
+    					<Button label="有本事再来啊！" nextID="-1" close="true">
+    						<Goto value="combat_0"/>
+    					</Button>
+    					<Button label="算你本事大" nextID="-1" close="true">
+    						<End/>
+    					</Button>
+    				</Page>
+    			</Script>	
+    			<Script label="win" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133000" npcName="武使徒">哼！<![CDATA[{name}]]>，看看你！长得那么丑！还不如我的阿亚拉拉一半好看！我对长得丑的洛克没有斗志，这次就放过你吧！</Dialog>
+    					<Button label="明明是我更帅！" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="133000" npcName="武使徒">龙珠碎片就埋在我的旁边！没想到千辛万苦找到的龙珠碎片，现在又要便宜了你小子！</Dialog>
+    					<Button label="龙珠碎片是属于龙族宠物的！" nextID="-1" close="true">
+    						<Click event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    		</ViewEvent>
+    		<ViewEvent type="GotIt1">
+    		<Click event="onRunScript">
+    			<Click label="default" event="NULL" fire="true"/>
+    		</Click>
+    		</ViewEvent>
+    	</Create>	
+    </Npc>
+    <!-- npc_c1_xml · 场景 81 -->
+    <Npc sceneID="81" type="1" npcID="133100" position="0|0">
+    	<View type="0" src="133100.swf" atLayerID="1"/>
+    	<Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1040/1040_0" winPos="0|0" name="提示">
+    			<Default><Click event="NULL" fire="true"/></Default>
+    		</Script>
+    	</Click>
+    </Npc>
+    <!-- npcfun_p_xml · 场景 81 -->
+    <NPCFun sceneID="81" label="交还碎片" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德"><![CDATA[{name}]]>，太谢谢你了！真的找到了另外一块龙珠碎片！</Dialog>
+    					<Button label="我想,把它给你更有用处" nextID="-1">
+    						<Goto value="dialog_1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_1" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">虽然我不喜欢随便拿人家的东西，但是这次我就不再装清高了吧！哈哈哈！谢谢你！对啦！刚刚八字毛球和帕娃咔咔经过这里，让我传达它们对你的谢意！</Dialog>
+    					<Button label="它们去哪里了？" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="128200" npcName="海德">它们啊……它们恐怕去云游四方啦……说不定哪天你们有缘的话，还会再见面的！就像我跟你的缘分一样……好吧……这是个笑话，哈哈哈！</Dialog>
+    					<Button label="一点也不好笑……不过这次真是太好了" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="2|1040"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

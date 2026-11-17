@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 AncientTreasure.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="153" label="古老的宝藏">
+  <Task id="4046" label="古老的宝藏">
+    <!-- npcfun_101600_accept · 场景 32 -->
+    <NPCFun sceneID="32" label="神秘的地图" icon="-1" close="false">	
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="101600" npcName="吉洛斯">一个小洛克在野外捡到了这份地图，看样子应该是一份藏宝图，有兴趣帮我找找其他的地图吗？</Dialog>
+    	      <Button label="好的" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Script label="index_0_1" type="asWindow" src="task/4046/task_4046_0" winPos="0|0" name="">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    			<Dialog npcID="101600" npcName="吉洛斯">……清楚了么？</Dialog>
+    	      <Button label="去哪里找呢？" nextID="-1" close="false">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    		<Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="101600" npcName="吉洛斯">据说在龙之秘境发现的，你去龙守望看看吧。</Dialog>
+    	      <Button label="好的现在就去！" nextID="-1" close="true">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  <Click label="index_0_4" event="onTaskCall2" params="1|4046"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_186300 · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="186300" name="小花嘴龙" position="630|360">
+    		<View type="0" src="186300.swf" atLayerID="2" height="85"/>
+    		<Click event="onTaskCall">
+    			<Dialog>呜呜</Dialog>
+    		</Click>
+    		<Create>
+    			<NPCFun label="聊聊" icon="0" close="false">	
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="186300" npcName="小花嘴龙">这是我的宝贝，不能给你！你个强盗！</Dialog>
+    			      <Button label="我们只是研究下，别激动，给我看看可以吧！" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="186300" npcName="小花嘴龙">嗯，看看可以，但是你要战胜我才行！</Dialog>
+    			      <Button label="好的，战斗吧！" nextID="-1" close="true">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="switch" invoke="combat" args="2|186300|小花嘴龙">
+    			    <Case value="2">
+    			      <Goto value="index_0_3_w"/>
+    			    </Case>
+    			    <Default>
+    			      <Goto value="index_0_3_l"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_3_w" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="186300" npcName="小花嘴龙">呜呜呜，很厉害嘛，好吧给你看看吧！记得还我！</Dialog>
+    			      <Button label="我照着复制一份！" nextID="-1" close="true">
+    			        <Goto value="index_0_4"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+      			<Script label="index_0_3_l" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="186300" npcName="小花嘴龙">这么弱还想看我的宝贝，练练再来吧！</Dialog>
+    			      <Button label="不服，再来一局！" nextID="-1" close="false">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    					<Button label="晚些再教训你" nextID="-1" close="true">
+    						<End/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    	
+    	
+     			<Script label="index_0_4" type="asWindow" src="task/4046/task_4046_1" winPos="0|0" name="">
+    	    		<Default>
+    	      			<Goto value="index_0_5"/>
+    	    		</Default>
+    	  		</Script>
+    	
+    			<Script label="index_0_5" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="186300" npcName="小花嘴龙">据说龙须小径的触须草龙也有一份，你去找找它吧！</Dialog>
+    			      <Button label="好的" nextID="-1" close="true">
+    			        <Goto value="index_0_6"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    	
+    			<Click label="index_0_6" event="NULL" fire="true"/>
+    			</Click>
+    			</NPCFun>
+    		</Create>
+    	</Npc>
+    <!-- npc_186400 · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="186400" name="触须草龙" position="540|420">
+    		<View type="0" src="186400.swf" atLayerID="2" height="85"/>
+    		<Click event="onTaskCall">
+    			<Dialog>呜呜</Dialog>
+    		</Click>
+    		<Create>
+    			<NPCFun label="聊聊" icon="0" close="false">	
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="186400" npcName="触须草龙">我没有地图，我只有残片……</Dialog>
+    				  <Button label="没事我只要残片" nextID="-1" close="false">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="186400" npcName="触须草龙">嗯，好吧，但是你要战胜我才行！</Dialog>
+    				  <Button label="好的！" nextID="-1" close="true">
+    					<Goto value="index_0_2"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="switch" invoke="combat" args="2|186400|触须草龙">
+    				<Case value="2">
+    				  <Goto value="index_0_3_w"/>
+    				</Case>
+    				<Default>
+    				  <Goto value="index_0_3_l"/>
+    				</Default>
+    			  </Script>
+    			  <Script label="index_0_3_w" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="186400" npcName="触须草龙">不错噢，好吧给你看看！</Dialog>
+    				  <Button label="我看看！" nextID="-1" close="true">
+    					<Goto value="index_0_4"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			<Script label="index_0_3_l" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="186400" npcName="触须草龙">打不过我，还想要宝贝，做梦！</Dialog>
+    				  <Button label="刚刚没发挥好，再来一局！" nextID="-1" close="false">
+    					<Goto value="index_0_2"/>
+    				  </Button>
+    					<Button label="晚些再来" nextID="-1" close="true">
+    						<End/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    	
+    	
+    			<Script label="index_0_4" type="asWindow" src="task/4046/task_4046_2" winPos="0|0" name="">
+    				<Default>
+    					<Goto value="index_0_5"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="index_0_5" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="186400" npcName="触须草龙">有好东西记得给我一份哦</Dialog>
+    				  <Button label="嗯嗯，谢谢你" nextID="-1" close="true">
+    					<Goto value="index_0_6"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    	
+    			<Click label="index_0_6" event="NULL" fire="true"/>
+    			</Click>
+    			</NPCFun>
+    		</Create>
+    	</Npc>
+    <!-- npc_186500 · 场景 32 -->
+    <Npc sceneID="32" type="1" npcID="186500" name="" position="690|420">
+    		<View type="0" src="186500.swf" atLayerID="2"/>
+    		<Click event="onTaskCall">
+    			<Dialog>挖掘</Dialog>
+    		</Click>
+    		<Create>
+    			<NPCFun label="挖掘" icon="0" close="false">	
+    				<Click label="index_0_5" event="NULL" fire="true"/>
+    			</NPCFun>
+    		</Create>
+    	</Npc>
+    <!-- npcfun_128200_submit · 场景 81 -->
+    <NPCFun sceneID="81" label="神秘的龙蛋" icon="-1" close="false">	
+    		<Click event="onRunScript">
+    		  <Script label="default" type="dialog">
+    			<Page id="0">
+    			  <Dialog npcID="128200" npcName="海德">我们来看看这枚古老的蛋到底有什么玄机</Dialog>
+    			  <Button label="好的。" nextID="-1" close="true">
+    				<Goto value="index_0_1"/>
+    			  </Button>
+    			</Page>
+    		  </Script>
+    		  <Script label="index_0_1" type="asWindow" src="task/4046/task_4046_3" winPos="0|0" name="">
+    			<Default>
+    			  <Goto value="index_0_2"/>
+    			</Default>
+    		  </Script>
+    		  <Script label="index_0_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="128200" npcName="海德">我们要更加珍惜环境了</Dialog>
+    			  <Button label="好的。" nextID="-1" close="true">
+    				<Goto value="index_0_4"/>
+    			  </Button>
+    			</Page>
+    		</Script>
+    		  <Click label="index_0_4" event="onTaskCall2" params="2|4046"/>
+    		</Click>
+    	</NPCFun>
+  </Task>
+</Story>

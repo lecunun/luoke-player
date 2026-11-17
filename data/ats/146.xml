@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 SecretGuest2.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="146" label="糗事一箩筐">
+  <Task id="4043" label="糗事一箩筐">
+    <!-- npcfun_100900 · 场景 14 -->
+    <NPCFun sceneID="14" label="糗事一箩筐" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    				<Page id="0">
+    				  <Dialog npcID="100900" npcName="麦斯威尔">阿昆他们特地发来了感谢信感谢你呢，据说他们的朋友暴牙在王国内惹了不少麻烦，先去体育场看看吧。</Dialog>
+    				  <Button label="好的，现在就去" nextID="-1" close="true">
+    					<Goto value="index_0_1"/>
+    				  </Button>
+    				</Page>
+    			  </Script>
+    			  <Click label="index_0_1" event="onTaskCall2" params="1|4043"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npc_183300 · 场景 76 -->
+    <Npc sceneID="76" type="1" npcID="183300" position="340|380">
+    		<View type="0" src="183300.swf" atLayerID="2" hasClick="true"/>
+           <Click event="onRunScript">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="183300" npcName="小洛克">气死我了，气死我了，好人没好报，还给我喝油！！！</Dialog>
+    			      <Button label="到底发生了什么呢？" nextID="-1" close="true">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="asWindow" src="task/4043/app1" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_2"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="183300" npcName="小洛克">气死我了，气死我了，好人没好报，还给我喝油！！！</Dialog>
+    			      <Button label="也许这是他最爱的饮料呢，算了消消气，后来他去哪里了呢？" nextID="-1" close="false">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_3" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="183300" npcName="小洛克">他说要去看海，也许去码头了吧^</Dialog>
+    			      <Button label="好的，谢谢。" nextID="-1" close="true">
+    			        <Goto value="index_0_4"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_4" event="NULL" fire="true"/>
+    			</Click>
+    		</Click>
+    	</Npc>
+    <!-- npcfun_122300 · 场景 76 -->
+    <NPCFun sceneID="76" label="你说那个笨蛋？" icon="-1" close="false">
+    			<Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="122300" npcName="拉瓦">今天早上见到一个家伙冒冒失失的出现在海边还说，哇大海好美啊！！</Dialog>
+    			      <Button label="那后来呢?" nextID="-1" close="true">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="asWindow" src="task/4043/app2" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_2"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="122300" npcName="拉瓦">这个家伙真的很令人头疼！</Dialog>
+    			      <Button label="那他没事吧?" nextID="-1" close="true">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_3" type="asWindow" src="task/4043/app3" winPos="0|0" name="">
+    			    <Default>
+    			      <Goto value="index_0_4"/>
+    			    </Default>
+    			  </Script>
+    			  <Script label="index_0_4" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="122300" npcName="拉瓦">无语啊……</Dialog>
+    			      <Button label="后来它去哪里了呢？" nextID="-1" close="false">
+    			        <Goto value="index_0_5"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_5" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="122300" npcName="拉瓦">向着海螺沙滩的方向去了……头一次见到这么糗的家伙！！！</Dialog>
+    			      <Button label="我会小心的！" nextID="-1" close="true">
+    			        <Goto value="index_0_6"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Click label="index_0_6" event="NULL" fire="true" fireID="122303"/>
+    			</Click>
+    	</NPCFun>
+    <!-- npcfun_182100 · 场景 76 -->
+    <NPCFun sceneID="76" label="你说那个笨蛋？" icon="0" close="false">
+    	
+             <Click event="onRunScript">
+    			  <Script label="default" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="182100" npcName="暴牙">哇哈哈哈哈，我就是英勇无敌，天下无双的暴牙，我看到了大海，我还潜了水，哦哈哈哈，太爽快了，太爽快了！！！</Dialog>
+    			      <Button label="可是你让大家都觉得你做了很多糗事哦！" nextID="-1" close="false">
+    			        <Goto value="index_0_1"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_1" type="dialog">
+    			    <Page id="0">
+                     <Dialog npcID="182100" npcName="暴牙">你是谁，你敢说我很糗？</Dialog>
+    			      <Button label="不是啦，我只是想说，我们要顾及别人的感受。" nextID="-1" close="false">
+    			        <Goto value="index_0_2"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_2" type="dialog">
+    			    <Page id="0">
+    			      <Dialog npcID="182100" npcName="暴牙">你说的对，但是想让我听你的，我们打上一场，你胜利了什么都好说，我可是神勇无敌战无不胜的暴牙！！</Dialog>
+    			      <Button label="……" nextID="-1" close="true">
+    			        <Goto value="index_0_3"/>
+    			      </Button>
+    			    </Page>
+    			  </Script>
+    			  <Script label="index_0_3" type="switch" invoke="combat" args="2|182100|暴牙">
+    			    <Case value="2">
+    			      <Goto value="index_0_4"/>
+    			    </Case>
+    			    <Default>
+    			      <Goto value="index_0_7"/>
+    			    </Default>
+    			  </Script>
+    	
+    	
+                    <Script label="index_0_7" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="182100" npcName="暴牙">练练再来吧。</Dialog>
+    				      <Button label="我不会放弃的。" nextID="-1" close="true">
+    				        <End/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    	
+    				
+    				  <Script label="index_0_4" type="dialog">
+    				    <Page id="0">
+    				      <Dialog npcID="182100" npcName="暴牙">其实我只是想让大家关注我，但是没想到给大家添了麻烦，帮我给大家道歉。其实我很希望找到阿昆，阿诺。</Dialog>
+    				      <Button label="好的，阿昆他们正在找你，我这就去告诉他们。" nextID="-1" close="true">
+    				        <Goto value="index_0_5"/>
+    				      </Button>
+    				    </Page>
+    				  </Script>
+    				  <Script label="index_0_5" type="asWindow" src="task/4043/app4" winPos="0|0" name="">
+    				    <Default>
+    				      <Goto value="index_0_6"/>
+    				    </Default>
+    				  </Script>
+    				  <Click label="index_0_6" event="onTaskCall2" params="2|4043"/>
+    
+    	
+    			</Click>
+    	
+       </NPCFun>
+    <!-- app_tz_xml · 场景 12 -->
+    <NPCFun label="app_tz" sceneID="12">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="12" label="default"/> 
+    	</Click>
+    </NPCFun>
+    <!-- app_tz2_xml · 场景 76 -->
+    <NPCFun label="app_tz2" sceneID="76">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="76" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

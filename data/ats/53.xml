@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 古堡探险（官方故事 53）
+     官方的 Angel.config 里这条 Story 的 script 属性是空的，四个子任务 112–115 在 21_TaskList.xml
+     的 TFlow 里也只有 asWindow（task/112/Task112 这类），没有一句 Dialog。
+     也就是说它本来就是四张单帧漫画，没有文字正文。
+     这里按任务顺序把它们串成一章；场景取自各任务的 submit sID：112/113 → 88 迷雾之森，
+     114 → 89 威廉古堡花园，115 → 90 威廉古堡大厅。 -->
+<Story id="53" label="古堡探险">
+  <Task id="112" label="顽皮小公主">
+    <Npc type="1" npcID="0" position="0|0" sceneID="88" care="1" name="" ver="0">
+      <Create>
+        <ViewEvent type="Getit_0_112_0">
+          <Click event="onRunScript">
+            <Script label="default" type="asWindow" src="task/112/Task112"/>
+          </Click>
+        </ViewEvent>
+      </Create>
+    </Npc>
+  </Task>
+  <Task id="113" label="林中机关">
+    <Npc type="1" npcID="0" position="0|0" sceneID="88" care="1" name="" ver="0">
+      <Create>
+        <ViewEvent type="Getit_0_113_0">
+          <Click event="onRunScript">
+            <Script label="default" type="asWindow" src="task/113/Task113"/>
+          </Click>
+        </ViewEvent>
+      </Create>
+    </Npc>
+  </Task>
+  <Task id="114" label="花园险境">
+    <Npc type="1" npcID="0" position="0|0" sceneID="89" care="1" name="" ver="0">
+      <Create>
+        <ViewEvent type="Getit_0_114_0">
+          <Click event="onRunScript">
+            <Script label="default" type="asWindow" src="task/114/Task114"/>
+          </Click>
+        </ViewEvent>
+      </Create>
+    </Npc>
+  </Task>
+  <Task id="115" label="援救公主">
+    <Npc type="1" npcID="0" position="0|0" sceneID="90" care="1" name="" ver="0">
+      <Create>
+        <ViewEvent type="Getit_0_115_0">
+          <Click event="onRunScript">
+            <Script label="default" type="asWindow" src="task/115/Task115"/>
+          </Click>
+        </ViewEvent>
+      </Create>
+    </Npc>
+  </Task>
+</Story>

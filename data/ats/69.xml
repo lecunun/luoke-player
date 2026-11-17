@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DeerWhoIsTrueStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="69" label="真假七彩鹿">
+  <Task id="1056" label="飞天载物">
+    <!-- npcfun_g_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="真假七彩鹿的问题还没解决吗？" icon="-1" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101000" npcName="兰斯洛">那两只七彩鹿，它们现在就在我这里呢！倒是很安全！不过，我也实在分不出真假！</Dialog>
+    				<Button label="那后来两只七彩鹿怎么说？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="137100" npcName="七彩鹿"><![CDATA[{name}]]>，我才是真的七彩鹿！你看看我多威风帅气啊！</Dialog>
+    				<Dialog npcID="137200" npcName="七彩鹿">对此我不做任何解释。真正的七彩鹿是不需要靠外表来辨认的，比如我，如果有机会，你真该看看我那神奇的力量。（虽然我的英俊程度不亚于旁边那只冒牌货）</Dialog>
+    				<Button label="两只七彩鹿，真真假假，好难辨认啊！还是去找格里芬校长问问吧！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="1|1056"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_p_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="137400" position="0|0">
+    		<View type="0" src="137400.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1056">
+    				<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿">哈哈，看来那只假七彩鹿的速度也不慢吗！</Dialog>
+    							<Button label="看来你们俩的速度果然不相上下" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1056"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npcfun_c0_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="真假七彩鹿" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100100" npcName="格里芬">竟然有两只一模一样的七彩鹿，而且都说自己是圣诞老人的七彩鹿？</Dialog>
+    				<Button label="我实在不知道该怎么办啦" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100100" npcName="格里芬">我听说，圣诞老人的七彩鹿，都是能飞的，而且速度奇快。正好我这里有一些关于雪山研究的资料，要送给希罗。不如让它们去帮我送过去，看看谁的速度快。</Dialog>
+    				<Button label="对啊！速度快的肯定是真七彩鹿！" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="100100" npcName="格里芬">正是如此！你只要去希罗那里问问，究竟是谁先到的，就能分辨真假了。</Dialog>
+    				<Button label="那我这就去找希罗，就劳烦您把资料交给七彩鹿吧！" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npcfun_c1_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="真假七彩鹿" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="114900" npcName="希罗">格里芬真是太不可思议了，竟然让七彩鹿给我送资料。</Dialog>
+    				<Button label="它们俩谁先到这里的？" nextID="-1">
+    					<Goto value="dialog_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_1" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="114900" npcName="希罗">让我想想，说实话，我现在还没回过神来！它们实在太快了，像一阵风一样！我都看不清楚！</Dialog>
+    				<Button label="难道它们俩一起到这里的吗？" nextID="-1">
+    					<Goto value="dialog_2"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_2" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="114900" npcName="希罗">让我回想一下。</Dialog>
+    				<Button label="好的" nextID="-1" close="true">
+    					<Goto value="asWindow_0"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_0" type="asWindow" src="task/1056/1056_0" winPos="0|0" name="提示">
+    			<Default><Goto value="dialog_3"/></Default>
+    		</Script>
+    		<Script label="dialog_3" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="137100" npcName="七彩鹿">不得不承认，这只假七彩鹿的速度还挺快的！</Dialog>
+    				<Dialog npcID="137200" npcName="七彩鹿">我就是真的七彩鹿，当然速度快了！</Dialog>
+    				<Button label="看来这个难题还是没有解决啊" nextID="-1">
+    					<Goto value="dialog_4"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_4" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="114900" npcName="希罗">原来你是在分辨真假七彩鹿啊！我以前听说，如果是真的七彩鹿的话，可以让一片荒芜的荒地，开出美丽的花朵！万物复苏！不过不知道是真是假！</Dialog>
+    				<Button label="原来七彩鹿这么神奇！" nextID="-1">
+    					<Goto value="dialog_5"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_5" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="137100" npcName="七彩鹿">这当然是真的！</Dialog>
+    				<Button label="你怎么证明呢？" nextID="-1">
+    					<Goto value="dialog_6"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_6" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="137200" npcName="七彩鹿">我想王国里阴雨连绵之地非雷霆峡谷莫属了。也正是因为这样，所以那里除了菌类外，几乎没有鲜花。不如我们现在就去那里，让你看看传说中的步步生花。</Dialog>
+    				<Button label="好的" nextID="-1">
+    					<Goto value="dialog_7"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="dialog_7" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="137100" npcName="七彩鹿">步步生花？我也可以啊！<![CDATA[{name}]]>，如果你愿意的话，可以骑在我的背上，我们一起飞过去吧！</Dialog>
+    				<Button label="太帅气了！" nextID="-1" close="true">
+    					<Goto value="asWindow_1"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Script label="asWindow_1" type="asWindow" src="task/1056/1056_1" winPos="0|0" name="提示">
+    			<Default><Goto value="submit"/></Default>
+    		</Script>	
+    		<Click label="submit" event="NULL" fire="true"/>
+    	</Click>
+    	</NPCFun>
+    <!-- npc_c2_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="137300" position="757|420">
+    		<View type="0" src="137300.swf" atLayerID="2" hasClick="false"/>
+    		<Click event="NULL"/>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 60 -->
+    <NPCFun label="app_ts0" sceneID="60">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1056/1056_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 60 -->
+    <NPCFun label="app_ts1" sceneID="60">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="60"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1057" label="步步生花">
+    <!-- npc_p_xml · 场景 60 -->
+    <Npc sceneID="60" type="1" npcID="137400" position="0|0">
+    		<View type="0" src="137400.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1057">
+    				<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">废话少说！<![CDATA[{name}]]>，就让你见识一下我的厉害！</Dialog>
+    							<Button label="拭目以待" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" cdtn="0" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1057_1"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1057" cdtn="10">
+    			<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿">雕虫小技！这有何难？看我的！</Dialog>
+    							<Button label="迫不及待" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1057_2"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_1057">
+    			<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">明明是只假七彩鹿，竟然还会这种本事！你也算是山寨之王了！</Dialog>
+    							<Dialog npcID="137200" npcName="七彩鹿">我山寨？哈哈！<![CDATA[{name}]]>，想必你也知道，我最厉害的一点，正是因为我能让愿望成真。</Dialog>
+    							<Button label="愿望成真？另外那只七彩鹿也可以吗？" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1057"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+  </Task>
+  <Task id="1058" label="愿望术">
+    <!-- npc_c0_xml · 场景 98 -->
+    <Npc sceneID="98" type="1" npcID="137400" position="0|0">
+    		<View type="0" src="137400.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1058">
+    				<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">愿望成真，就是能实现你的一切愿望.</Dialog>
+    							<Button label="真的什么愿望都能实现吗？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">当然！你说吧，你的愿望是什么！</Dialog>
+    							<Button label="我想回到最初的地方" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">你不就是想回到轻风山吗！轻而易举！</Dialog>
+    							<Button label="真的吗" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1058">
+    				<Click event="onRunScript" aimPos="335|490" cdtn="0">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">你不就是想回到轻风山吗！轻而易举！</Dialog>
+    							<Button label="真的吗" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onChangeScene" params="98"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 98 -->
+    <Npc sceneID="98" type="1" npcID="137500" position="646|380">
+    		<View type="0" src="137500.swf" atLayerID="1" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">怎么样！<![CDATA[{name}]]>，我没有骗你吧！</Dialog>
+    							<Button label="这……这太不可思议了！" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿"><![CDATA[{name}]]>，你还有什么愿望？我也可以帮你实现！</Dialog>
+    							<Button label="那……那我还想要最开始那把魔法扫帚" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1">
+    				<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿">怎么样，要不要骑着它试试呢？</Dialog>
+    							<Button label="这太不可思议了！可是我们去哪里呢？" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">不如我们一起去找圣诞老人，让他来辨别，究竟谁才是真的七彩鹿吧！</Dialog>
+    							<Button label="这真是个好办法！" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿">那我们现在就去怀特冰川找圣诞老人吧！</Dialog>
+    							<Button label="那我们出发" nextID="-1" close="true">
+    								<Goto value="asWindow_0"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="asWindow_0" type="asWindow" src="task/1058/1058_0" winPos="0|0" name="提示">
+    						<Default><Goto value="submit"/></Default>
+    					</Script>
+    					<Click label="submit" event="NULL" fire="true"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_p_xml · 场景 98 -->
+    <Npc sceneID="98" type="1" npcID="137600" position="350|434">
+    		<View type="0" src="137600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1058">
+    			<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137600" npcName="圣诞老人">原来是让我来分辨真假七彩鹿啊……乍看之下，果然两只七彩鹿一模一样呢……它们真的都如你所言，有那些神奇的力量？</Dialog>
+    							<Button label="当然！我都焦头烂额了" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">这个老头子是谁？我们不是要去见圣诞老人吗！</Dialog>
+    							<Button label="他就是圣诞老人啊！难道你都不认识！？" nextID="-1">
+    								<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_2" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137200" npcName="七彩鹿">哇咔咔！它果然是假七彩鹿！连圣诞老人都不认识！</Dialog>
+    							<Button label="快看！那边有什么奇怪的动静？" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onTaskCall2" params="2|1058"/>
+    				</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 98 -->
+    <NPCFun label="app_ts0" sceneID="98">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="98"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 44 -->
+    <NPCFun label="app_ts1" sceneID="44">
+    <Click event="onRunScript">
+    		<Click label="default" event="onChangeScene" params="44"/>
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="1059" label="读心术">
+    <!-- npc_p_xml · 场景 44 -->
+    <Npc sceneID="44" type="1" npcID="137600" position="350|434">
+    		<View type="0" src="137600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    			<ViewEvent type="GotIt0_1059">
+    			<Click event="onRunScript">
+    					<Script label="default" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">你们看！他就是圣诞老人的手下呢！</Dialog>
+    							<Button label="这怎么可能！他可是恩佐的手下！" nextID="-1">
+    								<Goto value="dialog_1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Script label="dialog_1" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137600" npcName="圣诞老人"><![CDATA[{name}]]>，还有一个关于七彩鹿的能量，你不知道。那就是它有读心术，可以读懂任何人的心声。那边的七彩鹿，也许你用读心术读一下黑衣人的心声，就知道真相了。</Dialog>
+    							<Dialog npcID="137700" npcName="黑衣人">要读我的心声！？</Dialog>							
+    							<Button label="原来还有这种神奇的力量" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1059_2"/>
+    				</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt1_1059">
+    			<Click event="onRunScript">
+    				<Script label="default" type="asWindow" src="task/1059/1059_0" winPos="0|0" name="提示">
+    					<Default><Goto value="dialog_0"/></Default>
+    				</Script>
+    				<Script label="dialog_0" type="dialog">
+    						<Page id="0">
+    							<Dialog npcID="137100" npcName="七彩鹿">原来……我是被复制出来的七彩鹿……我是多余的……？</Dialog>
+    							<Button label="这……？" nextID="-1" close="true">
+    								<Goto value="submit"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    					<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1059_3"/>		
+    			</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt2_1059">
+    			<Click event="onRunScript">
+    				<Click label="default" event="NULL" fire="true"/>
+    			</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt3_1059">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="137700" npcName="黑衣人">就凭你也想打败我？看我这就把真的七彩鹿夺走！</Dialog>
+    						<Button label="有本事再来" nextID="-1" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="combat_0" type="switch" invoke="combat" args="2|137700|黑衣人">
+    					<Case value="2"><Goto value="win"/></Case>
+    					<Default><Goto value="lose"/></Default>
+    				</Script>
+    				<Script label="lose" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="137700" npcName="黑衣人">就凭你也想打败我？看我这就把真的七彩鹿夺走！</Dialog>
+    						<Button label="你真的有这个本事吗？" nextID="-1" close="true"><End/></Button>
+    						<Button label="有本事再来" nextID="-1" close="true">
+    							<Goto value="combat_0"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="win" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="137700" npcName="黑衣人"><![CDATA[{name}]]>，你总是一而再再而三地阻挠我的计划！总有一天我会打败你！</Dialog>
+    						<Button label="在你的白日梦里，你会打败我" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1059_5"/>	
+    			</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt4_1059">
+    			<Click event="onRunScript">
+    				<Click label="default" event="NULL" fire="true" fireID="137700"/>
+    			</Click>
+    			</ViewEvent>
+    			<ViewEvent type="GotIt5_1059">
+    			<Click event="onRunScript">
+    				<Script label="default" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="137600" npcName="圣诞老人">那只七彩鹿本身，明明是没有错的，错的是恩佐那些坏人啊……不知道它逃到哪里去了……恐怕它受到了很大的刺激吧。</Dialog>
+    						<Button label="唉……好在真正的七彩鹿已经找回来了" nextID="-1">
+    							<Goto value="dialog_1"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Script label="dialog_1" type="dialog">
+    					<Page id="0">
+    						<Dialog npcID="137600" npcName="圣诞老人"><![CDATA[{name}]]>，真是太谢谢你啦！我这里有一支很甜的棒棒糖，就送给你当作谢礼吧！</Dialog>
+    						<Button label="哇！好漂亮啊！" nextID="-1" close="true">
+    							<Goto value="submit"/>
+    						</Button>
+    					</Page>
+    				</Script>
+    				<Click label="submit" event="onTaskCall2" params="2|1059"/>
+    			</Click>
+    			</ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 44 -->
+    <NPCFun label="app_ts0" sceneID="44">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1059/1059_ts_0" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 44 -->
+    <NPCFun label="app_ts1" sceneID="44">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/1059/1059_ts_1" winPos="0|0" name="提示">
+    			<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

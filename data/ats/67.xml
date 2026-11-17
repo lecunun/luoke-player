@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DeerDisappearStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="67" label="失踪的麋鹿">
+  <Task id="116" label="麋鹿困扰">
+    <!-- npcfun_lslt_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="麋鹿困扰" icon="-1" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛"><![CDATA[我又闻到了阴谋的味道……{name}，你知道吗，我收到了王国居民的举报，大量的麋鹿失踪了。]]></Dialog>
+                      <Dialog npcID="101000" npcName="兰斯洛"><![CDATA[我怀疑是有人打起传说中麋鹿的主意，进而波及其它宠物麋鹿。]]></Dialog>
+    					<Button label="传说中的麋鹿？" nextID="-1" close="true">
+    						<Goto value="movie1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		   <Script label="movie1" type="asWindow" src="task/116/aboutDeer" winPos="0|0" name="传说中的麋鹿">
+    					<Case value="0"><Goto value="dialog_2"/></Case>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">每年的圣诞节，圣诞老人都会和麋鹿一起出现，给乖巧的小朋友派发礼物。</Dialog>
+    					<Button label="它失踪了，礼物不就泡汤了吗！" nextID="-1">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		    <Script label="dialog_3" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">的确是这样子，所以为了各位小洛克，骑士团必须马上找出它来。</Dialog>
+    					<Button label="我来帮忙！" nextID="-1">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+              <Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101000" npcName="兰斯洛">很好，勇敢的小洛克。第一步，必须去麋鹿们失踪的特鲁米小径进行侦查，看是否有蛛丝马迹。</Dialog>
+    					<Button label="现在就去！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Click label="submit" event="onTaskCall2" params="1|116"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npc_hyr_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="135900" position="747|358">
+    		 <View type="0" src="135900.swf" atLayerID="2" lazyLoad="true" hasClick="false"/>
+    		 <Create>
+    		   <ViewEvent type="byySuccess">
+    			 <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="135900" npcName="黑衣人">太好了，又让我发现一只麋鹿。</Dialog>
+    							<Button label="你要干什么？" close="true">
+    								<Goto value="movie1"/>
+    							</Button>
+    						</Page>
+    					</Script>
+    				   <Script label="movie1" type="asWindow" src="task/116/catchDeer" winPos="0|0" name="麋鹿被抓">
+    						<Case value="0"><Goto value="submit"/></Case>
+    					</Script>
+                     <Click event="NULL" fire="true" label="submit"/>
+    				</Click>
+    		   </ViewEvent>
+    		</Create>
+    	</Npc>
+    <!-- npc_hyr2_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136000" position="747|358">
+    		 <View type="0" src="136000.swf" atLayerID="2" lazyLoad="true" hasClick="true"/>
+            <Click event="onRunScript">
+                     <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="136000" npcName="黑衣人">只要麋鹿抓得越多，找到七彩鹿给恩佐巫师的几率就越大。你这小毛头，一边凉快去吧。</Dialog>
+    							<Button label="你不会得逞的！" close="true">
+                                <Goto value="fight"/>
+    							</Button>
+    						</Page>
+    					</Script>
+                      <Script label="fight" type="switch" invoke="combat" args="2|136000|黑衣人">
+    				        <Case value="2"><Goto value="submit"/></Case>
+    				        <Default><End/></Default>
+    	              </Script>
+                     <Click event="NULL" fire="true" label="submit"/>
+    		   </Click>
+    	</Npc>
+    <!-- npc_hyr3_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136100" position="747|358">
+    			 <View type="0" src="136100.swf" atLayerID="2" lazyLoad="true" hasClick="false"/>
+    			 <Create>
+    			   <ViewEvent type="byySuccess">
+    				 <Click event="onRunScript">
+    					 <Script label="default" type="dialog">
+    							<Page>
+    								<Dialog npcID="136100" npcName="麋鹿">谢谢你，小洛克，呜呜呜，我好怕……</Dialog>
+    								<Button label="唉……他们为什么要抓你呀？">
+    									<Goto value="dialog_1"/>
+    								</Button>
+    							</Page>
+    					  </Script>
+                        <Script label="dialog_1" type="dialog">
+    							<Page>
+    								<Dialog npcID="136100" npcName="麋鹿">因为他们找不到七彩鹿，只好一只只抓，以为这样就能够找到七彩鹿了。</Dialog>
+                                <Dialog npcID="136100" npcName="麋鹿">七彩鹿是我们之中唯一的一只，拥有非常神奇的能力的麋鹿。</Dialog>
+                                <Button label="是什么？">
+    									<Goto value="dialog_2"/>
+    								</Button>
+    							</Page>
+    					  </Script>
+                        <Script label="dialog_2" type="dialog">
+    							<Page>
+    								<Dialog npcID="136100" npcName="麋鹿">每当到圣诞节快来临的时候，如果这个小洛克主人是个听话的好孩子，宠物们就会将主人写了礼物愿望的袜子拿到雪山山顶……</Dialog>
+                                <Button label="然后呢？" close="true">
+    									<Goto value="movie1"/>
+    								</Button>
+    							</Page>
+    					   </Script>
+                         <Script label="movie1" type="asWindow" src="task/116/colorDeer1" winPos="0|0" name="雪中拿袜子">
+    						    <Case value="0"><Goto value="dialog_3"/></Case>
+    					   </Script>
+                         <Script label="dialog_3" type="dialog">
+    							<Page>
+    								<Dialog npcID="136100" npcName="麋鹿">但是每实现一个愿望，麋鹿的犄角就会短一截，直到第二年圣诞来临才会恢复。</Dialog>
+                                <Button label="这样子啊……" close="true">
+    									<Goto value="movie2"/>
+    								</Button>
+    							</Page>
+    					   </Script>
+                         <Script label="movie2" type="asWindow" src="task/116/colorDeer2" winPos="0|0" name="雪中发礼物">
+    						    <Case value="0"><Goto value="submit"/></Case>
+    					   </Script>
+    					   <Click event="NULL" fire="true" label="submit"/>
+    					</Click>
+    			   </ViewEvent>
+    			</Create>
+    		</Npc>
+    <!-- npc_ml_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136200" position="747|358">
+    		 <View type="0" src="136200.swf" atLayerID="2" lazyLoad="true" hasClick="true"/>
+    		   <Click event="onRunScript">
+    				 <Script label="default" type="dialog">
+    						<Page>
+    							<Dialog npcID="136200" npcName="麋鹿">这就是我们称之为愿望术的能力哦。那些穿黑衣服的那么猖狂，七彩鹿肯定会被他们抓去了。</Dialog>
+    							<Button label="你觉得我应该到哪里去找它？">
+    							<Goto value="dialog_2"/>
+    							</Button>
+    						</Page>
+    				 </Script>
+                   <Script label="dialog_2" type="dialog">
+    				      <Page id="0">
+    					      <Dialog npcID="136200" npcName="麋鹿">（麋鹿想了想）</Dialog>
+                            <Dialog npcID="136200" npcName="麋鹿">……嗯，对了！七彩鹿会腾云术！为了躲避黑衣服的，它肯定会飞到天空去！你可以去天空城看看哦！我也很担心它……</Dialog>
+    					      <Button label="谢谢你！我现在就去！" close="true">
+    						      <Goto value="submit"/>
+    					      </Button>
+    				       </Page>
+    			     </Script>
+                   <Click label="submit" event="onTaskCall2" params="2|116"/>
+    		   </Click>
+    	</Npc>
+  </Task>
+  <Task id="117" label="救援线索">
+    <!-- npcfun_ltxd_xml · 场景 4 -->
+    <NPCFun sceneID="4" label="询问七彩鹿的线索" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="117200" npcName="威尔伯.莱特"><![CDATA[七彩鹿？你这么一说，我倒是想起有一天在练习御风术的时候，看过一个麋鹿经过。]]></Dialog>
+    					<Button label="然后呢？" nextID="-1" close="true">
+    						<Goto value="movie1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		   <Script label="movie1" type="asWindow" src="task/117/deerTrough" winPos="0|0" name="麋鹿经过">
+    					<Case value="0"><Goto value="dialog_2"/></Case>
+    			</Script>
+    			<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="117200" npcName="威尔伯.莱特">没等我来得及看，麋鹿已经不见了。</Dialog>
+    					<Button label="哎呀，这下没了线索了！" nextID="-1">
+    						<Goto value="dialog_3"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page id="0">
+                      <Dialog npcID="117200" npcName="威尔伯.莱特">发生了什么事情？</Dialog>
+                      <Dialog npcID="117200" npcName="威尔伯.莱特">（威尔伯.莱特仔细听了关于七彩鹿的叙述）</Dialog>
+                      <Dialog npcID="117200" npcName="威尔伯.莱特">这下可不容易，那群人想要在麋鹿中找到七彩鹿对不对，那就是说，只要有麋鹿出现，黑衣人就会去抓对不对？</Dialog>
+    					<Button label="对是对……" nextID="-1">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		   <Script label="dialog_4" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="117200" npcName="威尔伯.莱特">那你就用魔法把自己变成麋鹿，等他们抓你，不就得了！</Dialog>
+    					<Button label="说得容易……怎么做啊？" nextID="-1">
+    						<Goto value="dialog_5"/>
+    					</Button>
+    				</Page>
+    			</Script>
+              <Script label="dialog_5" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="117200" npcName="威尔伯.莱特">找博得啊！他专门研究变身，让他把你变成麋鹿不就可以了！</Dialog>
+    					<Button label="嗯……我马上找博得！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Click event="NULL" fire="true" label="submit"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_bd_xml · 场景 4 -->
+    <NPCFun sceneID="4" label="我想变成麋鹿" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101500" npcName="博得">（仔细听了关于麋鹿事件的来龙去脉）</Dialog>
+                      <Dialog npcID="101500" npcName="博得">是这样子的事情吗？嗯……你运气很好，我最近刚好研发出了变化麋鹿的材料。我等会教你怎么用这个药剂，你需要的时候就把自己变一下，就好了。</Dialog>
+    					<Button label="好的！" nextID="-1">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    				</Page>
+    			</Script>
+    		 	<Script label="dialog_2" type="dialog">
+    				<Page id="0">
+                      <Dialog npcID="101500" npcName="博得">（努力地倒弄）</Dialog>
+                      <Dialog npcID="101500" npcName="博得">这样……这样……这样，嗯……那样……那样……嘿！好了！我果然是材料专家，呵呵。瞪大眼睛看清楚了哦！ </Dialog>
+    					<Button label="好的！" nextID="-1" close="true">
+    						<Goto value="movie1"/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Script label="movie1" type="asWindow" src="task/117/becomeDeer" winPos="0|0" name="变成麋鹿">
+    					<Case value="0"><Goto value="submit"/></Case>
+    			</Script>
+    		   <Click event="NULL" fire="true" label="submit"/>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_bd2_xml · 场景 4 -->
+    <NPCFun sceneID="4" label="我已经学会了" icon="0" close="false">
+    		<Click event="onRunScript">
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="101500" npcName="博得">这下好了。赶快去进行你的救援大行动吧！要记得，在必要的时候才能够使用哦！</Dialog>
+    					<Button label="我现在就去！" nextID="-1" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    				</Page>
+    			</Script>
+               <Click label="submit" event="onTaskCall2" params="2|117"/>
+    		</Click>
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 20 -->
+    <NPCFun label="app_ts0" sceneID="20">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/117/ts117" winPos="0|0" name="提示">
+    	       <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+           <Click event="onChangeScene" params="20" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+  </Task>
+  <Task id="118" label="潜入敌阵">
+    <!-- npc_bzml_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136400" position="437|255">
+    				 <View type="0" src="136400.swf" atLayerID="2" hasClick="false"/>
+    				 <Create>
+    				   <ViewEvent type="byySuccess">
+    					 <Click event="onRunScript">
+    						 <Script label="default" type="dialog">
+    								<Page>
+    									<Dialog npcID="136400" npcName="黑衣人">这下，得到七彩鹿的几率又大大提高了。</Dialog>
+    									<Button label="（看我藏身其中……）" close="true">
+    										<Goto value="movie1"/>
+    									</Button>
+    								</Page>
+    						  </Script>
+    					  	 <Script label="movie1" type="asWindow" src="task/118/catchPlayer" winPos="0|0" name="抓住玩家">
+    								<Case value="0"><Goto value="submit"/></Case>
+    						  </Script>
+    					
+    						   <Click event="NULL" fire="true" label="submit"/>
+    						 </Click>
+    				   </ViewEvent>
+    				</Create>
+    			</Npc>
+    <!-- npc_fzml_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136401" position="602|457">
+    			<View type="0" src="136401.swf" atLayerID="2" hasClick="false"/>
+    			<Create>
+    			   <ViewEvent type="byySuccess1">
+    					<Click event="onRunScript">
+                          <Script label="default" type="dialog">
+    								<Page>
+    									<Dialog npcID="136401" npcName="黑衣人A">继续出去寻找麋鹿吧。</Dialog>
+                                    <Dialog npcID="136402" npcName="黑衣人B">嗯。</Dialog>
+    									<Button label="（太好了，他们要走了）" close="true">
+    										<Goto value="submit"/>
+    									</Button>
+    								</Page>
+    						  </Script>
+    						<Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="byySuccess2"/>
+    						</Click>
+    			   </ViewEvent>
+    			  <ViewEvent type="byySuccess">
+    					 <Click event="NULL" fire="true"/>
+    			   </ViewEvent>
+    		   </Create>
+    	</Npc>
+    <!-- npc_fzml3_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136500" position="580|500">
+    		<View type="0" src="136500.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		   <ViewEvent type="byySuccess">
+    				 <Click event="NULL" fire="true"/>
+    		   </ViewEvent>
+    	   </Create>
+    	</Npc>
+    <!-- npc_fzml4_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136600" position="580|500">
+    		<View type="0" src="136600.swf" atLayerID="2" hasClick="false"/>
+    		<Create>
+    		   <ViewEvent type="byySuccess1">
+    				<Click event="onRunScript">
+    					 <Script label="default" type="asWindow" src="task/118/takeAwayDeer" winPos="0|0" name="带走麋鹿">
+    							<Case value="0"><Goto value="submit"/></Case>
+    					  </Script>
+                        <Click label="submit" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="byySuccess2"/>
+    					</Click>
+    		   </ViewEvent>
+              <ViewEvent type="byySuccess">
+                     <Click event="NULL" fire="true"/>
+    		   </ViewEvent>
+    	   </Create>
+    	</Npc>
+    <!-- npcfun_g_xml · 场景 13 -->
+    <NPCFun sceneID="13" label="我带了七彩鹿回来" icon="0" close="false">
+    	<Click event="onRunScript">
+    		<Script label="default" type="dialog">
+    			<Page id="0">
+    				<Dialog npcID="101000" npcName="兰斯洛">想不到我的骑士队伍竟然没有你一个初出茅庐的魔法师有魄力，我该训斥他们了。</Dialog>
+    				<Dialog npcID="101000" npcName="兰斯洛">……</Dialog>
+    				<Dialog npcID="101000" npcName="兰斯洛">为什么有两只七彩鹿？据圣诞老人的叙述，七彩鹿只有唯一的一只。看来我得带他们给圣诞老人评判一下了。</Dialog>
+    				<Button label="那就麻烦团长了" nextID="-1" close="true">
+    					<Goto value="submit"/>
+    				</Button>
+    			</Page>
+    		</Script>
+    		<Click label="submit" event="onTaskCall2" params="2|118"/>
+    	</Click>
+       </NPCFun>
+    <!-- npc_mfz_xml · 场景 58 -->
+    <Npc sceneID="58" type="1" npcID="136700" position="700|360">
+    		<View type="0" src="136700.swf" atLayerID="1" hasClick="true"/>
+    		<Click event="onChangeScene" cdtn="10" params="96"/>
+    	</Npc>
+    <!-- app_ts0_xml · 场景 58 -->
+    <NPCFun label="app_ts0" sceneID="58">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/118/ts118" winPos="0|0" name="提示">
+    		   <Case value="1"><Goto value="submit"/></Case>
+    			<Default><End/></Default>
+    		</Script>
+    	   <Click event="onChangeScene" params="58" label="submit"/> 
+    
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 58 -->
+    <NPCFun label="app_ts1" sceneID="58">
+    <Click event="onRunScript">
+    		<Script label="default" type="asWindow" src="task/118/ts118_0" winPos="0|0" name="提示">
+    		   	<Default><End/></Default>
+    		</Script>
+    	</Click>
+    </NPCFun>
+    <!-- changeScene_xml · 场景 96 -->
+    <NPCFun label="changeScene" sceneID="96">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" params="96" label="default"/> 
+    	</Click>
+    </NPCFun>
+  </Task>
+</Story>

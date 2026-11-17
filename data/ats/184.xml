@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 DuoDuoAppearsStoryScript5.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="184" label="木豆丁的回忆">
+  <Task id="4060" label="永夜森林">
+    <!-- npcfun_accepttask_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的回忆" icon="-1" close="false">
+    	
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page id="0">
+    					<Dialog npcID="208600" npcName="木豆丁">那个严厉的家伙离开了，我多少有些想念它……</Dialog>
+    						<Button label="能给我讲讲你们的故事吗？">
+    							<Goto value="dlg2"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Script label="dlg2" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">想听故事没有那么容易，帮我搜集一些草木精华的叶子吧。</Dialog>
+    						<Button label="去哪里找呢？">
+    							<Goto value="dlg3"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    			
+    			<Script label="dlg3" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">特鲁米小径、索米亚草原都可以找到哦！</Dialog>
+    						<Button label="好的现在就去">
+    							<Goto value="donghua_0"/>
+    						</Button>
+    				</Page>
+    			</Script>
+    	
+    			<Script label="donghua_0" type="asWindow" src="task/4060/app1" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    			<Click label="submit" event="onTaskCall2" params="1|4060"/>
+    																
+    		</Click>
+    	
+    	</NPCFun>
+    <!-- app_ts0_xml · 场景 134 -->
+    <NPCFun label="app_ts0" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="58"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 134 -->
+    <NPCFun label="app_ts1" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="33"/>
+    	</Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 134 -->
+    <NPCFun label="app_ts2" sceneID="134">
+    <Click event="onRunScript">
+    		<Click event="onChangeScene" label="default" params="134"/>
+    	</Click>
+    </NPCFun>
+    <!-- npc_c0_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="208700" name="" position="168|358">
+    	<View type="0" src="208700.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="asWindow" src="task/4060/app2" winPos="150|309" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="208700"/>
+    	</Click>
+    	</Npc>
+    <!-- npc_c1_xml · 场景 134 -->
+    <Npc sceneID="134" type="1" npcID="208800" name="" position="680|480">
+    	<View type="0" src="208800.swf" atLayerID="2"/>
+    	<Click event="onRunScript">
+    	
+    			<Script label="default" type="asWindow" src="task/4060/app2" winPos="661|431" name="正在加载...">
+    				<Default>
+    					<Goto value="submit"/>
+    				</Default>
+    			</Script>
+    	
+    		<Click label="submit" event="NULL" fire="true" fireID="208800"/>
+    	</Click>
+    	</Npc>
+    <!-- npcfun_acceptnotfinish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的回忆" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    					<Dialog npcID="208600" npcName="木豆丁">不给我草木精华的叶子，我就不给你讲我们的故事！</Dialog>
+    					<Button label="我再去索米亚草原和特鲁米小径找找看。" close="true">
+    						<!--<Goto value="asWindow_0"/>-->
+    					</Button>
+    				</Page>
+    			</Script>
+    		</Click>
+    	</NPCFun>
+    <!-- npcfun_finish_xml · 场景 134 -->
+    <NPCFun sceneID="134" label="木豆丁的回忆" icon="0" close="false">
+    		<Click event="onRunScript">
+    	
+    			<Script label="default" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">你还真的找到了，好吧我给你讲讲我们的故事！</Dialog>
+    					<Button label="好哦！" close="true">
+    						<Goto value="donghua_0"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>
+    
+    			<Script label="donghua_0" type="asWindow" src="task/4060/app3" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_1"/>
+    				</Default>
+    			</Script>
+    	
+    			<Script label="dialog_1" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">今天就讲到这里……</Dialog>
+    					<Button label="不行不行，到底有什么秘密快说！" close="false">
+    						<Goto value="dialog_2"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="dialog_2" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">好吧，再和你说点</Dialog>
+    					<Button label="嗯嗯" close="true">
+    						<Goto value="donghua_1"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="donghua_1" type="asWindow" src="task/4060/app4" winPos="0|0" name="正在加载...">
+    				<Default>
+    					<Goto value="dialog_3"/>
+    				</Default>
+    			</Script>
+    			<Script label="dialog_3" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">听明白了吧</Dialog>
+    					<Button label="那封印之匙在哪里呢？" close="false">
+    						<Goto value="dialog_4"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Script label="dialog_4" type="dialog">
+    				<Page>
+    	
+    					<Dialog npcID="208600" npcName="木豆丁">当初出来了很多试炼的族人，谁知道在谁身上，今天不和你啰嗦了，我锻炼去了！</Dialog>
+    					<Button label="好吧，你的秘密真多" close="true">
+    						<Goto value="submit"/>
+    					</Button>
+    					
+    				</Page>
+    			</Script>	
+    	
+    			<Click label="submit" event="onTaskCall2" params="2|4060"/>
+    	
+    		</Click>
+    	
+    	</NPCFun>
+  </Task>
+</Story>

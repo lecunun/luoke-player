@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 YongShengStoryScript.ats 还原；场景归属取自 21_TaskList.xml 的任务链 -->
+<Story id="167" label="永生的定义">
+  <Task id="179" label="追查">
+    <!-- npc_c0_xml · 场景 164 -->
+    <Npc sceneID="164" type="1" npcID="197000" position="0|0" icon="-1">
+    <View type="0" src="197000.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197000">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">我来这里你也来这里。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">你怎么这么喜欢跟在本公主身后啊。</Dialog>
+    	      <Button label="我只是在调查恩佐……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">哼，说起可恶的黑衣人和恩佐，他们竟然敢拐带本公主我！</Dialog>
+    	      <Button label="谁让您身体里面有永生结晶……" nextID="-1" close="false">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">结晶个鬼！那都是假的！有心人发布的谣言！肯定是要让我卷入什么东西里面……</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">想起那段日子就恶心……</Dialog>
+    	      <Button label="……" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_3" type="asWindow" src="task/179/179_0" winPos="0|0" name="被拐那经历">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">所以……本公主要以牙还牙！</Dialog>
+    	      <Button label="公主你自便，我还要去救人……" nextID="-1" close="false">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    
+    	   <Script label="index_0_5" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">救什么人？</Dialog>
+    	      <Button label="徽章的候任者们，被恩佐抓走了" nextID="-1" close="false">
+    	        <Goto value="index_0_6"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_6" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">你往哪里走？</Dialog>
+    	      <Button label="我还不清楚，所以要调查嘛……" nextID="-1" close="false">
+    	        <Goto value="index_0_7"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_7" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">还查什么查啊！就是去了关本公主的地牢！天罩地牢！知道吧！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">那些什么候任者肯定在那里，走，跟本公主一起杀过去，本公主顺便报一拐之仇！</Dialog>
+    	      <Button label="公主，公主，啊喂公主……" nextID="-1" close="true">
+    	        <Goto value="index_0_8"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_8" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_179_197000"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_179_197000">
+    	<Click event="onRunScript">
+    	  <Click label="default" event="onTaskCall2" params="1|179"/>
+    	</Click>
+    </ViewEvent>
+    
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 164 -->
+    <Npc sceneID="164" type="1" npcID="197200" position="0|0" icon="0">
+    <View type="0" src="197200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197200">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">终于有人来救我们了！</Dialog>
+    	      <Button label="啊！你们果然在这里" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_179_197200"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt1_179_197200">
+    	<Click event="onRunScript">
+    	  
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">哼，果然被本公主猜中了吧！</Dialog>
+    	      <Dialog npcID="197000" npcName="徽章候任者">是可丽希亚公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">好吧，赶快救你们出去吧。这么暗，什么都看不到。看本公主的！</Dialog>
+    	      <Button label="公主你想干嘛？" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="asWindow" src="task/179/179_1" winPos="0|0" name="点亮六芒星阵">
+    	    <Default>
+    	      <Goto value="index_0_3"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	    <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="showMagicPic_state"/>
+    	  	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="showMagicPic_GotIt">
+    	<Click event="onRunScript">
+    	  
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">好一个恩佐，竟然用定身魔法阵。</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">公主你知道定身魔法阵哦？</Dialog>
+    	      <Button label="是啊公主你竟然知道……" nextID="-1" close="false">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    
+    	   <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">笨蛋！以为本公主只会使蛮横吗？我可是堂堂一国公主。</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">那公主，这个魔法阵怎么解除啊？</Dialog>
+    	      <Button label="嗯嗯！" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_5" type="asWindow" src="task/179/179_2" winPos="0|0" name="六芒星阵解法">
+    	    <Default>
+    	      <Goto value="index_0_6"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  
+    	  
+    	   <Script label="index_0_6" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">也就是说，我们按照身体的元素站到位置上，并且站满6个人，就没问题了是吧，公主。 </Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">不愧是本公主的宠物，理解能力真快。</Dialog>
+    	      <Button label="事不宜迟，赶快开始！" nextID="-1" close="true">
+    	        <Goto value="index_0_7"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_179_197200"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_179_197200">
+    	<Click event="onRunScript">
+    		
+    		<Script label="default" type="asWindow" src="task/179/179_3" winPos="0|0" name="解开魔法阵">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_179_197200"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_179_197200">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">谢谢公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">呼，累死本公主了啦。你还站在这里干嘛，赶快去救第二批的魔法师啊！就在旁边了！</Dialog>
+    	      <Button label="哦，好，我现在就去" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Click label="index_0_1" event="NULL" fire="true"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c4_xml · 场景 164 -->
+    <Npc sceneID="164" type="1" npcID="197400" position="0|0" icon="0">
+    <View type="0" src="197400.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">这下好了，我们要得救了！</Dialog>
+    	      <Button label="嗯！我们马上就可以离开这里了！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_179_197400"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt1_179_197400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">啊，剩下全部人都在这里了耶。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">那么黑，来点火吧。</Dialog>
+    	      <Button label="难道又是小路……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/179/179_4" winPos="0|0" name="点亮六芒星阵">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="showMagicPic_state"/>
+    	  	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="showMagicPic_GotIt">
+    	<Click event="onRunScript">
+    	  
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚"><![CDATA[{name}]]>，你还愣着干什么，赶快去救人啊，只有一个位置了。</Dialog>
+    	      <Button label="好吧，我去" nextID="-1" close="true">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_179_197400"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_179_197400">
+    	<Click event="onRunScript">
+    		
+    		<Script label="default" type="asWindow" src="task/179/179_5" winPos="0|0" name="小路摔跤">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_179_197400"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_179_197400">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">呆！小！路！你看你做的好事！</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">公主我也不想的啊……</Dialog>
+    	      <Button label="啊！不好了！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="switch" invoke="combat" args="2|197400|恶魔叮">
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_179_197400"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt4_179_197400">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">喂！不说句话就全带走了！</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">这下怎么办啊公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">走！去巨石阵！他们肯定把这些活人拿去当祭品了。赶快去巨石阵！</Dialog>
+    	      <Button label="好！！！！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onTaskCall2" params="2|179"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c5_xml · 场景 164 -->
+    <Npc sceneID="164" type="1" npcID="198600" position="0|0" icon="0">
+    <View type="0" src="198600.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_198600">
+    	<Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="163"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c6_xml · 场景 164 -->
+    <Npc sceneID="164" type="1" npcID="198700" position="0|0" icon="0">
+    <View type="0" src="198700.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_198700">
+    	<Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="164"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts4_xml · 场景 164 -->
+    <NPCFun label="app_ts4" sceneID="164">
+    <Click event="onRunScript">
+    	 <Script label="default" type="asWindow" src="task/179/179_ts_0" winPos="0|0" name="担心公主">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 164 -->
+    <NPCFun label="app_ts2" sceneID="164">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="164"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts3_xml · 场景 164 -->
+    <NPCFun label="app_ts3" sceneID="164">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/179/179_ts_1" winPos="0|0" name="往巨石阵走">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+  <Task id="180" label="定义">
+    <!-- npc_c0_xml · 场景 163 -->
+    <Npc sceneID="163" type="1" npcID="197500" position="0|0" icon="0">
+    <View type="0" src="197500.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_180_197500">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">恩佐！你这大坏蛋！大混蛋！坏人了不起啊！</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">打倒恩佐！</Dialog>
+    	      <Dialog npcID="189000" npcName="黑衣人">恩佐大人，这等小战，让我来就好了。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚"><![CDATA[{name}]]>，上啊！！！！不要愣在那里光发呆啊！！！</Dialog>
+    	      <Button label="啊，哦！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_1" type="switch" invoke="combat" args="2|197500|恶魔叮">
+    	    <Case value="2">
+      		  <Goto value="index_0_3"/>
+     		</Case>
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">不会吧你！黑衣人都打不赢！再去打啊！本公主命令你，一定要打赢黑衣人啊！</Dialog>
+    	      <Button label="马上再战！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	      <Button label="公主我需要整备一下…… " nextID="-1" close="true">
+    	         <Goto value="enableClick"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="enableClick" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="enableClick"/>
+    	  
+    	  <Script label="index_0_3" type="asWindow" src="task/180/180_0" winPos="0|0" name="大义凛然">
+    	    <Default>
+    	      <Goto value="index_0_4"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	    <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">公主公主……你可是堂堂公主啊……说话不要那么粗俗啊……</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">你管我那么多！让我把话讲完！</Dialog>
+    	      <Button label="那请继续说……" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	    <Script label="index_0_5" type="asWindow" src="task/180/180_1" winPos="0|0" name="所谓的永生">
+    	    <Default>
+    	      <Goto value="index_0_6"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_6" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_180_197500"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt1_180_197500">
+    	<Click event="onRunScript">
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">哦哦哦哦哦！！！公主你好帅！！！懂好多！！好厉害！！！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">那当然！皇家的教育可不是盖的！</Dialog>
+    	      <Button label="原来这就是永生啊……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="190000" npcName="恩佐">废话连篇。</Dialog>
+    	      <Button label="你才是执迷不悟呢！" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_180_197500"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt2_180_197500">
+    	<Click event="onRunScript">
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">喝！无视本公主！跟你拼了！</Dialog>
+    	      <Button label="公主小心！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_1" type="switch" invoke="combat" args="2|197000|恶魔叮">
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="asWindow" src="task/180/180_2" winPos="0|0" name="分头行动">
+    	    <Default>
+    	      <Goto value="index_0_3"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_180_197500"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt3_180_197500">
+    	<Click event="onRunScript">
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="190000" npcName="恩佐">哼。我还会回来的。我会证明，我的永生才是正确的。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">呸呸呸呸呸！你个大混蛋！</Dialog>
+    	      <Button label="已经阻止不了公主了……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_180_197500"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt4_180_197500">
+    	<Click event="onRunScript">
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">徽章候任者们，你们还好吧。</Dialog>
+    	      <Dialog npcID="197000" npcName="徽章候任者">谢谢公主。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">你们很重要！要记得不要再被人抓走啦！走吧小路，我们再去下个地点玩。</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">YES！MADAM！</Dialog>
+    	      <Button label="……" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/180/180_3" winPos="0|0" name="最后的思考">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    		<Click label="index_0_2" event="onTaskCall2" params="2|180"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    
+    </Create>
+    </Npc>
+    <!-- npc_c1_xml · 场景 163 -->
+    <Npc sceneID="163" type="1" npcID="197100" position="0|0" icon="0">
+    <View type="0" src="197100.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197100">
+    	<Click event="onRunScript">
+    	 <Click label="default" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c2_xml · 场景 163 -->
+    <Npc sceneID="163" type="1" npcID="197200" position="0|0" icon="0">
+    <View type="0" src="197200.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197200">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">终于有人来救我们了！</Dialog>
+    	      <Button label="啊！你们果然在这里" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_179_197200"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt1_179_197200">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">哼，说起可恶的黑衣人和恩佐，他们竟然敢拐带本公主我！</Dialog>
+    	      <Button label="谁让您身体里面有永生结晶……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">哼，果然被本公主猜中了吧！</Dialog>
+    	      <Dialog npcID="197000" npcName="徽章候任者">是可丽希亚公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">好吧，赶快救你们出去吧。这么暗，什么都看不到。看本公主的！</Dialog>
+    	      <Button label="公主你想干嘛？" nextID="-1" close="true">
+    	        <Goto value="index_0_2"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Script label="index_0_2" type="asWindow" src="task/179/179_1" winPos="0|0" name="点亮六芒星阵">
+    	    <Default>
+    	      <Goto value="index_0_3"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Script label="index_0_3" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">好一个恩佐，竟然用定身魔法阵。</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">公主你知道定身魔法阵哦？</Dialog>
+    	      <Button label="是啊公主你竟然知道……" nextID="-1" close="false">
+    	        <Goto value="index_0_4"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    
+    	   <Script label="index_0_4" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">笨蛋！以为本公主只会使蛮横吗？我可是堂堂一国公主。</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">那公主，这个魔法阵怎么解除啊？</Dialog>
+    	      <Button label="嗯嗯！" nextID="-1" close="true">
+    	        <Goto value="index_0_5"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_5" type="asWindow" src="task/179/179_2" winPos="0|0" name="六芒星阵解法">
+    	    <Default>
+    	      <Goto value="index_0_6"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  
+    	  
+    	   <Script label="index_0_6" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">也就是说，我们按照身体的元素站到位置上，并且站满6个人，就没问题了是吧，公主。 </Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">不愧是本公主的宠物，理解能力真快。</Dialog>
+    	      <Button label="事不宜迟，赶快开始！" nextID="-1" close="true">
+    	        <Goto value="index_0_7"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_7" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_179_197200"/>
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_179_197200">
+    	<Click event="onRunScript">
+    		
+    		<Script label="default" type="asWindow" src="task/179/179_3" winPos="0|0" name="解开魔法阵">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_179_197200"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_179_197200">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">谢谢公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">呼，累死本公主了啦。你还站在这里干嘛，赶快去救第二批的魔法师啊！就在旁边了！</Dialog>
+    	      <Button label="哦，好，我现在就去" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	 <Click label="index_0_1" event="NULL" fire="true"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c3_xml · 场景 163 -->
+    <Npc sceneID="163" type="1" npcID="197300" position="0|0" icon="0">
+    <View type="0" src="197300.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197300">
+    	<Click event="onRunScript">
+    	 <Click label="default" event="NULL" fire="true"/>
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- npc_c4_xml · 场景 163 -->
+    <Npc sceneID="163" type="1" npcID="197400" position="0|0" icon="0">
+    <View type="0" src="197400.swf" atLayerID="2" hasClick="false"/>
+    <Create>
+    
+    <ViewEvent type="GotIt0_179_197400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="197000" npcName="徽章候任者">这下好了，我们要得救了！</Dialog>
+    	      <Button label="嗯！我们马上就可以离开这里了！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state1_179_197400"/>
+    	</Click>
+    </ViewEvent>
+    
+    
+    <ViewEvent type="GotIt1_179_197400">
+    	<Click event="onRunScript">
+    	  <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="172700" npcName="呆小路">啊，剩下全部人都在这里了耶。</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">那么黑，来点火吧。</Dialog>
+    	      <Button label="难道又是小路……" nextID="-1" close="false">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Script label="index_0_1" type="asWindow" src="task/179/179_4" winPos="0|0" name="点亮六芒星阵">
+    	    <Default>
+    	      <Goto value="index_0_2"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	   <Script label="index_0_2" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚"><![CDATA[{name}]]>，你还愣着干什么，赶快去救人啊，只有一个位置了。</Dialog>
+    	      <Button label="好吧，我去" nextID="-1" close="false">
+    	        <Goto value="index_0_3"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	  
+    	  <Click label="index_0_3" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state2_179_197400"/>
+    
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt2_179_197400">
+    	<Click event="onRunScript">
+    		
+    		<Script label="default" type="asWindow" src="task/179/179_5" winPos="0|0" name="小路摔跤">
+    	    <Default>
+    	      <Goto value="index_0_1"/>
+    	    </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_1" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state3_179_197400"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt3_179_197400">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">呆！小！路！你看你做的好事！</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">公主我也不想的啊……</Dialog>
+    	      <Button label="啊！不好了！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="switch" invoke="combat" args="2|197400|恶魔叮">
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onSceneCMDCall" cmd="2" type="sceneEvent" params="state4_179_197400"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    
+    <ViewEvent type="GotIt4_179_197400">
+    	<Click event="onRunScript">
+    		
+    	   <Script label="default" type="dialog">
+    	    <Page id="0">
+    	      <Dialog npcID="108600" npcName="可丽希亚">喂！不说句话就全带走了！</Dialog>
+    	      <Dialog npcID="172700" npcName="呆小路">这下怎么办啊公主！</Dialog>
+    	      <Dialog npcID="108600" npcName="可丽希亚">走！去巨石阵！他们肯定把这些活人拿去当祭品了。赶快去巨石阵！</Dialog>
+    	      <Button label="好！！！！" nextID="-1" close="true">
+    	        <Goto value="index_0_1"/>
+    	      </Button>
+    	    </Page>
+    	  </Script>
+    	  
+    	   <Script label="index_0_1" type="switch" invoke="combat" args="2|197400|恶魔叮">
+    	  <Default>
+    	    <Goto value="index_0_2"/>
+    	  </Default>
+    	  </Script>
+    	  
+    	  <Click label="index_0_2" event="onTaskCall2" params="2|179"/>
+    	  
+    	</Click>
+    </ViewEvent>
+    </Create>
+    </Npc>
+    <!-- app_ts0_xml · 场景 163 -->
+    <NPCFun label="app_ts0" sceneID="163">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/179/179_ts_0" winPos="0|0" name="担心公主">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+    <!-- app_ts1_xml · 场景 163 -->
+    <NPCFun label="app_ts1" sceneID="163">
+    <Click event="onRunScript">
+    	  <Click label="default" event="onChangeScene" params="163"/>
+    </Click>
+    </NPCFun>
+    <!-- app_ts2_xml · 场景 163 -->
+    <NPCFun label="app_ts2" sceneID="163">
+    <Click event="onRunScript">
+    <Script label="default" type="asWindow" src="task/170/170_ts_2" winPos="0|0" name="光之藤有露水">
+    	<Default><End/></Default>
+    </Script>
+    </Click>
+    </NPCFun>
+  </Task>
+</Story>
