@@ -7,21 +7,17 @@
 
 ## 运行
 
-Windows：双击 `启动播放器.cmd`，会自动起服务并用默认浏览器打开。
+Windows：双击 `启动播放器.cmd`，什么都不用装。
 
-macOS / Linux：`./start.sh`
+它会按顺序找 Node.js：项目里的 `runtime\node.exe` → 系统 PATH 上的 node（需 18+）→
+都没有就自动下载一份便携版（约 30MB，只第一次），然后起服务并用默认浏览器打开播放器。
 
-命令行等价于：
+macOS / Linux：`./start.sh`，逻辑一样。
 
-```bash
-node proxy/server.mjs --open
-```
+首次运行那条下载走国内镜像（`cdn.npmmirror.com`），不通再退到 nodejs.org；
+两条都失败时窗口里会告诉你手动装 Node.js 18+ 的地址。
 
-需要 Node.js 18+。想完全免安装，可以执行一次
-`powershell -ExecutionPolicy Bypass -File tools\get_runtime.ps1`，
-它会把 `node.exe` 下到 `runtime\`，之后双击启动脚本即可。
-
-打开后地址是 http://127.0.0.1:8787/ ，关掉那个命令行窗口就停止服务。
+命令行等价于 `node proxy/server.mjs --open`。地址是 http://127.0.0.1:8787/ ，关掉那个命令行窗口就停止服务。
 
 ## 为什么需要本地服务
 
