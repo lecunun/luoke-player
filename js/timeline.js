@@ -61,6 +61,7 @@ export async function initTimeline(h = {}) {
     // 只认逐张看过、确认是整幅海报的卡（verified）；其余卡片是卷轴/界面框/场景拼贴，
     // 抽出来不是海报，宁可不放。no_image 是无位图的那两张。
     cardIds = new Set((c.verified || []).map(String));
+    if (h.extras) applyExtras(h.extras);
   } catch (e) {
     tree = { groups: [], timeline: [] };
     $("#tl-rows").innerHTML = `<div class="tl-empty">时间轴加载失败：${esc(e.message)}</div>`;
@@ -70,6 +71,49 @@ export async function initTimeline(h = {}) {
   render();
   // 进入播放器的首页就是时间轴
   showTimeline(true);
+}
+
+// 在线收录进来的故事与缩略图（updater.js）：并进 groups / covers 后再重建行
+function applyExtras(extra) {
+  if (!extra) return false;
+  let changed = false;
+  for (const [id, file] of Object.entries(extra.covers || {})) {
+    if (file && covers[id] !== file) {
+      covers[id] = file;
+      changed = true;
+    }
+  }
+  for (const s of extra.stories || []) {
+    if (s.kind === "task") continue;
+    const tid = String(s.themeId ?? "");
+    tree.groups = tree.groups || [];
+    let g = tree.groups.find((x) => String(x.themeId) === tid);
+    if (!g) {
+      const seq = tree.groups.reduce((m, x) => Math.max(m, x.seq ?? 0), 0) + 1;
+      g = { themeId: tid, theme: s.theme || "", date: s.date || "", stories: [], seq };
+      tree.groups.push(g);
+    }
+    if (g.stories.some((x) => String(x.id) === String(s.id))) continue;
+    g.stories.push({
+      id: s.id,
+      name: s.name,
+      outline: s.outline || "",
+      date: s.date || "",
+      kind: "story",
+      chapters: (s.chapters || []).map(Number),
+      status: (s.chapters || []).length ? "full" : "gone",
+    });
+    changed = true;
+  }
+  return changed;
+}
+
+/** 在线收录后补海报：covers 是 { 故事id: panelBG 文件名 } */
+export function addStories(payload) {
+  if (!applyExtras(payload)) return false;
+  build();
+  render();
+  return true;
 }
 
 function build() {

@@ -345,9 +345,12 @@ $("#btn-stay").addEventListener("click", () => {
     },
     onInfo: (msg) => setStatus(msg),
   });
+  // 上次在线收录的章节/海报，时间轴也要补进去（它自己 fetch 的是仓库里的旧表）
+  const extras = await loadExtras();
   // 时间轴是首页：只收官方带海报的故事，点「回顾」等于在目录里点开对应的一条
   initTimeline({
     covers,
+    extras,
     onPickChapter: (id, story) => {
       $("#start-overlay").classList.add("hidden");
       setStatus(`回顾《${story?.name || chapterLabel(id)}》`);
@@ -389,7 +392,10 @@ function renderUpdate(r) {
       `主题 <em>${it.theme ? "《" + esc(it.theme) + "》" : "《》（无归属）"}</em>` +
       (it.date ? ` · 官方日期 <em>${esc(it.date)}</em>` : "") +
       (it.playable
-        ? ` · <span class="up-good">可播，正文 ${it.lines} 句</span>`
+        ? ` · <span class="up-good">可播，正文 ${it.lines} 句</span>` +
+          (it.poster
+            ? ` · <span class="up-good">海报已进时间轴</span>`
+            : ` · <span class="up-bad">没有缩略图，未进时间轴</span>`)
         : ` · <span class="up-bad">缺正文（${esc(it.why)}）</span>`);
     div.innerHTML =
       `<div class="up-title">第 <b>${it.id}</b> 章 · ${esc(it.name)}</div>` +

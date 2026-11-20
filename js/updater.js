@@ -10,9 +10,11 @@
 
 import { wrap } from "./store.js";
 import { mergeStories, knownIds } from "./catalog.js";
+import { addStories as addTimelineStories } from "./timeline.js";
 
 const CONF_URL = "https://res.17roco.qq.com/conf/Angel.config";
 const SCRIPT_URL = (id) => `https://res.17roco.qq.com/res/task2/scripts/${id}.xml`;
+const THUMB_URL = (file) => `https://res.17roco.qq.com/res/task2/panelBG/${file}`;
 const DB_NAME = "luoke-story-meta";
 const TABLE = "kv";
 const KEY = "extras";
@@ -149,7 +151,21 @@ function parseConf(text) {
   return { stories, themes, tasks };
 }
 
-/* ---------------- 探测剧本 ---------------- */
+/* ---------------- 探测剧本与海报 ---------------- */
+
+// 档案列表的缩略图：res/task2/panelBG/<id>.jpg。有它时间轴才会显示这张海报
+async function probeThumb(id) {
+  const file = `${id}.jpg`;
+  try {
+    const r = await fetch(wrap(THUMB_URL(file)), { cache: "no-store" });
+    const type = r.headers.get("content-type") || "";
+    const len = Number(r.headers.get("content-length") || 0);
+    if (r.ok && type.startsWith("image/") && (len === 0 || len > 2000)) return file;
+  } catch {
+    /* 没有就当没海报 */
+  }
+  return "";
+}
 
 async function probeScript(id) {
   const r = await fetch(wrap(SCRIPT_URL(id)), { cache: "no-store" });
@@ -222,10 +238,14 @@ export async function checkUpdates() {
   const items = [];
   const chapters = [];
   const stories = [];
+  const covers = {}; // 新海报：{ 故事id: panelBG 文件名 }
   for (const s of fresh) {
     const theme = conf.themes.get(s.themeId) || "";
     const p = await probeScript(s.id);
     const label = p.ok ? p.label || s.name : s.name;
+    // 只有能播的才去探海报：时间轴上点了要能进去，缺正文的条目放上去只会点出提示
+    const thumb = p.ok ? await probeThumb(s.id) : "";
+    if (p.ok && thumb) covers[s.id] = thumb;
     if (p.ok) {
       chapters.push({
         id: Number(s.id),
@@ -255,6 +275,7 @@ export async function checkUpdates() {
       date: s.date,
       lines: p.lines || 0,
       playable: p.ok,
+      poster: !!thumb,
       why: p.ok ? "" : `剧本取不到（${p.why}）`,
     });
   }
@@ -264,6 +285,7 @@ export async function checkUpdates() {
   await dbSet(KEY, {
     stories: [...(extras.stories || []), ...stories],
     chapters: [...(extras.chapters || []), ...chapters],
+    covers: { ...(extras.covers || {}), ...covers },
     seen: [...new Set([...(extras.seen || []), ...allIds])],
     savedAt: Date.now(),
   });
@@ -272,6 +294,8 @@ export async function checkUpdates() {
   const themes = [];
   if (stories.length) {
     const r = mergeStories({ stories, chapters });
+    // 时间轴那套数据是独立加载的，这里同步补进去（含缩略图映射）
+    addTimelineStories({ stories, covers });
     added = r.addSt;
     for (const t of r.touched) {
       const nm = conf.themes.get(t) || "";
