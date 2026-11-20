@@ -26,6 +26,7 @@
       <button id="btn-typewriter" title="逐字显示开关">打字机 开</button>
       <button id="btn-bgm" title="背景音乐开关">音乐 开</button>
       <button id="btn-theme" title="切换配色">主题</button>
+      <button id="btn-update" title="从官方任务表检查有没有新上架的章节（会说明加到了哪个主题）">检查新章节</button>
     </div>
   </header>
 
@@ -126,6 +127,18 @@
   <footer>
     <span id="status">就绪</span>
   </footer>
+
+  <div id="update-panel" class="hidden">
+    <div class="card">
+      <div class="t">检查新章节</div>
+      <div class="d" id="up-summary">正在读取官方任务表…</div>
+      <div id="up-list"></div>
+      <div class="row">
+        <button id="up-again">再检查一次</button>
+        <button id="up-close">关闭</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="module" src="js/main.js"></script>

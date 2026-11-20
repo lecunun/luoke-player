@@ -677,3 +677,34 @@ footer {
   background: linear-gradient(160deg, var(--bg2), #0b0805);
 }
 #scene-layer ruffle-player { position: relative; z-index: 1; }
+
+/* ---------- 检查新章节 ---------- */
+#update-panel {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: #000000b0; z-index: 60; padding: 20px;
+}
+#update-panel.hidden { display: none; }
+#update-panel .card {
+  width: min(580px, calc(100vw - 32px)); max-height: min(70vh, 520px); overflow: auto;
+  padding: 20px 22px; text-align: left;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--panel); box-shadow: 0 12px 40px #000000aa;
+  color: var(--tint);
+}
+#update-panel .t { font-size: 15px; color: var(--gold); font-weight: 700; letter-spacing: .5px; }
+#update-panel .d { font-size: 12.5px; color: var(--ink-dim); margin: 8px 0 10px; line-height: 1.7; }
+#update-panel .row { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+#update-panel button {
+  padding: 6px 14px; font-size: 12.5px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel2); color: var(--tint);
+}
+#update-panel button:hover { border-color: var(--gold2); color: var(--gold); }
+#update-panel button:disabled { opacity: .45; cursor: default; }
+.up-row { padding: 9px 0; border-top: 1px dashed var(--line); }
+.up-row:first-child { border-top: 0; padding-top: 2px; }
+.up-title { font-size: 13px; }
+.up-title b { color: var(--gold); font-weight: 700; }
+.up-meta { font-size: 11.5px; color: var(--ink-dim); margin-top: 4px; line-height: 1.65; }
+.up-meta em { font-style: normal; color: var(--tint); }
+.up-bad { color: #c07a68; }
+.up-good { color: #7fae7a; }

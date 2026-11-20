@@ -4,6 +4,7 @@ import { initCatalog, setActive, toggleSidebar, restoreSidebar, nextChapterId, p
 import { renderReader, showReader } from "./reader.js";
 import { initMapView, toggleMapView } from "./mapview.js";
 import { initTimeline, toggleTimeline, showTimeline } from "./timeline.js";
+import { checkUpdates, loadExtras } from "./updater.js";
 
 const $ = (s) => document.querySelector(s);
 const status = $("#status");
@@ -331,6 +332,8 @@ $("#btn-stay").addEventListener("click", () => {
   }
   initCatalog({
     covers,
+    // 上次在线收录的章节（IndexedDB）在目录初始化时并进去
+    loadExtras,
     // 从目录点走时把时间轴收起来，别让覆盖层挡着新载入的剧情
     onPickChapter: (id) => {
       showTimeline(false);
@@ -352,6 +355,99 @@ $("#btn-stay").addEventListener("click", () => {
     },
   });
 })();
+
+/* ---------- 检查新章节（在线读官方任务表，见 updater.js） ---------- */
+const upPanel = $("#update-panel");
+const upList = $("#up-list");
+const upSummary = $("#up-summary");
+const esc = (s) =>
+  String(s ?? "").replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[m]);
+
+function closeUpdate() {
+  upPanel.classList.add("hidden");
+}
+
+function renderUpdate(r) {
+  upList.innerHTML = "";
+  if (!r.items.length) {
+    upSummary.innerHTML =
+      `已是最新。官方任务表里有 <em>${r.total}</em> 条故事，本地目录全都收录了。` +
+      `<br><span style="opacity:.75">（检测时间 ${new Date().toLocaleString()}，数据存在浏览器里，刷新不会丢）</span>`;
+    upPanel.classList.remove("hidden");
+    return;
+  }
+  const themes = [...new Set(r.items.map((i) => (i.theme ? `《${i.theme}》` : "《》（无归属主题）")))];
+  upSummary.innerHTML =
+    `官方任务表里有 <em>${r.total}</em> 条故事，发现 <em>${r.items.length}</em> 条本地还没有的，` +
+    `已加入目录：<em>${themes.map(esc).join("、")}</em>。` +
+    `<br><span style="opacity:.75">倒序排在最上面，也可以直接点下面任意一条开始看。</span>`;
+
+  for (const it of r.items) {
+    const div = document.createElement("div");
+    div.className = "up-row";
+    const meta =
+      `主题 <em>${it.theme ? "《" + esc(it.theme) + "》" : "《》（无归属）"}</em>` +
+      (it.date ? ` · 官方日期 <em>${esc(it.date)}</em>` : "") +
+      (it.playable
+        ? ` · <span class="up-good">可播，正文 ${it.lines} 句</span>`
+        : ` · <span class="up-bad">缺正文（${esc(it.why)}）</span>`);
+    div.innerHTML =
+      `<div class="up-title">第 <b>${it.id}</b> 章 · ${esc(it.name)}</div>` +
+      `<div class="up-meta">${meta}</div>`;
+    if (it.playable) {
+      div.style.cursor = "pointer";
+      div.title = "点这里直接播放这一章";
+      div.addEventListener("click", () => {
+        closeUpdate();
+        load(it.id);
+      });
+    }
+    upList.appendChild(div);
+  }
+  upPanel.classList.remove("hidden");
+}
+
+let checking = false;
+async function runUpdateCheck() {
+  if (checking) return;
+  checking = true;
+  const btn = $("#btn-update");
+  const again = $("#up-again");
+  btn.disabled = again.disabled = true;
+  const old = btn.textContent;
+  btn.textContent = "检查中…";
+  upList.innerHTML = "";
+  upSummary.textContent = "正在读取官方任务表（conf/Angel.config，约 1.4MB）…";
+  upPanel.classList.remove("hidden");
+  setStatus("检查新章节…");
+  try {
+    const r = await checkUpdates();
+    renderUpdate(r);
+    setStatus(
+      r.added
+        ? `新增 ${r.added} 个章节：${r.items.map((i) => i.name).join("、")}`
+        : `已是最新（官方 ${r.total} 条故事）`,
+    );
+  } catch (e) {
+    console.error(e);
+    upList.innerHTML = "";
+    upSummary.innerHTML =
+      `<span class="up-bad">检查失败：${esc(e.message)}</span>` +
+      `<br><span style="opacity:.75">这个功能要联网读官方任务表。如果只是想看已收录的剧情，直接关掉这个窗口即可。</span>`;
+    setStatus("检查失败：" + e.message);
+  } finally {
+    checking = false;
+    btn.disabled = again.disabled = false;
+    btn.textContent = old;
+  }
+}
+
+$("#btn-update").addEventListener("click", runUpdateCheck);
+$("#up-again").addEventListener("click", runUpdateCheck);
+$("#up-close").addEventListener("click", closeUpdate);
+upPanel.addEventListener("click", (e) => {
+  if (e.target === upPanel) closeUpdate();
+});
 
 /* ---------- 开始 ---------- */
 $("#btn-start").addEventListener("click", async () => {

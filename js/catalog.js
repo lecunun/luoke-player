@@ -20,6 +20,14 @@ export async function initCatalog(h) {
     ]);
     all = a;
     tree = b;
+    // 在线收录的章节（updater.js 存进 IndexedDB）在这里并进来。
+    // 必须赶在默认折叠状态计算之前，否则新增的篇章不会跟着收起
+    try {
+      const extra = await handlers.loadExtras?.();
+      if (extra) applyPayload(extra);
+    } catch (e) {
+      console.warn("在线收录数据读取失败", e.message);
+    }
     // 默认全部收起（含日期块）。老用户存过 lr.folded，也要按新默认走一次，用版本号迁移
     if (localStorage.getItem("lr.foldv") !== "3") {
       folded = new Set(allKeys());
@@ -34,11 +42,7 @@ export async function initCatalog(h) {
     return;
   }
 
-  const tl = tree.timeline || [];
-  const storyCount =
-    tree.groups.reduce((n, g) => n + g.stories.filter((s) => s.kind !== "task").length, 0) +
-    tl.filter((e) => e.kind !== "task").length;
-  document.querySelector("#cat-count").textContent = `${storyCount} 个故事`;
+  updateCount();
   document.querySelector("#btn-order").textContent = order === "desc" ? "倒序" : "正序";
   document.querySelector("#btn-order").classList.toggle("on", order === "desc");
 
@@ -70,6 +74,79 @@ export async function initCatalog(h) {
 
 // 章节 id → 名字，用于搜索和标题
 const labelOf = (id) => (all.find((c) => c.id === id) || {}).label || "";
+
+/* ---------- 在线收录（updater.js 调用） ---------- */
+
+// 侧栏底部的"N 个故事"：篇章里的故事 + 时间轴条目，任务档案不算
+function updateCount() {
+  const tl = tree.timeline || [];
+  const n =
+    tree.groups.reduce((a, g) => a + g.stories.filter((s) => s.kind !== "task").length, 0) +
+    tl.filter((e) => e.kind !== "task").length;
+  const el = document.querySelector("#cat-count");
+  if (el) el.textContent = `${n} 个故事`;
+}
+
+// 纯数据合并，不碰 DOM：启动时要在 render 之前跑，所以单独拆出来
+function applyPayload(payload = {}) {
+  const stories = payload.stories || [];
+  const chapters = payload.chapters || [];
+  let addSt = 0;
+  let addCh = 0;
+  const touched = new Set();
+
+  for (const c of chapters) {
+    const id = Number(c.id);
+    if (!Number.isFinite(id) || all.some((x) => x.id === id)) continue;
+    all.push({ ...c, id });
+    addCh++;
+  }
+
+  let seq = tree.groups.reduce((m, g) => Math.max(m, g.seq ?? 0), 0);
+  for (const s of stories) {
+    const tid = String(s.themeId ?? "");
+    let g = tree.groups.find((x) => String(x.themeId) === tid);
+    if (!g) {
+      // 官方新开一个主题（比如 259）：单独建组，seq 排到最后，倒序时自然在最上面
+      g = { themeId: tid, theme: s.theme || "", date: s.date || "", stories: [], seq: ++seq };
+      tree.groups.push(g);
+    }
+    if (g.stories.some((x) => String(x.id) === String(s.id))) continue;
+    const chs = (s.chapters || []).map(Number).filter((n) => Number.isFinite(n));
+    g.stories.push({
+      id: s.id,
+      name: s.name,
+      outline: s.outline || "",
+      date: s.date || "",
+      kind: "story",
+      chapters: chs,
+      status: chs.length ? "full" : "gone",
+    });
+    addSt++;
+    touched.add(tid);
+  }
+  return { addSt, addCh, touched: [...touched] };
+}
+
+/** 把在线收录的章节并进目录，并刷新界面（updater.js 用） */
+export function mergeStories(payload) {
+  const r = applyPayload(payload);
+  if (r.addSt || r.addCh) {
+    for (const t of r.touched) folded.delete(t); // 新篇章默认展开，让人一眼看到
+    localStorage.setItem("lr.folded", JSON.stringify([...folded]));
+    updateCount();
+    render();
+  }
+  return r;
+}
+
+/** 目录里已经知道的 id（故事 id + 章节 id），给"哪些算新"做差集 */
+export function knownIds() {
+  const storyIds = new Set();
+  for (const g of tree.groups) for (const s of g.stories) storyIds.add(String(s.id));
+  for (const e of tree.timeline || []) storyIds.add(String(e.id));
+  return { storyIds, chapterIds: all.map((c) => String(c.id)) };
+}
 
 // 收起/展开按钮的状态：全收起时提示"展开"，否则提示"收起"
 function syncFoldBtn() {
