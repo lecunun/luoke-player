@@ -2,7 +2,7 @@ import { Player } from "./player.js";
 import * as store from "./store.js";
 import { initCatalog, setActive, toggleSidebar, restoreSidebar, nextChapterId, prevChapterId, chapterLabel } from "./catalog.js";
 import { renderReader, showReader } from "./reader.js";
-import { initMapView, toggleMapView } from "./mapview.js";
+import { initMapView, toggleMapView, addScenes } from "./mapview.js";
 import { initTimeline, toggleTimeline, showTimeline } from "./timeline.js";
 import { checkUpdates, loadExtras } from "./updater.js";
 
@@ -320,12 +320,17 @@ $("#btn-stay").addEventListener("click", () => {
 /* ---------- 目录交互 ---------- */
 (async () => {
   let covers = [];
+  // 上次在线收录到的地图（含 BGM/名字）先并进场景表，否则新地图打开没声音没人名
+  let extras = null;
+  try { extras = await loadExtras(); } catch {}
   try {
-    const [sc, cv] = await Promise.all([
+    const [scBase, cv] = await Promise.all([
       fetch("data/scenes.json").then((r) => r.json()),
       fetch("data/covers.json").then((r) => r.json()),
     ]);
+    const sc = { ...scBase, ...(extras?.scenes || {}) };
     player.setSceneNames(sc);
+    if (extras?.scenes) addScenes(extras.scenes, extras.sceneUsage);
     covers = cv;
   } catch (e) {
     console.warn("场景名/封面索引加载失败", e.message);
@@ -345,8 +350,7 @@ $("#btn-stay").addEventListener("click", () => {
     },
     onInfo: (msg) => setStatus(msg),
   });
-  // 上次在线收录的章节/海报，时间轴也要补进去（它自己 fetch 的是仓库里的旧表）
-  const extras = await loadExtras();
+  // 时间轴也是自己 fetch 的仓库旧表，extras 在开头已经读过了
   // 时间轴是首页：只收官方带海报的故事，点「回顾」等于在目录里点开对应的一条
   initTimeline({
     covers,
@@ -383,7 +387,14 @@ function renderUpdate(r) {
   upSummary.innerHTML =
     `官方任务表里有 <em>${r.total}</em> 条故事，发现 <em>${r.items.length}</em> 条本地还没有的，` +
     `已加入目录：<em>${themes.map(esc).join("、")}</em>。` +
-    `<br><span style="opacity:.75">倒序排在最上面，也可以直接点下面任意一条开始看。</span>`;
+    `<br><span style="opacity:.75">倒序排在最上面，也可以直接点下面任意一条开始看。</span>` +
+    (r.sceneCount
+      ? `<br>顺带收录了 ${r.sceneCount} 张还没见过的新地图（BGM 和地图名一起补上了）：<em>${Object.values(
+          r.scenes,
+        )
+          .map((v) => esc(v.name) + (v.bgm ? `（${esc(v.bgm)}）` : ""))
+          .join("、")}</em>`
+      : "");
 
   for (const it of r.items) {
     const div = document.createElement("div");
@@ -428,6 +439,11 @@ async function runUpdateCheck() {
   setStatus("检查新章节…");
   try {
     const r = await checkUpdates();
+    // 新地图：立刻作用到播放器（BGM/名字）和地图库，不用刷新
+    if (r.sceneCount) {
+      player.setSceneNames({ ...(player.sceneNames || {}), ...r.scenes });
+      addScenes(r.scenes, r.sceneUsage);
+    }
     renderUpdate(r);
     setStatus(
       r.added

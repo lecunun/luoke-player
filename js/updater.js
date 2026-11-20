@@ -178,6 +178,11 @@ async function probeScript(id) {
     id: t.getAttribute("id") || "",
     label: t.getAttribute("label") || "",
   }));
+  // 这一章用到哪些地图：新地图的 BGM / 名字只能从官方 scene_conf 里补
+  const sceneRefs = [...root.getElementsByTagName("Npc")]
+    .map((n) => ({ id: n.getAttribute("sceneID") || "", ver: Number(n.getAttribute("ver")) || 1 }))
+    .filter((x) => x.id);
+  const sceneIds = [...new Set(sceneRefs.map((x) => x.id))];
   const dialogs = [...root.getElementsByTagName("Dialog")];
   const lines = dialogs.filter((d) => (d.textContent || "").trim()).length;
   const chars = dialogs.reduce((n, d) => n + (d.textContent || "").trim().length, 0);
@@ -185,10 +190,52 @@ async function probeScript(id) {
     ok: true,
     label: root.getAttribute("label") || "",
     tasks,
+    sceneIds,
+    sceneRefs,
     lines,
     chars,
     size: Number(r.headers.get("content-length") || 0) || xml.length,
   };
+}
+
+/* ---------------- 场景表（scenes.json 的在线补充） ---------------- */
+
+// 官方 conf/Angel.config 里的 scene_conf：
+//   <SceneDes id="181" name="枫雪左岸" bgMusic="new_69.swf|amb_3.swf" sceneVer="1" top="170" ver="1.000"/>
+// 同一个 id 多条 SceneDes 就是这张图的历史版本，sceneVer 是版本号。
+// 播放器的 BGM、地图名、地图库全靠这张表，新地图不补进来就会"能播但没声音、没名字"。
+function parseSceneTable(text) {
+  const rows = new Map();
+  for (const m of text.matchAll(/<SceneDes\b([^>]*?)\/?>/g)) {
+    const a = attrs(m[1]);
+    if (!a.id) continue;
+    const [bgm, amb] = String(a.bgMusic || "").split("|");
+    if (!rows.has(a.id)) rows.set(a.id, []);
+    rows.get(a.id).push({
+      ver: Number(a.sceneVer) || 1,
+      name: tidy(a.name),
+      bgm: (bgm || "").trim(),
+      amb: (amb || "").trim(),
+      top: a.top || a.id,
+      clientVer: a.ver || "",
+    });
+  }
+  const out = {};
+  for (const [id, list] of rows) {
+    list.sort((x, y) => x.ver - y.ver);
+    const last = list[list.length - 1];
+    out[id] = {
+      name: last.name,
+      bgm: last.bgm,
+      amb: last.amb,
+      top: last.top,
+      ver: last.clientVer,
+      maxVer: last.ver,
+      versions: list.map((v) => ({ ver: v.ver, name: v.name, bgm: v.bgm, amb: v.amb })),
+      from: "官方 scene_conf",
+    };
+  }
+  return out;
 }
 
 /* ---------------- 已知基线 ---------------- */
@@ -239,12 +286,21 @@ export async function checkUpdates() {
   const chapters = [];
   const stories = [];
   const covers = {}; // 新海报：{ 故事id: panelBG 文件名 }
+  const sceneIds = new Set(); // 这些新章节用到的地图 id
+  const sceneUse = {}; // { 地图id: { 版本: [章节id] } }，给地图库算「N 章」
   for (const s of fresh) {
     const theme = conf.themes.get(s.themeId) || "";
     const p = await probeScript(s.id);
     const label = p.ok ? p.label || s.name : s.name;
     // 只有能播的才去探海报：时间轴上点了要能进去，缺正文的条目放上去只会点出提示
     const thumb = p.ok ? await probeThumb(s.id) : "";
+    for (const ref of p.sceneRefs || []) {
+      sceneIds.add(ref.id);
+      const k = String(ref.ver || 1);
+      if (!sceneUse[ref.id]) sceneUse[ref.id] = {};
+      if (!sceneUse[ref.id][k]) sceneUse[ref.id][k] = [];
+      if (!sceneUse[ref.id][k].includes(Number(s.id))) sceneUse[ref.id][k].push(Number(s.id));
+    }
     if (p.ok && thumb) covers[s.id] = thumb;
     if (p.ok) {
       chapters.push({
@@ -280,12 +336,28 @@ export async function checkUpdates() {
     });
   }
 
+  // 新地图：剧本用到、但本地场景表里没有的。BGM 与地图名只能从官方 scene_conf 补
+  const shippedScenes = await fetch("data/scenes.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}));
+  const sceneTable = parseSceneTable(text);
+  const knownScenes = new Set([...Object.keys(shippedScenes), ...Object.keys(extras.scenes || {})]);
+  const newScenes = {};
+  const newUsage = {};
+  for (const sid of sceneIds) {
+    if (knownScenes.has(String(sid)) || !sceneTable[sid]) continue;
+    newScenes[sid] = sceneTable[sid];
+    newUsage[sid] = sceneUse[sid] || {};
+  }
+
   // 记下这一轮见到的所有 id，避免官方下架/我们主动删除的条目每次都当"新章节"报出来
   const allIds = conf.stories.filter((s) => Number(s.id) < 20000).map((s) => String(s.id));
   await dbSet(KEY, {
     stories: [...(extras.stories || []), ...stories],
     chapters: [...(extras.chapters || []), ...chapters],
     covers: { ...(extras.covers || {}), ...covers },
+    scenes: { ...(extras.scenes || {}), ...newScenes },
+    sceneUsage: { ...(extras.sceneUsage || {}), ...newUsage },
     seen: [...new Set([...(extras.seen || []), ...allIds])],
     savedAt: Date.now(),
   });
@@ -309,5 +381,8 @@ export async function checkUpdates() {
     added,
     items,
     themes,
+    scenes: newScenes,
+    sceneUsage: newUsage,
+    sceneCount: Object.keys(newScenes).length,
   };
 }

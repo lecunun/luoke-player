@@ -11,55 +11,85 @@ let keyword = "";
 let onlyStory = false;
 let onPick = null;
 
-export async function initMapView(pick) {
+let rawScenes = {};
+let rawUsage = {};
+
+// 从 scenes.json 的原始结构算出卡片数组（多版本归并成一张卡）
+function rebuildAll() {
+  all = Object.entries(rawScenes).map(([id, v]) => {
+    const use = rawUsage[id] || {};
+    const versions = (v.versions || [{ ver: 1, name: v.name, bgm: v.bgm }]).map((x) => ({
+      ...x,
+      chapters: use[String(x.ver)] || [],
+    }));
+    const chapters = [...new Set(versions.flatMap((x) => x.chapters))];
+    return {
+      id,
+      name: v.name || `场景 ${id}`,
+      bgm: v.bgm || '',
+      amb: v.amb || '',
+      maxVer: v.maxVer || 1,
+      versions,
+      multi: versions.length > 1,
+      chapters,
+      count: chapters.length,
+    };
+  });
+  all.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'zh'));
+  const multiCount = all.filter((m) => m.multi).length;
+  const el = document.querySelector('#map-count');
+  if (el) {
+    el.textContent =
+      `${all.length} 张地图 · ${all.filter((m) => m.count).length} 张在剧情里出现` +
+      (multiCount ? ` · ${multiCount} 张有多个版本` : '');
+  }
+}
+
+export async function initMapView(pick, extraScenes) {
   onPick = pick;
-  const grid = document.querySelector("#map-grid");
+  const grid = document.querySelector('#map-grid');
   try {
     const [scenes, usage] = await Promise.all([
-      fetch("data/scenes.json").then((r) => r.json()),
-      fetch("data/scene_usage.json").then((r) => r.json()).catch(() => ({})),
+      fetch('data/scenes.json').then((r) => r.json()),
+      fetch('data/scene_usage.json').then((r) => r.json()).catch(() => ({})),
     ]);
-    all = Object.entries(scenes).map(([id, v]) => {
-      const use = usage[id] || {};
-      const versions = (v.versions || [{ ver: 1, name: v.name, bgm: v.bgm }]).map((x) => ({
-        ...x,
-        chapters: use[String(x.ver)] || [],
-      }));
-      const chapters = [...new Set(versions.flatMap((x) => x.chapters))];
-      return {
-        id,
-        name: v.name || `场景 ${id}`,
-        bgm: v.bgm || "",
-        amb: v.amb || "",
-        maxVer: v.maxVer || 1,
-        versions,
-        multi: versions.length > 1,
-        chapters,
-        count: chapters.length,
-      };
-    });
-    all.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "zh"));
+    // 在线收录的新地图（updater.js 存进 IndexedDB）在这里并进来
+    rawScenes = { ...scenes, ...(extraScenes || {}) };
+    rawUsage = usage;
+    rebuildAll();
   } catch (e) {
     grid.innerHTML = `<div class="mv-empty">地图数据加载失败：${e.message}</div>`;
     return;
   }
 
-  const multiCount = all.filter((m) => m.multi).length;
-  document.querySelector("#map-count").textContent =
-    `${all.length} 张地图 · ${all.filter((m) => m.count).length} 张在剧情里出现` +
-    (multiCount ? ` · ${multiCount} 张有多个版本` : "");
-
-  document.querySelector("#map-search").addEventListener("input", (e) => {
+  document.querySelector('#map-search').addEventListener('input', (e) => {
     keyword = e.target.value.trim().toLowerCase();
     render();
   });
-  document.querySelector("#map-only-story").addEventListener("change", (e) => {
+  document.querySelector('#map-only-story').addEventListener('change', (e) => {
     onlyStory = e.target.checked;
     render();
   });
-  document.querySelector("#map-close").addEventListener("click", () => toggleMapView(false));
+  document.querySelector('#map-close').addEventListener('click', () => toggleMapView(false));
 
   render();
+}
+
+/** 在线收录到新地图后补进来（updater.js 用） */
+export function addScenes(map, usage) {
+  if (!map || !Object.keys(map).length) return 0;
+  for (const [id, u] of Object.entries(usage || {})) rawUsage[id] = { ...(rawUsage[id] || {}), ...u };
+  let n = 0;
+  for (const [id, v] of Object.entries(map)) {
+    if (rawScenes[id]) continue;
+    rawScenes[id] = v;
+    n++;
+  }
+  if (n) {
+    rebuildAll();
+    render();
+  }
+  return n;
 }
 
 function pick(m, ver) {
