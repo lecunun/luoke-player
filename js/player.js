@@ -110,6 +110,9 @@ export class Player {
     const pending = this.waiting;
     this.waiting = null;
     this._prevKey = null; // 换章后重置自指保护
+    this._visit = new Map(); // 节点访问次数，兜住老剧本里的循环
+    this._switchSeen = new Map(); // 每个条件分支进过几次（第一次按失败走，第二次判赢）
+    this._userRepeat = false;
     try { pending?.(); } catch {}
     store.setTimeScale(1);
     this.story = null;
@@ -509,7 +512,22 @@ export class Player {
       return this.finish();
     }
     this._prevKey = key || null;
+    this.curNodeKey = key || null; // 诊断用：当前节点 key
     if (!node) return this.finish();
+
+    /* 老剧本（.ats 还原）是事件驱动的状态机，线性播放时同一个节点会被反复绕回来。
+     * 同一个节点演到第三遍就说明是数据层面的循环，跳到后面还没演过的节点；
+     * 玩家自己点「原地不动」（打不过想跑那种）不算——那是他主动要循环。 */
+    const seen = this._visit.get(key) || 0;
+    if (!this._userRepeat && seen >= 2) {
+      this._visit.set(key, seen + 1);
+      const fresh = this._nextFresh(key);
+      console.warn("剧情节点重复，跳到未播节点：", key, "->", fresh);
+      if (!fresh) return this.finish();
+      return this.run(fresh);
+    }
+    this._userRepeat = false;
+    this._visit.set(key, seen + 1);
 
     if (node.npc?.sceneID) await this.setScene(node.npc.sceneID, node.npc.sceneVer);
     if (gen !== this.gen) return;
@@ -522,7 +540,29 @@ export class Player {
       const nxt = this.story.resolve(node.key, node.defaultGoto) || node.next;
       return this.run(nxt);
     }
+    if (node.type === "switch") {
+      /* 条件分支我们只能模拟：第一次进去按失败/未完成那条走（原版是打输了说两句、
+       * 玩家点「有本事再来」再打），第二次才判赢。这样 61 那个「有本事再来 / 我打不过
+       * 还跑不了吗」的分支会照原样出现：前者再进一次就赢了，后者原地不走。 */
+      const n = (this._switchSeen.get(node.key) || 0) + 1;
+      this._switchSeen.set(node.key, n);
+      const win = n >= 2 && node.switchGoto ? this.story.resolve(node.key, node.switchGoto) : null;
+      const tgt = win || this.story.resolve(node.key, node.defaultGoto) || node.next;
+      return this.run(tgt);
+    }
     await this.playDialog(node);
+  }
+
+  // 文档顺序里，fromKey 之后第一个没演过的节点
+  _nextFresh(fromKey) {
+    const st = this.story;
+    if (!st) return null;
+    const order = st.order || [];
+    const i = order.indexOf(fromKey);
+    for (let k = (i < 0 ? 0 : i + 1); k < order.length; k++) {
+      if (!this._visit.get(order[k])) return order[k];
+    }
+    return null;
   }
 
   async playDialog(node) {
@@ -534,9 +574,18 @@ export class Player {
         if (gen !== this.gen) return;
       }
       if (page.buttons.length) {
-        const target = await this.choose(page.buttons);
+        const pick = await this.choose(page.buttons);
         if (gen !== this.gen) return;
-        return this.run(target, node.key);
+        if (pick && pick.action === "goto") return this.run(pick.goto, node.key);
+        // 明确的"原地不动"（点一下就发场景命令的按钮，比如打输了想跑）：
+        // 把同一个节点再放一遍，选项还在，玩家可以改点另一条
+        if (pick && pick.action === "stay") {
+          this._prevKey = null;
+          this._userRepeat = true;
+          return this.run(node.key);
+        }
+        // <End/> 或只关窗口的按钮：只结束这一段，章节继续往下走
+        return this.run(node.next);
       }
     }
     return this.run(node.next);
@@ -591,6 +640,8 @@ export class Player {
     this.hintEl.textContent = "";
     this.choiceEl.innerHTML = "";
     return new Promise((resolve) => {
+      // 有按钮能推进时，"点了只发场景命令"的按钮代表原地不动（打输了想跑、看提示之类）
+      const canAdvance = buttons.some((b) => b.goto);
       for (const b of buttons) {
         const el = document.createElement("button");
         el.className = "choice";
@@ -598,7 +649,9 @@ export class Player {
         el.addEventListener("click", (ev) => {
           ev.stopPropagation(); // 别让这一发点击继续冒泡到对话框的 advance()
           this.choiceEl.innerHTML = "";
-          resolve(b.goto);
+          if (b.goto) resolve({ action: "goto", goto: b.goto });
+          else if (canAdvance && b.cmd) resolve({ action: "stay" });
+          else resolve({ action: "next" });
         });
         this.choiceEl.appendChild(el);
       }

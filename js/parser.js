@@ -96,10 +96,25 @@ export function parseStory(text) {
   const allEls = [...storyEl.querySelectorAll("Script, Click")];
   const docIndex = new Map();
   allEls.forEach((el, i) => docIndex.set(el, i));
+  // <Npc><Create><ViewEvent type="GotIt0">…</ViewEvent><ViewEvent type="GotIt2">…
+  // 同一 NPC 的多个 ViewEvent 是并列入口（第一次点 / 打完再说一遍），不是顺序的下一步。
+  // 记下每个 Script / Click 属于哪个 ViewEvent，Goto 落空时别跨到兄弟入口里去。
+  const viewEvOf = new Map();
+  {
+    let n = 0;
+    for (const el of allEls) {
+      let p = el.parentElement, id = 0;
+      while (p) {
+        if (p.tagName === "ViewEvent") { id = viewEvOf.get(p) || (viewEvOf.set(p, ++n), n); break; }
+        p = p.parentElement;
+      }
+      viewEvOf.set(el, id);
+    }
+  }
   // label 只在同一个 Npc 作用域里唯一，所以位置也要按作用域记：
   // <Click label="submit"> 这种在每段任务里都有，只看全局最小序号会让后一段的
   // Button 跳回前一段的 Click，解析出「自己指向自己」的死循环（57《最终的危机》）。
-  const labelPos = new Map(); // label -> Map(scope -> 最小文档序号)
+  const labelPos = new Map(); // label -> Map(scope -> { pos, viewEv })
   for (const el of allEls) {
     const lb = el.getAttribute("label");
     if (!lb) continue;
@@ -108,7 +123,8 @@ export function parseStory(text) {
     const scope = holder ? scopeOf.get(holder) || 0 : 0;
     if (!labelPos.has(lb)) labelPos.set(lb, new Map());
     const m = labelPos.get(lb);
-    if (!m.has(scope) || i < m.get(scope)) m.set(scope, i);
+    const cur = m.get(scope);
+    if (!cur || i < cur.pos) m.set(scope, { pos: i, scope, viewEv: viewEvOf.get(el) || 0 });
   }
 
   /* NPC 状态：剧本在每个 Script 后面挂一条
@@ -169,11 +185,23 @@ export function parseStory(text) {
       state: stateOfScript.has(el) ? stateOfScript.get(el) + 2 : 1,
       pages: [],
       defaultGoto: null,
+      switchGoto: null,
+      viewEv: viewEvOf.get(el) || 0,
       next: null,
     };
 
     if (type === "asWindow") {
       node.defaultGoto = el.querySelector("Default > Goto")?.getAttribute("value") || null;
+    } else if (type === "switch") {
+      /* 老剧本里的条件分支：<Script type="switch"><Func invoke="combat"/><Case value="2">…</Case><Default>…</Default>
+       * 我们没法真的战斗，统一按"打赢"处理：有 Case 2 就走 Case 2 的 Goto；
+       * 没有就退回文档顺序（嵌套在 Case 里的 Script 本来就排在后面，正好一条线走完）。
+       * taskIsComplete 这类状态判断同理，按文档顺序 0 → 1 依次播放。 */
+      const cases = [...el.querySelectorAll("Case")];
+      const win = cases.find((c) => c.getAttribute("value") === "2");
+      node.switchGoto = win?.querySelector("Goto")?.getAttribute("value") || null;
+      const dflt = [...el.children].find((c) => c.tagName === "Default");
+      node.defaultGoto = dflt?.querySelector("Goto")?.getAttribute("value") || null;
     } else {
       const pageEls = el.querySelectorAll("Page");
       for (const page of pageEls) {
@@ -186,6 +214,10 @@ export function parseStory(text) {
           buttons: [...page.querySelectorAll("Button")].map((b) => ({
             label: (b.getAttribute("label") || "").trim(),
             goto: b.querySelector("Goto")?.getAttribute("value") || null,
+            // 老剧本的三种"没有 Goto"的按钮：<End/> 结束这段脚本、点一下就执行场景命令（跑掉/看提示）、
+            // 或者干脆什么也没有（只关窗口）。玩家侧的处理见 player.playDialog
+            end: !!b.querySelector("End"),
+            cmd: !!b.querySelector("Click"),
           })),
         });
       }
@@ -224,20 +256,23 @@ export function parseStory(text) {
     // label 指向的不是 Script（多半是 Click：场景命令 / 任务回调），
     // 按文档顺序取它之后的第一个 Script，这样剧情不会在这里断掉。
     const posMap = labelPos.get(label);
-    let pos = null;
+    let hit = null;
     if (posMap && posMap.size) {
       const fromScope = nodes.get(fromKey)?.scope;
-      pos = posMap.has(fromScope) ? posMap.get(fromScope) : Math.min(...posMap.values());
+      hit = posMap.get(fromScope) || [...posMap.values()].sort((x, y) => x.pos - y.pos)[0];
     }
-    if (pos != null) {
+    if (hit) {
       let best = null;
       for (const k of order) {
         const p = scriptPos.get(k);
         // 别再指回自己：那必然是一次死循环
-        if (p != null && p > pos && k !== fromKey) {
-          best = k;
-          break;
-        }
+        if (p == null || p <= hit.pos || k === fromKey) continue;
+        // Click 多半是「任务回调 / 场景命令」，原版走到这里这一段就结束了，
+        // 下一个入口来自别的 NPC。同一个 NPC 里剩下的 Script 是并列入口
+        // （第一次对话 / 打完再说一遍 / 分支兄弟），顺着走必然绕回自己。
+        if (nodes.get(k)?.scope === hit.scope) continue;
+        best = k;
+        break;
       }
       if (best) return best;
     }
