@@ -109,6 +109,7 @@ export class Player {
     // 先放掉还挂着的那一步，避免切章后旧协程永远悬着
     const pending = this.waiting;
     this.waiting = null;
+    this._prevKey = null; // 换章后重置自指保护
     try { pending?.(); } catch {}
     store.setTimeScale(1);
     this.story = null;
@@ -501,6 +502,13 @@ export class Player {
       ? keyOrLabel
       : this.story?.resolve(fromKey, keyOrLabel);
     const node = key ? this.story.nodes.get(key) : null;
+    // 兜底：同一个节点连着进两次，说明 Goto/Button 指回了自己（老剧本里
+    // 多段任务共用 label="submit" 就会这样）。这时继续跑就是无限循环，直接收尾。
+    if (key && key === this._prevKey) {
+      console.warn("剧情节点自指，已中断：", key);
+      return this.finish();
+    }
+    this._prevKey = key || null;
     if (!node) return this.finish();
 
     if (node.npc?.sceneID) await this.setScene(node.npc.sceneID, node.npc.sceneVer);

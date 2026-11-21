@@ -96,12 +96,19 @@ export function parseStory(text) {
   const allEls = [...storyEl.querySelectorAll("Script, Click")];
   const docIndex = new Map();
   allEls.forEach((el, i) => docIndex.set(el, i));
-  const labelPos = new Map(); // label -> 最小文档序号
+  // label 只在同一个 Npc 作用域里唯一，所以位置也要按作用域记：
+  // <Click label="submit"> 这种在每段任务里都有，只看全局最小序号会让后一段的
+  // Button 跳回前一段的 Click，解析出「自己指向自己」的死循环（57《最终的危机》）。
+  const labelPos = new Map(); // label -> Map(scope -> 最小文档序号)
   for (const el of allEls) {
     const lb = el.getAttribute("label");
     if (!lb) continue;
     const i = docIndex.get(el);
-    if (!labelPos.has(lb) || i < labelPos.get(lb)) labelPos.set(lb, i);
+    const holder = findHolder(el);
+    const scope = holder ? scopeOf.get(holder) || 0 : 0;
+    if (!labelPos.has(lb)) labelPos.set(lb, new Map());
+    const m = labelPos.get(lb);
+    if (!m.has(scope) || i < m.get(scope)) m.set(scope, i);
   }
 
   /* NPC 状态：剧本在每个 Script 后面挂一条
@@ -216,12 +223,18 @@ export function parseStory(text) {
 
     // label 指向的不是 Script（多半是 Click：场景命令 / 任务回调），
     // 按文档顺序取它之后的第一个 Script，这样剧情不会在这里断掉。
-    const pos = labelPos.get(label);
+    const posMap = labelPos.get(label);
+    let pos = null;
+    if (posMap && posMap.size) {
+      const fromScope = nodes.get(fromKey)?.scope;
+      pos = posMap.has(fromScope) ? posMap.get(fromScope) : Math.min(...posMap.values());
+    }
     if (pos != null) {
       let best = null;
       for (const k of order) {
         const p = scriptPos.get(k);
-        if (p != null && p > pos) {
+        // 别再指回自己：那必然是一次死循环
+        if (p != null && p > pos && k !== fromKey) {
           best = k;
           break;
         }
