@@ -191,7 +191,7 @@ function storyRow(s, { withDate = false } = {}) {
     (withDate && s.date ? `<span class="sdate">${esc(s.date)}</span>` : "") +
     `<span class="sname">${esc(s.name)}</span>` +
     (isTask || gone
-      ? `<span class="scount${isTask ? " task" : ""}">${isTask ? "任务" : "缺正文"}</span>`
+      ? `<span class="scount${isTask ? " task" : ""}">${isTask ? "任务" : s.mark === "offline" ? "已下架" : "缺正文"}</span>`
       : "") +
     `</span>` +
     (s.outline ? `<span class="sout">${esc(s.outline)}</span>` : "");
