@@ -181,6 +181,9 @@ function matchStory(s) {
 function storyRow(s, { withDate = false } = {}) {
   const gone = !s.chapters.length;
   const isTask = s.kind === "task";
+  // 标记优先于默认：已下架＝官方整段没了；缺正文＝只找回了一部分
+  const markText =
+    s.mark === "offline" ? "已下架" : s.mark === "missing" ? "缺正文" : "";
   const row = document.createElement("button");
   row.className = "story-row" + (gone ? " gone" : "") + (withDate ? " tl-entry" : "");
   row.dataset.story = s.id;
@@ -190,20 +193,30 @@ function storyRow(s, { withDate = false } = {}) {
     `<span class="sline">` +
     (withDate && s.date ? `<span class="sdate">${esc(s.date)}</span>` : "") +
     `<span class="sname">${esc(s.name)}</span>` +
-    (isTask || gone
-      ? `<span class="scount${isTask ? " task" : ""}">${isTask ? "任务" : s.mark === "offline" ? "已下架" : "缺正文"}</span>`
+    (isTask || gone || markText
+      ? `<span class="scount${isTask && !markText ? " task" : ""}">${markText || (isTask ? "任务" : "缺正文")}</span>`
       : "") +
     `</span>` +
     (s.outline ? `<span class="sout">${esc(s.outline)}</span>` : "");
   row.title = gone
-    ? `${s.name}：官方已下架这一节的剧本，只保留官方提示卡`
+    ? `${s.name}：${
+        markText === "已下架"
+          ? "官方已下架这一节的剧本，只保留官方提示卡"
+          : markText === "缺正文"
+            ? "剧本只找回了一部分，缺失的内容没有收录"
+            : "收录时没找到这一节的正文"
+      }`
     : `${s.name}（${s.chapters.length} 章）· 点开从第 ${first} 章开始`;
   row.addEventListener("click", () => {
     if (gone) {
       handlers.onInfo?.(
-        isTask
-          ? `「${s.name}」是任务档案条目，收录时没找到对应脚本`
-          : `「${s.name}」的剧本已下架，只剩官方提示卡`,
+        markText === "已下架"
+          ? `「${s.name}」的剧本已下架，只剩官方提示卡`
+          : markText === "缺正文"
+            ? `「${s.name}」只找回了一部分剧本，缺失的段落没有收录`
+            : isTask
+              ? `「${s.name}」是任务档案条目，收录时没找到对应脚本`
+              : `「${s.name}」收录时没找到这一节的正文`,
       );
       return;
     }
