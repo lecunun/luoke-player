@@ -568,7 +568,8 @@ export class Player {
   async playDialog(node) {
     const gen = this.gen;
     const pages = node.pages.length ? node.pages : [{ dialogs: [], buttons: [] }];
-    for (const page of pages) {
+    for (let pageIdx = 0; pageIdx < pages.length; pageIdx++) {
+      const page = pages[pageIdx];
       for (const d of page.dialogs) {
         await this.say(d.name, d.text, d.npcID);
         if (gen !== this.gen) return;
@@ -584,7 +585,10 @@ export class Player {
           this._userRepeat = true;
           return this.run(node.key);
         }
-        // <End/> 或只关窗口的按钮：只结束这一段，章节继续往下走
+        // 一个 Script 里有多个 <Page> 时，普通按钮是"翻到下一页"，不是离开这个节点
+        // （TFlow 还原的老剧本都是这种结构，49《能源危机》只有第一页能播就是这么来的）
+        if (pick && pick.action === "next" && pageIdx < pages.length - 1) continue;
+        // <End/> 或最后一页的关闭按钮：只结束这一段，章节继续往下走
         return this.run(node.next);
       }
     }
@@ -651,6 +655,7 @@ export class Player {
           this.choiceEl.innerHTML = "";
           if (b.goto) resolve({ action: "goto", goto: b.goto });
           else if (canAdvance && b.cmd) resolve({ action: "stay" });
+          else if (b.end) resolve({ action: "end" });
           else resolve({ action: "next" });
         });
         this.choiceEl.appendChild(el);
